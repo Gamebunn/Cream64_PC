@@ -493,6 +493,8 @@ void bhv_sliding_plat_2_init(void);
 void bhv_sliding_plat_2_loop(void);
 void bhv_rotating_octagonal_plat_init(void);
 void bhv_rotating_octagonal_plat_loop(void);
+void bhv_rotating_octagonal_plat_vc_init(void);
+void bhv_rotating_octagonal_plat_vc_loop(void);
 void bhv_animates_on_floor_switch_press_init(void);
 void bhv_animates_on_floor_switch_press_loop(void);
 void bhv_activated_back_and_forth_platform_init(void);
@@ -553,6 +555,16 @@ void bhv_dust_smoke_loop(void);
 void bhv_yoshi_loop(void);
 void bhv_volcano_trap_loop(void);
 
+void bhv_explosion_nd_init(void);
+void bhv_explosion_nd_loop(void);
+void bhv_cheese_follow_init(void);
+void bhv_cheese_act_follow_mario(void);
+void bhv_tank_fish_group2_loop(void);
+void bhv_hocus_explode_init(void);
+void bhv_hocus_explode_loop(void);
+void bhv_tails_explode_init(void);
+void bhv_tails_explode_loop(void);
+
 Gfx *geo_move_mario_part_from_parent(s32 run, UNUSED struct GraphNode *node, Mat4 mtx);
 
 // Bowser
@@ -576,5 +588,12 @@ Gfx *geo_scale_bowser_key(s32 run, struct GraphNode *node, UNUSED f32 mtx[4][4])
 // Water splash
 extern struct WaterDropletParams gShallowWaterSplashDropletParams;
 extern struct WaterDropletParams gShallowWaterWaveDropletParams;
+
+// Story NPCs
+Gfx *geo_switch_npc_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
+Gfx *geo_switch_amy_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
+Gfx *geo_switch_tails_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
+Gfx *geo_switch_blaze_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
+Gfx *geo_switch_marine_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
 
 #endif // BEHAVIOR_ACTIONS_H

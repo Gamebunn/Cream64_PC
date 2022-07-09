@@ -12,6 +12,8 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/common0.h"
+#include "actors/group14.h"
 
 #include "make_const_nonconst.h"
 #include "levels/bob/header.h"
@@ -36,10 +38,10 @@ static const LevelScript script_func_local_2[] = {
     OBJECT          (/*model*/ MODEL_BOWLING_BALL,          /*pos*/  -993,  886, -3565, /*angle*/ 0, 0, 0,   /*bhvParam*/ 0, /*bhv*/ bhvPitBowlingBall),
     OBJECT          (/*model*/ MODEL_BOWLING_BALL,          /*pos*/  -785,  886, -4301, /*angle*/ 0, 0, 0,   /*bhvParam*/ 0, /*bhv*/ bhvPitBowlingBall),
     OBJECT_WITH_ACTS(/*model*/ MODEL_BOWLING_BALL,          /*pos*/   -93,  886, -3414, /*angle*/ 0, 0, 0,   /*bhvParam*/ 0, /*bhv*/ bhvPitBowlingBall,         /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
-    OBJECT_WITH_ACTS(/*model*/ MODEL_BOBOMB_BUDDY,          /*pos*/ -5723,  140,  6017, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(DIALOG_002), /*bhv*/ bhvBobombBuddy,            /*acts*/ ACT_1),
-    OBJECT_WITH_ACTS(/*model*/ MODEL_BOBOMB_BUDDY,          /*pos*/ -6250,    0,  6680, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(DIALOG_001), /*bhv*/ bhvBobombBuddy,            /*acts*/ ACT_1),
-    OBJECT_WITH_ACTS(/*model*/ MODEL_BOBOMB_BUDDY,          /*pos*/ -5723,  140,  6017, /*angle*/ 0, 0, 0,   /*bhvParam*/ 0,       /*bhv*/ bhvBobombBuddyOpensCannon, /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
-    OBJECT_WITH_ACTS(/*model*/ MODEL_BOBOMB_BUDDY,          /*pos*/ -6250,    0,  6680, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(DIALOG_003), /*bhv*/ bhvBobombBuddy,            /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_LAYLA,          /*pos*/ -5723,  140,  6017, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(DIALOG_002), /*bhv*/ bhvBobombBuddyLayla,            /*acts*/ ACT_1),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_KITTEN,          /*pos*/ -6250,    0,  6680, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(DIALOG_001), /*bhv*/ bhvBobombBuddyKitten,            /*acts*/ ACT_1),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_LAYLA,          /*pos*/ -5723,  140,  6017, /*angle*/ 0, 0, 0,   /*bhvParam*/ 0,       /*bhv*/ bhvBobombBuddyOpensCannon, /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_KITTEN,          /*pos*/ -6250,    0,  6680, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(DIALOG_003), /*bhv*/ bhvBobombBuddyKitten,            /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT_WITH_ACTS(/*model*/ MODEL_CANNON_BASE,           /*pos*/ -5694,  128,  5600, /*angle*/ 0, 135, 0, /*bhvParam*/ BPARAM2(0x01), /*bhv*/ bhvWaterBombCannon,        /*acts*/ ACT_1),
     OBJECT_WITH_ACTS(/*model*/ MODEL_DL_CANNON_LID,         /*pos*/ -5694,  128,  5600, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(0x00), /*bhv*/ bhvCannonClosed,           /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,                  /*pos*/  3304, 4242, -4603, /*angle*/ 0, 0, 0,   /*bhvParam*/ 0, /*bhv*/ bhvKoopaRaceEndpoint,      /*acts*/ ACT_2),
@@ -49,7 +51,7 @@ static const LevelScript script_func_local_2[] = {
 
 static const LevelScript script_func_local_3[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_KING_BOBOMB,           /*pos*/  1636, 4242, -5567, /*angle*/ 0, -147, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_1), /*bhv*/ bhvKingBobomb,            /*acts*/ ACT_1),
-    OBJECT_WITH_ACTS(/*model*/ MODEL_KOOPA_WITH_SHELL,      /*pos*/ -4004,    0,  5221, /*angle*/ 0, 0, 0,    /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_2) | BPARAM2(KOOPA_BP_KOOPA_THE_QUICK_BOB), /*bhv*/ bhvKoopa,                 /*acts*/ ACT_2),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_GEMERL,      /*pos*/ -4004,    0,  5221, /*angle*/ 0, 0, 0,    /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_2) | BPARAM2(KOOPA_BP_KOOPA_THE_QUICK_BOB), /*bhv*/ bhvKoopaGemerl,                 /*acts*/ ACT_2),
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,                  /*pos*/ -6000, 1000,  2400, /*angle*/ 0, 0, 0,    /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_4), /*bhv*/ bhvHiddenRedCoinStar,     /*acts*/ ALL_ACTS),
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,                  /*pos*/ -6600, 1000,  1250, /*angle*/ 0, 0, 0,    /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_5) | BPARAM2(0x04), /*bhv*/ bhvHiddenStar,            /*acts*/ ALL_ACTS),
     OBJECT_WITH_ACTS(/*model*/ MODEL_STAR,                  /*pos*/  1550, 1200,   300, /*angle*/ 0, 0, 0,    /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_6), /*bhv*/ bhvStar,                  /*acts*/ ALL_ACTS),
@@ -77,6 +79,10 @@ const LevelScript level_bob_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_BOB_SEESAW_PLATFORM,  bob_geo_000458),
     LOAD_MODEL_FROM_GEO(MODEL_BOB_BARS_GRILLS,      bob_geo_000470),
 
+    LOAD_MODEL_FROM_GEO(MODEL_LAYLA,      layla_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_KITTEN,     kitten_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_GEMERL,     gemerl_geo),
+
     AREA(/*index*/ 1, bob_geo_000488),
         JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),
@@ -86,6 +92,9 @@ const LevelScript level_bob_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  1680,  3835, -5523, /*angle*/ 0, -153, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0C), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -6612,  1024, -3351, /*angle*/ 0, 107, 0,  /*bhvParam*/ BPARAM2(WARP_NODE_0D), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  1980,   768,  6618, /*angle*/ 0, -151, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0E), /*bhv*/ bhvFadingWarp),
+        //OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -6365,  1000,  6464, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  -6806,   0,  5004, /*angle*/ 0, 0, 0, /*behParam*/ BPARAM2(MWISP_BOB), /*beh*/ bhvWisp1),
+        OBJECT(/*model*/ MODEL_WISP2, /*pos*/  -6500,   0,  4776, /*angle*/ 0, 0, 0, /*behParam*/ BPARAM2(WWISP_LAYLA_KITTEN), /*beh*/ bhvWisp2),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_BOB,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_BOB,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,      /*destLevel*/ LEVEL_BOB,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),

@@ -369,6 +369,9 @@ struct MarioState {
     /*0xBC*/ f32 peakHeight;
     /*0xC0*/ f32 quicksandDepth;
     /*0xC4*/ f32 unkC4;
+    u16 flyTimer;
+    u16 flyStamina;
+    int currentCostume;
 };
 
 #endif // _SM64_TYPES_H_

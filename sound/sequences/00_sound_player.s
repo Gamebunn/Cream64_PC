@@ -2065,6 +2065,8 @@ sound_ref .sound_mario_wah2
   sound_ref .sound_peach_bake_a_cake
   sound_ref .sound_peach_for_mario
   sound_ref .sound_peach_mario2
+  sound_ref .sound_mario_buh_bye
+  sound_ref .sound_mario_ground_pound_sub
 #endif
 
 .sound_mario_jump_hoo:
@@ -2165,7 +2167,7 @@ chan_end
 
 .layer_CB2:
 layer_transpose -3
-layer_note1 39, 0x1c, 127
+layer_note1 43, 0x1c, 127
 layer_end
 
 .sound_mario_whoa:
@@ -2592,6 +2594,18 @@ layer_jump .layer_C4E
   layer_note1 39, 0xc8, 110
   layer_end
 
+.sound_mario_buh_bye:
+chan_setbank 8
+chan_setinstr 27
+chan_setlayer 0, .layer_EF8
+chan_setlayer 1, .layer_EF8
+chan_end
+
+.layer_EF8:
+layer_portamento 0x82, 42, 200
+layer_note1 39, 0xc8, 110
+layer_end
+
   .sound_mario_ima_tired:
   chan_setbank 8
   chan_setinstr 23
@@ -2643,7 +2657,7 @@ layer_jump .layer_C4E
   chan_end
 
   .layer_F47:
-  layer_note1 39, 0x64, 127
+  layer_note1 39, 0xB4, 127
   layer_end
 
   .sound_peach_something_special:
@@ -2691,6 +2705,17 @@ layer_jump .layer_C4E
   .layer_F8A:
   layer_note1 39, 0x50, 127
   layer_end
+  
+.sound_mario_ground_pound_sub:
+chan_setbank 8
+chan_setinstr 28
+chan_setlayer 0, .layer_F8B
+chan_end
+
+.layer_F8B:
+layer_note1 39, 0xc8, 110
+layer_end
+
 #endif
 
 #if defined(VERSION_EU) || defined(VERSION_SH)
@@ -2723,7 +2748,7 @@ sound_ref .sound_general_quiet_bubble2
 sound_ref .sound_general_castle_trap_open
 sound_ref .sound_general_wall_explosion
 sound_ref .sound_general_coin
-sound_ref .sound_general_coin
+sound_ref .sound_general_ring
 sound_ref .sound_general_coin_water
 sound_ref .sound_general_coin_water
 sound_ref .sound_general_coin_water
@@ -2749,7 +2774,7 @@ sound_ref .sound_general_clam_shell3
 sound_ref .sound_general_painting_eject
 sound_ref .sound_general_painting_eject
 sound_ref .sound_general_painting_eject
-sound_ref .sound_general_painting_eject
+sound_ref .sound_general_explosion_badnik
 sound_ref .sound_menu_star_sound
 sound_ref .sound_general_platform
 sound_ref .sound_general_bobomb_explosion
@@ -2837,7 +2862,7 @@ sound_ref .sound_general_boat_rock
   sound_ref .sound_menu_enter_hole
 #else
   sound_ref .sound_general_vanish_sfx
-  sound_ref .sound_menu_enter_hole
+sound_ref .sound_general_presto
   sound_ref .sound_general_red_coin
   sound_ref .sound_general_birds_fly_away
   sound_ref .sound_general_right_answer
@@ -3070,6 +3095,17 @@ layer_note1 30, 0x5, 40
 layer_note1 42, 0x37, 85
 layer_end
 
+.sound_general_ring:
+chan_setbank 8
+chan_setinstr 17
+chan_setlayer 0, .layer_11E5
+chan_end
+
+.layer_11E5:
+
+layer_note1 39, 0x37, 95
+layer_end
+
 .sound_general_coin_water:
 chan_setbank 9
 chan_setinstr 3
@@ -3264,6 +3300,16 @@ chan_setlayer 0, .layer_1338
 chan_end
 
 .layer_1338:
+layer_note1 39, 0x73, 95
+layer_end
+
+.sound_general_explosion_badnik:
+chan_setbank 8
+chan_setinstr 18
+chan_setlayer 0, .layer_1339
+chan_end
+
+.layer_1339:
 layer_note1 39, 0x73, 95
 layer_end
 
@@ -3880,25 +3926,13 @@ layer_note1 31, 0x7f, 115
 layer_end
 
 .sound_general_collect_1up:
-chan_setbank 9
-chan_setinstr 3
-chan_setenvelope .envelope_3358
+chan_setbank 8
+chan_setinstr 19
 chan_setlayer 0, .layer_1734
-chan_setdecayrelease 50
-chan_setlayer 1, .layer_1732
 chan_end
 
-.layer_1732:
-layer_delay 0x4
-
 .layer_1734:
-layer_transpose 24
-layer_note1 31, 0xc, 100
-layer_note1 34, 0xc, 100
-layer_note1 43, 0xc, 100
-layer_note1 39, 0xc, 100
-layer_note1 41, 0xc, 100
-layer_note1 46, 0x18, 100
+layer_note1 39, 0x12C, 95
 layer_end
 
 .sound_general_rotating_block_alert:
@@ -4965,6 +4999,16 @@ layer_portamento 0x82, 20, 255
 layer_note1 43, 0x1b58, 63
 layer_jump .layer_1E47
 
+.sound_general_presto:
+chan_setbank 0
+chan_setinstr 6
+chan_setlayer 0, .layer_1E43
+chan_end
+
+.layer_1E43:
+layer_note1 39, 0xDC, 127
+layer_end
+
 .channel59_table:
 sound_ref .sound_obj_sushi_shark_water_sound
 sound_ref .sound_obj_mri_shoot
@@ -5083,11 +5127,11 @@ sound_ref .sound_obj_wiggler_low_pitch
 sound_ref .sound_obj_snufit_skeeter_death
 sound_ref .sound_obj_bubba_chomp
 sound_ref .sound_obj_enemy_defeat_shrink
-sound_ref .sound_obj_bowser_tail_pickup
-sound_ref .sound_obj_bowser_defeated
-sound_ref .sound_obj_bowser_spinning
-sound_ref .sound_obj_klepto2
-sound_ref .sound_obj_king_bobomb_talk
+sound_ref .sound_obj_gardevoir_sad
+sound_ref .sound_obj_pocky
+sound_ref .sound_obj_tails1
+sound_ref .sound_obj_chao
+sound_ref .sound_obj_floomba
 sound_ref .sound_obj_baby_penguin_walk
 sound_ref .sound_obj_bowser_walk
 sound_ref .sound_obj_bowser_roar
@@ -5211,6 +5255,56 @@ chan_end
 layer_note1 32, 0x28, 127
 layer_end
 
+.sound_obj_gardevoir_sad:
+chan_setbank 9
+chan_setinstr 7
+chan_setlayer 0, .layer_1FFB
+chan_end
+
+.layer_1FFB:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_pocky:
+chan_setbank 9
+chan_setinstr 8
+chan_setlayer 0, .layer_1FFC
+chan_end
+
+.layer_1FFC:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_tails1:
+chan_setbank 9
+chan_setinstr 9
+chan_setlayer 0, .layer_1FFD
+chan_end
+
+.layer_1FFD:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_chao:
+chan_setbank 9
+chan_setinstr 10
+chan_setlayer 0, .layer_1FFE
+chan_end
+
+.layer_1FFE:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_floomba:
+chan_setbank 9
+chan_setinstr 11
+chan_setlayer 0, .layer_1FFF
+chan_end
+
+.layer_1FFF:
+layer_note1 39, 0xFF, 127
+layer_end
+
 .sound_obj_bowser_inhaling:
 chan_setbank 6
 chan_setinstr 6
@@ -5243,8 +5337,8 @@ layer_note1 39, 0x18, 127
 layer_end
 
 .sound_obj_boo_laugh_short:
-chan_setbank 6
-chan_setinstr 9
+chan_setbank 9
+chan_setinstr 6
 chan_setlayer 0, .layer_202E
 chan_end
 
@@ -5624,8 +5718,8 @@ chan_end
 
 .layer_2253:
 layer_portamento 0x83, 46, 255
-layer_note1 27, 0x5, 127
-layer_note1 32, 0x3, 127
+layer_note1 27, 0x5, 0
+layer_note1 32, 0x3, 0
 layer_delay 0x22
 layer_end
 
@@ -6083,8 +6177,8 @@ layer_note1 34, 0xaf, 127
 layer_end
 
 .sound_obj_boo_laugh_long:
-chan_setbank 6
-chan_setinstr 9
+chan_setbank 9
+chan_setinstr 6
 chan_setval 25
 chan_call .set_reverb
 chan_setlayer 0, .layer_253E
@@ -7325,9 +7419,9 @@ chan_end
 
 .layer_2D99:
 layer_portamento 0x81, 23, 255
-layer_note1 35, 0x9, 96
+layer_note1 35, 0x9, 20
 layer_portamento 0x81, 36, 255
-layer_note1 43, 0x44, 100
+layer_note1 43, 0x44, 25
 layer_end
 
 .chan_2DA8:

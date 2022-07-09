@@ -10,3 +10,5 @@
 #include "clam_shell/geo.inc.c"
 #include "sushi/geo.inc.c"
 #include "unagi/geo.inc.c"
+
+#include "sushi_marine/geo.inc.c"

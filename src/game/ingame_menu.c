@@ -47,6 +47,28 @@ s16 gDialogY;
 s16 gCutsceneMsgXOffset;
 s16 gCutsceneMsgYOffset;
 s8 gRedCoinsCollected;
+u8 textCreamOutfit[] = { TEXT_CREAM1};
+u8 textCreamOutfit2[] = { TEXT_CREAM2};
+u8 textCreamOutfit3[] = { TEXT_CREAM3};
+u8 textCreamOutfit4[] = { TEXT_CREAM4};
+u8 textCreamOutfit5[] = { TEXT_CREAM5};
+u8 textCreamOutfit6[] = { TEXT_CREAM6};
+u8 textCreamOutfit7[] = { TEXT_CREAM7};
+u8 textCreamOutfit8[] = { TEXT_CREAM8};
+u8 textCreamOutfit9[] = { TEXT_CREAM9};
+u8 textCreamOutfit10[] = { TEXT_CREAM10};
+u8 textCreamOutfit11[] = { TEXT_CREAM11};
+u8 textCreamOutfit12[] = { TEXT_CREAM12};
+u8 textCreamOutfit13[] = { TEXT_CREAM13};
+u8 textCreamOutfit14[] = { TEXT_CREAM14};
+u8 textCreamOutfit15[] = { TEXT_CREAM15};
+u8 textCreamOutfit16[] = { TEXT_CREAM16};
+u8 textCreamOutfit17[] = { TEXT_CREAM17};
+u8 textCreamOutfit18[] = { TEXT_CREAM18};
+u8 textCreamOutfit19[] = { TEXT_CREAM19};
+u8 textCreamOutfit20[] = { TEXT_CREAM20};
+u8 textCostumeCurrent[] = { TEXT_CREAM_CURRENT};
+u8 textCostumeinstrutions[] = { TEXT_CREAM_DPAD};
 
 extern u8 gLastCompletedCourseNum;
 extern u8 gLastCompletedStarNum;
@@ -1054,7 +1076,7 @@ void render_dialog_box_type(struct DialogEntry *dialog, s8 linesPerBox) {
                                               (40.0 / gDialogBoxScale) - 40, 0);
                 create_dl_scale_matrix(MENU_MTX_NOPUSH, 1.0 / gDialogBoxScale, 1.0 / gDialogBoxScale, 1.0f);
             }
-            gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 150);
+            gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 150);
             break;
     }
 
@@ -1084,7 +1106,7 @@ void change_and_flash_dialog_text_color_lines(s8 colorMode, s8 lineNum) {
             case DIALOG_TYPE_ROTATE:
                 break;
             case DIALOG_TYPE_ZOOM:
-                gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 255);
+                gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
                 break;
         }
     }
@@ -1587,7 +1609,7 @@ void render_dialog_triangle_choice(void) {
 }
 
 #if defined(VERSION_JP) || defined(VERSION_SH)
-    #define X_VAL5 123.0f
+    #define X_VAL5 162.0f
     #define Y_VAL5_1 -20
     #define Y_VAL5_2 2
     #define X_Y_VAL6 0.8f
@@ -1617,7 +1639,7 @@ void render_dialog_triangle_next(s8 linesPerBox) {
     if (gDialogBoxType == DIALOG_TYPE_ROTATE) { // White Text
         gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
     } else { // Black Text
-        gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 255);
+        gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
     }
 
     gSPDisplayList(gDisplayListHead++, dl_draw_triangle);
@@ -2507,6 +2529,67 @@ void render_pause_course_options(s16 x, s16 y, s8 *index, s16 yIndex) {
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gMenuTextAlpha);
 
+    // Costume Code 1
+
+if (gPlayer1Controller->buttonPressed & R_CBUTTONS) {
+    gMarioState->currentCostume += 1;
+}
+if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
+    gMarioState->currentCostume -= 1;
+}
+
+if (gMarioState->currentCostume < 0) {
+    gMarioState->currentCostume = 19;
+}
+if (gMarioState->currentCostume > 19) {
+    gMarioState->currentCostume = 0;
+}
+
+    print_generic_string(10, 20, textCostumeCurrent);
+    print_generic_string(10, 5, textCostumeinstrutions);
+    switch (gMarioState->currentCostume) {
+    case 0: print_generic_string(110, 20, textCreamOutfit);
+    break;
+    case 1: print_generic_string(110, 20, textCreamOutfit2);
+    break;
+    case 2: print_generic_string(110, 20, textCreamOutfit3);
+    break;
+    case 3: print_generic_string(110, 20, textCreamOutfit4);
+    break;
+    case 4: print_generic_string(110, 20, textCreamOutfit5);
+    break;
+    case 5: print_generic_string(110, 20, textCreamOutfit6);
+    break;
+    case 6: print_generic_string(110, 20, textCreamOutfit7);
+    break;
+    case 7: print_generic_string(110, 20, textCreamOutfit8);
+    break;
+    case 8: print_generic_string(110, 20, textCreamOutfit9);
+    break;
+    case 9: print_generic_string(110, 20, textCreamOutfit10);
+    break;
+    case 10: print_generic_string(110, 20, textCreamOutfit11);
+    break;
+    case 11: print_generic_string(110, 20, textCreamOutfit12);
+    break;
+    case 12: print_generic_string(110, 20, textCreamOutfit13);
+    break;
+    case 13: print_generic_string(110, 20, textCreamOutfit14);
+    break;
+    case 14: print_generic_string(110, 20, textCreamOutfit15);
+    break;
+    case 15: print_generic_string(110, 20, textCreamOutfit16);
+    break;
+    case 16: print_generic_string(110, 20, textCreamOutfit17);
+    break;
+    case 17: print_generic_string(110, 20, textCreamOutfit18);
+    break;
+    case 18: print_generic_string(110, 20, textCreamOutfit19);
+    break;
+    case 19: print_generic_string(110, 20, textCreamOutfit20);
+    break;
+    }
+
     print_generic_string(x + 10, y - 2, LANGUAGE_ARRAY(textContinue));
     print_generic_string(x + 10, y - 17, LANGUAGE_ARRAY(textExitCourse));
 
@@ -2680,6 +2763,67 @@ void render_pause_castle_main_strings(s16 x, s16 y) {
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gMenuTextAlpha);
+
+    // Costume Code 1
+
+if (gPlayer1Controller->buttonPressed & R_CBUTTONS) {
+    gMarioState->currentCostume += 1;
+}
+if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
+    gMarioState->currentCostume -= 1;
+}
+
+if (gMarioState->currentCostume < 0) {
+    gMarioState->currentCostume = 19;
+}
+if (gMarioState->currentCostume > 19) {
+    gMarioState->currentCostume = 0;
+}
+
+    print_generic_string(10, 20, textCostumeCurrent);
+    print_generic_string(10, 5, textCostumeinstrutions);
+    switch (gMarioState->currentCostume) {
+    case 0: print_generic_string(110, 20, textCreamOutfit);
+    break;
+    case 1: print_generic_string(110, 20, textCreamOutfit2);
+    break;
+    case 2: print_generic_string(110, 20, textCreamOutfit3);
+    break;
+    case 3: print_generic_string(110, 20, textCreamOutfit4);
+    break;
+    case 4: print_generic_string(110, 20, textCreamOutfit5);
+    break;
+    case 5: print_generic_string(110, 20, textCreamOutfit6);
+    break;
+    case 6: print_generic_string(110, 20, textCreamOutfit7);
+    break;
+    case 7: print_generic_string(110, 20, textCreamOutfit8);
+    break;
+    case 8: print_generic_string(110, 20, textCreamOutfit9);
+    break;
+    case 9: print_generic_string(110, 20, textCreamOutfit10);
+    break;
+    case 10: print_generic_string(110, 20, textCreamOutfit11);
+    break;
+    case 11: print_generic_string(110, 20, textCreamOutfit12);
+    break;
+    case 12: print_generic_string(110, 20, textCreamOutfit13);
+    break;
+    case 13: print_generic_string(110, 20, textCreamOutfit14);
+    break;
+    case 14: print_generic_string(110, 20, textCreamOutfit15);
+    break;
+    case 15: print_generic_string(110, 20, textCreamOutfit16);
+    break;
+    case 16: print_generic_string(110, 20, textCreamOutfit17);
+    break;
+    case 17: print_generic_string(110, 20, textCreamOutfit18);
+    break;
+    case 18: print_generic_string(110, 20, textCreamOutfit19);
+    break;
+    case 19: print_generic_string(110, 20, textCreamOutfit20);
+    break;
+    }
 
     if (gMenuLineNum <= COURSE_NUM_TO_INDEX(COURSE_STAGES_MAX)) { // Main courses
         courseName = segmented_to_virtual(courseNameTbl[gMenuLineNum]);

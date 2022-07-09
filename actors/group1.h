@@ -91,4 +91,10 @@ extern const Gfx yoshi_egg_seg5_dl_05009898[];
 extern const Gfx yoshi_egg_seg5_dl_050098B0[];
 extern const Gfx yoshi_egg_seg5_dl_050098C8[];
 
+#include "bullet_bill/geo_header.h"
+
+#include "thwomp/geo_header.h"
+
+#include "hoot/geo_header.h"
+
 #endif

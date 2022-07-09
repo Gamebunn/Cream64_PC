@@ -1328,4 +1328,14 @@
     #define TOX_BOX_BP_MOVEMENT_PATTERN_2 1
     #define TOX_BOX_BP_MOVEMENT_PATTERN_3 2
 
+    /* Hocus */
+
+    #define HOCUS_IDLE                                      0x0
+    #define HOCUS_MAGIC                                     0x1
+
+/* Tails */
+
+    #define TAILS_IDLE                                      0x0
+    #define TAILS_HAPPY                                     0x1
+
 #endif // OBJECT_CONSTANTS_H

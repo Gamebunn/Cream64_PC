@@ -23,3 +23,11 @@ UNUSED static const u64 binid_2 = 2;
 
 #include "boo_castle/model.inc.c"
 UNUSED static const u64 binid_3 = 3;
+
+#include "chocola/model.inc.c"
+#include "silver/model.inc.c"
+#include "silver/anims/data.inc.c"
+#include "silver/anims/table.inc.c"
+#include "katalina/model.inc.c"
+#include "katalina/anims/data.inc.c"
+#include "katalina/anims/table.inc.c"

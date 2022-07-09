@@ -30,7 +30,7 @@ static struct MacroPreset sMacroObjectPresets[] = {
     /* macro_fake_star                   */ { bhvUnusedFakeStar, MODEL_STAR, 0 }, // unused
     /* macro_wooden_signpost             */ { bhvMessagePanel, MODEL_WOODEN_SIGNPOST, 0 },
     /* macro_cannon_closed               */ { bhvCannonClosed, MODEL_DL_CANNON_LID, 0 },
-    /* macro_bobomb_buddy_opens_cannon_1 */ { bhvBobombBuddyOpensCannon, MODEL_BOBOMB_BUDDY, 0 },
+    /* macro_bobomb_buddy_opens_cannon_1 */ { bhvBobombBuddyOpensCannon, MODEL_LAYLA, 0 },
     /* macro_butterfly                   */ { bhvButterfly, MODEL_BUTTERFLY, 0 }, // unused
     /* macro_bouncing_fireball_1         */ { bhvBouncingFireball, MODEL_NONE, 0 }, // unused
     /* macro_fish_spawner_many_blue      */ { bhvFishSpawner, MODEL_NONE, FISH_SPAWNER_BP_MANY_BLUE }, // unused

@@ -185,6 +185,15 @@
             "sound_lo": "1E_closed_triangle",
             "sound": "1F_open_triangle",
             "sound_hi": "20_cabasa"
+        },
+        "inst8": {
+            "release_rate": 15,
+            "normal_range_lo": 27,
+            "normal_range_hi": 46,
+            "envelope": "envelope2",
+            "sound_lo": "23_strings_1",
+            "sound": "24_strings_2",
+            "sound_hi": "25_strings_3"
         }
     },
     "instrument_list": [
@@ -200,6 +209,7 @@
         null,
         "inst5",
         "inst6",
-        "inst7"
+        "inst7",
+        "inst8"
     ]
 }

@@ -61,4 +61,10 @@ extern const Gfx spindrift_seg5_dl_05002C98[];
 extern const Gfx spindrift_seg5_dl_05002D08[];
 extern const struct Animation *const spindrift_seg5_anims_05002D68[];
 
+#include "penguin_chao/geo_header.h"
+
+#include "spindrift/geo_header.h"
+
+#include "snowman/geo_header.h"
+
 #endif

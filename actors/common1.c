@@ -86,6 +86,18 @@ UNUSED static const u64 binid_21 = 21;
 #include "tree/model.inc.c"
 UNUSED static const u64 binid_22 = 22;
 
+#include "bait_fish/model.inc.c"
+#include "bowser_key_cutscene/model.inc.c"
+#include "tails_c1/model.inc.c"
+#include "tails_c1/anims/data.inc.c"
+#include "tails_c1/anims/table.inc.c"
+#include "warpring/model.inc.c"
+#include "warpring/anims/data.inc.c"
+#include "warpring/anims/table.inc.c"
+#include "marios_cap/model.inc.c"
+#include "marios_metal_cap/model.inc.c"
+#include "marios_wing_cap/model.inc.c"
+
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/models.inc.c"
 #endif

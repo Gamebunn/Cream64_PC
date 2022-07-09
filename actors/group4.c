@@ -30,3 +30,5 @@ UNUSED static const u64 binid_3 = 3;
 
 #include "whirlpool/model.inc.c"
 UNUSED static const u64 binid_4 = 4;
+
+#include "sushi_marine/model.inc.c"

@@ -10,3 +10,8 @@
 #include "bird/geo.inc.c"
 #include "peach/geo.inc.c"
 #include "yoshi/geo.inc.c"
+
+#include "chocola_ed/geo.inc.c"
+#include "cheese_ed/geo.inc.c"
+#include "peach_mark/geo.inc.c"
+#include "mark/geo.inc.c"

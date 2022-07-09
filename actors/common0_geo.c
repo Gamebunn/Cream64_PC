@@ -27,3 +27,13 @@
 #include "metal_box/geo.inc.c"
 #include "exclamation_box_outline/geo.inc.c"
 #include "koopa_shell/geo.inc.c"
+
+#include "amy/geo.inc.c"
+#include "blaze/geo.inc.c"
+#include "layla/geo.inc.c"
+#include "kitten/geo.inc.c"
+#include "marine/geo.inc.c"
+#include "floomba/geo.inc.c"
+#include "bobomb_new/geo.inc.c"
+#include "toad_normal/geo.inc.c"
+#include "goomba_marine/geo.inc.c"

@@ -175,6 +175,16 @@
             "sound_lo": "38_electric_kick_drum",
             "sound": {"sample": "08", "tuning": 2.121321},
             "sound_hi": "38_electric_kick_drum"
+        },
+        "inst8": {
+            "release_rate": 208,
+            "envelope": "envelope3",
+            "sound": "29_orchestra_hit"
+        },
+        "inst9": {
+            "release_rate": 208,
+            "envelope": "envelope3",
+            "sound": "29_orchestra_hit"
         }
     },
     "instrument_list": [
@@ -182,8 +192,8 @@
         "inst1",
         "inst2",
         "inst3",
-        null,
-        null,
+        "inst8",
+        "inst9",
         null,
         null,
         null,

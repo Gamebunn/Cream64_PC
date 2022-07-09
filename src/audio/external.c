@@ -101,7 +101,7 @@ u8 sDialogSpeaker[] = {
     /* 0*/ _,     BOMB,  BOMB,  BOMB,  BOMB,  KOOPA, KOOPA, KOOPA, _,     KOOPA,
     /* 1*/ _,     _,     _,     _,     _,     _,     _,     KBOMB, _,     _,
     /* 2*/ _,     BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1,
-    /* 3*/ _,     _,     _,     _,     _,     _,     _,     DIFF,  _,     _,
+    /* 3*/ _,     _,     _,     _,     _,     _,     _,     TUXIE, _,     _,
     /* 4*/ _,     KOOPA, _,     _,     _,     _,     _,     BOMB,  _,     _,
     /* 5*/ _,     _,     _,     _,     _,     TUXIE, TUXIE, TUXIE, TUXIE, TUXIE,
     /* 6*/ _,     _,     _,     _,     _,     _,     _,     BOWS2, _,     _,
@@ -114,7 +114,14 @@ u8 sDialogSpeaker[] = {
     /*13*/ _,     _,     TUXIE, _,     _,     _,     _,     _,     _,     _,
     /*14*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
     /*15*/ WIGLR, WIGLR, WIGLR, _,     _,     _,     _,     _,     _,     _,
-    /*16*/ _,     YOSHI, _,     _,     _,     _,     _,     _,     WIGLR, _
+    /*16*/ _,     YOSHI, _,     _,     _,     _,     _,     _,     WIGLR, _,
+    /*17*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*18*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*19*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*20*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*21*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*22*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*22*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
 };
 #undef _
 STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT,
@@ -281,38 +288,64 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127, // SEQ_SOUND_PLAYER
     80,  // SEQ_EVENT_CUTSCENE_COLLECT_STAR
     80,  // SEQ_MENU_TITLE_SCREEN
-    75,  // SEQ_LEVEL_GRASS
+    127,  // SEQ_LEVEL_GRASS; NEW_BOB
     70,  // SEQ_LEVEL_INSIDE_CASTLE
-    75,  // SEQ_LEVEL_WATER
-    75,  // SEQ_LEVEL_HOT
-    75,  // SEQ_LEVEL_BOSS_KOOPA
-    70,  // SEQ_LEVEL_SNOW
-    65,  // SEQ_LEVEL_SLIDE
-    80,  // SEQ_LEVEL_SPOOKY
+    127,  // SEQ_LEVEL_WATER; NEW_JRB
+    127,  // SEQ_LEVEL_HOT; NEW_LLL
+    127,  // SEQ_LEVEL_BOSS_KOOPA; EGGMAN1
+    127,  // SEQ_LEVEL_SNOW; NEW_CCM
+    127,  // SEQ_LEVEL_SLIDE; NEW_TTC
+    127,  // SEQ_LEVEL_SPOOKY; NEW_BBH
     65,  // SEQ_EVENT_PIRANHA_PLANT
-    85,  // SEQ_LEVEL_UNDERGROUND
+    127,  // SEQ_LEVEL_UNDERGROUND; NEW_HMC
     75,  // SEQ_MENU_STAR_SELECT
-    65,  // SEQ_EVENT_POWERUP
+    90,  // SEQ_EVENT_POWERUP
     70,  // SEQ_EVENT_METAL_CAP
     65,  // SEQ_EVENT_KOOPA_MESSAGE
-    70,  // SEQ_LEVEL_KOOPA_ROAD
-    70,  // SEQ_EVENT_HIGH_SCORE
-    65,  // SEQ_EVENT_MERRY_GO_ROUND
+    127,  // SEQ_LEVEL_KOOPA_ROAD; EGGSTAGE1
+    127,  // SEQ_EVENT_HIGH_SCORE
+    127,  // SEQ_EVENT_MERRY_GO_ROUND; NEW_BBH2
     80,  // SEQ_EVENT_RACE
     70,  // SEQ_EVENT_CUTSCENE_STAR_SPAWN
-    85,  // SEQ_EVENT_BOSS
+    127,  // SEQ_EVENT_BOSS
     75,  // SEQ_EVENT_CUTSCENE_COLLECT_KEY
     75,  // SEQ_EVENT_ENDLESS_STAIRS
     85,  // SEQ_LEVEL_BOSS_KOOPA_FINAL
     70,  // SEQ_EVENT_CUTSCENE_CREDITS
     80,  // SEQ_EVENT_SOLVE_PUZZLE
     80,  // SEQ_EVENT_TOAD_MESSAGE
-    70,  // SEQ_EVENT_PEACH_MESSAGE
+    127,  // SEQ_EVENT_PEACH_MESSAGE
     75,  // SEQ_EVENT_CUTSCENE_INTRO
     80,  // SEQ_EVENT_CUTSCENE_VICTORY
     70,  // SEQ_EVENT_CUTSCENE_ENDING
     65,  // SEQ_MENU_FILE_SELECT
     0,   // SEQ_EVENT_CUTSCENE_LAKITU (not in JP)
+    127, // NEW_WF
+    127, // NEW_LLL2
+    127, // NEW_SSL
+    127, // NEW_SSL2
+    127, // NEW_DDD
+    127, // NEW_SL
+    127, // NEW_SL2
+    127, // NEW_WDW
+    127, // NEW_TTM
+    127, // NEW_TTM2
+    127, // NEW_THI
+    127, // NEW_RR
+    127, // EGGSTAGE2
+    127, // EGGMAN2
+    127, // EGGSTAGE3
+    127, // EGGMAN3_FINALE
+    127, // BOSS2 WISEMAN
+    127, // MISSION_STREET
+    127, // KARAOKE BAR
+    127, // WHITE PARK
+    127, // FUGIYAMA
+    127, // FUGIYAMA - STAR GET
+    127, // RACING
+    127, // SHELL SLIDING
+    127, // VANILLA'S SECRET SLIDE
+    127, // THE END
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,

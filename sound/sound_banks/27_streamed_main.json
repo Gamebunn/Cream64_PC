@@ -1,0 +1,184 @@
+{
+    "date": "1996-03-19",
+    "sample_bank": "streamed_audio_main",
+    "envelopes": {
+        "envelope0": [
+            [1, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "bob_fluffycatch_0"
+        },
+        "inst1": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "wf_thesky_0"
+        },
+        "inst2": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "jrb_tidaltempest_0"
+        },
+        "inst3": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ccm_snowballwaltz_0"
+        },
+        "inst4": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "bbh_oddmarch_0"
+        },
+        "inst5": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "bbh2_childssong_0"
+        },
+        "inst6": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "hmc_casinopolis_0"
+        },
+        "inst7": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "lll_volcanovalley1_0"
+        },
+        "inst8": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "lll2_redmountain2_0"
+        },
+        "inst9": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ssl_desertzone_0"
+        },
+        "inst10": { // 0A
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ssl2_pyramidcave_0"
+        },
+        "inst11": { // 0B
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ddd_seabottomsegue_0"
+        },
+        "inst12": { // 0C
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "sl_iceparadise_0"
+        },
+        "inst13": { // 0D
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "sl2_limestonecave_0"
+        },
+        "inst14": { // 0E
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "wdw_rustyruin_0"
+        },
+        "inst15": { // 0F
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ttm_redmountain_0"
+        },
+        "inst16": { // 10
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ttm2_gensmission_0"
+        },
+        "inst17": { // 11
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "thi_juicearchipelago_0"
+        },
+        "inst18": { // 12
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ttc_rooftoprun_0"
+        },
+        "inst19": { // 13
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "rr_endofsummer_0"
+        },
+        "inst20": { // 14
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggstage1_soarinoverspace_0"
+        },
+        "inst21": { // 15
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggman1_eggmantheme_0"
+        },
+        "inst22": { // 16
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggstage2_volcanovalley2_0"
+        },
+        "inst23": { // 17
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggman2_eggemperor_0"
+        },
+        "inst24": { // 18
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggstage3_kooparoad_0"
+        },
+        "inst25": { // 19
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggstage3_kooparoad_1"
+        },
+        "inst26": { // 1A
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggman3_rubyillusions_0"
+        },
+        "inst27": { // 1B
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggman3_finalstrike_0"
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4",
+        "inst5",
+        "inst6",
+        "inst7",
+        "inst8",
+        "inst9",
+        "inst10",
+        "inst11",
+        "inst12",
+        "inst13",
+        "inst14",
+        "inst15",
+        "inst16",
+        "inst17",
+        "inst18",
+        "inst19",
+        "inst20",
+        "inst21",
+        "inst22",
+        "inst23",
+        "inst24",
+        "inst25",
+        "inst26",
+        "inst27"
+    ]
+}

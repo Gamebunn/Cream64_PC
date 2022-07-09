@@ -965,6 +965,11 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
         case ACT_JUMP_KICK:
             m->vel[1] = 20.0f;
             break;
+                        
+        case ACT_HOVERING:
+            m->flyTimer = 0;
+            m->flyStamina = 0;
+            break;
     }
 
     m->peakHeight = m->pos[1];
@@ -1744,7 +1749,7 @@ void mario_update_hitbox_and_cap_model(struct MarioState *m) {
     }
 
     if (flags & MARIO_CAP_IN_HAND) {
-        if (flags & MARIO_WING_CAP) {
+        if ((flags & MARIO_WING_CAP)) {
             bodyState->handState = MARIO_HAND_HOLDING_WING_CAP;
         } else {
             bodyState->handState = MARIO_HAND_HOLDING_CAP;
@@ -1752,7 +1757,7 @@ void mario_update_hitbox_and_cap_model(struct MarioState *m) {
     }
 
     if (flags & MARIO_CAP_ON_HEAD) {
-        if (flags & MARIO_WING_CAP) {
+        if (flags & MARIO_WING_CAP || m->action == ACT_HOVERING) {
             bodyState->capState = MARIO_HAS_WING_CAP_ON;
         } else {
             bodyState->capState = MARIO_HAS_DEFAULT_CAP_ON;
@@ -1816,6 +1821,49 @@ void queue_rumble_particles(void) {
  */
 s32 execute_mario_action(UNUSED struct Object *o) {
     s32 inLoop = TRUE;
+
+    switch (gMarioState->currentCostume) {
+  case 0: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO];
+break;
+  case 1: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_RIDERS];
+break;
+  case 2: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_WINTER];
+break;
+  case 3: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SPRING];
+break;
+  case 4: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_UNICORN];
+break;
+  case 5: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_YUKATA];
+break;
+  case 6: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VANILLA];
+break;
+  case 7: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN];
+break;
+  case 8: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO];
+break;
+  case 9: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LUFFY];
+break;
+  case 10: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ICHIBAN];
+break;
+  case 11: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_GOKU];
+break;
+  case 12: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CINNIA];
+break;
+  case 13: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CHEF];
+break;
+  case 14: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VAL];
+break;
+  case 15: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ROGER];
+break;
+  case 16: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KATALINA];
+break;
+  case 17: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KITTEN];
+break;
+  case 18: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LAYLA];
+break;
+  case 19: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CREAMOCCHIA];
+break;
+        }
 
 #ifdef CHEATS_ACTIONS
     cheats_mario_action(gMarioState);

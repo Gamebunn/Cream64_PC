@@ -11,3 +11,7 @@
 #include "toad/geo.inc.c"
 #include "mips/geo.inc.c"
 #include "boo_castle/geo.inc.c"
+
+#include "chocola/geo.inc.c"
+#include "silver/geo.inc.c"
+#include "katalina/geo.inc.c"

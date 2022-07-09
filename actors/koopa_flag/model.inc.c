@@ -1,19 +1,19 @@
 // Koopa Flag
 
 // 0x06000000
-static const Lights1 koopa_flag_seg6_lights_06000000 = gdSPDefLights1(
+UNUSED static const Lights1 koopa_flag_seg6_lights_06000000 = gdSPDefLights1(
     0x00, 0x1b, 0x00,
     0x00, 0x6e, 0x00, 0x28, 0x28, 0x28
 );
 
 // 0x06000018
-static const Lights1 koopa_flag_seg6_lights_06000018 = gdSPDefLights1(
+UNUSED static const Lights1 koopa_flag_seg6_lights_06000018 = gdSPDefLights1(
     0x3f, 0x39, 0x15,
     0xff, 0xe6, 0x57, 0x28, 0x28, 0x28
 );
 
 // 0x06000030
-static const Lights1 koopa_flag_seg6_lights_06000030 = gdSPDefLights1(
+UNUSED static const Lights1 koopa_flag_seg6_lights_06000030 = gdSPDefLights1(
     0x2b, 0x15, 0x01,
     0xac, 0x54, 0x05, 0x28, 0x28, 0x28
 );
@@ -95,11 +95,11 @@ static const Vtx koopa_flag_seg6_vertex_06000A38[] = {
 
 // 0x06000A68
 static const Vtx koopa_flag_seg6_vertex_06000A68[] = {
-    {{{     0,      0,    720}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{   460,      0,    540}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{     0,      0,      0}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{   460,      0,   -539}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{     0,      0,   -719}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
+    {{{     0,      0,    720}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{   460,      0,    540}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{     0,      0,      0}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{   460,      0,   -539}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{     0,      0,   -719}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
 };
 
 // 0x06000AB8 - 0x06000AE8
@@ -212,10 +212,10 @@ const Gfx koopa_flag_seg6_dl_06000CE0[] = {
 
 // 0x06000D50
 static const Vtx koopa_flag_seg6_vertex_06000D50[] = {
-    {{{     0,      0,    224}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{   288,      0,    112}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{   288,      0,   -111}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{     0,      0,   -223}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
+    {{{     0,      0,    224}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{   288,      0,    112}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{   288,      0,   -111}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{     0,      0,   -223}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
 };
 
 // 0x06000D90 - 0x06000DB0
@@ -239,9 +239,9 @@ const Gfx koopa_flag_seg6_dl_06000DB0[] = {
 
 // 0x06000DF0
 static const Vtx koopa_flag_seg6_vertex_06000DF0[] = {
-    {{{     0,      0,    112}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{   288,      0,      0}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
-    {{{     0,      0,   -111}, 0, {     0,      0}, {0xfd, 0xa8, 0x02, 0xff}}},
+    {{{     0,      0,    112}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{   288,      0,      0}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
+    {{{     0,      0,   -111}, 0, {     0,      0}, {0x38, 0xaf, 0xf3, 0xff}}},
 };
 
 // 0x06000E20 - 0x06000E38

@@ -557,7 +557,7 @@ Gfx *geo_mario_rotate_wing_cap_wings(s32 callContext, struct GraphNode *node, UN
     if (callContext == GEO_CONTEXT_RENDER) {
         struct GraphNodeRotation *rotNode = (struct GraphNodeRotation *) node->next;
 
-        if (!gBodyStates[asGenerated->parameter >> 1].wingFlutter) {
+        if (!gBodyStates[asGenerated->parameter >> 1].wingFlutter && gBodyStates[asGenerated->parameter >> 1].action != ACT_HOVERING) {
             rotX = (coss((gAreaUpdateCounter & 0xF) << 12) + 1.0f) * 4096.0f;
         } else {
             rotX = (coss((gAreaUpdateCounter & 7) << 13) + 1.0f) * 6144.0f;

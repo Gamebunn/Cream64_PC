@@ -61,6 +61,31 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "06"
+        },
+        "inst7": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "07_gardevoir"
+        },
+        "inst8": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "08_pocky"
+        },
+        "inst9": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "09_tails1"
+        },
+        "inst10": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0A_chao"
+        },
+        "inst11": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0B_floomba"
         }
     },
     "instrument_list": [
@@ -70,6 +95,11 @@
         "inst3",
         "inst4",
         "inst5",
-        "inst6"
+        "inst6",
+        "inst7",
+        "inst8",
+        "inst9",
+        "inst10",
+        "inst11"
     ]
 }

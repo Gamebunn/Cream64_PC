@@ -611,6 +611,31 @@ extern const BehaviorScript bhvEndBirds2[];
 extern const BehaviorScript bhvIntroScene[];
 extern const BehaviorScript bhvUnusedFakeStar[];
 
+extern const BehaviorScript bhvExplosionNoDmg[];
+extern const BehaviorScript bhvCheeseFollow[];
+extern const BehaviorScript bhvBobombBuddyLayla[];
+extern const BehaviorScript bhvBobombBuddyKitten[];
+extern const BehaviorScript bhvToadMessageSilver[];
+extern const BehaviorScript bhvToadMessageKatty[];
+extern const BehaviorScript bhvToadMessageAmy[];
+extern const BehaviorScript bhvToadMessageAmy2[];
+extern const BehaviorScript bhvToadMessageAmy3[];
+extern const BehaviorScript bhvToadMessageAmy4[];
+extern const BehaviorScript bhvToadMessageAmy5[];
+extern const BehaviorScript bhvToadMessageAmy6[];
+extern const BehaviorScript bhvKoopaGemerl[];
+//extern const BehaviorScript bhvKoopaTails[]; 
+extern const BehaviorScript bhvWisp1[];
+extern const BehaviorScript bhvWisp2[];
+extern const BehaviorScript bhvToadMessageBlaze[];
+extern const BehaviorScript bhvToadMessageBlaze2[];
+extern const BehaviorScript bhvToadMessageBlaze3[];
+extern const BehaviorScript bhvToadMessageMarine[];
+extern const BehaviorScript bhvToadMessageMarine2[];
+extern const BehaviorScript bhvToadMessageMarine3[];
+extern const BehaviorScript bhvToadMessageTails1[];
+extern const BehaviorScript bhvWarpRing[];
+
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/include_behaviors.h"
 #endif

@@ -36,3 +36,6 @@ UNUSED static const u64 binid_5 = 5;
 
 #include "treasure_chest/model.inc.c"
 UNUSED static const u64 binid_6 = 6;
+#include "tammie/model.inc.c"
+#include "tammie/anims/data.inc.c"
+#include "tammie/anims/table.inc.c"

@@ -1,0 +1,106 @@
+{
+    "date": "1996-03-19",
+    "sample_bank": "streamed_audio_side",
+    "envelopes": {
+        "envelope0": [
+            [1, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "highscore_0"
+        },
+        "inst1": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "castlemessage_0"
+        },
+        "inst2": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "boss_maniaboss_0"  
+        },
+        "inst3": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "boss_maniaboss_0"  
+        },
+        "inst4": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "boss_maniaboss_0"  
+        },
+        "inst5": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "boss2_wiseman_0"  
+        },
+        "inst6": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "mission_street_0"  
+        },
+        "inst7": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "kb_dudleytheme_0"  
+        },
+        "inst8": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "wp_bubblebobble2_0"  
+        },
+        "inst9": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "gc_ntmfujiyama_0"  
+        },
+        "inst10": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "stargetextra_par_0"  
+        },
+        "inst11": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "race_saturnspecial_0"  
+        },
+        "inst12": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "shell_tiltthemachine_0"  
+        },
+        "inst13": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "pss_leafforest_0"  
+        },
+        "inst14": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "theend_0"  
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4",
+        "inst5",
+        "inst6",
+        "inst7",
+        "inst8",
+        "inst9",
+        "inst10",
+        "inst11",
+        "inst12",
+        "inst13",
+        "inst14"
+    ]
+}

@@ -151,16 +151,16 @@
  * File Select Text
  */
 // Main Screens
-#define TEXT_MARIO _("MARIO") // View Score Menu
-#define TEXT_SELECT_FILE _("SELECT FILE")
-#define TEXT_CHECK_FILE _("CHECK FILE")
-#define TEXT_COPY_FILE _("COPY FILE")
-#define TEXT_ERASE_FILE _("ERASE FILE")
+#define TEXT_MARIO _("CREAM") // View Score Menu
+#define TEXT_SELECT_FILE _("SELECT BUN")
+#define TEXT_CHECK_FILE _("CHECK BUN")
+#define TEXT_COPY_FILE _("COPY BUN")
+#define TEXT_ERASE_FILE _("ERASE BUN")
 #define TEXT_SOUND_SELECT _("SOUND SELECT")
-#define TEXT_FILE_MARIO_A _("MARIO A")
-#define TEXT_FILE_MARIO_B _("MARIO B")
-#define TEXT_FILE_MARIO_C _("MARIO C")
-#define TEXT_FILE_MARIO_D _("MARIO D")
+#define TEXT_FILE_MARIO_A _("CREAM A")
+#define TEXT_FILE_MARIO_B _("CREAM B")
+#define TEXT_FILE_MARIO_C _("CREAM C")
+#define TEXT_FILE_MARIO_D _("CREAM D")
 
 // Menu Options
 #define TEXT_SCORE _("SCORE")
@@ -200,7 +200,7 @@
 #define TEXT_SURE _("SURE?")
 #define TEXT_YES _("YES")
 #define TEXT_NO _("NO")
-#define TEXT_FILE_MARIO_A_JUST_ERASED _("MARIO A JUST ERASED")
+#define TEXT_FILE_MARIO_A_JUST_ERASED _("CREAM A JUST ERASED")
 
 /**
  * Menus Text (Pause, Course Completed)
@@ -215,9 +215,32 @@
 #define TEXT_CAMERA_ANGLE_R _("SET CAMERA ANGLE WITH R")
 #endif
 
+// Cream Outfits
+#define TEXT_CREAM1 _("DEFAULT")
+#define TEXT_CREAM2 _("RIDERS")
+#define TEXT_CREAM3 _("WINTER")
+#define TEXT_CREAM4 _("SPRING")
+#define TEXT_CREAM5 _("UNICORN")
+#define TEXT_CREAM6 _("YUKATA")
+#define TEXT_CREAM7 _("VANILLA")
+#define TEXT_CREAM8 _("BEAN")
+#define TEXT_CREAM9 _("MARIO")
+#define TEXT_CREAM10 _("LUFFY")
+#define TEXT_CREAM11 _("ICHIBAN")
+#define TEXT_CREAM12 _("(JHW) GOKU")
+#define TEXT_CREAM13 _("(V4W) CINNIA")
+#define TEXT_CREAM14 _("(SYS) CHEF")
+#define TEXT_CREAM15 _("(FG) VAL")
+#define TEXT_CREAM16 _("(BS) ROGER R.")
+#define TEXT_CREAM17 _("(GB) KATALINA")
+#define TEXT_CREAM18 _("(FN) KITTEN")
+#define TEXT_CREAM19 _("(MP) LAYLA")
+#define TEXT_CREAM20 _("(MSP) CREAMOCCHIA")
+#define TEXT_CREAM_CURRENT _("CURRENT COSTUME: ")
+#define TEXT_CREAM_DPAD _("PRESS CBTN LEFT OR RIGHT TO SWITCH")
 // Camera Options
-#define TEXT_LAKITU_MARIO _("LAKITU + MARIO")
-#define TEXT_LAKITU_STOP _("LAKITU + STOP")
+#define TEXT_LAKITU_MARIO _("OMOCHAO + CREAM")
+#define TEXT_LAKITU_STOP _("OMOCHAO + STOP")
 #define TEXT_NORMAL_UPCLOSE __("(NORMAL)(UP-CLOSE)")
 #define TEXT_NORMAL_FIXED __("(NORMAL)(FIXED)")
 
@@ -235,15 +258,15 @@
 /**
  * Ending Peach cutscene text.
  */
-#define TEXT_FILE_MARIO_EXCLAMATION _("Mario!")
-#define TEXT_POWER_STARS_RESTORED __("The power of the Stars is restored to the castle...")
+#define TEXT_FILE_MARIO_EXCLAMATION _("Cream!")
+#define TEXT_POWER_STARS_RESTORED __("The rings are restored and everyone is saved...")
 #define TEXT_THANKS_TO_YOU __("...and it's all thanks to you!")
-#define TEXT_THANK_YOU_MARIO __("Thank you, Mario!")
-#define TEXT_SOMETHING_SPECIAL __("We have to do something special for you...")
-#define TEXT_LISTEN_EVERYBODY _("Listen, everybody,")
-#define TEXT_LETS_HAVE_CAKE _("let's bake a delicious cake...")
-#define TEXT_FOR_MARIO _("...for Mario...")
-#define TEXT_FILE_MARIO_QUESTION _("Mario!")
+#define TEXT_THANK_YOU_MARIO __("I'm so proud of you, Cream!")
+#define TEXT_SOMETHING_SPECIAL __("I hope you had a wonderful birthday!")
+#define TEXT_LISTEN_EVERYBODY _("Ok, everybody,")
+#define TEXT_LETS_HAVE_CAKE _("We have a delicious cake to finish...")
+#define TEXT_FOR_MARIO _("...for Cream...")
+#define TEXT_FILE_MARIO_QUESTION _("Cream!")
 
 #endif
 

@@ -95,4 +95,14 @@ extern const Gfx wiggler_seg5_dl_0500E640[];
 extern const Gfx wiggler_seg5_dl_0500E678[];
 extern const struct Animation *const wiggler_seg5_anims_0500EC8C[];
 
+#include "lakitu_enemy/geo_header.h"
+
+#include "spiny_egg/geo_header.h"
+
+#include "bubba/geo_header.h"
+
+#include "spiny/geo_header.h"
+
+#include "wiggler_head/geo_header.h"
+
 #endif

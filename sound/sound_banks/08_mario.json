@@ -155,6 +155,18 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "1A_mario_lets_a_go"
+        },
+        "inst27": {
+            "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "1B_mario_buh_bye"
+        },
+        "inst28": {
+            "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "1C_subaluwa"
         }
     },
     "instrument_list": [
@@ -184,6 +196,8 @@
         "inst23",
         "inst24",
         "inst25",
-        "inst26"
+        "inst26",
+        "inst27",
+        "inst28"
     ]
 }

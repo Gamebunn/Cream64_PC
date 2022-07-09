@@ -11,7 +11,9 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
+#include "actors/group9.h"
 
 #include "make_const_nonconst.h"
 #include "levels/bbh/header.h"
@@ -54,7 +56,7 @@ static const LevelScript script_func_local_3[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,                        /*pos*/ -1551,   100, -1018, /*angle*/ 0, 0, 0,   /*bhvParam*/ 0, /*bhv*/ bhvBoo,                 /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,                       /*pos*/   990, -2146,  -908, /*angle*/ 0, -45, 0, /*bhvParam*/ BPARAM2(0x03), /*bhv*/ bhvFlamethrower,          /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,                       /*pos*/ -1100, -2372,  1100, /*angle*/ 0, 135, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_2), /*bhv*/ bhvMerryGoRoundBooManager,         /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
-    OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,                        /*pos*/  1030,  1922,  2546, /*angle*/ 0, -90, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_5), /*bhv*/ bhvBalconyBigBoo,        /*acts*/ ALL_ACTS),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_KINGBOO,                        /*pos*/  1030,  1922,  2546, /*angle*/ 0, -90, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_5), /*bhv*/ bhvBalconyBigBoo,        /*acts*/ ALL_ACTS),
     OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,                        /*pos*/   581,  1850,  -206, /*angle*/ 0, -90, 0, /*bhvParam*/ 0, /*bhv*/ bhvBoo,                 /*acts*/ ALL_ACTS),
     OBJECT          (/*model*/ MODEL_MAD_PIANO,                  /*pos*/ -1300,     0,  2310, /*angle*/ 0, 243, 0, /*bhvParam*/ 0, /*bhv*/ bhvMadPiano),
     OBJECT          (/*model*/ MODEL_HAUNTED_CHAIR,              /*pos*/ -1530,     0,  2200, /*angle*/ 0, 66, 0,  /*bhvParam*/ 0, /*bhv*/ bhvHauntedChair),
@@ -101,6 +103,9 @@ const LevelScript level_bbh_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_BBH_MESH_ELEVATOR,          geo_bbh_000628),
     LOAD_MODEL_FROM_GEO(MODEL_BBH_MERRY_GO_ROUND,         geo_bbh_000640),
     LOAD_MODEL_FROM_GEO(MODEL_BBH_WOODEN_TOMB,            geo_bbh_000658),
+
+    LOAD_MODEL_FROM_GEO(MODEL_KINGBOO,            kingboo_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_AMY,                    amy_geo),
 
     AREA(/*index*/ 1, geo_bbh_000F00),
         JUMP_LINK(script_func_local_1),

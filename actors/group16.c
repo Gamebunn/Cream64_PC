@@ -18,3 +18,5 @@ UNUSED static const u64 binid_0 = 0;
 #include "moneybag/anims/data.inc.c"
 #include "moneybag/anims/table.inc.c"
 UNUSED static const u64 binid_1 = 1;
+
+#include "chillycrawl/model.inc.c"

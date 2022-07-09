@@ -24,3 +24,5 @@ UNUSED static const u64 binid_2 = 2;
 #include "tornado/model.inc.c"
 #include "tornado/geo.inc.c"
 UNUSED static const u64 binid_3 = 3;
+
+#include "wiseman/model.inc.c"

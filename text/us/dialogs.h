@@ -275,12 +275,12 @@ Shhh! Please walk\n\
 quietly in the hallway!"))
 
 DEFINE_DIALOG(DIALOG_020, 1, 6, 95, 150, _("\
-Dear Mario:\n\
+Dear Cream:\n\
 Please come to the\n\
 castle. I've baked\n\
 a cake for you.\n\
-Yours truly--\n\
-Princess Toadstool"))
+Your loving mother--\n\
+Princess Vanilla"))
 
 DEFINE_DIALOG(DIALOG_021, 1, 5, 95, 200, _("\
 Welcome.\n\
@@ -784,8 +784,9 @@ by enemy attacks.\n\
 You don't even have to\n\
 breathe while wearing it.\n\
 \n\
-The only problem:\n"
-YOU_CANT_SWIM_IN_IT))
+The only problem:\n\
+It is too heavy to\n\
+swim with."))
 
 DEFINE_DIALOG(DIALOG_063, 1, 5, 30, 200, _("\
 The Vanish Cap is inside\n\
@@ -1644,36 +1645,14 @@ already defeated, select\n\
 the Stars you recovered\n\
 from them."))
 
-DEFINE_DIALOG(DIALOG_136, 1, 6, 30, 200, _("\
-Wow! You've already\n\
-recovered that many\n\
-Stars? Way to go, Mario!\n\
-I'll bet you'll have us out\n\
-of here in no time!\n\
-\n\
-Be careful, though.\n\
-Bowser and his band\n\
-wrote the book on 『bad.』\n\
-Take my advice: When you\n\
-need to recover from\n\
-injuries, collect coins.\n\
-Yellow Coins refill one\n\
-piece of the Power Meter,\n\
-Red Coins refill two\n\
-pieces, and Blue Coins\n\
-refill five.\n\
-\n\
-To make Blue Coins\n\
-appear, pound on Blue\n\
-Coin Blocks.\n\
+// Chao in basement
+DEFINE_DIALOG(DIALOG_136, 1, 3, 30, 200, _("\
+Chaaaao....\n\
 \n\
 \n\
-\n\
-Also, if you fall from\n\
-high places, you'll\n\
-minimize damage if you\n\
-Pound the Ground as you\n\
-land."))
+(Henlo miss crem. \n\
+Habby... birth... \n\
+love u)"))
 
 DEFINE_DIALOG(DIALOG_137, 1, 6, 30, 200, _("\
 Thanks, Mario! The castle\n\
@@ -1866,7 +1845,7 @@ Waaaaaaaaaaaaaaaaa!!!"))
 
 DEFINE_DIALOG(DIALOG_152, 1, 3, 30, 200, _("\
 Owwch! Uncle! Uncle!\n\
-Okay, I " GIVE_UP ". Take this\n\
+Okay, I give up. Take this\n\
 Star!\n\
 Whew! I feel better now.\n\
 I don't really need it\n\
@@ -1982,7 +1961,7 @@ Enjoy!!!"
 
 DEFINE_DIALOG(DIALOG_161, 1, 4, 30, 200, _("\
 Mario!!!\n\
-Is that really you???\n\
+It that really you???\n\
 It has been so long since\n\
 our last adventure!\n\
 They told me that I might\n\
@@ -2100,3 +2079,1218 @@ Arrgghh!\n\
 Anyone entering this cave\n\
 without permission will\n\
 meet certain disaster."))
+
+DEFINE_DIALOG(MWISP_CASTLE, 1, 4, 30, 200, _("\
+Hello there, Miss. I'm a\n\
+Magenta Wisp sent here as\n\
+a guide for the ones above.\n\
+\n\
+My fellow brethren are all\n\
+located in all the main \n\
+stages of this castle. \n\
+\n\
+We will give you the names\n\
+of the song in the level \n\
+as well as creator credits\n\
+if it's certain midis. \n\
+There's also the few \n\
+White Wisp next to certain\n\
+individuals.\n\
+\n\
+They'll help to explain\n\
+the strange fellows they're\n\
+next to and why they're\n\
+here.\n\
+There's another Magenta \n\
+Wisp in the basement that\n\
+will actually give you the\n\
+song info of the castle.\n\
+I'm just here to give you \n\
+an idea. Keep an eye out,\n\
+Miss!"))
+
+//Music Credits, Castle
+DEFINE_DIALOG(MWISP_CASTLE2, 1, 6, 30, 200, _("\
+Music used:\n\
+Title Music:\n\
+-Sonic Advance 2-\n\
+Leaf Forest Prototype\n\
+-- Gameboy Advance\n\
+Ori. Midi by: King Meteor\n\
+File Select:\n\
+-Sonic Jam-\n\
+Museum Theme\n\
+-- Saturn\n\
+Ori. Midi by: \n\
+-Name Unknown-\n\
+Castle Hub:\n\
+-Sonic Advance-\n\
+Ice Mountain Act 1\n\
+-- Gameboy Advance\n\
+Composed by: MrGreenThunder\n\
+\n\
+Boss Battle: \n\
+-Sonic Mania-\n\
+Eggman 1 ~ Ruby Delusions\n\
+-- Various Platforms\n\
+\n\
+\n\
+Endless Stairs: \n\
+-Sonic 2-\n\
+Death Egg Zone\n\
+-- Genesis-Megadrive\n\
+Ori. Midi by: \n\
+Hunt 'Sage' Bridges\n\
+Vanish/Wing Locket:\n\
+-Sonic 3 and Knuckles-\n\
+Unused Song\n\
+Ori. Midi from:\n\
+Sonic and Knuckles \n\
+Collection (PC)\n\
+Metal Locket:\n\
+-Sonic 3 and Knuckles-\n\
+Chrome Gadget Zone\n\
+--Genesis-MegaDrive\n\
+Ori. Midi by:\n\
+-Name Unknown-\n\
+Star Spawn:\n\
+-Sonic Advance-\n\
+Chaos Emerald\n\
+--Gameboy Advance\n\
+Ori. Midi by: Steve1\n\
+\n\
+Star Get:\n\
+-Sonic Advance-\n\
+Act 1 Complete\n\
+--Gameboy Advance\n\
+Ori. Midi by: MaliceX"))
+
+//Music Credits, Bob
+DEFINE_DIALOG(MWISP_BOB, 1, 4, 30, 200, _("\
+Music used:\n\
+-NiGHTS Journey of Dreams-\n\
+Eloquent Echo: Fluffy Catch\n\
+-- Wii"))
+
+//Music Credits, Wf
+DEFINE_DIALOG(MWISP_WF, 1, 4, 30, 200, _("\
+Music used:\n\
+-Sonic Adventure-\n\
+The Air - Windy Valley 3\n\
+-- Dreamcast"))
+
+//Music Credits, Jrb
+DEFINE_DIALOG(MWISP_JRB, 1, 4, 30, 200, _("\
+Music used:\n\
+-Sonic CD (EU-JP)-\n\
+Tidal Tempest - Present\n\
+-- SEGA CD"))
+
+//Music Credits, Ccm
+DEFINE_DIALOG(MWISP_CCM, 1, 4, 30, 200, _("\
+Music used:\n\
+-Sonic Lost World-\n\
+Snowball Waltz\n\
+-- Wii U"))
+
+//Music Credits, bbh
+DEFINE_DIALOG(MWISP_BBH, 1, 5, 30, 200, _("\
+Music used:\n\
+Main Area: \n\
+-Billy Hatcher 'n the Giant Egg-\n\
+Odd March\n\
+-- Nintendo GameCube\n\
+Merry-Go-Round:\n\
+-Knuckles' Chaotix-\n\
+Child's Song\n\
+-- 32X"))
+
+//Music Credits, hmc
+DEFINE_DIALOG(MWISP_HMC, 1, 4, 30, 200, _("\
+Music used:\n\
+-Sonic Adventure-\n\
+Dilapidated Way - Casinopolis\n\
+-- Dreamcast"))
+
+//Music Credits, lll
+DEFINE_DIALOG(MWISP_LLL, 1, 5, 30, 200, _("\
+Music used:\n\
+Main Area: \n\
+-Sonic 3D Blast-\n\
+Volcano Valley Act 1\n\
+-- Genesis\n\
+Volcano:\n\
+-Sonic Adventure-\n\
+Red Hot Skull - Red Mountain\n\
+-- Dreamcast"))
+
+//Music Credits, ssl
+DEFINE_DIALOG(MWISP_SSL, 1, 5, 30, 200, _("\
+Music used:\n\
+Main Area: \n\
+-Sonic Lost World-\n\
+Desert Ruins - Zone 4\n\
+-- Wii U\n\
+Pyramid:\n\
+-Sonic Adventure 2-\n\
+Keys the Ruins - Pyramid Cave\n\
+-- Dreamcast"))
+
+//Music Credits, ddd
+DEFINE_DIALOG(MWISP_DDD, 1, 4, 30, 200, _("\
+Music used:\n\
+-Sonic Lost World-\n\
+Sea Bottom Segue\n\
+-- Wii U"))
+
+//Music Credits, sl
+DEFINE_DIALOG(MWISP_SL, 1, 6, 30, 200, _("\
+Music used:\n\
+-Sonic Advance 2-\n\
+Ice Paradise Act 1\n\
+-- Gameboy Advance\n\
+Remastered by:\n\
+SuperChaosControl\n\
+Igloo:\n\
+-Sonic Adventure-\n\
+Limestone Cave - Icecap\n\
+-- Dreamcast"))
+
+//Music Credits, wdw
+DEFINE_DIALOG(MWISP_WDW, 1, 4, 30, 200, _("\
+Music used:\n\
+-Sonic Adventure-\n\
+Tricky Maze - Lost World 1\n\
+-- SEGA Dreamcast"))
+
+//Music Credits, ttm
+DEFINE_DIALOG(MWISP_TTM, 1, 5, 30, 200, _("\
+Music used:\n\
+Main Area: \n\
+-Sonic Adventure-\n\
+Symbol of Thrill - Red Mountain\n\
+-- Dreamcast\n\
+Secret Slide:\n\
+-M n'S 2014 Winter Olympics-\n\
+Slide\n\
+-- Wii U"))
+
+//Music Credits, thi
+DEFINE_DIALOG(MWISP_THI, 1, 5, 30, 200, _("\
+Music used:\n\
+Main Area: \n\
+-Sonic Lost World-\n\
+Juice Archipelago\n\
+-- Wii U\n\
+Inside Mountain:\n\
+-Sonic Mania-\n\
+Lava Reef Zone Act 2\n\
+-- Various Platforms"))
+
+//Music Credits, ttc
+DEFINE_DIALOG(MWISP_TTC, 1, 5, 30, 200, _("\
+Music used:\n\
+-Sonic Unleashed-\n\
+Rooftop Run - Night\n\
+-- 360-PS3"))
+
+//Music Credits, rr
+DEFINE_DIALOG(MWISP_RR, 1, 5, 30, 200, _("\
+Music used:\n\
+-Sonic Runners-\n\
+End of the Summer\n\
+-- Mobile"))
+
+//Music Credits, bowser 1
+DEFINE_DIALOG(MWISP_BITDW, 1, 5, 30, 200, _("\
+Music used:\n\
+Stage: \n\
+-Sonic Unleashed-\n\
+Eggmanland - Day\n\
+-- PS3-XBOX 360\n\
+Fight:\n\
+-Sonic Adventure-\n\
+Theme of Dr.EGGMAN\n\
+-- Dreamcast"))
+
+//Music Credits, bowser 2
+DEFINE_DIALOG(MWISP_BITFS, 1, 5, 30, 200, _("\
+Music used:\n\
+Stage: \n\
+-Sonic 3D Blast (Sat)-\n\
+Volcano Valley Act 1\n\
+-- Genesis-Megadrive-Saturn\n\
+Fight:\n\
+-Sonic Heroes-\n\
+Egg Emperor\n\
+-- Various Platforms"))
+
+//Music Credits, bowser 3
+DEFINE_DIALOG(MWISP_BITS, 1, 5, 30, 200, _("\
+Music used:\n\
+Stage: \n\
+-Sonic Mania-\n\
+Titanic Monarch Zone Act 2\n\
+-- Various Platform\n\
+Fight:\n\
+-Sonic Mania-\n\
+Final Boss ~ Ruby Illusions\n\
+-- Various Platforms"))
+
+//Character Credits, Bob
+DEFINE_DIALOG(WWISP_LAYLA_KITTEN, 1, 5, 30, 200, _("\
+Get ready cause this \n\
+is a long two-fer!\n\
+Here we goooooo\n\
+\n\
+\n\
+WHO IS!!\n\
+-Kitten Lynn-\n\
+Age: 8\n\
+creator:\n\
+Fudger-Nutter\n\
+An orphan wanting to have\n\
+fun, even if it means the\n\
+expense of her foster\n\
+father, Jack. \n\
+\n\
+While Jack is her primary\n\
+caretaker, she lives in a \n\
+small town that treats her\n\
+like their own daughter. \n\
+\n\
+While still a pain, she\n\
+does start to develop\n\
+some skills thanks to her\n\
+new 'family' and learns \n\
+to settle down...barely.\n\
+She meets Mark by chance \n\
+while he was exploring \n\
+outside her home. Seems\n\
+like he was able to deal\n\
+with her rowdiness.\n\
+Occasionally, he'll \n\
+bring her to meet Cream\n\
+and Vanilla and have little\n\
+playdates, much to \n\
+Vanilla's horror.\n\
+She does have a tendacy to\n\
+follow Tails, whether he \n\
+likes it or not. She's a\n\
+wiley cat, but deep down\n\
+she means well. \n\
+When she eventually meets\n\
+Layla, the two become\n\
+inseparable. A couple\n\
+of crazy kids having\n\
+fun.\n\
+The bond between the 4\n\
+children ends up being \n\
+a huge headache for Mark, \n\
+Vanilla and Jack...\n\
+Vanilla mostly. \n\
+Dev Talk: Her creator has \n\
+done a lot for me for so\n\
+long, I've wanted to repay\n\
+her with something big.\n\
+\n\
+WHO IS!!!\n\
+-Layla the Fox-\n\
+Age: 10\n\
+Creator: \n\
+Magical Poptarts\n\
+A young girl who was found \n\
+in the woods one day by \n\
+Katalina and Mark. She doesn't \n\
+talk much about her family \n\
+- if she has any. \n\
+Despite being alone in\n\
+the woods, she seems to\n\
+have a knack to survive\n\
+the worst. \n\
+\n\
+Hell, when they found her\n\
+initially, she was seen\n\
+eating a flicky. Mark was\n\
+very impressed while \n\
+Katalina was spooked.\n\
+Starts to cling around Mark\n\
+and is often mistaken for\n\
+his daughter. Still, he does\n\
+treat her like one, when\n\
+she isn't being a hassle. \n\
+Has a very cutesy and \n\
+childish way of speaking. \n\
+Much like Kitten, finds joy\n\
+in messing with Mark by \n\
+calling him 'Markie'.\n\
+Also seems to have a \n\
+very odd and unbalanced\n\
+skillset. I mean what 10\n\
+year old knows how to work\n\
+a cannon but can't read???\n\
+When she eventually meets\n\
+Kitten, the two become\n\
+inseparable. A couple\n\
+of crazy kids having\n\
+fun.\n\
+The bond between the \n\
+four children ends being \n\
+a huge headache for Mark, \n\
+Vanilla and Jack...\n\
+Vanilla mostly. \n\
+Dev Talk: Look, the creator of\n\
+her almost destroyed her voice\n\
+doing the extra Cream voices so\n\
+it's the least I can do.\n\
+\n\
+Also truth be told, I have a\n\
+very soft spot for these two \n\
+characters. So....creator's\n\
+bias strikes again. "))
+
+//castle, katalina
+DEFINE_DIALOG(WWISP_KATALINA, 1, 6, 30, 200, _("\
+WHO IS!!!\n\
+-Katalina Tannon-\n\
+Age: 7\n\
+Creator:\n\
+Gamebun\n\
+\n\
+An orphan found by Mark\n\
+in a bunker during a travel\n\
+up north of the Sonic World.\n\
+She says her parents left \n\
+her here to protect her.\n\
+\n\
+After...well an unfortunate \n\
+discovery of her parents \n\
+whereabouts, Mark decides to \n\
+take her along with her back\n\
+home to the Rabbits as his\n\
+new adopted daughter.\n\
+Though still paranoid of what \n\
+had happened, he usually leaves\n\
+her with Vanilla, and has now \n\
+formed a bond with the Rabbit \n\
+family, even going as far as\n\
+calling Vanilla, 'Mama'.\n\
+Cream and she also share a \n\
+bond, with Katalina calling\n\
+her' Lil' Sis'. Despite this, \n\
+Cream is still the braver \n\
+of the two.\n\
+\n\
+Katalina, or as Mark calls her\n\
+'Katty', currently resides with\n\
+the Rabbits, with her new Papa \n\
+making sure she lives a happy \n\
+and safe new life. \n\
+\n\
+Though after seeing Mark and\n\
+Cream fight off bad guys, she\n\
+wants to toughen up and be a\n\
+hero just like her new papa!\n\
+\n\
+\n\
+The blue rose she holds is \n\
+actually a gift from Mark. Says\n\
+he got it from a pretty little\n\
+town in the mountains.\n\
+\n\
+\n\
+Dev Talk: She's in due to creator\n\
+bias but I just love the little \n\
+blue bun. Still hoping to fix up\n\
+some stuff with her in the \n\
+future."))
+
+//castle, mark
+DEFINE_DIALOG(WWISP_MARK, 1, 6, 30, 200, _("\
+WHO IS!!!\n\
+-Mark Tannon-\n\
+Age: 26\n\
+Creator:\n\
+Gamebun\n\
+\n\
+A human from another world who,\n\
+after an incident involving his\n\
+own set of Stars, ended up in the \n\
+Sonic World barely alive. He was \n\
+given a fox body upon his arrival\n\
+for strange reasons. \n\
+He would end up being found and\n\
+saved by Cream and Vanilla, \n\
+living with them till he felt\n\
+ready to go out and find the\n\
+stars that brought him here \n\
+in the first place.\n\
+In his travels, he would run into \n\
+Katalina, a snowbunny from the\n\
+north, Layla, a strange feral fox \n\
+in the forest and Kitten, a....\n\
+well she just be weird.\n\
+\n\
+He's accepted Katalina but the\n\
+others, they just kind of cling \n\
+to him whether he likes it or not.\n\
+Still, he protects them much the \n\
+same as he does his actual  \n\
+adopted daughter.\n\
+When not adventuring, he heads\n\
+back to the Rabbit household to\n\
+wind down, still hoping to find \n\
+his Stars and return home, now \n\
+as a Father as well.\n\
+\n\
+Dev Talk: He gets special cues for \n\
+being my oldest character and \n\
+this being his most recent revamp.\n\
+Still, wanted to keep him as as \n\
+far from the actual game stuff.\n\
+\n\
+Needless to say I failed huh? \n\
+Also if you see this but don't \n\
+see him, means you prolly found a \n\
+way up here without getting all \n\
+120 Star Rings huh?"))
+
+//Blaze, JRB
+DEFINE_DIALOG(BLAZE_01, 1, 4, 30, 200, _("\
+Cream, how good it is to\n\
+you see again. I'm sorry\n\
+to ask so suddenly but have\n\
+you seen Marine?\n\
+...Now that I think about,\n\
+you two have never met have\n\
+you? She's a lil' raccoon\n\
+about your age and height.\n\
+More of a troublemaker than\n\
+you, that's for sure, but she\n\
+does mean a lot to me.\n\
+\n\
+She disappeared when we arrived\n\
+and has been gone for a long\n\
+while. \n\
+\n\
+I've noticed the paintings\n\
+act like portals so that makes\n\
+finding her harder than it needs\n\
+to be.\n\
+If you do see her, please let\n\
+me know the next time you \n\
+see me. Take care, Cream."))
+
+//Marine, JRB
+DEFINE_DIALOG(MARINE_01, 1, 4, 30, 200, _("\
+Oi, this treasure won't\n\
+budge! Curse ye, you\n\
+mangy old pirates!\n\
+\n\
+...Who the heck are you??\n\
+Maybe you can figure out\n\
+this here puzzle. Get it\n\
+wrong and you get shocked!\n\
+Don't ask how I know this,\n\
+I just know! Wanna show \n\
+Blaze I can be a great\n\
+pirate one day!\n\
+Bet she's lookin' for me\n\
+right now, ain't she? If ya\n\
+see her, tell her I'm fine!"))
+
+DEFINE_DIALOG(MS_001, 1, 6, 30, 200, _("\
+-RADICAL HIGHWAY\n\
+CLOSED FOR REPAIRS-\n\
+\n\
+Please take detour through\n\
+downtown Central City\n\
+in the meantime.\n\
+Thanks to a certain fox\n\
+and hedgehog, damages are\n\
+far more severe than expected.\n\
+We thank you for your patience\n\
+while we fix the situation."))
+
+DEFINE_DIALOG(MS_002, 1, 4, 30, 200, _("\
+Welcome to the adoption\n\
+center but unfortunately,\n\
+we're temporary closed while\n\
+we do some cleaning up.\n\
+The vaporeon in the window\n\
+escaped and left a mess\n\
+all over the place. So much\n\
+soggy bread...\n\
+I don't get paid enough to\n\
+deal with this. Come back\n\
+tomorrow and please take \n\
+the wonder bread fan."))
+
+// Pocky
+DEFINE_DIALOG(MS_003, 1, 5, 30, 200, _("\
+Hey! Welcome to the Emerald\n\
+Theater! I bet you're here\n\
+to watch the re-release of\n\
+Chao in Space huh?\n\
+\n\
+Sadly, the last ticket just\n\
+got bought by that cute lil'\n\
+fox over there. Aww he was so\n\
+red getting them. Probably\n\
+for a playdate. How cute!\n\
+Well, there's always my\n\
+favorite movie, the Sonic OVA!\n\
+Still a few tickets left if\n\
+you're interested or even\n\
+The Bani!\n\
+Sorbet, my chao over there,\n\
+can help ya out. Have fun\n\
+and enjoy the AC!"))
+
+// Tails
+DEFINE_DIALOG(MS_004, 1, 5, 30, 200, _("\
+Alright I got the tickets,\n\
+just have to go as-WHOA\n\
+hey Cream! Why are you\n\
+all the way out here? Is\n\
+Amy here with you??\n\
+I wanted to go find you to\n\
+see if you wanted to go see\n\
+Chao in Space? It's back\n\
+in theaters for a short time\n\
+and I know it's your favorite!\n\
+Huh? Eggman kidnapped your\n\
+mom again?! Man, always busy\n\
+being a jerk. I'm sure Sonic\n\
+is on his way to take care\n\
+of it!\n\
+In the mean time, you wanna \n\
+go watch the movie? ...Bad\n\
+time to ask? Y-yeah, of \n\
+course! No need to just wait\n\
+on Sonic. Good luck, Cream!\n\
+(Stupid stupid aaaagh. And I'm\n\
+supposed to be the smart \n\
+one...)"))
+
+// Sorbet
+DEFINE_DIALOG(MS_005, 1, 4, 30, 200, _("\
+(Welcome to the Emerald\n\
+Theather, I'll be handling\n\
+ticket sales today. Anything\n\
+you like in particular?\n\
+Hmm, sayin' you need to save\n\
+your Mama from that Eggman\n\
+fella? Hmm, we love to help\n\
+but it's just us here today.\n\
+Actually kind of busy today\n\
+so we gotta keep things\n\
+together. You look tough, kiddo.\n\
+Don't think you'll need our help.\n\
+You know I think those red rings\n\
+may help ya on your adventure.\n\
+Go bash that egghead, little \n\
+bunny. We're rootin' for ya.)"))
+
+// Tammie
+DEFINE_DIALOG(MS_006, 1, 4, 30, 200, _("\
+Oh hi, you here to jump on some\n\
+cars too? Man, I wish. Ever since\n\
+that tunnel closed, it's been \n\
+pretty quiet around here.\n\
+Why would I jump on moving\n\
+cars? Cause it's fun, that's why!\n\
+But this spot is a pretty cool\n\
+spot to just relax.\n\
+No one to bother ya except\n\
+the occasional city worker. But\n\
+they look at me and know to\n\
+not mess with me, haha!"))
+
+// Vending Machine
+DEFINE_DIALOG(MS_007, 1, 2, 30, 200, _("\
+Oh man, this vending machine\n\
+is full of a bunch of...\n\
+cool car magazines! You bet\n\
+Mr. Vector would love these!\n\
+Or even Charmy. He does love\n\
+that movie about the talking cars."))
+
+// Sign2
+DEFINE_DIALOG(MS_008, 1, 5, 30, 200, _("\
+Listen for the sounds of\n\
+Sweeps in the area. They seem\n\
+to be attracted to the \n\
+reflective red rings. So if\n\
+they're nearby, so is a ring!"))
+
+//Music Credits, Mission Street
+DEFINE_DIALOG(MWISP_MS, 1, 4, 30, 200, _("\
+Music used:\n\
+-Sonic Adventure 2-\n\
+Mission Street\n\
+-- Dreamcast"))
+
+//Lurk
+DEFINE_DIALOG(KB_000, 1, 6, 30, 200, _("\
+Welcome to the Trashpit,\n\
+what would it b- Well hello\n\
+there, sweetie!\n\
+How'd you manage to get in?\n\
+Are you lost? ... \n\
+\n\
+You look just like... Oh! \n\
+Is your name Cream? I wouldn't \n\
+let minors in usually but as \n\
+you're as cute as your Mom,\n\
+I'll make an exception for  \n\
+you, Sweetie!\n\
+You may not know this but\n\
+your mom and her friends\n\
+are frequent guests here. \n\
+Let Auntie Lurk look after \n\
+you for awhile.\n\
+\n\
+A lot of my drinks aren't \n\
+for you, Honeybun. Though I \n\
+do have some carrot jui- hm? \n\
+You need to get back to \n\
+the castle to save your \n\
+mom?\n\
+Oh, Sweetie, this is Central \n\
+City. No Castles here. You \n\
+must of got off at the train \n\
+station at Central Square.\n\
+\n\
+\n\
+Next you're gonna tell me you \n\
+'warped' here or something like \n\
+those two over there... You did?\n\
+Well franky, hun, it's not the\n\
+strangest thing I've heard since\n\
+taking over the bar.\n\
+Anyway darling, why don't you \n\
+join in our karaoke night! \n\
+I'm sure you'll wow the crowd \n\
+as much as your mom does with \n\
+her lovely voice~\n\
+\n\
+Feel free to have a look around \n\
+and talk to the patrons, \n\
+I'll keep an eye on them \n\
+for you sweetie. -wink-\n\
+And don't worry, sweetie, I'm \n\
+sure your mom is fine!\n\
+She keeps those pals of hers\n\
+in check and has the patience \n\
+of a saint. She's a lot \n\
+stronger than you think and\n\
+you should be proud of that.\n\
+\n\
+Make sure you behave yourself \n\
+and don't go wondering off. \n\
+Check around some objects to\n\
+learn a few things!\n\
+See ya around honeybun~"))
+
+//Sage - Bar
+DEFINE_DIALOG(KB_001, 1, 2, 30, 200, _("\
+...\n\
+\n\
+Don't bother me right\n\
+now, Earflops."))
+
+//Bump - Bar
+DEFINE_DIALOG(KB_002, 1, 5, 30, 200, _("\
+-You listen carefully and \n\
+you can kind of make out\n\
+some lyrics to various\n\
+songs...-\n\
+\n\
+hold on much longer...\n\
+-hic- oneee waay\n\
+traaack. Dun dun doooo\n\
+do dooo this'll last!\n\
+\n\
+So many faces...\n\
+I've seen them all.\n\
+buh buh buh...\n\
+as they faaaalllll!!\n\
+\n\
+I see it, now within my \n\
+reach...\n\
+it's always been within -hic-\n\
+which meeee. \n\
+The possibilities...\n\
+...\n\
+Light the fuse...\n\
+da da something...\n\
+READY TO BLOW!\n\
+\n\
+Yeah! I can feel it now!\n\
+Just take my hand baybee!!\n\
+Gonna reach it!\n\
+Reach for those staaaaars..\n\
+toooniiiiight. \n\
+-Ya know despite everything\n\
+she's still having a good time.\n\
+And really, for karaoke, that's\n\
+all that really matters.- "))
+
+//Marine Goomba - Bar
+DEFINE_DIALOG(KB_003, 1, 4, 30, 200, _("\
+C'mon, c'mon just a set of\n\ 
+sevens pleaaaaase.\n\
+...Oh gosh, it's you. How \n\
+did you even get here?\n\
+Ugh, nevermind that. Look\n\
+just don't tell my superiors\n\
+that I'm here okay? \n\
+\n\
+Have you tried dealing with\n\
+The Straw Hats?! They don't \n\
+mess around!! \n\
+\n\
+I rather lose my entire bank\n\
+account than lose my life...\n\
+But I know I gotta go back\n\
+out there eventually.\n\
+Command says there's three\n\
+of them somewhere in these \n\
+worlds.\n\
+\n\
+One in a misty lake,\n\
+another in the desert\n\
+and one in the sky.\n\
+\n\
+I know I'll cya later, kid.\n\
+Just let me enjoy my time\n\
+before I have to deal with\n\
+them again... "))
+
+//Marine Goomba 2 - Bar
+DEFINE_DIALOG(KB_004, 1, 5, 30, 200, _("\
+Aye, child. Do you see the\n\
+creature in front of you? \n\
+People claim it's a dog\n\
+or even some dinosaur...\n\
+\n\
+...But you would believe \n\
+it's a legendary beast living\n\
+in the darkness below the ground.\n\
+\n\
+\n\
+I'm grateful the owner here\n\
+let me hang up this old \n\
+painting of the beast in case\n\
+people feel interested in it.\n\
+\n\
+Only a few have ever seen its\n\
+beauty in person, my grandfather\n\
+being one of them. The diaries\n\
+he left detailing its existance\n\
+and beauty.\n\
+Sadly he never wrote exactly \n\
+where to find the beast but\n\
+legend say it's residing in an\n\
+underground lake. \n\
+\n\
+Maybe one day someone will\n\
+find the beast and record\n\
+their findings for others\n\
+to read and discover.\n\
+\n\
+Till then, I will continue to\n\
+spread the tale and maybe\n\
+just one day, someone can \n\
+witness it for themselves\n\
+as well."))
+
+//Bup 1 - Bar
+DEFINE_DIALOG(KB_005, 1, 4, 30, 200, _("\
+Oh hello there! Strange to see\n\
+a kid here but tonight looks\n\
+to be a slow one, so the more\n\
+the merrier!\n\
+It's funny. We were given the\n\
+order to leave the castle by\n\
+the princess for some party. \n\
+Can't beat an early vacation!\n\
+But as we were doing one \n\
+last inspection in the castle,\n\
+this guy and I found a weird\n\
+ring in the courtyard.\n\
+We got near it and suddenly, we\n\
+were in front of this place. \n\
+Sure, it's no Isle Defino but\n\
+this place is something else.\n\
+The barista is nice, the drinks\n\
+are great, the locals are \n\
+friendly folk and the \n\
+atmosphere is incredible!\n\
+This deer gal on stage right\n\
+now is wonderful!\n\
+\n\
+\n\
+Sure, she's a bit of a  \n\
+lightweight and her singing \n\
+is iffy but man, she's so cute \n\
+and nice. Can't stay mad.\n\
+I do wish her pal here wasn't \n\
+so ...what's the word for it. \n\
+A big meanie? Just be careful\n\
+around her.\n\
+Anyway, you have fun, kid,\n\
+and enjoy your time here!"))
+
+//Bup 2 - Bar
+DEFINE_DIALOG(KB_006, 1, 5, 30, 200, _("\
+Oh hello! Bet you got here\n\
+through some warp ring too huh?\n\
+Yeah, no idea when it showed up \n\
+but what cha gonna do.\n\
+\n\
+Oh, did you by chance run into\n\
+a Toad with bushy brows in the\n\
+basement? Oh man, please don't \n\
+tell me he insulted you too?\n\
+\n\
+Yeah, the rest of us have no\n\
+idea why he's that way, even\n\
+more so with you furry fellas.\n\
+\n\
+\n\
+Just kind of happened one day\n\
+back in London during the\n\
+Olympics. When we got back,\n\
+he suddenly got real angry\n\
+at the rabbits in the garden.\n\
+Also would not surprise us\n\
+that he stayed at the castle.\n\
+He's very committed to his\n\
+job.\n\
+\n\
+The rest of us apologize for\n\
+his behavior. We just kind of\n\
+leave him to his business. \n\
+Maybe he'll relax when we're\n\
+all back! Hopefully..."))
+
+//Bait - Bar
+DEFINE_DIALOG(KB_007, 1, 3, 30, 200, _("\
+Silly rabbit, you won't find \n\
+any tricks here. \n\
+\n\
+Just water, rust, and a \n\
+whole lot of nasty, nasty \n\
+stuff."))
+
+//Big doll - Bar
+DEFINE_DIALOG(KB_008, 1, 3, 30, 200, _("\
+~It's a doll of Mr. Big!\n\
+Aww, it's so cute and\n\ 
+fluffy!!\n\
+Wonder how he got one?\n\
+I want one of me!!...and\n\
+one of Tails and Cheese too!~"))
+
+//Arcade Flvaortext, MVC2 Cab
+DEFINE_DIALOG(KB_MVC2, 1, 5, 30, 200, _("\
+~Tails took me to an arcade that\n\
+had this and I don't know how\n\
+he does those crazy moves. Everything\n\
+moves so fast, it's exhausting!\n\
+\n\
+Mr. Mark says he has this in his\n\
+world too. But in his own words,\n\
+he's 'really awful at figuring\n\
+out basic combos'. Still really\n\
+likes it though!~"))
+
+//Arcade Flvaortext, CVS2 Cab
+DEFINE_DIALOG(KB_CVS2, 1, 5, 30, 200, _("\
+~The Chaotix have a machine of \n\
+this in their offices. I see Mr.\n\
+Espio and Charmy play it all the\n\
+time. It looks super complicated\n\
+to me.\n\
+Mama doesn't want me there when\n\
+they play though. Something about\n\
+the music being 'dirty'. But it\n\
+sounds so cool!~"))
+
+//Arcade Flvaortext, SF3 Cab
+DEFINE_DIALOG(KB_SF3, 1, 5, 30, 200, _("\
+~Mr. Mark talks about this a lot\n\
+oddly enough. Says he 'borrows' a\n\
+lot of moves from a character in \n\
+this game. Mr. Dudley was his name.\n\
+He does look super cool!\n\
+He's also weird about it when he \n\
+sleeps after playing a bit. Mama \n\
+and I sometimes hear him whisper\n\
+'Let's go, Justiiiiin' in his sleep.\n\
+I need to ask him about that.~"))
+
+//Arcade Flvaortext, Mr. Do Cab
+DEFINE_DIALOG(KB_MRDO, 1, 1, 30, 200, _("\
+~It's Mr. Do.\n\
+...\n\
+It's Mr. Do!!~"))
+
+//Arcade Flvaortext, Mappy Cab
+DEFINE_DIALOG(KB_MAPPY, 1, 4, 30, 200, _("\
+~Oh! Mama loves this game. She\n\
+thinks the cats and mouse are\n\
+cute. She's also really good at\n\
+this. Always get the hi-scores.\n\
+I think Pac-Man is a better game\n\
+though. Maybe cause I'm just bad \n\
+at it. Stupid cute kitties...~"))
+
+//Wisp, Karaoke Bar
+DEFINE_DIALOG(MWISP_KB, 1, 5, 30, 200, _("\
+Music used:\n\
+-Dudley's Theme-\n\
+Street Fighter 3:\n\
+A New Generation\n\
+-- Arcade"))
+
+//Tails Part 2
+DEFINE_DIALOG(WP_000, 1, 4, 30, 200, _("\
+Cream, good to see ya!! Any\n\
+luck with finding your mom?\n\
+And I haven't gotten back with\n\
+Sonic either, which is strange.\n\
+(Glad I found that letter before\n\
+calling Sonic. Maybe we can still\n\
+have fun but keep the charade.)\n\
+\n\
+I dunno how you got here but look\n\
+at this place! I didn't think they\n\
+would be open but we can go ride \n\
+some rides and have some sweets!\n\
+Maybe even just have a snowball\n\
+fight! ...now's not the time? \n\
+Right, I understand. I'll go\n\
+see what I can do to help you.\n\
+(Maybe I can actually help her\n\
+without actually getting in the\n\
+way. Need to go find Gemerl...)"))
+
+//Jack
+DEFINE_DIALOG(WP_001, 1, 4, 30, 200, _("\
+Cream? It's nice to see you\n\
+but strange to see you all by\n\
+yourself. Is your Mom around?\n\
+Kidnapped? Really??\n\
+(Ahh right...the party...)\n\
+\n\
+\n\
+\n\
+Ahh, so you're going out to go\n\
+save your mom, huh? She's told me \n\
+you've done it before. I have no\n\
+doubt you'll save her in no time.\n\
+As for me, I wanted to take the \n\
+girls to have some fun at the park,\n\
+see the Chao races and just relax\n\
+in the snowy weather.\n\
+When this whole mess is over, \n\
+why don't you and Katalina join\n\
+us? I know you can use the rest\n\
+after this whole journey."))
+
+//Layla-Kitten
+DEFINE_DIALOG(WP_002, 1, 4, 30, 200, _("\
+-Your friends are having so much\n\
+fun in the snow. You wish you could\n\
+join them but Mama is still at the\n\
+castle!-"))
+
+//Hocus
+DEFINE_DIALOG(WP_003, 1, 4, 30, 200, _("\
+Man, I had the perfect act planned\n\
+but this switch beat me to the \n\
+whole disappearing act! Don't \n\
+worry, I got a backup plan.\n\
+Nothing up my sleeves and nothing\n\
+under my hat. With a flick of my \n\
+wrist and a tap of my shoes...."))
+
+
+//Wisp, White Park
+DEFINE_DIALOG(MWISP_WP, 1, 4, 30, 200, _("\
+Music used:\n\
+-Woolen's Theme-\n\
+Puzzle Bobble 2\n\
+-- Arcade"))
+
+//White Wisp, Jack
+DEFINE_DIALOG(WWISP_WP, 1, 4, 30, 200, _("\
+Music used:\n\
+-Woolen's Theme-\n\
+Puzzle Bobble 2\n\
+-- Arcade"))
+
+//Sign at Front of Castle
+DEFINE_DIALOG(CASTLESIGN, 1, 2, 30, 200, _("\
+Welcome!\n\
+\n\
+To the Castle of\n\
+Cream's Mom!\n\
+\n\
+...and Cream I guess.\n\
+I hope you enjoy this little\n\
+world I put together.\n\
+And the hack of course. \n\
+Enjoy -Gamebun"))
+
+//Artist, STAIN GLASS
+DEFINE_DIALOG(ARTIST00, 1, 4, 30, 200, _("\
+'The Motherly Princess'\n\
+Vanilla stain glass\n\
+was done by\n\
+Zack113"))
+
+//Artist, BOB
+DEFINE_DIALOG(ARTIST01, 1, 3, 30, 200, _("\
+'Bombs be Marchin' '\n\
+This painting was done by\n\
+InfiniteBrians"))
+
+//Artist, WF
+DEFINE_DIALOG(ARTIST02, 1, 3, 30, 200, _("\
+'Jawz of the Tower'\n\
+This painting was done by\n\
+SketchMeister"))
+
+//Artist, JRB
+DEFINE_DIALOG(ARTIST03, 1, 3, 30, 200, _("\
+'Utsubo in the Deep'\n\
+This painting was done by\n\
+InfiniteBrians"))
+
+//Artist, CCM
+DEFINE_DIALOG(ARTIST04, 1, 3, 30, 200, _("\
+'Chill Chao'\n\
+This painting was done by\n\
+FlamingGaraco"))
+
+//Artist, LLL
+DEFINE_DIALOG(ARTIST05, 1, 3, 30, 200, _("\
+'Everburning Empire'\n\
+This painting was done by\n\
+TheNovika"))
+
+//Artist, WDW
+DEFINE_DIALOG(ARTIST06, 1, 3, 30, 200, _("\
+'Still in Progress'\n\
+This painting was done by\n\
+???"))
+
+//Artist, TTM
+DEFINE_DIALOG(ARTIST07, 1, 3, 30, 200, _("\
+'Ukiki-ing Around'\n\
+This painting was done by\n\
+TheNovika"))
+
+//Artist, THI
+DEFINE_DIALOG(ARTIST08, 1, 3, 30, 200, _("\
+'Motobuds'\n\
+This painting was done by\n\
+GeekofKawaii"))
+
+//Atlas
+DEFINE_DIALOG(NTM_000, 1, 4, 30, 200, _("\
+Well, you're a new face\n\
+around here. Welcome to the\n\
+course! I'm simply a trainer\n\
+keeping an eye on this hole.\n\
+I'm also kind of training \n\
+someone but he's up on the third\n\
+island. Seems to be alright,\n\
+that rookie should be with him.\n\
+These motobugs have suddenly\n\
+showed up and are causing a mess.\n\
+Seems like something you could\n\
+take care of no problem.\n\
+Just take it easy, kid. Talk to\n\
+the fox gal by that cannon and\n\
+you'll be on your way. Just don't\n\
+forget your Wing Locket.\n\
+It's a long way down if you miss. \n\
+Thankfully, they set the warps \n\
+to bounce you back to the castle, \n\
+whatever that means."))
+
+//Tails
+DEFINE_DIALOG(NTM_001, 1, 6, 30, 200, _("\
+Hey, Cream! I'm still reeling \n\
+back from that race we had. I'm\n\
+glad Gemerl gave me a chance\n\
+to race you.\n\
+\n\
+\n\
+The past day has been really fun\n\
+though I do feel a bit bad for\n\
+taking time away from your huge\n\
+adventure, but I bet you're right\n\
+at the very end, aren't you?\n\
+\n\
+I'll be rooting for you while\n\
+you take care of Eggman. I still\n\
+don't knoiw why Sonic didn't show \n\
+up after I called him but I know\n\
+he would've slowed ya down\n\
+anyway, hahahaha.\n\
+- You're happy that's he's happy, \n\
+even if he's being a bit sappy,\n\
+but the smiles of your friends\n\
+is just as important as saving\n\
+Mama.\n\
+\n\
+You give him a big ol' hug and \n\
+a lil' chu~ on the cheek, something\n\
+you learned from Amy. That'll\n\
+put him in a good mood! Time to\n\
+head out and save Mom!-\n\
+\n\
+\n\
+-End of Tails Story-"))
+
+//Floomba NTM
+DEFINE_DIALOG(NTM_002, 1, 5, 30, 200, _("\
+Oh gosh, I was supposed to\n\
+go follow that new guy up there\n\
+but he went got there when I\n\
+went to the bathroom and I\n\
+don't know what to do!\n\
+Are motobugs super dangerous?\n\
+I've never ran into one myself,\n\
+don't see much of them in the\n\
+Mushroom Kingdom but I'm but\n\
+a lonely floomba...\n\
+\n\
+Oh gosh..."))
+
+//Johnny
+DEFINE_DIALOG(NTM_003, 1, 5, 30, 200, _("\
+Man I should've waited for\n\
+that yellow goomba. Lost my \n\
+ball, don't have extras and\n\
+no idea how to get down. Those\n\
+'lockets' don't work for me!\n\
+Even worse these motobugs just\n\
+showed up! I could try and take \n\
+them but I wonder they'll \n\
+charge me for 'destroying \n\
+company equipment'..."))
+
+//Magenta Wisp, Fujiyama
+DEFINE_DIALOG(MWISP_NTM, 1, 5, 30, 200, _("\
+Music used:\n\
+-Fujiyama Oriental\n\ 
+Golf Club (Japan)-\n\
+Neo Turf Masters\n\
+-- Neo Geo"))
