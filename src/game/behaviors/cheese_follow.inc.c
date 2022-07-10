@@ -18,20 +18,26 @@ void bhv_cheese_act_follow_mario(void) {
 
 	o->oPosY = (o->oPosY * (1.0 - 0.5f)) + ((gMarioState->pos[1] + 100.0f + offset) * 0.5f);
 
+	o->oDistanceToMario = lateral_dist_between_objects(gMarioObject, o);
+
 	if (o->oDistanceToMario > 200.0f)
 	{
 	  o->oMoveAngleYaw = o->oAngleToMario;
 	  o->oForwardVel = o->oDistanceToMario/15.0f;
 
-	  o->oDistanceToMario = lateral_dist_between_objects(gMarioObject, o);
+
 	}
 	else
 	{
 		o->oForwardVel *= 0.75f;
 	}
 
+	o->oFaceAngleYaw = o->oAngleToMario;
 	cur_obj_move_xz_using_fvel_and_yaw();
-    o->oFaceAngleYaw = o->oAngleToMario;
+
+	/*
+
+    */
 
 	/*switch (gMarioState->currentCostume) {
     case 0: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW];
