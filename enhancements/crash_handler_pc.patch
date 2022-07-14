@@ -1,0 +1,1308 @@
+diff --git a/Makefile b/Makefile
+index 86dcbed..4fc6049 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1018,7 +1018,9 @@ endif
+ ifeq ($(WINDOWS_BUILD),1)
+   CC_CHECK := $(CC) -fsyntax-only -fsigned-char $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -Wall -Wextra -Wno-format-security
+   CFLAGS := $(OPT_FLAGS) $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -fno-strict-aliasing -fwrapv
+-
++  ifeq ($(TARGET_BITS), 32)
++    BACKEND_LDFLAGS += -ldbghelp
++  endif
+ else ifeq ($(TARGET_WEB),1)
+   CC_CHECK := $(CC) -fsyntax-only -fsigned-char $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -Wall -Wextra -Wno-format-security -s USE_SDL=2
+   CFLAGS := $(OPT_FLAGS) $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -fno-strict-aliasing -fwrapv -s USE_SDL=2
+@@ -1771,6 +1773,12 @@ $(APK_SIGNED): $(APK)
+ endif
+ endif
+ 
++ifeq ($(WINDOWS_BUILD),1)
++all: PC_EXE_MAP
++PC_EXE_MAP: $(EXE)
++	@objdump -t $(EXE) > $(BUILD_DIR)/sm64pc.map
++endif
++
+ $(EXE): $(O_FILES) $(MIO0_FILES:.mio0=.o) $(ULTRA_O_FILES) $(GODDARD_O_FILES) $(BUILD_DIR)/$(RPC_LIBS)
+ 	$(V)$(LD) -L $(BUILD_DIR) -o $@ $(O_FILES) $(ULTRA_O_FILES) $(GODDARD_O_FILES) $(LDFLAGS)
+ 
+diff --git a/bin/segment2.c b/bin/segment2.c
+index e658033..49ab6ed 100644
+--- a/bin/segment2.c
++++ b/bin/segment2.c
+@@ -3423,3 +3423,200 @@ const s16 seg2_painting_mesh_neighbor_tris[] = {
+       3, 240, 242, 244,
+       1, 243,
+ };
++
++//////////////////////////////////////////////////////////
++
++ALIGNED8 static const u8 texture_font_normal_char_03[] = {
++#include "textures/segment2/custom_font_normal_char_03.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_04[] = {
++#include "textures/segment2/custom_font_normal_char_04.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_10[] = {
++#include "textures/segment2/custom_font_normal_char_10.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_11[] = {
++#include "textures/segment2/custom_font_normal_char_11.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_15[] = {
++#include "textures/segment2/custom_font_normal_char_15.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_26[] = {
++#include "textures/segment2/custom_font_normal_char_26.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_27[] = {
++#include "textures/segment2/custom_font_normal_char_27.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_28[] = {
++#include "textures/segment2/custom_font_normal_char_28.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_29[] = {
++#include "textures/segment2/custom_font_normal_char_29.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_30[] = {
++#include "textures/segment2/custom_font_normal_char_30.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_32[] = {
++#include "textures/segment2/custom_font_normal_char_32.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_59[] = {
++#include "textures/segment2/custom_font_normal_char_59.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_60[] = {
++#include "textures/segment2/custom_font_normal_char_60.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_61[] = {
++#include "textures/segment2/custom_font_normal_char_61.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_62[] = {
++#include "textures/segment2/custom_font_normal_char_62.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_63[] = {
++#include "textures/segment2/custom_font_normal_char_63.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_64[] = {
++#include "textures/segment2/custom_font_normal_char_64.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_91[] = {
++#include "textures/segment2/custom_font_normal_char_91.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_92[] = {
++#include "textures/segment2/custom_font_normal_char_92.ia4.inc.c"
++};
++
++ALIGNED8 static const u8 texture_font_normal_char_93[] = {
++#include "textures/segment2/custom_font_normal_char_93.ia4.inc.c"
++};
++
++const u8* const font_normal_chars[] = {
++    texture_font_char_us_exclamation,        // !
++    texture_font_char_us_double_quote_open,  // "
++    texture_font_normal_char_03,             // #
++    texture_font_normal_char_04,             // $
++    texture_font_char_us_percent,            // %
++    texture_font_char_us_ampersand,          // &
++    texture_font_char_us_apostrophe,         // '
++    texture_font_char_us_open_parentheses,   // (
++    texture_font_char_us_close_parentheses,  // )
++    texture_font_normal_char_10,             // *
++    texture_font_normal_char_11,             // +
++    texture_font_char_us_comma,              // ,
++    texture_font_char_us_slash,              // -
++    texture_font_char_us_period,             // .
++    texture_font_normal_char_15,             // /
++    texture_font_char_us_0,                  // 0
++    texture_font_char_us_1,                  // 1
++    texture_font_char_us_2,                  // 2
++    texture_font_char_us_3,                  // 3
++    texture_font_char_us_4,                  // 4
++    texture_font_char_us_5,                  // 5
++    texture_font_char_us_6,                  // 6
++    texture_font_char_us_7,                  // 7
++    texture_font_char_us_8,                  // 8
++    texture_font_char_us_9,                  // 9
++    texture_font_normal_char_26,             // :
++    texture_font_normal_char_27,             // ;
++    texture_font_normal_char_28,             // <
++    texture_font_normal_char_29,             // =
++    texture_font_normal_char_30,             // >
++    texture_font_char_us_question,           // ?
++    texture_font_normal_char_32,             // @
++    texture_font_char_us_A,                  // A
++    texture_font_char_us_B,                  // B
++    texture_font_char_us_C,                  // C
++    texture_font_char_us_D,                  // D
++    texture_font_char_us_E,                  // E
++    texture_font_char_us_F,                  // F
++    texture_font_char_us_G,                  // G
++    texture_font_char_us_H,                  // H
++    texture_font_char_us_I,                  // I
++    texture_font_char_us_J,                  // J
++    texture_font_char_us_K,                  // K
++    texture_font_char_us_L,                  // L
++    texture_font_char_us_M,                  // M
++    texture_font_char_us_N,                  // N
++    texture_font_char_us_O,                  // O
++    texture_font_char_us_P,                  // P
++    texture_font_char_us_Q,                  // Q
++    texture_font_char_us_R,                  // R
++    texture_font_char_us_S,                  // S
++    texture_font_char_us_T,                  // T
++    texture_font_char_us_U,                  // U
++    texture_font_char_us_V,                  // V
++    texture_font_char_us_W,                  // W
++    texture_font_char_us_X,                  // X
++    texture_font_char_us_Y,                  // Y
++    texture_font_char_us_Z,                  // Z
++    texture_font_normal_char_59,             // [
++    texture_font_normal_char_60,             // \ //
++    texture_font_normal_char_61,             // ]
++    texture_font_normal_char_62,             // ^
++    texture_font_normal_char_63,             // _
++    texture_font_normal_char_64,             // `
++    texture_font_char_us_a,                  // a
++    texture_font_char_us_b,                  // b
++    texture_font_char_us_c,                  // c
++    texture_font_char_us_d,                  // d
++    texture_font_char_us_e,                  // e
++    texture_font_char_us_f,                  // f
++    texture_font_char_us_g,                  // g
++    texture_font_char_us_h,                  // h
++    texture_font_char_us_i,                  // i
++    texture_font_char_us_j,                  // j
++    texture_font_char_us_k,                  // k
++    texture_font_char_us_l,                  // l
++    texture_font_char_us_m,                  // m
++    texture_font_char_us_n,                  // n
++    texture_font_char_us_o,                  // o
++    texture_font_char_us_p,                  // p
++    texture_font_char_us_q,                  // q
++    texture_font_char_us_r,                  // r
++    texture_font_char_us_s,                  // s
++    texture_font_char_us_t,                  // t
++    texture_font_char_us_u,                  // u
++    texture_font_char_us_v,                  // v
++    texture_font_char_us_w,                  // w
++    texture_font_char_us_x,                  // x
++    texture_font_char_us_y,                  // y
++    texture_font_char_us_z,                  // z
++    texture_font_normal_char_91,             // {
++    texture_font_normal_char_92,             // |
++    texture_font_normal_char_93,             // }
++    texture_font_char_us_tilde,              // ~
++    texture_font_char_us_star_filled,        // DEL
++};
++
++const f32 font_normal_widths[] = {
++/*        !        "        #        $        %        &        '        (        )        *        +        ,        -        .        /        */
++    0.3125f, 0.3750f, 0.4375f, 0.3750f, 0.4375f, 0.5000f, 0.2500f, 0.3125f, 0.3125f, 0.3750f, 0.4375f, 0.2500f, 0.3750f, 0.2500f, 0.3125f,
++/*        0        1        2        3        4        5        6        7        8        9        */
++    0.4375f, 0.4375f, 0.4375f, 0.4375f, 0.4375f, 0.4375f, 0.4375f, 0.4375f, 0.4375f, 0.4375f,
++/*        :        ;        <        =        >        ?        @         */
++    0.2500f, 0.2500f, 0.3125f, 0.3750f, 0.3125f, 0.4375f, 0.5750f,
++/*        A        B        C        D        E        F        G        H        I        J        K        L        M        N        O        P        Q        R        S        T        U        V        W        X        Y        Z        */
++     0.3750f, 0.3750f, 0.3750f, 0.3750f, 0.3750f, 0.3750f, 0.3750f, 0.3750f, 0.3125f, 0.3750f, 0.3750f, 0.3125f, 0.5000f, 0.5000f, 0.3750f, 0.3750f, 0.3750f, 0.3750f, 0.3750f, 0.3125f, 0.3750f, 0.3750f, 0.5000f, 0.4375f, 0.3750f, 0.3750f,
++/*        [        \        ]        ^        _        `        */
++    0.3125f, 0.3125f, 0.3125f, 0.3750f, 0.3750f, 0.2500f,
++/*        a        b        c        d        e        f        g        h        i        j        k        l        m        n        o        p        q        r        s        t        u        v        w        x        y        z        */
++    0.3750f, 0.3125f, 0.3125f, 0.3750f, 0.3125f, 0.3125f, 0.3750f, 0.3125f, 0.2500f, 0.3125f, 0.3125f, 0.1875f, 0.4375f, 0.3125f, 0.3125f, 0.3125f, 0.3750f, 0.3125f, 0.3125f, 0.3125f, 0.3125f, 0.3125f, 0.4375f, 0.4375f, 0.3125f, 0.3125f,
++/*        {        |        }        ~      DEL        */
++    0.3125f, 0.2500f, 0.3125f, 0.5000f, 0.5000f
++};
+diff --git a/src/extras/draw_util.c b/src/extras/draw_util.c
+index eaf675c..ff53421 100644
+--- a/src/extras/draw_util.c
++++ b/src/extras/draw_util.c
+@@ -76,7 +76,7 @@ Gfx dl_tri_quad_ex_end[] = {
+  * Converts ASCII to hex values (Vanilla) used in generic strings and dialogs.
+  * Note, if you edited charmap.txt you may need to edit this function as well.
+  */
+-static u8 ascii_to_font_char(u8 c) {
++u8 ascii_to_font_char(u8 c) {
+     if (c >= '0' && c <= '9')
+         return (c - '0' + 0x00);
+ 
+diff --git a/src/extras/draw_util.h b/src/extras/draw_util.h
+index 78a6c5d..f22909a 100644
+--- a/src/extras/draw_util.h
++++ b/src/extras/draw_util.h
+@@ -20,6 +20,8 @@ extern Gfx dl_texture_rect_ex_end[];
+ extern Gfx dl_tri_quad_ex_start[];
+ extern Gfx dl_tri_quad_ex_end[];
+ 
++u8 ascii_to_font_char(u8 c);
++
+ s16 get_hud_str_width(u8 *str);
+ s16 get_hud_str_width_ascii(char *str);
+ s16 get_string_width_ascii(char *str);
+diff --git a/src/pc/crash_handler.c b/src/pc/crash_handler.c
+new file mode 100644
+index 0000000..eb61136
+--- /dev/null
++++ b/src/pc/crash_handler.c
+@@ -0,0 +1,463 @@
++// Adapted from PeachyPeach's sm64pc-omm
++
++#if defined(_WIN32)
++#include <SDL2/SDL.h>
++
++#include <stdio.h>
++#include <windows.h>
++#include <dbghelp.h>
++#include <PR/ultratypes.h>
++#include <PR/gbi.h>
++#include <crtdbg.h>
++#include "config.h"
++#include "pc/gfx/gfx_window_manager_api.h"
++#include "pc/gfx/gfx_dxgi.h"
++#include "pc/gfx/gfx_sdl.h"
++#include "pc/gfx/gfx_pc.h"
++#include "game/game_init.h"
++#include "game/ingame_menu.h"
++#include "game/segment2.h"
++#include "game/mario.h"
++#include "gfx_dimensions.h"
++#include "pc/gfx/gfx_rendering_api.h"
++#include "dbghelp.h"
++#include "src/pc/djui_font.h"
++
++#if IS_64_BIT
++    #define CRASH_HANDLER_TYPE LONG
++    #define SYMBOL_INCREMENT 16
++    #define SYMBOL_SCAN_FORMAT "%016llX"
++    #define MACHINE_TYPE IMAGE_FILE_MACHINE_AMD64
++    #define ARCHITECTURE_STR "64-bit"
++#else
++    #define CRASH_HANDLER_TYPE LONG WINAPI
++    #define SYMBOL_INCREMENT 9
++    #define SYMBOL_SCAN_FORMAT "%08X"
++    #define MACHINE_TYPE IMAGE_FILE_MACHINE_I386
++    #define ARCHITECTURE_STR "32-bit"
++#endif
++
++#define PTR long long unsigned int)(uintptr_t
++
++#define ARRAY_SIZE(a)               (sizeof(a) / sizeof(a[0]))
++#define MEMNEW(typ, cnt)            calloc(sizeof(typ), cnt)
++#define STRING(str, size, fmt, ...) char str[size]; snprintf(str, size, fmt, __VA_ARGS__);
++
++#define load_gfx_memory_pool()          select_gfx_pool()
++#define init_scene_rendering()          init_rcp()
++
++static struct {
++    u32 code;
++    const char *error;
++    const char *message;
++} sCrashHandlerErrors[] = {
++    { EXCEPTION_ACCESS_VIOLATION,       "Segmentation Fault",       "The game tried to %s at address 0x%016llX." },
++    { EXCEPTION_ARRAY_BOUNDS_EXCEEDED,  "Array Out Of Bounds",      "The game tried to access an element out of the array bounds." },
++    { EXCEPTION_DATATYPE_MISALIGNMENT,  "Data Misalignment",        "The game tried to access misaligned data." },
++    { EXCEPTION_BREAKPOINT,             "Breakpoint",               "The game reached a breakpoint." },
++    { EXCEPTION_FLT_DENORMAL_OPERAND,   "Float Denormal Operand",   "The game tried to perform a floating point operation with a denormal operand." },
++    { EXCEPTION_FLT_DIVIDE_BY_ZERO,     "Float Division By Zero",   "The game tried to divide a floating point number by zero." },
++    { EXCEPTION_FLT_INEXACT_RESULT,     "Float Inexact Result",     "The game couldn't represent the result of a floating point operation as a decimal fraction." },
++    { EXCEPTION_FLT_INVALID_OPERATION,  "Float Invalid Operation",  "The game tried to perform an invalid floating point operation." },
++    { EXCEPTION_FLT_OVERFLOW,           "Float Overflow",           "An overflow occurred with a floating point number." },
++    { EXCEPTION_FLT_STACK_CHECK,        "Float Stack Overflow",     "The game performed a floating point operation resulting in a stack overflow." },
++    { EXCEPTION_FLT_UNDERFLOW,          "Float Underflow",          "An underflow occurred with a floating point number." },
++    { EXCEPTION_ILLEGAL_INSTRUCTION,    "Illegal Instruction",      "The game tried to execute an invalid instruction." },
++    { EXCEPTION_IN_PAGE_ERROR,          "Page Error",               "The game tried to %s at address 0x%016llX." },
++    { EXCEPTION_INT_DIVIDE_BY_ZERO,     "Integer Division By Zero", "The game tried to divide an integer by zero." },
++    { EXCEPTION_INT_OVERFLOW,           "Integer Overflow",         "An overflow occurred with an integer." },
++    { EXCEPTION_PRIV_INSTRUCTION,       "Instruction Not Allowed",  "The game tried to execute an invalid instruction." },
++    { EXCEPTION_STACK_OVERFLOW,         "Stack Overflow",           "The game performed an operation resulting in a stack overflow." },
++    { 0,                                "Unknown Exception",        "An unknown exception occurred." },
++};
++
++typedef struct {
++    s32 x, y;
++    u8 r, g, b;
++    char s[128];
++} CrashHandlerText;
++static CrashHandlerText sCrashHandlerText[128 + 256];
++
++#define crash_handler_set_text(_x_, _y_, _r_, _g_, _b_, _fmt_, ...)     \
++{                                                                       \
++    if (_x_ == -1) {                                                    \
++        pText->x = ((pText - 1)->x + strlen((pText - 1)->s) * 4);       \
++    } else {                                                            \
++        pText->x = _x_;                                                 \
++    }                                                                   \
++    pText->y = _y_;                                                     \
++    pText->r = _r_;                                                     \
++    pText->g = _g_;                                                     \
++    pText->b = _b_;                                                     \
++    snprintf(pText->s, 128, _fmt_, __VA_ARGS__);                        \
++    pText++;                                                            \
++}
++
++void render_create_dl_ortho_matrix() {
++    static const Mtx sIdentMatrix = { {
++        { 1.f, 0.f, 0.f, 0.f },
++        { 0.f, 1.f, 0.f, 0.f },
++        { 0.f, 0.f, 1.f, 0.f },
++        { 0.f, 0.f, 0.f, 1.f },
++    } };
++    static const Mtx sOrthoMatrix = { {
++        { 2.f / SCREEN_WIDTH, 0.f, 0.f, 0.f },
++        { 0.f, 2.f / SCREEN_HEIGHT, 0.f, 0.f },
++        { 0.f, 0.f, -0.1f, 0.f },
++        { -1.f, -1.f, 0.f, 1.f },
++    } };
++    gSPPerspNormalize(gDisplayListHead++, 0xFFFF);
++    gSPMatrix(gDisplayListHead++, &sIdentMatrix, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
++    gSPMatrix(gDisplayListHead++, &sIdentMatrix, G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
++    gSPMatrix(gDisplayListHead++, &sOrthoMatrix, G_MTX_PROJECTION | G_MTX_MUL | G_MTX_NOPUSH);
++}
++
++static void crash_handler_produce_one_frame() {
++    // Start frame
++    gfx_start_frame();
++    load_gfx_memory_pool();
++    init_scene_rendering();
++
++    float minAspectRatio = 1.743468f;
++    float aspectScale = 1.0f;
++    if (gfx_current_dimensions.aspect_ratio < minAspectRatio) {
++        aspectScale = gfx_current_dimensions.aspect_ratio / minAspectRatio;
++    }
++
++    // Fix scaling issues
++    extern Vp D_8032CF00;
++    gSPViewport(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(&D_8032CF00));
++    gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, BORDER_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT - BORDER_HEIGHT);
++
++    // Clear screen
++    create_dl_translation_matrix(MENU_MTX_PUSH, GFX_DIMENSIONS_FROM_LEFT_EDGE(0), 240.f, 0.f);
++    create_dl_scale_matrix(MENU_MTX_NOPUSH, (GFX_DIMENSIONS_ASPECT_RATIO * SCREEN_HEIGHT) / 130.f, 3.f, 1.f);
++    gDPSetEnvColor(gDisplayListHead++, 0x02, 0x06, 0x0F, 0xFF);
++    gSPDisplayList(gDisplayListHead++, dl_draw_text_bg_box);
++    gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
++
++    // Print text
++    const struct DjuiFont* font = gDjuiFonts[0];
++    if (font->textBeginDisplayList != NULL) {
++        gSPDisplayList(gDisplayListHead++, font->textBeginDisplayList);
++    }
++    
++    for (CrashHandlerText* text = sCrashHandlerText; text->s[0] != 0; ++text) {
++        s32 x = GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(text->x * aspectScale);
++        s32 y = SCREEN_HEIGHT - 8 - text->y * aspectScale;
++
++        gDPPipeSync(gDisplayListHead++);
++        gDPSetEnvColor(gDisplayListHead++, text->r, text->g, text->b, 0xFF);
++        create_dl_translation_matrix(MENU_MTX_PUSH, x, y, 0);
++
++        // translate scale
++        f32 fontSize = 10.0f * aspectScale;
++        create_dl_scale_matrix(MENU_MTX_NOPUSH, fontSize, fontSize, 1.0f);
++
++        // set color
++        gDPSetEnvColor(gDisplayListHead++, text->r, text->g, text->b, 0xFF);
++
++        // render the line
++        f32 addX = 0;
++        size_t length = strlen(text->s);
++        for (size_t i = 0; i < length; i++) {
++            char c = text->s[i];
++            f32 charWidth = 0.4f;
++
++            if (c <= 0x20 || c >= 0x7F) {
++                addX += charWidth;
++                continue;
++            }
++
++            if (addX != 0) {
++                create_dl_translation_matrix(MENU_MTX_NOPUSH, addX, 0, 0);
++                addX = 0;
++            }
++            // render
++            font->render_char(c);
++
++            create_dl_translation_matrix(MENU_MTX_NOPUSH, charWidth, 0, 0);
++        }
++
++        // pop
++        gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
++    }
++
++    // Render frame
++    end_master_display_list();
++    alloc_display_list(0);
++    display_and_vsync();
++    gfx_end_frame();
++}
++
++#if !IS_64_BIT
++static ULONG CaptureStackWalkBackTrace(CONTEXT* ctx, DWORD FramesToSkip, DWORD FramesToCapture, void* BackTrace[]) {
++
++    HANDLE process = GetCurrentProcess();
++    HANDLE thread = GetCurrentThread();
++
++    STACKFRAME64 stack;
++    memset(&stack, 0, sizeof(STACKFRAME64));
++#if IS_64_BIT
++    stack.AddrPC.Offset = (*ctx).Rip;
++    stack.AddrPC.Mode = AddrModeFlat;
++    stack.AddrStack.Offset = (*ctx).Rsp;
++    stack.AddrStack.Mode = AddrModeFlat;
++    stack.AddrFrame.Offset = (*ctx).Rbp;
++    stack.AddrFrame.Mode = AddrModeFlat; 
++#else
++    stack.AddrPC.Offset = (*ctx).Eip;
++    stack.AddrPC.Mode = AddrModeFlat;
++    stack.AddrStack.Offset = (*ctx).Esp;
++    stack.AddrStack.Mode = AddrModeFlat;
++    stack.AddrFrame.Offset = (*ctx).Ebp;
++    stack.AddrFrame.Mode = AddrModeFlat;
++#endif
++
++    ULONG frame = 0;
++    for (frame = 0; ; frame++)
++    {
++        if (!StackWalk64(MACHINE_TYPE, process, thread, &stack, ctx, NULL, NULL, NULL, NULL)) { break; }
++        if (frame < FramesToSkip || frame >= FramesToCapture) { continue; }
++        BackTrace[frame+1] = (void*)(intptr_t)stack.AddrPC.Offset;
++    }
++    return frame;
++}
++#endif
++
++static void crash_handler_add_info_str(CrashHandlerText** pTextP, f32 x, f32 y, char* title, char* value) {
++    CrashHandlerText* pText = *pTextP;
++    crash_handler_set_text(x, y, 0xFF, 0xFF, 0x00, "%s", title);
++    crash_handler_set_text(-1, y, 0xFF, 0xFF, 0xFF, "%s", ": ");
++    crash_handler_set_text(-1, y, 0x00, 0xFF, 0xFF, "%s", value);
++    *pTextP = pText;
++}
++
++static void crash_handler_add_info_int(CrashHandlerText** pTextP, f32 x, f32 y, char* title, int value) {
++    CrashHandlerText* pText = *pTextP;
++    crash_handler_set_text(x, y, 0xFF, 0xFF, 0x00, "%s", title);
++    crash_handler_set_text(-1, y, 0xFF, 0xFF, 0xFF, "%s", ": ");
++    crash_handler_set_text(-1, y, 0x00, 0xFF, 0xFF, "%d", value);
++    *pTextP = pText;
++}
++
++static CRASH_HANDLER_TYPE crash_handler(EXCEPTION_POINTERS *ExceptionInfo) {
++    memset(sCrashHandlerText, 0, sizeof(sCrashHandlerText));
++    CrashHandlerText *pText = &sCrashHandlerText[0];
++
++    // Exception report
++    crash_handler_set_text(8, -4, 0xFF, 0x80, 0x00, "%s", "Please report this crash with a consistent way to reproduce it.");
++
++    // Exception address, code, type and info
++    if (ExceptionInfo && ExceptionInfo->ExceptionRecord) {
++        PEXCEPTION_RECORD er = ExceptionInfo->ExceptionRecord;
++        crash_handler_set_text( 8, 4, 0xFF, 0x00, 0x00, "%s", "Exception occurred at address ");
++        crash_handler_set_text(-1, 4, 0xFF, 0xFF, 0x00, "0x%016llX", (PTR) er->ExceptionAddress);
++        crash_handler_set_text(-1, 4, 0xFF, 0x00, 0x00, "%s", " with error code ");
++        crash_handler_set_text(-1, 4, 0xFF, 0x00, 0xFF, "0x%08X", (u32) er->ExceptionCode);
++        crash_handler_set_text(-1, 4, 0xFF, 0x00, 0x00, "%s", ":");
++        for (s32 i = 0; i != ARRAY_SIZE(sCrashHandlerErrors); ++i) {
++            if (sCrashHandlerErrors[i].code == (u32) er->ExceptionCode || sCrashHandlerErrors[i].code == 0) {
++                crash_handler_set_text( 8, 12, 0xFF, 0x00, 0x00, "%s", sCrashHandlerErrors[i].error);
++                crash_handler_set_text(-1, 12, 0xFF, 0xFF, 0xFF, "%s", " - ");
++                if (er->ExceptionCode == EXCEPTION_ACCESS_VIOLATION || er->ExceptionCode == EXCEPTION_IN_PAGE_ERROR) {
++                    crash_handler_set_text(-1, 12, 0xFF, 0xFF, 0xFF, sCrashHandlerErrors[i].message, (er->ExceptionInformation[0] ? "write" : "read"), (PTR)er->ExceptionInformation[1]);
++                } else {
++                    crash_handler_set_text(-1, 12, 0xFF, 0xFF, 0xFF, "%s", sCrashHandlerErrors[i].message);
++                }
++                break;
++            }
++        }
++    } else {
++        crash_handler_set_text(8,  4, 0xFF, 0x00, 0x00, "%s", "An unknown exception occurred somewhere in the game's code.");
++        crash_handler_set_text(8, 12, 0x80, 0x80, 0x80, "%s", "Unable to retrieve the exception info.");
++    }
++
++    // Registers
++    if (ExceptionInfo && ExceptionInfo->ContextRecord) {
++        PCONTEXT cr = ExceptionInfo->ContextRecord;
++        crash_handler_set_text( 8, 22, 0xFF, 0xFF, 0xFF,   "%s", "Registers:");
++#if IS_64_BIT
++        crash_handler_set_text( 8, 30, 0xFF, 0xFF, 0xFF,   "RSP: 0x%016llX", (PTR)cr->Rsp);
++        crash_handler_set_text(-1, 30, 0xFF, 0xFF, 0xFF, "  RBP: 0x%016llX", (PTR)cr->Rbp);
++        crash_handler_set_text(-1, 30, 0xFF, 0xFF, 0xFF, "  RIP: 0x%016llX", (PTR)cr->Rip);
++        crash_handler_set_text( 8, 38, 0xFF, 0xFF, 0xFF,   "RAX: 0x%016llX", (PTR)cr->Rax);
++        crash_handler_set_text(-1, 38, 0xFF, 0xFF, 0xFF, "  RBX: 0x%016llX", (PTR)cr->Rbx);
++        crash_handler_set_text(-1, 38, 0xFF, 0xFF, 0xFF, "  RCX: 0x%016llX", (PTR)cr->Rcx);
++        crash_handler_set_text(-1, 38, 0xFF, 0xFF, 0xFF, "  RDX: 0x%016llX", (PTR)cr->Rdx);
++        crash_handler_set_text( 8, 46, 0xFF, 0xFF, 0xFF,   "R08: 0x%016llX", (PTR)cr->R8);
++        crash_handler_set_text(-1, 46, 0xFF, 0xFF, 0xFF, "  R09: 0x%016llX", (PTR)cr->R9);
++        crash_handler_set_text(-1, 46, 0xFF, 0xFF, 0xFF, "  R10: 0x%016llX", (PTR)cr->R10);
++        crash_handler_set_text(-1, 46, 0xFF, 0xFF, 0xFF, "  R11: 0x%016llX", (PTR)cr->R11);
++        crash_handler_set_text( 8, 54, 0xFF, 0xFF, 0xFF,   "R12: 0x%016llX", (PTR)cr->R12);
++        crash_handler_set_text(-1, 54, 0xFF, 0xFF, 0xFF, "  R13: 0x%016llX", (PTR)cr->R13);
++        crash_handler_set_text(-1, 54, 0xFF, 0xFF, 0xFF, "  R14: 0x%016llX", (PTR)cr->R14);
++        crash_handler_set_text(-1, 54, 0xFF, 0xFF, 0xFF, "  R15: 0x%016llX", (PTR)cr->R15);
++        crash_handler_set_text( 8, 62, 0xFF, 0xFF, 0xFF,   "RSI: 0x%016llX", (PTR)cr->Rsi);
++        crash_handler_set_text(-1, 62, 0xFF, 0xFF, 0xFF, "  RDI: 0x%016llX", (PTR)cr->Rdi);
++#else
++        crash_handler_set_text( 8, 30, 0xFF, 0xFF, 0xFF,   "EAX: 0x%016llX", (PTR)cr->Eax);
++        crash_handler_set_text(-1, 30, 0xFF, 0xFF, 0xFF, "  EBX: 0x%016llX", (PTR)cr->Ebx);
++        crash_handler_set_text(-1, 30, 0xFF, 0xFF, 0xFF, "  ECX: 0x%016llX", (PTR)cr->Ecx);
++        crash_handler_set_text( 8, 38, 0xFF, 0xFF, 0xFF,   "EDX: 0x%016llX", (PTR)cr->Edx);
++        crash_handler_set_text(-1, 38, 0xFF, 0xFF, 0xFF, "  ESI: 0x%016llX", (PTR)cr->Esi);
++        crash_handler_set_text(-1, 38, 0xFF, 0xFF, 0xFF, "  EDI: 0x%016llX", (PTR)cr->Edi);
++        crash_handler_set_text(-1, 38, 0xFF, 0xFF, 0xFF, "  EBP: 0x%016llX", (PTR)cr->Ebp);
++        crash_handler_set_text( 8, 46, 0xFF, 0xFF, 0xFF,   "EIP: 0x%016llX", (PTR)cr->Eip);
++        crash_handler_set_text(-1, 46, 0xFF, 0xFF, 0xFF, "  ESP: 0x%016llX", (PTR)cr->Esp);
++        crash_handler_set_text(-1, 46, 0xFF, 0xFF, 0xFF, "   CS: 0x%016llX", (PTR)cr->SegCs);
++        crash_handler_set_text(-1, 46, 0xFF, 0xFF, 0xFF, "   DS: 0x%016llX", (PTR)cr->SegDs);
++        crash_handler_set_text( 8, 54, 0xFF, 0xFF, 0xFF,   " ES: 0x%016llX", (PTR)cr->SegEs);
++        crash_handler_set_text(-1, 54, 0xFF, 0xFF, 0xFF, "   FS: 0x%016llX", (PTR)cr->SegFs);
++        crash_handler_set_text(-1, 54, 0xFF, 0xFF, 0xFF, "   GS: 0x%016llX", (PTR)cr->SegGs);
++        crash_handler_set_text(-1, 54, 0xFF, 0xFF, 0xFF, "   SS: 0x%016llX", (PTR)cr->SegSs);
++        crash_handler_set_text( 8, 62, 0xFF, 0xFF, 0xFF,   "DR0: 0x%016llX", (PTR)cr->Dr0);
++        crash_handler_set_text(-1, 62, 0xFF, 0xFF, 0xFF, "  DR1: 0x%016llX", (PTR)cr->Dr1);
++#endif
++    } else {
++        crash_handler_set_text(8, 22, 0xFF, 0xFF, 0xFF, "%s", "Registers:");
++        crash_handler_set_text(8, 30, 0x80, 0x80, 0x80, "%s", "Unable to access the registers.");
++    }
++
++    // Stack trace
++    crash_handler_set_text(8, 72, 0xFF, 0xFF, 0xFF, "%s", "Stack trace:");
++    if (ExceptionInfo && ExceptionInfo->ContextRecord) {
++        static const char sGlobalFunctionIdentifier[] = "(sec1)(fl0x00)(ty20)(scl2)(nx0)0x";
++        static const char sStaticFunctionIdentifier[] = "(sec1)(fl0x00)(ty20)(scl3)(nx0)0x";
++        typedef struct Symbol { uintptr_t offset; char name[128]; struct Symbol *next; } Symbol;
++        Symbol *symbols = NULL;
++        Symbol* symbol0 = NULL;
++
++        // Load symbols
++        char filename[256] = { 0 };
++        if (GetModuleFileName(NULL, filename, sizeof(filename))) {
++            int index = strlen(filename);
++            while (--index > 0) {
++                if (filename[index] == '\\') {
++                    filename[index] = '\0';
++                    break;
++                }
++            }
++            strncat(filename, "\\sm64pc.map", 255);
++        } else {
++            snprintf(filename, 256, "%s", "sm64pc.map");
++        }
++
++        FILE *f = fopen(filename, "r");
++        if (f) {
++            char buffer[1024];
++            while (fgets(buffer, 1024, f)) {
++
++                // Remove spaces
++                char bufferNoSpace[1024] = { 0 };
++                for (char *p0 = buffer, *p1 = bufferNoSpace; *p0 != 0; ++p0) {
++                    if (*p0 > 0x20) {
++                        *(p1++) = *p0;
++                    }
++                }
++
++                // Try to find identifiers
++                char *id0 = strstr(bufferNoSpace, sGlobalFunctionIdentifier);
++                char *id1 = strstr(bufferNoSpace, sStaticFunctionIdentifier);
++                if (id0 || id1) {
++                    char *addr = (char *) max((uintptr_t) id0, (uintptr_t) id1) + sizeof(sGlobalFunctionIdentifier) - 1;
++                    char* name = addr + SYMBOL_INCREMENT;
++
++                    // New symbol
++                    Symbol *newSymbol = MEMNEW(Symbol, 1);
++                    snprintf(newSymbol->name, 128, "%s", name); *name = 0;
++                    sscanf(addr, SYMBOL_SCAN_FORMAT, &newSymbol->offset);
++                    newSymbol->next = NULL;
++
++                    // Store symbol
++                    if (symbols == NULL) {
++                        symbols = newSymbol;
++                    } else {
++                        for (Symbol *symbol = symbols;; symbol = symbol->next) {
++                            if (symbol->next == NULL) {
++                                symbol->next = newSymbol;
++                                break;
++                            }
++                            if (symbol->next->offset > newSymbol->offset) {
++                                newSymbol->next = symbol->next;
++                                symbol->next = newSymbol;
++                                break;
++                            }
++                        }
++                    }
++
++                    // Reference
++                    if (memcmp(newSymbol->name, "set_mario_action", sizeof("set_mario_action")) == 0) {
++                        symbol0 = newSymbol;
++                    }
++                }
++            }
++            fclose(f);
++        }
++        uintptr_t addr0 = (symbol0 ? ((uintptr_t) set_mario_action - symbol0->offset) : 0);
++
++        // Unwind and print call stack
++        void *stack[64];
++#if IS_64_BIT
++        s32 frames = CaptureStackBackTrace(6, 64, stack, NULL);
++#else
++        s32 frames = CaptureStackWalkBackTrace(ExceptionInfo->ContextRecord, 0, 64, stack);
++#endif
++        for (s32 i = 1, j = 0; i < frames && j < 15; ++i) {
++            s32 y = 80 + j++ * 8;
++            crash_handler_set_text( 8, y, 0xFF, 0xFF, 0x00, "0x%016llX", (PTR) stack[i]);
++            crash_handler_set_text(-1, y, 0xFF, 0xFF, 0xFF, "%s", ": ");
++            for (Symbol *symbol = symbols;; symbol = symbol->next) {
++                if (symbol == NULL || symbol->next == NULL) {
++                    if (j != 0) {
++                        crash_handler_set_text(-1, y, 0x00, 0xFF, 0xFF, "%s", "????");
++                    }
++                    break;
++                } else {
++                    uintptr_t offset = (uintptr_t) stack[i] - addr0;
++                    if (symbol->next->offset > offset) {
++                        crash_handler_set_text(-1, y, 0x00, 0xFF, 0xFF, "%s", symbol->name);
++                        crash_handler_set_text(-1, y, 0xFF, 0xFF, 0xFF, " + 0x%llX", (PTR)(offset - symbol->offset));
++                        break;
++                    }
++                }
++            }
++        }
++    } else {
++        crash_handler_set_text(8, 116, 0x80, 0x80, 0x80, "%s", "Unable to unwind the call stack.");
++    }
++
++    // Info
++    crash_handler_add_info_str(&pText, 340, -4 + (8 * 0), "Arch", ARCHITECTURE_STR);
++
++    // sounds
++    if (SDL_WasInit(SDL_INIT_AUDIO) || SDL_InitSubSystem(SDL_INIT_AUDIO) == 0) {
++        SDL_AudioSpec want, have;
++        want.freq = 32000;
++        want.format = AUDIO_S16SYS;
++        want.channels = 1;
++        want.samples = 0x200;
++        want.callback = NULL;
++        want.userdata = NULL;
++        s32 device = SDL_OpenAudioDevice(NULL, 0, &want, &have, 0);
++        if (device) {
++            SDL_PauseAudioDevice(device, 0);
++        }
++    }
++
++    // Main loop
++    while (true) {
++#if defined(WAPI_SDL1) || defined(WAPI_SDL2)
++        gfx_sdl.main_loop(crash_handler_produce_one_frame);
++#elif defined(WAPI_DXGI)
++        gfx_dxgi.main_loop(crash_handler_produce_one_frame);
++#endif
++    }
++    exit(0);
++}
++
++__attribute__((constructor)) static void init_crash_handler() {
++    SetUnhandledExceptionFilter(crash_handler);
++}
++
++#endif
+diff --git a/src/pc/djui_font.c b/src/pc/djui_font.c
+new file mode 100644
+index 0000000..c33c576
+--- /dev/null
++++ b/src/pc/djui_font.c
+@@ -0,0 +1,78 @@
++#include <PR/gbi.h>
++#include <PR/ultratypes.h>
++#include <stdint.h>
++#include <stdbool.h>
++#include <stdlib.h>
++#include "game/game_init.h"
++#include "game/ingame_menu.h"
++#include "game/segment2.h"
++#include "djui_font.h"
++#include "djui_gbi.h"
++
++  ///////////////////////////////////
++ // font 0 (built-in normal font) //
++///////////////////////////////////
++
++static Vtx djui_font_normal_vertices[] = {
++    {{{ 0, -1, 0}, 0, {   0, 256}, { 0xff, 0xff, 0xff, 0xff }}},
++    {{{ 0.5f, -1, 0}, 0, {   0,   0}, { 0xff, 0xff, 0xff, 0xff }}},
++    {{{ 0.5f,  0, 0}, 0, { 512,   0}, { 0xff, 0xff, 0xff, 0xff }}},
++    {{{ 0,   0, 0}, 0, { 512, 256}, { 0xff, 0xff, 0xff, 0xff }}},
++};
++
++const Gfx dl_font_normal_display_list_begin[] = {
++    gsDPPipeSync(),
++    gsSPClearGeometryMode(G_LIGHTING),
++    gsDPSetCombineMode(G_CC_FADEA, G_CC_FADEA),
++    gsDPSetRenderMode(G_RM_XLU_SURF, G_RM_XLU_SURF2),
++    gsDPSetTextureFilter(G_TF_POINT),
++    gsSPTexture(0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_ON),
++    gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_4b, 1, 0, G_TX_RENDERTILE, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, G_TX_NOLOD, G_TX_WRAP | G_TX_NOMIRROR, 4, G_TX_NOLOD),
++    gsDPSetTileSize(0, 0, 0, (16 - 1) << G_TEXTURE_IMAGE_FRAC, (8 - 1) << G_TEXTURE_IMAGE_FRAC),
++    gsSPEndDisplayList(),
++};
++
++const Gfx dl_font_normal_display_list[] = {
++    gsDPLoadBlock(G_TX_LOADTILE, 0, 0, ((16 * 8 + G_IM_SIZ_4b_INCR) >> G_IM_SIZ_4b_SHIFT) - 1, CALC_DXT(16, G_IM_SIZ_4b_BYTES)),
++    gsSPVertex(djui_font_normal_vertices, 4, 0),
++    gsSPExecuteDjui(G_TEXCLIP_DJUI),
++    gsSP2Triangles(0,  1,  2, 0x0, 0,  2,  3, 0x0),
++    gsSPEndDisplayList(),
++};
++
++static void djui_font_normal_render_char(char c) {
++    extern const u8* const font_normal_chars[];
++    // replace undisplayable characters
++    if (c < ' ' || (u8)c > ('~' + 1)) { c = '?'; }
++    if (c == ' ') { return; }
++    void* fontChar = (void*)font_normal_chars[c - '!'];
++    if (fontChar == NULL) { fontChar = (void*)font_normal_chars[94]; }
++
++    gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_IA, G_IM_SIZ_16b, 1, (void*)fontChar);
++    gSPDisplayList(gDisplayListHead++, dl_font_normal_display_list);
++}
++
++static f32 djui_font_normal_char_width(char c) {
++    if (c == ' ') { return 0.30f; }
++    extern const f32 font_normal_widths[];
++    return font_normal_widths[c - '!'];
++}
++
++static const struct DjuiFont sDjuiFontNormal = {
++    .charWidth            = 0.5f,
++    .charHeight           = 1.0f,
++    .lineHeight           = 0.8125f,
++    .defaultFontScale     = 32.0f,
++    .rotatedUV            = true,
++    .textBeginDisplayList = dl_font_normal_display_list_begin,
++    .render_char          = djui_font_normal_render_char,
++    .char_width           = djui_font_normal_char_width,
++};
++
++  ///////////////
++ // font list //
++///////////////
++
++const struct DjuiFont* gDjuiFonts[] = {
++    &sDjuiFontNormal,
++};
+diff --git a/src/pc/djui_font.h b/src/pc/djui_font.h
+new file mode 100644
+index 0000000..3b04d51
+--- /dev/null
++++ b/src/pc/djui_font.h
+@@ -0,0 +1,22 @@
++#pragma once
++#include <PR/gbi.h>
++#include <PR/ultratypes.h>
++#include <stdint.h>
++#include <stdbool.h>
++#include <stdlib.h>
++#include "game/game_init.h"
++#include "game/ingame_menu.h"
++
++struct DjuiFont {
++    f32 charWidth;
++    f32 charHeight;
++    f32 lineHeight;
++    f32 defaultFontScale;
++    u8 textureBitSize;
++    bool rotatedUV;
++    const Gfx* textBeginDisplayList;
++    void (*render_char)(char);
++    f32 (*char_width)(char);
++};
++
++extern const struct DjuiFont* gDjuiFonts[];
+diff --git a/src/pc/djui_gbi.h b/src/pc/djui_gbi.h
+new file mode 100644
+index 0000000..d718f92
+--- /dev/null
++++ b/src/pc/djui_gbi.h
+@@ -0,0 +1,29 @@
++#pragma once
++
++#define G_TEXCLIP_DJUI     0xe1
++#define G_TEXOVERRIDE_DJUI 0xe0
++#define G_EXECUTE_DJUI     0xdd
++
++#define gSetClippingDjui(pkt, cmd, rot, x1, y1, x2, y2)         \
++{                                                               \
++    Gfx *_g = (Gfx *)(pkt);                                     \
++    _g->words.w0 = _SHIFTL(cmd, 24, 8) | _SHIFTL( x1, 16, 8) |  \
++                   _SHIFTL( y1,  8, 8) | _SHIFTL(rot,  0, 8);   \
++    _g->words.w1 = _SHIFTL(x2, 16, 8) | _SHIFTL(y2, 8, 8);      \
++}
++
++#define gSetOverrideDjui(pkt, cmd, texture, w, h, bitSize)      \
++{                                                               \
++    Gfx *_g = (Gfx *)(pkt);                                     \
++    _g->words.w0 = _SHIFTL(cmd, 24, 8) | _SHIFTL(w, 16, 8) |    \
++           _SHIFTL(h, 8, 8) | _SHIFTL(bitSize, 0, 8);           \
++    _g->words.w1 = (uintptr_t)(texture);                        \
++}
++
++#define gsSPExecuteDjui(word)                                   \
++{{                                                              \
++    _SHIFTL(G_EXECUTE_DJUI, 24, 8), (unsigned int)(word)        \
++}}
++
++#define gDPSetTextureClippingDjui(pkt, rot, x1, y1, x2, y2)    gSetClippingDjui(pkt, G_TEXCLIP_DJUI, rot, x1, y1, x2, y2)
++#define gDPSetTextureOverrideDjui(pkt, texture, w, h, bitSize) gSetOverrideDjui(pkt, G_TEXOVERRIDE_DJUI, texture, w, h, bitSize)
+diff --git a/src/pc/gfx/gfx_pc.c b/src/pc/gfx/gfx_pc.c
+index 8bef45d..9537000 100644
+--- a/src/pc/gfx/gfx_pc.c
++++ b/src/pc/gfx/gfx_pc.c
+@@ -212,6 +212,12 @@ static inline size_t string_hash(const uint8_t *str) {
+ }
+ #endif
+ 
++//////////////////////////////////
++// forward declaration for djui //
++//////////////////////////////////
++void djui_gfx_run_dl(Gfx* cmd);
++//////////////////////////////////
++
+ #ifdef TARGET_N3DS
+ static void gfx_set_2d(int mode_2d)
+ {
+@@ -1664,6 +1670,8 @@ static inline void *seg_addr(uintptr_t w1) {
+ #define C0(pos, width) ((cmd->words.w0 >> (pos)) & ((1U << width) - 1))
+ #define C1(pos, width) ((cmd->words.w1 >> (pos)) & ((1U << width) - 1))
+ 
++#include "pc/djui_gbi.h"
++
+ static void gfx_run_dl(Gfx* cmd) {
+     //int dummy = 0;
+     for (;;) {
+@@ -1896,6 +1904,9 @@ static void gfx_run_dl(Gfx* cmd) {
+             case G_SETCIMG:
+                 gfx_dp_set_color_image(C0(21, 3), C0(19, 2), C0(0, 11), seg_addr(cmd->words.w1));
+                 break;
++            default:
++                djui_gfx_run_dl(cmd);
++                break;
+ #ifdef TARGET_N3DS
+             case G_SPECIAL_1:
+                 gfx_set_2d(cmd->words.w1);
+@@ -2046,3 +2057,167 @@ void gfx_shutdown(void) {
+         framebuffer_data = NULL;
+     }
+ }
++
++  /////////////////////////
++ // v custom for djui v //
++/////////////////////////
++
++static bool    sDjuiClip          = 0;
++static bool    sDjuiClipRotatedUV = 0;
++static uint8_t sDjuiClipX1        = 0;
++static uint8_t sDjuiClipY1        = 0;
++static uint8_t sDjuiClipX2        = 0;
++static uint8_t sDjuiClipY2        = 0;
++
++static bool    sDjuiOverride        = false;
++static void*   sDjuiOverrideTexture = NULL;
++static uint32_t sDjuiOverrideW       = 0;
++static uint32_t sDjuiOverrideH       = 0;
++static uint32_t sDjuiOverrideB       = 0;
++
++static void djui_gfx_dp_execute_clipping(void) {
++    if (!sDjuiClip) { return; }
++    sDjuiClip = false;
++
++    size_t start_index = 0;
++    size_t dest_index = 4;
++
++    float minX = rsp.loaded_vertices[start_index].x;
++    float maxX = rsp.loaded_vertices[start_index].x;
++    float minY = rsp.loaded_vertices[start_index].y;
++    float maxY = rsp.loaded_vertices[start_index].y;
++
++    float minU = rsp.loaded_vertices[start_index].u;
++    float maxU = rsp.loaded_vertices[start_index].u;
++    float minV = rsp.loaded_vertices[start_index].v;
++    float maxV = rsp.loaded_vertices[start_index].v;
++
++    for (size_t i = start_index; i < dest_index; i++) {
++        struct LoadedVertex* d = &rsp.loaded_vertices[i];
++        minX = fmin(minX, d->x);
++        maxX = fmax(maxX, d->x);
++        minY = fmin(minY, d->y);
++        maxY = fmax(maxY, d->y);
++
++        minU = fmin(minU, d->u);
++        maxU = fmax(maxU, d->u);
++        minV = fmin(minV, d->v);
++        maxV = fmax(maxV, d->v);
++    }
++
++    float midY = (minY + maxY) / 2.0f;
++    float midX = (minX + maxX) / 2.0f;
++    float midU = (minU + maxU) / 2.0f;
++    float midV = (minV + maxV) / 2.0f;
++    for (size_t i = start_index; i < dest_index; i++) {
++        struct LoadedVertex* d = &rsp.loaded_vertices[i];
++        if (d->x <= midX) {
++            d->x += (maxX - minX) * (sDjuiClipX1 / 255.0f);
++        } else {
++            d->x -= (maxX - minX) * (sDjuiClipX2 / 255.0f);
++        }
++        if (d->y <= midY) {
++            d->y += (maxY - minY) * (sDjuiClipY2 / 255.0f);
++        } else {
++            d->y -= (maxY - minY) * (sDjuiClipY1 / 255.0f);
++        }
++
++        if (sDjuiClipRotatedUV) {
++            if (d->u <= midU) {
++                d->u += (maxU - minU) * (sDjuiClipY2 / 255.0f);
++            }
++            else {
++                d->u -= (maxU - minU) * (sDjuiClipY1 / 255.0f);
++            }
++            if (d->v <= midV) {
++                d->v += (maxV - minV) * (sDjuiClipX2 / 255.0f);
++            }
++            else {
++                d->v -= (maxV - minV) * (sDjuiClipX1 / 255.0f);
++            }
++        } else {
++            if (d->u <= midU) {
++                d->u += (maxU - minU) * (sDjuiClipX1 / 255.0f);
++            } else {
++                d->u -= (maxU - minU) * (sDjuiClipX2 / 255.0f);
++            }
++            if (d->v <= midV) {
++                d->v += (maxV - minV) * (sDjuiClipY1 / 255.0f);
++            } else {
++                d->v -= (maxV - minV) * (sDjuiClipY2 / 255.0f);
++            }
++        }
++    }
++}
++
++static void djui_gfx_dp_execute_override(void) {
++    if (!sDjuiOverride) { return; }
++    sDjuiOverride = false;
++
++    // gsDPSetTextureImage
++    uint8_t sizeLoadBlock = (sDjuiOverrideB == 32) ? 3 : 2;
++    rdp.texture_to_load.addr = sDjuiOverrideTexture;
++    rdp.texture_to_load.siz = sizeLoadBlock;
++
++    // gsDPSetTile
++    rdp.texture_tile.siz = sizeLoadBlock;
++
++    // gsDPLoadBlock
++    uint32_t wordSizeShift = (sDjuiOverrideB == 32) ? 2 : 1;
++    uint32_t lrs = (sDjuiOverrideW * sDjuiOverrideH) - 1;
++    uint32_t sizeBytes = (lrs + 1) << wordSizeShift;
++    rdp.loaded_texture[rdp.texture_to_load.tile_number].size_bytes = sizeBytes;
++    rdp.loaded_texture[rdp.texture_to_load.tile_number].addr = rdp.texture_to_load.addr;
++    rdp.textures_changed[rdp.texture_to_load.tile_number] = true;
++
++    // gsDPSetTile
++    uint32_t line = (((sDjuiOverrideW * 2) + 7) >> 3);
++    rdp.texture_tile.line_size_bytes = line * 8;
++
++    // gsDPSetTileSize
++    /*rdp.texture_tile.uls = 0;
++    rdp.texture_tile.ult = 0;
++    rdp.texture_tile.lrs = (sDjuiOverrideW - 1) << G_TEXTURE_IMAGE_FRAC;
++    rdp.texture_tile.lrt = (sDjuiOverrideH - 1) << G_TEXTURE_IMAGE_FRAC;*/
++    rdp.textures_changed[0] = true;
++    rdp.textures_changed[1] = true;
++}
++
++static void djui_gfx_dp_execute_djui(uint32_t opcode) {
++    switch (opcode) {
++        case G_TEXOVERRIDE_DJUI: djui_gfx_dp_execute_override(); break;
++        case G_TEXCLIP_DJUI:     djui_gfx_dp_execute_clipping(); break;
++    }
++}
++
++static void djui_gfx_dp_set_clipping(bool rotatedUV, uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2) {
++    sDjuiClipRotatedUV = rotatedUV;
++    sDjuiClipX1 = x1;
++    sDjuiClipY1 = y1;
++    sDjuiClipX2 = x2;
++    sDjuiClipY2 = y2;
++    sDjuiClip   = true;
++}
++
++static void djui_gfx_dp_set_override(void* texture, uint32_t w, uint32_t h, uint32_t b) {
++    sDjuiOverrideTexture = texture;
++    sDjuiOverrideW = w;
++    sDjuiOverrideH = h;
++    sDjuiOverrideB = b;
++    sDjuiOverride  = (texture != NULL);
++}
++
++void djui_gfx_run_dl(Gfx* cmd) {
++    uint32_t opcode = cmd->words.w0 >> 24;
++    switch (opcode) {
++        case G_TEXCLIP_DJUI:
++            djui_gfx_dp_set_clipping(C0(0, 8), C0(16, 8), C0(8, 8), C1(16, 8), C1(8, 8));
++            break;
++        case G_TEXOVERRIDE_DJUI:
++            djui_gfx_dp_set_override(seg_addr(cmd->words.w1), 1 << C0(16, 8), 1 << C0(8, 8), C0(0, 8));
++            break;
++        case G_EXECUTE_DJUI:
++            djui_gfx_dp_execute_djui(cmd->words.w1);
++            break;
++    }
++}
+diff --git a/textures/segment2/custom_font_normal_char_03.ia4.png b/textures/segment2/custom_font_normal_char_03.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..83f5e9e04cc047c40bbe2bb50c19ce96be20e303
+GIT binary patch
+literal 110
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IU1fWjv*3L
+zlM@yg{rD{J=)|DBOND2Hfl&gJ&tD!MpB9}~X_sZJJUk2y*8I;;X)N0c)WhKE>gTe~
+HDWM4fD484#
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_04.ia4.png b/textures/segment2/custom_font_normal_char_04.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..df39f225da005be2f8d953a01da3fe09a78a54ac
+GIT binary patch
+literal 108
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IclCRjv*3L
+zlM@!G|M>j>e7ywsYLiVOPMpelwmLl#J`U!b?LsM;42j~B$He(Krvr5`c)I$ztaD0e
+F0stRb8)g6i
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_10.ia4.png b/textures/segment2/custom_font_normal_char_10.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..46931ec9deca9a3ca3e8d935e238a58cb715646d
+GIT binary patch
+literal 106
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IVzqmjv*3L
+zlM^I3K0LQ)GBz-H6m;mofkPe6j4o2kS{87!++|>h&=Gv*@xDYBsGh;o)z4*}Q$iB}
+D>)sqn
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_11.ia4.png b/textures/segment2/custom_font_normal_char_11.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..abf6f5f8af44aa4f4a47b9fe36a56416968fc635
+GIT binary patch
+literal 101
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Ir5$^jv*3L
+ylM@yg{rD^&+tN8f%q?eEq{K!|)$3eM3=GT)tbeBe-R2Hd%HZkh=d#Wzp$PzPcN+l!
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_15.ia4.png b/textures/segment2/custom_font_normal_char_15.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..0488c28af4b5387364f450412593c52532512945
+GIT binary patch
+literal 108
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IclCRjv*3L
+zlM@zLCLGcG^W2^p2)LESSUEI#gfA?eAd)a$Nr-_#tDA$>(}39msDr`N)z4*}Q$iB}
+Do%R>h
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_26.ia4.png b/textures/segment2/custom_font_normal_char_26.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..43149dfde4b565566e0f195a2316b7ee7ff987fe
+GIT binary patch
+literal 93
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IpUr!jv*3L
+qlM^JY9-RMg|Nmm7zyX(yHyM_FV}EbwT&V(7!r<xZ=d#Wzp$P!Q(HYMG
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_27.ia4.png b/textures/segment2/custom_font_normal_char_27.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..a15092a5985ca0ab9522533d51b37947954af85f
+GIT binary patch
+literal 97
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Intgkjv*3L
+ulM^JY9-RMg|Nmm7zyTIPl^}C728RBvybsQ7nH>&P#^CAd=d#Wzp$Py6)*0{s
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_28.ia4.png b/textures/segment2/custom_font_normal_char_28.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..f03c311f4ac444e69a891fb8d37e855fb08acbcb
+GIT binary patch
+literal 97
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Intgkjv*3L
+ulM^IN9-Oa#lcVER;Bk1#2am^>cp2m`^WJN75dRNU#^CAd=d#Wzp$PycksCJv
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_29.ia4.png b/textures/segment2/custom_font_normal_char_29.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..8d2efa278df8432f7aa84cfd7321463b5be87501
+GIT binary patch
+literal 95
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Ig*|(jv*3L
+rlM^ID9-Oad>16O}*&-O?0MvB(IP>qLVjngF6)||a`njxgN@xNAvr-t3
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_30.ia4.png b/textures/segment2/custom_font_normal_char_30.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..493fd04eeb4ba6d54c7f8dd50b3d42dc98d52227
+GIT binary patch
+literal 97
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Intgkjv*3L
+ulM^IT9-Oalx>Pacz>)$DM=`fhCWh$Ey!V2cTG)Wf7(8A5T-G@yGywnr9~kcd
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_32.ia4.png b/textures/segment2/custom_font_normal_char_32.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..d74a007da79d816fc5c5e0bab993e0d6320351f5
+GIT binary patch
+literal 131
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IkuiIjv*3L
+zOZ`rBF(~lNy70e#V?ukx+0c1M#Fe;Kq%apgzA;s~mGOP>woPYx0`^^3;or{sD)Ybo
+eyUBXjtA$^MYp?$^#W(?I5QC?ypUXO@geCwrNh|>X
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_59.ia4.png b/textures/segment2/custom_font_normal_char_59.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..0855e3ed9ec6c0fc57fe661d236a1f198fe11a7d
+GIT binary patch
+literal 95
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Ig*|(jv*3L
+slM^IV9-Obgv&g5#Wb*^#W(@`g2M^XCFHSb>0V-nfboFyt=akR{0Nr01>Hq)$
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_60.ia4.png b/textures/segment2/custom_font_normal_char_60.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..e61513af4ae5936847bdd7429f707a51ac410ecd
+GIT binary patch
+literal 112
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Ia;1Bjv*3L
+zlM@zLCZr@JB>eb1zYz#p1(!2%99YNWEWXQV&9O(@MR<WqyE$0ZsxtQgbuoCl`njxg
+HN@xNA*c~4+
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_61.ia4.png b/textures/segment2/custom_font_normal_char_61.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..97c7260d6eead3817dd526dc386b3d8710b1519a
+GIT binary patch
+literal 103
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2If|Yxjv*3L
+zlM^H=4xBh};J}CH_GO-8ZW_$HnL0FtkLEEjxK^?LvMClY1S)3mboFyt=akR{0JG&A
+AH~;_u
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_62.ia4.png b/textures/segment2/custom_font_normal_char_62.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..152501c6635441c49efef013e5ae7dead3a40fd1
+GIT binary patch
+literal 89
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Il`VUjv*3L
+llM^H)K0LRVoiagzm*K-!&KJGP<xN0o22WQ%mvv4FO#mS{76<?U
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_63.ia4.png b/textures/segment2/custom_font_normal_char_63.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..0e43fff7919d3c7e568c2d107e0814d57a3d7c6c
+GIT binary patch
+literal 92
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IbxnJjv*3L
+plM@#3|M)DwT}D{(Y)JqEgMAMZ%Pa5sM}R6AJYD@<);T3K0RU$g7SaF!
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_64.ia4.png b/textures/segment2/custom_font_normal_char_64.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..43739cb3cb7bfac64bb90e7a14861990de00f82e
+GIT binary patch
+literal 106
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IVzqmjv*3L
+zlM^IXJvjg0{(oYQTa1?k5JX5wO3c`xozR%g!qB>o^?&O3H}*jF44$rjF6*2UngIWG
+B9S;Bi
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_91.ia4.png b/textures/segment2/custom_font_normal_char_91.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..f2ca1d931f8e9a28fe81efce9594866a39333368
+GIT binary patch
+literal 101
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2Ir5$^jv*3L
+ylM^IV9-Obgv&g5##CXxHgNHg!9ZS;LRmyO01NVnLHvB-93=E#GelF{r5}E+CupMLo
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_92.ia4.png b/textures/segment2/custom_font_normal_char_92.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..e7e031c1144de94fd7ff046a310a00dbafa7c09d
+GIT binary patch
+literal 96
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IZ~c3jv*3L
+tlM^KP8YVV2Ha<LG|7Ma-kIM`OhRRD!Oy4yE&jD32c)I$ztaD0e0s!qD8KeLJ
+
+literal 0
+HcmV?d00001
+
+diff --git a/textures/segment2/custom_font_normal_char_93.ia4.png b/textures/segment2/custom_font_normal_char_93.ia4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..38a36ab58a63f5893b98a53813dcdb7a730f5104
+GIT binary patch
+literal 109
+zcmeAS@N?(olHy`uVBq!ia0vp^0zk~c!2%?s>bJ`PDaPU;cPEB*=VV?2IqIG+jv*3L
+zlM^IL9-RMg|3A=GB2h?SR;%FDvkh9kc~Z<kAgt)k_*97dgG`Q^Hc$(Lr>mdKI;Vst
+E04}o|dH?_b
+
+literal 0
+HcmV?d00001
+

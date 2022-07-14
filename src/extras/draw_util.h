@@ -20,6 +20,8 @@ extern Gfx dl_texture_rect_ex_end[];
 extern Gfx dl_tri_quad_ex_start[];
 extern Gfx dl_tri_quad_ex_end[];
 
+u8 ascii_to_font_char(u8 c);
+
 s16 get_hud_str_width(u8 *str);
 s16 get_hud_str_width_ascii(char *str);
 s16 get_string_width_ascii(char *str);

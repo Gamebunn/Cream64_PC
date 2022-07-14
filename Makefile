@@ -1020,7 +1020,9 @@ endif
 ifeq ($(WINDOWS_BUILD),1)
   CC_CHECK := $(CC) -fsyntax-only -fsigned-char $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -Wall -Wextra -Wno-format-security
   CFLAGS := $(OPT_FLAGS) $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -fno-strict-aliasing -fwrapv
-
+  ifeq ($(TARGET_BITS), 32)
+    BACKEND_LDFLAGS += -ldbghelp
+  endif
 else ifeq ($(TARGET_WEB),1)
   CC_CHECK := $(CC) -fsyntax-only -fsigned-char $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -Wall -Wextra -Wno-format-security -s USE_SDL=2
   CFLAGS := $(OPT_FLAGS) $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -fno-strict-aliasing -fwrapv -s USE_SDL=2
@@ -1771,6 +1773,12 @@ $(APK_SIGNED): $(APK)
 	$(V)cp $< $@
 	$(V)apksigner sign --cert $(PLATFORM_DIR)/certificate.pem --key $(PLATFORM_DIR)/key.pk8 $@
 endif
+endif
+
+ifeq ($(WINDOWS_BUILD),1)
+all: PC_EXE_MAP
+PC_EXE_MAP: $(EXE)
+	@objdump -t $(EXE) > $(BUILD_DIR)/sm64pc.map
 endif
 
 $(EXE): $(O_FILES) $(MIO0_FILES:.mio0=.o) $(ULTRA_O_FILES) $(GODDARD_O_FILES) $(BUILD_DIR)/$(RPC_LIBS)

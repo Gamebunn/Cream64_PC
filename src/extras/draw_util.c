@@ -76,7 +76,7 @@ Gfx dl_tri_quad_ex_end[] = {
  * Converts ASCII to hex values (Vanilla) used in generic strings and dialogs.
  * Note, if you edited charmap.txt you may need to edit this function as well.
  */
-static u8 ascii_to_font_char(u8 c) {
+u8 ascii_to_font_char(u8 c) {
     if (c >= '0' && c <= '9')
         return (c - '0' + 0x00);
 
