@@ -635,6 +635,7 @@ extern const BehaviorScript bhvToadMessageMarine2[];
 extern const BehaviorScript bhvToadMessageMarine3[];
 extern const BehaviorScript bhvToadMessageTails1[];
 extern const BehaviorScript bhvWarpRing[];
+extern const BehaviorScript bhvAmyBoo[];
 
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/include_behaviors.h"

@@ -273,6 +273,7 @@ s32 set_obj_anim_with_accel_and_sound(s16 a0, s16 a1, s32 a2) {
 #include "behaviors/npc_explosion.inc.c"
 #include "behaviors/explosion_nd.inc.c"
 #include "behaviors/cheese_follow.inc.c"
+#include "behaviors/boo_amy.inc.c"
 
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/code.inc.c"
