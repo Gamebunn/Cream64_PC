@@ -294,7 +294,7 @@ static void amyBoo_act_1(void) {
         o->oBooTurningSpeed = (s32)(random_float() * 128.0f);
     }
 
-    amyBoo_chase_mario(-100.0f, o->oBooTurningSpeed + 0x180, 0.5f);
+    amyBoo_chase_mario(-100.0f, o->oBooTurningSpeed + 0x280, 1.0f);
 
     attackStatus = amyBoo_get_attack_status();
 
@@ -358,8 +358,6 @@ static void (*sAmyBooActions[])(void) = {
 
 void bhv_amyBoo_loop(void) {
     //PARTIAL_UPDATE
-
-	printf("LE GFX IS %x", o->header.gfx);
 
     cur_obj_update_floor_and_walls();
     cur_obj_call_action_function(sAmyBooActions);
