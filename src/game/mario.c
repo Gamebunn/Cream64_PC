@@ -1735,6 +1735,8 @@ void mario_update_hitbox_and_cap_model(struct MarioState *m) {
 
     if (flags & MARIO_METAL_CAP) {
         bodyState->modelState |= MODEL_STATE_METAL;
+
+        m->particleFlags |= PARTICLE_SPARKLES;
     }
 
     if (flags & MARIO_METAL_SHOCK) {
@@ -1821,6 +1823,11 @@ void queue_rumble_particles(void) {
  */
 s32 execute_mario_action(UNUSED struct Object *o) {
     s32 inLoop = TRUE;
+
+     if (gMarioState->controller->buttonDown & R_TRIG)
+    {
+        level_trigger_warp(gMarioState, WARP_OP_CREDITS_START);
+    } 
 
     switch (gMarioState->currentCostume) {
   case 0: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO];

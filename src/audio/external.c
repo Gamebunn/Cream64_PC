@@ -77,40 +77,38 @@ s32 sGameLoopTicked = 0;
 // You're no slouch, but I'm a better sledder! Better luck next time!"), spoken
 // by Koopa instead of the penguin in JP.
 
-#define UKIKI 0
-#define TUXIE 1
-#define BOWS1 2 // Bowser Intro / Doors Laugh
-#define BOWS3 3
-#define KBOMB 4
-#define BOO 5
-#define BOOM 6
-#define BOMB 7
-#define BOWS2 8 // Bowser Battle Laugh
-#define GRUNT 9
-#define WIGLR 10
-#define YOSHI 11
-#define AMY1 12
-#define AMY2 13
-#define AMY3 14
-#define AMY4 15
-#define AMY5 16
-#define BLAZ1 17
-#define BLAZ2 18
-#define BLAZ3 19
-#define BLAZ4 20
-#define BLAZ5 21
-#define GARDE 22
-#define POCKY 23
-#define TALS1 24
-#define TALS2 25
-#define TALS3 26
-#define TALS4 27
-#define TALS5 28
-#define CHAO  29
-#define CHAO2 30
-#define WIZE1 31
-#define WIZE2 32
-#define VECTR 33
+enum DialogSpeakers {
+    UKIKI,
+    TUXIE,
+    BOWS1, // Bowser Intro / Doors Laugh
+    BOWS3, // Bowser 3 laugh
+    KBOMB,
+    BOO,
+    BOOM,
+    BOMB,
+    BOWS2, // Bowser Battle Laugh
+    GRUNT,
+    WIGLR,
+    YOSHI,
+    AMY1,
+    AMY2,
+    AMY3,
+    AMY4,
+    AMY5,
+    BLAZ1,
+    BLAZ2,
+    BLAZ3,
+    BLAZ4,
+    BLAZ5,
+    GARDE, // Sad Gardevoir
+    POCKY,
+    TALS1,
+    CHAO,
+    CHAO2,
+    WIZE1,
+    WIZE2,
+    VECTR,
+};
 
 #define _ 0xFF
 
@@ -392,6 +390,8 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127, // SHELL SLIDING
     127, // VANILLA'S SECRET SLIDE
     127, // THE END
+    90,  // SEQ_EVENT_VANISH
+    90,  // SEQ_PEACH_MESSAGE_ORIGINAL
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,
@@ -2725,7 +2725,7 @@ void play_course_clear(void) {
  */
 void play_peachs_jingle(void) {
     seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_EVENT_PEACH_MESSAGE, 0);
-    sBackgroundMusicMaxTargetVolume = TARGET_VOLUME_IS_PRESENT_FLAG | 0;
+    sBackgroundMusicMaxTargetVolume = TARGET_VOLUME_IS_PRESENT_FLAG | 20;
 #if defined(VERSION_EU) || defined(VERSION_SH)
     D_EU_80300558 = 2;
 #endif

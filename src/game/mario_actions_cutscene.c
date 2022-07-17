@@ -43,6 +43,12 @@ static struct Object *sIntroWarpPipeObj;
 static struct Object *sEndPeachObj;
 static struct Object *sEndRightToadObj;
 static struct Object *sEndLeftToadObj;
+static struct Object *sEndExtraToadObj;
+static struct Object *sEndExtraToad2Obj;
+static struct Object *sEndKatalinaObj;
+static struct Object *sEndRudeToadObj;
+static struct Object *sEndBlazeObj;
+static struct Object *sEndMarineObj;
 static struct Object *sEndJumboStarObj;
 static UNUSED s32 sUnused;
 static s16 sEndPeachAnimation;
@@ -56,7 +62,7 @@ static s8 D_8032CBE4 = 0;
 static s8 D_8032CBE8 = 0;
 static s8 D_8032CBEC[7] = { 2, 3, 2, 1, 2, 3, 2 };
 
-static u8 sStarsNeededForDialog[] = { 1, 3, 8, 30, 50, 70 };
+static u8 sStarsNeededForDialog[] = { 3, 8, 30, 50, 70, 120 };
 
 /**
  * Data for the jumbo star cutscene. It specifies the flight path after triple
@@ -413,7 +419,7 @@ s32 act_reading_npc_dialog(struct MarioState *m) {
         headTurnAmount = -1024;
     }
     if (m->actionArg == MARIO_DIALOG_LOOK_DOWN) {
-        headTurnAmount = 384;
+        headTurnAmount = 0;
     }
 
     if (m->actionState < 8) {
@@ -685,14 +691,18 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                     #endif
                     {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_KEY), 0);
-                    } else {
+                    } else if (gCurrLevelNum == LEVEL_WMOTR) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_NTM_STARGET), 0);
+                    } else  {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_STAR), 0);
                     }
                 }
+                m->marioBodyState->eyeState = MARIO_EYES_LOOK_LEFT;
                 break;
 
             case 42:
                 play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
+                m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
                 break;
 
             case 80:
@@ -703,6 +713,7 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                     create_dialog_box_with_response(gLastCompletedStarNum == 7 ? DIALOG_013 : DIALOG_014);
                     m->actionState = 1;
                 }
+                m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
                 break;
         }
     } else if (m->actionState == 1 && gDialogResponse != DIALOG_RESPONSE_NONE) {
@@ -729,6 +740,7 @@ s32 act_star_dance(struct MarioState *m) {
                                                : MARIO_ANIM_STAR_DANCE);
     general_star_dance_handler(m, 0);
     if (m->actionState != 2 && m->actionTimer >= 40) {
+        m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
         m->marioBodyState->handState = MARIO_HAND_PEACE_SIGN;
     }
     stop_and_set_height_to_floor(m);
@@ -744,6 +756,7 @@ s32 act_star_dance_water(struct MarioState *m) {
     general_star_dance_handler(m, 1);
     if (m->actionState != 2 && m->actionTimer >= 62) {
         m->marioBodyState->handState = MARIO_HAND_PEACE_SIGN;
+        m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
     }
     return FALSE;
 }
@@ -1232,17 +1245,28 @@ s32 act_exit_land_save_dialog(struct MarioState *m) {
         // exit with cap
         case 3:
             animFrame = set_mario_animation(m, MARIO_ANIM_TAKE_CAP_OFF_THEN_ON);
+if (!(animFrame < 12) && animFrame < 80) {
+                m->marioBodyState->eyeState = MARIO_EYES_LOOK_LEFT;
+                        }
+                        if (!(animFrame < 81)) {
+                m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
+                        }
             switch (animFrame) {
+                case 10: 
+                m->marioBodyState->eyeState = MARIO_EYES_CLOSED;
                 case 12:
-                    cutscene_take_cap_off(m);
+                   // cutscene_take_cap_off(m);
                     break;
-                case 37:
-                // fallthrough
+                case 30:
+                play_sound(SOUND_ACTION_TERRAIN_LANDING, m->marioObj->header.gfx.cameraToObject);
                 case 53:
-                    play_sound(SOUND_ACTION_BRUSH_HAIR, m->marioObj->header.gfx.cameraToObject);
+                    // play_sound(SOUND_ACTION_BRUSH_HAIR, m->marioObj->header.gfx.cameraToObject);
                     break;
-                case 82:
-                    cutscene_put_cap_on(m);
+                case 79:
+                   // cutscene_put_cap_on(m);
+                    break;
+                case 80:
+                    play_sound(SOUND_MARIO_HAHA, m->marioObj->header.gfx.cameraToObject);
                     break;
             }
             handle_save_menu(m);
@@ -1820,7 +1844,7 @@ static void intro_cutscene_raise_pipe(struct MarioState *m) {
     sIntroWarpPipeObj->oPosY = camera_approach_f32_symmetric(sIntroWarpPipeObj->oPosY, 260.0f, 10.0f);
 
     if (m->actionTimer == 0) {
-        play_sound(SOUND_MENU_EXIT_PIPE, sIntroWarpPipeObj->header.gfx.cameraToObject);
+        play_sound(SOUND_MENU_PIPE_SLIDE, sIntroWarpPipeObj->header.gfx.cameraToObject);
     }
 
     if (m->actionTimer++ == TIMER_RAISE_PIPE) {
@@ -2207,8 +2231,68 @@ static void end_peach_cutscene_spawn_peach(struct MarioState *m) {
     if (m->actionTimer == 40) {
         obj_mark_for_deletion(sEndJumboStarObj);
 
-        sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+        switch (m->currentCostume) {
+    case 0: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
+break;
+    case 1: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 2: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 3: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 4: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 5: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 6: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 7: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 8: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 9: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 10: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 11: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 12: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 14: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 15: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 16: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 17: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 18: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 19: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+        }
         gCutsceneFocus = sEndPeachObj;
 
         sEndRightToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_TOAD, bhvEndToad, 200,
@@ -2315,7 +2399,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
 
     if (m->actionState == 0) {
         if (animFrame == 8) {
-            cutscene_take_cap_off(m);
+            //cutscene_take_cap_off(m);
         }
 
         if (is_anim_at_end(m)) {
@@ -2466,11 +2550,11 @@ static void end_peach_cutscene_dialog_2(struct MarioState *m) {
 
 // blink twice then have half-shut eyes (see end_peach_cutscene_kiss_from_peach)
 static u8 sMarioBlinkOverride[20] = {
-    MARIO_EYES_HALF_CLOSED, MARIO_EYES_HALF_CLOSED, MARIO_EYES_CLOSED, MARIO_EYES_CLOSED,
+    /*MARIO_EYES_HALF_CLOSED, MARIO_EYES_HALF_CLOSED, MARIO_EYES_CLOSED, MARIO_EYES_CLOSED,
     MARIO_EYES_HALF_CLOSED, MARIO_EYES_HALF_CLOSED, MARIO_EYES_OPEN,   MARIO_EYES_OPEN,
     MARIO_EYES_HALF_CLOSED, MARIO_EYES_HALF_CLOSED, MARIO_EYES_CLOSED, MARIO_EYES_CLOSED,
     MARIO_EYES_HALF_CLOSED, MARIO_EYES_HALF_CLOSED, MARIO_EYES_OPEN,   MARIO_EYES_OPEN,
-    MARIO_EYES_HALF_CLOSED, MARIO_EYES_HALF_CLOSED, MARIO_EYES_CLOSED, MARIO_EYES_CLOSED,
+    MARIO_EYES_HALF_CLOSED, MARIO_EYES_HALF_CLOSED, MARIO_EYES_CLOSED, MARIO_EYES_CLOSED,*/
 };
 
 static void end_peach_cutscene_kiss_from_peach(struct MarioState *m) {
@@ -2478,7 +2562,7 @@ static void end_peach_cutscene_kiss_from_peach(struct MarioState *m) {
 
     if (m->actionTimer >= 90) {
         m->marioBodyState->eyeState =
-            m->actionTimer < 110 ? sMarioBlinkOverride[m->actionTimer - 90] : MARIO_EYES_HALF_CLOSED;
+            m->actionTimer < 110 ? sMarioBlinkOverride[m->actionTimer - 90] : MARIO_EYES_LOOK_LEFT;
     }
 
     switch (m->actionTimer) {
@@ -2511,6 +2595,7 @@ static void end_peach_cutscene_kiss_from_peach(struct MarioState *m) {
             break;
 
         case 140:
+            play_sound(SOUND_MARIO_HAHA, m->marioObj->header.gfx.cameraToObject);
             advance_cutscene_step(m);
             break;
     }
@@ -2520,17 +2605,22 @@ static void end_peach_cutscene_star_dance(struct MarioState *m) {
     s32 animFrame = set_mario_animation(m, MARIO_ANIM_CREDITS_PEACE_SIGN);
 
     if (animFrame == 77) {
-        cutscene_put_cap_on(m);
+        //cutscene_put_cap_on(m);
+    }
+    if (animFrame >= 87) {
+        m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
     }
     if (animFrame == 88) {
         play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
     }
     if (animFrame >= 98) {
         m->marioBodyState->handState = MARIO_HAND_PEACE_SIGN;
+        m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
     }
 
     if (m->actionTimer < 52) {
         m->marioBodyState->eyeState = MARIO_EYES_HALF_CLOSED;
+        m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
     }
 
     switch (m->actionTimer) {
@@ -2776,18 +2866,105 @@ static s32 act_end_waving_cutscene(struct MarioState *m) {
     if (m->actionState == 0) {
         m->statusForCamera->cameraEvent = CAM_EVENT_START_END_WAVING;
 
+        switch (m->currentCostume) {
+    case 0: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 1: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 2: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 3: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 4: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 5: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 6: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 7: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 8: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 9: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 10: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 11: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 12: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 14: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 15: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 16: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 17: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 18: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 19: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    }
+
         sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 
-        sEndRightToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_TOAD, bhvEndToad, 180,
+        sEndRightToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_CHOCOLA_ED, bhvEndToad, 180,
                                                      906, -1170, 0, 0, 0);
 
-        sEndLeftToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_TOAD, bhvEndToad, -180,
+        sEndLeftToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_CHEESE_ED, bhvEndToad, -180,
                                                     906, -1170, 0, 0, 0);
+
+        sEndExtraToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_GEMERL_ED, bhvEndToadGemerl, -250,
+                                                     955, -1070, 0, 0, 0);    
+
+        sEndExtraToad2Obj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_MARK_ED, bhvEndToadMark, -350,
+                                                    825, -670, 0, 0, 0);
+
+        sEndKatalinaObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_KATALINA_ED, bhvEndToadKatalina, -350,
+                                                   830, -270, 0, 0, 0);
+
+        sEndBlazeObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_BLAZE_ED, bhvEndToadBlaze, 250,
+                                                     933, -1070, 0, 0, 0);    
+
+        sEndMarineObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_TAILS_ED, bhvEndToadTails, 350,
+                                                    890, -670, 0, 0, 0);
+
+        sEndRudeToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_AMY_ED, bhvEndToadAmy, 350,
+                                                    830, -270, 0, 0, 0);
 
         sEndPeachObj->oOpacity = 255;
         sEndRightToadObj->oOpacity = 255;
         sEndLeftToadObj->oOpacity = 255;
+        sEndExtraToadObj->oOpacity = 255;       
+        sEndExtraToad2Obj->oOpacity = 255;    
+        sEndKatalinaObj->oOpacity = 255;    
+        sEndBlazeObj->oOpacity = 255;    
+        sEndMarineObj->oOpacity = 255;    
+        sEndRudeToadObj->oOpacity = 255;   
 
         sEndPeachAnimation = 11;
         sEndToadAnims[0] = 6;

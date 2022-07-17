@@ -1407,6 +1407,20 @@ u32 interact_bounce_top(struct MarioState *m, UNUSED u32 interactType, struct Ob
         queue_rumble_data(5, 80);
 #endif
         attack_object(o, interaction);
+               if (o->behavior != segmented_to_virtual(bhvBoo)
+            &&     o->behavior != segmented_to_virtual(bhvAmyBoo)
+            &&     o->behavior != segmented_to_virtual(bhvBooWithCage)
+            &&     o->behavior != segmented_to_virtual(bhvMerryGoRoundBoo)
+            &&     o->behavior != segmented_to_virtual(bhvMerryGoRoundBigBoo)
+            &&     o->behavior != segmented_to_virtual(bhvGhostHuntBoo)
+            &&     o->behavior != segmented_to_virtual(bhvGhostHuntBigBoo)
+            &&     o->behavior != segmented_to_virtual(bhvBalconyBigBoo)
+            &&     o->behavior != segmented_to_virtual(bhvEyerokBoss)
+            &&     o->behavior != segmented_to_virtual(bhvEyerokHand)            
+            &&     o->behavior != segmented_to_virtual(bhvWigglerBody)
+            &&     o->behavior != segmented_to_virtual(bhvWigglerHead)) {
+                            spawn_object(o, MODEL_EXPLOSION, bhvExplosionNoDmg);
+        }
         bounce_back_from_attack(m, interaction);
 
         if (interaction & INT_HIT_FROM_ABOVE) {
@@ -1638,20 +1652,14 @@ u32 interact_cap(struct MarioState *m, UNUSED u32 interactType, struct Object *o
         m->flags |= capFlag;
 
         switch (capFlag) {
-            case MARIO_VANISH_CAP:
-                capTime = 600;
-                capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_POWERUP);
-                break;
-
-            case MARIO_METAL_CAP:
-                capTime = 600;
-                capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_METAL_CAP);
-                break;
-
-            case MARIO_WING_CAP:
-                capTime = 1800;
-                capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_POWERUP);
-                break;
+            case MARIO_VANISH_CAP: capTime =  600; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_VANISH  ); break;
+            case MARIO_METAL_CAP:  capTime =  600; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_METAL_CAP); break;
+            case MARIO_WING_CAP: if(gCurrLevelNum == LEVEL_WMOTR)  {
+                    capTime = 1800; break;
+                }
+                else {
+                    capTime = 1800; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_POWERUP  ); break;
+                }
         }
 
         if (capTime > m->capTimer) {

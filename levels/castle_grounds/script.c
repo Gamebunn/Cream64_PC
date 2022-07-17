@@ -90,7 +90,7 @@ static const LevelScript script_func_local_4[] = {
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/  5473,  775, -5322, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -1504,  326,  3196, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvButterfly),
     OBJECT(/*model*/ MODEL_BUTTERFLY, /*pos*/ -1204,  326,  3296, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvButterfly),
-    OBJECT(/*model*/ MODEL_YOSHI,     /*pos*/     0, 3174, -5625, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvYoshi),
+    OBJECT(/*model*/ MODEL_MARK,     /*pos*/     0, 3174, -5625, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvYoshi),
     RETURN(),
 };
 

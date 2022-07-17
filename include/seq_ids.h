@@ -70,6 +70,8 @@ enum SeqId {
     SEQ_SHELLSLIDE,                   // 0x3A VS SHELL SLIDING
     SEQ_PSS_LEAFFOREST,               // 0x3B VS PSS - LEAF FOREST BETA
     SEQ_THEEND,                       // 0x3C VS THE END
+    SEQ_EVENT_VANISH,                 // 0x3D VANISH CAP
+    SEQ_EVENT_PEACH_MESSAGE_ORI,      // 0x3E ORIGINAL PEACH MESSAGE
     SEQ_COUNT
 };
 

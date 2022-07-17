@@ -21,15 +21,15 @@
             "hang"
         ],
         "envelope3": [
-            [2, 32700],
-            [1, 32700],
-            [32700, 29430],
+            [6, 32700],
+            [298, 0],
+            [1, 0],
             "hang"
         ],
         "envelope4": [
             [2, 32700],
-            [1, 32700],
-            [32700, 29430],
+            [205, 0],
+            [1, 0],
             "hang"
         ],
         "envelope5": [
@@ -46,8 +46,8 @@
         ],
         "envelope7": [
             [2, 32700],
-            [55, 32700],
-            [127, 0],
+            [1, 32700],
+            [32700, 29430],
             "hang"
         ],
         "envelope8": [
@@ -55,29 +55,131 @@
             [1, 32700],
             [32700, 29430],
             "hang"
+        ],
+        "envelope9": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope10": [
+            [6, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope11": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope12": [
+            [2, 32700],
+            [205, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope13": [
+            [3, 32700],
+            [298, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope14": [
+            [11, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
         ]
     },
     "instruments": {
         "inst0": {
-            "release_rate": 208,
+            "release_rate": 19,
             "envelope": "envelope0",
-            "sound": "22_boys_choir"
+            "sound": "43_harmonica"
         },
         "inst1": {
             "release_rate": 208,
             "envelope": "envelope1",
-            "sound": "36_sawtooth_synth"
+            "sound": "1A_slap_bass"
         },
         "inst2": {
             "release_rate": 208,
             "envelope": "envelope2",
-            "sound": "37_square_synth"
+            "sound": "1C"
         },
         "inst3": {
-            "release_rate": 208,
+            "release_rate": 10,
             "envelope": "envelope3",
-            "sound": "29_orchestra_hit"
+            "sound": "26_crystal_rhodes"
         },
+        "inst4": {
+            "release_rate": 34,
+            "envelope": "envelope4",
+            "sound": "44_grand_piano"
+        },
+        "inst5": {
+            "release_rate": 53,
+            "normal_range_hi": 50,
+            "envelope": "envelope5",
+            "sound": "16_french_horns",
+            "sound_hi": "45_french_horns_lq"
+        },
+        "inst6": {
+            "release_rate": 10,
+            "normal_range_lo": 24,
+            "envelope": "envelope6",
+            "sound_lo": "0E_hihat_closed",
+            "sound": "0F_hihat_open"
+        },
+        "inst7": {
+            "release_rate": 10,
+            "normal_range_lo": 28,
+            "normal_range_hi": 28,
+            "envelope": "envelope7",
+            "sound_lo": "10_cymbal_bell",
+            "sound": "11_splash_cymbal",
+            "sound_hi": "10_cymbal_bell"
+        },
+        "inst8": {
+            "release_rate": 208,
+            "normal_range_lo": 60,
+            "normal_range_hi": 60,
+            "envelope": "envelope8",
+            "sound_lo": "1E_closed_triangle",
+            "sound": "1F_open_triangle",
+            "sound_hi": "20_cabasa"
+        },
+        "inst9": {
+            "release_rate": 43,
+            "envelope": "envelope9",
+            "sound": "41_pan_flute"
+        },
+        "inst10": {
+            "release_rate": 15,
+            "normal_range_lo": 27,
+            "normal_range_hi": 46,
+            "envelope": "envelope10",
+            "sound_lo": "23_strings_1",
+            "sound": "24_strings_2",
+            "sound_hi": "25_strings_3"
+        },
+        "inst11": {
+            "release_rate": 10,
+            "envelope": "envelope12",
+            "sound": "44_grand_piano"
+        },
+        "inst12": {
+            "release_rate": 10,
+            "envelope": "envelope13",
+            "sound": "26_crystal_rhodes"
+        },
+        "inst13": {
+            "release_rate": 34,
+            "envelope": "envelope14",
+            "sound": "43_harmonica"
+        },  
         "percussion": [
             {"release_rate": 10, "pan": 62, "envelope": "envelope4", "sound": {"sample": "06_kick_drum_1", "tuning": 0.210224}},
             {"release_rate": 10, "pan": 62, "envelope": "envelope4", "sound": {"sample": "06_kick_drum_1", "tuning": 0.2227245}},
@@ -143,65 +245,24 @@
             {"release_rate": 10, "pan": 82, "envelope": "envelope4", "sound": {"sample": "0C_conga_stick", "tuning": 1.414214}},
             {"release_rate": 10, "pan": 82, "envelope": "envelope4", "sound": {"sample": "0C_conga_stick", "tuning": 1.498307}},
             {"release_rate": 10, "pan": 128, "envelope": "envelope4", "sound": "0D_clave"}
-        ],
-        "inst4": {
-            "release_rate": 10,
-            "normal_range_lo": 24,
-            "envelope": "envelope5",
-            "sound_lo": "0E_hihat_closed",
-            "sound": "0F_hihat_open"
-        },
-        "inst5": {
-            "release_rate": 208,
-            "normal_range_lo": 60,
-            "normal_range_hi": 60,
-            "envelope": "envelope6",
-            "sound_lo": "1E_closed_triangle",
-            "sound": "1F_open_triangle",
-            "sound_hi": "20_cabasa"
-        },
-        "inst6": {
-            "release_rate": 10,
-            "normal_range_lo": 18,
-            "envelope": "envelope7",
-            "sound_lo": "12_snare_drum_1",
-            "sound": "13_snare_drum_2"
-        },
-        "inst7": {
-            "release_rate": 10,
-            "normal_range_lo": 19,
-            "normal_range_hi": 19,
-            "envelope": "envelope8",
-            "sound_lo": "38_electric_kick_drum",
-            "sound": {"sample": "08", "tuning": 2.121321},
-            "sound_hi": "38_electric_kick_drum"
-        },
-        "inst8": {
-            "release_rate": 208,
-            "envelope": "envelope3",
-            "sound": "29_orchestra_hit"
-        },
-        "inst9": {
-            "release_rate": 208,
-            "envelope": "envelope3",
-            "sound": "29_orchestra_hit"
-        }
+        ]
     },
     "instrument_list": [
         "inst0",
         "inst1",
         "inst2",
         "inst3",
-        "inst8",
-        "inst9",
-        null,
-        null,
-        null,
-        null,
         "inst4",
-        null,
         "inst5",
+        "inst9",
+        "inst10",
+        "inst12",
+        null,
         "inst6",
-        "inst7"
+        "inst7",
+        "inst8",
+        null,
+        "inst13",
+        "inst11"
     ]
 }

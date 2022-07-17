@@ -1,0 +1,171 @@
+{
+    "date": "1996-02-14",
+    "sample_bank": "sfx_9",
+    "envelopes": {
+        "envelope0": [
+            [1, 0],
+            [1, 32700],
+            [1, 32700],
+            [32700, 29430],
+            ["goto", 2]
+        ],
+        "envelope1": [
+            [1, 0],
+            [1, 32700],
+            [1, 32700],
+            [32700, 19620],
+            ["goto", 2]
+        ],
+        "envelope2": [
+            [1, 0],
+            [1, 10000],
+            [30, 10000],
+            [30, 32700],
+            ["goto", 2]
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 208,
+            "normal_range_hi": 50,
+            "envelope": "envelope0",
+            "sound": "00",
+            "sound_hi": "01"
+        },
+        "inst1": {
+            "release_rate": 208,
+            "envelope": "envelope1",
+            "sound": "02"
+        },
+        "inst2": {
+            "release_rate": 208,
+            "envelope": "envelope2",
+            "sound": "00"
+        },
+        "inst3": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "03"
+        },
+        "inst4": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "04_camera_buzz"
+        },
+        "inst5": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "05_camera_shutter"
+        },
+        "inst6": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "06"
+        },
+        "inst7": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "07_amy1_hello"
+        },
+        "inst8": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "08_amy2_3_scared"
+        },
+        "inst9": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "09_amy4_phew"
+        },
+        "inst10": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0A_amy5_thinking"
+        },
+        "inst11": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0B_amy7_happy"
+        },
+        "inst12": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0C_blaze1_hello"
+        },
+        "inst13": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0D_blaze2_hmm"
+        },
+        "inst14": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0E_blaze3_thinking"
+        },
+        "inst15": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "0F_blaze4_anger"
+        },
+        "inst16": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "10_blaze5_lasthello"
+        },
+        "inst17": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "11_tails1"
+        },
+        "inst18": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "12_tails2"
+        },
+        "inst19": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "13_tails3"
+        },
+        "inst20": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "14_tails4"
+        },
+        "inst21": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "15_tails5"
+        },
+        "inst22": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "16_vector"
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4",
+        "inst5",
+        "inst6",
+        "inst7",
+        "inst8",
+        "inst9",
+        "inst10",
+        "inst11",
+        "inst12",
+        "inst13",
+        "inst14",
+        "inst15",
+        "inst16",
+        "inst17",
+        "inst18",
+        "inst19",
+        "inst20",
+        "inst21",
+        "inst22"
+    ]
+}

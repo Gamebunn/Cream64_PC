@@ -84,4 +84,48 @@ void bhv_intro_scene_loop(void) {
 
         gCutsceneObjSpawn = 0;
     }
+
+    switch (gMarioState->currentCostume) {
+    case 0: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 1: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 2: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 3: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 4: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 5: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 6: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 7: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 8: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 9: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 10: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 11: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 12: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 13: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 14: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 15: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    case 16: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
+break;
+    case 17: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
+break;
+    case 18: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
+break;
+    case 19: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
+    }
+    
 }

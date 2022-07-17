@@ -941,7 +941,7 @@ static s32 act_drowning(struct MarioState *m) {
             break;
     }
 
-    play_sound_if_no_flag(m, SOUND_MARIO_DROWNING, MARIO_ACTION_SOUND_PLAYED);
+    //play_sound_if_no_flag(m, SOUND_MARIO_DROWNING, MARIO_ACTION_SOUND_PLAYED);
     stationary_slow_down(m);
     perform_water_step(m);
 

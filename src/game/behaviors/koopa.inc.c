@@ -80,7 +80,11 @@ void bhv_koopa_init(void) {
         // Koopa the Quick. Race index is 0 for BoB and 1 for THI
         o->oKoopaTheQuickRaceIndex = o->oKoopaMovementType - KOOPA_BP_KOOPA_THE_QUICK_BASE;
         o->oKoopaAgility = 4.0f;
-        cur_obj_scale(3.0f);
+        if(gCurrLevelNum == LEVEL_THI) {
+            cur_obj_scale(1.0f); 
+            } else {
+                cur_obj_scale(2.5f);
+            }
     } else {
         o->oKoopaAgility = 1.0f;
     }
@@ -474,7 +478,7 @@ s32 obj_begin_race(s32 noTimer) {
         cur_obj_play_sound_2(SOUND_GENERAL_RACE_GUN_SHOT);
 
         if (!noTimer) {
-            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_LEVEL_SLIDE), 0);
+            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_RACING), 0);
 
             level_control_timer(TIMER_CONTROL_SHOW);
             level_control_timer(TIMER_CONTROL_START);
@@ -618,11 +622,11 @@ static void koopa_the_quick_act_race(void) {
                         && (o->oPathedPrevWaypointFlags & WAYPOINT_MASK_00FF) < 28) {
                         // Move faster if mario has already finished the race or
                         // cheated by shooting from cannon
-                        o->oKoopaAgility = 8.0f;
+                        o->oKoopaAgility = 11.0f;
                     } else if (o->oKoopaTheQuickRaceIndex != KOOPA_THE_QUICK_BOB_INDEX) {
-                        o->oKoopaAgility = 6.0f;
+                        o->oKoopaAgility = 7.0f;
                     } else {
-                        o->oKoopaAgility = 4.0f;
+                        o->oKoopaAgility = 5.5f;
                     }
 
                     obj_forward_vel_approach(o->oKoopaAgility * 6.0f * downhillSteepness,
@@ -708,8 +712,8 @@ static void koopa_the_quick_act_after_race(void) {
     cur_obj_init_animation_with_sound(7);
 
     if (o->parentObj->oKoopaRaceEndpointDialog == 0) {
-        if (cur_obj_can_mario_activate_textbox_2(400.0f, 400.0f)) {
-            stop_background_music(SEQUENCE_ARGS(4, SEQ_LEVEL_SLIDE));
+        if (cur_obj_can_mario_activate_textbox_2(200.0f, 200.0f)) {
+            stop_background_music(SEQUENCE_ARGS(4, SEQ_RACING));
 
             // Determine which text to display
 

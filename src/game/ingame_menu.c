@@ -1615,7 +1615,7 @@ void render_dialog_triangle_choice(void) {
     #define Y_VAL5_2 2
     #define X_Y_VAL6 0.8f
 #elif defined(VERSION_US)
-    #define X_VAL5 118.0f
+    #define X_VAL5 162.0f
     #define Y_VAL5_1 -16
     #define Y_VAL5_2 5
     #define X_Y_VAL6 0.8f
@@ -1667,7 +1667,12 @@ void handle_special_dialog_text(s16 dialogID) { // dialog ID tables, in order
     for (i = 0; i < (s16) ARRAY_COUNT(dialogBossStart); i++) {
         if (dialogBossStart[i] == dialogID) {
             seq_player_unlower_volume(SEQ_PLAYER_LEVEL, 60);
-            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_EVENT_BOSS), 0);
+            if(gCurrLevelNum == LEVEL_SSL) {
+                play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_EVENT_BOSS_WISEMAN), 0);
+                }
+                else {
+                    play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_EVENT_BOSS), 0);
+                }
             return;
         }
     }
@@ -1791,7 +1796,7 @@ s8 gDialogCourseActNum = 1;
 #else
     #define DIAG_VAL2 238
 #endif
-    #define DIAG_VAL3 132
+    #define DIAG_VAL3 170
     #define DIAG_VAL4 5
 #endif
 

@@ -633,6 +633,15 @@ void bowser_act_spit_fire_into_sky(void) {
  */
 void bowser_act_hit_mine(void) {
     // Similar vel values from bowser_fly_back_dead
+
+        if(o->oHealth == 2)
+    {
+        if(!o->unused2)
+            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_LEVEL_EGGMAN3FINALE), 0);
+
+        o->unused2 = 1;
+    }
+    
     if (o->oTimer == 0) {
         o->oForwardVel = -400.0f;
         o->oVelY = 100.0f;
@@ -1555,7 +1564,7 @@ struct SoundState sBowserSoundStates[] = {
     { 0, 0, 0, NO_SOUND },
     { 0, 0, 0, NO_SOUND },
     { 1, 0, -1, SOUND_OBJ_BOWSER_WALK },
-    { 1, 0, -1, SOUND_OBJ2_BOWSER_ROAR },
+    { 1, 0, -1, SOUND_OBJ_BOWSER_PAIN },
     { 1, 0, -1, SOUND_OBJ2_BOWSER_ROAR },
     { 0, 0, 0, NO_SOUND },
     { 0, 0, 0, NO_SOUND },
@@ -1571,8 +1580,8 @@ struct SoundState sBowserSoundStates[] = {
     { 1, 5, -1, SOUND_OBJ_FLAME_BLOWN },
     { 0, 0, 0, NO_SOUND },
     { 0, 0, 0, NO_SOUND },
+    { 1, 0, -1, SOUND_OBJ_BOWSER_PAIN },
     { 1, 0, -1, SOUND_OBJ_BOWSER_TAIL_PICKUP },
-    { 1, 0, -1, SOUND_OBJ2_BOWSER_ROAR },
 };
 
 /**
@@ -1583,7 +1592,7 @@ s8 sBowserRainbowLight[] = { FALSE, FALSE, TRUE };
 /**
  * Set how much health Bowser has on each stage
  */
-s8 sBowserHealth[] = { 1, 1, 3 };
+s8 sBowserHealth[] = { 1, 2, 4 };
 
 /**
  * Update Bowser's actions when he's hands free
