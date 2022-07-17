@@ -189,6 +189,8 @@ const LevelScript level_lll_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/     0,  105,    0, /*angle*/ 0,    0, 0, /*bhvParam*/ BPARAM1(25) | BPARAM2(WARP_NODE_0B), /*bhv*/ bhvWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -3200,   11, 3456, /*angle*/ 0, -100, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0C), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -5888,  154, 6656, /*angle*/ 0,  100, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0D), /*bhv*/ bhvFadingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -3639, 1154, 6272, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  -3461,   154,  6091, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_LLL << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_LLL,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_LLL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,      /*destLevel*/ LEVEL_LLL,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0D, /*flags*/ WARP_NO_CHECKPOINT),
@@ -209,6 +211,7 @@ const LevelScript level_lll_entry[] = {
 
     AREA(/*index*/ 2, lll_geo_000EC0),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -955, 1103, -1029, /*angle*/ 0, 118, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -755, 1103, -1029, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_LLL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 3, /*destNode*/ WARP_NODE_32, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_DEATH,   /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 3, /*destNode*/ WARP_NODE_64, /*flags*/ WARP_NO_CHECKPOINT),
@@ -216,7 +219,7 @@ const LevelScript level_lll_entry[] = {
         JUMP_LINK(script_func_local_7),
         TERRAIN(/*terrainData*/ lll_seg7_area_2_collision),
         MACRO_OBJECTS(/*objList*/ lll_seg7_area_2_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_HOT),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_NEW_LLL2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 

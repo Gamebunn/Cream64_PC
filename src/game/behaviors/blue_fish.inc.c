@@ -131,3 +131,69 @@ void bhv_tank_fish_group_loop(void) {
             break;
     }
 }
+
+void bhv_tank_fish_group2_loop(void) {
+    struct Object *fish;
+    s32 i;
+
+    switch (o->oAction) {
+        case BLUE_FISH_ACT_SPAWN:
+            if (gMarioCurrentRoom == 15 || gMarioCurrentRoom == 7) {
+
+                // spawns fifteen fish and moves them within 200.0f
+                for (i = 0; i < 15; i++) {
+                    fish = spawn_object_relative(0, 300, 0, -200, o, MODEL_FISH_BAIT, bhvBlueFish);
+                    obj_translate_xyz_random(fish, 200.0f);
+                }
+
+                // Proceed to BLUE_FISH_ACT_ROOM phase.
+                o->oAction++;
+            }
+            break;
+
+        // Sets next oAction phase if Mario is not in rooms fifteen and seven.
+        case BLUE_FISH_ACT_ROOM:
+            if (gMarioCurrentRoom != 15 && gMarioCurrentRoom != 7) {
+                o->oAction++;
+            }
+            break;
+
+        // Sets oAction to the BLUE_FISH_ACT_SPAWN phase.
+        case BLUE_FISH_ACT_DUPLICATE:
+            o->oAction = BLUE_FISH_ACT_SPAWN;
+            break;
+    }
+}
+
+void bhv_tank_fish_group3_loop(void) {
+    struct Object *fish;
+    s32 i;
+
+    switch (o->oAction) {
+        case BLUE_FISH_ACT_SPAWN:
+            if (gMarioCurrentRoom == 15 || gMarioCurrentRoom == 7) {
+
+                // spawns fifteen fish and moves them within 200.0f
+                for (i = 0; i < 15; i++) {
+                    fish = spawn_object_relative(0, 300, 0, -200, o, MODEL_FISH_BAIT2, bhvBlueFish);
+                    obj_translate_xyz_random(fish, 200.0f);
+                }
+
+                // Proceed to BLUE_FISH_ACT_ROOM phase.
+                o->oAction++;
+            }
+            break;
+
+        // Sets next oAction phase if Mario is not in rooms fifteen and seven.
+        case BLUE_FISH_ACT_ROOM:
+            if (gMarioCurrentRoom != 15 && gMarioCurrentRoom != 7) {
+                o->oAction++;
+            }
+            break;
+
+        // Sets oAction to the BLUE_FISH_ACT_SPAWN phase.
+        case BLUE_FISH_ACT_DUPLICATE:
+            o->oAction = BLUE_FISH_ACT_SPAWN;
+            break;
+    }
+}

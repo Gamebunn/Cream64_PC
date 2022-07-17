@@ -2153,6 +2153,24 @@ const BehaviorScript bhvTankFishGroup[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvTankFishGroup2[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_tank_fish_group2_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvTankFishGroup3[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_tank_fish_group3_loop),
+    END_LOOP(),
+};
+
 const BehaviorScript bhvCheckerboardElevatorGroup[] = {
     BEGIN(OBJ_LIST_SPAWNER),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
@@ -6482,6 +6500,51 @@ const BehaviorScript bhvWarpRing[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvToadMessageGoombaMarine[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_PERSISTENT_RESPAWN | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_ANIMATIONS(oAnimations, goomba_marine_anims),
+    ANIMATE(0),
+    SET_INTERACT_TYPE(INTERACT_TEXT),
+    SET_HITBOX(/*Radius*/ 80, /*Height*/ 100),
+    SET_INT(oIntangibleTimer, 0),
+    CALL_NATIVE(bhv_init_room),
+    CALL_NATIVE(bhv_toad_message_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_toad_message_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvToadMessageNormal[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_PERSISTENT_RESPAWN | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_ANIMATIONS(oAnimations, toad_normal_anims),
+    ANIMATE(0),
+    SET_INTERACT_TYPE(INTERACT_TEXT),
+    SET_HITBOX(/*Radius*/ 80, /*Height*/ 100),
+    SET_INT(oIntangibleTimer, 0),
+    CALL_NATIVE(bhv_init_room),
+    CALL_NATIVE(bhv_toad_message_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_toad_message_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvToadMessageFloomba[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, (OBJ_FLAG_PERSISTENT_RESPAWN | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_ANIMATIONS(oAnimations, floomba_anims),
+    ANIMATE(0),
+    SET_INTERACT_TYPE(INTERACT_TEXT),
+    SET_HITBOX(/*Radius*/ 80, /*Height*/ 100),
+    SET_INT(oIntangibleTimer, 0),
+    CALL_NATIVE(bhv_init_room),
+    CALL_NATIVE(bhv_toad_message_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_toad_message_loop),
+    END_LOOP(),
+};
+
 //Spooky invincible possessed Amy
 const BehaviorScript bhvAmyBoo[] = {
 	    BEGIN(OBJ_LIST_GENACTOR),
@@ -6502,6 +6565,75 @@ const BehaviorScript bhvAmyBoo[] = {
 	    END_LOOP(),
 };
 
+const BehaviorScript bhvKoopaTails[] = {
+    BEGIN(OBJ_LIST_PUSHABLE),
+    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    DROP_TO_FLOOR(),
+    LOAD_ANIMATIONS(oAnimations, tailsrace_anims),
+    ANIMATE(9),
+    SET_HOME(),
+    SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 50, /*Gravity*/ -400, /*Bounciness*/ 0, /*Drag strength*/ 0, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
+    SCALE(/*Unused*/ 0, /*Field*/ 150),
+    SET_FLOAT(oKoopaAgility, 1),
+    CALL_NATIVE(bhv_koopa_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_koopa_update),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvEndToadGemerl[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_ANIMATIONS(oAnimations, gemerl_ed_anims),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvEndToadBlaze[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_ANIMATIONS(oAnimations, blaze_ed_anims),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvEndToadMark[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_ANIMATIONS(oAnimations, mark_ed_anims),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvEndToadKatalina[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_ANIMATIONS(oAnimations, katalina_ed_anims),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvEndToadTails[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_ANIMATIONS(oAnimations, tails_ed_anims),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvEndToadAmy[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_ANIMATIONS(oAnimations, amy_ed_anims),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+    END_LOOP(),
+};
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/behaviors.inc.c"
 #endif

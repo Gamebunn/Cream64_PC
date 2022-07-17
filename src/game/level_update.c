@@ -1422,3 +1422,8 @@ s32 lvl_play_the_end_screen_sound(UNUSED s16 arg0, UNUSED s32 arg1) {
     play_sound(SOUND_MENU_THANK_YOU_PLAYING_MY_GAME, gGlobalSoundSource);
     return 1;
 }
+
+s32 lvl_play_the_end_screen_sound2(UNUSED s16 arg0, UNUSED s32 arg1) {
+    stop_background_music(SEQUENCE_ARGS(4, SEQ_EVENT_CUTSCENE_CREDITS));
+    play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_THEEND), 0);
+}

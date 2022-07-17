@@ -33,7 +33,7 @@
         "inst4": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "bbh_oddmarch_0"
+            "sound": "bbh_mysticmansion_0"
         },
         "inst5": {
             "release_rate": 10,
@@ -148,7 +148,7 @@
         "inst27": { // 1B
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "eggman3_finalstrike_0"
+            "sound": "eggman3_liveandlearn_0"
         }
     },
     "instrument_list": [

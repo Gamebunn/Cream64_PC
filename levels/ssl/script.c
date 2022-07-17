@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -10,6 +11,7 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
 
 #include "make_const_nonconst.h"
@@ -90,12 +92,17 @@ const LevelScript level_ssl_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_SSL_PYRAMID_ELEVATOR,    ssl_geo_0007AC),
     LOAD_MODEL_FROM_GEO(MODEL_SSL_TOX_BOX,             ssl_geo_000630),
 
+    LOAD_MODEL_FROM_GEO(MODEL_AMY,                        amy_geo),
+
     AREA(/*index*/ 1, ssl_geo_000648),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/   653, 1038,  6566, /*angle*/ 0,  90, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2048,    0,    56, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(WARP_NODE_14), /*bhv*/ bhvWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2048,  768, -1024, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(15) | BPARAM2(WARP_NODE_1E), /*bhv*/ bhvWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  6930,    0, -4871, /*angle*/ 0, 159, 0, /*bhvParam*/ BPARAM2(WARP_NODE_1F), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -5943,    0, -4903, /*angle*/ 0,  49, 0, /*bhvParam*/ BPARAM2(WARP_NODE_20), /*bhv*/ bhvFadingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 453, 1038,  6566, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  439,   0,  6321, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_SSL << 16, /*beh*/ bhvWisp1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  6540, 694,  3059,  /*angle*/ 0, 270, 0, /*behParam*/ AMY_04 << 24, /*beh*/ bhvToadMessageAmy4,   /*acts*/ ACT_4 | ACT_5),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_14,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_1E,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_14, /*flags*/ WARP_CHECKPOINT),
@@ -108,7 +115,7 @@ const LevelScript level_ssl_entry[] = {
         JUMP_LINK(script_func_local_3),
         TERRAIN(/*terrainData*/ ssl_seg7_area_1_collision),
         MACRO_OBJECTS(/*objList*/ ssl_seg7_area_1_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_HOT),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_NEW_SSL),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SAND),
     END_AREA(),
 
@@ -117,6 +124,7 @@ const LevelScript level_ssl_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/    0, 5500,   256, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_14), /*bhv*/ bhvAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 3070, 1280,  2900, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_15), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 2546, 1150, -2647, /*angle*/ 0,  78, 0, /*bhvParam*/ BPARAM2(WARP_NODE_16), /*bhv*/ bhvFadingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 200,  300,  6451, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_14,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_14, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_15,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_16, /*flags*/ WARP_NO_CHECKPOINT),
@@ -128,7 +136,7 @@ const LevelScript level_ssl_entry[] = {
         INSTANT_WARP(/*index*/ 3, /*destArea*/ 3, /*displace*/ 0, 0, 0),
         TERRAIN(/*terrainData*/ ssl_seg7_area_2_collision),
         MACRO_OBJECTS(/*objList*/ ssl_seg7_area_2_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_UNDERGROUND),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_NEW_SSL2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 
@@ -139,7 +147,7 @@ const LevelScript level_ssl_entry[] = {
         TERRAIN(/*terrainData*/ ssl_seg7_area_3_collision),
         MACRO_OBJECTS(/*objList*/ ssl_seg7_area_3_macro_objs),
         INSTANT_WARP(/*index*/ 2, /*destArea*/ 2, /*displace*/ 0, 0, 0),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_UNDERGROUND),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_NEW_SSL2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 

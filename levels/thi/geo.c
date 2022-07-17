@@ -18,3 +18,6 @@
 #include "levels/thi/areas/1/geo.inc.c"
 #include "levels/thi/areas/2/geo.inc.c"
 #include "levels/thi/areas/3/geo.inc.c"
+
+#include "levels/thi/tailsrace/geo.inc.c"
+#include "levels/thi/tailsflag/geo.inc.c"

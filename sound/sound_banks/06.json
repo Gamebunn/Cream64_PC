@@ -133,6 +133,21 @@
             "release_rate": 48,
             "envelope": "envelope3",
             "sound": "0D"
+        },
+        "inst14": {
+            "release_rate": 48,
+            "envelope": "envelope3",
+            "sound": "0E_eggman_pain"
+        },
+        "inst15": {
+            "release_rate": 48,
+            "envelope": "envelope3",
+            "sound": "0F_eggman_tailgrab"
+        },
+        "inst16": {
+            "release_rate": 48,
+            "envelope": "envelope3",
+            "sound": "10_eggman_finallaugh"
         }
     },
     "instrument_list": [
@@ -151,6 +166,9 @@
         "inst11",
         null,
         "inst12",
-        "inst13"
+        "inst13",
+        "inst14",
+        "inst15",
+        "inst16"
     ]
 }

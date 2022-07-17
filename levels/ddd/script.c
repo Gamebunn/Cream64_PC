@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -10,17 +11,20 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
+#include "actors/group4.h"
 
 #include "make_const_nonconst.h"
 #include "levels/ddd/header.h"
 
 static const LevelScript script_func_local_1[] = {
-    OBJECT(/*model*/ MODEL_SUSHI,        /*pos*/ -3071,  -270,   0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvSushiShark),
-    OBJECT(/*model*/ MODEL_SUSHI,        /*pos*/ -3071, -4270,   0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvSushiShark),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_SUSHI_MARINE,        /*pos*/ -3071,  -4270,   0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvSushiShark, /*acts*/ ACT_2 | ACT_3 | ACT_4),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_SUSHI,        /*pos*/ -3071,  -4270,   0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvSushiShark, /*acts*/ ACT_1 | ACT_5 | ACT_6),
+    OBJECT(/*model*/ MODEL_SUSHI,        /*pos*/ -3071, -470,   0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvSushiShark),
     OBJECT(/*model*/ MODEL_NONE,         /*pos*/ -3071,  -130,   0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvFewBlueFishSpawner),
     OBJECT(/*model*/ MODEL_NONE,         /*pos*/ -3071, -4270,   0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvManyBlueFishSpawner),
-    OBJECT(/*model*/ MODEL_NONE,         /*pos*/ -3071, -2000,   0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvChirpChirp),
+    //OBJECT(/*model*/ MODEL_NONE,         /*pos*/ -3071, -2000,   0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvChirpChirp),
     OBJECT(/*model*/ MODEL_NONE,         /*pos*/ -3071, -3000,   0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvChirpChirp),
     OBJECT(/*model*/ MODEL_DL_WHIRLPOOL, /*pos*/ -3174, -4915, 102, /*angle*/ 0, 0, 0, /*bhvParam*/ 0, /*bhv*/ bhvWhirlpool),
     RETURN(),
@@ -81,8 +85,14 @@ const LevelScript level_ddd_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_DDD_BOWSER_SUB,      ddd_geo_0004A0),
     LOAD_MODEL_FROM_GEO(MODEL_DDD_POLE,            ddd_geo_000450),
 
+    LOAD_MODEL_FROM_GEO(MODEL_BLAZE,            blaze_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_SUSHI_MARINE,            sushi_marine_geo),
+
+
+
     AREA(/*index*/ 1, ddd_geo_0004C0),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -3071, 3000, 0, /*angle*/ 0, 7, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -2871, 3000, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_DDD,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 3, /*destNode*/ WARP_NODE_35, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_DEATH,   /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 3, /*destNode*/ WARP_NODE_67, /*flags*/ WARP_NO_CHECKPOINT),
@@ -92,11 +102,14 @@ const LevelScript level_ddd_entry[] = {
         INSTANT_WARP(/*index*/ 3, /*destArea*/ 2, /*displace*/ -8192, 0, 0),
         TERRAIN(/*terrainData*/ ddd_seg7_area_1_collision),
         MACRO_OBJECTS(/*objList*/ ddd_seg7_area_1_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_WATER),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_NEW_DDD),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_WATER),
     END_AREA(),
 
     AREA(/*index*/ 2, ddd_geo_000570),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -2871, 3000, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  6898,  110,  423, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_DDD << 16, /*beh*/ bhvWisp1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/  6934,  190,  2864, /*angle*/ 0, 270, 0, /*behParam*/ BLAZE_03 << 24, /*beh*/ bhvToadMessageBlaze3, /*acts*/ ACT_2 | ACT_3 | ACT_4),
         WHIRLPOOL(/*unk2*/ 0, /*unk3*/ 0, /*pos*/ 3355, -3575, -515, /*strength*/ -30),
         WHIRLPOOL(/*unk2*/ 1, /*unk3*/ 2, /*pos*/ 3917, -2040, -6041, /*strength*/ 50),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS,    /*destLevel*/ LEVEL_CASTLE,         /*destArea*/ 3, /*destNode*/ WARP_NODE_35, /*flags*/ WARP_NO_CHECKPOINT),
@@ -108,7 +121,7 @@ const LevelScript level_ddd_entry[] = {
         INSTANT_WARP(/*index*/ 2, /*destArea*/ 1, /*displace*/ 8192, 0, 0),
         TERRAIN(/*terrainData*/ ddd_seg7_area_2_collision),
         MACRO_OBJECTS(/*objList*/ ddd_seg7_area_2_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_WATER),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_NEW_DDD),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_WATER),
     END_AREA(),
 

@@ -29,6 +29,7 @@ const LevelScript level_bowser_1_entry[] = {
 
     AREA(/*index*/ 1, bowser_1_geo_0000D0),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 0, 1307, 0, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneCircleWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 0, 1307, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_BOWSER_1, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A,  /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE,   /*destArea*/ 1, /*destNode*/ WARP_NODE_24,  /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_DEATH,   /*destLevel*/ LEVEL_BITDW,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0C,  /*flags*/ WARP_NO_CHECKPOINT),

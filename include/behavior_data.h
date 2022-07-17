@@ -635,7 +635,19 @@ extern const BehaviorScript bhvToadMessageMarine2[];
 extern const BehaviorScript bhvToadMessageMarine3[];
 extern const BehaviorScript bhvToadMessageTails1[];
 extern const BehaviorScript bhvWarpRing[];
+extern const BehaviorScript bhvToadMessageGoombaMarine[];
+extern const BehaviorScript bhvToadMessageNormal[];
+extern const BehaviorScript bhvToadMessageFloomba[];
 extern const BehaviorScript bhvAmyBoo[];
+extern const BehaviorScript bhvKoopaTails[]; 
+
+// Ending
+extern const BehaviorScript bhvEndToadGemerl[];
+extern const BehaviorScript bhvEndToadBlaze[];
+extern const BehaviorScript bhvEndToadMark[];
+extern const BehaviorScript bhvEndToadKatalina[];
+extern const BehaviorScript bhvEndToadAmy[];
+extern const BehaviorScript bhvEndToadTails[];
 
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/include_behaviors.h"

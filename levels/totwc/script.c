@@ -46,6 +46,7 @@ const LevelScript level_totwc_entry[] = {
 
     AREA(/*index*/ 1, totwc_geo_000188),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -4095, 2935, 0, /*angle*/ 0, 90, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvFlyingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -3995, 2935, 0,  /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,         /*destLevel*/ LEVEL_TOTWC,  /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_WARP_FLOOR, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 1, /*destNode*/ WARP_NODE_20, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS,    /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 1, /*destNode*/ WARP_NODE_26, /*flags*/ WARP_NO_CHECKPOINT),
@@ -55,7 +56,7 @@ const LevelScript level_totwc_entry[] = {
         TERRAIN(/*terrainData*/ totwc_seg7_collision),
         MACRO_OBJECTS(/*objList*/ totwc_seg7_macro_objs),
         SHOW_DIALOG(/*index*/ 0x00, DIALOG_131),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_SLIDE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_NEW_WF),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 

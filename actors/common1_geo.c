@@ -26,7 +26,6 @@
 #include "wooden_signpost/geo.inc.c"
 #include "tree/geo.inc.c"
 
-#include "bait_fish/geo.inc.c"
 #include "bowser_key_cutscene/geo.inc.c"
 #include "tails_c1/geo.inc.c"
 #include "warpring/geo.inc.c"

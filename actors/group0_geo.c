@@ -39,3 +39,4 @@
 #include "mario_creamocchia/geo.inc.c"
 #include "wisp1/geo.inc.c"
 #include "wisp2/geo.inc.c"
+#include "mario_klonoa/geo.inc.c"

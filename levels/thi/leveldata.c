@@ -32,3 +32,8 @@
 #include "levels/thi/areas/1/trajectory.inc.c"
 #include "levels/thi/areas/1/movtext.inc.c"
 #include "levels/thi/areas/2/movtext.inc.c"
+
+#include "levels/thi/tailsrace/model.inc.c"
+#include "levels/thi/tailsrace/anims/data.inc.c"
+#include "levels/thi/tailsrace/anims/table.inc.c"
+#include "levels/thi/tailsflag/model.inc.c"

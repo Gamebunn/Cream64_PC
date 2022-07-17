@@ -106,4 +106,28 @@ extern const struct Animation *const yoshi_seg5_anims_05024100[];
 
 
 #include "mark/anim_header.h"
+#include "blaze_ed/geo_header.h"
+
+
+#include "blaze_ed/anim_header.h"
+#include "gemerl_ed/geo_header.h"
+
+
+#include "gemerl_ed/anim_header.h"
+#include "mark_ed/geo_header.h"
+
+
+#include "mark_ed/anim_header.h"
+#include "katalina_ed/geo_header.h"
+
+
+#include "katalina_ed/anim_header.h"
+#include "amy_ed/geo_header.h"
+
+
+#include "amy_ed/anim_header.h"
+#include "tails_ed/geo_header.h"
+
+
+#include "tails_ed/anim_header.h"
 #endif

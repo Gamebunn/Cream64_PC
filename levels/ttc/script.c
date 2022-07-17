@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -10,6 +11,7 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
 
 #include "make_const_nonconst.h"
@@ -59,8 +61,14 @@ const LevelScript level_ttc_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_TTC_SMALL_GEAR,        ttc_geo_000388),
     LOAD_MODEL_FROM_GEO(MODEL_TTC_LARGE_GEAR,        ttc_geo_0003A0),
 
+    LOAD_MODEL_FROM_GEO(MODEL_AMY,                        amy_geo),
+
     AREA(/*index*/ 1, ttc_geo_0003B8),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 1417, -3822, -548, /*angle*/ 0, 316, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1969, -4742,  -289,  /*angle*/ 0, 90, 0, /*behParam*/ AMY_06 << 24, /*beh*/ bhvToadMessageAmy6,   /*acts*/ ACT_1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1958, -4742,  -588,  /*angle*/ 0, 270, 0, /*behParam*/ AMY_07 << 24, /*beh*/ bhvToadMessageAmy,   /*acts*/ ACT_2 | ACT_3| ACT_4| ACT_5| ACT_6),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 1617, -3822, -548, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  1912,  -4822,  902, /*angle*/ 0, 315, 0, /*behParam*/ MWISP_TTC << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_TTC,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 2, /*destNode*/ WARP_NODE_35, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_DEATH,   /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 2, /*destNode*/ WARP_NODE_67, /*flags*/ WARP_NO_CHECKPOINT),

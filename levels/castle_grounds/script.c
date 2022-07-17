@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -11,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/group10.h"
 
 #include "make_const_nonconst.h"
 #include "levels/castle_grounds/header.h"
@@ -175,8 +177,21 @@ const LevelScript level_castle_grounds_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_GROUNDS_FLAG,         castle_grounds_geo_000660),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_GROUNDS_CANNON_GRILL, castle_grounds_geo_000724),
 
+    LOAD_MODEL_FROM_GEO(MODEL_SIGNPOST_VANILLA,            signpost_vanilla_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARK,                        mark_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PEACH_MARK,                  peach_mark_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_ED,                   cheese_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHOCOLA_ED,                  chocola_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_GEMERL_ED,                   gemerl_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_BLAZE_ED,                    blaze_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARK_ED,                     mark_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_KATALINA_ED,                 katalina_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_AMY_ED,                      amy_ed_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_TAILS_ED,                    tails_ed_geo),
+    
     AREA(/*index*/ 1, castle_grounds_geo_00073C),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_03, /*flags*/ WARP_NO_CHECKPOINT),
+        OBJECT(/*model*/ MODEL_WISP2, /*pos*/  759,  3180,  -4756, /*angle*/ 0, 90, 0, /*behParam*/ WWISP_MARK << 16, /*beh*/ bhvWisp2),
         JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),
         JUMP_LINK(script_func_local_3),

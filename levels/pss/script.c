@@ -30,6 +30,7 @@ const LevelScript level_pss_entry[] = {
 
     AREA(/*index*/ 1, pss_geo_000100),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 5632, 6751, -5631, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 5732, 6751, -5631,  /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,         /*destLevel*/ LEVEL_PSS,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_WARP_FLOOR, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 1, /*destNode*/ WARP_NODE_20, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS,    /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 1, /*destNode*/ WARP_NODE_26, /*flags*/ WARP_NO_CHECKPOINT),
@@ -37,7 +38,7 @@ const LevelScript level_pss_entry[] = {
         TERRAIN(/*terrainData*/ pss_seg7_collision),
         MACRO_OBJECTS(/*objList*/ pss_seg7_macro_objs),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SLIDE),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_SLIDE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_PSS_LEAFFOREST),
     END_AREA(),
 
     FREE_LEVEL_POOL(),

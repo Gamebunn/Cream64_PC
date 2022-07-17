@@ -108,4 +108,6 @@ extern const struct Animation *const swoop_seg6_anims_060070D0[];
 
 #include "snufit/geo_header.h"
 
+#include "dorrie/geo_header.h"
+
 #endif

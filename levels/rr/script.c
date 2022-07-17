@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -10,6 +11,7 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
 
 #include "make_const_nonconst.h"
@@ -118,10 +120,20 @@ const LevelScript level_rr_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_RR_TRICKY_TRIANGLES_FRAME3,  rr_geo_0009A0),
     LOAD_MODEL_FROM_GEO(MODEL_RR_TRICKY_TRIANGLES_FRAME4,  rr_geo_0009B8),
 
+    LOAD_MODEL_FROM_GEO(MODEL_BLAZE,  blaze_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_LAYLA,  layla_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARINE,  marine_geo),
+
+
     AREA(/*index*/ 1, rr_geo_0009D0),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 2599, -833, 2071, /*angle*/ 0, 90, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -7092, 2364, -63, /*angle*/ 0, 90, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0B), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -4213, 3379, -2815, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0C), /*bhv*/ bhvFadingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 2799, -833, 2071, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  2817,  -1782,  1486, /*angle*/ 0, 260, 0, /*behParam*/ MWISP_RR << 16, /*beh*/ bhvWisp1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/  -5171,  -1702,  -178, /*angle*/ 0, 90, 0, /*behParam*/ BLAZE_04 << 24, /*beh*/ bhvToadMessageBlaze2, /*acts*/ ACT_1 |ACT_2 | ACT_3),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_MARINE, /*pos*/  -4971,  -1832,  -178, /*angle*/ 0, 270, 0, /*behParam*/ MARINE_03 << 24, /*beh*/ bhvToadMessageMarine3, /*acts*/ ACT_1 |ACT_2 | ACT_3),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/  2370,  -1753,  2645, /*angle*/ 0, 160, 0, /*behParam*/ BLAZE_05 << 24, /*beh*/ bhvToadMessageBlaze, /*acts*/ ACT_4 | ACT_5 | ACT_6),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_RR,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_RR,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,      /*destLevel*/ LEVEL_RR,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),
@@ -132,7 +144,7 @@ const LevelScript level_rr_entry[] = {
         JUMP_LINK(script_func_local_3),
         TERRAIN(/*terrainData*/ rr_seg7_collision_level),
         MACRO_OBJECTS(/*objList*/ rr_seg7_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_SLIDE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_NEW_RR),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 

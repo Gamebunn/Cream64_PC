@@ -55,3 +55,4 @@
 #include "wisp2/anims/data.inc.c"
 #include "wisp2/anims/table.inc.c"
 #include "mario/collision.inc.c"
+#include "mario_klonoa/model.inc.c"

@@ -14,7 +14,15 @@ extern const GeoLayout intro_geo_mario_head_dizzy[];
 extern const GeoLayout intro_geo_000414[];
 
 // leveldata
-extern const Gfx intro_seg7_dl_0700B3A0[];
+extern Lights1 title_cream64_colors_f3d_lights;
+extern u8 title_cream64_titlescreen_ci8_ci8[];
+extern u8 title_cream64_titlescreen_ci8_ci8_pal_rgba16[];
+extern Vtx title_cream64_title_cream64_mesh_vtx_0[3998];
+extern Gfx title_cream64_title_cream64_mesh_tri_0[];
+extern Gfx mat_title_cream64_colors_f3d[];
+extern Gfx mat_revert_title_cream64_colors_f3d[];
+extern Gfx title_cream64_title_cream64_mesh[];
+
 extern const Gfx intro_seg7_dl_0700C6A0[];
 extern const f32 intro_seg7_table_0700C790[];
 extern const f32 intro_seg7_table_0700C880[];

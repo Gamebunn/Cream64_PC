@@ -398,4 +398,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "mario/collision_header.h"
 
+#include "mario_klonoa/geo_header.h"
+
 #endif

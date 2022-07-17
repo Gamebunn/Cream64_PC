@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -125,6 +126,8 @@ const LevelScript level_ttm_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2447, -2457,  3952, /*angle*/ 0, -105, 0, /*bhvParam*/ BPARAM2(WARP_NODE_14), /*bhv*/ bhvAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  2267, -3006, -3788, /*angle*/ 0,  148, 0, /*bhvParam*/ BPARAM2(WARP_NODE_15), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  -557, -3448, -4146, /*angle*/ 0, -168, 0, /*bhvParam*/ BPARAM2(WARP_NODE_16), /*bhv*/ bhvFadingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 302, -3332,  5734, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  93,  -4284,  5467, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_TTM << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A, /*destLevel*/ LEVEL_TTM, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_14, /*destLevel*/ LEVEL_TTM, /*destArea*/ 1, /*destNode*/ WARP_NODE_14, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_15, /*destLevel*/ LEVEL_TTM, /*destArea*/ 1, /*destNode*/ WARP_NODE_16, /*flags*/ WARP_NO_CHECKPOINT),
@@ -139,12 +142,13 @@ const LevelScript level_ttm_entry[] = {
         JUMP_LINK(script_func_local_3),
         TERRAIN(/*terrainData*/ ttm_seg7_area_1_collision),
         MACRO_OBJECTS(/*objList*/ ttm_seg7_area_1_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_GRASS),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_NEW_TTM),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 
     AREA(/*index*/ 2, ttm_geo_000B5C),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 7000, 5381, 6750, /*angle*/ 0, 225, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 7200, 5381, 6750, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_TTM,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 2, /*destNode*/ WARP_NODE_34, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_DEATH,   /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 2, /*destNode*/ WARP_NODE_66, /*flags*/ WARP_NO_CHECKPOINT),
@@ -152,7 +156,7 @@ const LevelScript level_ttm_entry[] = {
         TERRAIN(/*terrainData*/ ttm_seg7_area_2_collision),
         MACRO_OBJECTS(/*objList*/ ttm_seg7_area_2_macro_objs),
         INSTANT_WARP(/*index*/ 2, /*destArea*/ 3, /*displace*/ 10240, 7168, 10240),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_SLIDE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_NEW_TTM2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SLIDE),
     END_AREA(),
 
@@ -163,7 +167,7 @@ const LevelScript level_ttm_entry[] = {
         TERRAIN(/*terrainData*/ ttm_seg7_area_3_collision),
         MACRO_OBJECTS(/*objList*/ ttm_seg7_area_3_macro_objs),
         INSTANT_WARP(/*index*/ 3, /*destArea*/ 4, /*displace*/ -11264, 13312, 3072),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_SLIDE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_NEW_TTM2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SLIDE),
     END_AREA(),
 
@@ -176,7 +180,7 @@ const LevelScript level_ttm_entry[] = {
         JUMP_LINK(script_func_local_7),
         TERRAIN(/*terrainData*/ ttm_seg7_area_4_collision),
         MACRO_OBJECTS(/*objList*/ ttm_seg7_area_4_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_SLIDE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_NEW_TTM2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SLIDE),
     END_AREA(),
 

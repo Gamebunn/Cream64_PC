@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -73,6 +74,8 @@ const LevelScript level_sl_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/   569, 2150,  1336, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(6) | BPARAM2(WARP_NODE_0C), /*bhv*/ bhvWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  5468, 1056, -5400, /*angle*/ 0, -20, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0D), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -3698, 1024, -1237, /*angle*/ 0,   6, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0E), /*bhv*/ bhvFadingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 5741, 2024,   443, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  4044,  1024,  98, /*angle*/ 0, 90, 0, /*behParam*/ MWISP_SL << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A, /*destLevel*/ LEVEL_SL, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B, /*destLevel*/ LEVEL_SL, /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C, /*destLevel*/ LEVEL_SL, /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
@@ -85,13 +88,14 @@ const LevelScript level_sl_entry[] = {
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 2, /*destNode*/ WARP_NODE_68, /*flags*/ WARP_NO_CHECKPOINT),
         TERRAIN(/*terrainData*/ sl_seg7_area_1_collision),
         MACRO_OBJECTS(/*objList*/ sl_seg7_area_1_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_SNOW),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_NEW_SL),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SNOW),
     END_AREA(),
 
     AREA(/*index*/ 2, sl_geo_000484),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 0, 0, 2867, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvInstantActiveWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 0, 0, 3277, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(20) | BPARAM2(WARP_NODE_0B), /*bhv*/ bhvWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 200, 0, 2867, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A, /*destLevel*/ LEVEL_SL, /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B, /*destLevel*/ LEVEL_SL, /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),
         JUMP_LINK(script_func_local_4),
@@ -99,7 +103,7 @@ const LevelScript level_sl_entry[] = {
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 2, /*destNode*/ WARP_NODE_68, /*flags*/ WARP_NO_CHECKPOINT),
         TERRAIN(/*terrainData*/ sl_seg7_area_2_collision),
         MACRO_OBJECTS(/*objList*/ sl_seg7_area_2_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_UNDERGROUND),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0004, /*seq*/ SEQ_LEVEL_NEW_SL2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SNOW),
     END_AREA(),
 

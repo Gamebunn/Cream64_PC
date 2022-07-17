@@ -86,7 +86,6 @@ UNUSED static const u64 binid_21 = 21;
 #include "tree/model.inc.c"
 UNUSED static const u64 binid_22 = 22;
 
-#include "bait_fish/model.inc.c"
 #include "bowser_key_cutscene/model.inc.c"
 #include "tails_c1/model.inc.c"
 #include "tails_c1/anims/data.inc.c"

@@ -12,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/group15.h"
 
 #include "make_const_nonconst.h"
 #include "levels/castle_inside/header.h"
@@ -47,7 +48,7 @@ static const LevelScript script_func_local_1[] = {
     OBJECT(/*model*/ MODEL_NONE, /*pos*/ -5513,  512, -4324, /*angle*/ 0,    0, 0, /*bhvParam*/ BPARAM1(0x30) | BPARAM2(WARP_NODE_0B), /*bhv*/ bhvWarp),
     WARP_NODE(/*id*/ WARP_NODE_0B,    /*destLevel*/ LEVEL_BITDW, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
     OBJECT(/*model*/ MODEL_NONE, /*pos*/  1963,  819,  1280, /*angle*/ 0,    0, 0, /*bhvParam*/ BPARAM1(0x05) | BPARAM2(WARP_NODE_0C), /*bhv*/ bhvWarp),
-    WARP_NODE(/*id*/ WARP_NODE_0C,    /*destLevel*/ LEVEL_SA,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
+    WARP_NODE(/*id*/ WARP_NODE_0C,    /*destLevel*/ LEVEL_SA,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
     WARP_NODE(/*id*/ WARP_NODE_TOTWC, /*destLevel*/ LEVEL_TOTWC, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
     OBJECT(/*model*/ MODEL_NONE, /*pos*/ -1024,  512,  -650, /*angle*/ 0,    0, 0, /*bhvParam*/ BPARAM2(WARP_NODE_1E), /*bhv*/ bhvInstantActiveWarp),
     OBJECT(/*model*/ MODEL_NONE, /*pos*/ -1024,  -50,   717, /*angle*/ 0,  180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_1F), /*bhv*/ bhvInstantActiveWarp),
@@ -251,6 +252,17 @@ const LevelScript level_castle_inside_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_STAR_DOOR_50_STARS, castle_geo_000F00),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_STAR_DOOR_70_STARS, castle_geo_000F00),
 
+    LOAD_MODEL_FROM_GEO(MODEL_CHOCOLA, chocola_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_SILVER, silver_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_KATALINA, katalina_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_SIGNPOST_ARTIST, signpost_artist_geo),
+
+
+    LOAD_MODEL_FROM_GEO(MODEL_FISH_BAIT, bait_fish_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_FISH_BAIT2, bait_fish2_geo),
+
+    LOAD_MODEL_FROM_GEO(MODEL_TOAD_ANGY, toad_angy_geo),
+
     AREA(/*index*/ 1, castle_geo_001400),
         OBJECT(/*model*/ MODEL_NONE,       /*pos*/ -5513,  717, -4324, /*angle*/ 0,  45, 0, /*bhvParam*/ BPARAM2(0x14), /*bhv*/ bhvCastleFloorTrap),
         OBJECT(/*model*/ MODEL_NONE,       /*pos*/  2477,  307, -2000, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvFishGroup),
@@ -259,10 +271,20 @@ const LevelScript level_castle_inside_entry[] = {
         OBJECT(/*model*/ MODEL_NONE,       /*pos*/  3748,  507,   773, /*angle*/ 0, -45, 0, /*bhvParam*/ 0, /*bhv*/ bhvTankFishGroup),
         OBJECT(/*model*/ MODEL_NONE,       /*pos*/  2778,  507,  1255, /*angle*/ 0, -90, 0, /*bhvParam*/ 0, /*bhv*/ bhvTankFishGroup),
         OBJECT(/*model*/ MODEL_BOO_CASTLE, /*pos*/ -1000,   50, -3500, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvBooInCastle),
-        OBJECT(/*model*/ MODEL_TOAD,       /*pos*/ -1671,    0,  1313, /*angle*/ 0,  83, 0, /*bhvParam*/ BPARAM1(DIALOG_133), /*bhv*/ bhvToadMessage),
+        OBJECT(/*model*/ MODEL_CHOCOLA,       /*pos*/ -1671,    0,  1313, /*angle*/ 0,  83, 0, /*bhvParam*/ BPARAM1(DIALOG_133), /*bhv*/ bhvToadMessage),
         OBJECT(/*model*/ MODEL_TOAD,       /*pos*/  1524,  307,   458, /*angle*/ 0, 110, 0, /*bhvParam*/ BPARAM1(DIALOG_134), /*bhv*/ bhvToadMessage),
         OBJECT(/*model*/ MODEL_TOAD,       /*pos*/   596, -306, -2637, /*angle*/ 0, 152, 0, /*bhvParam*/ BPARAM1(DIALOG_135), /*bhv*/ bhvToadMessage),
+        OBJECT(/*model*/ MODEL_WISP1,    /*pos*/ -716,    0,  -6, /*angle*/ 0,  83, 0, /*behParam*/ MWISP_CASTLE << 16, /*beh*/ bhvWisp1),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -1154, 0, 2012, /*angle*/ 0, 90, 0, /*behParam*/ 0, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_YELLOW_COIN, /*pos*/ -1039, 1020, 1371, /*angle*/ 0, 90, 0, /*behParam*/ 0x00000000, /*beh*/ bhvYellowCoin),
+        OBJECT(/*model*/ MODEL_NONE, /*pos*/ -1039, 1020, 1371, /*angle*/ 0,   0, 0, /*behParam*/ 0x00EE0000, /*beh*/ bhvWarp),
+        WARP_NODE(/*id*/ 0xEE, /*destLevel*/ LEVEL_COTMC, /*destArea*/ 0x01, /*destNode*/ 0x0A, /*flags*/ WARP_NO_CHECKPOINT),
+        OBJECT(MODEL_SIGNPOST_ARTIST, -1857, 90, 1064, 0, 136, 0, ARTIST00 << 16, bhvMessagePanel),
+        OBJECT(MODEL_SIGNPOST_ARTIST, -5079, 307, -733, 0, 90, 0, ARTIST01 << 16, bhvMessagePanel),
+        OBJECT(MODEL_SIGNPOST_ARTIST, 616, -306, -4415, 0, 0, 0, ARTIST02 << 16, bhvMessagePanel),
+        OBJECT(MODEL_SIGNPOST_ARTIST, 4079, 307, 211, 0, 270, 0, ARTIST03 << 16, bhvMessagePanel),
+        OBJECT(MODEL_SIGNPOST_ARTIST, -2042, -409, -4278, 0, 0, 0, ARTIST04 << 16, bhvMessagePanel),
+
         JUMP_LINK(script_func_local_1),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_03, /*flags*/ WARP_NO_CHECKPOINT),
         TERRAIN(/*terrainData*/ inside_castle_seg7_area_1_collision),
@@ -277,9 +299,15 @@ const LevelScript level_castle_inside_entry[] = {
         OBJECT(/*model*/ MODEL_CASTLE_CLOCK_HOUR_HAND,   /*pos*/  -205, 2918, 7222, /*angle*/ 0, 180, 0, /*bhvParam*/ 0, /*bhv*/ bhvClockHourHand),
         OBJECT(/*model*/ MODEL_CASTLE_CLOCK_PENDULUM,    /*pos*/  -205, 2611, 7140, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvDecorativePendulum),
         OBJECT(/*model*/ MODEL_LAKITU,                   /*pos*/  4231, 1408, 1601, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(CAMERA_LAKITU_BP_FOLLOW_CAMERA), /*bhv*/ bhvCameraLakitu),
-        OBJECT(/*model*/ MODEL_TOAD,                     /*pos*/  -977, 1203, 2569, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(DIALOG_076), /*bhv*/ bhvToadMessage),
-        OBJECT(/*model*/ MODEL_TOAD,                     /*pos*/ -1584, 2253, 7157, /*angle*/ 0, 136, 0, /*bhvParam*/ BPARAM1(DIALOG_083), /*bhv*/ bhvToadMessage),
+        OBJECT(/*model*/ MODEL_SILVER,                     /*pos*/  -977, 1293, 2569, /*angle*/ 0,   0, 0, /*behParam*/ DIALOG_076 << 24, /*beh*/ bhvToadMessageSilver),
+        OBJECT(/*model*/ MODEL_KATALINA,                     /*pos*/ -1584, 2303, 7157, /*angle*/ 0, 136, 0, /*behParam*/ DIALOG_083 << 24, /*beh*/ bhvToadMessageKatty),
+        OBJECT(/*model*/ MODEL_WISP2, /*pos*/  -1235,  2253,  7250, /*angle*/ 0, 136, 0, /*behParam*/ WWISP_KATALINA << 16, /*beh*/ bhvWisp2),
         OBJECT(/*model*/ MODEL_TOAD,                     /*pos*/   837, 1203, 3020, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM1(DIALOG_137), /*bhv*/ bhvToadMessage),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -1201, 512, 2827, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(MODEL_SIGNPOST_ARTIST, -306, 1203, -97, 0, 0, 0, ARTIST06 << 16, bhvMessagePanel),
+        OBJECT(MODEL_SIGNPOST_ARTIST, -905, 1203, 3785, 0, 180, 0, ARTIST07 << 16, bhvMessagePanel),
+        OBJECT(MODEL_SIGNPOST_ARTIST, -5052, 1357, 1829, 0, 90, 0, ARTIST08 << 16, bhvMessagePanel),
+        OBJECT(MODEL_SIGNPOST_ARTIST, 153, 3174, 2767, 0, 0, 0, ARTIST09 << 16, bhvMessagePanel),
         JUMP_LINK(script_func_local_2),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_03, /*flags*/ WARP_NO_CHECKPOINT),
         TERRAIN(/*terrainData*/ inside_castle_seg7_area_2_collision),
@@ -295,8 +323,11 @@ const LevelScript level_castle_inside_entry[] = {
         OBJECT(/*model*/ MODEL_CASTLE_WATER_LEVEL_PILLAR, /*pos*/  7066, -1178,  -205, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvWaterLevelPillar),
         OBJECT(/*model*/ MODEL_NONE,                      /*pos*/     0,     0,     0, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvDDDWarp),
         OBJECT(/*model*/ MODEL_MIPS,                      /*pos*/ -1509, -1177, -1564, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(MIPS_BP_15_STARS), /*bhv*/ bhvMips),
-        OBJECT(/*model*/ MODEL_TOAD,                      /*pos*/  1787, -1381, -1957, /*angle*/ 0, 126, 0, /*bhvParam*/ BPARAM1(DIALOG_082), /*bhv*/ bhvToadMessage),
+        OBJECT(/*model*/ MODEL_TOAD_ANGY,                      /*pos*/  1787, -1381, -1957, /*angle*/ 0, 126, 0, /*bhvParam*/ BPARAM1(DIALOG_082), /*bhv*/ bhvToadMessage),
         OBJECT(/*model*/ MODEL_TOAD,                      /*pos*/ -4048, -1381, -1334, /*angle*/ 0,  30, 0, /*bhvParam*/ BPARAM1(DIALOG_136), /*bhv*/ bhvToadMessage),
+        OBJECT(/*model*/ MODEL_WISP1,    /*pos*/ -1745,    -1074,  1422, /*angle*/ 0,  83, 0, /*behParam*/ MWISP_CASTLE2 << 16, /*beh*/ bhvWisp1),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -878, -1074, 1139, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(MODEL_SIGNPOST_ARTIST, -1069, -1177, -3813, 0, 0, 0, ARTIST05 << 16, bhvMessagePanel),
         JUMP_LINK(script_func_local_3),
         JUMP_LINK(script_func_local_4),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_03, /*flags*/ WARP_NO_CHECKPOINT),

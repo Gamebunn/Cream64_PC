@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -10,6 +11,7 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
 
 #include "make_const_nonconst.h"
@@ -91,11 +93,15 @@ const LevelScript level_wdw_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_WDW_EXPRESS_ELEVATOR,              wdw_geo_000610),
     LOAD_MODEL_FROM_GEO(MODEL_WDW_RECTANGULAR_FLOATING_PLATFORM, wdw_geo_000628),
     LOAD_MODEL_FROM_GEO(MODEL_WDW_ROTATING_PLATFORM,             wdw_geo_000640),
+    LOAD_MODEL_FROM_GEO(MODEL_AMY,                        amy_geo),
 
     AREA(/*index*/ 1, wdw_geo_000658),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  3395, 3580,  384, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/   818,    0, 3634, /*angle*/ 0,  45, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0B), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2865, 3328, 3065, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0C), /*bhv*/ bhvFadingWarp),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  349, 3150,  -3760,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_05 << 24, /*beh*/ bhvToadMessageAmy5,   /*acts*/ ACT_2 | ACT_3),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 3595, 3580,  384, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  1159,  3060,  -3713, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_WDW << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A, /*destLevel*/ LEVEL_WDW, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B, /*destLevel*/ LEVEL_WDW, /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C, /*destLevel*/ LEVEL_WDW, /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),
@@ -106,7 +112,7 @@ const LevelScript level_wdw_entry[] = {
         INSTANT_WARP(/*index*/ 1, /*destArea*/ 2, /*displace*/ 0, 0, 0),
         TERRAIN(/*terrainData*/ wdw_seg7_area_1_collision),
         MACRO_OBJECTS(/*objList*/ wdw_seg7_area_1_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_UNDERGROUND),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_NEW_WDW),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 
@@ -118,7 +124,7 @@ const LevelScript level_wdw_entry[] = {
         INSTANT_WARP(/*index*/ 0, /*destArea*/ 1, /*displace*/ 0, 0, 0),
         TERRAIN(/*terrainData*/ wdw_seg7_area_2_collision),
         MACRO_OBJECTS(/*objList*/ wdw_seg7_area_2_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_UNDERGROUND),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ SEQ_LEVEL_NEW_WDW),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_WATER),
     END_AREA(),
 

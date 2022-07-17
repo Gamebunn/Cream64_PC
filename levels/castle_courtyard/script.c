@@ -5,11 +5,13 @@
 #include "seq_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
+#include "dialog_ids.h"
 
 #include "game/level_update.h"
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
 
 #include "make_const_nonconst.h"
@@ -46,10 +48,21 @@ const LevelScript level_castle_courtyard_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_COURTYARD_WOODEN_DOOR, wooden_door_geo),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_03,     castle_courtyard_geo_000200),
 
+    LOAD_MODEL_FROM_GEO(MODEL_WARPRING,     warpring_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_BAIT,     bait_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_LURK,     lurk_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_BUMP,     bump_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_SAGE,     sage_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_MARINE,     goomba_marine_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_TOAD_NORMAL,     toad_normal_geo),
+
     AREA(/*index*/ 1, castle_courtyard_geo_000218),
         OBJECT(/*model*/ MODEL_BOO,  /*pos*/ -2360, -100, -2712, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(1) | BPARAM2(WARP_NODE_05), /*bhv*/ bhvBooWithCage),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/     0,   51, -1000, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvLaunchStarCollectWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/     0,   51, -1000, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0B), /*bhv*/ bhvLaunchDeathWarp),
+        OBJECT(/*model*/ MODEL_NONE, /*pos*/ 3180,    500,   330, /*angle*/ 0,   0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvWarp),
+        OBJECT(/*model*/ MODEL_WARPRING, /*pos*/ 3180,    500,   330, /*angle*/ 0,   0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvWarpRing),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 0, 0, 461, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_05,    /*destLevel*/ LEVEL_BBH,              /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0A,    /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,    /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),

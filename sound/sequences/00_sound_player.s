@@ -2861,16 +2861,16 @@ sound_ref .sound_general_boat_rock
   sound_ref .sound_menu_enter_hole
   sound_ref .sound_menu_enter_hole
 #else
-  sound_ref .sound_general_vanish_sfx
+sound_ref .sound_general_vanish_sfx
 sound_ref .sound_general_presto
-  sound_ref .sound_general_red_coin
-  sound_ref .sound_general_birds_fly_away
-  sound_ref .sound_general_right_answer
-  sound_ref .sound_general_metal_pound
-  sound_ref .sound_general_boing1
-  sound_ref .sound_general_boing2
-  sound_ref .sound_general_yoshi_walk
-  sound_ref .sound_general_enemy_alert1
+sound_ref .sound_obj_tails1
+sound_ref .sound_obj_tails2
+sound_ref .sound_obj_tails3
+sound_ref .sound_obj_tails4
+sound_ref .sound_obj_tails5
+sound_ref .sound_obj_gardevoir_sad
+sound_ref .sound_obj_pocky
+sound_ref .sound_obj_chao
 #endif
 
 .sound_general_activate_cap_switch:
@@ -5009,6 +5009,87 @@ chan_end
 layer_note1 39, 0xDC, 127
 layer_end
 
+
+.sound_obj_tails1:
+chan_setbank 9
+chan_setinstr 17
+chan_setlayer 0, .layer_1E44
+chan_end
+
+.layer_1E44:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_tails2:
+chan_setbank 9
+chan_setinstr 18
+chan_setlayer 0, .layer_1E45
+chan_end
+
+.layer_1E45:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_tails3:
+chan_setbank 9
+chan_setinstr 18
+chan_setlayer 0, .layer_1E46
+chan_end
+
+.layer_1E46:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_tails4:
+chan_setbank 9
+chan_setinstr 18
+chan_setlayer 0, .layer_1E48
+chan_end
+
+.layer_1E48:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_tails5:
+chan_setbank 9
+chan_setinstr 18
+chan_setlayer 0, .layer_1E49
+chan_end
+
+.layer_1E49:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_gardevoir_sad:
+chan_setbank 0
+chan_setinstr 11
+chan_setlayer 0, .layer_1E50
+chan_end
+
+.layer_1E50:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_pocky:
+chan_setbank 0
+chan_setinstr 12
+chan_setlayer 0, .layer_1E51
+chan_end
+
+.layer_1E51:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_chao:
+chan_setbank 0
+chan_setinstr 13
+chan_setlayer 0, .layer_1E52
+chan_end
+
+.layer_1E52:
+layer_note1 39, 0xFF, 127
+layer_end
+
 .channel59_table:
 sound_ref .sound_obj_sushi_shark_water_sound
 sound_ref .sound_obj_mri_shoot
@@ -5127,17 +5208,17 @@ sound_ref .sound_obj_wiggler_low_pitch
 sound_ref .sound_obj_snufit_skeeter_death
 sound_ref .sound_obj_bubba_chomp
 sound_ref .sound_obj_enemy_defeat_shrink
-sound_ref .sound_obj_gardevoir_sad
-sound_ref .sound_obj_pocky
-sound_ref .sound_obj_tails1
-sound_ref .sound_obj_chao
-sound_ref .sound_obj_floomba
-sound_ref .sound_obj_baby_penguin_walk
-sound_ref .sound_obj_bowser_walk
-sound_ref .sound_obj_bowser_roar
-sound_ref .sound_obj_bowser_tail_pickup
+sound_ref .sound_obj_bowser_pain
+sound_ref .sound_obj_bowser_serious
+sound_ref .sound_obj_eyerok_opening
+sound_ref .sound_obj_eyerok_death
+sound_ref .sound_obj_kingboomboo
 sound_ref .sound_obj_bowser_defeated
 sound_ref .sound_obj_bowser_spinning
+sound_ref .sound_obj_bowser_inhaling
+sound_ref .sound_obj_big_penguin_walk
+sound_ref .sound_obj_boo_bounce_top
+sound_ref .sound_obj_boo_laugh_short
 
 .sound_general_swish_water:
 chan_setbank 6
@@ -5217,20 +5298,14 @@ layer_end
 
 .sound_obj_bowser_tail_pickup:
 chan_setbank 6
-chan_setinstr 2
+chan_setinstr 17
 chan_setval 10
 chan_call .set_reverb
 chan_setlayer 0, .layer_1FD8
-chan_setlayer 1, .layer_1FD4
 chan_end
 
-.layer_1FD4:
-layer_delay 0x3
-layer_transpose 5
-
 .layer_1FD8:
-layer_portamento 0x81, 45, 255
-layer_note1 33, 0x30, 127
+layer_note1 39, 0x5F, 127
 layer_end
 
 .sound_obj_bowser_defeated:
@@ -5242,7 +5317,7 @@ chan_setlayer 0, .layer_1FED
 chan_end
 
 .layer_1FED:
-layer_note1 32, 0x104, 127
+layer_note1 39, 0x104, 127
 layer_end
 
 .sound_obj_bowser_spinning:
@@ -5255,56 +5330,6 @@ chan_end
 layer_note1 32, 0x28, 127
 layer_end
 
-.sound_obj_gardevoir_sad:
-chan_setbank 9
-chan_setinstr 7
-chan_setlayer 0, .layer_1FFB
-chan_end
-
-.layer_1FFB:
-layer_note1 39, 0xFF, 127
-layer_end
-
-.sound_obj_pocky:
-chan_setbank 9
-chan_setinstr 8
-chan_setlayer 0, .layer_1FFC
-chan_end
-
-.layer_1FFC:
-layer_note1 39, 0xFF, 127
-layer_end
-
-.sound_obj_tails1:
-chan_setbank 9
-chan_setinstr 9
-chan_setlayer 0, .layer_1FFD
-chan_end
-
-.layer_1FFD:
-layer_note1 39, 0xFF, 127
-layer_end
-
-.sound_obj_chao:
-chan_setbank 9
-chan_setinstr 10
-chan_setlayer 0, .layer_1FFE
-chan_end
-
-.layer_1FFE:
-layer_note1 39, 0xFF, 127
-layer_end
-
-.sound_obj_floomba:
-chan_setbank 9
-chan_setinstr 11
-chan_setlayer 0, .layer_1FFF
-chan_end
-
-.layer_1FFF:
-layer_note1 39, 0xFF, 127
-layer_end
-
 .sound_obj_bowser_inhaling:
 chan_setbank 6
 chan_setinstr 6
@@ -5312,7 +5337,27 @@ chan_setlayer 0, .layer_2006
 chan_end
 
 .layer_2006:
-layer_note1 36, 0x5a, 127
+layer_note1 39, 0x5a, 127
+layer_end
+
+.sound_obj_bowser_pain:
+chan_setbank 6
+chan_setinstr 16
+chan_setlayer 0, .layer_2007
+chan_end
+
+.layer_2007:
+layer_note1 39, 0x3C, 127
+layer_end
+
+.sound_obj_bowser_serious:
+chan_setbank 6
+chan_setinstr 18
+chan_setlayer 0, .layer_2008
+chan_end
+
+.layer_2008:
+layer_note1 39, 0x1F4, 127
 layer_end
 
 .sound_obj_big_penguin_walk:
@@ -5969,12 +6014,10 @@ chan_setinstr 9
 chan_setval 25
 chan_call .set_reverb
 chan_setlayer 0, .layer_23EF
-chan_setlayer 1, .layer_23EF
 chan_end
 
 .layer_23EF:
-layer_portamento 0x81, 20, 255
-layer_note1 26, 0x12c, 127
+layer_note1 39, 0xFF, 100
 layer_end
 
 .sound_obj_ukiki_chatter_short:
@@ -6403,27 +6446,47 @@ layer_note1 8, 0x6, 100
 layer_note1 32, 0xc, 100
 layer_end
 
+.sound_obj_eyerok_opening:
+chan_setbank 0
+chan_setinstr 7
+chan_setlayer 0, .layer_26D8
+chan_end
+
+.layer_26D8:
+layer_note1 39, 0x168, 110
+layer_end
+
+.sound_obj_eyerok_death:
+chan_setbank 0
+chan_setinstr 8
+chan_setlayer 0, .layer_26D9
+chan_end
+
+.layer_26D9:
+layer_note1 39, 0xF0, 110
+layer_end
+
 .sound_obj_eyerok_sound_short:
-chan_setbank 7
-chan_setinstr 12
+chan_setbank 0
+chan_setinstr 9
 chan_setlayer 0, .layer_26C7
 chan_setlayer 1, .layer_26C7
 chan_end
 
 .layer_26C7:
 layer_portamento 0x81, 32, 255
-layer_note1 22, 0x24, 110
+layer_note1 39, 0x50, 110
 layer_end
 
 .sound_obj_eyerok_sound_long:
-chan_setbank 7
-chan_setinstr 12
+chan_setbank 0
+chan_setinstr 9
 chan_setlayer 0, .layer_26D7
 chan_end
 
 .layer_26D7:
 layer_portamento 0x81, 26, 255
-layer_note1 19, 0x60, 127
+layer_note1 19, 0x70, 127
 layer_end
 
 .sound_obj_wiggler_high_pitch:
@@ -6464,8 +6527,7 @@ chan_end
 layer_delay 0xdc
 
 .layer_271D:
-layer_portamento 0x81, 20, 255
-layer_note1 26, 0xc8, 110
+layer_note1 39, 0xFF, 127
 layer_end
 
 .sound_obj_enemy_death_high:
@@ -6792,6 +6854,16 @@ layer_portamento 0x81, 22, 255
 layer_note1 34, 0x10, 105
 layer_end
 
+.sound_obj_kingboomboo:
+chan_setbank 0
+chan_setinstr 10
+chan_setlayer 0, .layer_2954
+chan_end
+
+.layer_2954:
+layer_note1 39, 0x14A, 110
+layer_end
+
 .channel6_table:
 sound_ref .sound_air_bowser_spit_fire
 sound_ref .chan_29C2
@@ -6810,18 +6882,18 @@ sound_ref .sound_air_bowser_spit_fire
 sound_ref .sound_air_bowser_spit_fire
 sound_ref .sound_air_bowser_spit_fire
 sound_ref .sound_air_castle_outdoors_ambient
-sound_ref .chan_29C2
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .chan_29C2
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
+sound_ref .sound_obj_amy1
+sound_ref .sound_obj_amy2
+sound_ref .sound_obj_amy3
+sound_ref .sound_obj_amy4
+sound_ref .sound_obj_amy5
+sound_ref .sound_obj_blaze1
+sound_ref .sound_obj_blaze2
+sound_ref .sound_obj_blaze3
+sound_ref .sound_obj_blaze4
+sound_ref .sound_obj_blaze5
+sound_ref .sound_obj_chao_deeper
+sound_ref .sound_obj_vector
 sound_ref .sound_air_bowser_spit_fire
 sound_ref .sound_air_bowser_spit_fire
 sound_ref .sound_air_bowser_spit_fire
@@ -7041,6 +7113,126 @@ layer_note1 20, 0x2, 85
 layer_jump .layer_2B0F
 layer_end
 
+.sound_obj_amy1:
+chan_setbank 9
+chan_setinstr 7
+chan_setlayer 0, .layer_2B10
+chan_end
+
+.layer_2B10:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_amy2:
+chan_setbank 9
+chan_setinstr 8
+chan_setlayer 0, .layer_2B11
+chan_end
+
+.layer_2B11:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_amy3:
+chan_setbank 9
+chan_setinstr 9
+chan_setlayer 0, .layer_2B12
+chan_end
+
+.layer_2B12:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_amy4:
+chan_setbank 9
+chan_setinstr 10
+chan_setlayer 0, .layer_2B13
+chan_end
+
+.layer_2B13:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_amy5:
+chan_setbank 9
+chan_setinstr 11
+chan_setlayer 0, .layer_2B14
+chan_end
+
+.layer_2B14:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_blaze1:
+chan_setbank 9
+chan_setinstr 12
+chan_setlayer 0, .layer_2B16
+chan_end
+
+.layer_2B16:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_blaze2:
+chan_setbank 9
+chan_setinstr 13
+chan_setlayer 0, .layer_2B17
+chan_end
+
+.layer_2B17:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_blaze3:
+chan_setbank 9
+chan_setinstr 14
+chan_setlayer 0, .layer_2B18
+chan_end
+
+.layer_2B18:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_blaze4:
+chan_setbank 9
+chan_setinstr 15
+chan_setlayer 0, .layer_2B19
+chan_end
+
+.layer_2B19:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_blaze5:
+chan_setbank 9
+chan_setinstr 16
+chan_setlayer 0, .layer_2B1A
+chan_end
+
+.layer_2B1A:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_chao_deeper:
+chan_setbank 0
+chan_setinstr 13
+chan_setlayer 0, .layer_2B1B
+chan_end
+
+.layer_2B1B:
+layer_note1 20, 0x1F4, 127
+layer_end
+
+.sound_obj_vector:
+chan_setbank 9
+chan_setinstr 22
+chan_setlayer 0, .layer_2B1C
+chan_end
+
+.layer_2B1C:
+layer_note1 39, 0xFF, 127
+layer_end
+
 .channel7_table:
 sound_ref .sound_menu_change_select
 sound_ref .sound_menu_reverse_pause
@@ -7094,7 +7286,7 @@ sound_ref .sound_menu_mario_castle_warp2
 #else
   sound_ref .sound_menu_star_sound_okey_dokey
   sound_ref .sound_menu_star_sound_lets_a_go
-  sound_ref .sound_menu_yoshi_gain_lives
+sound_ref .sound_menu_pipe_slide
   sound_ref .sound_menu_enter_pipe
   sound_ref .sound_menu_exit_pipe
   sound_ref .sound_menu_collect_red_coin
@@ -7547,106 +7739,35 @@ layer_note1 58, 0x5, 20
 layer_end
 
 .sound_menu_enter_pipe:
-chan_reservenotes 4
-chan_setbank 9
-chan_setinstr 2
-chan_setpanmix 0
-chan_stereoheadseteffects 1
-chan_setval 30
-chan_call .set_reverb
-chan_setenvelope .envelope_33BC
-chan_setdecayrelease 220
-chan_setlayer 0, .layer_2EA3
-chan_setlayer 1, .layer_2E9E
+chan_setbank 0
+chan_setinstr 14
+chan_setlayer 0, .layer_2E9E
 chan_end
 
 .layer_2E9E:
-layer_transpose -12
-layer_jump .layer_2EA5
-
-.layer_2EA3:
-layer_transpose -24
-.layer_2EA5:
-layer_call .layer_fn_2EAB
-layer_call .layer_fn_2EAB
-
-.layer_fn_2EAB:
-layer_portamento 0x85, 60, 192
-layer_setpan 117
-layer_note1 60, 0x3, 126
-layer_setpan 105
-layer_note1 58, 0x3, 126
-layer_setpan 93
-layer_note1 55, 0x3, 126
-layer_setpan 81
-layer_note1 51, 0x3, 126
-layer_setpan 46
-layer_note1 50, 0x3, 126
-layer_setpan 34
-layer_note1 46, 0x3, 126
-layer_setpan 22
-layer_note1 44, 0x3, 126
-layer_setpan 10
-layer_note1 41, 0x3, 126
+layer_note1 39, 0x104, 127
 layer_end
 
 .sound_menu_exit_pipe:
-chan_reservenotes 4
-chan_setbank 9
-chan_setinstr 2
-#ifdef VERSION_SH
-  chan_setval 15
-  .set EXIT_PIPE_NOTE_VELOCITY, 106
-#else
-  chan_setval 30
-  .set EXIT_PIPE_NOTE_VELOCITY, 126
-#endif
-chan_call .set_reverb
-chan_setenvelope .envelope_3464
-chan_setdecayrelease 220
-chan_setlayer 0, .layer_2EF4
-chan_setlayer 1, .layer_2EEF
+chan_setbank 0
+chan_setinstr 14
+chan_setlayer 0, .layer_2EEF
 chan_end
 
 .layer_2EEF:
-layer_transpose 24
-layer_jump .layer_2EF6
-
-.layer_2EF4:
-layer_transpose 12
-.layer_2EF6:
-layer_portamento 0x85, 15, 128
-layer_note1 15, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 19, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 22, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 27, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 22, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 27, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 31, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 34, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 39, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 34, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 23, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 27, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 30, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 35, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 30, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 35, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 39, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 42, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 47, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 42, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 25, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 29, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 32, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 37, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 32, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 37, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 41, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 44, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 49, 0x3, EXIT_PIPE_NOTE_VELOCITY
-layer_note1 44, 0x3, EXIT_PIPE_NOTE_VELOCITY
+layer_note1 39, 0x104, 127
 layer_end
+
+.sound_menu_pipe_slide:
+chan_setbank 0
+chan_setinstr 15
+chan_setlayer 0, .layer_2EF0
+chan_end
+
+.layer_2EF0:
+layer_note1 39, 0xFF, 127
+layer_end
+
 
 .sound_menu_bowser_laugh:
 chan_setbank 6
@@ -7654,7 +7775,6 @@ chan_setinstr 9
 chan_setval 25
 chan_call .set_reverb
 chan_setlayer 0, .layer_271D
-chan_setlayer 1, .layer_271D
 chan_end
 
 .sound_menu_click_change_view:
@@ -7664,7 +7784,7 @@ chan_setlayer 0, .layer_2F6D
 chan_end
 
 .layer_2F6D:
-layer_note1 39, 0x30, 127
+layer_note1 39, 0xFF, 100
 layer_end
 
 .sound_menu_camera_unused1:

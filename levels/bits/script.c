@@ -2,6 +2,7 @@
 #include "sm64.h"
 #include "behavior_data.h"
 #include "model_ids.h"
+#include "dialog_ids.h"
 #include "seq_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
@@ -93,6 +94,8 @@ const LevelScript level_bits_entry[] = {
         OBJECT(/*model*/ MODEL_NONE,           /*pos*/ -7039, -3812,     4, /*angle*/ 0, 90, 0,  /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
         OBJECT(/*model*/ MODEL_BITS_WARP_PIPE, /*pos*/   351,  6652, -6030, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(WARP_NODE_0B), /*bhv*/ bhvWarpPipe),
         OBJECT(/*model*/ MODEL_NONE,           /*pos*/   351,  6800, -3900, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0C), /*bhv*/ bhvDeathWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -6839, -3812,     4, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  -82,  6537,  -5321, /*angle*/ 0, 90, 0, /*behParam*/ MWISP_BITS << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A,    /*destLevel*/ LEVEL_BITS,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,    /*destLevel*/ LEVEL_BOWSER_3, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,    /*destLevel*/ LEVEL_BITS,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
@@ -101,7 +104,7 @@ const LevelScript level_bits_entry[] = {
         JUMP_LINK(script_func_local_2),
         TERRAIN(/*terrainData*/ bits_seg7_collision_level),
         MACRO_OBJECTS(/*objList*/ bits_seg7_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_KOOPA_ROAD),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_EGGSTAGE3),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 

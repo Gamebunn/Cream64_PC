@@ -2,6 +2,7 @@
 #include "sm64.h"
 #include "behavior_data.h"
 #include "model_ids.h"
+#include "dialog_ids.h"
 #include "seq_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
@@ -10,7 +11,9 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
+
 
 #include "make_const_nonconst.h"
 #include "levels/hmc/header.h"
@@ -94,9 +97,16 @@ const LevelScript level_hmc_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_HMC_ROCK_SMALL_PIECE,     hmc_geo_000588),
     LOAD_MODEL_FROM_GEO(MODEL_HMC_RED_GRILLS,           hmc_geo_000530),
 
+    LOAD_MODEL_FROM_GEO(MODEL_BLAZE,           blaze_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARINE,          marine_geo),
+    
     AREA(/*index*/ 1, hmc_geo_000B90),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -7152,  3161, 7181, /*angle*/ 0, 135, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  3351, -4690, 4773, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(52) | BPARAM2(WARP_NODE_0B), /*bhv*/ bhvWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -6952,  3161, 7181, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  -6151,   2048,  5721, /*angle*/ 0, 315, 0, /*behParam*/ MWISP_HMC << 16, /*beh*/ bhvWisp1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/ -7526,  2241, 6835, /*angle*/ 0, 10, 0, /*behParam*/ BLAZE_02 << 24, /*beh*/ bhvToadMessageBlaze, /*acts*/ ACT_1 | ACT_2 | ACT_3),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_MARINE, /*pos*/ -4653,  -4505, -2997, /*angle*/ 0, 10, 0, /*behParam*/ MARINE_02 << 24, /*beh*/ bhvToadMessageMarine2, /*acts*/ ACT_1 | ACT_2 | ACT_3),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_HMC,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_COTMC,  /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 3, /*destNode*/ WARP_NODE_34, /*flags*/ WARP_NO_CHECKPOINT),

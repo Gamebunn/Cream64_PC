@@ -94,6 +94,8 @@ const LevelScript level_bitdw_entry[] = {
         WARP_NODE(/*id*/ WARP_NODE_0B,    /*destLevel*/ LEVEL_BOWSER_1, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,    /*destLevel*/ LEVEL_BITDW,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE,   /*destArea*/ 1, /*destNode*/ WARP_NODE_25, /*flags*/ WARP_NO_CHECKPOINT),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -7243, -2153, 3886, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  5636,  2765,  -256, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_BITDW << 16, /*beh*/ bhvWisp1),
         JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),
         JUMP_LINK(script_func_local_3),

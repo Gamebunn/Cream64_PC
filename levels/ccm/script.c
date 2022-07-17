@@ -12,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/group7.h"
 
 #include "make_const_nonconst.h"
 #include "levels/ccm/header.h"
@@ -22,8 +23,8 @@ static const LevelScript script_func_local_1[] = {
 };
 
 static const LevelScript script_func_local_2[] = {
-    OBJECT          (/*model*/ MODEL_PENGUIN,          /*pos*/  2650, -3735,  3970, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(0x01), /*bhv*/ bhvSmallPenguin),
-    OBJECT          (/*model*/ MODEL_PENGUIN,          /*pos*/  -555,  3470, -1000, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(0x00), /*bhv*/ bhvSmallPenguin),
+    OBJECT          (/*model*/ MODEL_PENGUIN_CHAO,          /*pos*/  2650, -3735,  3970, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(0x01), /*bhv*/ bhvSmallPenguin),
+    OBJECT          (/*model*/ MODEL_PENGUIN_CHAO,          /*pos*/  -555,  3470, -1000, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(0x00), /*bhv*/ bhvSmallPenguin),
     OBJECT          (/*model*/ MODEL_MR_BLIZZARD,      /*pos*/ -2376, -1589,  4256, /*angle*/ 0, 252, 0, /*bhvParam*/ BPARAM2(MR_BLIZZARD_STYPE_JUMPING), /*bhv*/ bhvMrBlizzard),
     OBJECT          (/*model*/ MODEL_MR_BLIZZARD,      /*pos*/  -394, -1589,  4878, /*angle*/ 0,  74, 0, /*bhvParam*/ BPARAM2(MR_BLIZZARD_STYPE_JUMPING), /*bhv*/ bhvMrBlizzard),
     OBJECT_WITH_ACTS(/*model*/ MODEL_CCM_SNOWMAN_BASE, /*pos*/  2560,  2662, -1122, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvSnowmansBottom, /*acts*/ ACT_5),
@@ -40,7 +41,7 @@ static const LevelScript script_func_local_3[] = {
 };
 
 static const LevelScript script_func_local_4[] = {
-    OBJECT_WITH_ACTS(/*model*/ MODEL_PENGUIN, /*pos*/ -4952,  6656, -6075, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_3) | BPARAM2(RACING_PENGUIN_BP_THIN), /*bhv*/ bhvRacingPenguin,   /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_PENGUIN_CHAO, /*pos*/ -4952,  6656, -6075, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_3) | BPARAM2(RACING_PENGUIN_BP_THIN), /*bhv*/ bhvRacingPenguin,   /*acts*/ ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
     OBJECT          (/*model*/ MODEL_NONE,    /*pos*/ -6500, -5836, -6400, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvPenguinRaceFinishLine),
     OBJECT          (/*model*/ MODEL_NONE,    /*pos*/ -6393,  -716,  7503, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvPenguinRaceShortcutCheck),
 #ifndef VERSION_JP
@@ -77,11 +78,15 @@ const LevelScript level_ccm_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CCM_SNOWMAN_BASE,  ccm_geo_0003F0),
     LOAD_MODEL_FROM_GEO(MODEL_CCM_SNOWMAN_HEAD,  ccm_geo_00040C),
 
+    LOAD_MODEL_FROM_GEO(MODEL_PENGUIN_CHAO,     penguin_chao_geo),
+    
     AREA(/*index*/ 1, ccm_geo_00051C),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -1512,  3560, -2305, /*angle*/ 0,  140, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  -181,  2918, -1486, /*angle*/ 0,    0, 0, /*bhvParam*/ BPARAM1(15) | BPARAM2(WARP_NODE_1E), /*bhv*/ bhvWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -1847,  2815,  -321, /*angle*/ 0, -158, 0, /*bhvParam*/ BPARAM2(WARP_NODE_1F), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  3349, -4694,  -183, /*angle*/ 0,  -34, 0, /*bhvParam*/ BPARAM2(WARP_NODE_20), /*bhv*/ bhvFadingWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -1312,  3560, -2305, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT(/*model*/ MODEL_WISP1, /*pos*/  -1417,   2560,  -1519, /*angle*/ 0, 179, 0, /*behParam*/ MWISP_CCM << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_CCM,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_14,      /*destLevel*/ LEVEL_CCM,    /*destArea*/ 2, /*destNode*/ WARP_NODE_14, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_1E,      /*destLevel*/ LEVEL_CCM,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
@@ -101,6 +106,7 @@ const LevelScript level_ccm_entry[] = {
 
     AREA(/*index*/ 2, ccm_geo_0005E8),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -5836, 7465, -6143, /*angle*/ 0, 90, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -5636, 7465, -6143, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_14,      /*destLevel*/ LEVEL_CCM,    /*destArea*/ 1, /*destNode*/ WARP_NODE_14, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_CCM,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 1, /*destNode*/ WARP_NODE_33, /*flags*/ WARP_NO_CHECKPOINT),
@@ -108,7 +114,7 @@ const LevelScript level_ccm_entry[] = {
         JUMP_LINK(script_func_local_4),
         TERRAIN(/*terrainData*/ ccm_seg7_area_2_collision),
         MACRO_OBJECTS(/*objList*/ ccm_seg7_area_2_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_SLIDE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_NEW_TTM2),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SLIDE),
     END_AREA(),
 

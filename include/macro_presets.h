@@ -24,6 +24,7 @@ enum MacroPresets {
     macro_empty_19,
     macro_fake_star,
     macro_wooden_signpost,
+    macro_signpost_vanilla,
     macro_cannon_closed,
     macro_bobomb_buddy_opens_cannon_1,
     macro_butterfly,

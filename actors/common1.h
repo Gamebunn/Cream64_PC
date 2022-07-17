@@ -259,8 +259,6 @@ extern const Collision wooden_signpost_seg3_collision_0302DD80[];
 
 #include "wooden_signpost/geo_header.h"
 
-#include "bait_fish/geo_header.h"
-
 #include "bowser_key_cutscene/geo_header.h"
 
 #include "bowser_key/geo_header.h"

@@ -80,14 +80,38 @@ s32 sGameLoopTicked = 0;
 #define UKIKI 0
 #define TUXIE 1
 #define BOWS1 2 // Bowser Intro / Doors Laugh
-#define KOOPA 3
+#define BOWS3 3
 #define KBOMB 4
 #define BOO 5
-#define BOMB 6
-#define BOWS2 7 // Bowser Battle Laugh
-#define GRUNT 8
-#define WIGLR 9
-#define YOSHI 10
+#define BOOM 6
+#define BOMB 7
+#define BOWS2 8 // Bowser Battle Laugh
+#define GRUNT 9
+#define WIGLR 10
+#define YOSHI 11
+#define AMY1 12
+#define AMY2 13
+#define AMY3 14
+#define AMY4 15
+#define AMY5 16
+#define BLAZ1 17
+#define BLAZ2 18
+#define BLAZ3 19
+#define BLAZ4 20
+#define BLAZ5 21
+#define GARDE 22
+#define POCKY 23
+#define TALS1 24
+#define TALS2 25
+#define TALS3 26
+#define TALS4 27
+#define TALS5 28
+#define CHAO  29
+#define CHAO2 30
+#define WIZE1 31
+#define WIZE2 32
+#define VECTR 33
+
 #define _ 0xFF
 
 #if BUGFIX_DIALOG_SOUND_KTQ_WIN
@@ -98,30 +122,32 @@ s32 sGameLoopTicked = 0;
 
 u8 sDialogSpeaker[] = {
     //       0      1      2      3      4      5      6      7      8      9
-    /* 0*/ _,     BOMB,  BOMB,  BOMB,  BOMB,  KOOPA, KOOPA, KOOPA, _,     KOOPA,
+    /* 0*/ _,     BOMB,  BOMB,  BOMB,  BOMB,  _,     _,     _,     _,     _,
     /* 1*/ _,     _,     _,     _,     _,     _,     _,     KBOMB, _,     _,
     /* 2*/ _,     BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1,
-    /* 3*/ _,     _,     _,     _,     _,     _,     _,     TUXIE, _,     _,
-    /* 4*/ _,     KOOPA, _,     _,     _,     _,     _,     BOMB,  _,     _,
-    /* 5*/ _,     _,     _,     _,     _,     TUXIE, TUXIE, TUXIE, TUXIE, TUXIE,
+    /* 3*/ _,     _,     _,     _,     _,     _,     _,     CHAO2, _,     _,
+    /* 4*/ _,     _,     _,     _,     _,     _,     _,     BOMB,  _,     _,
+    /* 5*/ _,     _,     _,     _,     _,     CHAO2, CHAO2, TUXIE, TUXIE, TUXIE,
     /* 6*/ _,     _,     _,     _,     _,     _,     _,     BOWS2, _,     _,
     /* 7*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     UKIKI,
     /* 8*/ UKIKI, _,     _,     _,     _,     BOO,   _,     _,     _,     _,
-    /* 9*/ BOWS2, _,     BOWS2, BOWS2, _,     _,     _,     _,     BOO,   BOO,
-    /*10*/ UKIKI, UKIKI, _,     _,     _,     BOMB,  BOMB,  BOO,   BOO,   _,
-    /*11*/ _,     _,     _,     _,     GRUNT, GRUNT, KBOMB, GRUNT, GRUNT, _,
+    /* 9*/ BOWS2, _,     BOWS2, BOWS3, _,     _,     _,     _,     BOO,   BOO,
+    /*10*/ UKIKI, UKIKI, _,     _,     _,     BOMB,  BOMB,  BOO,   BOOM,  _,
+    /*11*/ _,     _,     _,     _,     GRUNT, GRUNT, KBOMB, WIZE1, WIZE2, _,
     /*12*/ _,     _,     _,     _,     _,     _,     _,     _,     KBOMB, _,
-    /*13*/ _,     _,     TUXIE, _,     _,     _,     _,     _,     _,     _,
+    /*13*/ _,     _,     CHAO2,  CHAO,  CHAO,  CHAO,  CHAO,  CHAO, _,     _,
     /*14*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
     /*15*/ WIGLR, WIGLR, WIGLR, _,     _,     _,     _,     _,     _,     _,
-    /*16*/ _,     YOSHI, _,     _,     _,     _,     _,     _,     WIGLR, _,
+    /*16*/ _,     YOSHI, _,     _,     CHAO2, _,     _,     _,     WIGLR, _,
     /*17*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
     /*18*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*19*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*20*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*21*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*19*/ _,     _,     _,     AMY1,  AMY2,  AMY2,  AMY3,  AMY4,  _,     AMY5, 
+    /*20*/ BLAZ1, _,     BLAZ2, _,     BLAZ3, BLAZ4, _,     BLAZ5, _,     GARDE, 
+    /*21*/ POCKY, TALS1, CHAO,  _,     _,     _,     _,     _,     _,     _,
     /*22*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*22*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*23*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*24*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
+    /*25*/ VECTR, _,     _,     _,     _,
 };
 #undef _
 STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT,
@@ -131,14 +157,34 @@ s32 sDialogSpeakerVoice[] = {
     SOUND_OBJ_UKIKI_CHATTER_LONG,
     SOUND_OBJ_BIG_PENGUIN_YELL,
     SOUND_OBJ_BOWSER_INTRO_LAUGH,
-    SOUND_OBJ_KOOPA_TALK,
+    SOUND_OBJ_BOWSER_SERIOUS,
     SOUND_OBJ_KING_BOBOMB_TALK,
     SOUND_OBJ_BOO_LAUGH_LONG,
+    SOUND_OBJ_KINGBOOMBOO,
     SOUND_OBJ_BOBOMB_BUDDY_TALK,
     SOUND_OBJ_BOWSER_LAUGH,
     SOUND_OBJ2_BOSS_DIALOG_GRUNT,
     SOUND_OBJ_WIGGLER_TALK,
     SOUND_GENERAL_YOSHI_TALK,
+    SOUND_OBJ_AMY1,
+    SOUND_OBJ_AMY2,
+    SOUND_OBJ_AMY3,
+    SOUND_OBJ_AMY4,
+    SOUND_OBJ_AMY5,
+    SOUND_OBJ_BLAZE1,
+    SOUND_OBJ_BLAZE2,
+    SOUND_OBJ_BLAZE3,
+    SOUND_OBJ_BLAZE4,
+    SOUND_OBJ_BLAZE5,
+    SOUND_OBJ_SAD_GARDEVOIR,
+    SOUND_OBJ_POCKY,
+    SOUND_OBJ_TAILS1,
+    SOUND_OBJ_CHAO,
+    SOUND_OBJ_CHAO_DEEPER,
+    SOUND_OBJ_EYEROK_OPENING,
+    SOUND_OBJ_EYEROK_DEATH,
+    SOUND_OBJ_VECTOR,
+
 #if defined(VERSION_JP) || defined(VERSION_US)
     NO_SOUND,
     NO_SOUND,

@@ -29,6 +29,7 @@ static struct MacroPreset sMacroObjectPresets[] = {
     /* macro_empty_19                    */ { bhvYellowCoin, MODEL_YELLOW_COIN, 0 },
     /* macro_fake_star                   */ { bhvUnusedFakeStar, MODEL_STAR, 0 }, // unused
     /* macro_wooden_signpost             */ { bhvMessagePanel, MODEL_WOODEN_SIGNPOST, 0 },
+    /* macro_signpost_vanilla            */ { bhvMessagePanel, MODEL_SIGNPOST_VANILLA, 0 },
     /* macro_cannon_closed               */ { bhvCannonClosed, MODEL_DL_CANNON_LID, 0 },
     /* macro_bobomb_buddy_opens_cannon_1 */ { bhvBobombBuddyOpensCannon, MODEL_LAYLA, 0 },
     /* macro_butterfly                   */ { bhvButterfly, MODEL_BUTTERFLY, 0 }, // unused

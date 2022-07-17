@@ -85,3 +85,8 @@
 #include "levels/castle_inside/water_level_pillar/collision.inc.c"
 #include "levels/castle_inside/areas/3/trajectory.inc.c"
 #include "levels/castle_inside/areas/3/movtext.inc.c"
+
+#include "levels/castle_inside/signpost_artist/model.inc.c"
+#include "levels/castle_inside/bait_fish2/model.inc.c"
+#include "levels/castle_inside/bait_fish/model.inc.c"
+#include "levels/castle_inside/toad_angy/model.inc.c"
