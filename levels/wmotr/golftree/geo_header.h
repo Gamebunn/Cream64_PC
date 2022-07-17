@@ -1,0 +1,10 @@
+extern const GeoLayout golftree_geo[];
+extern Lights1 golftree_tree3_lights;
+extern u8 golftree_golftree_ci8[];
+extern u8 golftree_golftree_ci8_pal_rgba16[];
+extern Vtx golftree_000_displaylist_mesh_layer_4_vtx_0[4];
+extern Gfx golftree_000_displaylist_mesh_layer_4_tri_0[];
+extern Gfx mat_golftree_tree3[];
+extern Gfx mat_revert_golftree_tree3[];
+extern Gfx golftree_000_displaylist_mesh_layer_4[];
+extern Gfx golftree_material_revert_render_settings[];

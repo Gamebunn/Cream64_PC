@@ -15,3 +15,10 @@
 
 #include "levels/castle_courtyard/areas/1/spire/geo.inc.c"
 #include "levels/castle_courtyard/areas/1/geo.inc.c"
+
+#include "levels/castle_courtyard/areas/area_2/geo.inc.c"
+#include "levels/castle_courtyard/areas/area_3/geo.inc.c"
+#include "levels/castle_courtyard/bait/geo.inc.c"
+#include "levels/castle_courtyard/lurk/geo.inc.c"
+#include "levels/castle_courtyard/bump/geo.inc.c"
+#include "levels/castle_courtyard/sage/geo.inc.c"

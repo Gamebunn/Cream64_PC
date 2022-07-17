@@ -1,0 +1,16 @@
+extern const GeoLayout ms_tree_geo[];
+extern Lights1 ms_tree_tree1_lights;
+extern Lights1 ms_tree_tree2_lights;
+extern u8 ms_tree_tree_bottom_ci8[];
+extern u8 ms_tree_tree_bottom_ci8_pal_rgba16[];
+extern u8 ms_tree_tex1_256x256_m_14e610d0b51443a0_14_mip2_rgba16[];
+extern Vtx ms_tree_000_displaylist_mesh_layer_4_vtx_0[6];
+extern Gfx ms_tree_000_displaylist_mesh_layer_4_tri_0[];
+extern Vtx ms_tree_000_displaylist_mesh_layer_4_vtx_1[4];
+extern Gfx ms_tree_000_displaylist_mesh_layer_4_tri_1[];
+extern Gfx mat_ms_tree_tree1[];
+extern Gfx mat_revert_ms_tree_tree1[];
+extern Gfx mat_ms_tree_tree2[];
+extern Gfx mat_revert_ms_tree_tree2[];
+extern Gfx ms_tree_000_displaylist_mesh_layer_4[];
+extern Gfx ms_tree_material_revert_render_settings[];

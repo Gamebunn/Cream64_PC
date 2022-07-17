@@ -3,6 +3,7 @@
 #include "behavior_data.h"
 #include "model_ids.h"
 #include "seq_ids.h"
+#include "dialog_ids.h"
 #include "segment_symbols.h"
 #include "level_commands.h"
 
@@ -10,62 +11,76 @@
 
 #include "levels/scripts.h"
 
+#include "actors/common0.h"
 #include "actors/common1.h"
+
+/* Fast64 begin persistent block [includes] */
+/* Fast64 end persistent block [includes] */
 
 #include "make_const_nonconst.h"
 #include "levels/wmotr/header.h"
 
-static const LevelScript script_func_local_1[] = {
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/  3996, -2739,  5477, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM2(82),  /*bhv*/ bhvPoleGrabbing),
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2911,  3564, -3967, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM2(84),  /*bhv*/ bhvPoleGrabbing),
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -3258,  3359, -3946, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM2(105), /*bhv*/ bhvPoleGrabbing),
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2639,  3154, -4369, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM2(125), /*bhv*/ bhvPoleGrabbing),
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2980,  4048, -4248, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM2(36),  /*bhv*/ bhvPoleGrabbing),
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -3290,  3636, -4477, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM2(77),  /*bhv*/ bhvPoleGrabbing),
-    RETURN(),
-};
-
-static const LevelScript script_func_local_2[] = {
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -160, 1950, -470, /*angle*/ 0, 0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_1), /*bhv*/ bhvHiddenRedCoinStar),
-    RETURN(),
-};
+/* Fast64 begin persistent block [scripts] */
+/* Fast64 end persistent block [scripts] */
 
 const LevelScript level_wmotr_entry[] = {
-    INIT_LEVEL(),
-    LOAD_MIO0        (/*seg*/ 0x07, _wmotr_segment_7SegmentRomStart, _wmotr_segment_7SegmentRomEnd),
-    LOAD_MIO0        (/*seg*/ 0x0A, _cloud_floor_skybox_mio0SegmentRomStart, _cloud_floor_skybox_mio0SegmentRomEnd),
-    LOAD_MIO0_TEXTURE(/*seg*/ 0x09, _sky_mio0SegmentRomStart, _sky_mio0SegmentRomEnd),
-    LOAD_MIO0        (/*seg*/ 0x05, _group2_mio0SegmentRomStart, _group2_mio0SegmentRomEnd),
-    LOAD_RAW         (/*seg*/ 0x0C, _group2_geoSegmentRomStart,  _group2_geoSegmentRomEnd),
-    LOAD_MIO0        (/*seg*/ 0x06, _group17_mio0SegmentRomStart, _group17_mio0SegmentRomEnd),
-    LOAD_RAW         (/*seg*/ 0x0D, _group17_geoSegmentRomStart,  _group17_geoSegmentRomEnd),
-    LOAD_MIO0        (/*seg*/ 0x08, _common0_mio0SegmentRomStart, _common0_mio0SegmentRomEnd),
-    LOAD_RAW         (/*seg*/ 0x0F, _common0_geoSegmentRomStart,  _common0_geoSegmentRomEnd),
-    ALLOC_LEVEL_POOL(),
-    MARIO(/*model*/ MODEL_MARIO, /*bhvParam*/ BPARAM4(0x01), /*bhv*/ bhvMario),
-    JUMP_LINK(script_func_global_1),
-    JUMP_LINK(script_func_global_3),
-    JUMP_LINK(script_func_global_18),
+	INIT_LEVEL(),
+	LOAD_MIO0_TEXTURE(0x09, _sky_mio0SegmentRomStart, _sky_mio0SegmentRomEnd), 
+	LOAD_MIO0(0x7, _wmotr_segment_7SegmentRomStart, _wmotr_segment_7SegmentRomEnd), 
+	LOAD_MIO0(0xa, _clouds_skybox_mio0SegmentRomStart, _clouds_skybox_mio0SegmentRomEnd), 
+	ALLOC_LEVEL_POOL(),
+	MARIO(MODEL_MARIO, 0x00000001, bhvMario), 
+	JUMP_LINK(script_func_global_1), 
+	JUMP_LINK(script_func_global_3), 
+	JUMP_LINK(script_func_global_18), 
+	LOAD_MODEL_FROM_GEO(MODEL_FLOOMBA, floomba_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_GOLFTREE, golftree_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_TAILS_C1, tails_c1_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_JOHNNY, johnny_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_STARFLAG, starflag_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_VECTOR, vector_geo), 
 
-    AREA(/*index*/ 1, wmotr_geo_0001F0),
-        OBJECT(/*model*/ MODEL_NONE, /*pos*/ -67, 2669, -16, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
-        WARP_NODE(/*id*/ WARP_NODE_0A,         /*destLevel*/ LEVEL_WMOTR,          /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
-        WARP_NODE(/*id*/ WARP_NODE_SUCCESS,    /*destLevel*/ LEVEL_CASTLE,         /*destArea*/ 2, /*destNode*/ WARP_NODE_38, /*flags*/ WARP_NO_CHECKPOINT),
-        WARP_NODE(/*id*/ WARP_NODE_DEATH,      /*destLevel*/ LEVEL_CASTLE,         /*destArea*/ 2, /*destNode*/ WARP_NODE_6D, /*flags*/ WARP_NO_CHECKPOINT),
-        WARP_NODE(/*id*/ WARP_NODE_WARP_FLOOR, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
-        JUMP_LINK(script_func_local_1),
-        JUMP_LINK(script_func_local_2),
-        TERRAIN(/*terrainData*/ wmotr_seg7_collision),
-        MACRO_OBJECTS(/*objList*/ wmotr_seg7_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_SLIDE),
-        TERRAIN_TYPE(/*terrainType*/ TERRAIN_SNOW),
-    END_AREA(),
+	/* Fast64 begin persistent block [level commands] */
+	/* Fast64 end persistent block [level commands] */
 
-    FREE_LEVEL_POOL(),
-    MARIO_POS(/*area*/ 1, /*yaw*/ 270, /*pos*/ -67, 1669, -16),
-    CALL(/*arg*/ 0, /*func*/ lvl_init_or_update),
-    CALL_LOOP(/*arg*/ 1, /*func*/ lvl_init_or_update),
-    CLEAR_LEVEL(),
-    SLEEP_BEFORE_EXIT(/*frames*/ 1),
-    EXIT(),
+	AREA(1, wmotr_area_1),
+		WARP_NODE(0x0A, LEVEL_WMOTR, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF0, LEVEL_CASTLE, 0x02, 0x38, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF1, LEVEL_CASTLE, 0x02, 0x6D, WARP_NO_CHECKPOINT),
+		OBJECT(MODEL_CHEESE_FOLLOW, 5447, -4342, 6268, 0, 0, 0, 0x00000000, bhvCheeseFollow),
+		OBJECT(MODEL_FLOOMBA, 2670, -4342, 4283, 0, 0, 0, NTM_002 << 24, bhvToadMessageFloomba),
+		OBJECT(MODEL_JOHNNY, 5834, 1200, -3444, 0, 0, 0, NTM_003 << 24, bhvToadMessageJohnny),
+		OBJECT(MODEL_TAILS_C1, 5237, -4369, 4361, 0, 0, 0, NTM_001 << 24, bhvToadMessageTails3),
+		OBJECT(MODEL_VECTOR, 6166, -3827, 5078, 0, -90, 0, NTM_000 << 24, bhvToadMessageVector),
+		OBJECT(MODEL_WISP1, 4175, -4369, 4768, 0, 0, 0, MWISP_NTM << 16, bhvWisp1),
+		OBJECT(MODEL_NONE, -4460, 3374, 3447, 0, 0, 0, 0x00000000, bhvHiddenRedCoinStar),
+		OBJECT(MODEL_NONE, -4460, 3074, 3447, 0, 0, 0, 0x00000000, bhvRedCoinStarMarker),
+		OBJECT(MODEL_STARFLAG, -4439, 3074, 3097, 0, 0, 0, 0x00000000, bhvStarFlag),
+		OBJECT(MODEL_GOLFTREE, 5586, -4369, 5370, 0, 0, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, 1087, -4369, 5338, 0, 0, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, 1717, -4369, 7252, 0, 0, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, -2848, -2050, -3972, -15, -1, -6, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, -806, -2054, -1242, 0, -1, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, 4710, 1200, -5365, 0, -1, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, 6398, 1200, -4138, 0, -1, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, 2122, 1200, 387, 0, -1, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, 4491, 1200, -481, 0, -1, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_GOLFTREE, 5984, 1200, -4907, 0, -1, 0, 0x00000000, bhvTree),
+		OBJECT(MODEL_NONE, 5217, -4369, 6083, 0, 0, 0, 0x000A0000, bhvAirborneWarp),
+		MARIO_POS(0x01, 0, 5217, -4369, 6083),
+		TERRAIN(wmotr_area_1_collision),
+		MACRO_OBJECTS(wmotr_area_1_macro_objs),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_NTMFUGIYAMA),
+		TERRAIN_TYPE(TERRAIN_GRASS),
+		/* Fast64 begin persistent block [area commands] */
+		/* Fast64 end persistent block [area commands] */
+	END_AREA(),
+
+	FREE_LEVEL_POOL(),
+	MARIO_POS(0x01, 0, 5217, -4369, 6083),
+	CALL(0, lvl_init_or_update),
+	CALL_LOOP(1, lvl_init_or_update),
+	CLEAR_LEVEL(),
+	SLEEP_BEFORE_EXIT(1),
+	EXIT(),
 };

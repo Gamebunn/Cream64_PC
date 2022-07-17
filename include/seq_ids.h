@@ -38,7 +38,7 @@ enum SeqId {
     SEQ_EVENT_CUTSCENE_CREDITS,       // 0x1A
     SEQ_EVENT_SOLVE_PUZZLE,           // 0x1B
     SEQ_EVENT_TOAD_MESSAGE,           // 0x1C
-    SEQ_EVENT_PEACH_MESSAGE,          // 0x1D
+    SEQ_EVENT_PEACH_MESSAGE,          // 0x1D 
     SEQ_EVENT_CUTSCENE_INTRO,         // 0x1E
     SEQ_EVENT_CUTSCENE_VICTORY,       // 0x1F
     SEQ_EVENT_CUTSCENE_ENDING,        // 0x20; NEW MIDI

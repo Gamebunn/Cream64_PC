@@ -12,3 +12,16 @@
 #include "levels/wmotr/areas/1/model.inc.c"
 #include "levels/wmotr/areas/1/collision.inc.c"
 #include "levels/wmotr/areas/1/macro.inc.c"
+
+#include "levels/wmotr/leveldata.inc.c"
+
+#include "levels/wmotr/golftree/model.inc.c"
+#include "levels/wmotr/starflag/model.inc.c"
+#include "levels/wmotr/starflag/anims/data.inc.c"
+#include "levels/wmotr/starflag/anims/table.inc.c"
+#include "levels/wmotr/johnny/anims/data.inc.c"
+#include "levels/wmotr/johnny/anims/table.inc.c"
+#include "levels/wmotr/johnny/model.inc.c"
+#include "levels/wmotr/vector/model.inc.c"
+#include "levels/wmotr/vector/anims/data.inc.c"
+#include "levels/wmotr/vector/anims/table.inc.c"

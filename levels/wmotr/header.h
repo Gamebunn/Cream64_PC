@@ -16,4 +16,21 @@ extern const MacroObject wmotr_seg7_macro_objs[];
 // script
 extern const LevelScript level_wmotr_entry[];
 
+
+#include "levels/wmotr/header.inc.h"
+
+#include "levels/wmotr/golftree/geo_header.h"
+
+#include "levels/wmotr/starflag/geo_header.h"
+
+#include "levels/wmotr/starflag/anim_header.h"
+
+#include "levels/wmotr/johnny/anim_header.h"
+
+#include "levels/wmotr/johnny/geo_header.h"
+
+#include "levels/wmotr/vector/geo_header.h"
+
+#include "levels/wmotr/vector/anim_header.h"
+
 #endif

@@ -15,3 +15,11 @@
 
 #include "levels/vcutm/seesaw/geo.inc.c"
 #include "levels/vcutm/areas/1/geo.inc.c"
+
+#include "levels/vcutm/geo.inc.c"
+
+#include "levels/vcutm/carousel/geo.inc.c"
+#include "levels/vcutm/jack/geo.inc.c"
+#include "levels/vcutm/kitten_layla/geo.inc.c"
+#include "levels/vcutm/sweet/geo.inc.c"
+#include "levels/vcutm/hocus/geo.inc.c"

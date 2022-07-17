@@ -15,4 +15,22 @@ extern const MacroObject sa_seg7_macro_objs[];
 // script
 extern const LevelScript level_sa_entry[];
 
+// Area 2
+
+#include "levels/sa/areas/area_2/header.inc.h"
+
+#include "levels/sa/gardevoir/geo_header.h"
+
+#include "levels/sa/gardevoir/anim_header.h"
+
+#include "levels/sa/pocky/geo_header.h"
+
+#include "levels/sa/pocky/anim_header.h"
+
+#include "levels/sa/ms_tree/geo_header.h"
+
+#include "levels/sa/sorbet/geo_header.h"
+
+#include "levels/sa/sorbet/anim_header.h"
+
 #endif

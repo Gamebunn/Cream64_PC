@@ -20,4 +20,21 @@ extern const struct MovtexQuadCollection castle_courtyard_movtex_star_statue_wat
 // script
 extern const LevelScript level_castle_courtyard_entry[];
 
+#include "levels/castle_courtyard/areas/area_2/header.inc.h"
+
+#include "levels/castle_courtyard/bait/geo_header.h"
+
+#include "levels/castle_courtyard/bait/anim_header.h"
+
+#include "levels/castle_courtyard/lurk/geo_header.h"
+
+#include "levels/castle_courtyard/lurk/anim_header.h"
+
+#include "levels/castle_courtyard/bump/geo_header.h"
+
+#include "levels/castle_courtyard/bump/anim_header.h"
+
+#include "levels/castle_courtyard/sage/geo_header.h"
+
+#include "levels/castle_courtyard/sage/anim_header.h"
 #endif

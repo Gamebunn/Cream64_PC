@@ -14,3 +14,10 @@
 #include "levels/wmotr/header.h"
 
 #include "levels/wmotr/areas/1/geo.inc.c"
+
+#include "levels/wmotr/geo.inc.c"
+
+#include "levels/wmotr/golftree/geo.inc.c"
+#include "levels/wmotr/starflag/geo.inc.c"
+#include "levels/wmotr/johnny/geo.inc.c"
+#include "levels/wmotr/vector/geo.inc.c"

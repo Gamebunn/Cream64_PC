@@ -564,6 +564,7 @@ extern const BehaviorScript bhvMrBlizzard[];
 extern const BehaviorScript bhvMrBlizzardSnowball[];
 extern const BehaviorScript bhvSlidingPlatform2[];
 extern const BehaviorScript bhvOctagonalPlatformRotating[];
+extern const BehaviorScript bhvOctagonalPlatformRotatingVC[];
 extern const BehaviorScript bhvAnimatesOnFloorSwitchPress[];
 extern const BehaviorScript bhvActivatedBackAndForthPlatform[];
 extern const BehaviorScript bhvRecoveryHeart[];
@@ -640,6 +641,35 @@ extern const BehaviorScript bhvToadMessageNormal[];
 extern const BehaviorScript bhvToadMessageFloomba[];
 extern const BehaviorScript bhvAmyBoo[];
 extern const BehaviorScript bhvKoopaTails[]; 
+
+// Castle Inside
+extern const BehaviorScript bhvTankFishGroup2[];
+extern const BehaviorScript bhvTankFishGroup3[];
+
+// SA
+extern const BehaviorScript bhvToadMessagePocky[];
+extern const BehaviorScript bhvToadMessageSorbet[];
+extern const BehaviorScript bhvBobombBuddyGardevoir[];
+extern const BehaviorScript bhvTammie[];
+
+// Castle Courtyard
+extern const BehaviorScript bhvToadMessageBait[];
+extern const BehaviorScript bhvLurk[];
+extern const BehaviorScript bhvToadMessageBump[];
+extern const BehaviorScript bhvSage[];
+
+// Vanish Cap
+extern const BehaviorScript bhvJack[];
+extern const BehaviorScript bhvKittenLayla[];
+extern const BehaviorScript bhvSweet[];
+extern const BehaviorScript bhvToadMessageHocus[];
+extern const BehaviorScript bhvToadMessageTails2[];
+
+// WMOTR
+extern const BehaviorScript bhvStarFlag[];
+extern const BehaviorScript bhvToadMessageTails3[];
+extern const BehaviorScript bhvToadMessageJohnny[];
+extern const BehaviorScript bhvToadMessageVector[];
 
 // Ending
 extern const BehaviorScript bhvEndToadGemerl[];

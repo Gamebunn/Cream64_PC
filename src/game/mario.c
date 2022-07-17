@@ -1824,10 +1824,10 @@ void queue_rumble_particles(void) {
 s32 execute_mario_action(UNUSED struct Object *o) {
     s32 inLoop = TRUE;
 
-     if (gMarioState->controller->buttonDown & R_TRIG)
+    /* if (gMarioState->controller->buttonDown & R_TRIG)
     {
         level_trigger_warp(gMarioState, WARP_OP_CREDITS_START);
-    } 
+    } */
 
     switch (gMarioState->currentCostume) {
   case 0: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO];
