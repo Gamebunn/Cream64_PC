@@ -2646,12 +2646,18 @@ by: PeachyPeach\n\
 unused, still wanna say thanks)\n\
 \n\
 \n\
+Costume Switch Code only possible\n\
+thanks to:\n\
+CowQuack\n\
+\n\
+\n\
+\n\
 Various Pokemon pics seen in the\n\
 castle and Mission Street from:\n\
 Gigaboots\n\
 \n\
-\n\
-\n\
+Cream Wanted Poster\n\
+by: Nim\n\
 New Paintings by: InfiniteBrians,\n\
 SketchMeister, FlamingGaraco, \n\
 FudgerNutter, TheNovika, Simple, \n\
@@ -2698,8 +2704,8 @@ Mark and Katalina\n\
 Tannon by:\n\
 Gamebun\n\
 \n\
-Think that's everyone.\n\
-\n\
+Tammie by:\n\
+FlamingGaraco\n\
 I like to thank everyone\n\
 whose supported me these \n\
 last few years that I've been\n\
@@ -3726,10 +3732,16 @@ I'm sure you'll wow the crowd \n\
 as much as your mom does with \n\
 her lovely voice~\n\
 \n\
-Feel free to have a look around \n\
-and talk to the patrons, \n\
-I'll keep an eye on them \n\
-for you sweetie.\n\
+Though if you do need to get\n\
+back to your little adventure,\n\
+a warp ring did also appear\n\
+in the restrooms around the same\n\
+time. Think it'll get you back\n\
+to your castle.\n\
+Otherwise, feel free to have \n\
+a look around and talk to \n\
+the patrons. They shouldn't be\n\
+a bother as long as I'm around.\n\
 And don't worry, sweetie, I'm \n\
 sure your mom is fine!\n\
 She keeps those pals of hers\n\

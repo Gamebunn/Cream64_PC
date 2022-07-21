@@ -70,7 +70,7 @@ const char *credits04[] = { "3ALONWOOF", "FLIGHT CODE", "NPC SWITCH STATE CODE",
 #if defined(VERSION_JP) || defined(VERSION_SH)
 
 const char *credits05[] = { "4ARCTICJAGUAR", "THECOZIES", "AUDIO AND SEQUENCE HELP", "STAR GEO HELP" };
-const char *credits06[] = { "1SKETCHMEISTER", "NEW HUD AND RING SPRITES" };
+const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES" "COSTUME SWITCH CODE" };
 const char *credits07[] = { "3CODING ASSIST", "WISEGUY", "CHEEZEPIN", "REONU"  };
 const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE OH DEAR GOD" };
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
@@ -98,7 +98,7 @@ const char *credits17[] = { "2PROGRESS MANAGEMENT", "KIMIYOSHI FUKUI", "KEIZO KA
 #else // VERSION_US || VERSION_EU
 // US and EU combine camera programmer and Mario face programmer...
 const char *credits05[] = { "4ARCTICJAGUAR", "THECOZIES", "AUDIO AND SEQUENCE HELP", "STAR GEO HELP" };
-const char *credits06[] = { "1SKETCHMEISTER", "NEW HUD AND RING SPRITES" };
+const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES" "COSTUME SWITCH CODE" };
 const char *credits07[] = { "3CODING ASSIST", "WISEGUY", "CHEEZEPIN", "REONU"  };
 const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE OH DEAR GOD" };
 
@@ -111,7 +111,7 @@ const char *credits11[] = { "5STREAMER THANKS TO", "FLAMINGGARACO", "VOTE4WAIFU"
 const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "DOES NOT RECOMMEND IT" };
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
 const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
-const char *credits15[] = { "4BLAZE VOICE", "VECTOR VOICE", "ERICA LINDBECK", "KEITH SILVERSTEIN" };
+const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
 const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOLE STEPHANIE" };
 #else // VERSION_EU
 // ...as well as sound composer, sound effects, and sound programmer, and...
@@ -123,7 +123,7 @@ const char *credits11[] = { "5STREAMER THANKS TO", "FLAMINGGARACO", "VOTE4WAIFU"
 const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "DOES NOT RECOMMEND IT" };
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
 const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
-const char *credits15[] = { "4BLAZE VOICE", "VECTOR VOICE", "ERICA LINDBECK", "KEITH SILVERSTEIN" };
+const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
 const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOLE STEPHANIE" };
 #endif
 

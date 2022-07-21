@@ -88,8 +88,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_CREAMOCCHIA,       mario_creamocchia_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
-    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_CHOCOLA,   cheese_follow_chocola_geo),
-    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SPRING,    cheese_follow_spring_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_CHOCOLA,   cheese_follow_chocola_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SPRING,    cheese_follow_spring_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_UNICORN,   cheese_follow_unicorn_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_YUKATA,    cheese_follow_yukata_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_WINTER,    cheese_follow_winter_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WISP2,                   wisp2_geo),

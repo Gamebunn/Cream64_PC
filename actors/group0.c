@@ -56,3 +56,7 @@
 #include "wisp2/anims/table.inc.c"
 #include "mario/collision.inc.c"
 #include "mario_klonoa/model.inc.c"
+#include "cheese_follow_spring/model.inc.c"
+#include "cheese_follow_chocola/model.inc.c"
+#include "cheese_follow_unicorn/model.inc.c"
+#include "cheese_follow_yukata/model.inc.c"

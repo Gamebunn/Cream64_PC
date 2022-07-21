@@ -39,7 +39,7 @@ void bhv_cheese_act_follow_mario(void) {
 
     */
 
-	/*switch (gMarioState->currentCostume) {
+	switch (gMarioState->currentCostume) {
     case 0: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW];
 break;
     case 1: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW];
@@ -48,9 +48,9 @@ break;
 break;
     case 3: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_SPRING];
 break;
-    case 4: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW];
+    case 4: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_UNICORN];
 break;
-    case 5: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW];
+    case 5: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_YUKATA];
 break;
     case 6: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_CHOCOLA];
 break;
@@ -80,7 +80,9 @@ break;
 break;
     case 19: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW];
 break;
-    }*/
+    case 20: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW];
+break;
+    }
 	
 }
 

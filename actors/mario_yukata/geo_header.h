@@ -135,7 +135,7 @@ extern u8 mario_yukata_chaowing1_rgba16_copy[];
 extern u8 mario_yukata_chaowing2_rgba16_copy[];
 extern Vtx mario_yukata_000_offset_mesh_layer_4_vtx_0[64];
 extern Gfx mario_yukata_000_offset_mesh_layer_4_tri_0[];
-extern Vtx mario_yukata_000_offset_mesh_layer_1_vtx_0[79];
+extern Vtx mario_yukata_000_offset_mesh_layer_1_vtx_0[24];
 extern Gfx mario_yukata_000_offset_mesh_layer_1_tri_0[];
 extern Vtx mario_yukata_000_offset_001_skinned_mesh_layer_4_vtx_0[16];
 extern Gfx mario_yukata_000_offset_001_skinned_mesh_layer_4_tri_0[];

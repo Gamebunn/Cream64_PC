@@ -48,6 +48,12 @@
 
 // Cheese Alts
 
+#define MODEL_CHEESE_FOLLOW_CHOCOLA       0x1C2       // cheese_follow_chocola_geo
+#define MODEL_CHEESE_FOLLOW_SPRING        0x1C1       // cheese_follow_spring_geo
+#define MODEL_CHEESE_FOLLOW_UNICORN       0x1C0       // cheese_follow_unicorn_geo
+#define MODEL_CHEESE_FOLLOW_YUKATA        0x1BF       // cheese_follow_yukata_geo
+#define MODEL_CHEESE_FOLLOW_WINTER        0x1BE       // cheese_follow_winter_geo
+
 // Additional NPCs
 
 #define MODEL_FLOOMBA                     0xE4         // floomba_geo

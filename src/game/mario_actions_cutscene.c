@@ -2295,10 +2295,10 @@ break;
         }
         gCutsceneFocus = sEndPeachObj;
 
-        sEndRightToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_TOAD, bhvEndToad, 200,
+        sEndRightToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_CHOCOLA_ED, bhvEndToad, 200,
                                                      906, -1290, 0, 0, 0);
 
-        sEndLeftToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_TOAD, bhvEndToad, -200,
+        sEndLeftToadObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_CHEESE_ED, bhvEndToad, -200,
                                                     906, -1290, 0, 0, 0);
 
         sEndPeachObj->oOpacity = 127;

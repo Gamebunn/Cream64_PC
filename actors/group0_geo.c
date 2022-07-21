@@ -40,3 +40,7 @@
 #include "wisp1/geo.inc.c"
 #include "wisp2/geo.inc.c"
 #include "mario_klonoa/geo.inc.c"
+#include "cheese_follow_spring/geo.inc.c"
+#include "cheese_follow_chocola/geo.inc.c"
+#include "cheese_follow_unicorn/geo.inc.c"
+#include "cheese_follow_yukata/geo.inc.c"

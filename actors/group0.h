@@ -400,4 +400,10 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "mario_klonoa/geo_header.h"
 
+#include "cheese_follow_spring/geo_header.h"
+
+#include "cheese_follow_unicorn/geo_header.h"
+
+#include "cheese_follow_yukata/geo_header.h"
+
 #endif
