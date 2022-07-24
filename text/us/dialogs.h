@@ -1445,7 +1445,13 @@ Bwa ha ha ha!"))
 
 //Eggman 3, before fight
 DEFINE_DIALOG(DIALOG_093, 1, 6, 30, 200, _("\
-Alright, I'm done messing \n\
+Ha ha ha ha....\n\
+Don't think this will be\n\
+like last time.\n\
+\n\
+\n\
+\n\
+I'm done messing \n\
 around. Time to show you\n\
 the real power of my \n\
 genius! And your little blue \n\
@@ -2036,9 +2042,10 @@ before you go in, how's \n\
 things been?\n\
 You managed to enter White\n\
 Park Zone without any \n\
-trouble? Found the Warp \n\
-Ring in the courtyard or \n\
-even the Metal Locket?\n\
+trouble? Found the Metal \n\
+Locket? How's your friend, \n\
+Cheese, been? He doing\n\
+alright?\n\
 Anyway, I heard that Eggman\n\
 snuck out to sea and is\n\
 hiding underground. \n\
@@ -3005,7 +3012,8 @@ Final Boss ~ Ruby Illusions\n\
 \n\
 Well, you made it to the\n\
 end. It's been nice helping\n\
-you out, Miss!"))
+you out, Miss! Go bash that\n\
+Eggman!"))
 
 //Character Credits, Bob
 DEFINE_DIALOG(WWISP_LAYLA_KITTEN, 1, 6, 30, 200, _("\
