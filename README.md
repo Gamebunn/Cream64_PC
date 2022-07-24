@@ -1,4 +1,4 @@
-#Super Cream 64 - The Grand Finale 
+## Super Cream 64 - The Grand Finale 
 A fork of [AloXado320/sm64ex-alo](https://github.com/AloXado320/sm64ex-alo), which is a fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex) with additional features. 
 
 Overall additions since the last build:
