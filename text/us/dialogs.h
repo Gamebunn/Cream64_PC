@@ -267,7 +267,7 @@ Show them your strength!\n\
 \n\
 \n\
 [A] to jump, [B] to punch,\n\
-[A] then [B] to kick but \n\
+[A] then [B] to kick butt \n\
 Also remember to hold back \n\
 while in the air to kick, \n\
 otherwise you'll go into \n\
@@ -1564,7 +1564,7 @@ Ready for blastoff! Come\n\
 on, hop into the cannon!\n\
 \n\
 \n\
-Oh! I saw a shiny green thing\n\
+Oh! I saw a shiny red thing\n\
 somewhere high up, you can aim \n\
 with the control stick and then\n\
 press [A] to nyoom to go get it!\n\
@@ -3642,7 +3642,7 @@ Actually kind of busy today\n\
 so we gotta keep things\n\
 together. You look tough, kiddo.\n\
 Don't think you'll need our help.\n\
-You know I think those number rings\n\
+You know I think those green rings\n\
 may help ya on your adventure.\n\
 Go bash that egghead, little \n\
 bunny. We're rootin' for ya.)"))
