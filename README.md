@@ -14,6 +14,7 @@ Overall additions since the last build:
  Helpful build additions:
  
  HIGH_FPS_PC=1 - Game runs at 60 FPS
+ 
  NODRAWINGDISTANCE=1 - All objects are shown at all times
 
 ## Building
