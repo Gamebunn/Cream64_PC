@@ -1,4 +1,4 @@
-#Super Cream 64 - The Grand Finale 
+## Super Cream 64 - The Grand Finale 
 A fork of [AloXado320/sm64ex-alo](https://github.com/AloXado320/sm64ex-alo), which is a fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex) with additional features. 
 
 Overall additions since the last build:
@@ -9,7 +9,13 @@ Overall additions since the last build:
  * Redone soundtrack - While mostly the same as before, more songs have been added and redone to help with file size. 
  * And much more!
  
- Repo custom assets: https://drive.google.com/file/d/1Qze3htl10to8ZySFfbPlARpvc2otPvF1/view?usp=sharing
+ Repo custom assets: https://drive.google.com/file/d/1PnNohUtrKLahcUObhSvOFsZF4So9gTZ0/view?usp=sharing
+ 
+ Helpful build additions:
+ 
+ HIGH_FPS_PC=1 - Game runs at 60 FPS
+ 
+ NODRAWINGDISTANCE=1 - All objects are shown at all times
 
 ## Building
  ### Clone the repository:
