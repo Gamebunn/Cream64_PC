@@ -1,25 +1,15 @@
-# sm64ex_alo
-Fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex) with additional features. 
+#Super Cream 64 - The Grand Finale 
+A fork of [AloXado320/sm64ex-alo](https://github.com/AloXado320/sm64ex-alo), which is a fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex) with additional features. 
 
-## Changes
- * N64 Building - Support for it was removed in sm64ex
- * Based of the latest refresh (since sm64ex is stuck on 12)
- * Puppycam 2 (sm64ex still has Puppycam 1)
- * Quality of life fixes and features (QOL_FIXES=1 and QOL_FEATURES=1 respectively)
- * Mouse support for desktop targets (MOUSE_ACTIONS=1) (SDL1/SDL2 only, DirectX Mouse not implemented yet)
- * Simple debug options menu (EXT_DEBUG_MENU=1)
- * Kaze's more objects patch (PORT_MOP_OBJS=1)
+Overall additions since the last build:
+
+ * Flying finally added! - Since introduced in Chao Bandstand, you can now fly around in the base game
+ * Outfits galore - All the outfits are all available here alongside a few new ones to boot! Cheese also gets in on the fun with matching alts!
+ * New levels - Three new areas have been added, replacing Secret Aquarium, Vanish Cap Under the Moat and Wing Mario over the Rainbow. 
+ * Redone soundtrack - While mostly the same as before, more songs have been added and redone to help with file size. 
+ * And much more!
  
-## Backends included
- * Same ones as in [sm64ex](https://github.com/sm64pc/sm64ex/tree/nightly) (macOS - Raspberry Pi Series - Windows - Linux), etc.
- * [Nintendo 64](https://github.com/n64decomp/sm64) along with some slight [HackerSM64](https://github.com/HackerN64/HackerSM64) changes.
- * [Nintendo Wii U](https://github.com/aboood40091/sm64ex/tree/nightly) (by AboodXD)
- * [Nintendo 3DS](https://github.com/mkst/sm64-port) (by Fnouwt, mkst)
- * [Nintendo Switch](https://github.com/fgsfdsfgs/sm64ex/tree/switch) (by Vatuu, fgsfdsfgs, KiritoDev)
- * [Android](https://github.com/VDavid003/sm64-port-android/tree/ex/nightly) (by VDavid003)
-
-## Patches
- * Some misc patches for this repo are available [here](https://github.com/AloXado320/sm64ex-alo-patches) (more incoming)
+ Repo custom assets: https://drive.google.com/file/d/1Qze3htl10to8ZySFfbPlARpvc2otPvF1/view?usp=sharing
 
 ## Building
  ### Clone the repository:
