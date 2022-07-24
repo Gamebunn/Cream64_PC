@@ -141,6 +141,21 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "16_vector"
+        },
+        "inst23": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "17_silver"
+        },
+        "inst24": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "18_rudetoad"
+        },
+        "inst25": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "19_goodtoad"
         }
     },
     "instrument_list": [
@@ -166,6 +181,9 @@
         "inst19",
         "inst20",
         "inst21",
-        "inst22"
+        "inst22",
+        "inst23",
+        "inst24",
+        "inst25"
     ]
 }

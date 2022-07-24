@@ -26,6 +26,7 @@ void spawn_child_obj_relative(struct Object *parent, s16 xOffset, s16 yOffset, s
 
 void bhv_intro_scene_loop(void) {
     UNUSED struct Object *obj;
+    UNUSED struct Object *obj2;
 
     if (gCutsceneObjSpawn != 0) {
         o->oPosX = gCamera->pos[0];
@@ -41,7 +42,7 @@ void bhv_intro_scene_loop(void) {
                 break;
 
             case 5:
-                obj = spawn_object(o, MODEL_PEACH, bhvBeginningPeach);
+                obj2 = spawn_object(o, MODEL_PEACH, bhvBeginningPeach);
                 break;
 
             case 7:
@@ -86,45 +87,49 @@ void bhv_intro_scene_loop(void) {
     }
 
     switch (gMarioState->currentCostume) {
-    case 0: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 0: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 1: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 1: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 2: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 2: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 3: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 3: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 4: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 4: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 5: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 5: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 6: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 6: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 7: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 7: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_VANILLA];
 break;
-    case 8: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 8: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 9: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 9: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 10: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 10: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 11: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 11: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 12: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 12: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 13: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 13: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 14: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 14: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 15: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 15: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 16: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
+    case 16: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 17: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
+    case 17: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_CREAMOCCHIA];
 break;
-    case 18: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
+    case 18: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
 break;
-    case 19: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+    case 19: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_JACK];
+break;
+    case 20: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
+break;
+    case 21: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
 break;
     }
     

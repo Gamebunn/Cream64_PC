@@ -21,3 +21,6 @@
 #include "katalina_ed/geo.inc.c"
 #include "amy_ed/geo.inc.c"
 #include "tails_ed/geo.inc.c"
+#include "peach_jack/geo.inc.c"
+#include "peach_creamocchia/geo.inc.c"
+#include "peach_vanilla/geo.inc.c"

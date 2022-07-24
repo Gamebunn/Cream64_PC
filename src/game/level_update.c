@@ -70,11 +70,11 @@ const char *credits04[] = { "3ALONWOOF", "FLIGHT CODE", "NPC SWITCH STATE CODE",
 #if defined(VERSION_JP) || defined(VERSION_SH)
 
 const char *credits05[] = { "4ARCTICJAGUAR", "THECOZIES", "AUDIO AND SEQUENCE HELP", "STAR GEO HELP" };
-const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES" "COSTUME SWITCH CODE" };
+const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES", "COSTUME SWITCH CODE" };
 const char *credits07[] = { "3CODING ASSIST", "WISEGUY", "CHEEZEPIN", "REONU"  };
 const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE OH DEAR GOD" };
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
-const char *credits10[] = { "5NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII", "SIMPLE" };
+const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII" };
 
 #ifdef VERSION_JP
 const char *credits11[] = { "1SOUND EFFECTS", "YOJI INAGAKI" };
@@ -98,14 +98,14 @@ const char *credits17[] = { "2PROGRESS MANAGEMENT", "KIMIYOSHI FUKUI", "KEIZO KA
 #else // VERSION_US || VERSION_EU
 // US and EU combine camera programmer and Mario face programmer...
 const char *credits05[] = { "4ARCTICJAGUAR", "THECOZIES", "AUDIO AND SEQUENCE HELP", "STAR GEO HELP" };
-const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES" "COSTUME SWITCH CODE" };
+const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES", "COSTUME SWITCH CODE" };
 const char *credits07[] = { "3CODING ASSIST", "WISEGUY", "CHEEZEPIN", "REONU"  };
 const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE OH DEAR GOD" };
 
 #ifdef VERSION_US
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
 // ...3D animators and additional graphics in order to make room for screen text writer(s), Mario voice, and Peach voice
-const char *credits10[] = { "5NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII", "SIMPLE" };
+const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII" };
 const char *credits11[] = { "5STREAMER THANKS TO", "FLAMINGGARACO", "VOTE4WAIFU",
                             "SYSTEM FIVE O NINE", "JOHNNYHEDGEWOLF" };
 const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "DOES NOT RECOMMEND IT" };

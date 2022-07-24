@@ -406,4 +406,40 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "cheese_follow_yukata/geo_header.h"
 
+#include "cheese_follow_bean/geo_header.h"
+
+#include "cheese_follow_mario/geo_header.h"
+
+#include "cheese_follow_luffy/geo_header.h"
+
+#include "cheese_follow_klonoa/geo_header.h"
+
+#include "cheese_follow_chef/geo_header.h"
+
+#include "cheese_follow_val/geo_header.h"
+
+#include "cheese_follow_ichiban/geo_header.h"
+
+#include "cheese_follow_goku/geo_header.h"
+
+#include "cheese_follow_cinnia/geo_header.h"
+
+#include "cheese_follow_roger/geo_header.h"
+
+#include "cheese_follow_creamocchia/geo_header.h"
+
+#include "cheese_follow_layla/geo_header.h"
+
+#include "cheese_follow_kitten/geo_header.h"
+
+#include "cheese_follow_katalina/geo_header.h"
+
+#include "mario_halloween/geo_header.h"
+
+#include "cheese_follow_halloween/geo_header.h"
+
+#include "cheese_follow_riders/geo_header.h"
+
+#include "cheese_follow_winter/geo_header.h"
+
 #endif

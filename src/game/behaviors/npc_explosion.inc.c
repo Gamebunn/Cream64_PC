@@ -4,7 +4,7 @@ extern s16 gDialogTextPos;
 
 void bhv_hocus_explode_loop(void)
 {
-    if(o->oSubAction == 55)
+    if(o->oSubAction == 95)
     {
         struct Object *explosion;
         explosion = spawn_object(gCurrentObject, MODEL_EXPLOSION, bhvExplosion);
@@ -14,7 +14,7 @@ void bhv_hocus_explode_loop(void)
         o->oSubAction++;
     }
 
-    if(o->oSubAction > 1 && o->oSubAction < 55)
+    if(o->oSubAction > 1 && o->oSubAction < 95)
     {
         o->oSubAction++;
     }

@@ -2465,7 +2465,7 @@ to the following: \n\
 Cheezepin, Wiseguy, furyiousfight,\n\
 anonymousmoose, PablosCorner, \n\
 kurethedead, The Sour OG, Rovert,\n\
-Arthurtilly, Theison, CowtheQuack,\n\
+Arthurtilly, Thodds, CowtheQuack,\n\
 Kaze, Mishu and so much more!!\n\
 Also special thanks to the \n\
 Sonic specific discords I'm\n\
@@ -2482,9 +2482,9 @@ my good friends MagicalPoptarts,\n\
 Catti, FudgerNutter and the \n\
 Roys Boys for all the support!\n\
 And also...\n\
-FlamingGaraco, Sweet Sawft,\n\
+Paps, Alonwolf, Sweet Sawft,\n\
 GeekofKawaii, Zack113, Blazy,\n\
-CuteyTCat, JohnnyHedgewolf,\n\
+CuteyTCat, Nullify, Brin,\n\
 Toad900, BlueStarGal, MSP169,\n\
 BerkStorm1 (I guessssss),\n\
 Sketch, Lali, Poodle, Wiz,\n\
@@ -2660,7 +2660,7 @@ Cream Wanted Poster\n\
 by: Nim\n\
 New Paintings by: InfiniteBrians,\n\
 SketchMeister, FlamingGaraco, \n\
-FudgerNutter, TheNovika, Simple, \n\
+FudgerNutter, TheNovika, \n\
 GeekofKawaii And Zack113\n\
 \n\
 \n\
@@ -2704,7 +2704,7 @@ Mark and Katalina\n\
 Tannon by:\n\
 Gamebun\n\
 \n\
-Tammie by:\n\
+Tammie (the Imp) by:\n\
 FlamingGaraco\n\
 I like to thank everyone\n\
 whose supported me these \n\
@@ -4169,9 +4169,9 @@ TheNovika"))
 
 //Artist, WDW
 DEFINE_DIALOG(ARTIST06, 1, 3, 30, 200, _("\
-'Still in Progress'\n\
+'Sweepin the Ocean'\n\
 This painting was done by\n\
-???"))
+InfiniteBrians"))
 
 //Artist, TTM
 DEFINE_DIALOG(ARTIST07, 1, 3, 30, 200, _("\
@@ -4239,21 +4239,27 @@ at the very end, aren't you?\n\
 \n\
 I'll be rooting for you while\n\
 you take care of Eggman. I still\n\
-don't knoiw why Sonic didn't show \n\
+don't know why Sonic didn't show \n\
 up after I called him but I know\n\
 he would've slowed ya down\n\
 anyway, hahahaha.\n\
-- You're happy that's he's happy, \n\
+-You're happy that's he's happy, \n\
 even if he's being a bit sappy,\n\
 but the smiles of your friends\n\
 is just as important as saving\n\
-Mama.\n\
+your Mom.\n\
 \n\
 You give him a big ol' hug and \n\
-a lil' chu~ on the cheek, something\n\
-you learned from Amy. That'll\n\
-put him in a good mood! Time to\n\
-head out and save Mom!-\n\
+a lil' chu~ on the cheek. That'll\n\
+put him in a good mood! You save \n\
+your goodbyes and head out once\n\
+more. Time to go and save Mama!\n\
+\n\
+And honestly, when this whole \n\
+ordeal is completely done, taking \n\
+his offer to go see Chao in Space\n\
+doesn't sound like a bad idea\n\
+right now.-\n\
 \n\
 \n\
 ~End of Tails Story~"))

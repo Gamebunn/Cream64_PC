@@ -559,6 +559,9 @@
 #define SOUND_OBJ_BLAZE5                         /* 0x50744080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x1A, 0x40, SOUND_DISCRETE)
 #define SOUND_OBJ_CHAO_DEEPER                    /* 0x50744080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x1B, 0x40, SOUND_DISCRETE)
 #define SOUND_OBJ_VECTOR                         /* 0x50744080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x1C, 0x40, SOUND_DISCRETE)
+#define SOUND_OBJ_SILVER                         /* 0x50744080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x1D, 0x40, SOUND_DISCRETE)
+#define SOUND_OBJ_RUDETOAD                       /* 0x50744080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x1E, 0x40, SOUND_DISCRETE)
+#define SOUND_OBJ_GOODTOAD                       /* 0x50744080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x1F, 0x40, SOUND_DISCRETE)
 
 /* Menu Sound Effects */
 #define SOUND_MENU_CHANGE_SELECT                 /* 0x7000F880 */ SOUND_ARG_LOAD(SOUND_BANK_MENU,     0x00, 0xF8, SOUND_DISCRETE)
@@ -602,6 +605,7 @@
 #define SOUND_MENU_STAR_SOUND_OKEY_DOKEY         /* 0x7023FF80 */ SOUND_ARG_LOAD(SOUND_BANK_MENU,     0x23, 0xFF, SOUND_DISCRETE)
 #define SOUND_MENU_STAR_SOUND_LETS_A_GO          /* 0x7024FF80 */ SOUND_ARG_LOAD(SOUND_BANK_MENU,     0x24, 0xFF, SOUND_DISCRETE)
 #define SOUND_MENU_PIPE_SLIDE                    /* 0x7016A080 */ SOUND_ARG_LOAD(SOUND_BANK_MENU,     0x25, 0xA0, SOUND_DISCRETE)
+#define SOUND_MENU_PIPE_SLIDE2                   /* 0x7016A080 */ SOUND_ARG_LOAD(SOUND_BANK_MENU,     0x26, 0xA0, SOUND_DISCRETE)
 
 // US/EU only; an index between 0-7 or 0-4 is added to the sound ID before
 // playing, producing the same sound with different pitch.

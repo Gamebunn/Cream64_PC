@@ -130,4 +130,10 @@ extern const struct Animation *const yoshi_seg5_anims_05024100[];
 
 
 #include "tails_ed/anim_header.h"
+#include "peach_jack/geo_header.h"
+
+#include "peach_creamocchia/geo_header.h"
+
+#include "peach_vanilla/geo_header.h"
+
 #endif

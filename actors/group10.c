@@ -45,3 +45,6 @@ UNUSED static const u64 binid_2 = 2;
 #include "tails_ed/model.inc.c"
 #include "tails_ed/anims/data.inc.c"
 #include "tails_ed/anims/table.inc.c"
+#include "peach_jack/model.inc.c"
+#include "peach_creamocchia/model.inc.c"
+#include "peach_vanilla/model.inc.c"

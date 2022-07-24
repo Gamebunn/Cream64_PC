@@ -179,7 +179,12 @@ const LevelScript level_castle_grounds_entry[] = {
 
     LOAD_MODEL_FROM_GEO(MODEL_SIGNPOST_VANILLA,            signpost_vanilla_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARK,                        mark_geo),
+
     LOAD_MODEL_FROM_GEO(MODEL_PEACH_MARK,                  peach_mark_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PEACH_JACK,                  peach_jack_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PEACH_CREAMOCCHIA,           peach_creamocchia_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PEACH_VANILLA,               peach_vanilla_geo),
+
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_ED,                   cheese_ed_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHOCOLA_ED,                  chocola_ed_geo),
     LOAD_MODEL_FROM_GEO(MODEL_GEMERL_ED,                   gemerl_ed_geo),

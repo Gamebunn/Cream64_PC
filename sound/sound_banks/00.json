@@ -89,6 +89,11 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "0F_slidewhistle"
+        },
+        "inst16": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "10_slidewhistle2"
         }
     },
     "instrument_list": [
@@ -107,6 +112,7 @@
         "inst12",
         "inst13",
         "inst14",
-        "inst15"
+        "inst15",
+        "inst16"
     ]
 }

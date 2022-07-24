@@ -45,6 +45,7 @@
 #define MODEL_MARIO_KITTEN                0x1EF        // mario_kitten_geo
 #define MODEL_MARIO_LAYLA                 0x1EE        // mario_layla_geo
 #define MODEL_MARIO_CREAMOCCHIA           0x1ED        // mario_creamocchia_geo
+#define MODEL_MARIO_HALLOWEEN             0x1EB        // mario_halloween_geo
 
 // Cheese Alts
 
@@ -53,6 +54,22 @@
 #define MODEL_CHEESE_FOLLOW_UNICORN       0x1C0       // cheese_follow_unicorn_geo
 #define MODEL_CHEESE_FOLLOW_YUKATA        0x1BF       // cheese_follow_yukata_geo
 #define MODEL_CHEESE_FOLLOW_WINTER        0x1BE       // cheese_follow_winter_geo
+#define MODEL_CHEESE_FOLLOW_BEAN          0x1BD       // cheese_follow_bean_geo
+#define MODEL_CHEESE_FOLLOW_MARIO         0x1BC       // cheese_follow_mario_geo
+#define MODEL_CHEESE_FOLLOW_LUFFY         0x1BB       // cheese_follow_luffy_geo
+#define MODEL_CHEESE_FOLLOW_KLONOA        0x1BA       // cheese_follow_klonoa_geo
+#define MODEL_CHEESE_FOLLOW_VAL           0x1B9       // cheese_follow_val_geo
+#define MODEL_CHEESE_FOLLOW_CHEF          0x1B8       // cheese_follow_chef_geo
+#define MODEL_CHEESE_FOLLOW_ICHIBAN       0x1B7       // cheese_follow_ichiban_geo
+#define MODEL_CHEESE_FOLLOW_GOKU          0x1B6       // cheese_follow_goku_geo
+#define MODEL_CHEESE_FOLLOW_CINNIA        0x1B5       // cheese_follow_cinnia_geo
+#define MODEL_CHEESE_FOLLOW_ROGER         0x1B4       // cheese_follow_roger_geo
+#define MODEL_CHEESE_FOLLOW_CREAMOCCHIA   0x1B3       // cheese_follow_creamocchia_geo
+#define MODEL_CHEESE_FOLLOW_KATALINA      0x1B2       // cheese_follow_katalina_geo
+#define MODEL_CHEESE_FOLLOW_KITTEN        0x1B1       // cheese_follow_kitten_geo
+#define MODEL_CHEESE_FOLLOW_LAYLA         0x1B0       // cheese_follow_layla_geo
+#define MODEL_CHEESE_FOLLOW_HALLOWEEN     0x1AF       // cheese_follow_halloween_geo
+#define MODEL_CHEESE_FOLLOW_RIDERS        0x1AE       // cheese_follow_riders_geo
 
 // Additional NPCs
 
@@ -475,6 +492,9 @@
 // Vanilla Alts
 
 #define MODEL_PEACH_MARK                  0x1D1        // peach_mark_geo
+#define MODEL_PEACH_JACK                  0x1D0        // peach_jack_geo
+#define MODEL_PEACH_CREAMOCCHIA           0x1CF        // peach_creamocchia_geo
+#define MODEL_PEACH_VANILLA               0x1CE        // peach_vanilla_geo
 
 // ED Models
 

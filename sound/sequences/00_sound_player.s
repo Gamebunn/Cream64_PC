@@ -5006,7 +5006,7 @@ chan_setlayer 0, .layer_1E43
 chan_end
 
 .layer_1E43:
-layer_note1 39, 0xDC, 127
+layer_note1 39, 0x168, 127
 layer_end
 
 
@@ -5032,7 +5032,7 @@ layer_end
 
 .sound_obj_tails3:
 chan_setbank 9
-chan_setinstr 18
+chan_setinstr 19
 chan_setlayer 0, .layer_1E46
 chan_end
 
@@ -5042,7 +5042,7 @@ layer_end
 
 .sound_obj_tails4:
 chan_setbank 9
-chan_setinstr 18
+chan_setinstr 20
 chan_setlayer 0, .layer_1E48
 chan_end
 
@@ -5052,7 +5052,7 @@ layer_end
 
 .sound_obj_tails5:
 chan_setbank 9
-chan_setinstr 18
+chan_setinstr 21
 chan_setlayer 0, .layer_1E49
 chan_end
 
@@ -6894,9 +6894,9 @@ sound_ref .sound_obj_blaze4
 sound_ref .sound_obj_blaze5
 sound_ref .sound_obj_chao_deeper
 sound_ref .sound_obj_vector
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
-sound_ref .sound_air_bowser_spit_fire
+sound_ref .sound_obj_silver
+sound_ref .sound_obj_rudetoad
+sound_ref .sound_obj_goodtoad
 
 .sound_air_bowser_spit_fire:
 chan_setbank 7
@@ -7233,6 +7233,36 @@ chan_end
 layer_note1 39, 0xFF, 127
 layer_end
 
+.sound_obj_silver:
+chan_setbank 9
+chan_setinstr 23
+chan_setlayer 0, .layer_2B1D
+chan_end
+
+.layer_2B1D:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_rudetoad:
+chan_setbank 9
+chan_setinstr 24
+chan_setlayer 0, .layer_2B1E
+chan_end
+
+.layer_2B1E:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_obj_goodtoad:
+chan_setbank 9
+chan_setinstr 25
+chan_setlayer 0, .layer_2B1F
+chan_end
+
+.layer_2B1F:
+layer_note1 39, 0xFF, 127
+layer_end
+
 .channel7_table:
 sound_ref .sound_menu_change_select
 sound_ref .sound_menu_reverse_pause
@@ -7286,8 +7316,8 @@ sound_ref .sound_menu_mario_castle_warp2
 #else
   sound_ref .sound_menu_star_sound_okey_dokey
   sound_ref .sound_menu_star_sound_lets_a_go
-sound_ref .sound_menu_pipe_slide
-  sound_ref .sound_menu_enter_pipe
+  sound_ref .sound_menu_pipe_slide
+  sound_ref .sound_menu_pipe_slide2
   sound_ref .sound_menu_exit_pipe
   sound_ref .sound_menu_collect_red_coin
   sound_ref .sound_menu_collect_red_coin
@@ -7765,6 +7795,16 @@ chan_setlayer 0, .layer_2EF0
 chan_end
 
 .layer_2EF0:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_menu_pipe_slide2:
+chan_setbank 0
+chan_setinstr 16
+chan_setlayer 0, .layer_2EF1
+chan_end
+
+.layer_2EF1:
 layer_note1 39, 0xFF, 127
 layer_end
 

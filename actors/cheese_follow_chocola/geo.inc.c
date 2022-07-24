@@ -1,20 +1,13 @@
 #include "src/game/envfx_snow.h"
 
-const GeoLayout cheese_follow_chocola_Head_Switch_opt1[] = {
-	GEO_NODE_START(),
-	GEO_OPEN_NODE(),
-		GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 48, 0, cheese_follow_chocola_Head_mesh_layer_1_mat_override_eyes_f3d_0),
-	GEO_CLOSE_NODE(),
-	GEO_RETURN(),
-};
 const GeoLayout cheese_follow_chocola_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_SHADOW(1, 204, 80),
+		GEO_SHADOW(1, 0, 80),
 		GEO_OPEN_NODE(),
 			GEO_SCALE(LAYER_OPAQUE, 14418),
 			GEO_OPEN_NODE(),
-				GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 168, 22, cheese_follow_chocola_Root_mesh_layer_1),
+				GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 168, 0, cheese_follow_chocola_Root_mesh_layer_1),
 				GEO_OPEN_NODE(),
 					GEO_DISPLAY_LIST(LAYER_TRANSPARENT, cheese_follow_chocola_Root_mesh_layer_5),
 					GEO_SWITCH_CASE(0, geo_switch_mario_eyes),
@@ -23,7 +16,6 @@ const GeoLayout cheese_follow_chocola_geo[] = {
 						GEO_OPEN_NODE(),
 							GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 48, 0, cheese_follow_chocola_Head_mesh_layer_1),
 						GEO_CLOSE_NODE(),
-						GEO_BRANCH(1, cheese_follow_chocola_Head_Switch_opt1),
 					GEO_CLOSE_NODE(),
 					GEO_ANIMATED_PART(LAYER_OPAQUE, 25, 35, -62, cheese_follow_chocola_LWing_mesh_layer_1),
 					GEO_ANIMATED_PART(LAYER_OPAQUE, -26, 35, -62, cheese_follow_chocola_RWing_mesh_layer_1),

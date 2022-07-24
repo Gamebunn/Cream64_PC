@@ -68,6 +68,7 @@ u8 textCreamOutfit18[] = { TEXT_CREAM18};
 u8 textCreamOutfit19[] = { TEXT_CREAM19};
 u8 textCreamOutfit20[] = { TEXT_CREAM20};
 u8 textCreamOutfit21[] = { TEXT_CREAM21};
+u8 textCreamOutfit22[] = { TEXT_CREAM22};
 u8 textCostumeCurrent[] = { TEXT_CREAM_CURRENT};
 u8 textCostumeinstrutions[] = { TEXT_CREAM_DPAD};
 
@@ -2545,9 +2546,9 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 20;
+    gMarioState->currentCostume = 21;
 }
-if (gMarioState->currentCostume > 20) {
+if (gMarioState->currentCostume > 21) {
     gMarioState->currentCostume = 0;
 }
 
@@ -2595,6 +2596,8 @@ if (gMarioState->currentCostume > 20) {
     case 19: print_generic_string(110, 20, textCreamOutfit20);
     break;
     case 20: print_generic_string(110, 20, textCreamOutfit21);
+    break;
+    case 21: print_generic_string(110, 20, textCreamOutfit22);
     break;
     }
 
@@ -2782,9 +2785,9 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 20;
+    gMarioState->currentCostume = 21;
 }
-if (gMarioState->currentCostume > 20) {
+if (gMarioState->currentCostume > 21) {
     gMarioState->currentCostume = 0;
 }
 
@@ -2832,6 +2835,8 @@ if (gMarioState->currentCostume > 20) {
     case 19: print_generic_string(110, 20, textCreamOutfit20);
     break;
     case 20: print_generic_string(110, 20, textCreamOutfit21);
+    break;
+    case 21: print_generic_string(110, 20, textCreamOutfit22);
     break;
     }
 

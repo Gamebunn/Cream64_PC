@@ -168,6 +168,7 @@ static unsigned char textMarioB[] = { TEXT_FILE_MARIO_B };
 static unsigned char textMarioC[] = { TEXT_FILE_MARIO_C };
 static unsigned char textMarioD[] = { TEXT_FILE_MARIO_D };
 
+
 #ifndef VERSION_EU
 static unsigned char textNew[] = { TEXT_NEW };
 static unsigned char starIcon[] = { GLYPH_STAR, GLYPH_SPACE };

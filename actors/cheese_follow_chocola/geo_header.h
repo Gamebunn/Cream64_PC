@@ -1,4 +1,3 @@
-extern const GeoLayout cheese_follow_chocola_Head_Switch_opt1[];
 extern const GeoLayout cheese_follow_chocola_geo[];
 extern Lights1 cheese_follow_chocola_cheese_texture_f3d_lights;
 extern Lights1 cheese_follow_chocola_bowtie_lights;
@@ -44,7 +43,6 @@ extern Gfx mat_revert_cheese_follow_chocola_eyes_f3d[];
 extern Gfx cheese_follow_chocola_Root_mesh_layer_1[];
 extern Gfx cheese_follow_chocola_Root_mesh_layer_5[];
 extern Gfx cheese_follow_chocola_Head_mesh_layer_1[];
-extern Gfx cheese_follow_chocola_Head_mesh_layer_1_mat_override_eyes_f3d_0[];
 extern Gfx cheese_follow_chocola_LWing_mesh_layer_1[];
 extern Gfx cheese_follow_chocola_RWing_mesh_layer_1[];
 extern Gfx cheese_follow_chocola_lArm_001_mesh_layer_1[];

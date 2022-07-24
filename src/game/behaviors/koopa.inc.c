@@ -504,7 +504,7 @@ static void koopa_the_quick_act_wait_before_race(void) {
 
     if (o->oKoopaTheQuickInitTextboxCooldown != 0) {
         o->oKoopaTheQuickInitTextboxCooldown--;
-    } else if (cur_obj_can_mario_activate_textbox_2(400.0f, 400.0f)) {
+    } else if (cur_obj_can_mario_activate_textbox_2(200.0f, 200.0f)) {
         //! The next action doesn't execute until next frame, giving mario one
         //  frame where he can jump, and thus no longer be ready to speak.
         //  (On J, he has two frames and doing this enables time stop - see
