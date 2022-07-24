@@ -9,7 +9,7 @@ Overall additions since the last build:
  * Redone soundtrack - While mostly the same as before, more songs have been added and redone to help with file size. 
  * And much more!
  
- Repo custom assets: [https://drive.google.com/file/d/1Qze3htl10to8ZySFfbPlARpvc2otPvF1/view?usp=sharing](https://drive.google.com/file/d/1C2XFHdlYvfYRcXaUSNOFMhbS7Mhk8AgS/view?usp=sharing)
+ Repo custom assets: https://drive.google.com/file/d/1PnNohUtrKLahcUObhSvOFsZF4So9gTZ0/view?usp=sharing
  
  Helpful build additions:
  
