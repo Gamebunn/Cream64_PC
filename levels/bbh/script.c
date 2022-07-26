@@ -40,7 +40,7 @@ static const LevelScript script_func_local_2[] = {
 };
 
 static const LevelScript script_func_local_3[] = {
-    OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,                        /*pos*/  1000,    50,  1000, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_1) | BPARAM2(BIG_BOO_BP_GHOST_HUNT), /*bhv*/ bhvGhostHuntBigBoo,       /*acts*/ ACT_1),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_KINGBOO,                        /*pos*/  1000,    50,  1000, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_1) | BPARAM2(BIG_BOO_BP_GHOST_HUNT), /*bhv*/ bhvGhostHuntBigBoo,       /*acts*/ ACT_1),
     OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,                        /*pos*/    20,   100,  -908, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(BOO_BP_GHOST_HUNT), /*bhv*/ bhvGhostHuntBoo,                 /*acts*/ ACT_1),
     OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,                        /*pos*/  3150,   100,   398, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(BOO_BP_GHOST_HUNT), /*bhv*/ bhvGhostHuntBoo,                 /*acts*/ ACT_1),
     OBJECT_WITH_ACTS(/*model*/ MODEL_BOO,                        /*pos*/ -2000,   150,  -800, /*angle*/ 0, 0, 0,   /*bhvParam*/ BPARAM2(BOO_BP_GHOST_HUNT), /*bhv*/ bhvGhostHuntBoo,                 /*acts*/ ACT_1),
