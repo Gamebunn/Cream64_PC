@@ -9,7 +9,14 @@ Overall additions since the last build:
  * Redone soundtrack - While mostly the same as before, more songs have been added and redone to help with file size. 
  * And much more!
  
- Repo custom assets: https://drive.google.com/file/d/1PnNohUtrKLahcUObhSvOFsZF4So9gTZ0/view?usp=sharing
+ ## Building SC64
+ 
+ If you haven't built with the normal sm64ex/sm64ex-alo builds, look at those first for a proper tutorial. Then come back here. 
+ 
+ 1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC.
+ 2) download the extra assets needed for the repo. https://drive.google.com/file/d/1PnNohUtrKLahcUObhSvOFsZF4So9gTZ0/view?usp=sharing
+ 3) dump the contents of the repo folder into the root of where you cloned the git
+ 4) go ahead and compile.
  
  Helpful build additions:
  
