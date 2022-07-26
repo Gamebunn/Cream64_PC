@@ -3729,7 +3729,7 @@ Well franky, hun, it's not the\n\
 strangest thing I've heard since\n\
 taking over the bar.\n\
 Hmm, you look oddly similar to\n\
-one of my regualrs. Is Vanilla\n\
+one of my regulars. Is Vanilla\n\
 your mom by any chance? Yea, she\n\
 comes here twice a month with\n\
 friends. Don't worry, she's only\n\

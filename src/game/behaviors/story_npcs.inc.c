@@ -30,7 +30,7 @@ Gfx *geo_switch_amy_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx) {
 
         if(gCurrLevelNum == LEVEL_BBH)
         {
-            if(gCurrActNum == 3 || gCurrActNum == 5)
+            if(gCurrActNum == 2 || gCurrActNum == 3 || gCurrActNum == 5 || gCurrActNum == 6)
                 switchCase->selectedCase = 4;
             if(gCurrActNum == 4)
                 switchCase->selectedCase = 5;
