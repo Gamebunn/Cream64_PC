@@ -15,7 +15,7 @@ Overall additions since the last build:
  
  1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC with MSYS2.
  2) download the extra assets needed for the repo. https://drive.google.com/file/d/1PnNohUtrKLahcUObhSvOFsZF4So9gTZ0/view?usp=sharing
- 3) dump the contents of the repo folder into the root of where you cloned the git
+ 3) dump the contents of the assets folder into the root of where you cloned the git
  4) go ahead and compile.
  
  Helpful build additions:
