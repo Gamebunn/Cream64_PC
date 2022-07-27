@@ -13,16 +13,19 @@ Overall additions since the last build:
  
  If you haven't built with the normal sm64ex/sm64ex-alo builds, look at those first for a proper tutorial. Then once you got the hang of it, come back here. 
  
- 1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC with MSYS2.
+ 1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC with MSYS2. Make sure it's a directory with full access.
  2) download the extra assets needed for the repo. https://drive.google.com/file/d/1hmJFyawj3jrFyex7rzwfMySawqNkGWnj/view?usp=sharing
- 3) dump the contents of the assets folder into the root of where you cloned the git
- 4) go ahead and compile.
+ 3) find your own US copy of sm64, rename it to baserom.z64 and put it in the root of your clone.
+ 4) dump the contents of the assets folder into the root of where you cloned the git
+ 5) go ahead and compile with ```make```. If you got a decent CPU, you can increase the compile speed with ```make -j4```.
  
  Helpful build additions:
  
  HIGH_FPS_PC=1 - Game runs at 60 FPS
  
  NODRAWINGDISTANCE=1 - All objects are shown at all times
+ 
+ Example: ```make HIGH_FPS_PC=1 NODRAWINGDISTANCE=1 -j4```
 
 ## Building
  ### Clone the repository:
