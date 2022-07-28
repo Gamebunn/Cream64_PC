@@ -1232,7 +1232,6 @@ In the room with\n\
 the mirrors, look carefully\n\
 for anything that's not\n\
 reflected in the mirror.\n\
-\n\
 And when you go to the\n\
 water town, you can flood\n\
 it with a high jump into\n\
