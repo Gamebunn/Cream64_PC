@@ -11,7 +11,7 @@ Overall additions since the last build:
  
  ## Building SC64
  
- If you haven't built with the normal sm64ex/sm64ex-alo builds, look at those first for a proper tutorial. Then once you got the hang of it, come back here. 
+ If you haven't built with the normal sm64ex/sm64ex-alo builds, [look at those first for a proper tutorial and getting the proper dependencies for install](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows). Then once you got the hang of it, come back here. 
  
  1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC with MSYS2. Make sure it's a directory with full access. Then `cd sm64ex-alo` to get into the folder itself.
  2) download the extra assets needed for the repo. https://drive.google.com/file/d/1hmJFyawj3jrFyex7rzwfMySawqNkGWnj/view?usp=sharing
