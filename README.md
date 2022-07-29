@@ -3,11 +3,14 @@ A fork of [AloXado320/sm64ex-alo](https://github.com/AloXado320/sm64ex-alo), whi
 
 Overall additions since the last build:
 
- * Flying finally added! - Since introduced in Chao Bandstand, you can now fly around in the base game
- * Outfits galore - All the outfits are all available here alongside a few new ones to boot! Cheese also gets in on the fun with matching alts!
- * New levels - Three new areas have been added, replacing Secret Aquarium, Vanish Cap Under the Moat and Wing Mario over the Rainbow. 
- * Redone soundtrack - While mostly the same as before, more songs have been added and redone to help with file size. 
- * And much more!
+* You can now finally fly! Originally made for Cream 64, introduced in Chao Bandstand and now it's finally here. Works like Sonic Heroes: get about 3-4 seconds of total flight time. When you're not moving, you lose no stamina.
+* Be whoever you wanna be! Bunch of alt outfits are available for you to choose from the very start.
+-- PC Version: Each alt has its own matching Cheese alt and a handful have a custom Vanilla alt.
+* Brand new levels replacing three existing levels: Secret Aquarium, Vanish Cap under the Moat and Wing Mario over the Rainbow. Each still have a single secret star and the vanish switch is still there too.
+* Music has been updated. Mostly the same but with some new tracks scattered here and there. A bit more variety now with a few repeats. 
+* Gemerl is now actually beatable in the rematch. And even if you're struggling, you can always fly around on the other side.
+* Tails, Blaze and Marine have their own little side stories now alongside Amy. The number of encounters is now listed at the end of each of their dialog boxes.
+* And some smaller fixes
  
  ## Building SC64
  
