@@ -62,3 +62,7 @@
 #include "cheese_follow_halloween/geo.inc.c"
 #include "cheese_follow_riders/geo.inc.c"
 #include "cheese_follow_winter/geo.inc.c"
+#include "mario_swimsuit/geo.inc.c"
+#include "cheese_follow_swimsuit/geo.inc.c"
+#include "mario_travis/geo.inc.c"
+#include "cheese_follow_travis/geo.inc.c"

@@ -78,3 +78,7 @@
 #include "cheese_follow_halloween/model.inc.c"
 #include "cheese_follow_riders/model.inc.c"
 #include "cheese_follow_winter/model.inc.c"
+#include "mario_swimsuit/model.inc.c"
+#include "cheese_follow_swimsuit/model.inc.c"
+#include "mario_travis/model.inc.c"
+#include "cheese_follow_travis/model.inc.c"

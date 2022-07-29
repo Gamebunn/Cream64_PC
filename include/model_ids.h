@@ -46,6 +46,8 @@
 #define MODEL_MARIO_LAYLA                 0x1EE        // mario_layla_geo
 #define MODEL_MARIO_CREAMOCCHIA           0x1ED        // mario_creamocchia_geo
 #define MODEL_MARIO_HALLOWEEN             0x1EB        // mario_halloween_geo
+#define MODEL_MARIO_SWIMSUIT              0x1EA        // mario_swimsuit_geo
+#define MODEL_MARIO_TRAVIS                0x1E9        // mario_travis_geo
 
 // Cheese Alts
 
@@ -70,6 +72,8 @@
 #define MODEL_CHEESE_FOLLOW_LAYLA         0x1B0       // cheese_follow_layla_geo
 #define MODEL_CHEESE_FOLLOW_HALLOWEEN     0x1AF       // cheese_follow_halloween_geo
 #define MODEL_CHEESE_FOLLOW_RIDERS        0x1AE       // cheese_follow_riders_geo
+#define MODEL_CHEESE_FOLLOW_SWIMSUIT      0x1AD       // cheese_follow_swimsuit_geo
+#define MODEL_CHEESE_FOLLOW_TRAVIS        0x1AC       // cheese_follow_travis_geo
 
 // Additional NPCs
 
