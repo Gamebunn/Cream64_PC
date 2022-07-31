@@ -105,4 +105,5 @@ extern const struct Animation *const water_ring_seg6_anims_06013F7C[];
 
 
 #include "tammie/anim_header.h"
+#include "bub/geo_header.h"
 #endif

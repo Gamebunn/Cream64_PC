@@ -5,7 +5,7 @@ const GeoLayout chillycrawl_geo[] = {
 	GEO_OPEN_NODE(),
 		GEO_SHADOW(0, 200, 70),
 		GEO_OPEN_NODE(),
-			GEO_SCALE(LAYER_FORCE, 24576),
+			GEO_SCALE(0, 0xE666),
 			GEO_OPEN_NODE(),
 				GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, NULL),
 				GEO_OPEN_NODE(),

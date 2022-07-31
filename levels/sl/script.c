@@ -12,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/group16.h"
 
 #include "make_const_nonconst.h"
 #include "levels/sl/header.h"
@@ -36,7 +37,7 @@ static const LevelScript script_func_local_3[] = {
     OBJECT(/*model*/ MODEL_PENGUIN,            /*pos*/ 1715, 3328,   518, /*angle*/ 0, -51, 0, /*bhvParam*/ 0, /*bhv*/ bhvSLWalkingPenguin),
     OBJECT(/*model*/ MODEL_NONE,               /*pos*/  700, 3428,   700, /*angle*/ 0,  30, 0, /*bhvParam*/ 0, /*bhv*/ bhvSLSnowmanWind),
     OBJECT(/*model*/ MODEL_NONE,               /*pos*/  480, 2300,  1370, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvIgloo),
-    OBJECT(/*model*/ MODEL_BIG_CHILL_BULLY,    /*pos*/  315, 1331, -4852, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_2), /*bhv*/ bhvBigChillBully),
+    OBJECT(/*model*/ MODEL_CHILLYCRAWL,    /*pos*/  315, 1331, -4852, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(STAR_INDEX_ACT_2), /*bhv*/ bhvBigChillBully),
     OBJECT(/*model*/ MODEL_MR_BLIZZARD_HIDDEN, /*pos*/ 2954,  970,   750, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(MR_BLIZZARD_STYPE_CAP), /*bhv*/ bhvMrBlizzard),
     RETURN(),
 };
@@ -67,6 +68,7 @@ const LevelScript level_sl_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_SL_CRACKED_ICE,       sl_geo_000360),
     LOAD_MODEL_FROM_GEO(MODEL_SL_CRACKED_ICE_CHUNK, sl_geo_000378),
     LOAD_MODEL_FROM_GEO(MODEL_SL_SNOW_TREE,         snow_tree_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHILLYCRAWL,          chillycrawl_geo),
 
     AREA(/*index*/ 1, sl_geo_0003A8),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  5541, 2024,   443, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),

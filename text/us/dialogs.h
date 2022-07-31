@@ -2922,7 +2922,7 @@ Sea Bottom Segue\n\
 DEFINE_DIALOG(MWISP_SL, 1, 6, 30, 200, _("\
 Music used:\n\
 -Sonic Advance 2-\n\
-Ice Paradise Act 1\n\
+Ice Paradise Act 2\n\
 -- Gameboy Advance\n\
 Remastered by:\n\
 SuperChaosControl\n\
@@ -3124,7 +3124,7 @@ set of stars, activating a \n\
 portal here and dumping \n\
 him into a Chao Garden lake.\n\
 He would eventually be saved \n\
-byVanilla and out of her\n\
+by Vanilla and out of her\n\
 generousity, is currently \n\
 living with her family till \n\
 he feels ready to go out \n\
@@ -4121,7 +4121,7 @@ Overtime, their time together grew\n\
 and he eventually accepted the role\n\
 of being a Dad. Now a few years \n\
 later, he has no regrets in his \n\
-decisio, even making friends with\n\
+decision, even making friends with\n\
 Kitten's friend's parents. "))
 
 //Sign at Front of Castle

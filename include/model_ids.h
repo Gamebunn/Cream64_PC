@@ -566,6 +566,7 @@
 #define MODEL_CHILL_BULLY                 0x64        // chilly_chief_geo
 #define MODEL_BIG_CHILL_BULLY             0x65        // chilly_chief_big_geo
 #define MODEL_MONEYBAG                    0x66        // moneybag_geo
+#define MODEL_CHILLYCRAWL                 0x67        // chillycrawl_geo
 
 // group 17
 #define MODEL_SWOOP                       0x64        // swoop_geo
