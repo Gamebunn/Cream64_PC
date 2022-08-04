@@ -2086,18 +2086,6 @@ Red Star Rings. Congrats,\n\
 little bunny, you really did\n\
 leave an impression on me.\n\
 \n\
-Your Ma's told me stories of\n\
-some of the adventures you've\n\
-done, like saving her before\n\
-from Eggman, dealing with\n\
-something called the Metal \n\
-Overlord...\n\
-...having to fight another Gizoid \n\
-like Gemerl and even going head\n\
-to head with something called\n\
-a Zeti! Man, you kind of done\n\
-a lot, haven't ya, kid?\n\
-\n\
 Better to congratulate ya in\n\
 person than through this \n\
 intercom. I'll be on the roof,\n\
@@ -2430,7 +2418,7 @@ didn't stop you, did it??\n\
 \n\
 The stuff your Mom told\n\
 me about you made me a\n\
-little sceptic.\n\
+little skeptic.\n\
 \n\
 \n\
 I know you've done some stuff\n\
@@ -2438,12 +2426,22 @@ with Sonic and pals but you've\n\
 never really shown it to me \n\
 while I've been here on this.\n\
 world.\n\
-Then here we are, you beating his\n\
+Like saving your mom before\n\
+from Eggman, dealing with\n\
+something called the Metal \n\
+Overlord...\n\
+\n\
+...having to fight another bot\n\
+like Gemerl and even going head\n\
+to head with something called\n\
+a Zeti! Man, you kind of done\n\
+a lot, haven't ya, kid?\n\
+And here we are, you beating his\n\
 mechs with ease, and not even\n\
 with Cheese, who I thought was\n\
 your main muscle. I'm proud \n\
 of ya, kid. We all are.\n\
-Don't ever change, kid. \n\
+Don't ever change, ya hear?\n\
 We need more people like\n\
 you in this crazy world.\n\
 Oh I'm just dragging on\n\
@@ -2471,7 +2469,7 @@ to the following: \n\
 Cheezepin, Wiseguy, furyiousfight,\n\
 anonymousmoose, PablosCorner, \n\
 kurethedead, The Sour OG, Rovert,\n\
-Arthurtilly, Thodds, CowtheQuack,\n\
+Arthurtilly, Thodds, CowQuack,\n\
 Kaze, Mishu and so much more!!\n\
 Also special thanks to the \n\
 Sonic specific discords I'm\n\
@@ -3024,7 +3022,7 @@ Here we goooooo\n\
 \n\
 -Kitten Lynn-\n\
 By: FudgerNutter\n\
-Age: 10\n\
+Age: 7\n\
 ~A small wiley cat who\n\
 causes trouble but means\n\
 well~\n\
@@ -3076,7 +3074,7 @@ DEFINE_DIALOG(WWISP_KATALINA, 1, 6, 30, 200, _("\
 -Katalina Tannon-\n\
 By: Gamebun\n\
 Age: 7\n\
-~And orphan from the cold \n\
+~An orphan from the cold \n\
 north found by Mark, ever so\n\
 sweet and helpful~\n\
 A scared snow rabbit who\n\
@@ -3107,7 +3105,13 @@ A part of her still unknown\n\
 to everyone, she too can \n\
 use fire magic just like \n\
 Mark. How she obtain this\n\
-power, is still a mystery."))
+power, is still a mystery.\n\
+\n\
+The blue rose she holds is\n\
+a gift from Mark. She says\n\
+he got it from a pretty\n\
+little town in the\n\
+mountains."))
 
 //castle, mark
 DEFINE_DIALOG(WWISP_MARK, 1, 6, 30, 200, _("\
