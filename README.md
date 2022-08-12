@@ -13,6 +13,8 @@ Overall additions since the last build:
  
  ## Building SC64
  
+ IMPORTANT: Newer versions of MSYS2 are currently unable to compile most PC Port Repositories. To fix, uninstall your current version of of MSYS2 and reinstall from this link: https://drive.google.com/file/d/10Eon_nDvbcgN2aCAP0sJVg1JbquYdI4g/view?usp=sharing
+ 
  If you haven't built with the normal sm64ex/sm64ex-alo builds, [look at those first for a proper tutorial and getting the proper dependencies for install](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows). Then once you got the hang of it, come back here. 
  
  1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC with MSYS2. Make sure it's a directory with full access. Then `cd sm64ex-alo` to get into the folder itself.
