@@ -87,6 +87,9 @@ break;
     case 22: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_LAYLA];
 break;
     case 23: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_KATALINA];
+break;
+    case 24: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_BAIT];
+break;
     }
 	
 }

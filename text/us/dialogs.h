@@ -1039,7 +1039,7 @@ Good luck, Cream!"))
 //Eggman 1 Before Defeat
 DEFINE_DIALOG(DIALOG_067, 1, 5, 30, 200, _("\
 Ohohoho, You've finally arrived!\n\
-Trying to same your precious\n\
+Trying to save your precious\n\
 mommy? Hahahaaa, good luck with\n\
 that you little brat!\n\
 \n\

@@ -82,3 +82,5 @@
 #include "cheese_follow_swimsuit/model.inc.c"
 #include "mario_travis/model.inc.c"
 #include "cheese_follow_travis/model.inc.c"
+#include "mario_bait/model.inc.c"
+#include "cheese_follow_bait/model.inc.c"

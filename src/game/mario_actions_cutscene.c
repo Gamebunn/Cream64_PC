@@ -2304,6 +2304,9 @@ break;
     case 23: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
+    case 24: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
         }
         gCutsceneFocus = sEndPeachObj;
 
@@ -2949,6 +2952,9 @@ break;
                                                  -1180, 0, 0, 0);
 break;
     case 23: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 24: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
         }

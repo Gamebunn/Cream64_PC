@@ -135,6 +135,8 @@ break;
 break;
     case 23: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK];
 break;
+    case 24: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH];
+break;
     }
     
 }

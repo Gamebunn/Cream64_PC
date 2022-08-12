@@ -66,3 +66,5 @@
 #include "cheese_follow_swimsuit/geo.inc.c"
 #include "mario_travis/geo.inc.c"
 #include "cheese_follow_travis/geo.inc.c"
+#include "mario_bait/geo.inc.c"
+#include "cheese_follow_bait/geo.inc.c"

@@ -1878,6 +1878,8 @@ break;
 break;
   case 23: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KATALINA];
 break;
+  case 24: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BAIT];
+break;
         }
 
 #ifdef CHEATS_ACTIONS
