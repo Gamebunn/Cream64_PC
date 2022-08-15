@@ -90,6 +90,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SWIMSUIT,          mario_swimsuit_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_TRAVIS,            mario_travis_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_BAIT,              mario_bait_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_ANYA,              mario_anya_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_WIZ,               mario_wiz_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_JACK,              mario_jack_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_AUSTIN,            mario_austin_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_CAROLINE,          mario_caroline_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_RIDERS,    cheese_follow_riders_geo),
@@ -116,6 +121,10 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SWIMSUIT,  cheese_follow_swimsuit_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_TRAVIS,    cheese_follow_travis_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_BAIT,      cheese_follow_bait_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ANYA,      cheese_follow_anya_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_WIZ,       cheese_follow_wiz_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_JACK,      cheese_follow_jack_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_AUSTIN,    cheese_follow_austin_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WISP2,                   wisp2_geo),

@@ -49,6 +49,11 @@
 #define MODEL_MARIO_SWIMSUIT              0x1EA        // mario_swimsuit_geo
 #define MODEL_MARIO_TRAVIS                0x1E9        // mario_travis_geo
 #define MODEL_MARIO_BAIT                  0x1E8        // mario_bait_geo
+#define MODEL_MARIO_ANYA                  0x1E7        // mario_bait_anya
+#define MODEL_MARIO_WIZ                   0x1E6        // mario_bait_wiz
+#define MODEL_MARIO_JACK                  0x1E5        // mario_bait_jack
+#define MODEL_MARIO_AUSTIN                0x1E4        // mario_bait_austin
+#define MODEL_MARIO_CAROLINE              0x1E3        // mario_bait_austin
 
 // Cheese Alts
 
@@ -76,6 +81,10 @@
 #define MODEL_CHEESE_FOLLOW_SWIMSUIT      0x1AD       // cheese_follow_swimsuit_geo
 #define MODEL_CHEESE_FOLLOW_TRAVIS        0x1AC       // cheese_follow_travis_geo
 #define MODEL_CHEESE_FOLLOW_BAIT          0x1AB       // cheese_follow_bait_geo
+#define MODEL_CHEESE_FOLLOW_ANYA          0x1AA       // cheese_follow_anya_geo
+#define MODEL_CHEESE_FOLLOW_WIZ           0x1A9       // cheese_follow_wiz_geo
+#define MODEL_CHEESE_FOLLOW_JACK          0x1A8       // cheese_follow_jack_geo
+#define MODEL_CHEESE_FOLLOW_AUSTIN        0x1A7       // cheese_follow_austin_geo
 
 // Additional NPCs
 
