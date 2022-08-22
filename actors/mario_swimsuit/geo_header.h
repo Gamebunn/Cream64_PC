@@ -138,7 +138,7 @@ extern u8 mario_swimsuit_chaowing1_rgba16_copy[];
 extern u8 mario_swimsuit_chaowing2_rgba16_copy[];
 extern u8 mario_swimsuit_feeties_ci8[];
 extern u8 mario_swimsuit_feeties_ci8_pal_rgba16[];
-extern Vtx mario_swimsuit_000_offset_mesh_layer_1_vtx_0[124];
+extern Vtx mario_swimsuit_000_offset_mesh_layer_1_vtx_0[126];
 extern Gfx mario_swimsuit_000_offset_mesh_layer_1_tri_0[];
 extern Vtx mario_swimsuit_000_offset_mesh_layer_4_vtx_0[26];
 extern Gfx mario_swimsuit_000_offset_mesh_layer_4_tri_0[];

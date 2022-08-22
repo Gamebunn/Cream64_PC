@@ -49,11 +49,35 @@
 #define MODEL_MARIO_SWIMSUIT              0x1EA        // mario_swimsuit_geo
 #define MODEL_MARIO_TRAVIS                0x1E9        // mario_travis_geo
 #define MODEL_MARIO_BAIT                  0x1E8        // mario_bait_geo
-#define MODEL_MARIO_ANYA                  0x1E7        // mario_bait_anya
-#define MODEL_MARIO_WIZ                   0x1E6        // mario_bait_wiz
-#define MODEL_MARIO_JACK                  0x1E5        // mario_bait_jack
-#define MODEL_MARIO_AUSTIN                0x1E4        // mario_bait_austin
-#define MODEL_MARIO_CAROLINE              0x1E3        // mario_bait_austin
+#define MODEL_MARIO_ANYA                  0x1E7        // mario_bait_anya_geo
+#define MODEL_MARIO_WIZ                   0x1E6        // mario_bait_wiz_geo
+#define MODEL_MARIO_JACK                  0x1E5        // mario_bait_jack_geo
+#define MODEL_MARIO_AUSTIN                0x1E4        // mario_bait_austin_geo
+#define MODEL_MARIO_CAROLINE              0x1E3        // mario_bait_caroline_geo
+
+// Cream Flying Models
+
+#define MODEL_MARIO_FLY                   0x18F        // mario_fly_geo
+#define MODEL_MARIO_ANYA_FLY              0x18E        // mario_anya_fly_geo
+#define MODEL_MARIO_AUSTIN_FLY            0x18D        // mario_austin_fly_geo
+#define MODEL_MARIO_CAROLINE_FLY          0x18C        // mario_caroline_fly_geo
+#define MODEL_MARIO_CHEF_FLY              0x18B        // mario_chef_fly_geo
+#define MODEL_MARIO_GOKU_FLY              0x18A        // mario_goku_fly_geo
+#define MODEL_MARIO_HALLOWEEN_FLY         0x189        // mario_halloween_fly_geo
+#define MODEL_MARIO_ICHIBAN_FLY           0x188        // mario_ichiban_fly_geo
+#define MODEL_MARIO_JACK_FLY              0x187        // mario_jack_fly_geo
+#define MODEL_MARIO_YUKATA_FLY            0x186        // mario_yukata_fly_geo
+#define MODEL_MARIO_RIDERS_FLY            0x185        // mario_riders_fly_geo
+#define MODEL_MARIO_ROGER_FLY             0x184        // mario_rider_fly_geo
+#define MODEL_MARIO_BEAN_FLY              0x183        // mario_bean_fly_geo
+#define MODEL_MARIO_SPRING_FLY            0x182        // mario_spring_fly_geo
+#define MODEL_MARIO_SWIMSUIT_FLY          0x181        // mario_swimsuit_fly_geo
+#define MODEL_MARIO_TRAVIS_FLY            0x180        // mario_travis_fly_geo
+#define MODEL_MARIO_UNICORN_FLY           0x17F        // mario_unicorn_fly_geo
+#define MODEL_MARIO_VANILLA_FLY           0x17E        // mario_vanilla_fly_geo
+#define MODEL_MARIO_WINTER_FLY            0x17D        // mario_winter_fly_geo
+#define MODEL_MARIO_WIZ_FLY               0x17C        // mario_wiz_fly_geo
+
 
 // Cheese Alts
 

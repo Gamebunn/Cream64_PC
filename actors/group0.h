@@ -472,4 +472,44 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "cheese_follow_austin/geo_header.h"
 
+#include "mario_fly/geo_header.h"
+
+#include "mario_anya_fly/geo_header.h"
+
+#include "mario_austin_fly/geo_header.h"
+
+#include "mario_caroline_fly/geo_header.h"
+
+#include "mario_chef_fly/geo_header.h"
+
+#include "mario_goku_fly/geo_header.h"
+
+#include "mario_halloween_fly/geo_header.h"
+
+#include "mario_ichiban_fly/geo_header.h"
+
+#include "mario_jack_fly/geo_header.h"
+
+#include "mario_yukata_fly/geo_header.h"
+
+#include "mario_riders_fly/geo_header.h"
+
+#include "mario_roger_fly/geo_header.h"
+
+#include "mario_bean_fly/geo_header.h"
+
+#include "mario_spring_fly/geo_header.h"
+
+#include "mario_swimsuit_fly/geo_header.h"
+
+#include "mario_travis_fly/geo_header.h"
+
+#include "mario_unicorn_fly/geo_header.h"
+
+#include "mario_vanilla_fly/geo_header.h"
+
+#include "mario_winter_fly/geo_header.h"
+
+#include "mario_wiz_fly/geo_header.h"
+
 #endif
