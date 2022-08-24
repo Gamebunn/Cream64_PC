@@ -7396,35 +7396,15 @@ layer_jump .layer_2BD7
 
 .sound_menu_pause:
 chan_setbank 9
-chan_setinstr 1
+chan_setinstr 26
 chan_setmutebhv 0x0
 chan_setnotepriority 14
 chan_setpanmix 0
 chan_setlayer 0, .layer_2C03
-chan_setlayer 1, .layer_2C10
 chan_end
 
 .layer_2C03:
-layer_note1 43, 0x9, 95
-layer_note1 39, 0x9, 90
-layer_note1 43, 0x9, 95
-layer_note1 39, 0x9, 90
-layer_end
-
-.layer_2C10:
-layer_delay 0x8
-layer_setpan 40
-layer_note1 43, 0x9, 35
-layer_setpan 88
-layer_note1 39, 0x9, 35
-layer_setpan 36
-layer_note1 43, 0x9, 30
-layer_setpan 92
-layer_note1 39, 0x9, 30
-layer_setpan 28
-layer_note1 43, 0x9, 25
-layer_setpan 100
-layer_note1 39, 0x9, 25
+layer_note1 39, 0x32, 127
 layer_end
 
 .sound_menu_message_appear:

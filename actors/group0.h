@@ -512,4 +512,28 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "mario_wiz_fly/geo_header.h"
 
+#include "mario_macer/geo_header.h"
+
+#include "cheese_follow_macer/geo_header.h"
+
+#include "mario_macer_fly/geo_header.h"
+
+#include "mario_dudley/geo_header.h"
+
+#include "cheese_follow_dudley/geo_header.h"
+
+#include "mario_dudley_fly/geo_header.h"
+
+#include "mario_pan/geo_header.h"
+
+#include "mario_pan_fly/geo_header.h"
+
+#include "cheese_follow_pan/geo_header.h"
+
+#include "mario_pocky/geo_header.h"
+
+#include "mario_pocky_fly/geo_header.h"
+
+#include "cheese_follow_pocky/geo_header.h"
+
 #endif

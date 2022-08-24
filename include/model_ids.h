@@ -49,11 +49,15 @@
 #define MODEL_MARIO_SWIMSUIT              0x1EA        // mario_swimsuit_geo
 #define MODEL_MARIO_TRAVIS                0x1E9        // mario_travis_geo
 #define MODEL_MARIO_BAIT                  0x1E8        // mario_bait_geo
-#define MODEL_MARIO_ANYA                  0x1E7        // mario_bait_anya_geo
-#define MODEL_MARIO_WIZ                   0x1E6        // mario_bait_wiz_geo
-#define MODEL_MARIO_JACK                  0x1E5        // mario_bait_jack_geo
-#define MODEL_MARIO_AUSTIN                0x1E4        // mario_bait_austin_geo
-#define MODEL_MARIO_CAROLINE              0x1E3        // mario_bait_caroline_geo
+#define MODEL_MARIO_ANYA                  0x1E7        // mario_anya_geo
+#define MODEL_MARIO_WIZ                   0x1E6        // mario_wiz_geo
+#define MODEL_MARIO_JACK                  0x1E5        // mario_jack_geo
+#define MODEL_MARIO_AUSTIN                0x1E4        // mario_ustin_geo
+#define MODEL_MARIO_CAROLINE              0x1E3        // mario_caroline_geo
+#define MODEL_MARIO_MACER                 0x1E2        // mario_macer_geo
+#define MODEL_MARIO_DUDLEY                0x1E1        // mario_dudley_geo
+#define MODEL_MARIO_PAN                   0x1E0        // mario_pan_geo
+#define MODEL_MARIO_POCKY                 0x1DF        // mario_pocky_geo
 
 // Cream Flying Models
 
@@ -77,6 +81,10 @@
 #define MODEL_MARIO_VANILLA_FLY           0x17E        // mario_vanilla_fly_geo
 #define MODEL_MARIO_WINTER_FLY            0x17D        // mario_winter_fly_geo
 #define MODEL_MARIO_WIZ_FLY               0x17C        // mario_wiz_fly_geo
+#define MODEL_MARIO_MACER_FLY             0x17B        // mario_macer_fly_geo
+#define MODEL_MARIO_DUDLEY_FLY            0x17A        // mario_dudley_fly_geo
+#define MODEL_MARIO_PAN_FLY               0x179        // mario_pan_fly_geo
+#define MODEL_MARIO_POCKY_FLY             0x178        // mario_pocky_fly_geo
 
 
 // Cheese Alts
@@ -109,6 +117,10 @@
 #define MODEL_CHEESE_FOLLOW_WIZ           0x1A9       // cheese_follow_wiz_geo
 #define MODEL_CHEESE_FOLLOW_JACK          0x1A8       // cheese_follow_jack_geo
 #define MODEL_CHEESE_FOLLOW_AUSTIN        0x1A7       // cheese_follow_austin_geo
+#define MODEL_CHEESE_FOLLOW_MACER         0x1A6       // cheese_follow_macer_geo
+#define MODEL_CHEESE_FOLLOW_DUDLEY        0x1A5       // cheese_follow_dudley_geo
+#define MODEL_CHEESE_FOLLOW_PAN           0x1A4       // cheese_follow_pan_geo
+#define MODEL_CHEESE_FOLLOW_POCKY         0x1A3       // cheese_follow_pocky_geo
 
 // Additional NPCs
 

@@ -510,10 +510,10 @@ Just use the [C] buttons to guide\n\
 me around!\n\
 You can fly like you usually\n\
 can. Just press [A] after any\n\
-of the three jumps, the long\n\
-jump and wall kick. Be careful\n\
-on how far you can go.\n\
-\n\
+of the three jumps, the side\n\
+flip and wall kick. For the\n\
+long jump, use [B] then [A].\n\
+That way you can still BLJ!\n\
 You also have a lot of neat\n\
 outfits you can pick from. You\n\
 need to come to a complete stop\n\
@@ -526,12 +526,6 @@ updated to fit the theme.\n\
 You'll find out more as you\n\
 explore the castle. Otherwise,\n\
 this is still a vanilla hack.\n\
-There should be some new \n\
-objects to speak to that will \n\
-inform you of the music used in \n\
-levels. All signposts have also\n\
-been updated to be more helpful\n\
-...hopefully\n\
 Your friends are waiting inside\n\
 to assist you as they can. But\n\
 for the most part, this is\n\
@@ -888,35 +882,20 @@ Her parents must be\n\
 worried sick!"))
 
 //jrb, start of level
-DEFINE_DIALOG(DIALOG_060, 1, 4, 30, 200, _("\
-ATTENTION!\n\
-Read Before Diving In!\n\
-\n\
-\n\
-If you stay under the\n\
-water for too long, you'll\n\
-run out of oxygen.\n\
-\n\
-Return to the surface for\n\
-air or find an air bubble\n\
-or rings to breathe while\n\
-underwater.\n\
-Press [A] to swim. Hold [A]\n\
-to swim slow and steady.\n\
-Tap [A] with smooth timing\n\
-to gain speed.\n\
-Press Up on the\n\
-Control Stick and press [A]\n\
-to dive.\n\
-\n\
-Press Down on the Control\n\
-Stick and press [A] to\n\
-return to the surface.\n\
-\n\
-Hold Down and press [A]\n\
-while on the surface near\n\
-the edge of the water to\n\
-jump out."))
+DEFINE_DIALOG(DIALOG_060, 1, 5, 30, 200, _("\
+Currently the pillars above\n\
+the water may cause you to\n\
+just die. Seems to be linked\n\
+to a plugin used in this\n\
+sm64 build.\n\
+This is just specifically\n\
+the three pillars by the\n\
+capsule for the BLAST TO THE \n\
+PILLAR star. The one with the \n\
+green ring seems fine. I hope.\n\
+I'd recommend just flying to \n\
+the star from the boat\n\
+when it rises to the surface."))
 
 //sl
 DEFINE_DIALOG(DIALOG_061, 1, 5, 30, 200, _("\
@@ -2968,13 +2947,12 @@ End of the Summer\n\
 -- Mobile"))
 
 //Music Credits, bowser 1
-DEFINE_DIALOG(MWISP_BITDW, 1, 6, 30, 200, _("\
+DEFINE_DIALOG(MWISP_BITDW, 1, 5, 30, 200, _("\
 Music used:\n\
 Stage: \n\
--Sonic Adventure 2-\n\
-Soarin' Over Space -\n\
-Cosmic Wall\n\
--- Dreamcast\n\
+-Shadow the Hedgehog-\n\
+The Ark\n\
+-- Various Systems\n\
 Fight:\n\
 -Sonic Adventure-\n\
 Theme of Dr.EGGMAN\n\
@@ -3072,24 +3050,24 @@ DEFINE_DIALOG(WWISP_KATALINA, 1, 6, 30, 200, _("\
 By: Gamebun\n\
 Age: 7\n\
 ~An orphan from the cold \n\
-north found by Mark, ever so\n\
+north adopted by Mark, ever so\n\
 sweet and helpful~\n\
 A scared snow rabbit who\n\
 only wants to be loved.\n\
 And while she does feel\n\
 at home at the orphanage,\n\
-she still yanders for a\n\
+she still waits for a\n\
 real family.\n\
 After being found by Mark\n\
 alone in the orphanage, \n\
-they travel to find out \n\
-what's happen in this part\n\
-of the world and fix the \n\
-situation.\n\
+they travel together to\n\
+find out what's happening \n\
+in this part of the world,\n\
+a story for another day.\n\
 After the situation has \n\
 been cleared, Mark adopts\n\
 her and takes her along \n\
-back to Vanilla and co to\n\
+back to Vanilla and Co to\n\
 live in peace with her\n\
 new family and friends.\n\
 Happy with her new life,\n\
@@ -3101,9 +3079,9 @@ of her family.\n\
 A part of her still unknown\n\
 to everyone, she too can \n\
 use fire magic just like \n\
-Mark. How she obtain this\n\
-power, is still a mystery.\n\
-\n\
+her foster dad. How she\n\
+obtain this power, is still \n\
+a mystery.\n\
 The blue rose she holds is\n\
 a gift from Mark. She says\n\
 he got it from a pretty\n\
@@ -3134,8 +3112,8 @@ His eventual travels would\n\
 lead him down many roads,\n\
 meeting new friends and \n\
 discovering what he wants \n\
-to do with his life.\n\
-\n\
+to do after this whole\n\
+ordeal is over.\n\
 For what felt like a freak\n\
 accident, ending up on this\n\
 world would end up doing\n\
@@ -4259,3 +4237,30 @@ Music used:\n\
 Golf Club (Japan)-\n\
 Neo Turf Masters\n\
 -- Neo Geo"))
+
+//Gemerl at THI
+DEFINE_DIALOG(EX_001, 1, 6, 30, 200, _("\
+He really wanted to race ya,\n\
+I couldn't say no to the\n\
+guy. It's fine, you've made\n\
+it this far without any\n\
+trouble so why test you\n\
+again.\n\
+I can give you a small\n\
+hint for the last section:\n\
+Your flying is unaffected\n\
+by the wind. Take advantage\n\
+of that!"))
+
+//JRB Pillar Warning
+DEFINE_DIALOG(EX_002, 1, 5, 30, 200, _("\
+Currently the pillars above\n\
+the water may cause you to\n\
+just die. Seems to be linked\n\
+to a plugin used in this\n\
+sm64 build.\n\
+To get the BLAST TO THE\n\
+PILLAR star, I'd recommend just\n\
+flying to the star from the boat\n\
+when it rises to the surface."))
+

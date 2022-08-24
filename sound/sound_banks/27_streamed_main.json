@@ -113,7 +113,7 @@
         "inst20": { // 14
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "eggstage1_soarinoverspace_0"
+            "sound": "eggstage1__theark_0"
         },
         "inst21": { // 15
             "release_rate": 10,

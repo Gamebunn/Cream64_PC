@@ -156,6 +156,11 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "19_goodtoad"
+        },
+        "inst26": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "1A_pause"
         }
     },
     "instrument_list": [
@@ -184,6 +189,7 @@
         "inst22",
         "inst23",
         "inst24",
-        "inst25"
+        "inst25",
+        "inst26"
     ]
 }

@@ -258,6 +258,8 @@ enum DialogID {
     NTM_002, 
     NTM_003,
     MWISP_NTM,
+    EX_001,
+    EX_002,
     DIALOG_COUNT
 };
 

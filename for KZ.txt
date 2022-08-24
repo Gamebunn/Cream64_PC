@@ -1,0 +1,13 @@
+Game will just launch by opening the exe file. It generates a config file in appdata/roaming/sm64ex that you can delete in case something goes wrong.
+
+Things to note:
+
+Some star rings will look transparant even when you never collected them. It's a visual bug. They should still work just fine.
+
+You'll just do the water star dance when getting certain stars. Also a visual bug and no idea why.
+
+AVOID THE PILLARS IN JRB. I also stuck in an in-game warning just in case. 
+
+Something I noticed in Kris' stream: When you get the star in the first eggman stage, it'll lock you in the key camera for when you normally beat bowser and I think your movement is limited. No idea if it's just an issue with the new camera or something I missed but try to exit level or somehow wiggle your way to the warp ring to reset the camera when you start the eggman fight. 
+
+Aside from those, everything should be fine. Also stuck in a save file that has all the star rings just in case you choose not to bother with that.

@@ -95,6 +95,10 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_JACK,              mario_jack_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_AUSTIN,            mario_austin_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_CAROLINE,          mario_caroline_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_MACER,             mario_macer_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_DUDLEY,            mario_dudley_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_PAN,               mario_pan_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_POCKY,             mario_pocky_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_FLY,               mario_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_ANYA_FLY,          mario_anya_fly_geo),
@@ -116,6 +120,10 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_VANILLA_FLY,       mario_vanilla_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_WINTER_FLY,        mario_winter_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_WIZ_FLY,           mario_wiz_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_MACER_FLY,         mario_macer_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_DUDLEY_FLY,        mario_dudley_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_PAN_FLY,           mario_pan_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_POCKY_FLY,         mario_pocky_fly_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_RIDERS,    cheese_follow_riders_geo),
@@ -146,6 +154,10 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_WIZ,       cheese_follow_wiz_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_JACK,      cheese_follow_jack_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_AUSTIN,    cheese_follow_austin_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_MACER,     cheese_follow_macer_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_DUDLEY,    cheese_follow_dudley_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_PAN,       cheese_follow_pan_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_POCKY,     cheese_follow_pocky_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WISP2,                   wisp2_geo),

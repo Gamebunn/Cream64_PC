@@ -152,7 +152,7 @@ u8 sDialogSpeaker[] = {
     /*22*/ _,     _,     GTOAD, GTOAD, _,     _,     _,     _,     _,     _,
     /*23*/ _,     _,     TALS2, _,     _,     _,     _,     _,     _,     _,
     /*24*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*25*/ VECTR, TALS5, _,     _,     _,
+    /*25*/ VECTR, TALS5, _,     _,     _,     _,     _,
 };
 #undef _
 STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT,

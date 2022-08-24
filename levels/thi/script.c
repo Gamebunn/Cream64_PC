@@ -12,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/group14.h"
 
 #include "make_const_nonconst.h"
 #include "levels/thi/header.h"
@@ -33,6 +34,7 @@ static const LevelScript script_func_local_3[] = {
 
 static const LevelScript script_func_local_4[] = {
     OBJECT_WITH_ACTS(/*model*/ MODEL_TAILSRACE, /*pos*/ -1900,  -511,  2400, /*angle*/ 0, -30, 0, /*behParam*/ 0x02030000, /*beh*/ bhvKoopaTails,             /*acts*/ ACT_3),
+    OBJECT_WITH_ACTS(/*model*/ MODEL_GEMERL, /*pos*/ -2057,  -511,  1536, /*angle*/ 0, -30, 0, /*behParam*/ EX_001 << 24, /*beh*/ bhvToadMessageGemerl,             /*acts*/ ACT_3),
     OBJECT_WITH_ACTS(/*model*/ MODEL_NONE,             /*pos*/  7400, -1537, -6300, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvKoopaRaceEndpoint, /*acts*/ ACT_3),
     OBJECT          (/*model*/ MODEL_NONE,             /*pos*/ -6556, -2969,  6565, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(GOOMBA_TRIPLET_SPAWNER_BP_EXTRA_GOOMBAS(0) | GOOMBA_SIZE_HUGE), /*bhv*/ bhvGoombaTripletSpawner),
     OBJECT          (/*model*/ MODEL_GOOMBA,           /*pos*/  6517, -2559,  4327, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(GOOMBA_SIZE_HUGE), /*bhv*/ bhvGoomba),
@@ -102,6 +104,7 @@ const LevelScript level_thi_entry[] = {
 
     LOAD_MODEL_FROM_GEO(MODEL_TAILSRACE, tailsrace_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TAILSFLAG, tailsflag_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_GEMERL, gemerl_geo),
 
     AREA(/*index*/ 1, thi_geo_000608),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -7372, -1969,  7373, /*angle*/ 0, 149, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
