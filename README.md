@@ -36,7 +36,7 @@ Currently the only build that works for this is just for PC. The others have not
 ## Known Bugs
 
 * Certain stars show up transparent even when not collected (Visual bug): Aware but not sure what's going on. Still functions properly otherwise. 
-* Going to the Displays option crashes the game (SM64EX conflict): Since sm64ex-alo removed a setting in display (3 point filter for textures), the game doesn't know what to do and crashes. The current fix is to just delete your `sm64config.txt ` file in `Appdata/Roaming/sm64ex` and let it generate a new one. 
+* Going to the Displays option crashes the game (SM64EX conflict): Since sm64ex-alo removed a setting in display (3 point filter for textures), the game doesn't know what to do and crashes. The current fix is to just delete your `sm64config.txt` file in `Appdata/Roaming/sm64ex` and let it generate a new one. 
 
 ## Building
  ### Clone the repository:
