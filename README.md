@@ -36,8 +36,6 @@ Currently the only build that works for this is just for PC. The others have not
 ## Known Bugs
 
 * Certain stars show up transparent even when not collected (Visual bug): Aware but not sure what's going on. Still functions properly otherwise. 
-* Wrong animation plays when collection stars in Eggman levels (Visual bug): Plays the underwater star dance rather than the normal one. Still functions properly otherwise.
-* Collision with pillars in Jolly Roger Bay may cause accidental death: Some conflicts with the better poles patch included in the repo. Since the pillars in JRB use cones for climbing, it may sometimes sends the player to NULL causing them to die. Looking into this and hoping to fix at a later date. For now, it's best recommended you just avoid the pillars all together for `BLAST TO THE STONE PILLAR` and just fly to the star from the boat next to it. 
 * Going to the Displays option crashes the game (SM64EX conflict): Since sm64ex-alo removed a setting in display (3 point filter for textures), the game doesn't know what to do and crashes. The current fix is to just delete your `sm64config.txt ` file in `Appdata/Roaming/sm64ex` and let it generate a new one. 
 
 ## Building
