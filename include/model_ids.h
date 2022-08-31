@@ -58,6 +58,8 @@
 #define MODEL_MARIO_DUDLEY                0x1E1        // mario_dudley_geo
 #define MODEL_MARIO_PAN                   0x1E0        // mario_pan_geo
 #define MODEL_MARIO_POCKY                 0x1DF        // mario_pocky_geo
+#define MODEL_MARIO_LAN                   0x1DE        // mario_lan_geo
+#define MODEL_MARIO_DANI                  0x1DD        // mario_dani_geo
 
 // Cream Flying Models
 
@@ -85,6 +87,8 @@
 #define MODEL_MARIO_DUDLEY_FLY            0x17A        // mario_dudley_fly_geo
 #define MODEL_MARIO_PAN_FLY               0x179        // mario_pan_fly_geo
 #define MODEL_MARIO_POCKY_FLY             0x178        // mario_pocky_fly_geo
+#define MODEL_MARIO_LAN_FLY               0x177        // mario_lan_fly_geo
+#define MODEL_MARIO_DANI_FLY              0x176        // mario_dani_fly_geo
 
 
 // Cheese Alts
@@ -121,6 +125,8 @@
 #define MODEL_CHEESE_FOLLOW_DUDLEY        0x1A5       // cheese_follow_dudley_geo
 #define MODEL_CHEESE_FOLLOW_PAN           0x1A4       // cheese_follow_pan_geo
 #define MODEL_CHEESE_FOLLOW_POCKY         0x1A3       // cheese_follow_pocky_geo
+#define MODEL_CHEESE_FOLLOW_LAN           0x1A2       // cheese_follow_lan_geo
+#define MODEL_CHEESE_FOLLOW_DANI          0x1A1       // cheese_follow_dani_geo
 
 // Additional NPCs
 

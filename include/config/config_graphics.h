@@ -22,7 +22,7 @@
 #define INTRO_JAPANESE_GAME_TEXT (0 || ((VERSION_JP || VERSION_SH) && QOL_FEATURES))
 
 // Changes credit text font to the one used by generic strings.
-#define CREDITS_TEXT_STRING_FONT (0 || QOL_FEATURES)
+// #define CREDITS_TEXT_STRING_FONT (0 || QOL_FEATURES)
 
 // Makes certain objects (mainly trees) transparent when the camera gets close.
 #define OBJ_OPACITY_BY_CAM_DIST (0 || QOL_FEATURES)
@@ -34,4 +34,4 @@
 #define SHOW_INTERACT_OBJ_COLLECTABLE (0 || QOL_FEATURES)
 
 /// Correctly changes star model to be transparent when (Klepto and Unagi) stars are collected
-#define OBJ_HOLD_TRANSPARENT_STAR (0 || QOL_FEATURES)
+// #define OBJ_HOLD_TRANSPARENT_STAR (0 || QOL_FEATURES)

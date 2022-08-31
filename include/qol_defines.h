@@ -40,7 +40,7 @@
 #define QOL_FEATURE_SPECIAL_TRIPLE_JUMP_AIR_STEPS (0 || QOL_FEATURES)
 /// Adds unused cracked ice object in Snowman Land
 /// Credits: (Original Devs, SunlitSpace542, Arceveti)
-#define QOL_FEATURE_SSL_CRACKED_ICE (0 || QOL_FEATURES)
+// #define QOL_FEATURE_SSL_CRACKED_ICE (0 || QOL_FEATURES)
 /// Changes WF breakable wall by no taking damage and returning safely if the proper wall is broken
 /// Credits: (AloXado320)
 #define QOL_FEATURE_BETTER_WF_BREAKEABLE_WALL (0 || QOL_FEATURES)
@@ -64,7 +64,7 @@
 #define QOL_FEATURE_BETTER_HANGING (0 || QOL_FEATURES)
 /// Makes Mario not fall after star grab if the floor is too far below
 /// Credits: (Arceveti)
-#define QOL_FEATURE_STAR_GRAB_NO_FALL_HEIGHT (0 || QOL_FEATURES)
+// #define QOL_FEATURE_STAR_GRAB_NO_FALL_HEIGHT (0 || QOL_FEATURES)
 /// Changes obj_resolve_object_collisions to work consistently
 /// Credits: (Arceveti)
 #define QOL_FEATURE_BETTER_OBJ_COLLISIONS (0 || QOL_FEATURES)
@@ -211,7 +211,7 @@
 #define QOL_FIX_HORIZONTAL_WIND_SPEED (0 || QOL_FIXES)
 /// Fixes fake pole grab on the bottom of it, allowing to be properly grabbed
 /// Credits: (Arceveti)
-#define QOL_FIX_POLE_BOTTOM_GRAB (0 || QOL_FIXES)
+// #define QOL_FIX_POLE_BOTTOM_GRAB (0 || QOL_FIXES)
 /// Fixes undefined anim return in the hit wall code, more info in the fix itself
 /// Credits: (Arceveti)
 #define QOL_FIX_HIT_WALL_ACTION (0 || QOL_FIXES)

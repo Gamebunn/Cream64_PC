@@ -81,6 +81,8 @@ u8 textCreamOutfit31[] = { TEXT_CREAM31};
 u8 textCreamOutfit32[] = { TEXT_CREAM32};
 u8 textCreamOutfit33[] = { TEXT_CREAM33};
 u8 textCreamOutfit34[] = { TEXT_CREAM34};
+u8 textCreamOutfit35[] = { TEXT_CREAM35};
+u8 textCreamOutfit36[] = { TEXT_CREAM36};
 u8 textCostumeCurrent[] = { TEXT_CREAM_CURRENT};
 u8 textCostumeinstrutions[] = { TEXT_CREAM_DPAD};
 
@@ -2558,82 +2560,87 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 33;
+    gMarioState->currentCostume = 35;
 }
-if (gMarioState->currentCostume > 33) {
+if (gMarioState->currentCostume > 35) {
     gMarioState->currentCostume = 0;
 }
 
     print_generic_string(10, 20, textCostumeCurrent);
     print_generic_string(10, 5, textCostumeinstrutions);
     switch (gMarioState->currentCostume) {
-    case 0: print_generic_string(110, 20, textCreamOutfit);
+    case 0: print_generic_string(100, 20, textCreamOutfit);
     break;
-    case 1: print_generic_string(110, 20, textCreamOutfit2);
+    case 1: print_generic_string(100, 20, textCreamOutfit2);
     break;
-    case 2: print_generic_string(110, 20, textCreamOutfit3);
+    case 2: print_generic_string(100, 20, textCreamOutfit3);
     break;
-    case 3: print_generic_string(110, 20, textCreamOutfit4);
+    case 3: print_generic_string(100, 20, textCreamOutfit4);
     break;
-    case 4: print_generic_string(110, 20, textCreamOutfit5);
+    case 4: print_generic_string(100, 20, textCreamOutfit5);
     break;
-    case 5: print_generic_string(110, 20, textCreamOutfit6);
+    case 5: print_generic_string(100, 20, textCreamOutfit6);
     break;
-    case 6: print_generic_string(110, 20, textCreamOutfit7);
+    case 6: print_generic_string(100, 20, textCreamOutfit7);
     break;
-    case 7: print_generic_string(110, 20, textCreamOutfit8);
+
+    case 7: print_generic_string(100, 20, textCreamOutfit8);
     break;
-    case 8: print_generic_string(110, 20, textCreamOutfit9);
+    case 8: print_generic_string(100, 20, textCreamOutfit9);
     break;
-    case 9: print_generic_string(110, 20, textCreamOutfit10);
+    case 9: print_generic_string(100, 20, textCreamOutfit10);
     break;
-    case 10: print_generic_string(110, 20, textCreamOutfit11);
+    case 10: print_generic_string(100, 20, textCreamOutfit11);
     break;
-    case 11: print_generic_string(110, 20, textCreamOutfit12);
+    case 11: print_generic_string(100, 20, textCreamOutfit12);
     break;
-    case 12: print_generic_string(110, 20, textCreamOutfit13);
+    case 12: print_generic_string(100, 20, textCreamOutfit13);
     break;
-    case 13: print_generic_string(110, 20, textCreamOutfit14);
+    case 13: print_generic_string(100, 20, textCreamOutfit14);
     break;
-    case 14: print_generic_string(110, 20, textCreamOutfit15);
+    case 14: print_generic_string(100, 20, textCreamOutfit15);
     break;
-    case 15: print_generic_string(110, 20, textCreamOutfit16);
+    case 15: print_generic_string(100, 20, textCreamOutfit16);
     break;
-    case 16: print_generic_string(110, 20, textCreamOutfit17);
+    case 16: print_generic_string(100, 20, textCreamOutfit17);
     break;
-    case 17: print_generic_string(110, 20, textCreamOutfit18);
+    case 17: print_generic_string(100, 20, textCreamOutfit18);
     break;
-    case 18: print_generic_string(110, 20, textCreamOutfit19);
+    case 18: print_generic_string(100, 20, textCreamOutfit19);
     break;
-    case 19: print_generic_string(110, 20, textCreamOutfit20);
+    case 19: print_generic_string(100, 20, textCreamOutfit20);
     break;
-    case 20: print_generic_string(110, 20, textCreamOutfit21);
+    case 20: print_generic_string(100, 20, textCreamOutfit21);
     break;
-    case 21: print_generic_string(110, 20, textCreamOutfit22);
+    case 21: print_generic_string(100, 20, textCreamOutfit22);
     break;
-    case 22: print_generic_string(110, 20, textCreamOutfit23);
+    case 22: print_generic_string(100, 20, textCreamOutfit23);
     break;
-    case 23: print_generic_string(110, 20, textCreamOutfit24);
+    case 23: print_generic_string(100, 20, textCreamOutfit24);
     break;
-    case 24: print_generic_string(110, 20, textCreamOutfit25);
+    case 24: print_generic_string(100, 20, textCreamOutfit25);
     break;
-    case 25: print_generic_string(110, 20, textCreamOutfit26);
+    case 25: print_generic_string(100, 20, textCreamOutfit26);
     break;
-    case 26: print_generic_string(110, 20, textCreamOutfit27);
+    case 26: print_generic_string(100, 20, textCreamOutfit27);
     break;
-    case 27: print_generic_string(110, 20, textCreamOutfit28);
+    case 27: print_generic_string(100, 20, textCreamOutfit28);
     break;
-    case 28: print_generic_string(110, 20, textCreamOutfit29);
+    case 28: print_generic_string(100, 20, textCreamOutfit29);
     break;
-    case 29: print_generic_string(110, 20, textCreamOutfit30);
+    case 29: print_generic_string(100, 20, textCreamOutfit30);
     break;
-    case 30: print_generic_string(110, 20, textCreamOutfit31);
+    case 30: print_generic_string(100, 20, textCreamOutfit31);
     break;
-    case 31: print_generic_string(110, 20, textCreamOutfit32);
+    case 31: print_generic_string(100, 20, textCreamOutfit32);
     break;
-    case 32: print_generic_string(110, 20, textCreamOutfit33);
+    case 32: print_generic_string(100, 20, textCreamOutfit33);
     break;
-    case 33: print_generic_string(110, 20, textCreamOutfit34);
+    case 33: print_generic_string(100, 20, textCreamOutfit34);
+    break;
+    case 34: print_generic_string(100, 20, textCreamOutfit35);
+    break;
+    case 35: print_generic_string(100, 20, textCreamOutfit36);
     break;
     }
 
@@ -2821,82 +2828,86 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 33;
+    gMarioState->currentCostume = 35;
 }
-if (gMarioState->currentCostume > 33) {
+if (gMarioState->currentCostume > 35) {
     gMarioState->currentCostume = 0;
 }
 
     print_generic_string(10, 20, textCostumeCurrent);
     print_generic_string(10, 5, textCostumeinstrutions);
     switch (gMarioState->currentCostume) {
-    case 0: print_generic_string(110, 20, textCreamOutfit);
+    case 0: print_generic_string(100, 20, textCreamOutfit);
     break;
-    case 1: print_generic_string(110, 20, textCreamOutfit2);
+    case 1: print_generic_string(100, 20, textCreamOutfit2);
     break;
-    case 2: print_generic_string(110, 20, textCreamOutfit3);
+    case 2: print_generic_string(100, 20, textCreamOutfit3);
     break;
-    case 3: print_generic_string(110, 20, textCreamOutfit4);
+    case 3: print_generic_string(100, 20, textCreamOutfit4);
     break;
-    case 4: print_generic_string(110, 20, textCreamOutfit5);
+    case 4: print_generic_string(100, 20, textCreamOutfit5);
     break;
-    case 5: print_generic_string(110, 20, textCreamOutfit6);
+    case 5: print_generic_string(100, 20, textCreamOutfit6);
     break;
-    case 6: print_generic_string(110, 20, textCreamOutfit7);
+    case 6: print_generic_string(100, 20, textCreamOutfit7);
     break;
-    case 7: print_generic_string(110, 20, textCreamOutfit8);
+    case 7: print_generic_string(100, 20, textCreamOutfit8);
     break;
-    case 8: print_generic_string(110, 20, textCreamOutfit9);
+    case 8: print_generic_string(100, 20, textCreamOutfit9);
     break;
-    case 9: print_generic_string(110, 20, textCreamOutfit10);
+    case 9: print_generic_string(100, 20, textCreamOutfit10);
     break;
-    case 10: print_generic_string(110, 20, textCreamOutfit11);
+    case 10: print_generic_string(100, 20, textCreamOutfit11);
     break;
-    case 11: print_generic_string(110, 20, textCreamOutfit12);
+    case 11: print_generic_string(100, 20, textCreamOutfit12);
     break;
-    case 12: print_generic_string(110, 20, textCreamOutfit13);
+    case 12: print_generic_string(100, 20, textCreamOutfit13);
     break;
-    case 13: print_generic_string(110, 20, textCreamOutfit14);
+    case 13: print_generic_string(100, 20, textCreamOutfit14);
     break;
-    case 14: print_generic_string(110, 20, textCreamOutfit15);
+    case 14: print_generic_string(100, 20, textCreamOutfit15);
     break;
-    case 15: print_generic_string(110, 20, textCreamOutfit16);
+    case 15: print_generic_string(100, 20, textCreamOutfit16);
     break;
-    case 16: print_generic_string(110, 20, textCreamOutfit17);
+    case 16: print_generic_string(100, 20, textCreamOutfit17);
     break;
-    case 17: print_generic_string(110, 20, textCreamOutfit18);
+    case 17: print_generic_string(100, 20, textCreamOutfit18);
     break;
-    case 18: print_generic_string(110, 20, textCreamOutfit19);
+    case 18: print_generic_string(100, 20, textCreamOutfit19);
     break;
-    case 19: print_generic_string(110, 20, textCreamOutfit20);
+    case 19: print_generic_string(100, 20, textCreamOutfit20);
     break;
-    case 20: print_generic_string(110, 20, textCreamOutfit21);
+    case 20: print_generic_string(100, 20, textCreamOutfit21);
     break;
-    case 21: print_generic_string(110, 20, textCreamOutfit22);
+    case 21: print_generic_string(100, 20, textCreamOutfit22);
     break;
-    case 22: print_generic_string(110, 20, textCreamOutfit23);
+    case 22: print_generic_string(100, 20, textCreamOutfit23);
     break;
-    case 23: print_generic_string(110, 20, textCreamOutfit24);
+    case 23: print_generic_string(100, 20, textCreamOutfit24);
     break;
-    case 24: print_generic_string(110, 20, textCreamOutfit25);
+    case 24: print_generic_string(100, 20, textCreamOutfit25);
     break;
-    case 25: print_generic_string(110, 20, textCreamOutfit26);
+    case 25: print_generic_string(100, 20, textCreamOutfit26);
     break;
-    case 26: print_generic_string(110, 20, textCreamOutfit27);
+    case 26: print_generic_string(100, 20, textCreamOutfit27);
     break;
-    case 27: print_generic_string(110, 20, textCreamOutfit28);
+    case 27: print_generic_string(100, 20, textCreamOutfit28);
     break;
-    case 28: print_generic_string(110, 20, textCreamOutfit29);
+    case 28: print_generic_string(100, 20, textCreamOutfit29);
     break;
-    case 29: print_generic_string(110, 20, textCreamOutfit30);
+    case 29: print_generic_string(100, 20, textCreamOutfit30);
     break;
-    case 30: print_generic_string(110, 20, textCreamOutfit31);
+    case 30: print_generic_string(100, 20, textCreamOutfit31);
     break;
-    case 31: print_generic_string(110, 20, textCreamOutfit32);
+    case 31: print_generic_string(100, 20, textCreamOutfit32);
     break;
-    case 32: print_generic_string(110, 20, textCreamOutfit33);
+    case 32: print_generic_string(100, 20, textCreamOutfit33);
     break;
-    case 33: print_generic_string(110, 20, textCreamOutfit34);
+    case 33: print_generic_string(100, 20, textCreamOutfit34);
+    break;
+    case 34: print_generic_string(100, 20, textCreamOutfit35);
+    break;
+    case 35: print_generic_string(100, 20, textCreamOutfit36);
     break;
     }
 

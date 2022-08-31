@@ -536,4 +536,16 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "cheese_follow_pocky/geo_header.h"
 
+#include "mario_lan/geo_header.h"
+
+#include "mario_lan_fly/geo_header.h"
+
+#include "cheese_follow_lan/geo_header.h"
+
+#include "mario_dani/geo_header.h"
+
+#include "cheese_follow_dani/geo_header.h"
+
+#include "mario_dani_fly/geo_header.h"
+
 #endif

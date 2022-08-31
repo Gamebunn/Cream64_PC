@@ -885,17 +885,13 @@ worried sick!"))
 DEFINE_DIALOG(DIALOG_060, 1, 5, 30, 200, _("\
 Currently the pillars above\n\
 the water may cause you to\n\
-just die. Seems to be linked\n\
-to a plugin used in this\n\
-sm64 build.\n\
-This is just specifically\n\
-the three pillars by the\n\
-capsule for the BLAST TO THE \n\
-PILLAR star. The one with the \n\
-green ring seems fine. I hope.\n\
+just die. Did managed to find\n\
+what may be causing it so\n\
+it may be fixed, not fully sure.\n\
+If you wanna play it safe,\n\
 I'd recommend just flying to \n\
 the star from the boat\n\
-when it rises to the surface."))
+when it rises to the surface"))
 
 //sl
 DEFINE_DIALOG(DIALOG_061, 1, 5, 30, 200, _("\
@@ -2928,9 +2924,9 @@ Challenge- Mission 2\n\
 DEFINE_DIALOG(MWISP_THI, 1, 5, 30, 200, _("\
 Music used:\n\
 Main Area: \n\
--Sonic Lost World-\n\
-Juice Archipelago\n\
--- Wii U"))
+-Sonic 06-\n\
+Wave Ocean\n\
+-- Various Platforms"))
 
 //Music Credits, ttc
 DEFINE_DIALOG(MWISP_TTC, 1, 5, 30, 200, _("\

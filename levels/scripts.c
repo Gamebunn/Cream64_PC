@@ -99,6 +99,8 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_DUDLEY,            mario_dudley_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_PAN,               mario_pan_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_POCKY,             mario_pocky_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_LAN,               mario_lan_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_DANI,              mario_dani_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_FLY,               mario_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_ANYA_FLY,          mario_anya_fly_geo),
@@ -124,6 +126,8 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_DUDLEY_FLY,        mario_dudley_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_PAN_FLY,           mario_pan_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_POCKY_FLY,         mario_pocky_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_LAN_FLY,           mario_lan_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_DANI_FLY,          mario_dani_fly_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_RIDERS,    cheese_follow_riders_geo),
@@ -158,6 +162,8 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_DUDLEY,    cheese_follow_dudley_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_PAN,       cheese_follow_pan_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_POCKY,     cheese_follow_pocky_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_LAN,       cheese_follow_lan_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_DANI,      cheese_follow_dani_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WISP2,                   wisp2_geo),
