@@ -1,7 +1,7 @@
 ## Super Cream 64 - The Grand Finale 
 A fork of [AloXado320/sm64ex-alo](https://github.com/AloXado320/sm64ex-alo), which is a fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex) with additional features. 
 
-Overall additions since the last build:
+Overall additions since the last build: 
 
 * You can now finally fly! Originally made for Cream 64, introduced in Chao Bandstand and now it's finally here. Works like Sonic Heroes: get about 3-4 seconds of total flight time. When you're not moving, you lose no stamina.
 * Be whoever you wanna be! Bunch of alt outfits are available for you to choose from the very start. (PC Version only): Each alt has its own matching Cheese alt and a handful have a custom Vanilla alt.
