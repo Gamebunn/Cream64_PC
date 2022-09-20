@@ -6897,6 +6897,7 @@ sound_ref .sound_obj_vector
 sound_ref .sound_obj_silver
 sound_ref .sound_obj_rudetoad
 sound_ref .sound_obj_goodtoad
+sound_ref .sound_bowser_charge
 
 .sound_air_bowser_spit_fire:
 chan_setbank 7
@@ -7260,6 +7261,16 @@ chan_setlayer 0, .layer_2B1F
 chan_end
 
 .layer_2B1F:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_bowser_charge:
+chan_setbank 6
+chan_setinstr 19
+chan_setlayer 0, .layer_2B20
+chan_end
+
+.layer_2B20:
 layer_note1 39, 0xFF, 127
 layer_end
 

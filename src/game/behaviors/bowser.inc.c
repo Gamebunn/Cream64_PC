@@ -918,6 +918,7 @@ void bowser_act_charge_mario(void) {
             o->oBowserTimer = 0;
             if (cur_obj_init_animation_and_check_if_near_end(BOWSER_ANIM_RUN_START)) {
                 o->oSubAction = BOWSER_SUB_ACT_CHARGE_RUN;
+                cur_obj_play_sound_2(SOUND_OBJ_BOWSER_CHARGE);
             }
             break;
 

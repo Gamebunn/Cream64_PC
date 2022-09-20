@@ -16,7 +16,7 @@ const GeoLayout mario_klonoa_mario_geo_closed[] = {
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
-const GeoLayout mario_klonoa_mario_geo_happy[] = {
+const GeoLayout mario_klonoa_mario_geo_happy1[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, mario_klonoa_002_switch_001_000_displaylist_mesh_layer_1),
@@ -165,7 +165,7 @@ const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_m
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
-const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_mario_geo_happy[] = {
+const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_mario_geo_happy1[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
 		GEO_DISPLAY_LIST(LAYER_TRANSPARENT, mario_klonoa_002_switch_001_000_displaylist_mesh_layer_1),
@@ -347,7 +347,7 @@ const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt1[] = {
 											GEO_CLOSE_NODE(),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_mario_geo_halfblink),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_mario_geo_closed),
-											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_mario_geo_happy),
+											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_mario_geo_happy1),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt1_jump_mario_klonoa_mario_geo_happy2),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt1_000_switch_opt0_000_switch_001_opt5),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt1_000_switch_opt0_000_switch_001_opt6),
@@ -489,7 +489,7 @@ const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_m
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
-const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_happy[] = {
+const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_happy1[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, mario_klonoa_002_switch_001_000_displaylist_mesh_layer_1_mat_override_metal_0),
@@ -599,7 +599,7 @@ const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt2[] = {
 											GEO_CLOSE_NODE(),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_halfblink),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_closed),
-											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_happy),
+											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_happy1),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_happy2),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt2_jump_mario_klonoa_mario_geo_ded),
 										GEO_CLOSE_NODE(),
@@ -739,7 +739,7 @@ const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_m
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
-const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_happy[] = {
+const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_happy1[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
 		GEO_DISPLAY_LIST(LAYER_TRANSPARENT, mario_klonoa_002_switch_001_000_displaylist_mesh_layer_1_mat_override_metal_0),
@@ -849,7 +849,7 @@ const GeoLayout mario_klonoa_002_switch_opt0_001_switch_opt3[] = {
 											GEO_CLOSE_NODE(),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_halfblink),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_closed),
-											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_happy),
+											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_happy1),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_happy2),
 											GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt3_jump_mario_klonoa_mario_geo_ded),
 										GEO_CLOSE_NODE(),
@@ -1036,7 +1036,7 @@ const GeoLayout mario_klonoa_geo[] = {
 																	GEO_CLOSE_NODE(),
 																	GEO_BRANCH(1, mario_klonoa_mario_geo_halfblink),
 																	GEO_BRANCH(1, mario_klonoa_mario_geo_closed),
-																	GEO_BRANCH(1, mario_klonoa_mario_geo_happy),
+																	GEO_BRANCH(1, mario_klonoa_mario_geo_happy1),
 																	GEO_BRANCH(1, mario_klonoa_mario_geo_happy2),
 																	GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt0_000_switch_opt0_000_switch_001_opt5),
 																	GEO_BRANCH(1, mario_klonoa_002_switch_opt0_001_switch_opt0_000_switch_opt0_000_switch_001_opt6),

@@ -115,3 +115,6 @@
 #include "mario_dani/geo.inc.c"
 #include "cheese_follow_dani/geo.inc.c"
 #include "mario_dani_fly/geo.inc.c"
+#include "mario_amy/geo.inc.c"
+#include "mario_amy_fly/geo.inc.c"
+#include "cheese_follow_amy/geo.inc.c"

@@ -548,4 +548,10 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "mario_dani_fly/geo_header.h"
 
+#include "mario_amy/geo_header.h"
+
+#include "mario_amy_fly/geo_header.h"
+
+#include "cheese_follow_amy/geo_header.h"
+
 #endif

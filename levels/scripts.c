@@ -101,6 +101,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_POCKY,             mario_pocky_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_LAN,               mario_lan_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_DANI,              mario_dani_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_AMY,               mario_amy_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_MARINE,            mario_marine_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_BLAZE,             mario_blaze_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_TAILS,             mario_tails_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_EGGMAN,            mario_eggman_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_FLY,               mario_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_ANYA_FLY,          mario_anya_fly_geo),
@@ -128,6 +133,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_POCKY_FLY,         mario_pocky_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_LAN_FLY,           mario_lan_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_DANI_FLY,          mario_dani_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_AMY_FLY,           mario_amy_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_MARINE_FLY,        mario_marine_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_BLAZE_FLY,         mario_blaze_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_TAILS_FLY,         mario_tails_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_EGGMAN_FLY,        mario_eggman_fly_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_RIDERS,    cheese_follow_riders_geo),
@@ -164,6 +174,12 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_POCKY,     cheese_follow_pocky_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_LAN,       cheese_follow_lan_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_DANI,      cheese_follow_dani_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_AMY,       cheese_follow_amy_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_MARINE,    cheese_follow_amy_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_BLAZE,     cheese_follow_amy_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_TAILS,     cheese_follow_amy_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_EGGMAN,     cheese_follow_amy_geo),
+
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WISP2,                   wisp2_geo),

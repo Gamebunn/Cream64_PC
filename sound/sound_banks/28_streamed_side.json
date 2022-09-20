@@ -84,6 +84,26 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "theend_0"  
+        },
+        "inst15": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "highscore_1"
+        },
+        "inst16": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "highscore_2"
+        },
+        "inst17": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "highscore_3"
+        },
+        "inst18": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "highscore_4"
         }
     },
     "instrument_list": [
@@ -101,6 +121,10 @@
         "inst11",
         "inst12",
         "inst13",
-        "inst14"
+        "inst14",
+        "inst15",
+        "inst16",
+        "inst17",
+        "inst18"
     ]
 }

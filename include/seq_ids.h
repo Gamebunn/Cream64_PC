@@ -72,6 +72,10 @@ enum SeqId {
     SEQ_THEEND,                       // 0x3C VS THE END
     SEQ_EVENT_VANISH,                 // 0x3D VANISH CAP
     SEQ_EVENT_PEACH_MESSAGE_ORI,      // 0x3E ORIGINAL PEACH MESSAGE
+    SEQ_EVENT_HIGH_SCORE2,            // 0x3F; NEW_HIGHSCORE2
+    SEQ_EVENT_HIGH_SCORE3,            // 0x40; NEW_HIGHSCORE3
+    SEQ_EVENT_HIGH_SCORE4,            // 0x41; NEW_HIGHSCORE3
+    SEQ_EVENT_HIGH_SCORE5,            // 0x42; NEW_HIGHSCORE3
     SEQ_COUNT
 };
 

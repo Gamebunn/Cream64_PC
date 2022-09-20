@@ -406,6 +406,10 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127, // THE END
     90,  // SEQ_EVENT_VANISH
     90,  // SEQ_PEACH_MESSAGE_ORIGINAL
+    127,  // SEQ_EVENT_HIGH_SCORE2
+    127,  // SEQ_EVENT_HIGH_SCORE3
+    127,  // SEQ_EVENT_HIGH_SCORE4
+    127,  // SEQ_EVENT_HIGH_SCORE5
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,
@@ -2766,7 +2770,17 @@ void play_puzzle_jingle(void) {
  * Called from threads: thread5_game_loop
  */
 void play_star_fanfare(void) {
-    seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_EVENT_HIGH_SCORE, 0);
+u16 outcome = (random_u16() % (5 + 1 - 0) + 0); 
+u8 song = SEQ_EVENT_HIGH_SCORE;
+    switch(outcome) 
+        {
+            case 1: song = SEQ_EVENT_HIGH_SCORE2; break;
+            case 2: song = SEQ_EVENT_HIGH_SCORE3; break;
+            case 3: song = SEQ_EVENT_HIGH_SCORE4; break;
+            case 4: song = SEQ_EVENT_HIGH_SCORE5; break;
+            default: song = SEQ_EVENT_HIGH_SCORE; break;
+        }
+    seq_player_play_sequence(SEQ_PLAYER_ENV, song, 0);
     sBackgroundMusicMaxTargetVolume = TARGET_VOLUME_IS_PRESENT_FLAG | 20;
 #if defined(VERSION_EU) || defined(VERSION_SH)
     D_EU_80300558 = 2;

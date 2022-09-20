@@ -131,3 +131,6 @@
 #include "mario_dani/model.inc.c"
 #include "cheese_follow_dani/model.inc.c"
 #include "mario_dani_fly/model.inc.c"
+#include "mario_amy/model.inc.c"
+#include "mario_amy_fly/model.inc.c"
+#include "cheese_follow_amy/model.inc.c"

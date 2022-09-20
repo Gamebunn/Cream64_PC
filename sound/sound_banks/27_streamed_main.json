@@ -148,7 +148,7 @@
         "inst27": { // 1B
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "eggman3_liveandlearn_0"
+            "sound": "eggman3_whatimmadeof_0"
         }
     },
     "instrument_list": [

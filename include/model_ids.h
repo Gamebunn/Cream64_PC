@@ -60,6 +60,11 @@
 #define MODEL_MARIO_POCKY                 0x1DF        // mario_pocky_geo
 #define MODEL_MARIO_LAN                   0x1DE        // mario_lan_geo
 #define MODEL_MARIO_DANI                  0x1DD        // mario_dani_geo
+#define MODEL_MARIO_AMY                   0x1DC        // mario_amy_geo
+#define MODEL_MARIO_MARINE                0x1DB        // mario_marine_geo
+#define MODEL_MARIO_BLAZE                 0x1DA        // mario_blaze_geo
+#define MODEL_MARIO_TAILS                 0x1D9        // mario_tails_geo
+#define MODEL_MARIO_EGGMAN                0x1D8        // mario_eggman_geo
 
 // Cream Flying Models
 
@@ -89,6 +94,11 @@
 #define MODEL_MARIO_POCKY_FLY             0x178        // mario_pocky_fly_geo
 #define MODEL_MARIO_LAN_FLY               0x177        // mario_lan_fly_geo
 #define MODEL_MARIO_DANI_FLY              0x176        // mario_dani_fly_geo
+#define MODEL_MARIO_AMY_FLY               0x175        // mario_amy_fly_geo
+#define MODEL_MARIO_MARINE_FLY            0x174        // mario_marine_fly_geo
+#define MODEL_MARIO_BLAZE_FLY             0x173        // mario_blaze_fly_geo
+#define MODEL_MARIO_TAILS_FLY             0x172        // mario_tails_fly_geo
+#define MODEL_MARIO_EGGMAN_FLY            0x171        // mario_eggman_fly_geo
 
 
 // Cheese Alts
@@ -127,6 +137,12 @@
 #define MODEL_CHEESE_FOLLOW_POCKY         0x1A3       // cheese_follow_pocky_geo
 #define MODEL_CHEESE_FOLLOW_LAN           0x1A2       // cheese_follow_lan_geo
 #define MODEL_CHEESE_FOLLOW_DANI          0x1A1       // cheese_follow_dani_geo
+#define MODEL_CHEESE_FOLLOW_AMY           0x1A0       // cheese_follow_amy_geo
+#define MODEL_CHEESE_FOLLOW_MARINE        0x19F       // cheese_follow_marine_geo
+#define MODEL_CHEESE_FOLLOW_BLAZE         0x19E       // cheese_follow_blaze_geo
+#define MODEL_CHEESE_FOLLOW_TAILS         0x19D       // cheese_follow_tails_geo
+#define MODEL_CHEESE_FOLLOW_EGGMAN        0x19C       // cheese_follow_eggman_geo
+
 
 // Additional NPCs
 
