@@ -13,12 +13,12 @@ Overall additions since the last build:
  
  ## Building SC64
  
- IMPORTANT: Newer versions of MSYS2 are currently unable to compile most PC Port Repositories. To fix, uninstall your current version of of MSYS2 and reinstall from this link: https://drive.google.com/file/d/10Eon_nDvbcgN2aCAP0sJVg1JbquYdI4g/view?usp=sharing
+ Make sure to grab the latest version of MSYS2 from their website. Seems that initial bug has been fixed now and the latest version should be able to compile hacks now.
  
  If you haven't built with the normal sm64ex/sm64ex-alo builds, [look at those first for a proper tutorial and getting the proper dependencies for install](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows). Then once you got the hang of it, come back here. 
  
  1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC with MSYS2. Make sure it's a directory with full access. Then `cd sm64ex-alo` to get into the folder itself.
- 2) download the extra assets needed for the repo. https://drive.google.com/file/d/19XvAJgvpFPKJ35mLK20DZyMdQAio4PG5/view?usp=sharing
+ 2) download the extra assets needed for the repo. https://drive.google.com/file/d/1-TAw3tel0Xaj6LZF4KMWoa5NqFSIYsiN/view?usp=sharing
  3) find your own US copy of sm64, rename it to baserom.us.z64 and put it in the root of your clone.
  4) dump the contents of the assets folder into the root of where you cloned the git
  5) go ahead and compile with ```make```. If you got a decent CPU, you can increase the compile speed with ```make -j4```.
