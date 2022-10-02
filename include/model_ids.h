@@ -65,6 +65,8 @@
 #define MODEL_MARIO_BLAZE                 0x1DA        // mario_blaze_geo
 #define MODEL_MARIO_TAILS                 0x1D9        // mario_tails_geo
 #define MODEL_MARIO_EGGMAN                0x1D8        // mario_eggman_geo
+#define MODEL_MARIO_KZ                    0x1D7        // mario_kz_geo
+#define MODEL_MARIO_COSMO                 0x1D6        // mario_cosmo_geo
 
 // Cream Flying Models
 
@@ -97,8 +99,9 @@
 #define MODEL_MARIO_AMY_FLY               0x175        // mario_amy_fly_geo
 #define MODEL_MARIO_MARINE_FLY            0x174        // mario_marine_fly_geo
 #define MODEL_MARIO_BLAZE_FLY             0x173        // mario_blaze_fly_geo
-#define MODEL_MARIO_TAILS_FLY             0x172        // mario_tails_fly_geo
-#define MODEL_MARIO_EGGMAN_FLY            0x171        // mario_eggman_fly_geo
+#define MODEL_MARIO_EGGMAN_FLY            0x172        // mario_eggman_fly_geo
+#define MODEL_MARIO_KZ_FLY                0x171        // mario_kz_fly_geo
+#define MODEL_MARIO_COSMO_FLY             0x170        // mario_cosmo_fly_geo
 
 
 // Cheese Alts
@@ -142,6 +145,8 @@
 #define MODEL_CHEESE_FOLLOW_BLAZE         0x19E       // cheese_follow_blaze_geo
 #define MODEL_CHEESE_FOLLOW_TAILS         0x19D       // cheese_follow_tails_geo
 #define MODEL_CHEESE_FOLLOW_EGGMAN        0x19C       // cheese_follow_eggman_geo
+#define MODEL_CHEESE_FOLLOW_KZ            0x19B       // cheese_follow_kz_geo
+#define MODEL_CHEESE_FOLLOW_COSMO         0x19A       // cheese_follow_cosmo_geo
 
 
 // Additional NPCs
@@ -159,9 +164,9 @@
 
 // Fish Models
 
-#define MODEL_FISH_BAIT                   0x19A        // bait_fish_geo
-#define MODEL_FISH_BAIT2                  0x19B        // bait_fish2_geo
-#define MODEL_FISH_BAIT3                  0x19C        // bait_fish3_geo
+#define MODEL_FISH_BAIT                   0x15A        // bait_fish_geo
+#define MODEL_FISH_BAIT2                  0x15B        // bait_fish2_geo
+#define MODEL_FISH_BAIT3                  0x15C        // bait_fish3_geo
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
