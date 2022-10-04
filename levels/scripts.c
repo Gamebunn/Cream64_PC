@@ -107,7 +107,13 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_TAILS,             mario_tails_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_EGGMAN,            mario_eggman_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_KZ,                mario_kz_geo),
-    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_COSMO,             mario_cosmo_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_COSMO_FLY,         mario_cosmo_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_TIKAL_FLY,         mario_tikal_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_CHARMY_FLY,        mario_charmy_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_VIRGIL_FLY,        mario_virgil_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_SORA_FLY,          mario_sora_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_LATINA_FLY,        mario_latina_geo),
+    
 
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_FLY,               mario_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_ANYA_FLY,          mario_anya_fly_geo),
@@ -141,6 +147,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_EGGMAN_FLY,        mario_eggman_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_KZ_FLY,            mario_kz_fly_geo),
     //LOAD_MODEL_FROM_GEO(MODEL_MARIO_COSMO_FLY,         mario_cosmo_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_TIKAL_FLY,         mario_tikal_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_CHARMY_FLY,        mario_charmy_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_VIRGIL_FLY,        mario_virgil_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_SORA_FLY,          mario_sora_fly_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_MARIO_LATINA_FLY,        mario_latina_fly_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_RIDERS,    cheese_follow_riders_geo),
@@ -184,6 +195,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_EGGMAN,    cheese_follow_eggman_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_KZ,        cheese_follow_kz_geo),
     //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_COSMO,     cheese_follow_cosmo_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_TIKAL,     cheese_follow_tikal_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_CHARMY,    cheese_follow_charmy_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_VIRGIL,    cheese_follow_virgil_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SORA,      cheese_follow_sora_geo),
+    //LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_LATINA,    cheese_follow_latina_geo),
 
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),

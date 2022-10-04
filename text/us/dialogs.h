@@ -4015,15 +4015,15 @@ DEFINE_DIALOG(WP_004, 1, 3, 30, 200, _("\
 Seems the silly frog in the\n\
 dunk tank left a sign here for\n\
 anyone willing to try. Let's see:\n\
-'Wus poppin? Try 'n dunk me, \n\
-brother. Good luck, it's frozen\n\
-lol.'\n\
+'Wus poppin? Sweet here~ \n\
+Try 'n dunk me,  brother. Good\n\
+luck, it's frozen lol.'\n\
 Such a strange silly frog..."))
 
 //Magenta Wisp, White Park
 DEFINE_DIALOG(MWISP_WP, 1, 4, 30, 200, _("\
 Music used:\n\
--Woolen's Theme-\n\
+-Step Skip Go Go! (BGM1)-\n\
 Puzzle Bobble 2\n\
 -- Arcade"))
 

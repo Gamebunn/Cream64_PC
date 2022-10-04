@@ -2325,7 +2325,7 @@ break;
     case 30: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
-    case 31: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 0, 2428,
+    case 31: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
     case 32: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
@@ -2343,16 +2343,37 @@ break;
     case 36: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
-    case 37: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+    case 37: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
-    case 38: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 0, 2428,
+    case 38: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
-    case 39: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
+    case 39: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
-    case 40: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
+    case 40: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 41: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 42: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 43: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 44: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 45: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 46: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
+                                                 -1300, 0, 0, 0);
+break;
+    case 47: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428,
                                                  -1300, 0, 0, 0);
 break;
         }
@@ -3023,7 +3044,7 @@ break;
     case 30: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
-    case 31: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 60, 906,
+    case 31: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
     case 32: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
@@ -3041,16 +3062,37 @@ break;
     case 36: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
-    case 37: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+    case 37: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
-    case 38: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 60, 906,
+    case 38: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
-    case 39: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
+    case 39: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
-    case 40: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
+    case 40: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 41: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 42: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 43: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 44: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 45: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 46: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
+                                                 -1180, 0, 0, 0);
+break;
+    case 47: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906,
                                                  -1180, 0, 0, 0);
 break;
         }

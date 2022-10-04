@@ -88,6 +88,13 @@ u8 textCreamOutfit38[] = { TEXT_CREAM38};
 u8 textCreamOutfit39[] = { TEXT_CREAM39};
 u8 textCreamOutfit40[] = { TEXT_CREAM40};
 u8 textCreamOutfit41[] = { TEXT_CREAM41};
+u8 textCreamOutfit42[] = { TEXT_CREAM42};
+u8 textCreamOutfit43[] = { TEXT_CREAM43};
+u8 textCreamOutfit44[] = { TEXT_CREAM44};
+u8 textCreamOutfit45[] = { TEXT_CREAM45};
+u8 textCreamOutfit46[] = { TEXT_CREAM46};
+u8 textCreamOutfit47[] = { TEXT_CREAM47};
+u8 textCreamOutfit48[] = { TEXT_CREAM48};
 u8 textCostumeCurrent[] = { TEXT_CREAM_CURRENT};
 u8 textCostumeinstrutions[] = { TEXT_CREAM_DPAD};
 
@@ -2565,9 +2572,9 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 40;
+    gMarioState->currentCostume = 47;
 }
-if (gMarioState->currentCostume > 40) {
+if (gMarioState->currentCostume > 47) {
     gMarioState->currentCostume = 0;
 }
 
@@ -2656,6 +2663,20 @@ if (gMarioState->currentCostume > 40) {
     case 39: print_generic_string(100, 20, textCreamOutfit40);
     break;
     case 40: print_generic_string(100, 20, textCreamOutfit41);
+    break;
+    case 41: print_generic_string(100, 20, textCreamOutfit42);
+    break;
+    case 42: print_generic_string(100, 20, textCreamOutfit43);
+    break;
+    case 43: print_generic_string(100, 20, textCreamOutfit44);
+    break;
+    case 44: print_generic_string(100, 20, textCreamOutfit45);
+    break;
+    case 45: print_generic_string(100, 20, textCreamOutfit46);
+    break;
+    case 46: print_generic_string(100, 20, textCreamOutfit47);
+    break;
+    case 47: print_generic_string(100, 20, textCreamOutfit48);
     break;
     }
 
@@ -2843,9 +2864,9 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 40;
+    gMarioState->currentCostume = 47;
 }
-if (gMarioState->currentCostume > 40) {
+if (gMarioState->currentCostume > 47) {
     gMarioState->currentCostume = 0;
 }
 
@@ -2933,6 +2954,20 @@ if (gMarioState->currentCostume > 40) {
     case 39: print_generic_string(100, 20, textCreamOutfit40);
     break;
     case 40: print_generic_string(100, 20, textCreamOutfit41);
+    break;
+    case 41: print_generic_string(100, 20, textCreamOutfit42);
+    break;
+    case 42: print_generic_string(100, 20, textCreamOutfit43);
+    break;
+    case 43: print_generic_string(100, 20, textCreamOutfit44);
+    break;
+    case 44: print_generic_string(100, 20, textCreamOutfit45);
+    break;
+    case 45: print_generic_string(100, 20, textCreamOutfit46);
+    break;
+    case 46: print_generic_string(100, 20, textCreamOutfit47);
+    break;
+    case 47: print_generic_string(100, 20, textCreamOutfit48);
     break;
     }
 

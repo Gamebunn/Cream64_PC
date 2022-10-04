@@ -67,6 +67,10 @@
 #define MODEL_MARIO_EGGMAN                0x1D8        // mario_eggman_geo
 #define MODEL_MARIO_KZ                    0x1D7        // mario_kz_geo
 #define MODEL_MARIO_COSMO                 0x1D6        // mario_cosmo_geo
+#define MODEL_MARIO_TIKAL                 0x1D5        // mario_tikal_geo
+#define MODEL_MARIO_CHARMY                0x1D4        // mario_charmy_geo
+#define MODEL_MARIO_VIRGIL                0x1D3        // mario_virgil_geo
+#define MODEL_MARIO_LATINA                0x1D2        // mario_latina_geo
 
 // Cream Flying Models
 
@@ -102,6 +106,10 @@
 #define MODEL_MARIO_EGGMAN_FLY            0x172        // mario_eggman_fly_geo
 #define MODEL_MARIO_KZ_FLY                0x171        // mario_kz_fly_geo
 #define MODEL_MARIO_COSMO_FLY             0x170        // mario_cosmo_fly_geo
+#define MODEL_MARIO_TIKAL_FLY             0x16F        // mario_tikal_fly_geo
+#define MODEL_MARIO_CHARMY_FLY            0x16E        // mario_charmy_fly_geo
+#define MODEL_MARIO_VIRGIL_FLY            0x16D        // mario_virgil_fly_geo
+#define MODEL_MARIO_LATINA_FLY            0x16C        // mario_latina_fly_geo
 
 
 // Cheese Alts
@@ -147,6 +155,10 @@
 #define MODEL_CHEESE_FOLLOW_EGGMAN        0x19C       // cheese_follow_eggman_geo
 #define MODEL_CHEESE_FOLLOW_KZ            0x19B       // cheese_follow_kz_geo
 #define MODEL_CHEESE_FOLLOW_COSMO         0x19A       // cheese_follow_cosmo_geo
+#define MODEL_CHEESE_FOLLOW_TIKAL         0x199       // cheese_follow_tikal_geo
+#define MODEL_CHEESE_FOLLOW_CHARMY        0x198       // cheese_follow_charmy_geo
+#define MODEL_CHEESE_FOLLOW_VIRGIL        0x197       // cheese_follow_virgil_geo
+#define MODEL_CHEESE_FOLLOW_LATINA        0x196       // cheese_follow_latina_geo
 
 
 // Additional NPCs
