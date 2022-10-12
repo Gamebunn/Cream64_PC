@@ -70,46 +70,62 @@
 #define MODEL_MARIO_TIKAL                 0x1D5        // mario_tikal_geo
 #define MODEL_MARIO_CHARMY                0x1D4        // mario_charmy_geo
 #define MODEL_MARIO_VIRGIL                0x1D3        // mario_virgil_geo
-#define MODEL_MARIO_LATINA                0x1D2        // mario_latina_geo
+#define MODEL_MARIO_SORA                  0x1D2        // mario_sora_geo
+#define MODEL_MARIO_YUGI                  0x1D1        // mario_yugi_geo
+#define MODEL_MARIO_DAWN                  0x1D0        // mario_dawn_geo
+#define MODEL_MARIO_SERENA                0x1CF        // mario_serena_geo
+#define MODEL_MARIO_MIKU                  0x1CE        // mario_miku_geo
+#define MODEL_MARIO_MAGE                  0x1CD        // mario_mage_geo
+#define MODEL_MARIO_WONDER                0x1CC        // mario_wonder_geo
+#define MODEL_MARIO_DENJI                 0x1CB        // mario_denji_geo
+#define MODEL_MARIO_JOHNNY                0x1CA        // mario_johnny_geo
 
 // Cream Flying Models
 
-#define MODEL_MARIO_FLY                   0x18F        // mario_fly_geo
-#define MODEL_MARIO_ANYA_FLY              0x18E        // mario_anya_fly_geo
-#define MODEL_MARIO_AUSTIN_FLY            0x18D        // mario_austin_fly_geo
-#define MODEL_MARIO_CAROLINE_FLY          0x18C        // mario_caroline_fly_geo
-#define MODEL_MARIO_CHEF_FLY              0x18B        // mario_chef_fly_geo
-#define MODEL_MARIO_GOKU_FLY              0x18A        // mario_goku_fly_geo
-#define MODEL_MARIO_HALLOWEEN_FLY         0x189        // mario_halloween_fly_geo
-#define MODEL_MARIO_ICHIBAN_FLY           0x188        // mario_ichiban_fly_geo
-#define MODEL_MARIO_JACK_FLY              0x187        // mario_jack_fly_geo
-#define MODEL_MARIO_YUKATA_FLY            0x186        // mario_yukata_fly_geo
-#define MODEL_MARIO_RIDERS_FLY            0x185        // mario_riders_fly_geo
-#define MODEL_MARIO_ROGER_FLY             0x184        // mario_rider_fly_geo
-#define MODEL_MARIO_BEAN_FLY              0x183        // mario_bean_fly_geo
-#define MODEL_MARIO_SPRING_FLY            0x182        // mario_spring_fly_geo
-#define MODEL_MARIO_SWIMSUIT_FLY          0x181        // mario_swimsuit_fly_geo
-#define MODEL_MARIO_TRAVIS_FLY            0x180        // mario_travis_fly_geo
-#define MODEL_MARIO_UNICORN_FLY           0x17F        // mario_unicorn_fly_geo
-#define MODEL_MARIO_VANILLA_FLY           0x17E        // mario_vanilla_fly_geo
-#define MODEL_MARIO_WINTER_FLY            0x17D        // mario_winter_fly_geo
-#define MODEL_MARIO_WIZ_FLY               0x17C        // mario_wiz_fly_geo
-#define MODEL_MARIO_MACER_FLY             0x17B        // mario_macer_fly_geo
-#define MODEL_MARIO_DUDLEY_FLY            0x17A        // mario_dudley_fly_geo
-#define MODEL_MARIO_PAN_FLY               0x179        // mario_pan_fly_geo
-#define MODEL_MARIO_POCKY_FLY             0x178        // mario_pocky_fly_geo
-#define MODEL_MARIO_LAN_FLY               0x177        // mario_lan_fly_geo
-#define MODEL_MARIO_DANI_FLY              0x176        // mario_dani_fly_geo
-#define MODEL_MARIO_AMY_FLY               0x175        // mario_amy_fly_geo
-#define MODEL_MARIO_MARINE_FLY            0x174        // mario_marine_fly_geo
-#define MODEL_MARIO_BLAZE_FLY             0x173        // mario_blaze_fly_geo
-#define MODEL_MARIO_EGGMAN_FLY            0x172        // mario_eggman_fly_geo
-#define MODEL_MARIO_KZ_FLY                0x171        // mario_kz_fly_geo
-#define MODEL_MARIO_COSMO_FLY             0x170        // mario_cosmo_fly_geo
-#define MODEL_MARIO_TIKAL_FLY             0x16F        // mario_tikal_fly_geo
-#define MODEL_MARIO_CHARMY_FLY            0x16E        // mario_charmy_fly_geo
-#define MODEL_MARIO_VIRGIL_FLY            0x16D        // mario_virgil_fly_geo
-#define MODEL_MARIO_LATINA_FLY            0x16C        // mario_latina_fly_geo
+#define MODEL_MARIO_FLY                   0x17F        // mario_fly_geo
+#define MODEL_MARIO_ANYA_FLY              0x17E        // mario_anya_fly_geo
+#define MODEL_MARIO_AUSTIN_FLY            0x17D        // mario_austin_fly_geo
+#define MODEL_MARIO_CAROLINE_FLY          0x17C        // mario_caroline_fly_geo
+#define MODEL_MARIO_CHEF_FLY              0x17B        // mario_chef_fly_geo
+#define MODEL_MARIO_GOKU_FLY              0x17A        // mario_goku_fly_geo
+#define MODEL_MARIO_HALLOWEEN_FLY         0x179        // mario_halloween_fly_geo
+#define MODEL_MARIO_ICHIBAN_FLY           0x178        // mario_ichiban_fly_geo
+#define MODEL_MARIO_JACK_FLY              0x177        // mario_jack_fly_geo
+#define MODEL_MARIO_YUKATA_FLY            0x176        // mario_yukata_fly_geo
+#define MODEL_MARIO_RIDERS_FLY            0x175        // mario_riders_fly_geo
+#define MODEL_MARIO_ROGER_FLY             0x174        // mario_rider_fly_geo
+#define MODEL_MARIO_BEAN_FLY              0x173        // mario_bean_fly_geo
+#define MODEL_MARIO_SPRING_FLY            0x172        // mario_spring_fly_geo
+#define MODEL_MARIO_SWIMSUIT_FLY          0x171        // mario_swimsuit_fly_geo
+#define MODEL_MARIO_TRAVIS_FLY            0x170        // mario_travis_fly_geo
+#define MODEL_MARIO_UNICORN_FLY           0x16F        // mario_unicorn_fly_geo
+#define MODEL_MARIO_VANILLA_FLY           0x16E        // mario_vanilla_fly_geo
+#define MODEL_MARIO_WINTER_FLY            0x16D        // mario_winter_fly_geo
+#define MODEL_MARIO_WIZ_FLY               0x16C        // mario_wiz_fly_geo
+#define MODEL_MARIO_MACER_FLY             0x16B        // mario_macer_fly_geo
+#define MODEL_MARIO_DUDLEY_FLY            0x16A        // mario_dudley_fly_geo
+#define MODEL_MARIO_PAN_FLY               0x169        // mario_pan_fly_geo
+#define MODEL_MARIO_POCKY_FLY             0x168        // mario_pocky_fly_geo
+#define MODEL_MARIO_LAN_FLY               0x167        // mario_lan_fly_geo
+#define MODEL_MARIO_DANI_FLY              0x166        // mario_dani_fly_geo
+#define MODEL_MARIO_AMY_FLY               0x165        // mario_amy_fly_geo
+#define MODEL_MARIO_MARINE_FLY            0x164        // mario_marine_fly_geo
+#define MODEL_MARIO_BLAZE_FLY             0x163        // mario_blaze_fly_geo
+#define MODEL_MARIO_EGGMAN_FLY            0x162        // mario_eggman_fly_geo
+#define MODEL_MARIO_KZ_FLY                0x161        // mario_kz_fly_geo
+#define MODEL_MARIO_COSMO_FLY             0x160        // mario_cosmo_fly_geo
+#define MODEL_MARIO_TIKAL_FLY             0x15F        // mario_tikal_fly_geo
+#define MODEL_MARIO_VIRGIL_FLY            0x15E        // mario_virgil_geo
+#define MODEL_MARIO_SORA_FLY              0x15D        // mario_sora_geo
+#define MODEL_MARIO_YUGI_FLY              0x15C        // mario_yugi_geo
+#define MODEL_MARIO_DAWN_FLY              0x15B        // mario_dawn_geo
+#define MODEL_MARIO_SERENA_FLY            0x15A        // mario_serena_geo
+#define MODEL_MARIO_MIKU_FLY              0x159        // mario_miku_geo
+#define MODEL_MARIO_MAGE_FLY              0x158        // mario_mage_geo
+#define MODEL_MARIO_WONDER_FLY            0x157        // mario_wonder_geo
+#define MODEL_MARIO_DENJI_FLY             0x156        // mario_denji_geo
+#define MODEL_MARIO_JOHNNY_FLY            0x155        // mario_johnny_geo
+
 
 
 // Cheese Alts
@@ -158,8 +174,15 @@
 #define MODEL_CHEESE_FOLLOW_TIKAL         0x199       // cheese_follow_tikal_geo
 #define MODEL_CHEESE_FOLLOW_CHARMY        0x198       // cheese_follow_charmy_geo
 #define MODEL_CHEESE_FOLLOW_VIRGIL        0x197       // cheese_follow_virgil_geo
-#define MODEL_CHEESE_FOLLOW_LATINA        0x196       // cheese_follow_latina_geo
-
+#define MODEL_CHEESE_FOLLOW_SORA          0x196       // cheese_follow_sora_geo
+#define MODEL_CHEESE_FOLLOW_YUGI          0x195       // cheese_follow_yugi_geo
+#define MODEL_CHEESE_FOLLOW_DAWN          0x194       // cheese_follow_dawn_geo
+#define MODEL_CHEESE_FOLLOW_SERENA        0x193       // cheese_follow_serena_geo
+#define MODEL_CHEESE_FOLLOW_MIKU          0x192       // cheese_follow_miku_geo
+#define MODEL_CHEESE_FOLLOW_MAGE          0x191       // cheese_follow_mage_geo
+#define MODEL_CHEESE_FOLLOW_WONDER        0x190       // cheese_follow_wonder_geo
+#define MODEL_CHEESE_FOLLOW_DENJI         0x18F       // cheese_follow_denji_geo
+#define MODEL_CHEESE_FOLLOW_JOHNNY        0x18E       // cheese_follow_johnny_geo
 
 // Additional NPCs
 
@@ -176,9 +199,9 @@
 
 // Fish Models
 
-#define MODEL_FISH_BAIT                   0x15A        // bait_fish_geo
-#define MODEL_FISH_BAIT2                  0x15B        // bait_fish2_geo
-#define MODEL_FISH_BAIT3                  0x15C        // bait_fish3_geo
+#define MODEL_FISH_BAIT                   0x155        // bait_fish_geo
+#define MODEL_FISH_BAIT2                  0x154        // bait_fish2_geo
+#define MODEL_FISH_BAIT3                  0x153        // bait_fish3_geo
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
