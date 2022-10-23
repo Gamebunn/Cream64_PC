@@ -79,6 +79,7 @@
 #define MODEL_MARIO_WONDER                0x1CC        // mario_wonder_geo
 #define MODEL_MARIO_DENJI                 0x1CB        // mario_denji_geo
 #define MODEL_MARIO_JOHNNY                0x1CA        // mario_johnny_geo
+#define MODEL_MARIO_SWEET                 0x1C9        // mario_sweet_geo
 
 // Cream Flying Models
 
@@ -115,16 +116,15 @@
 #define MODEL_MARIO_KZ_FLY                0x161        // mario_kz_fly_geo
 #define MODEL_MARIO_COSMO_FLY             0x160        // mario_cosmo_fly_geo
 #define MODEL_MARIO_TIKAL_FLY             0x15F        // mario_tikal_fly_geo
-#define MODEL_MARIO_VIRGIL_FLY            0x15E        // mario_virgil_geo
-#define MODEL_MARIO_SORA_FLY              0x15D        // mario_sora_geo
-#define MODEL_MARIO_YUGI_FLY              0x15C        // mario_yugi_geo
-#define MODEL_MARIO_DAWN_FLY              0x15B        // mario_dawn_geo
-#define MODEL_MARIO_SERENA_FLY            0x15A        // mario_serena_geo
-#define MODEL_MARIO_MIKU_FLY              0x159        // mario_miku_geo
-#define MODEL_MARIO_MAGE_FLY              0x158        // mario_mage_geo
-#define MODEL_MARIO_WONDER_FLY            0x157        // mario_wonder_geo
-#define MODEL_MARIO_DENJI_FLY             0x156        // mario_denji_geo
-#define MODEL_MARIO_JOHNNY_FLY            0x155        // mario_johnny_geo
+#define MODEL_MARIO_VIRGIL_FLY            0x15E        // mario_virgil_fly_geo
+#define MODEL_MARIO_SORA_FLY              0x15D        // mario_sora_fly_geo
+#define MODEL_MARIO_YUGI_FLY              0x15C        // mario_yugi_fly_geo
+#define MODEL_MARIO_MIKU_FLY              0x15B        // mario_miku_fly_geo
+#define MODEL_MARIO_MAGE_FLY              0x15A        // mario_mage_fly_geo
+#define MODEL_MARIO_WONDER_FLY            0x159        // mario_wonder_fly_geo
+#define MODEL_MARIO_DENJI_FLY             0x158        // mario_denji_fly_geo
+#define MODEL_MARIO_JOHNNY_FLY            0x157        // mario_johnny_fly_geo
+#define MODEL_MARIO_SWEET_FLY             0x156        // mario_sweet_fly_geo
 
 
 
@@ -183,6 +183,7 @@
 #define MODEL_CHEESE_FOLLOW_WONDER        0x190       // cheese_follow_wonder_geo
 #define MODEL_CHEESE_FOLLOW_DENJI         0x18F       // cheese_follow_denji_geo
 #define MODEL_CHEESE_FOLLOW_JOHNNY        0x18E       // cheese_follow_johnny_geo
+#define MODEL_CHEESE_FOLLOW_SWEET         0x18D       // cheese_follow_sweet_geo
 
 // Additional NPCs
 
@@ -604,10 +605,10 @@
 
 // Vanilla Alts
 
-#define MODEL_PEACH_MARK                  0x1D1        // peach_mark_geo
-#define MODEL_PEACH_JACK                  0x1D0        // peach_jack_geo
-#define MODEL_PEACH_CREAMOCCHIA           0x1CF        // peach_creamocchia_geo
-#define MODEL_PEACH_VANILLA               0x1CE        // peach_vanilla_geo
+#define MODEL_PEACH_MARK                  0x57        // peach_mark_geo
+#define MODEL_PEACH_JACK                  0x58        // peach_jack_geo
+#define MODEL_PEACH_CREAMOCCHIA           0x59        // peach_creamocchia_geo
+#define MODEL_PEACH_VANILLA               0x5A        // peach_vanilla_geo
 
 // ED Models
 

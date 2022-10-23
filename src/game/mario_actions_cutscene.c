@@ -2284,9 +2284,10 @@ static void end_peach_cutscene_spawn_peach(struct MarioState *m) {
     case 49: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
     case 50: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
     case 51: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 52: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 53: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 52: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 53: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
     case 54: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 55: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
 
         }
         gCutsceneFocus = sEndPeachObj;
@@ -2915,9 +2916,10 @@ static s32 act_end_waving_cutscene(struct MarioState *m) {
     case 49: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
     case 50: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
     case 51: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 52: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 53: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    case 52: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    case 53: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
     case 54: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    case 55: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
 
         }
         

@@ -69,15 +69,15 @@ void bhv_cheese_act_follow_mario(void) {
     case 26: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_DUDLEY]; break;
     case 27: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_PAN]; break;
     case 28: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_LAN]; break;
-    case 29: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // Virgil
+    case 29: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_VIRGIL]; break; // Vergil
     case 30: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_SORA]; break; // Sora
-    case 31: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // Yugi
-    case 32: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // Dawn
-    case 33: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // Serena
-    case 34: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // Miku
-    case 35: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // DQ3 Mage
-    case 36: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // W101 Wonder-Bun
-    case 37: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // CSM Denji
+    case 31: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_YUGI]; break; // Yugi
+    case 32: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_DAWN]; break; // Dawn
+    case 33: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_SERENA]; break; // Serena
+    case 34: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_MIKU]; break; // Miku
+    case 35: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_MAGE]; break; // DQ3 Mage
+    case 36: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_WONDER]; break; // W101 Wonder-Bun
+    case 37: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_DENJI]; break; // CSM Denji
     case 38: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_ROGER]; break;
     case 39: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_GOKU]; break;
     case 40: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_CINNIA]; break;
@@ -90,11 +90,12 @@ void bhv_cheese_act_follow_mario(void) {
     case 47: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_NONE]; break;
     case 48: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_MACER]; break;
     case 49: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_POCKY]; break;
-    case 50: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_DANI]; break;
-    case 51: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // Johnny
-    case 52: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_KITTEN]; break;
-    case 53: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_LAYLA]; break;
-    case 54: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_KATALINA]; break;
+    case 50: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_SWEET]; break;
+    case 51: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_DANI]; break;
+    case 52: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_JOHNNY]; break; // JohnnyHedgewolf
+    case 53: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_KITTEN]; break;
+    case 54: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_LAYLA]; break;
+    case 55: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_KATALINA]; break;
     }
 	
 }

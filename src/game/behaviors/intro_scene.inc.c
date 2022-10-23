@@ -139,9 +139,10 @@ void bhv_intro_scene_loop(void) {
     case 49: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 50: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 51: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
-    case 52: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_JACK]; break;
-    case 53: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK]; break;
+    case 52: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 53: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_JACK]; break;
     case 54: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK]; break;
+    case 55: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK]; break;
     }
     
 }

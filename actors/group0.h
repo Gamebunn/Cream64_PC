@@ -604,4 +604,60 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "cheese_follow_sora/geo_header.h"
 
+#include "mario_virgil/geo_header.h"
+
+#include "mario_virgil_fly/geo_header.h"
+
+#include "cheese_follow_virgil/geo_header.h"
+
+#include "mario_dawn/geo_header.h"
+
+#include "cheese_follow_dawn/geo_header.h"
+
+#include "mario_serena/geo_header.h"
+
+#include "cheese_follow_serena/geo_header.h"
+
+#include "mario_yugi/geo_header.h"
+
+#include "mario_yugi_fly/geo_header.h"
+
+#include "cheese_follow_yugi/geo_header.h"
+
+#include "mario_miku/geo_header.h"
+
+#include "mario_miku_fly/geo_header.h"
+
+#include "cheese_follow_miku/geo_header.h"
+
+#include "mario_johnny/geo_header.h"
+
+#include "mario_johnny_fly/geo_header.h"
+
+#include "cheese_follow_johnny/geo_header.h"
+
+#include "mario_denji/geo_header.h"
+
+#include "mario_denji_fly/geo_header.h"
+
+#include "cheese_follow_denji/geo_header.h"
+
+#include "mario_mage/geo_header.h"
+
+#include "mario_mage_fly/geo_header.h"
+
+#include "cheese_follow_mage/geo_header.h"
+
+#include "mario_wonder/geo_header.h"
+
+#include "mario_wonder_fly/geo_header.h"
+
+#include "cheese_follow_wonder/geo_header.h"
+
+#include "mario_sweet/geo_header.h"
+
+#include "cheese_follow_sweet/geo_header.h"
+
+#include "mario_sweet_fly/geo_header.h"
+
 #endif
