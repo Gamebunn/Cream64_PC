@@ -161,4 +161,8 @@ extern const LevelScript level_castle_inside_entry[];
 #include "levels/castle_inside/bait_fish/geo_header.h"
 
 #include "levels/castle_inside/toad_angy/geo_header.h"
+#include "levels/castle_inside/sage_egg/geo_header.h"
+
+#include "levels/castle_inside/sage_egg/anim_header.h"
+
 #endif

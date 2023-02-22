@@ -616,6 +616,7 @@ extern const BehaviorScript bhvExplosionNoDmg[];
 extern const BehaviorScript bhvCheeseFollow[];
 extern const BehaviorScript bhvBobombBuddyLayla[];
 extern const BehaviorScript bhvBobombBuddyKitten[];
+extern const BehaviorScript bhvBobombBuddyKitten2[];
 extern const BehaviorScript bhvToadMessageSilver[];
 extern const BehaviorScript bhvToadMessageKatty[];
 extern const BehaviorScript bhvToadMessageAmy[];
@@ -624,10 +625,11 @@ extern const BehaviorScript bhvToadMessageAmy3[];
 extern const BehaviorScript bhvToadMessageAmy4[];
 extern const BehaviorScript bhvToadMessageAmy5[];
 extern const BehaviorScript bhvToadMessageAmy6[];
+extern const BehaviorScript bhvToadMessageAmy7[];
+extern const BehaviorScript bhvToadMessageSageEgg[];
 extern const BehaviorScript bhvKoopaGemerl[];
 //extern const BehaviorScript bhvKoopaTails[]; 
 extern const BehaviorScript bhvWisp1[];
-extern const BehaviorScript bhvWisp2[];
 extern const BehaviorScript bhvToadMessageBlaze[];
 extern const BehaviorScript bhvToadMessageBlaze2[];
 extern const BehaviorScript bhvToadMessageBlaze3[];
@@ -652,6 +654,12 @@ extern const BehaviorScript bhvToadMessagePocky[];
 extern const BehaviorScript bhvToadMessageSorbet[];
 extern const BehaviorScript bhvBobombBuddyGardevoir[];
 extern const BehaviorScript bhvTammie[];
+extern const BehaviorScript bhvGremlin[];
+extern const BehaviorScript bhvKZNekoarc[];
+extern const BehaviorScript bhvSimple[];
+extern const BehaviorScript bhvDDRMusic[];
+extern const BehaviorScript bhvDDRMusic2[];
+extern const BehaviorScript bhvDDRMusic3[];
 
 // Castle Courtyard
 extern const BehaviorScript bhvToadMessageBait[];
@@ -671,6 +679,14 @@ extern const BehaviorScript bhvStarFlag[];
 extern const BehaviorScript bhvToadMessageTails3[];
 extern const BehaviorScript bhvToadMessageJohnny[];
 extern const BehaviorScript bhvToadMessageVector[];
+
+// TOTWC
+extern const BehaviorScript bhvSmallBullyK[];
+extern const BehaviorScript bhvToadMessageCharmy[];
+
+// COTMC
+extern const BehaviorScript bhvSkeeter_MM[];
+extern const BehaviorScript bhvToadMessageEspio[];
 
 // Ending
 extern const BehaviorScript bhvEndToadGemerl[];

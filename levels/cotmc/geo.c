@@ -14,3 +14,8 @@
 #include "levels/cotmc/header.h"
 
 #include "levels/cotmc/areas/1/geo.inc.c"
+
+#include "levels/cotmc/skeeter_mm/geo.inc.c"
+#include "levels/cotmc/geo.inc.c"
+
+#include "levels/cotmc/espio/geo.inc.c"

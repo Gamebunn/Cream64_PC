@@ -372,8 +372,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "mario_goku/geo_header.h"
 
-#include "mario_cinnia/geo_header.h"
-
 #include "mario_chef/geo_header.h"
 
 #include "mario_val/geo_header.h"
@@ -391,10 +389,6 @@ extern const Gfx white_particle_small_unused_dl[];
 #include "wisp1/geo_header.h"
 
 #include "wisp1/anim_header.h"
-#include "wisp2/geo_header.h"
-
-
-#include "wisp2/anim_header.h"
 
 #include "mario/collision_header.h"
 
@@ -421,8 +415,6 @@ extern const Gfx white_particle_small_unused_dl[];
 #include "cheese_follow_ichiban/geo_header.h"
 
 #include "cheese_follow_goku/geo_header.h"
-
-#include "cheese_follow_cinnia/geo_header.h"
 
 #include "cheese_follow_roger/geo_header.h"
 
@@ -659,5 +651,15 @@ extern const Gfx white_particle_small_unused_dl[];
 #include "cheese_follow_sweet/geo_header.h"
 
 #include "mario_sweet_fly/geo_header.h"
+
+#include "mario_kate/geo_header.h"
+
+#include "cheese_follow_kate/geo_header.h"
+
+#include "mario_kate_fly/geo_header.h"
+
+#include "mario_mmx/geo_header.h"
+
+#include "cheese_follow_mmx/geo_header.h"
 
 #endif

@@ -115,6 +115,13 @@ enum DialogSpeakers {
     SILVR,
     RTOAD,
     GTOAD,
+    KZX,
+    LAYLA,
+    TAMIE,
+    KITEN,
+    HCHAO,
+    LAYL2,
+
 };
 
 #define _ 0xFF
@@ -127,32 +134,32 @@ enum DialogSpeakers {
 
 u8 sDialogSpeaker[] = {
     //       0      1      2      3      4      5      6      7      8      9
-    /* 0*/ _,     BOMB,  BOMB,  BOMB,  BOMB,  _,     _,     _,     _,     TALS3,
+    /* 0*/ _,     KITEN, LAYL2, KITEN, LAYLA, _,     _,     _,     _,     TALS3,
     /* 1*/ _,     _,     _,     _,     _,     _,     _,     KBOMB, _,     _,
     /* 2*/ _,     BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1, BOWS1,
     /* 3*/ _,     TALS4, _,     _,     _,     _,     _,     CHAO2, _,     _,
-    /* 4*/ _,     _,     _,     _,     _,     _,     _,     BOMB,  _,     _,
+    /* 4*/ _,     _,     _,     _,     _,     _,     _,     LAYLA,  _,     _,
     /* 5*/ _,     _,     _,     _,     _,     CHAO2, CHAO2, TUXIE, TUXIE, TUXIE,
     /* 6*/ _,     _,     _,     _,     _,     _,     _,     BOWS2, _,     _,
     /* 7*/ _,     _,     _,     _,     _,     _,     SILVR, _,     _,     UKIKI,
-    /* 8*/ UKIKI, _,     RTOAD, _,     _,     BOO,   _,     _,     _,     _,
+    /* 8*/ UKIKI, _,     _,     _,     _,     BOO,   _,     _,     _,     _,
     /* 9*/ BOWS2, _,     BOWS2, BOWS3, _,     _,     _,     _,     BOO,   BOO,
-    /*10*/ UKIKI, UKIKI, _,     _,     _,     BOMB,  BOMB,  BOO,   BOOM,  _,
-    /*11*/ _,     _,     _,     _,     GRUNT, GRUNT, KBOMB, WIZE1, WIZE2, _,
-    /*12*/ _,     _,     _,     _,     _,     _,     _,     _,     KBOMB, _,
-    /*13*/ _,     _,     CHAO2,  CHAO,  CHAO,  CHAO,  CHAO,  CHAO, _,     _,
+    /*10*/ UKIKI, UKIKI, _,     _,     _,     LAYLA, LAYLA, BOO,   BOOM,  _,
+    /*11*/ _,     _,     _,     _,     _,     GRUNT, KBOMB, WIZE1, WIZE2, _,
+    /*12*/ _,     _,     _,     RTOAD, _,     _,     _,     _,     KBOMB, _,
+    /*13*/ _,     _,     CHAO2, CHAO,  CHAO,  CHAO,  CHAO,  CHAO,  _,     _,
     /*14*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*15*/ WIGLR, WIGLR, WIGLR, _,     RTOAD, SILVR, _,     _,     _,     _,
+    /*15*/ WIGLR, WIGLR, WIGLR, _,     _,     SILVR, _,     _,     _,     _,
     /*16*/ _,     YOSHI, _,     _,     CHAO2, _,     _,     _,     WIGLR, _,
-    /*17*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*18*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*19*/ _,     _,     _,     AMY1,  AMY2,  AMY2,  AMY3,  AMY4,  _,     AMY5, 
+    /*17*/ HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO,
+    /*18*/ HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO,
+    /*19*/ HCHAO, HCHAO, _,     AMY1,  AMY2,  AMY2,  AMY3,  AMY4,  _,     AMY5, 
     /*20*/ BLAZ1, _,     BLAZ2, _,     BLAZ3, BLAZ4, _,     BLAZ5, _,     GARDE, 
-    /*21*/ POCKY, TALS1, CHAO,  _,     _,     _,     _,     _,     _,     _,
+    /*21*/ POCKY, TALS1, CHAO,  TAMIE, _,     _,     HCHAO, _,     _,     _,
     /*22*/ _,     _,     GTOAD, GTOAD, _,     _,     _,     _,     _,     _,
-    /*23*/ _,     _,     TALS2, _,     _,     _,     _,     _,     _,     _,
+    /*23*/ _,     _,     TALS2, _,     _,     _,     _,     HCHAO, KZX,   _,
     /*24*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*25*/ VECTR, TALS5, _,     _,     _,     _,     _,
+    /*25*/ VECTR, TALS5, _,     _,     HCHAO, _,     
 };
 #undef _
 STATIC_ASSERT(ARRAY_COUNT(sDialogSpeaker) == DIALOG_COUNT,
@@ -196,6 +203,12 @@ s32 sDialogSpeakerVoice[] = {
     SOUND_OBJ_SILVER,
     SOUND_OBJ_RUDETOAD,
     SOUND_OBJ_GOODTOAD,
+    SOUND_OBJ_KZNEKO,
+    SOUND_OBJ_LAYLA,
+    SOUND_OBJ_TAMMIE,
+    SOUND_OBJ_KITTEN,
+    SOUND_OBJ_HEROCHAO,
+    SOUND_OBJ_LAYLA2,
 
 #if defined(VERSION_JP) || defined(VERSION_US)
     NO_SOUND,
@@ -410,6 +423,11 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127,  // SEQ_EVENT_HIGH_SCORE3
     127,  // SEQ_EVENT_HIGH_SCORE4
     127,  // SEQ_EVENT_HIGH_SCORE5
+    127,  // SEQ_DDRTRACK1
+    127,  // SEQ_DDRTRACK2
+    127,  // SEQ_DDRTRACK3
+    127,  // NEW_TOTWC
+    127,  // NEW_COTMC
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,

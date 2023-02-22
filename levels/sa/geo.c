@@ -15,8 +15,12 @@
 
 #include "levels/sa/areas/1/geo.inc.c"
 #include "levels/sa/areas/area_2/geo.inc.c"
+#include "levels/sa/areas/area_3/geo.inc.c"
 
 #include "levels/sa/gardevoir/geo.inc.c"
 #include "levels/sa/pocky/geo.inc.c"
 #include "levels/sa/ms_tree/geo.inc.c"
 #include "levels/sa/sorbet/geo.inc.c"
+#include "levels/sa/gremlin/geo.inc.c"
+#include "levels/sa/kz_nekoarc/geo.inc.c"
+#include "levels/sa/simple/geo.inc.c"

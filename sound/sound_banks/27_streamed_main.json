@@ -13,12 +13,12 @@
         "inst0": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "bob_fluffycatch_0"
+            "sound": "bob_eloquentecho_0"
         },
         "inst1": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "wf_thesky_0"
+            "sound": "wf_windyvalley_0"
         },
         "inst2": {
             "release_rate": 10,
@@ -33,12 +33,12 @@
         "inst4": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "bbh_mysticmansion_0"
+            "sound": "bbh_hangcastle1_0"
         },
         "inst5": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "bbh2_childssong_0"
+            "sound": "bbh2_hangcastle2_0"
         },
         "inst6": {
             "release_rate": 10,
@@ -143,12 +143,12 @@
         "inst26": { // 1A
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "eggman3_rubyillusions_0"
+            "sound": "eggman3_bigarm_0"
         },
         "inst27": { // 1B
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "eggman3_whatimmadeof_0"
+            "sound": "eggman3_liveandlearn_0"
         }
     },
     "instrument_list": [

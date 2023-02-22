@@ -34,6 +34,7 @@
 #include "course_table.h"
 #include "rumble_init.h"
 #include "../../include/libc/stdlib.h"
+#include "alon_cheats.h"
 
 #ifndef TARGET_N64
 #include "pc/pc_main.h"
@@ -61,10 +62,8 @@
 
 // TODO: Make these ifdefs better
 const char *credits01[] = { "1ROMHACK BY", "GAMEBUN" };
-const char *credits02[] = { "5ENDING MUSIC", "ORIGINAL MIDI BY", "SONIC ADVANCE 3", "ENDING A",
-                            "STEVEONE" };
-const char *credits03[] = { "5CREDIT MUSIC", "ORIGINAL MIDI BY", "SONIC ADVANCE 3", "STAFF ROLL",
-                            "GOLDENYOSHI" };
+const char *credits02[] = { "2ENDING MUSIC", "SONIC ADVANCE 3", "ENDING A" };
+const char *credits03[] = { "2CREDIT MUSIC", "SONIC ADVANCE 3", "STAFF ROLL" };
 const char *credits04[] = { "3ALONWOOF", "FLIGHT CODE", "NPC SWITCH STATE CODE", "MAJOR CODE ADDITIONS" };
 
 #if defined(VERSION_JP) || defined(VERSION_SH)
@@ -74,7 +73,7 @@ const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRI
 const char *credits07[] = { "3CODING ASSIST", "WISEGUY", "CHEEZEPIN", "REONU"  };
 const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE OH DEAR GOD" };
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
-const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII" };
+const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "FUNKYSXDA" };
 
 #ifdef VERSION_JP
 const char *credits11[] = { "1SOUND EFFECTS", "YOJI INAGAKI" };
@@ -106,31 +105,29 @@ const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE O
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
 // ...3D animators and additional graphics in order to make room for screen text writer(s), Mario voice, and Peach voice
 const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII" };
-const char *credits11[] = { "5STREAMER THANKS TO", "FLAMINGGARACO", "VOTE4WAIFU",
-                            "SYSTEM FIVE O NINE", "JOHNNYHEDGEWOLF" };
-const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "DOES NOT RECOMMEND IT" };
+const char *credits11[] = { "4CREAM FACE MODEL", "CREAM FACE PROGRAMMER", "GAMEBUN", "BWGLITE" };
+const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "SURPRISINGLY BEATABLE" };
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
 const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
 const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
-const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOLE STEPHANIE" };
+const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPH" };
 #else // VERSION_EU
 // ...as well as sound composer, sound effects, and sound programmer, and...
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
 // ...3D animators and additional graphics in order to make room for screen text writer(s), Mario voice, and Peach voice
 const char *credits10[] = { "5NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII", "SIMPLE" };
-const char *credits11[] = { "5STREAMER THANKS TO", "FLAMINGGARACO", "VOTE4WAIFU",
-                            "SYSTEM FIVE O NINE", "JOHNNYHEDGEWOLF" };
-const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "DOES NOT RECOMMEND IT" };
+const char *credits11[] = { "4CREAM FACE MODEL", "CREAM FACE PROGRAMMER", "GAMEBUN", "BWGLITE" };
+const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "SURPRISINGLY BEATABLE" };
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
 const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
 const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
-const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOLE STEPHANIE" };
+const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPH" };
 #endif
 
 #endif
 
 #ifndef VERSION_JP
-const char *credits17[] = { "3CREAM VOICE", "SARAH WULFECK", "MICHELLE RUFF", "HAYLEY SKYE" };
+const char *credits17[] = { "3CREAM VOICE", "SARAH WULFECK", "MICHELLE RUFF", "MAGICALPOPTARTS" };
 #endif
 
 #if defined(VERSION_JP) || defined(VERSION_SH)
@@ -319,14 +316,14 @@ void set_mario_initial_cap_powerup(struct MarioState *m) {
     u32 capCourseIndex = gCurrCourseNum - COURSE_CAP_COURSES;
 
     switch (capCourseIndex) {
-        case COURSE_COTMC - COURSE_CAP_COURSES:
+        case COURSE_COTMC - COURSE_CAP_COURSES: /*
             m->flags |= MARIO_METAL_CAP | MARIO_CAP_ON_HEAD;
-            m->capTimer = 600;
+            m->capTimer = 600; */
             break;
 
-        case COURSE_TOTWC - COURSE_CAP_COURSES:
+        case COURSE_TOTWC - COURSE_CAP_COURSES: /*
             m->flags |= MARIO_WING_CAP | MARIO_CAP_ON_HEAD;
-            m->capTimer = 1200;
+            m->capTimer = 1200; */
             break;
 
         case COURSE_VCUTM - COURSE_CAP_COURSES:
@@ -1018,6 +1015,7 @@ s32 play_mode_normal(void) {
 
     warp_area();
     check_instant_warp();
+    alon_cheats_update();
 
     if (sTimerRunning && gHudDisplay.timer < 17999) {
         gHudDisplay.timer++;
@@ -1390,6 +1388,7 @@ s32 lvl_set_current_level(UNUSED s16 arg0, s32 levelNum) {
     sWarpCheckpointActive = FALSE;
     gCurrLevelNum = levelNum;
     gCurrCourseNum = gLevelToCourseNumTable[levelNum - 1];
+	if (gCurrLevelNum == LEVEL_TOTWC) return 0;
 
     if (gCurrDemoInput != NULL || gCurrCreditsEntry != NULL || gCurrCourseNum == COURSE_NONE) {
         return 0;

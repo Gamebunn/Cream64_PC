@@ -16,3 +16,12 @@
 #include "levels/cotmc/areas/1/collision.inc.c"
 #include "levels/cotmc/areas/1/macro.inc.c"
 #include "levels/cotmc/movtext.inc.c"
+
+#include "levels/cotmc/skeeter_mm/model.inc.c"
+#include "levels/cotmc/skeeter_mm/anims/data.inc.c"
+#include "levels/cotmc/skeeter_mm/anims/table.inc.c"
+#include "levels/cotmc/leveldata.inc.c"
+
+#include "levels/cotmc/espio/model.inc.c"
+#include "levels/cotmc/espio/anims/data.inc.c"
+#include "levels/cotmc/espio/anims/table.inc.c"

@@ -82,7 +82,7 @@ const LevelScript level_intro_mario_head_regular[] = {
     AREA(/*index*/ 1, intro_geo_mario_head_regular),
     END_AREA(),
     FREE_LEVEL_POOL(),
-    JUMP(script_intro_L1),
+    //JUMP(script_intro_L1),
     SLEEP(/*frames*/ 2),
     BLACKOUT(/*active*/ FALSE),
     LOAD_AREA(/*area*/ 1),

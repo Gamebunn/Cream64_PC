@@ -103,6 +103,14 @@ u8 textCreamOutfit53[] = { TEXT_CREAM53};
 u8 textCreamOutfit54[] = { TEXT_CREAM54};
 u8 textCreamOutfit55[] = { TEXT_CREAM55};
 u8 textCreamOutfit56[] = { TEXT_CREAM56};
+u8 textCreamOutfit57[] = { TEXT_CREAM57};
+u8 textCreamOutfit58[] = { TEXT_CREAM58};
+u8 textCreamOutfit59[] = { TEXT_CREAM59};
+u8 textCreamOutfit60[] = { TEXT_CREAM60};
+u8 textCreamOutfit61[] = { TEXT_CREAM61};
+u8 textCreamOutfit62[] = { TEXT_CREAM62};
+u8 textCreamOutfit63[] = { TEXT_CREAM63};
+u8 textCreamOutfit64[] = { TEXT_CREAM64};
 u8 textCostumeCurrent[] = { TEXT_CREAM_CURRENT};
 u8 textCostumeinstrutions[] = { TEXT_CREAM_DPAD};
 
@@ -2580,9 +2588,9 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 55;
+    gMarioState->currentCostume = 63;
 }
-if (gMarioState->currentCostume > 55) {
+if (gMarioState->currentCostume > 63) {
     gMarioState->currentCostume = 0;
 }
 
@@ -2700,6 +2708,22 @@ if (gMarioState->currentCostume > 55) {
     case 54: print_generic_string(100, 20, textCreamOutfit55);
     break;
     case 55: print_generic_string(100, 20, textCreamOutfit56);
+    break;
+    case 56: print_generic_string(100, 20, textCreamOutfit57);
+    break;
+    case 57: print_generic_string(100, 20, textCreamOutfit58);
+    break;
+    case 58: print_generic_string(100, 20, textCreamOutfit59);
+    break;
+    case 59: print_generic_string(100, 20, textCreamOutfit60);
+    break;
+    case 60: print_generic_string(100, 20, textCreamOutfit61);
+    break;
+    case 61: print_generic_string(100, 20, textCreamOutfit62);
+    break;
+    case 62: print_generic_string(100, 20, textCreamOutfit63);
+    break;
+    case 63: print_generic_string(100, 20, textCreamOutfit64);
     break;
     }
 
@@ -2887,9 +2911,9 @@ if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
 }
 
 if (gMarioState->currentCostume < 0) {
-    gMarioState->currentCostume = 55;
+    gMarioState->currentCostume = 63;
 }
-if (gMarioState->currentCostume > 55) {
+if (gMarioState->currentCostume > 63) {
     gMarioState->currentCostume = 0;
 }
 
@@ -3007,6 +3031,22 @@ if (gMarioState->currentCostume > 55) {
     case 54: print_generic_string(100, 20, textCreamOutfit55);
     break;
     case 55: print_generic_string(100, 20, textCreamOutfit56);
+    break;
+    case 56: print_generic_string(100, 20, textCreamOutfit57);
+    break;
+    case 57: print_generic_string(100, 20, textCreamOutfit58);
+    break;
+    case 58: print_generic_string(100, 20, textCreamOutfit59);
+    break;
+    case 59: print_generic_string(100, 20, textCreamOutfit60);
+    break;
+    case 60: print_generic_string(100, 20, textCreamOutfit61);
+    break;
+    case 61: print_generic_string(100, 20, textCreamOutfit62);
+    break;
+    case 62: print_generic_string(100, 20, textCreamOutfit63);
+    break;
+    case 63: print_generic_string(100, 20, textCreamOutfit64);
     break;
     }
 

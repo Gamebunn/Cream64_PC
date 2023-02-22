@@ -1,6 +1,5 @@
 // 0x07016284 - 0x070163F8
 const MacroObject ccm_seg7_area_1_macro_objs[] = {
-    MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/ 180, /*pos*/ -2412,  2912,  -878, /*bhvParam*/ DIALOG_040),
     MACRO_OBJECT               (/*preset*/ macro_mr_blizzard_1,               /*yaw*/   0, /*pos*/  3054, -2674,  2072),
     MACRO_OBJECT               (/*preset*/ macro_spindrift,                   /*yaw*/   0, /*pos*/  2542,  2622, -1714),
     MACRO_OBJECT               (/*preset*/ macro_spindrift,                   /*yaw*/   0, /*pos*/ -6090, -1740,  1936),
@@ -21,7 +20,6 @@ const MacroObject ccm_seg7_area_1_macro_objs[] = {
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/ 270, /*pos*/ -4350, -4864, -4813, /*bhvParam*/ DIALOG_094),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/   0, /*pos*/ -1037, -3583,  5872, /*bhvParam*/ DIALOG_091),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/ 180, /*pos*/  -309, -4889, -3690, /*bhvParam*/ DIALOG_049),
-    MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/   0, /*pos*/  1900, -1535,  3500, /*bhvParam*/ DIALOG_040),
     MACRO_OBJECT               (/*preset*/ macro_red_coin,                    /*yaw*/   0, /*pos*/  -488,  3100, -2305),
     MACRO_OBJECT               (/*preset*/ macro_red_coin,                    /*yaw*/   0, /*pos*/ -3120, -1200, -2080),
     MACRO_OBJECT               (/*preset*/ macro_hidden_1up_in_pole,          /*yaw*/   0, /*pos*/ -5200, -1345,  2995),

@@ -153,6 +153,16 @@
             "release_rate": 48,
             "envelope": "envelope3",
             "sound": "11_eggman_charge"
+        },
+        "inst18": {
+            "release_rate": 48,
+            "envelope": "envelope3",
+            "sound": "12_kz_scream"
+        },
+        "inst19": {
+            "release_rate": 48,
+            "envelope": "envelope3",
+            "sound": "13_ohno"
         }
     },
     "instrument_list": [
@@ -175,6 +185,8 @@
         "inst14",
         "inst15",
         "inst16",
-        "inst17"
+        "inst17",
+        "inst18",
+        "inst19"
     ]
 }

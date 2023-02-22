@@ -565,9 +565,19 @@ void bhv_hocus_explode_init(void);
 void bhv_hocus_explode_loop(void);
 void bhv_tails_explode_init(void);
 void bhv_tails_explode_loop(void);
+void bhv_amy_explode_init(void);
+void bhv_amy_explode_loop(void);
 
 void bhv_amyBoo_init(void);
 void bhv_amyBoo_loop(void);
+
+void bhv_ddr_music_loop(void);
+void bhv_ddr_music_init(void);
+void bhv_ddr_music2_loop(void);
+void bhv_ddr_music2_init(void);
+void bhv_ddr_music3_loop(void);
+void bhv_ddr_music3_init(void);
+
 
 Gfx *geo_move_mario_part_from_parent(s32 run, UNUSED struct GraphNode *node, Mat4 mtx);
 
@@ -599,5 +609,6 @@ Gfx *geo_switch_amy_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
 Gfx *geo_switch_tails_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
 Gfx *geo_switch_blaze_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
 Gfx *geo_switch_marine_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
+Gfx *geo_switch_kitten_layla_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx);
 
 #endif // BEHAVIOR_ACTIONS_H

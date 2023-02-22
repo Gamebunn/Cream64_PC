@@ -90,3 +90,6 @@
 #include "levels/castle_inside/bait_fish2/model.inc.c"
 #include "levels/castle_inside/bait_fish/model.inc.c"
 #include "levels/castle_inside/toad_angy/model.inc.c"
+#include "levels/castle_inside/sage_egg/model.inc.c"
+#include "levels/castle_inside/sage_egg/anims/data.inc.c"
+#include "levels/castle_inside/sage_egg/anims/table.inc.c"

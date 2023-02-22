@@ -270,6 +270,7 @@ s32 set_obj_anim_with_accel_and_sound(s16 a0, s16 a1, s32 a2) {
 #include "behaviors/sl_snowman_wind.inc.c"
 #include "behaviors/sl_walking_penguin.inc.c"
 #include "behaviors/story_npcs.inc.c"
+#include "behaviors/ddr_music.inc.c"
 #include "behaviors/npc_explosion.inc.c"
 #include "behaviors/explosion_nd.inc.c"
 #include "behaviors/cheese_follow.inc.c"

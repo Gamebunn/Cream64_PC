@@ -28,7 +28,7 @@ const LevelScript level_pss_entry[] = {
     JUMP_LINK(script_func_global_1),
     JUMP_LINK(script_func_global_9),
 
-    AREA(/*index*/ 1, pss_geo_000100),
+    AREA(/*index*/ 1, pss_area_1),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 5632, 6751, -5631, /*angle*/ 0, 270, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvAirborneWarp),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 5732, 6751, -5631,  /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         WARP_NODE(/*id*/ WARP_NODE_0A,         /*destLevel*/ LEVEL_PSS,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),

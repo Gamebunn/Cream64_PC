@@ -1,0 +1,16 @@
+extern void scroll_sage_egg_Root_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_Head_mesh_layer_1_vtx_2();
+extern void scroll_sage_egg_lArm_002_mesh_layer_1_vtx_1();
+extern void scroll_sage_egg_lArm_003_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_rArm_002_skinned_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_rArm_002_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_rArm_002_mesh_layer_1_vtx_2();
+extern void scroll_sage_egg_rArm_003_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_lLeg_002_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_lLeg_003_skinned_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_lLeg_003_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_lLeg_003_mesh_layer_1_vtx_1();
+extern void scroll_sage_egg_rLeg_003_skinned_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_rLeg_003_mesh_layer_1_vtx_0();
+extern void scroll_sage_egg_rLeg_003_mesh_layer_1_vtx_1();
+extern void scroll_castle_inside_level_geo_sage_egg();

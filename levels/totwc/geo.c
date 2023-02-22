@@ -15,3 +15,8 @@
 
 #include "levels/totwc/cloud/geo.inc.c"
 #include "levels/totwc/areas/1/geo.inc.c"
+
+#include "levels/totwc/geo.inc.c"
+
+#include "levels/totwc/bullyk/geo.inc.c"
+#include "levels/totwc/charmy/geo.inc.c"

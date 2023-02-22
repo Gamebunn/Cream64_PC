@@ -11,5 +11,7 @@ const struct Animation *const amy_anims[] = {
 
 	&amy_anim_amySad_30,
 
+	&amy_anim_amyTerrified_30,
+
 	NULL,
 };

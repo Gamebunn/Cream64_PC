@@ -1,5 +1,12 @@
 #include "src/game/envfx_snow.h"
 
+const GeoLayout layla_Armature_001[] = {
+	GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 97, 0, 0, 0, 0),
+	GEO_OPEN_NODE(),
+		GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, layla_0_Switch_Head_mesh_layer_1),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
 const GeoLayout layla_0_Switch_opt1[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
@@ -25,7 +32,7 @@ const GeoLayout layla_geo[] = {
 				GEO_OPEN_NODE(),
 					GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 71, 0, layla_Chest_mesh_layer_1),
 					GEO_OPEN_NODE(),
-						GEO_SWITCH_CASE(0, geo_switch_mario_eyes),
+						GEO_SWITCH_CASE(0, geo_switch_kitten_layla_face),
 						GEO_OPEN_NODE(),
 							GEO_NODE_START(),
 							GEO_OPEN_NODE(),
@@ -33,6 +40,7 @@ const GeoLayout layla_geo[] = {
 							GEO_CLOSE_NODE(),
 							GEO_BRANCH(1, layla_0_Switch_opt1),
 							GEO_BRANCH(1, layla_0_Switch_opt2),
+							GEO_BRANCH(1, layla_Armature_001),
 						GEO_CLOSE_NODE(),
 						GEO_ANIMATED_PART(LAYER_OPAQUE, 49, 77, 0, layla_LArm_001_mesh_layer_1),
 						GEO_OPEN_NODE(),

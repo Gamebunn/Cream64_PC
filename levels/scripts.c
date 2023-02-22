@@ -78,7 +78,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_ICHIBAN,           mario_ichiban_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_KLONOA,            mario_klonoa_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_GOKU,              mario_goku_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_MARIO_CINNIA,            mario_cinnia_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_KATE,              mario_kate_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_CHEF,              mario_chef_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_VAL,               mario_val_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_ROGER,             mario_roger_geo),
@@ -121,6 +121,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_DENJI,             mario_denji_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_JOHNNY,            mario_johnny_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SWEET,             mario_sweet_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_MMX,               mario_mmx_geo),
 
     
 
@@ -130,6 +131,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_CAROLINE_FLY,      mario_caroline_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_CHEF_FLY,          mario_chef_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_GOKU_FLY,          mario_goku_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_KATE_FLY,          mario_kate_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_HALLOWEEN_FLY,     mario_halloween_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_ICHIBAN_FLY,       mario_ichiban_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_JACK_FLY,          mario_jack_fly_geo),
@@ -183,7 +185,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_CHEF,      cheese_follow_chef_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ICHIBAN,   cheese_follow_ichiban_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_GOKU,      cheese_follow_goku_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_CINNIA,    cheese_follow_cinnia_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_KATE,      cheese_follow_kate_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ROGER,     cheese_follow_roger_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_CREAMOCCHIA, cheese_follow_creamocchia_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_KATALINA,  cheese_follow_katalina_geo),
@@ -223,10 +225,10 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_DENJI,     cheese_follow_denji_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_JOHNNY,    cheese_follow_johnny_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SWEET,     cheese_follow_sweet_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_MMX,       cheese_follow_mmx_geo),
 
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_WISP2,                   wisp2_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SMOKE,                   smoke_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SPARKLES,                sparkles_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BUBBLE,                  bubble_geo),

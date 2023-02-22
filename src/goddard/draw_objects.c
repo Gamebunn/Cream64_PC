@@ -1,10 +1,6 @@
 #include <PR/ultratypes.h>
 #include <stdio.h>
 
-#if defined(VERSION_JP) || defined(VERSION_US)
-#include "prevent_bss_reordering.h"
-#endif
-
 #include "debug_utils.h"
 #include "dynlist_proc.h"
 #include "gd_macros.h"
@@ -46,7 +42,7 @@ enum SceneType {
  * texture S,T coordinates.
  */
 struct BetaVtx {
-    /* 0x00 */ u8 filler[68];
+    /* 0x00 */ u8 pad[0x44 - 0];
     /* 0x44 */ f32 s;
     /* 0x48 */ f32 t;
 };
@@ -65,7 +61,7 @@ static struct GdColour sClrYellow = { 1.0, 1.0, 0.0 };           // @ 801A80DC
 static struct GdColour sLightColours[1] = { { 1.0, 1.0, 0.0 } }; // @ 801A80E8
 static struct GdColour *sSelectedColour = &sClrRed;              // @ 801A80F4
 struct ObjCamera *gViewUpdateCamera = NULL;                      // @ 801A80F8
-UNUSED static void *sUnref801A80FC = NULL;
+static void *sUnref801A80FC = NULL;
 static s32 sUnreadShapeFlag = 0;       // @ 801A8100
 struct GdColour *sColourPalette[5] = { // @ 801A8104
     &sClrWhite, &sClrYellow, &sClrRed, &sClrBlack, &sClrBlack
@@ -75,20 +71,20 @@ struct GdColour *sWhiteBlack[2] = {
     &sClrWhite,
     &sClrBlack,
 };
-UNUSED static Mat4f sUnref801A8120 = {
+static Mat4f sUnref801A8120 = {
     { 1.0, 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0, 0.0 }, { 0.0, 0.0, 0.0, 1.0 }
 };
-UNUSED static Mat4f sUnrefIden801A8160 = {
+static Mat4f sUnrefIden801A8160 = {
     { 1.0, 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0, 0.0 }, { 0.0, 0.0, 0.0, 1.0 }
 };
 static s32 sLightDlCounter = 1; // @ 801A81A0
-UNUSED static s32 sUnref801A81A4[4] = { 0 };
+static s32 sUnref801A81A4[4] = { 0 };
 
 // bss
 u8 gUnref_801B9B30[0x88];
 struct ObjGroup *gGdLightGroup; // @ 801B9BB8; is this the main light group? only light group?
 
-UNUSED static u8 sUnref_801B9BBC[0x40];
+static u8 sUnref_801B9BBC[0x40];
 static enum SceneType sSceneProcessType; // @ 801B9C00
 static s32 sUseSelectedColor;            // @ 801B9C04
 static s16 sPickBuffer[100];             ///< buffer of objects near click
@@ -97,12 +93,12 @@ static f32 sPickObjDistance;             ///< distance between object position a
 static struct GdObj *sPickedObject;      ///< object selected with cursor
 /// Various counters and pointers set in update_view() and used in various `draw_XXX` functions
 static struct {
-    u8 filler1[4];        // @ 801B9CE0
+    u32 pad00;            // @ 801B9CE0
     struct ObjView *view; // @ 801B9CE4
     s32 unreadCounter;    // @ 801B9CE8
     s32 mtlDlNum;         // @ 801B9CEC; name is a big guess
     s32 shapesDrawn;      // @ 801B9CF0
-    s32 unused;           // @ 801B9CF4
+    s32 unused18;         // @ 801B9CF4
 } sUpdateViewState;
 static struct ObjLight *sPhongLight;          // material light? phong light?
 static struct GdVec3f sPhongLightPosition;    //@ 801B9D00; guess; light source unit position for light
@@ -138,12 +134,12 @@ void Unknown801781DC(struct ObjZone *zone) {
     f32 sp30;
     f32 sp2C;
     struct ObjLight *light;
-    register struct ListNode *link = zone->unk30->firstMember; // s0 (24)
+    register struct Links *link = zone->unk30->link1C; // s0 (24)
     struct GdObj *obj;                                 // 20
 
     while (link != NULL) {
         obj = link->obj;
-        light = (struct ObjLight *) gGdLightGroup->firstMember->obj;
+        light = (struct ObjLight *) gGdLightGroup->link1C->obj;
         lightPos.x = light->position.x;
         lightPos.y = light->position.y;
         lightPos.z = light->position.z;
@@ -174,7 +170,7 @@ void draw_shape(struct ObjShape *shape, s32 flag, f32 c, f32 d, f32 e, // "sweep
                 f32 i, f32 j, f32 k, // translate shape
                 f32 l, f32 m, f32 n, // rotate x, y, z
                 s32 colorIdx, Mat4f *rotMtx) {
-    UNUSED u8 filler[8];
+    UNUSED u8 unused[8];
     struct GdVec3f sp1C;
 
     restart_timer("drawshape");
@@ -186,14 +182,14 @@ void draw_shape(struct ObjShape *shape, s32 flag, f32 c, f32 d, f32 e, // "sweep
 
     sp1C.x = sp1C.y = sp1C.z = 0.0f;
     if (flag & 2) {
-        gd_dl_load_trans_matrix(f, g, h);
+        translate_load_mtx_gddl(f, g, h);
         sp1C.x += f;
         sp1C.y += g;
         sp1C.z += h;
     }
 
     if ((flag & 0x10) && rotMtx != NULL) {
-        gd_dl_load_matrix(rotMtx);
+        add_mat4_load_to_dl(rotMtx);
         sp1C.x += (*rotMtx)[3][0];
         sp1C.y += (*rotMtx)[3][1];
         sp1C.z += (*rotMtx)[3][2];
@@ -215,7 +211,7 @@ void draw_shape(struct ObjShape *shape, s32 flag, f32 c, f32 d, f32 e, // "sweep
         sUseSelectedColor = TRUE;
         sSelectedColour = gd_get_colour(colorIdx);
         if (sSelectedColour != NULL) {
-            gd_dl_material_lighting(-1, sSelectedColour, GD_MTL_LIGHTS);
+            func_801A086C(-1, sSelectedColour, GD_MTL_LIGHTS);
         } else {
             fatal_print("Draw_shape(): Bad colour");
         }
@@ -236,11 +232,11 @@ void draw_shape(struct ObjShape *shape, s32 flag, f32 c, f32 d, f32 e, // "sweep
     }
 
     if (flag & 4) {
-        gd_dl_mul_trans_matrix(i, j, k);
+        translate_mtx_gddl(i, j, k);
     }
 
     if (flag & 1) {
-        gd_dl_scale(c, d, e);
+        func_8019F258(c, d, e);
     }
 
     draw_shape_faces(shape);
@@ -251,7 +247,7 @@ void draw_shape(struct ObjShape *shape, s32 flag, f32 c, f32 d, f32 e, // "sweep
 void draw_shape_2d(struct ObjShape *shape, s32 flag, UNUSED f32 c, UNUSED f32 d, UNUSED f32 e, f32 f,
                    f32 g, f32 h, UNUSED f32 i, UNUSED f32 j, UNUSED f32 k, UNUSED f32 l, UNUSED f32 m,
                    UNUSED f32 n, UNUSED s32 color, UNUSED s32 p) {
-    UNUSED u8 filler[8];
+    UNUSED u8 unused[8];
     struct GdVec3f sp1C;
 
     restart_timer("drawshape2d");
@@ -268,7 +264,7 @@ void draw_shape_2d(struct ObjShape *shape, s32 flag, UNUSED f32 c, UNUSED f32 d,
         if (gViewUpdateCamera != NULL) {
             gd_rotate_and_translate_vec3f(&sp1C, &gViewUpdateCamera->unkE8);
         }
-        gd_dl_load_trans_matrix(sp1C.x, sp1C.y, sp1C.z);
+        translate_load_mtx_gddl(sp1C.x, sp1C.y, sp1C.z);
     }
     draw_shape_faces(shape);
     split_timer("drawshape2d");
@@ -277,9 +273,9 @@ void draw_shape_2d(struct ObjShape *shape, s32 flag, UNUSED f32 c, UNUSED f32 d,
 void draw_light(struct ObjLight *light) {
     struct GdVec3f sp94;
     Mat4f sp54;
-    UNUSED Mat4f *uMatPtr;
-    UNUSED f32 uMultiplier;
-    struct ObjShape *shape;
+    UNUSED Mat4f *uMatPtr;  // 50
+    UNUSED f32 uMultiplier; // 4c
+    struct ObjShape *shape; // 48
 
     if (sSceneProcessType == FIND_PICKS) {
         return;
@@ -296,7 +292,7 @@ void draw_light(struct ObjLight *light) {
         sp94.z = -light->unk80.z;
         gd_create_origin_lookat(&sp54, &sp94, 0.0f);
         uMultiplier = light->unk38 / 45.0;
-        shape = gSpotShape;
+        shape = D_801A82E4;
         uMatPtr = &sp54;
     } else {
         uMultiplier = 1.0f;
@@ -305,7 +301,7 @@ void draw_light(struct ObjLight *light) {
         if (++sLightDlCounter >= 17) {
             sLightDlCounter = 1;
         }
-        shape->unk50 = sLightDlCounter;
+        shape->gdDls[2] = sLightDlCounter;
     }
 
     draw_shape_2d(shape, 2, 1.0f, 1.0f, 1.0f, light->position.x, light->position.y, light->position.z,
@@ -318,7 +314,7 @@ void draw_material(struct ObjMaterial *mtl) {
     if (mtlType == GD_MTL_SHINE_DL) {
         if (sPhongLight != NULL && sPhongLight->unk30 > 0.0f) {
             if (gViewUpdateCamera != NULL) {
-                gd_dl_hilite(mtl->gddlNumber, gViewUpdateCamera, &sPhongLight->position,
+                func_801A0478(mtl->gddlNumber, gViewUpdateCamera, &sPhongLight->position,
                               &sLightPositionOffset, &sPhongLightPosition, &sPhongLight->colour);
             } else {
                 fatal_printf("draw_material() no active camera for phong");
@@ -328,9 +324,9 @@ void draw_material(struct ObjMaterial *mtl) {
         }
     }
     if (sUseSelectedColor == FALSE) {
-        gd_dl_material_lighting(mtl->gddlNumber, &mtl->Kd, mtlType);
+        func_801A086C(mtl->gddlNumber, &mtl->Kd, mtlType);
     } else {
-        gd_dl_material_lighting(mtl->gddlNumber, sSelectedColour, GD_MTL_LIGHTS);
+        func_801A086C(mtl->gddlNumber, sSelectedColour, GD_MTL_LIGHTS);
     }
 }
 
@@ -380,41 +376,41 @@ void check_face_bad_vtx(struct ObjFace *face) {
  * @return Pointer to a GdColour struct
  */
 struct GdColour *gd_get_colour(s32 idx) {
-    switch (idx) {
-        case COLOUR_BLACK:
+    switch (idx + 1) {
+        case 1:
             return &sClrBlack;
             break;
-        case COLOUR_WHITE:
+        case 2:
             return &sClrWhite;
             break;
-        case COLOUR_RED:
+        case 3:
             return &sClrRed;
             break;
-        case COLOUR_GREEN:
+        case 4:
             return &sClrGreen;
             break;
-        case COLOUR_BLUE:
+        case 5:
             return &sClrBlue;
             break;
-        case COLOUR_GRAY:
+        case 6:
             return &sClrGrey;
             break;
-        case COLOUR_DARK_GRAY:
+        case 7:
             return &sClrDarkGrey;
             break;
-        case COLOUR_DARK_BLUE:
+        case 8:
             return &sClrErrDarkBlue;
             break;
-        case COLOUR_BLACK2:
+        case 11:
             return &sClrBlack;
             break;
-        case COLOUR_YELLOW:
+        case 9:
             return &sClrYellow;
             break;
-        case COLOUR_PINK:
+        case 10:
             return &sClrPink;
             break;
-        case -1:
+        case 0:
             return &sLightColours[0];
             break;
         default:
@@ -431,7 +427,7 @@ void Unknown80178ECC(f32 v0X, f32 v0Y, f32 v0Z, f32 v1X, f32 v1Y, f32 v1Z) {
     f32 difX = v1X - v0X;
     f32 difZ = v1Z - v0Z;
 
-    gd_dl_make_triangle(v0X, v0Y, v0Z, v1X, v1Y, v1Z, v0X + difY * 0.1, v0Y + difX * 0.1, v0Z + difZ * 0.1);
+    add_tri_to_dl(v0X, v0Y, v0Z, v1X, v1Y, v1Z, v0X + difY * 0.1, v0Y + difX * 0.1, v0Z + difZ * 0.1);
 }
 
 /**
@@ -443,18 +439,19 @@ void draw_face(struct ObjFace *face) {
     f32 z;                 // 38
     f32 y;                 // 34
     f32 x;                 // 30
-    UNUSED u8 filler[12];
+    UNUSED u8 pad[12];
     s32 i;             // 20; also used to store mtl's gddl number
     s32 hasTextCoords; // 1c
     Vtx *gbiVtx;       // 18
 
-    imin("draw_face");
+    add_to_stacktrace("draw_face");
     hasTextCoords = FALSE;
-    if (sUseSelectedColor == FALSE && face->mtlId >= 0) { // -1 == colored face
+    if (sUseSelectedColor == FALSE && face->mtlId >= 0) // -1 == colored face
+    {
         if (face->mtl != NULL) {
             if ((i = face->mtl->gddlNumber) != 0) {
                 if (i != sUpdateViewState.mtlDlNum) {
-                    gd_dl_flush_vertices();
+                    func_801A0070();
                     branch_to_gddl(i);
                     sUpdateViewState.mtlDlNum = i;
                 }
@@ -486,7 +483,7 @@ void draw_face(struct ObjFace *face) {
             set_vtx_tc_buf(((struct BetaVtx *) vtx)->s, ((struct BetaVtx *) vtx)->t);
         }
 
-        gbiVtx = gd_dl_make_vertex(x, y, z, vtx->alpha);
+        gbiVtx = make_vtx_if_new(x, y, z, vtx->alpha);
 
         if (gbiVtx != NULL) {
             vtx->gbiVerts = make_vtx_link(vtx->gbiVerts, gbiVtx);
@@ -504,7 +501,7 @@ void draw_face(struct ObjFace *face) {
  * @param lrx,lry lower right point
  */
 void draw_rect_fill(s32 color, f32 ulx, f32 uly, f32 lrx, f32 lry) {
-    gd_dl_set_fill(gd_get_colour(color));
+    gd_set_fill(gd_get_colour(color));
     gd_draw_rect(ulx, uly, lrx, lry);
 }
 
@@ -516,7 +513,7 @@ void draw_rect_fill(s32 color, f32 ulx, f32 uly, f32 lrx, f32 lry) {
  * @param lrx,lry lower right point
  */
 void draw_rect_stroke(s32 color, f32 ulx, f32 uly, f32 lrx, f32 lry) {
-    gd_dl_set_fill(gd_get_colour(color));
+    gd_set_fill(gd_get_colour(color));
     gd_draw_border_rect(ulx, uly, lrx, lry);
 }
 
@@ -528,31 +525,27 @@ void Unknown801792F0(struct GdObj *obj) {
     char objId[32];
     struct GdVec3f objPos;
 
-    format_object_id(objId, obj);
+    sprint_obj_id(objId, obj);
     set_cur_dynobj(obj);
     d_get_world_pos(&objPos);
     func_801A4438(objPos.x, objPos.y, objPos.z);
-    stub_draw_label_text(objId);
+    func_801A48D8(objId);
 }
 
-/**
- * Draws a label
- */
+/* 227B20 -> 227DF8; orig name: Proc80179350 */
 void draw_label(struct ObjLabel *label) {
-    struct GdVec3f position;
+    struct GdVec3f position; // 144
     char strbuf[0x100];
-    UNUSED u8 filler[16];
-    struct ObjValPtr *valptr;
-    union ObjVarVal varval;
+    UNUSED u8 unused[16];
+    struct ObjValPtrs *valptr; // 2c
+    union ObjVarVal varval;    // 28
     valptrproc_t valfn = label->valfn;
 
     if ((valptr = label->valptr) != NULL) {
-        if (valptr->flag == 0x40000) {
-            // position is offset from object
+        if (valptr->unk20 == 0x40000) {
             set_cur_dynobj(valptr->obj);
             d_get_world_pos(&position);
         } else {
-            // position is absolute
             position.x = position.y = position.z = 0.0f;
         }
 
@@ -587,32 +580,32 @@ void draw_label(struct ObjLabel *label) {
             gd_strcpy(strbuf, "NONAME");
         }
     }
-    position.x += label->position.x;
-    position.y += label->position.y;
-    position.z += label->position.z;
+    position.x += label->vec14.x;
+    position.y += label->vec14.y;
+    position.z += label->vec14.z;
     func_801A4438(position.x, position.y, position.z);
-    stub_renderer_10(label->unk30);
-    stub_draw_label_text(strbuf);
+    func_801A48C4(label->unk30);
+    func_801A48D8(strbuf);
 }
 
 /* 227DF8 -> 227F3C; orig name: Proc80179628 */
 void draw_net(struct ObjNet *self) {
     struct ObjNet *net = self;
     s32 netColor;
-    UNUSED u8 filler[80];
+    UNUSED u8 unused[80];
 
     if (sSceneProcessType == FIND_PICKS) {
         return;
     }
 
-    if (net->header.drawFlags & OBJ_HIGHLIGHTED) {
-        netColor = COLOUR_YELLOW;
+    if (net->header.drawFlags & OBJ_USE_ENV_COLOUR) {
+        netColor = 8;
     } else {
-        netColor = net->colourNum;
+        netColor = net->unk40;
     }
 
-    if (net->shapePtr != NULL) {
-        draw_shape(net->shapePtr, 0x10, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+    if (net->unk1A8 != NULL) {
+        draw_shape((struct ObjShape *) net->unk1A8, 0x10, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
                    0.0f, 0.0f, 0.0f, 0.0f, 0.0f, netColor, &net->mat168);
     }
 
@@ -621,30 +614,22 @@ void draw_net(struct ObjNet *self) {
     }
 }
 
-/**
- * Draws a gadget
- */
+/* 227F3C -> 22803C; orig name: Proc8017976C */
 void draw_gadget(struct ObjGadget *gdgt) {
     s32 colour = 0;
 
-    if (gdgt->colourNum != 0) {
-        colour = gdgt->colourNum;
+    if (gdgt->unk5C != 0) {
+        colour = gdgt->unk5C;
     }
 
-    draw_rect_fill(colour,
-        gdgt->worldPos.x,
-        gdgt->worldPos.y,
-        gdgt->worldPos.x + gdgt->sliderPos * gdgt->size.x,
-        gdgt->worldPos.y + gdgt->size.y);
+    draw_rect_fill(colour, gdgt->unk14.x, gdgt->unk14.y, gdgt->unk14.x + gdgt->unk28 * gdgt->unk40.x,
+                   gdgt->unk14.y + gdgt->unk40.y);
 
-    if (gdgt->header.drawFlags & OBJ_HIGHLIGHTED) {
-        draw_rect_stroke(COLOUR_YELLOW,
-            gdgt->worldPos.x,
-            gdgt->worldPos.y,
-            gdgt->worldPos.x + gdgt->sliderPos * gdgt->size.x,
-            gdgt->worldPos.y + gdgt->size.y);
+    if (gdgt->header.drawFlags & OBJ_USE_ENV_COLOUR) {
+        draw_rect_stroke(8, gdgt->unk14.x, gdgt->unk14.y, gdgt->unk14.x + gdgt->unk28 * gdgt->unk40.x,
+                         gdgt->unk14.y + gdgt->unk40.y);
     }
-    gdgt->header.drawFlags &= ~OBJ_HIGHLIGHTED;
+    gdgt->header.drawFlags &= ~OBJ_USE_ENV_COLOUR;
 }
 
 /* 22803C -> 22829C */
@@ -658,26 +643,26 @@ void draw_camera(struct ObjCamera *cam) {
     if (cam->unk30 != NULL) {
         set_cur_dynobj(cam->unk30);
         d_get_world_pos(&sp44);
-        sp44.x += cam->lookAt.x;
-        sp44.y += cam->lookAt.y;
-        sp44.z += cam->lookAt.z;
+        sp44.x += cam->unk34.x;
+        sp44.y += cam->unk34.y;
+        sp44.z += cam->unk34.z;
         ; // needed to match
     } else {
-        sp44.x = cam->lookAt.x;
-        sp44.y = cam->lookAt.y;
-        sp44.z = cam->lookAt.z;
+        sp44.x = cam->unk34.x;
+        sp44.y = cam->unk34.y;
+        sp44.z = cam->unk34.z;
     }
 
     if (0) {
         // dead code
-        gd_printf("%f,%f,%f\n", cam->worldPos.x, cam->worldPos.y, cam->worldPos.z);
+        gd_printf("%f,%f,%f\n", cam->unk14.x, cam->unk14.y, cam->unk14.z);
     }
 
-    if (ABS(cam->worldPos.x - sp44.x) + ABS(cam->worldPos.z - sp44.z) == 0.0f) {
+    if (ABS(cam->unk14.x - sp44.x) + ABS(cam->unk14.z - sp44.z) == 0.0f) {
         gd_printf("Draw_Camera(): Zero view distance\n");
         return;
     }
-    gd_dl_lookat(cam, cam->worldPos.x, cam->worldPos.y, cam->worldPos.z, sp44.x, sp44.y, sp44.z, cam->unkA4);
+    func_8019F318(cam, cam->unk14.x, cam->unk14.y, cam->unk14.z, sp44.x, sp44.y, sp44.z, cam->unkA4);
 }
 
 /**
@@ -687,14 +672,15 @@ void draw_camera(struct ObjCamera *cam) {
  * @note Not called
  */
 void Unknown80179ACC(struct GdObj *obj) {
-    switch (obj->type) {
-        case OBJ_TYPE_NETS:
-            if (((struct ObjNet *) obj)->unk1C8 != NULL) {
-                func_80179B64(((struct ObjNet *) obj)->unk1C8);
-            }
-            break;
-        default:
-            break;
+    if (obj->type == OBJ_TYPE_NETS) {
+        if (0) {
+        }
+        if (((struct ObjNet *) obj)->unk1C8 != NULL) {
+            func_80179B64(((struct ObjNet *) obj)->unk1C8);
+        }
+    } else {
+        if (0) {
+        }
     }
     obj->drawFlags &= ~OBJ_DRAW_UNK01;
 }
@@ -710,7 +696,8 @@ void func_80179B64(struct ObjGroup *group) {
 }
 
 // plc again
-void world_pos_to_screen_coords(struct GdVec3f *pos, struct ObjCamera *cam, struct ObjView *view) {
+void func_80179B9C(struct GdVec3f *pos, struct ObjCamera *cam, struct ObjView *view)
+{
     f32 aspect = GFX_DIMENSIONS_ASPECT_RATIO;
     aspect *= 0.75;
     //func_80196430(pos, &cam->unkE8);
@@ -737,9 +724,9 @@ void world_pos_to_screen_coords(struct GdVec3f *pos, struct ObjCamera *cam, stru
  * @param input `GdObj` to check position of
  * @return void
  */
-void check_grabbable_click(struct GdObj *input) {
+void check_grabable_click(struct GdObj *input) {
     struct GdVec3f objPos;
-    UNUSED u8 filler[12];
+    UNUSED u8 unused[12];
     struct GdObj *obj;
     Mat4f *mtx;
 
@@ -747,7 +734,7 @@ void check_grabbable_click(struct GdObj *input) {
         return;
     }
     obj = input;
-    if (!(obj->drawFlags & OBJ_IS_GRABBABLE)) {
+    if (!(obj->drawFlags & OBJ_IS_GRABBALE)) {
         return;
     }
 
@@ -756,13 +743,13 @@ void check_grabbable_click(struct GdObj *input) {
     objPos.x = (*mtx)[3][0];
     objPos.y = (*mtx)[3][1];
     objPos.z = (*mtx)[3][2];
-    world_pos_to_screen_coords(&objPos, gViewUpdateCamera, sUpdateViewState.view);
+    func_80179B9C(&objPos, gViewUpdateCamera, sUpdateViewState.view);
     if (ABS(gGdCtrl.csrX - objPos.x) < 20.0f) {
         if (ABS(gGdCtrl.csrY - objPos.y) < 20.0f) {
-            // store (size, Obj Type, Obj Index) in s16 pick buffer array
+            // store (size, Obj Type, Obj Number) in s16 pick buffer array
             store_in_pickbuf(2);
             store_in_pickbuf(obj->type);
-            store_in_pickbuf(obj->index);
+            store_in_pickbuf(obj->number);
             sGrabCords.x = objPos.x;
             sGrabCords.y = objPos.y;
         }
@@ -782,15 +769,15 @@ void check_grabbable_click(struct GdObj *input) {
  * @param lightgrp lights of `ObjView
  */
 void drawscene(enum SceneType process, struct ObjGroup *interactables, struct ObjGroup *lightgrp) {
-    UNUSED u8 filler[16];
+    UNUSED u8 unused[16];
 
     restart_timer("drawscene");
-    imin("draw_scene()");
+    add_to_stacktrace("draw_scene()");
     sUnreadShapeFlag = 0;
     sUpdateViewState.unreadCounter = 0;
     restart_timer("draw1");
     set_gd_mtx_parameters(G_MTX_PROJECTION | G_MTX_MUL | G_MTX_PUSH);
-    if (sUpdateViewState.view->projectionType == 1) {
+    if (sUpdateViewState.view->unk38 == 1) {
         gd_create_perspective_matrix(sUpdateViewState.view->clipping.z,
                       sUpdateViewState.view->lowerRight.x / sUpdateViewState.view->lowerRight.y,
                       sUpdateViewState.view->clipping.x, sUpdateViewState.view->clipping.y);
@@ -811,12 +798,12 @@ void drawscene(enum SceneType process, struct ObjGroup *interactables, struct Ob
     if (gViewUpdateCamera != NULL) {
         draw_camera(gViewUpdateCamera);
     } else {
-        gd_dl_mul_trans_matrix(0.0f, 0.0f, -1000.0f);
+        translate_mtx_gddl(0.0f, 0.0f, -1000.0f);
     }
 
     setup_lights();
     set_gd_mtx_parameters(G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_PUSH);
-    gd_dl_push_matrix();
+    idn_mtx_push_gddl();
     sSceneProcessType = process;
 
     if ((sNumActiveLights = sUpdateViewState.view->flags & VIEW_LIGHT)) {
@@ -827,9 +814,9 @@ void drawscene(enum SceneType process, struct ObjGroup *interactables, struct Ob
     apply_to_obj_types_in_group(OBJ_TYPE_LIGHTS, (applyproc_t) register_light, gGdLightGroup);
     split_timer("draw1");
     restart_timer("drawobj");
-    imin("process_group");
+    add_to_stacktrace("process_group");
     if (sSceneProcessType == FIND_PICKS) {
-        apply_to_obj_types_in_group(OBJ_TYPE_ALL, (applyproc_t) check_grabbable_click, interactables);
+        apply_to_obj_types_in_group(OBJ_TYPE_ALL, (applyproc_t) check_grabable_click, interactables);
     } else {
         apply_to_obj_types_in_group(OBJ_TYPE_LIGHTS | OBJ_TYPE_GADGETS | OBJ_TYPE_NETS
                                         | OBJ_TYPE_PARTICLES,
@@ -840,7 +827,7 @@ void drawscene(enum SceneType process, struct ObjGroup *interactables, struct Ob
     gd_setproperty(GD_PROP_LIGHTING, 0.0f, 0.0f, 0.0f);
     apply_to_obj_types_in_group(OBJ_TYPE_LABELS, (applyproc_t) apply_obj_draw_fn, interactables);
     gd_setproperty(GD_PROP_LIGHTING, 1.0f, 0.0f, 0.0f);
-    gd_dl_pop_matrix();
+    pop_mtx_gddl();
     imout();
     split_timer("drawscene");
     return;
@@ -850,7 +837,7 @@ void drawscene(enum SceneType process, struct ObjGroup *interactables, struct Ob
  * A drawing function that does nothing. This function is used for
  * `GdObj`s that don't need to be rendered
  */
-void draw_nothing(UNUSED struct GdObj *nop) {
+void nop_obj_draw(UNUSED struct GdObj *nop) {
 }
 
 /**
@@ -863,13 +850,13 @@ void draw_shape_faces(struct ObjShape *shape) {
     sUpdateViewState.unreadCounter = 0;
     gddl_is_loading_stub_dl(FALSE);
     sUnreadShapeFlag = (s32) shape->flag & 1;
-    set_render_alpha(shape->alpha);
-    if (shape->dlNums[gGdFrameBufNum] != 0) {
-        draw_indexed_dl(shape->dlNums[gGdFrameBufNum], shape->unk50);
+    func_801A02B8(shape->unk58);
+    if (shape->gdDls[gGdFrameBuf] != 0) {
+        func_8019BD0C(shape->gdDls[gGdFrameBuf], shape->gdDls[2]);
     } else if (shape->faceGroup != NULL) {
         func_801A0038();
         draw_group(shape->faceGroup);
-        gd_dl_flush_vertices();
+        func_801A0070();
     }
 }
 
@@ -878,19 +865,19 @@ void draw_shape_faces(struct ObjShape *shape) {
  */
 void draw_particle(struct GdObj *obj) {
     struct ObjParticle *ptc = (struct ObjParticle *) obj;
-    UNUSED u8 filler1[16];
-    struct GdColour *white;
-    struct GdColour *black;
-    f32 brightness;
-    UNUSED u8 filler2[16];
+    UNUSED u8 unused1[16];
+    struct GdColour *white; // 60
+    struct GdColour *black; // 5c
+    f32 sp58;
+    UNUSED u8 unused2[16];
 
-    if (ptc->timeout > 0) {
+    if (ptc->unk5C > 0) {
         white = sColourPalette[0];
         black = sWhiteBlack[1];
-        brightness = ptc->timeout / 10.0;
-        sLightColours[0].r = (white->r - black->r) * brightness + black->r;
-        sLightColours[0].g = (white->g - black->g) * brightness + black->g;
-        sLightColours[0].b = (white->b - black->b) * brightness + black->b;
+        sp58 = ptc->unk5C / 10.0;
+        sLightColours[0].r = (white->r - black->r) * sp58 + black->r;
+        sLightColours[0].g = (white->g - black->g) * sp58 + black->g;
+        sLightColours[0].b = (white->b - black->b) * sp58 + black->b;
         ; // needed to match
     } else {
         sLightColours[0].r = 0.0f;
@@ -898,14 +885,14 @@ void draw_particle(struct GdObj *obj) {
         sLightColours[0].b = 0.0f;
     }
 
-    if (ptc->timeout > 0) {
-        ptc->shapePtr->unk50 = ptc->timeout;
-        draw_shape_2d(ptc->shapePtr, 2, 1.0f, 1.0f, 1.0f, ptc->pos.x, ptc->pos.y, ptc->pos.z, 0.0f,
+    if (ptc->unk5C > 0) {
+        ptc->unk1C->gdDls[2] = ptc->unk5C;
+        draw_shape_2d(ptc->unk1C, 2, 1.0f, 1.0f, 1.0f, ptc->unk20.x, ptc->unk20.y, ptc->unk20.z, 0.0f,
                       0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0);
     }
     if (ptc->unk60 == 3) {
-        if (ptc->subParticlesGrp != NULL) {
-            draw_group(ptc->subParticlesGrp);
+        if (ptc->unk6C != NULL) {
+            draw_group(ptc->unk6C);
         }
     }
 }
@@ -918,9 +905,9 @@ void draw_particle(struct GdObj *obj) {
  */
 void draw_bone(struct GdObj *obj) {
     struct ObjBone *bone = (struct ObjBone *) obj;
-    UNUSED u8 filler1[4];
+    UNUSED u8 unused1[4];
     s32 colour;
-    UNUSED u8 filler2[4];
+    UNUSED u8 unused2[4];
     struct GdVec3f scale; // guess
 
     return;
@@ -930,16 +917,16 @@ void draw_bone(struct GdObj *obj) {
     scale.y = 1.0f;
     scale.z = bone->unkF8 / 50.0f;
 
-    if (bone->header.drawFlags & OBJ_HIGHLIGHTED) {
-        colour = COLOUR_YELLOW;
+    if (bone->header.drawFlags & OBJ_USE_ENV_COLOUR) {
+        colour = 8;
     } else {
-        colour = bone->colourNum;
+        colour = bone->unk100;
     }
-    bone->header.drawFlags &= ~OBJ_HIGHLIGHTED;
+    bone->header.drawFlags &= ~OBJ_USE_ENV_COLOUR;
 
     if (sSceneProcessType != FIND_PICKS) {
-        draw_shape(bone->shapePtr, 0x1B, scale.x, scale.y, scale.z, bone->worldPos.x, bone->worldPos.y,
-                   bone->worldPos.z, 0.0f, 0.0f, 0.0f, bone->unk28.x, bone->unk28.y, bone->unk28.z, colour,
+        draw_shape(bone->unkF0, 0x1B, scale.x, scale.y, scale.z, bone->unk14.x, bone->unk14.y,
+                   bone->unk14.z, 0.0f, 0.0f, 0.0f, bone->unk28.x, bone->unk28.y, bone->unk28.z, colour,
                    &bone->mat70);
     }
 }
@@ -949,23 +936,23 @@ void draw_bone(struct GdObj *obj) {
  */
 void draw_joint(struct GdObj *obj) {
     struct ObjJoint *joint = (struct ObjJoint *) obj;
-    UNUSED u8 filler1[4];
+    UNUSED u8 unused1[4];
     UNUSED f32 sp7C = 70.0f;
-    UNUSED u8 filler2[4];
+    UNUSED u8 unused2[4];
     UNUSED s32 sp74 = 1;
     s32 colour;
-    UNUSED u8 filler3[8];
+    UNUSED u8 unused[8];
     struct ObjShape *boneShape;
-    UNUSED u8 filler4[28];
+    UNUSED u8 unused3[28];
 
-    if ((boneShape = joint->shapePtr) == NULL) {
+    if ((boneShape = joint->unk20) == NULL) {
         return;
     }
 
-    if (joint->header.drawFlags & OBJ_HIGHLIGHTED) {
-        colour = COLOUR_YELLOW;
+    if (joint->header.drawFlags & OBJ_USE_ENV_COLOUR) {
+        colour = 8;
     } else {
-        colour = joint->colourNum;
+        colour = joint->unk1C8;
     }
 
     draw_shape(boneShape, 0x10, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
@@ -992,8 +979,8 @@ void draw_group(struct ObjGroup *grp) {
 void draw_plane(struct GdObj *obj) {
     struct ObjPlane *plane = (struct ObjPlane *) obj;
 
-    if (obj->drawFlags & OBJ_HIGHLIGHTED) {
-        obj->drawFlags &= ~OBJ_HIGHLIGHTED;
+    if (obj->drawFlags & OBJ_USE_ENV_COLOUR) {
+        obj->drawFlags &= ~OBJ_USE_ENV_COLOUR;
         ; // needed to match; presumably setting up the color to draw the plane with
     } else {
         sUseSelectedColor = FALSE;
@@ -1011,7 +998,7 @@ void apply_obj_draw_fn(struct GdObj *obj) {
     if (obj == NULL) {
         fatal_print("Bad object!");
     }
-    if (obj->drawFlags & OBJ_INVISIBLE) {
+    if (obj->drawFlags & OBJ_NOT_DRAWABLE) {
         return;
     }
 
@@ -1107,7 +1094,7 @@ void create_shape_mtl_gddls(struct ObjShape *shape) {
 }
 
 /**
- * Uncalled function that calls a stubbed function (`stub_objects_1()`) for all
+ * Uncalled function that calls a stubbed function (`func_8017BED0()`) for all
  * `GdObj`s in @p grp
  *
  * @param grp Unknown group of objects
@@ -1115,12 +1102,12 @@ void create_shape_mtl_gddls(struct ObjShape *shape) {
  * @note Not called
  */
 void unref_8017AEDC(struct ObjGroup *grp) {
-    register struct ListNode *link = grp->firstMember;
+    register struct Links *link = grp->link1C;
 
     while (link != NULL) {
         struct GdObj *obj = link->obj;
 
-        stub_objects_1(grp, obj);
+        func_8017BED0(grp, obj);
         link = link->next;
     }
 }
@@ -1161,8 +1148,8 @@ create_shape_gddl(struct ObjShape *s) {
         draw_shape_faces(shape);
     }
     enddl = gd_enddlsplist_parent();
-    shape->dlNums[0] = shapedl;
-    shape->dlNums[1] = shapedl;
+    shape->gdDls[0] = shapedl;
+    shape->gdDls[1] = shapedl;
 
     if (shape->name[0] != '\0') {
         printf("Generated '%s' (%d) display list ok.(%d)\n", shape->name, shapedl, enddl);
@@ -1195,16 +1182,16 @@ void create_gddl_for_shapes(struct ObjGroup *grp) {
  */
 void map_face_materials(struct ObjGroup *faces, struct ObjGroup *mtls) {
     struct ObjFace *face;
-    register struct ListNode *linkFaces;
+    register struct Links *linkFaces;
     struct GdObj *temp;
-    register struct ListNode *linkMtls;
+    register struct Links *linkMtls;
     struct ObjMaterial *mtl;
 
-    linkFaces = faces->firstMember;
+    linkFaces = faces->link1C;
     while (linkFaces != NULL) {
         temp = linkFaces->obj;
         face = (struct ObjFace *) temp;
-        linkMtls = mtls->firstMember;
+        linkMtls = mtls->link1C;
         while (linkMtls != NULL) {
             mtl = (struct ObjMaterial *) linkMtls->obj;
             if (mtl->id == face->mtlId) {
@@ -1222,8 +1209,7 @@ void map_face_materials(struct ObjGroup *faces, struct ObjGroup *mtls) {
 }
 
 /**
- * @brief Calculate the normal for @p vtx by averaging the normals of all
- *  `ObjFaces` in @p facegrp
+ * @brief Calculate the normal for @p vtx based on `ObjFaces` in @p facegrp
  *
  * Calculate the normal for the input `ObjVetex` @p vtx based on the
  * `ObjFace` structures in @p facegrp of which that vertex is a part.
@@ -1232,70 +1218,68 @@ void map_face_materials(struct ObjGroup *faces, struct ObjGroup *mtls) {
  * @param facegrp `ObjGroup` of `ObjFace` structures that use @p vtx
  * @return void
  */
-static void calc_vtx_normal(struct ObjVertex *vtx, struct ObjGroup *facegrp) {
+void calc_vtx_normal(struct ObjVertex *vtx, struct ObjGroup *facegrp) {
     s32 i;
-    s32 faceCount;
-    register struct ListNode *node;
+    s32 facesAdded;
+    register struct Links *faceLink;
     struct ObjFace *curFace;
 
     vtx->normal.x = vtx->normal.y = vtx->normal.z = 0.0f;
-
-    faceCount = 0;
-    node = facegrp->firstMember;
-    while (node != NULL) {
-        curFace = (struct ObjFace *) node->obj;
+    facesAdded = 0;
+    faceLink = facegrp->link1C;
+    while (faceLink != NULL) {
+        curFace = (struct ObjFace *) faceLink->obj;
         for (i = 0; i < curFace->vtxCount; i++) {
             if (curFace->vertices[i] == vtx) {
                 vtx->normal.x += curFace->normal.x;
                 vtx->normal.y += curFace->normal.y;
                 vtx->normal.z += curFace->normal.z;
-                faceCount++;
+                facesAdded++;
             }
         }
-        node = node->next;
+        faceLink = faceLink->next;
     }
-    if (faceCount != 0) {
-        vtx->normal.x /= faceCount;
-        vtx->normal.y /= faceCount;
-        vtx->normal.z /= faceCount;
+    if (facesAdded != 0) {
+        vtx->normal.x /= facesAdded;
+        vtx->normal.y /= facesAdded;
+        vtx->normal.z /= facesAdded;
     }
 }
 
 /**
- * @brief Convert vertex indices in an `ObjFace` into pointers and computes the
- * face's normal
+ * @brief Convert vertex indices in an `ObjFace` into pointers
  *
  * Using the group of `ObjVertex` or `ObjParticle` structures in @p verts,
- * convert indices in @p face into pointers. The indices are indices
- * into the list contained in @p vertexGrp group
+ * convert indices in @p face into pointers. The indices are offests
+ * into the list contained in @p verts group
  *
  * @param face  `ObjFace` to find vertices for
- * @param vertexGrp  `ObjGroup` to index in for `ObjVertex` or `ObjPaticle` structures
+ * @param verts `ObjGroup` to index in for `ObjVertex` or `ObjPaticle` structures
  * @return void
  */
-static void find_thisface_verts(struct ObjFace *face, struct ObjGroup *vertexGrp) {
+void find_thisface_verts(struct ObjFace *face, struct ObjGroup *verts) {
     s32 i;
-    u32 currIndex;
-    struct ListNode *node;
+    u32 linkVtxIdx;
+    struct Links *link;
 
     for (i = 0; i < face->vtxCount; i++) {
-        // find the vertex or particle whose index in vertexGrp equals face->vertices[i]
-        node = vertexGrp->firstMember;
-        currIndex = 0;
-        while (node != NULL) {
-            if (node->obj->type == OBJ_TYPE_VERTICES || node->obj->type == OBJ_TYPE_PARTICLES) {
-                if (currIndex++ == (u32) (uintptr_t) face->vertices[i]) {
+        link = verts->link1C;
+        linkVtxIdx = 0;
+        while (link != NULL) {
+            if (link->obj->type == OBJ_TYPE_VERTICES || link->obj->type == OBJ_TYPE_PARTICLES) {
+                // it seems that the vertices in a face are first pointer-sized indices
+                // to a given vertix or particle link in the second argument's group.
+                if (linkVtxIdx++ == (u32) (uintptr_t) face->vertices[i]) {
                     break;
                 }
             }
-            node = node->next;
-        }
-        if (node == NULL) {
-            fatal_printf("find_thisface_verts(): Vertex not found");
+            link = link->next;
         }
 
-        // set the vertex to point to the resolved `ObjVertex`
-        face->vertices[i] = (struct ObjVertex *) node->obj;
+        if (link == NULL) {
+            fatal_printf("find_thisface_verts(): Vertex not found");
+        }
+        face->vertices[i] = (struct ObjVertex *) link->obj;
     }
     calc_face_normal(face);
 }
@@ -1315,27 +1299,25 @@ static void find_thisface_verts(struct ObjFace *face, struct ObjGroup *vertexGrp
  *       a very similar task...
  */
 void map_vertices(struct ObjGroup *facegrp, struct ObjGroup *vtxgrp) {
-    register struct ListNode *faceNode;
+    register struct Links *faceLink;
     struct ObjFace *curFace;
-    register struct ListNode *vtxNode;
+    register struct Links *vtxLink;
     struct ObjVertex *vtx;
 
-    imin("map_vertices");
+    add_to_stacktrace("map_vertices");
 
-    // resolve vertex indices to actual vertices
-    faceNode = facegrp->firstMember;
-    while (faceNode != NULL) {
-        curFace = (struct ObjFace *) faceNode->obj;
+    faceLink = facegrp->link1C;
+    while (faceLink != NULL) {
+        curFace = (struct ObjFace *) faceLink->obj;
         find_thisface_verts(curFace, vtxgrp);
-        faceNode = faceNode->next;
+        faceLink = faceLink->next;
     }
 
-    // compute normals of vertices in vtxgrp
-    vtxNode = vtxgrp->firstMember;
-    while (vtxNode != NULL) {
-        vtx = (struct ObjVertex *) vtxNode->obj;
+    vtxLink = vtxgrp->link1C;
+    while (vtxLink != NULL) {
+        vtx = (struct ObjVertex *) vtxLink->obj;
         calc_vtx_normal(vtx, facegrp);
-        vtxNode = vtxNode->next;
+        vtxLink = vtxLink->next;
     }
 
     imout();
@@ -1350,8 +1332,8 @@ void map_vertices(struct ObjGroup *facegrp, struct ObjGroup *vtxgrp) {
  */
 void unpick_obj(struct GdObj *obj) {
     struct GdObj *why = obj;
-    if (why->drawFlags & OBJ_IS_GRABBABLE) {
-        why->drawFlags &= ~(OBJ_PICKED | OBJ_HIGHLIGHTED);
+    if (why->drawFlags & OBJ_IS_GRABBALE) {
+        why->drawFlags &= ~(OBJ_PICKED | OBJ_USE_ENV_COLOUR);
     }
 }
 
@@ -1366,11 +1348,11 @@ void unpick_obj(struct GdObj *obj) {
  */
 void find_closest_pickable_obj(struct GdObj *input) {
     struct GdObj *obj = input;
-    UNUSED u8 filler[12];
+    UNUSED u8 unused[12];
     f32 distance;
 
-    if (obj->drawFlags & OBJ_IS_GRABBABLE) {
-        if (obj->index == sPickDataTemp) {
+    if (obj->drawFlags & OBJ_IS_GRABBALE) {
+        if (obj->number == sPickDataTemp) {
             if (gViewUpdateCamera != NULL) {
                 distance = d_calc_world_dist_btwn(&gViewUpdateCamera->header, obj);
             } else {
@@ -1421,14 +1403,14 @@ void update_view(struct ObjView *view) {
     char objTypeAbbr[0x100];
 
     sUpdateViewState.shapesDrawn = 0;
-    sUpdateViewState.unused = 0;
+    sUpdateViewState.unused18 = 0;
 
     if (!(view->flags & VIEW_UPDATE)) {
         view->flags &= ~VIEW_WAS_UPDATED;
         return;
     }
 
-    imin("UpdateView()");
+    add_to_stacktrace("UpdateView()");
     if (view->proc != NULL) {
         view->proc(view);
     }
@@ -1473,8 +1455,8 @@ void update_view(struct ObjView *view) {
     }
 
     if (view->components != NULL) {
-        if (gGdCtrl.dragging) {
-            if (gd_getproperty(3, 0) != FALSE && gGdCtrl.startedDragging != FALSE) {
+        if (gGdCtrl.btnApressed) {
+            if (gd_getproperty(3, 0) != FALSE && gGdCtrl.btnAnewPress != FALSE) {
                 init_pick_buf(sPickBuffer, ARRAY_COUNT(sPickBuffer));
                 drawscene(FIND_PICKS, sUpdateViewState.view->components, NULL);
                 pickOffset = get_cur_pickbuf_offset(sPickBuffer);
@@ -1518,18 +1500,19 @@ void update_view(struct ObjView *view) {
 
                 if (sPickedObject != NULL) {
                     sPickedObject->drawFlags |= OBJ_PICKED;
-                    sPickedObject->drawFlags |= OBJ_HIGHLIGHTED;
+                    sPickedObject->drawFlags |= OBJ_USE_ENV_COLOUR;
                     sUpdateViewState.view->pickedObj = sPickedObject;
-                    gGdCtrl.dragStartX = gGdCtrl.csrX = sGrabCords.x;
-                    gGdCtrl.dragStartY = gGdCtrl.csrY = sGrabCords.y;
+                    gGdCtrl.csrXatApress = gGdCtrl.csrX = sGrabCords.x;
+                    gGdCtrl.csrYatApress = gGdCtrl.csrY = sGrabCords.y;
                 }
             }
 
             find_and_drag_picked_object(sUpdateViewState.view->components);
-        } else { // check for any previously picked objects, and turn off?
+        } else // check for any previously picked objects, and turn off?
+        {
             if (sUpdateViewState.view->pickedObj != NULL) {
                 sUpdateViewState.view->pickedObj->drawFlags &= ~OBJ_PICKED;
-                sUpdateViewState.view->pickedObj->drawFlags &= ~OBJ_HIGHLIGHTED;
+                sUpdateViewState.view->pickedObj->drawFlags &= ~OBJ_USE_ENV_COLOUR;
                 sUpdateViewState.view->pickedObj = NULL;
             }
         }
@@ -1546,5 +1529,5 @@ void update_view(struct ObjView *view) {
  * Stub function.
  * @note Not Called
  */
-void stub_draw_objects_1(void) {
+void unref_8017BC94(void) {
 }

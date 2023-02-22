@@ -119,7 +119,7 @@ const LevelScript level_bbh_entry[] = {
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 866, 796, 5350, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_02 << 24, /*beh*/ bhvToadMessageAmy2,   /*acts*/ ACT_2 | ACT_3),
         OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvAmyBoo,   /*acts*/ ACT_4),
-        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_03 << 24, /*beh*/ bhvToadMessageAmy2,   /*acts*/ ACT_5 | ACT_6),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_03 << 24, /*beh*/ bhvToadMessageAmy7,   /*acts*/ ACT_5 | ACT_6),
         OBJECT(/*model*/ MODEL_WISP1, /*pos*/  912,   -204,  3063, /*angle*/ 0, 179, 0, /*behParam*/ MWISP_BBH << 16, /*beh*/ bhvWisp1),
         TERRAIN(/*terrainData*/ bbh_seg7_collision_level),
         MACRO_OBJECTS(/*objList*/ bbh_seg7_macro_objs),

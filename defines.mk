@@ -61,7 +61,7 @@ ifeq ($(TARGET_N64),0)
 
 # Check for PC Port Defines
 ifeq ($(PC_PORT_DEFINES),1)
-  CUSTOM_C_DEFINES += -DNO_SEGMENTED_MEMORY -DWIDESCREEN -DUSE_SYSTEM_MALLOC
+  CUSTOM_C_DEFINES += -DNO_SEGMENTED_MEMORY -DWIDESCREEN
 endif
 
 # Use Console exclusive defines

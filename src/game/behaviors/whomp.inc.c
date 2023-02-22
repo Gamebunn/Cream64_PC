@@ -253,7 +253,7 @@ void whomp_die(void) {
             cur_obj_shake_screen(SHAKE_POS_SMALL);
             o->oPosY += 100.0f;
             spawn_default_star(180.0f, 3880.0f, 340.0f);
-            cur_obj_play_sound_2(SOUND_OBJ_KING_WHOMP_DEATH);
+            cur_obj_play_sound_2(SOUND_OBJ_KZ_SCREAM);
             o->oAction = 9;
         }
     } else {

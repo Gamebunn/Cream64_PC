@@ -193,9 +193,9 @@ enum DialogID {
     MWISP_BITDW, 
     MWISP_BITFS, 
     MWISP_BITS, 
-    WWISP_LAYLA_KITTEN, //190
-    WWISP_KATALINA, 
-    WWISP_MARK,
+    MWISP_TOTWC, //190
+    MWISP_COTMC, 
+    EX_SIMPLE, // PC only
     AMY_01,
     AMY_02,
     AMY_03,
@@ -241,7 +241,7 @@ enum DialogID {
     WP_003,
     WP_004,
     MWISP_WP,
-    WWISP_JACK,
+    EX_KZNEKO,
     CASTLESIGN,
     ARTIST00, // 240
     ARTIST01, 
@@ -259,7 +259,6 @@ enum DialogID {
     NTM_003,
     MWISP_NTM,
     EX_001,
-    EX_002,
     DIALOG_COUNT
 };
 

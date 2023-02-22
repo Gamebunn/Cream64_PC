@@ -23,7 +23,7 @@
         "inst2": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "boss_maniaboss_0"  
+            "sound": "credits_staffroll_0"  
         },
         "inst3": {
             "release_rate": 10,
@@ -53,7 +53,7 @@
         "inst8": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "wp_bubblebobble2_0"  
+            "sound": "wp_ringrink2_0"  
         },
         "inst9": {
             "release_rate": 10,
@@ -73,7 +73,7 @@
         "inst12": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "shell_tiltthemachine_0"  
+            "sound": "shell_speedofsound_0"  
         },
         "inst13": {
             "release_rate": 10,
@@ -83,7 +83,7 @@
         "inst14": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "theend_0"  
+            "sound": "theend2_0"  
         },
         "inst15": {
             "release_rate": 10,
@@ -104,6 +104,36 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "highscore_4"
+        },
+        "inst19": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ddr_track1_funkys0da_daikenkai_0"
+        },
+        "inst20": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ddr_track2_funkys0da_rhythm_0"
+        },
+        "inst21": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "ddr_track3_gamebun_miraclemoon_0"
+        },
+        "inst22": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "totwc_moltenmines_0"
+        },
+        "inst23": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "fileselect_windmillvillage_0"
+        },
+        "inst24": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "cotmc_miningmelancholy_0"
         }
     },
     "instrument_list": [
@@ -125,6 +155,12 @@
         "inst15",
         "inst16",
         "inst17",
-        "inst18"
+        "inst18",
+        "inst19",
+        "inst20",
+        "inst21",
+        "inst22",
+        "inst23",
+        "inst24"
     ]
 }

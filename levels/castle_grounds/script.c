@@ -196,7 +196,6 @@ const LevelScript level_castle_grounds_entry[] = {
     
     AREA(/*index*/ 1, castle_grounds_geo_00073C),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_03, /*flags*/ WARP_NO_CHECKPOINT),
-        OBJECT(/*model*/ MODEL_WISP2, /*pos*/  759,  3180,  -4756, /*angle*/ 0, 90, 0, /*behParam*/ WWISP_MARK << 16, /*beh*/ bhvWisp2),
         JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),
         JUMP_LINK(script_func_local_3),

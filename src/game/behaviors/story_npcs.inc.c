@@ -30,10 +30,12 @@ Gfx *geo_switch_amy_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx) {
 
         if(gCurrLevelNum == LEVEL_BBH)
         {
-            if(gCurrActNum == 2 || gCurrActNum == 3 || gCurrActNum == 5 || gCurrActNum == 6)
+            if(gCurrActNum == 2 || gCurrActNum == 3)
                 switchCase->selectedCase = 4;
             if(gCurrActNum == 4)
                 switchCase->selectedCase = 5;
+            if(gCurrActNum == 5 || gCurrActNum == 6)
+                switchCase->selectedCase = 9;
         }
 
         if(gCurrLevelNum == LEVEL_WDW)
@@ -130,6 +132,36 @@ Gfx *geo_switch_tails_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx) {
 
         if(gCurrLevelNum == LEVEL_WMOTR)
             switchCase->selectedCase = 3;
+    }
+    return NULL;
+}
+
+Gfx *geo_switch_kitten_layla_face(s32 run, struct GraphNode *node, UNUSED Mat4 *mtx) {
+    struct Object *obj;
+    struct GraphNodeSwitchCase *switchCase;
+    s32 timer;
+
+    if (run == TRUE) {
+        obj = (struct Object *) gCurGraphNodeObject;
+        switchCase = (struct GraphNodeSwitchCase *) node;
+        switchCase->selectedCase = 0;
+
+        // timer logic for blinking. uses cases 0-2.
+        timer = gGlobalTimer % 50;
+        if (timer < 43)
+            switchCase->selectedCase = 0;
+        else if (timer < 45)
+            switchCase->selectedCase = 1;
+        else if (timer < 47)
+            switchCase->selectedCase = 2;
+        else
+            switchCase->selectedCase = 1;
+
+        if(gCurrLevelNum == LEVEL_BOB)
+        {
+            if(gCurrActNum == 1)
+                switchCase->selectedCase = 3;
+        }
     }
     return NULL;
 }

@@ -94,6 +94,16 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "10_slidewhistle2"
+        },
+        "inst17": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "11_bigring"
+        },
+        "inst18": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "12_cheatcode"
         }
     },
     "instrument_list": [
@@ -113,6 +123,8 @@
         "inst13",
         "inst14",
         "inst15",
-        "inst16"
+        "inst16",
+        "inst17",
+        "inst18"
     ]
 }

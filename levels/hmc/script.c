@@ -108,7 +108,7 @@ const LevelScript level_hmc_entry[] = {
         OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/ -7526,  2241, 6835, /*angle*/ 0, 10, 0, /*behParam*/ BLAZE_02 << 24, /*beh*/ bhvToadMessageBlaze, /*acts*/ ACT_1 | ACT_2 | ACT_3),
         OBJECT_WITH_ACTS(/*model*/ MODEL_MARINE, /*pos*/ -4653,  -4505, -2997, /*angle*/ 0, 10, 0, /*behParam*/ MARINE_02 << 24, /*beh*/ bhvToadMessageMarine2, /*acts*/ ACT_1 | ACT_2 | ACT_3),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_HMC,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
-        WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_COTMC,  /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
+        WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_COTMC,  /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_SUCCESS, /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 3, /*destNode*/ WARP_NODE_34, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_DEATH,   /*destLevel*/ LEVEL_CASTLE, /*destArea*/ 3, /*destNode*/ WARP_NODE_66, /*flags*/ WARP_NO_CHECKPOINT),
         JUMP_LINK(script_func_local_1),

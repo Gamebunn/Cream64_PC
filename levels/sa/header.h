@@ -33,4 +33,16 @@ extern const LevelScript level_sa_entry[];
 
 #include "levels/sa/sorbet/anim_header.h"
 
+#include "levels/sa/gremlin/geo_header.h"
+
+#include "levels/sa/gremlin/anim_header.h"
+
+#include "levels/sa/kz_nekoarc/geo_header.h"
+
+#include "levels/sa/kz_nekoarc/anim_header.h"
+
+#include "levels/sa/simple/geo_header.h"
+
+#include "levels/sa/simple/anim_header.h"
+
 #endif

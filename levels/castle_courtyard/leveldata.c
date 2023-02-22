@@ -21,10 +21,10 @@
 #include "levels/castle_courtyard/areas/area_2/collision.inc.c"
 #include "levels/castle_courtyard/areas/area_2/macro.inc.c"
 #include "levels/castle_courtyard/areas/area_2/spline.inc.c"
+#include "levels/castle_courtyard/areas/area_2/model.inc.c"
 #include "levels/castle_courtyard/areas/area_3/collision.inc.c"
 #include "levels/castle_courtyard/areas/area_3/macro.inc.c"
 #include "levels/castle_courtyard/areas/area_3/spline.inc.c"
-#include "levels/castle_courtyard/areas/area_2/model.inc.c"
 
 #include "levels/castle_courtyard/bait/model.inc.c"
 #include "levels/castle_courtyard/bait/anims/data.inc.c"

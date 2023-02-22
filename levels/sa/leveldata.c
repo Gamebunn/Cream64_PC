@@ -20,6 +20,10 @@
 #include "levels/sa/areas/area_2/spline.inc.c"
 #include "levels/sa/areas/area_2/model.inc.c"
 
+#include "levels/sa/areas/area_3/collision.inc.c"
+#include "levels/sa/areas/area_3/macro.inc.c"
+#include "levels/sa/areas/area_3/spline.inc.c"
+
 #include "levels/sa/gardevoir/model.inc.c"
 #include "levels/sa/gardevoir/anims/data.inc.c"
 #include "levels/sa/gardevoir/anims/table.inc.c"
@@ -30,3 +34,12 @@
 #include "levels/sa/sorbet/model.inc.c"
 #include "levels/sa/sorbet/anims/data.inc.c"
 #include "levels/sa/sorbet/anims/table.inc.c"
+#include "levels/sa/gremlin/model.inc.c"
+#include "levels/sa/gremlin/anims/data.inc.c"
+#include "levels/sa/gremlin/anims/table.inc.c"
+#include "levels/sa/kz_nekoarc/model.inc.c"
+#include "levels/sa/kz_nekoarc/anims/data.inc.c"
+#include "levels/sa/kz_nekoarc/anims/table.inc.c"
+#include "levels/sa/simple/model.inc.c"
+#include "levels/sa/simple/anims/data.inc.c"
+#include "levels/sa/simple/anims/table.inc.c"

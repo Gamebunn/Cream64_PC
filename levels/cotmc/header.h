@@ -20,4 +20,15 @@ extern const Gfx cotmc_dl_water[];
 // script
 extern const LevelScript level_cotmc_entry[];
 
+#include "levels/cotmc/skeeter_mm/geo_header.h"
+
+#include "levels/cotmc/skeeter_mm/anim_header.h"
+
+
+#include "levels/cotmc/header.inc.h"
+
+#include "levels/cotmc/espio/geo_header.h"
+
+#include "levels/cotmc/espio/anim_header.h"
+
 #endif

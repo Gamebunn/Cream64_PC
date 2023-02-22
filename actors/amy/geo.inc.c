@@ -70,6 +70,16 @@ const GeoLayout amy_Amy_sad[] = {
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
+const GeoLayout amy_Amy_scared2[] = {
+	GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, 0, 169, 0, 0, 0, 0),
+	GEO_OPEN_NODE(),
+		GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, amy_Head_Switch_008_Head_mesh_layer_1),
+		GEO_OPEN_NODE(),
+			GEO_DISPLAY_LIST(LAYER_ALPHA, amy_Head_Switch_008_Head_mesh_layer_4),
+		GEO_CLOSE_NODE(),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
 const GeoLayout amy_Head_Switch_opt1[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
@@ -109,6 +119,7 @@ const GeoLayout amy_geo[] = {
 							GEO_BRANCH(1, amy_Amy_sweaty),
 							GEO_BRANCH(1, amy_Amy_confused),
 							GEO_BRANCH(1, amy_Amy_sad),
+							GEO_BRANCH(1, amy_Amy_scared2),
 						GEO_CLOSE_NODE(),
 						GEO_ANIMATED_PART(LAYER_OPAQUE, 88, 128, 0, amy_lArm_001_mesh_layer_1),
 						GEO_OPEN_NODE(),

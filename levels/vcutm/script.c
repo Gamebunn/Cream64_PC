@@ -61,7 +61,6 @@ const LevelScript level_vcutm_entry[] = {
 		OBJECT(MODEL_WOODEN_SIGNPOST, 2721, 94, 1853, 0, 90, 0, WP_004 << 16, bhvMessagePanel),
 		OBJECT(MODEL_TAILS_C1, -4715, 94, 4638, 0, 25, 0, WP_000 << 24, bhvToadMessageTails2),
 		OBJECT(MODEL_WISP1, -5192, 94, 5232, 0, 45, 0, MWISP_WP << 16, bhvWisp1),
-		OBJECT(MODEL_WISP2, -870, 94, 2217, 0, 45, 0, WWISP_JACK << 16, bhvWisp2),
 		OBJECT(MODEL_NONE, 3824, 451, -809, 0, 0, 0, 0x00000000, bhvHiddenRedCoinStar),
 		OBJECT(MODEL_NONE, 3824, 154, -809, 0, 0, 0, 0x00000000, bhvRedCoinStarMarker),
 		OBJECT(MODEL_NONE, -4655, 94, -1428, 0, 0, 0, 0x004C0000, bhvPoleGrabbing),

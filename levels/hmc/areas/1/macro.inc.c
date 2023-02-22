@@ -43,8 +43,6 @@ const MacroObject hmc_seg7_macro_objs[] = {
     MACRO_OBJECT               (/*preset*/ macro_recovery_heart,              /*yaw*/   0, /*pos*/ -7511,  1420,  -666),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/ 270, /*pos*/ -3359,  1536,   298, /*bhvParam*/ DIALOG_122),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/   0, /*pos*/ -3092,  2033, -7685, /*bhvParam*/ DIALOG_138),
-    MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/   0, /*pos*/  5439,     0,  2785, /*bhvParam*/ DIALOG_125),
-    MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/   0, /*pos*/ -3184,     0,   699, /*bhvParam*/ DIALOG_126),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/ 270, /*pos*/   500, -4300,  3644, /*bhvParam*/ DIALOG_127),
     MACRO_OBJECT               (/*preset*/ macro_box_1up,                     /*yaw*/   0, /*pos*/ -4960,  2700,    80),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,             /*yaw*/ 180, /*pos*/  2006,     0,  6713, /*bhvParam*/ DIALOG_124),

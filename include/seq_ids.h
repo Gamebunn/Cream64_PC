@@ -76,6 +76,11 @@ enum SeqId {
     SEQ_EVENT_HIGH_SCORE3,            // 0x40; NEW_HIGHSCORE3
     SEQ_EVENT_HIGH_SCORE4,            // 0x41; NEW_HIGHSCORE3
     SEQ_EVENT_HIGH_SCORE5,            // 0x42; NEW_HIGHSCORE3
+    SEQ_DDRTRACK1,                    // 0x43; DDR TRACK1
+    SEQ_DDRTRACK2,                    // 0x44; DDR TRACK2
+    SEQ_DDRTRACK3,                    // 0x45; DDR TRACK3
+    SEQ_LEVEL_NEW_TOTWC,              // 0x46; TOTWC
+    SEQ_LEVEL_NEW_COTMC,              // 0x47; COTMC
     SEQ_COUNT
 };
 
