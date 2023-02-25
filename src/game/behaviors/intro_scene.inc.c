@@ -130,19 +130,27 @@ void bhv_intro_scene_loop(void) {
     case 40: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 41: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 42: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
-    case 43: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_CREAMOCCHIA]; break;
+    case 43: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 44: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 45: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 46: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
-    case 47: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 47: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_CREAMOCCHIA]; break;
     case 48: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 49: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 50: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 51: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 52: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
-    case 53: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_JACK]; break;
-    case 54: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK]; break;
-    case 55: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK]; break;
+    case 53: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 54: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 55: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 56: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 57: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 58: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 59: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 60: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
+    case 61: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_JACK]; break;
+    case 62: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK]; break;
+    case 63: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH_MARK]; break;
     }
     
 }

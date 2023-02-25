@@ -670,14 +670,14 @@
 
 // ED Models
 
-#define MODEL_CHEESE_ED                   0x57        // cheese_ed_geo
-#define MODEL_CHOCOLA_ED                  0x58        // chocola_ed_geo
-#define MODEL_GEMERL_ED                   0x59        // gemerl_ed_geo
-#define MODEL_BLAZE_ED                    0x5A        // blaze_ed_geo
-#define MODEL_MARK_ED                     0x5B        // mark_ed_geo
-#define MODEL_KATALINA_ED                 0x5C        // katalina_ed_geo
-#define MODEL_AMY_ED                      0x5D        // amy_ed_geo
-#define MODEL_TAILS_ED                    0x5E        // tails_ed_geo
+#define MODEL_CHEESE_ED                   0x5B        // cheese_ed_geo
+#define MODEL_CHOCOLA_ED                  0x5C        // chocola_ed_geo
+#define MODEL_GEMERL_ED                   0x5D        // gemerl_ed_geo
+#define MODEL_BLAZE_ED                    0x5E        // blaze_ed_geo
+#define MODEL_MARK_ED                     0x5F        // mark_ed_geo
+#define MODEL_KATALINA_ED                 0x60        // katalina_ed_geo
+#define MODEL_AMY_ED                      0x61        // amy_ed_geo
+#define MODEL_TAILS_ED                    0x62        // tails_ed_geo
 
 // group 11
 #define MODEL_ENEMY_LAKITU                0x54        // enemy_lakitu_geo
