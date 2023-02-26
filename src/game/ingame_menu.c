@@ -2905,16 +2905,20 @@ void render_pause_castle_main_strings(s16 x, s16 y) {
 
 if (gPlayer1Controller->buttonPressed & R_CBUTTONS) {
     gMarioState->currentCostume += 1;
+    save_file_set_outfit();
 }
 if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
     gMarioState->currentCostume -= 1;
+    save_file_set_outfit();
 }
 
 if (gMarioState->currentCostume < 0) {
     gMarioState->currentCostume = 63;
+    save_file_set_outfit();
 }
 if (gMarioState->currentCostume > 63) {
     gMarioState->currentCostume = 0;
+    save_file_set_outfit();
 }
 
     print_generic_string(10, 20, textCostumeCurrent);

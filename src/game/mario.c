@@ -2136,6 +2136,8 @@ void init_mario(void) {
     gMarioState->marioObj->oMoveAngleYaw = gMarioState->faceAngle[1];
     gMarioState->marioObj->oMoveAngleRoll = gMarioState->faceAngle[2];
 
+    save_file_get_outfit();
+
     vec3f_copy(gMarioState->marioObj->header.gfx.pos, gMarioState->pos);
     vec3s_set(gMarioState->marioObj->header.gfx.angle, 0, gMarioState->faceAngle[1], 0);
 

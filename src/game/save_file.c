@@ -709,6 +709,21 @@ void save_file_set_cannon_unlocked(void) {
     gSaveFileModified = TRUE;
 }
 
+void save_file_set_outfit(void)
+{
+    struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][0];
+
+    saveFile->sCurrentOutfit = gMarioState->currentCostume;
+    
+}
+
+void save_file_get_outfit(void)
+{
+    struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][0];
+    
+    gMarioState->currentCostume = saveFile->sCurrentOutfit;
+}
+
 void save_file_set_cap_pos(s16 x, s16 y, s16 z) {
     struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][0];
 

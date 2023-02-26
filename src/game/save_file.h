@@ -8,7 +8,7 @@
 
 #include "course_table.h"
 
-#define EEPROM_SIZE 0x200
+#define EEPROM_SIZE 0x240
 #define NUM_SAVE_FILES 4
 
 struct SaveBlockSignature {
@@ -33,7 +33,9 @@ struct SaveFile {
 
     u8 courseCoinScores[COURSE_STAGES_COUNT];
 
-    struct SaveBlockSignature signature;
+    u8 sCurrentOutfit;
+
+    struct SaveBlockSignature signature; //32
 };
 
 enum SaveFileIndex {
@@ -145,6 +147,8 @@ s32 save_file_get_course_coin_score(s32 fileIndex, s32 courseIndex);
 s32 save_file_is_cannon_unlocked(void);
 void save_file_set_cannon_unlocked(void);
 void save_file_set_cap_pos(s16 x, s16 y, s16 z);
+void save_file_set_outfit(void);
+void save_file_get_outfit(void);
 s32 save_file_get_cap_pos(Vec3s capPos);
 void save_file_set_sound_mode(u16 mode);
 u16 save_file_get_sound_mode(void);
