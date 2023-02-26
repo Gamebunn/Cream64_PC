@@ -239,4 +239,8 @@ extern const Collision unknown_seg8_collision_080262F8[];
 #include "goomba_marine/anim_header.h"
 
 #include "toad_normal/anim_header.h"
+#include "goomba_crem/geo_header.h"
+
+
+#include "goomba_crem/anim_header.h"
 #endif

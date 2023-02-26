@@ -134,6 +134,8 @@ const LevelScript level_rr_entry[] = {
         OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/  -5171,  -1702,  -178, /*angle*/ 0, 90, 0, /*behParam*/ BLAZE_04 << 24, /*beh*/ bhvToadMessageBlaze2, /*acts*/ ACT_1 |ACT_2 | ACT_3),
         OBJECT_WITH_ACTS(/*model*/ MODEL_MARINE, /*pos*/  -4971,  -1832,  -178, /*angle*/ 0, 270, 0, /*behParam*/ MARINE_03 << 24, /*beh*/ bhvToadMessageMarine3, /*acts*/ ACT_1 |ACT_2 | ACT_3),
         OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/  2370,  -1753,  2645, /*angle*/ 0, 160, 0, /*behParam*/ BLAZE_05 << 24, /*beh*/ bhvToadMessageBlaze, /*acts*/ ACT_4 | ACT_5 | ACT_6),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  3485,  2889, -2057, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvGoombaCrem, ACT_5 | ACT_6),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_BLACK_BOBOMB, /*pos*/  3485,  2889, -2057, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvBobomb, ACT_1 | ACT_2| ACT_3 | ACT_4),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_RR,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_RR,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,      /*destLevel*/ LEVEL_RR,     /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),

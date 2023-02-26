@@ -125,6 +125,8 @@ const LevelScript level_ssl_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 3070, 1280,  2900, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_15), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 2546, 1150, -2647, /*angle*/ 0,  78, 0, /*bhvParam*/ BPARAM2(WARP_NODE_16), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 200,  300,  6451, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  3431,   673, -1373, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvGoombaCrem, ACT_6),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA, /*pos*/  3431,   673, -1373, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvGoomba, ACT_1 | ACT_2 | ACT_3 | ACT_4 | ACT_5),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_14,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_14, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_15,      /*destLevel*/ LEVEL_SSL,    /*destArea*/ 2, /*destNode*/ WARP_NODE_16, /*flags*/ WARP_NO_CHECKPOINT),

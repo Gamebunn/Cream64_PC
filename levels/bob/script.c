@@ -94,6 +94,8 @@ const LevelScript level_bob_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/  1980,   768,  6618, /*angle*/ 0, -151, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0E), /*bhv*/ bhvFadingWarp),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -6365,  1000,  6464, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         OBJECT(/*model*/ MODEL_WISP1, /*pos*/  -6806,   0,  5004, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_BOB << 16, /*beh*/ bhvWisp1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_BLACK_BOBOMB, /*pos*/  6888,  2002, -5608, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvBobomb, ACT_1 | ACT_2 | ACT_3 | ACT_5 | ACT_6),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  6888,  2002, -5608, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvGoombaCrem, ACT_4),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_BOB,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_BOB,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,      /*destLevel*/ LEVEL_BOB,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),

@@ -22,7 +22,7 @@ const MacroObject bbh_seg7_macro_objs[] = {
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,           /*yaw*/   0, /*pos*/  2026,  -204,  2966, /*bhvParam*/ DIALOG_102),
     MACRO_OBJECT               (/*preset*/ macro_mr_i,                      /*yaw*/   0, /*pos*/   480,    10,  -653),
     MACRO_OBJECT               (/*preset*/ macro_scuttlebug,                /*yaw*/   0, /*pos*/  -346,  -204, -2813),
-    MACRO_OBJECT               (/*preset*/ macro_scuttlebug,                /*yaw*/   0, /*pos*/  1146,  -203, -2280),
+    //MACRO_OBJECT               (/*preset*/ macro_scuttlebug,                /*yaw*/   0, /*pos*/  1146,  -203, -2280),
     MACRO_OBJECT               (/*preset*/ macro_mr_i,                      /*yaw*/   0, /*pos*/ -2369,  -204,  5184),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,           /*yaw*/ 135, /*pos*/ -1546,  -204,  4813, /*bhvParam*/ DIALOG_086),
     MACRO_OBJECT               (/*preset*/ macro_scuttlebug,                /*yaw*/   0, /*pos*/  3466,  -204,  5106),

@@ -187,3 +187,6 @@
 #include "mario_kate_fly/model.inc.c"
 #include "mario_mmx/model.inc.c"
 #include "cheese_follow_mmx/model.inc.c"
+#include "mario_latina/model.inc.c"
+#include "mario_latina_fly/model.inc.c"
+#include "cheese_follow_latina/model.inc.c"

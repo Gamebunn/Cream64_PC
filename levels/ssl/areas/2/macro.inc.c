@@ -10,7 +10,7 @@ const MacroObject ssl_seg7_area_2_macro_objs[] = {
     MACRO_OBJECT               (/*preset*/ macro_yellow_coin_2,               /*yaw*/   0, /*pos*/  1200,     0, -3495),
     MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_circling_amp,                /*yaw*/   0, /*pos*/  3056,   736, -3267, /*bhvParam*/ AMP_BP_ROT_RADIUS_300),
     MACRO_OBJECT               (/*preset*/ macro_goomba,                      /*yaw*/   0, /*pos*/  3263,   652,  2200),
-    MACRO_OBJECT               (/*preset*/ macro_goomba,                      /*yaw*/   0, /*pos*/  3431,   673, -1373),
+    //MACRO_OBJECT               (/*preset*/ macro_goomba,                      /*yaw*/   0, /*pos*/  3431,   673, -1373),
     MACRO_OBJECT               (/*preset*/ macro_coin_line_horizontal_flying, /*yaw*/  90, /*pos*/    -2,  1774,  2794),
     MACRO_OBJECT               (/*preset*/ macro_coin_ring_horizontal_flying, /*yaw*/   0, /*pos*/  2694,   850, -2889),
     MACRO_OBJECT               (/*preset*/ macro_recovery_heart,              /*yaw*/   0, /*pos*/  -400,  1978, -2250),

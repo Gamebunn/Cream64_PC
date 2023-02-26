@@ -121,6 +121,8 @@ const LevelScript level_bbh_entry[] = {
         OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvAmyBoo,   /*acts*/ ACT_4),
         OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  1289, 80,  1005,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_03 << 24, /*beh*/ bhvToadMessageAmy7,   /*acts*/ ACT_5 | ACT_6),
         OBJECT(/*model*/ MODEL_WISP1, /*pos*/  912,   -204,  3063, /*angle*/ 0, 179, 0, /*behParam*/ MWISP_BBH << 16, /*beh*/ bhvWisp1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  1146,  -203, -2280, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvGoombaCrem, ACT_1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_SCUTTLEBUG, /*pos*/  1146,  -203, -2280, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvScuttlebug, ACT_2 | ACT_3 | ACT_4 | ACT_5 | ACT_6),
         TERRAIN(/*terrainData*/ bbh_seg7_collision_level),
         MACRO_OBJECTS(/*objList*/ bbh_seg7_macro_objs),
         ROOMS(/*surfaceRooms*/ bbh_seg7_rooms),

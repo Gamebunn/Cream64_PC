@@ -102,6 +102,7 @@ const LevelScript level_wdw_entry[] = {
         OBJECT_WITH_ACTS(/*model*/ MODEL_AMY, /*pos*/  349, 3150,  -3760,  /*angle*/ 0, 0, 0, /*behParam*/ AMY_05 << 24, /*beh*/ bhvToadMessageAmy5,   /*acts*/ ACT_2 | ACT_3),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 3595, 3580,  384, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         OBJECT(/*model*/ MODEL_WISP1, /*pos*/  1159,  3060,  -3713, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_WDW << 16, /*beh*/ bhvWisp1),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  -220,  3860,    60, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvGoombaCrem, ACT_3),
         WARP_NODE(/*id*/ WARP_NODE_0A, /*destLevel*/ LEVEL_WDW, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B, /*destLevel*/ LEVEL_WDW, /*destArea*/ 1, /*destNode*/ WARP_NODE_0C, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C, /*destLevel*/ LEVEL_WDW, /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),

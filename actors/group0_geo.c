@@ -173,3 +173,6 @@
 #include "mario_kate_fly/geo.inc.c"
 #include "mario_mmx/geo.inc.c"
 #include "cheese_follow_mmx/geo.inc.c"
+#include "mario_latina/geo.inc.c"
+#include "mario_latina_fly/geo.inc.c"
+#include "cheese_follow_latina/geo.inc.c"

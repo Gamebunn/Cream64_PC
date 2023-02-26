@@ -238,22 +238,24 @@
 
 // Additional NPCs
 
-#define MODEL_FLOOMBA                     0xE4         // floomba_geo
+#define MODEL_FLOOMBA                     0xFF         // floomba_geo
 
-#define MODEL_LAYLA                       0xEC         // layla_geo
-#define MODEL_AMY                         0xE8         // amy_geo
-#define MODEL_WISP1                       0xEB         // wisp1_geo
-#define MODEL_WISP2                       0xEA         // wisp2_geo
-#define MODEL_BLAZE                       0xE7         // blaze_geo
-#define MODEL_MARINE                      0xE6         // marine_geo
-#define MODEL_TAILS_C1                    0xE5         // tails_c1_geo
-#define MODEL_WARPRING                    0xE9         // warpring_geo
+#define MODEL_LAYLA                       0xFE         // layla_geo
+#define MODEL_AMY                         0xFD         // amy_geo
+#define MODEL_WISP1                       0xFC         // wisp1_geo
+//#define MODEL_WISP2                       0xEA         // wisp2_geo
+#define MODEL_BLAZE                       0xFB         // blaze_geo
+#define MODEL_MARINE                      0xFA         // marine_geo
+#define MODEL_TAILS_C1                    0xF9         // tails_c1_geo
+#define MODEL_WARPRING                    0xF8         // warpring_geo
+#define MODEL_GOOMBA_CREM                 0xF7        // goomba_crem_geo
+
 
 // Fish Models
 
-#define MODEL_FISH_BAIT                   0x152        // bait_fish_geo
-#define MODEL_FISH_BAIT2                  0x151        // bait_fish2_geo
-#define MODEL_FISH_BAIT3                  0x150        // bait_fish3_geo
+#define MODEL_FISH_BAIT                   0xF6        // bait_fish_geo
+#define MODEL_FISH_BAIT2                  0xF5        // bait_fish2_geo
+#define MODEL_FISH_BAIT3                  0xF4        // bait_fish3_geo
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 

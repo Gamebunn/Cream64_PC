@@ -154,6 +154,7 @@ const LevelScript level_thi_entry[] = {
         OBJECT(/*model*/ MODEL_NONE, /*pos*/   0, 3277,    0, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0B), /*bhv*/ bhvAirborneWarp),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ 512, 1024, 2355, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM1(5) | BPARAM2(WARP_NODE_0C), /*bhv*/ bhvWarp),
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 712, 1024, 2150, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  -1838,  1068,  338, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvGoombaCrem, ACT_4 | ACT_5 | ACT_6),
         WARP_NODE(/*id*/ WARP_NODE_0A,      /*destLevel*/ LEVEL_THI,    /*destArea*/ 3, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,      /*destLevel*/ LEVEL_THI,    /*destArea*/ 3, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0C,      /*destLevel*/ LEVEL_THI,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),

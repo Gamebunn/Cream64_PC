@@ -86,7 +86,7 @@ void bhv_cheese_act_follow_mario(void) {
     case 43: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_WONDER]; break; 
     case 44: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // WIP
     case 45: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_ROGER]; break;
-    case 46: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW]; break; // WIP
+    case 46: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_LATINA]; break;
     case 47: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_CREAMOCCHIA]; break;
     case 48: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_CHEF]; break;
     case 49: o->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_CHEESE_FOLLOW_VAL]; break;

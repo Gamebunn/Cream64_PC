@@ -529,6 +529,7 @@ extern const BehaviorScript bhvSwoop[];
 extern const BehaviorScript bhvFlyGuy[];
 extern const BehaviorScript bhvGoomba[];
 extern const BehaviorScript bhvGoombaTripletSpawner[];
+extern const BehaviorScript bhvGoombaCrem[];
 extern const BehaviorScript bhvChainChomp[];
 extern const BehaviorScript bhvChainChompChainPart[];
 extern const BehaviorScript bhvWoodenPost[];

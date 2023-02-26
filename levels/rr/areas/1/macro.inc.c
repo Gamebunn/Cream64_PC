@@ -33,7 +33,7 @@ const MacroObject rr_seg7_macro_objs[] = {
     MACRO_OBJECT               (/*preset*/ macro_1up,                         /*yaw*/   0, /*pos*/  5040,  2100,   280),
     MACRO_OBJECT               (/*preset*/ macro_hidden_1up_in_pole,          /*yaw*/   0, /*pos*/  3542,  4892, -2371),
     MACRO_OBJECT               (/*preset*/ macro_enemy_lakitu,                /*yaw*/   0, /*pos*/  4714,  3507, -2371),
-    MACRO_OBJECT               (/*preset*/ macro_bobomb,                      /*yaw*/   0, /*pos*/  3485,  2889, -2057),
+    // MACRO_OBJECT               (/*preset*/ macro_bobomb,                      /*yaw*/   0, /*pos*/  3485,  2889, -2057),
     MACRO_OBJECT               (/*preset*/ macro_bobomb,                      /*yaw*/   0, /*pos*/  2628,  2893, -2371),
     MACRO_OBJECT               (/*preset*/ macro_coin_ring_horizontal,        /*yaw*/   0, /*pos*/  3542,  2923, -2371),
     MACRO_OBJECT               (/*preset*/ macro_coin_line_horizontal,        /*yaw*/   0, /*pos*/ -3342,  3222, -5071),

@@ -152,6 +152,7 @@ const LevelScript level_jrb_entry[] = {
         OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ -6550, 2126, 1482, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         OBJECT_WITH_ACTS(/*model*/ MODEL_BLAZE, /*pos*/  -5674, 1206,  665,  /*angle*/ 0, 0, 0, /*behParam*/ BLAZE_01 << 24, /*beh*/ bhvToadMessageBlaze,   /*acts*/ ACT_1 | ACT_2 | ACT_3),
         OBJECT_WITH_ACTS(/*model*/ MODEL_MARINE, /*pos*/  -2814, -3016, -2299,  /*angle*/ 0, 0, 0, /*behParam*/ MARINE_01 << 24, /*beh*/ bhvToadMessageMarine,   /*acts*/ ACT_1 | ACT_2 | ACT_3),
+        OBJECT_WITH_ACTS(/*model*/ MODEL_GOOMBA_CREM, /*pos*/  884,  -2556, -4282, /*angle*/ 0, 0, 0, /*behParam*/ 0x000C0000, /*beh*/ bhvGoombaCrem, ACT_3),
         OBJECT(/*model*/ MODEL_WISP1, /*pos*/ -6309, 1286, 2201, /*angle*/ 0, 0, 0, /*behParam*/ MWISP_JRB << 16, /*beh*/ bhvWisp1),
         WARP_NODE(/*id*/ WARP_NODE_0A,         /*destLevel*/ LEVEL_JRB,    /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_WARP_FLOOR, /*destLevel*/ LEVEL_JRB,    /*destArea*/ 2, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),

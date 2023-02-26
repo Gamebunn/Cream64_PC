@@ -122,6 +122,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_JOHNNY,            mario_johnny_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SWEET,             mario_sweet_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_MMX,               mario_mmx_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_LATINA,            mario_latina_geo),
 
     
 
@@ -168,6 +169,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_DENJI_FLY,         mario_denji_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_JOHNNY_FLY,        mario_johnny_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SWEET_FLY,         mario_sweet_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_LATINA_FLY,        mario_latina_fly_geo),
 
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
@@ -226,6 +228,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_JOHNNY,    cheese_follow_johnny_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SWEET,     cheese_follow_sweet_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_MMX,       cheese_follow_mmx_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_LATINA,    cheese_follow_latina_geo),
 
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
@@ -360,6 +363,7 @@ const LevelScript script_func_global_1[] = {
     LOAD_MODEL_FROM_GEO(MODEL_EXCLAMATION_BOX_OUTLINE, exclamation_box_outline_geo),
     LOAD_MODEL_FROM_GEO(MODEL_EXCLAMATION_BOX,         exclamation_box_geo),
     LOAD_MODEL_FROM_GEO(MODEL_GOOMBA,                  goomba_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_GOOMBA_CREM,             goomba_crem_geo),
     // LOAD_MODEL_FROM_DL (MODEL_EXCLAMATION_POINT,       exclamation_box_outline_seg8_dl_08025F08, LAYER_ALPHA),
     LOAD_MODEL_FROM_GEO(MODEL_KOOPA_SHELL,             koopa_shell_geo),
     LOAD_MODEL_FROM_GEO(MODEL_METAL_BOX,               metal_box_geo),
