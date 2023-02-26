@@ -1,5 +1,7 @@
 // coin.inc.c
 
+#define RING_ROTATE_SPEED 1800
+
 struct ObjectHitbox sYellowCoinHitbox = {
     /* interactType:      */ INTERACT_COIN,
     /* downOffset:        */ 0,
@@ -42,7 +44,7 @@ void bhv_yellow_coin_init(void) {
 
 void bhv_yellow_coin_loop(void) {
 
-    o->oAngleVelYaw = 1500;
+    o->oAngleVelYaw = RING_ROTATE_SPEED;
     cur_obj_rotate_face_angle_using_vel();
 
     bhv_coin_sparkles_init();
@@ -52,7 +54,7 @@ void bhv_yellow_coin_loop(void) {
 void bhv_temp_coin_loop(void) {
     o->oAnimState++;
 
-    o->oAngleVelYaw = 1500;
+    o->oAngleVelYaw = RING_ROTATE_SPEED;
     cur_obj_rotate_face_angle_using_vel();
 
     if (cur_obj_wait_then_blink(200, 20)) {
@@ -80,7 +82,7 @@ void bhv_spawned_coin_loop(void) {
     cur_obj_move_standard(-62);
 
     o->oFaceAnglePitch = 0;
-    o->oAngleVelYaw = 1500;
+    o->oAngleVelYaw = RING_ROTATE_SPEED;
     cur_obj_rotate_face_angle_using_vel();
 
     if ((floor = o->oFloor) != NULL) {
@@ -174,7 +176,7 @@ void bhv_coin_formation_spawn_loop(void) {
         o->oAnimState++;
     }
 
-    o->oAngleVelYaw = 1500;
+    o->oAngleVelYaw = RING_ROTATE_SPEED;
     cur_obj_rotate_face_angle_using_vel();
 
     if (o->parentObj->oAction == COIN_FORMATION_ACT_RESPAWN_COINS) {
@@ -341,7 +343,7 @@ void (*sCoinInsideBooActions[])(void) = {
 void bhv_coin_inside_boo_loop(void) {
     cur_obj_call_action_function(sCoinInsideBooActions);
 
-    o->oAngleVelYaw = 1500;
+    o->oAngleVelYaw = RING_ROTATE_SPEED;
     cur_obj_rotate_face_angle_using_vel();
 }
 

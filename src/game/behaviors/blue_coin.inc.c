@@ -8,10 +8,13 @@
 /**
  * Update function for bhvHiddenBlueCoin.
  */
+
+#define RING_ROTATE_SPEED 1800
+
 void bhv_hidden_blue_coin_loop(void) {
     struct Object *blueCoinSwitch;
 
-    o->oAngleVelYaw = 1500;
+    o->oAngleVelYaw = RING_ROTATE_SPEED;
     cur_obj_rotate_face_angle_using_vel();
 
     switch (o->oAction) {
