@@ -8,6 +8,9 @@
 /**
  * Red coin's hitbox details.
  */
+
+#define RING_ROTATE_SPEED 1800
+
 static struct ObjectHitbox sRedCoinHitbox = {
     /* interactType:      */ INTERACT_COIN,
     /* downOffset:        */ 0,
@@ -79,6 +82,6 @@ void bhv_red_coin_loop(void) {
     }
 
     
-    o->oAngleVelYaw = 1500;
+    o->oAngleVelYaw = RING_ROTATE_SPEED;
     cur_obj_rotate_face_angle_using_vel();
 }
