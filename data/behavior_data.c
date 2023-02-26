@@ -889,7 +889,7 @@ const BehaviorScript bhvSpawnedBlueCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     SET_INT(oInteractType, INTERACT_COIN),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    //BILLBOARD(),
     SET_INT(oIntangibleTimer, 0),
     SET_FLOAT(oCoinBaseVelY, 20),
     SET_INT(oAnimState, -1),
@@ -909,7 +909,7 @@ const BehaviorScript bhvCoinInsideBoo[] = {
     SET_INT(oInteractType, INTERACT_COIN),
     OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -70, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
-    BILLBOARD(),
+    //BILLBOARD(),
     CALL_NATIVE(bhv_init_room),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_coin_inside_boo_loop),
@@ -920,7 +920,7 @@ const BehaviorScript bhvCoinInsideBoo[] = {
 const BehaviorScript bhvCoinFormationSpawn[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    //BILLBOARD(),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_coin_formation_spawn_loop),
     END_LOOP(),
@@ -944,7 +944,7 @@ const BehaviorScript bhvOneCoin[] = {
 const BehaviorScript bhvYellowCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     // Yellow coin - common:
-    BILLBOARD(),
+    //BILLBOARD(),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     CALL_NATIVE(bhv_yellow_coin_init),
     BEGIN_LOOP(),
@@ -954,7 +954,7 @@ const BehaviorScript bhvYellowCoin[] = {
 
 const BehaviorScript bhvTemporaryYellowCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
-    BILLBOARD(),
+    //BILLBOARD(),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     CALL_NATIVE(bhv_yellow_coin_init),
     BEGIN_LOOP(),
@@ -983,7 +983,7 @@ const BehaviorScript bhvTenCoinsSpawn[] = {
 const BehaviorScript bhvSingleCoinGetsSpawned[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    //BILLBOARD(),
     CALL_NATIVE(bhv_spawned_coin_init),
     SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -70, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
     BEGIN_LOOP(),
@@ -2874,7 +2874,7 @@ const BehaviorScript bhvHiddenBlueCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     SET_INT(oInteractType, INTERACT_COIN),
     OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    BILLBOARD(),
+    //BILLBOARD(),
     SET_HITBOX(/*Radius*/ 100, /*Height*/ 64),
     SET_INT(oDamageOrCoinValue, 5),
     SET_INT(oIntangibleTimer, 0),
@@ -3705,7 +3705,7 @@ const BehaviorScript bhvActSelector[] = {
 const BehaviorScript bhvMovingYellowCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    //BILLBOARD(),
     SET_HITBOX(/*Radius*/ 100, /*Height*/ 64),
     SET_INT(oInteractType, INTERACT_COIN),
     SET_INT(oIntangibleTimer, 0),
@@ -3720,7 +3720,7 @@ const BehaviorScript bhvMovingYellowCoin[] = {
 const BehaviorScript bhvMovingBlueCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    //BILLBOARD(),
     SET_INT(oIntangibleTimer, 0),
     SET_INT(oAnimState, -1),
     CALL_NATIVE(bhv_moving_blue_coin_init),
@@ -3733,7 +3733,7 @@ const BehaviorScript bhvMovingBlueCoin[] = {
 const BehaviorScript bhvBlueCoinSliding[] = {
     BEGIN(OBJ_LIST_GENACTOR),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    BILLBOARD(),
+    //BILLBOARD(),
     SET_INT(oIntangibleTimer, 0),
     SET_INT(oAnimState, -1),
     CALL_NATIVE(bhv_blue_coin_sliding_jumping_init),
@@ -4681,7 +4681,7 @@ const BehaviorScript bhvHiddenRedCoinStar[] = {
 const BehaviorScript bhvRedCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    //BILLBOARD(),
     SET_INT(oIntangibleTimer, 0),
     SET_INT(oAnimState, -1),
     CALL_NATIVE(bhv_init_room),

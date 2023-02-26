@@ -11,6 +11,9 @@
 void bhv_hidden_blue_coin_loop(void) {
     struct Object *blueCoinSwitch;
 
+    o->oAngleVelYaw = 1500;
+    cur_obj_rotate_face_angle_using_vel();
+
     switch (o->oAction) {
         case HIDDEN_BLUE_COIN_ACT_INACTIVE:
             // Become invisible and intangible

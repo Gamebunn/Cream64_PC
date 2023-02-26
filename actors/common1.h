@@ -279,6 +279,10 @@ extern const Collision wooden_signpost_seg3_collision_0302DD80[];
 
 #include "warp_pipe/geo_header.h"
 
+#include "ring/geo_header.h"
+#include "ring_green/geo_header.h"
+#include "ring_blue/geo_header.h"
+
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/include_models.h"
 #endif

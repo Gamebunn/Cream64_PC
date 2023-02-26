@@ -1,0 +1,10 @@
+extern const GeoLayout green_ring_geo[];
+extern const GeoLayout green_ring_no_shadow_geo[];
+extern u8 ring_green_sikake_05_64_gween_ci4[];
+extern u8 ring_green_sikake_05_64_gween_ci4_pal_rgba16[];
+extern Vtx ring_green_RingModel_mesh_layer_1_vtx_0[149];
+extern Gfx ring_green_RingModel_mesh_layer_1_tri_0[];
+extern Gfx mat_ring_green_f3d_material_002[];
+extern Gfx mat_revert_ring_green_f3d_material_002[];
+extern Gfx ring_green_RingModel_mesh_layer_1[];
+extern Gfx ring_green_material_revert_render_settings[];

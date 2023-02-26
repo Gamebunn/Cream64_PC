@@ -77,4 +77,8 @@ void bhv_red_coin_loop(void) {
         // Despawn the coin.
         o->oInteractStatus = 0;
     }
+
+    
+    o->oAngleVelYaw = 1500;
+    cur_obj_rotate_face_angle_using_vel();
 }
