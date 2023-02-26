@@ -79,6 +79,7 @@ void bhv_spawned_coin_loop(void) {
     cur_obj_if_hit_wall_bounce_away();
     cur_obj_move_standard(-62);
 
+    o->oFaceAnglePitch = 0;
     o->oAngleVelYaw = 1500;
     cur_obj_rotate_face_angle_using_vel();
 
