@@ -875,36 +875,58 @@ looks nothing like her!\n\
 Her parents must be\n\
 worried sick!"))
 
-//jrb, start of level
-DEFINE_DIALOG(DIALOG_060, 1, 4, 30, 200, _("\
-ATTENTION!\n\
-Read Before Diving In!\n\
+//jrb, start of level, extra dev post
+DEFINE_DIALOG(DIALOG_060, 1, 5, 30, 200, _("\
+Dev Talk: The Various\n\
+Cream Outfits.\n\
 \n\
 \n\
-If you stay under the\n\
-water for too long, you'll\n\
-run out of oxygen.\n\
 \n\
-Return to the surface for\n\
-air or find an air bubble\n\
-or rings to breathe while\n\
-underwater.\n\
-Press [A] to swim. Hold [A]\n\
-to swim slow and steady.\n\
-Tap [A] with smooth timing\n\
-to gain speed.\n\
-Press Up on the\n\
-Control Stick and press [A]\n\
-to dive.\n\
+The Cream Costumes were something\n\
+I just did on a whim. My specialty \n\
+is doing models and I wanted to\n\
+give the player some extra outfits\n\
+to go through Cream 64.\n\
+Initially started as a set of 10,\n\
+now here we are up to a grand total\n\
+of 64 outfits. All the outfits are\n\
+categorized as well:\n\
 \n\
-Press Down on the Control\n\
-Stick and press [A] to\n\
-return to the surface.\n\
+1-8 are official outfits seen in\n\
+either the games, comics, Sonic X\n\
+or in official art from Sonic Team\n\
+and Sonic Channel.\n\
 \n\
-Hold Down and press [A]\n\
-while on the surface near\n\
-the edge of the water to\n\
-jump out."))
+9-17 are outfits based on various\n\
+Sonic characters, if it wasn't\n\
+obvious enough. Originally just \n\
+picking who was in the hack and\n\
+then ended up adding a bit more.\n\
+18-46 are personal picks either by\n\
+how fitting, suggestions from\n\
+others, wanting to rep a series I \n\
+like or just finding it amusing.\n\
+\n\
+47-61 are good friend suggestions\n\
+and streamer thanks with me asking\n\
+who they like or me wanting to put\n\
+their characters as outfits.\n\
+\n\
+62-64 are for my closest friends \n\
+and me! One of the earliest alts\n\
+I made for the hack and using the\n\
+characters themselves rather than\n\
+just an outfit. \n\
+I could keep going with these but\n\
+I need a personal limit so 64\n\
+was fitting. Something for \n\
+everyone at least!\n\
+\n\
+My initial plan after this was\n\
+to retire this Cream model so\n\
+at the very least, she's going\n\
+out with a bang!\n\
+Enjoy the various Creams~"))
 
 //sl
 DEFINE_DIALOG(DIALOG_061, 1, 5, 30, 200, _("\
@@ -2286,8 +2308,8 @@ The dark areas are\n\
 bottomless pits."))
 
 DEFINE_DIALOG(DIALOG_158, 1, 6, 30, 200, _("\
-Dev Talk: The various Cream\n\
-Models.\n\
+Dev Talk: The Cream\n\
+Model Herself.\n\
 \n\
 \n\
 \n\
@@ -2310,16 +2332,15 @@ left the model as is. The \n\
 fixed up head is now applied\n\
 to Katalina, the bunny by \n\
 TTC.\n\
-The Alt Creams came in after\n\
-just being bored one day and\n\
-wanting to give Cream some\n\
-extra costumes for the player.\n\
-I will admit I did go\n\
-overboard with it..."))
+I do have plans on redoing the \n\
+model again at some point with\n\
+a lower poly count so this is\n\
+kind of a swan song for this \n\
+one. One final hurrah~"))
 
 DEFINE_DIALOG(DIALOG_159, 1, 6, 30, 200, _("\
-Dev Talk: The chosen set of\n\
-characters among other things.\n\
+Dev Talk: The Chosen Set of\n\
+Characters Among Other Things.\n\
 \n\
 \n\
 \n\
@@ -2357,7 +2378,7 @@ they can serve a better purpose."))
 
 DEFINE_DIALOG(DIALOG_160, 1, 6, 30, 200, _("\
 Dev Talk: Streaming Audio and\n\
-the power of self control.\n\
+the Power of Self Control.\n\
 \n\
 \n\
 \n\
@@ -2404,11 +2425,11 @@ streaming audio. The castle inside\n\
 music had a strange crackle that\n\
 I couldn't figure out. \n\
 \n\
-Endless Mines was a last minute\n\
-decision, though I did picked \n\
-a different track for later versions.\n\
-Hoping it fits better in the \n\
-long run."))
+I wound up using a midi track to\n\
+get past this problem though I\n\
+believe later builds of sm64ex\n\
+seem to have fixed the problem.\n\
+Not 100 percent sure."))
 
 #ifdef VERSION_EU
 #define KEEP_ON_PLAYING ".."

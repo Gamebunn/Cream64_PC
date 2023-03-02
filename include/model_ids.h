@@ -91,7 +91,7 @@
 #define MODEL_MARIO_POCKY                 0x1C9        // mario_pocky_geo #56
 #define MODEL_MARIO_SWEET                 0x1C8        // mario_sweet_geo #57
 #define MODEL_MARIO_KZ                    0x1C7        // mario_kz_geo #58
-#define MODEL_MARIO_DOTLVL                0x1C6        // mario_dotlvl_geo #59
+#define MODEL_MARIO_DOT                   0x1C6        // mario_dot_geo #59
 #define MODEL_MARIO_DANI                  0x1C5        // mario_dani_geo #60
 #define MODEL_MARIO_JOHNNY                0x1C4        // mario_johnny_geo #61
 
@@ -171,7 +171,7 @@
 #define MODEL_CHEESE_FOLLOW_POCKY         0x18B       // cheese_follow_pocky_geo #56
 #define MODEL_CHEESE_FOLLOW_SWEET         0x18A       // cheese_follow_sweet_geo #57
 #define MODEL_CHEESE_FOLLOW_KZ            0x189       // cheese_follow_kz_geo #58
-#define MODEL_CHEESE_FOLLOW_DOTLVL        0x188       // cheese_follow_dotlvl_geo #59
+#define MODEL_CHEESE_FOLLOW_DOT           0x188       // cheese_follow_dot_geo #59
 #define MODEL_CHEESE_FOLLOW_DANI          0x187       // cheese_follow_dani_geo #60
 #define MODEL_CHEESE_FOLLOW_JOHNNY        0x186       // cheese_follow_johnny_geo #61
 
@@ -435,6 +435,7 @@
 #define MODEL_SAGE                                0x39        // sage_geo
 #define MODEL_GOOMBA_MARINE                       0x3A        // goomba_marine_geo
 #define MODEL_TOAD_NORMAL                         0x3B        // toad_normal_geo
+#define MODEL_SIGNPOST_DEV                        0x3C        // signpost_dev_geo
 
 // bitdw
 #define MODEL_BITDW_SQUARE_PLATFORM               0x36        // geo_bitdw_000558

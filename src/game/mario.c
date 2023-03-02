@@ -1889,7 +1889,7 @@ s32 execute_mario_action(UNUSED struct Object *o) {
   case 55: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_POCKY]; break;
   case 56: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SWEET]; break;
   case 57: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KZ]; break;
-  case 58: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO]; break; // WIP DOTLVL
+  case 58: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DOT]; break;
   case 59: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DANI]; break;
   case 60: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_JOHNNY]; break; 
   case 61: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KITTEN]; break;
@@ -1959,7 +1959,7 @@ if (gMarioState->action == ACT_HOVERING) {
   case 55: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_POCKY_FLY]; break;
   case 56: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SWEET_FLY]; break;
   case 57: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KZ_FLY]; break;
-  case 58: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_FLY]; break; // WIP
+  case 58: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DOT]; break;
   case 59: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DANI_FLY]; break;
   case 60: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_JOHNNY_FLY]; break; 
   case 61: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KITTEN]; break;

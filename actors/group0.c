@@ -190,3 +190,5 @@
 #include "mario_latina/model.inc.c"
 #include "mario_latina_fly/model.inc.c"
 #include "cheese_follow_latina/model.inc.c"
+#include "mario_dot/model.inc.c"
+#include "cheese_follow_dot/model.inc.c"

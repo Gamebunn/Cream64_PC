@@ -104,3 +104,5 @@ UNUSED static const u64 binid_22 = 22;
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/models.inc.c"
 #endif
+
+#include "signpost_dev/model.inc.c"

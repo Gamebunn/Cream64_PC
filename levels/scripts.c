@@ -123,6 +123,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SWEET,             mario_sweet_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_MMX,               mario_mmx_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_LATINA,            mario_latina_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_DOT,               mario_dot_geo),
 
     
 
@@ -229,6 +230,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SWEET,     cheese_follow_sweet_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_MMX,       cheese_follow_mmx_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_LATINA,    cheese_follow_latina_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_DOT,       cheese_follow_dot_geo),
 
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
@@ -243,6 +245,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_STAR,                    star_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TRANSPARENT_STAR,        transparent_star_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WOODEN_SIGNPOST,         wooden_signpost_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_SIGNPOST_DEV,            signpost_dev_geo),
     LOAD_MODEL_FROM_DL (MODEL_WHITE_PARTICLE_SMALL,    white_particle_small_dl, LAYER_ALPHA),
     LOAD_MODEL_FROM_GEO(MODEL_RED_FLAME,               red_flame_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BLUE_FLAME,              blue_flame_geo),

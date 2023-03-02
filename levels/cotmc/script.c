@@ -78,6 +78,7 @@ const LevelScript level_cotmc_entry[] = {
 		MARIO_POS(0x01, -90, -1737, -3946, -1838),
 		TERRAIN(cotmc_area_2_collision),
 		MACRO_OBJECTS(cotmc_area_2_macro_objs),
+		SHOW_DIALOG(/*index*/ 0x00, DIALOG_130),
 		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_NEW_COTMC),
 		TERRAIN_TYPE(TERRAIN_STONE),
 		/* Fast64 begin persistent block [area commands] */

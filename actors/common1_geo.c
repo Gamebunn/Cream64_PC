@@ -39,3 +39,5 @@
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/geo.inc.c"
 #endif
+
+#include "signpost_dev/geo.inc.c"
