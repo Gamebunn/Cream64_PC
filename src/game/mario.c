@@ -49,6 +49,143 @@
 u32 unused80339F10;
 u8 unused80339F1C[20];
 
+u16 Cream_Model_IDs[] =
+{
+    MODEL_MARIO,
+    MODEL_MARIO_RIDERS,
+    MODEL_MARIO_WINTER,
+    MODEL_MARIO_SPRING,
+    MODEL_MARIO_UNICORN,
+    MODEL_MARIO_YUKATA,
+    MODEL_MARIO_SWIMSUIT,
+    MODEL_MARIO_HALLOWEEN,
+    MODEL_MARIO_VANILLA,
+    MODEL_MARIO_AMY,
+    MODEL_MARIO_BLAZE,
+    MODEL_MARIO_MARINE,
+    MODEL_MARIO_TAILS,
+    MODEL_MARIO_CHARMY,
+    MODEL_MARIO_TIKAL,
+    MODEL_MARIO_COSMO,
+    MODEL_MARIO_EGGMAN,
+    MODEL_MARIO_MARIO,
+    MODEL_MARIO_BEAN,
+    MODEL_MARIO_KLONOA,
+    MODEL_MARIO_LUFFY,
+    MODEL_MARIO_ICHIBAN,
+    MODEL_MARIO_TRAVIS,
+    MODEL_MARIO_JACK,
+    MODEL_MARIO_AUSTIN,
+    MODEL_MARIO_DUDLEY,
+    MODEL_MARIO, // WIP ENGIE
+    MODEL_MARIO_GOKU,
+    MODEL_MARIO_PAN,
+    MODEL_MARIO_ANYA,
+    MODEL_MARIO_DENJI,
+    MODEL_MARIO, // WIP NEZUKO
+    MODEL_MARIO_MMX,
+    MODEL_MARIO_LAN,
+    MODEL_MARIO_VIRGIL,
+    MODEL_MARIO, // WIP MARIA
+    MODEL_MARIO_SORA,
+    MODEL_MARIO_YUGI, 
+    MODEL_MARIO_DAWN, 
+    MODEL_MARIO_SERENA, 
+    MODEL_MARIO, // WIP MARINA
+    MODEL_MARIO_MIKU, 
+    MODEL_MARIO_MAGE, 
+    MODEL_MARIO_WONDER, 
+    MODEL_MARIO, // WIP SENA
+    MODEL_MARIO_ROGER,
+    MODEL_MARIO_LATINA,
+    MODEL_MARIO_CREAMOCCHIA,
+    MODEL_MARIO_CHEF,
+    MODEL_MARIO_VAL,
+    MODEL_MARIO_KATE,
+    MODEL_MARIO_BAIT,
+    MODEL_MARIO_WIZ,
+    MODEL_MARIO_CAROLINE,
+    MODEL_MARIO_MACER,
+    MODEL_MARIO_POCKY,
+    MODEL_MARIO_SWEET,
+    MODEL_MARIO_KZ,
+    MODEL_MARIO_DOT,
+    MODEL_MARIO_DANI,
+    MODEL_MARIO_JOHNNY,
+    MODEL_MARIO_KITTEN,
+    MODEL_MARIO_LAYLA,
+    MODEL_MARIO_KATALINA
+
+};
+
+u16 Cream_Model_IDs_Fly[] =
+{
+    MODEL_MARIO_FLY,
+    MODEL_MARIO_RIDERS_FLY,
+    MODEL_MARIO_WINTER_FLY,
+    MODEL_MARIO_SPRING_FLY, 
+    MODEL_MARIO_UNICORN_FLY, 
+    MODEL_MARIO_YUKATA_FLY, 
+    MODEL_MARIO_SWIMSUIT_FLY, 
+    MODEL_MARIO_HALLOWEEN_FLY, 
+    MODEL_MARIO_VANILLA_FLY, 
+    MODEL_MARIO_AMY_FLY, 
+    MODEL_MARIO_BLAZE_FLY, 
+    MODEL_MARIO_MARINE_FLY, 
+    MODEL_MARIO_TAILS, 
+    MODEL_MARIO_CHARMY, 
+    MODEL_MARIO_TIKAL_FLY, 
+    MODEL_MARIO_COSMO_FLY, 
+    MODEL_MARIO_EGGMAN_FLY, 
+    MODEL_MARIO_MARIO, 
+    MODEL_MARIO_BEAN_FLY, 
+    MODEL_MARIO_KLONOA, 
+    MODEL_MARIO_LUFFY, 
+    MODEL_MARIO_ICHIBAN_FLY, 
+    MODEL_MARIO_TRAVIS_FLY, 
+    MODEL_MARIO_JACK_FLY, 
+    MODEL_MARIO_AUSTIN_FLY, 
+    MODEL_MARIO_DUDLEY_FLY, 
+    MODEL_MARIO_FLY,  // WIP ENGIE
+    MODEL_MARIO_GOKU_FLY, 
+    MODEL_MARIO_PAN_FLY, 
+    MODEL_MARIO_ANYA_FLY, 
+    MODEL_MARIO_DENJI_FLY, 
+    MODEL_MARIO_FLY,  // WIP NEZUKO
+    MODEL_MARIO_MMX, 
+    MODEL_MARIO_LAN_FLY, 
+    MODEL_MARIO_VIRGIL_FLY, 
+    MODEL_MARIO_FLY,  // WIP MARIA
+    MODEL_MARIO_SORA_FLY, 
+    MODEL_MARIO_YUGI_FLY,  
+    MODEL_MARIO_DAWN,  
+    MODEL_MARIO_SERENA,  
+    MODEL_MARIO_FLY,  // WIP MARINA
+    MODEL_MARIO_MIKU_FLY,  
+    MODEL_MARIO_MAGE_FLY,  
+    MODEL_MARIO_WONDER_FLY,  
+    MODEL_MARIO_FLY,  // WIP SENA
+    MODEL_MARIO_ROGER_FLY, 
+    MODEL_MARIO_LATINA_FLY, 
+    MODEL_MARIO_CREAMOCCHIA, 
+    MODEL_MARIO_CHEF_FLY, 
+    MODEL_MARIO_VAL, 
+    MODEL_MARIO_KATE_FLY, 
+    MODEL_MARIO_BAIT, 
+    MODEL_MARIO_WIZ_FLY, 
+    MODEL_MARIO_CAROLINE_FLY, 
+    MODEL_MARIO_MACER_FLY, 
+    MODEL_MARIO_POCKY_FLY, 
+    MODEL_MARIO_SWEET_FLY, 
+    MODEL_MARIO_KZ_FLY, 
+    MODEL_MARIO_DOT, 
+    MODEL_MARIO_DANI_FLY, 
+    MODEL_MARIO_JOHNNY_FLY, 
+    MODEL_MARIO_KITTEN, 
+    MODEL_MARIO_LAYLA, 
+    MODEL_MARIO_KATALINA
+};
+
 /**************************************************
  *                    ANIMATIONS                  *
  **************************************************/
@@ -1829,145 +1966,14 @@ s32 execute_mario_action(UNUSED struct Object *o) {
         level_trigger_warp(gMarioState, WARP_OP_CREDITS_START);
     } 
 
-    if (gMarioState->action != ACT_HOVERING) {
-    switch (gMarioState->currentCostume) {
-  case 0: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO];break;
-  case 1: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_RIDERS]; break;
-  case 2: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_WINTER]; break;
-  case 3: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SPRING]; break;
-  case 4: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_UNICORN]; break;
-  case 5: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_YUKATA]; break;
-  case 6: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SWIMSUIT]; break;
-  case 7: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_HALLOWEEN]; break;
-  case 8: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VANILLA]; break;
-  case 9: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_AMY]; break;
-  case 10: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BLAZE]; break;
-  case 11: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARINE]; break;
-  case 12: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TAILS]; break;
-  case 13: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CHARMY]; break;
-  case 14: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TIKAL]; break;
-  case 15: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_COSMO]; break;
-  case 16: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_EGGMAN]; break;
-  case 17: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO]; break;
-  case 18: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN]; break;
-  case 19: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KLONOA]; break;
-  case 20: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LUFFY]; break;
-  case 21: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ICHIBAN]; break;
-  case 22: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TRAVIS]; break;
-  case 23: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_JACK]; break;
-  case 24: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_AUSTIN]; break;
-  case 25: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DUDLEY]; break;
-  case 26: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO]; break; // WIP ENGIE
-  case 27: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_GOKU]; break;
-  case 28: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_PAN]; break;
-  case 29: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ANYA]; break;
-  case 30: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DENJI]; break; 
-  case 31: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO]; break; // WIP NEZUKO
-  case 32: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MMX]; break;
-  case 33: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LAN]; break;
-  case 34: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VIRGIL]; break; 
-  case 35: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO]; break; // WIP MARIA
-  case 36: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SORA]; break;
-  case 37: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_YUGI]; break; 
-  case 38: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DAWN]; break; 
-  case 39: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SERENA]; break; 
-  case 40: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO]; break; // WIP MARINA
-  case 41: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MIKU]; break; 
-  case 42: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MAGE]; break; 
-  case 43: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_WONDER]; break; 
-  case 44: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO]; break; // WIP SENA
-  case 45: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ROGER]; break;
-  case 46: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LATINA]; break;
-  case 47: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CREAMOCCHIA]; break;
-  case 48: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CHEF]; break;
-  case 49: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VAL]; break;
-  case 50: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KATE]; break;
-  case 51: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BAIT]; break;
-  case 52: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_WIZ]; break;
-  case 53: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CAROLINE]; break;
-  case 54: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MACER]; break;
-  case 55: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_POCKY]; break;
-  case 56: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SWEET]; break;
-  case 57: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KZ]; break;
-  case 58: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DOT]; break;
-  case 59: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DANI]; break;
-  case 60: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_JOHNNY]; break; 
-  case 61: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KITTEN]; break;
-  case 62: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LAYLA]; break;
-  case 63: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KATALINA]; break;
-
-        }
-}
-
-if (gMarioState->action == ACT_HOVERING) {
-  switch (gMarioState->currentCostume) {
-  case 0: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_FLY];break;
-  case 1: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_RIDERS_FLY]; break;
-  case 2: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_WINTER_FLY]; break;
-  case 3: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SPRING_FLY]; break;
-  case 4: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_UNICORN_FLY]; break;
-  case 5: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_YUKATA_FLY]; break;
-  case 6: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SWIMSUIT_FLY]; break;
-  case 7: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_HALLOWEEN_FLY]; break;
-  case 8: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VANILLA_FLY]; break;
-  case 9: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_AMY_FLY]; break;
-  case 10: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BLAZE_FLY]; break;
-  case 11: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARINE_FLY]; break;
-  case 12: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TAILS]; break;
-  case 13: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CHARMY]; break;
-  case 14: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TIKAL_FLY]; break;
-  case 15: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_COSMO_FLY]; break;
-  case 16: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_EGGMAN_FLY]; break;
-  case 17: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO]; break;
-  case 18: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN_FLY]; break;
-  case 19: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KLONOA]; break;
-  case 20: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LUFFY]; break;
-  case 21: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ICHIBAN_FLY]; break;
-  case 22: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TRAVIS_FLY]; break;
-  case 23: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_JACK_FLY]; break;
-  case 24: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_AUSTIN_FLY]; break;
-  case 25: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DUDLEY_FLY]; break;
-  case 26: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_FLY]; break; // WIP
-  case 27: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_GOKU_FLY]; break;
-  case 28: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_PAN_FLY]; break;
-  case 29: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ANYA_FLY]; break;
-  case 30: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DENJI_FLY]; break; 
-  case 31: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_FLY]; break; // WIP
-  case 32: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MMX]; break;
-  case 33: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LAN_FLY]; break;
-  case 34: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VIRGIL_FLY]; break;
-  case 35: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_FLY]; break; // WIP
-  case 36: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SORA_FLY]; break;
-  case 37: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_YUGI_FLY]; break;
-  case 38: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DAWN]; break; 
-  case 39: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SERENA]; break;
-  case 40: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_FLY]; break; // WIP
-  case 41: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MIKU_FLY]; break;
-  case 42: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MAGE]; break;
-  case 43: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_WONDER_FLY]; break; 
-  case 44: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_FLY]; break; // WIP
-  case 45: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ROGER_FLY]; break;
-  case 46: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LATINA_FLY]; break;
-  case 47: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CREAMOCCHIA]; break;
-  case 48: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CHEF_FLY]; break;
-  case 49: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_VAL]; break;
-  case 50: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KATE_FLY]; break;
-  case 51: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BAIT]; break;
-  case 52: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_WIZ_FLY]; break;
-  case 53: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_CAROLINE_FLY]; break;
-  case 54: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MACER_FLY]; break;
-  case 55: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_POCKY_FLY]; break;
-  case 56: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_SWEET_FLY]; break;
-  case 57: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KZ_FLY]; break;
-  case 58: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DOT]; break;
-  case 59: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_DANI_FLY]; break;
-  case 60: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_JOHNNY_FLY]; break; 
-  case 61: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KITTEN]; break;
-  case 62: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LAYLA]; break;
-  case 63: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KATALINA]; break;
-
-        }
-}
+    if (gMarioState->action != ACT_HOVERING) 
+    {
+        gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[Cream_Model_IDs[gMarioState->currentCostume]];
+    }
+    else
+    {
+        gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[Cream_Model_IDs_Fly[gMarioState->currentCostume]];
+    }
 
 #ifdef CHEATS_ACTIONS
     cheats_mario_action(gMarioState);
