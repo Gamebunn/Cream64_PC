@@ -882,15 +882,15 @@ Cream Outfits.\n\
 \n\
 \n\
 \n\
-The Cream Costumes were something\n\
+The Cream costumes were something\n\
 I just did on a whim. My specialty \n\
 is doing models and I wanted to\n\
 give the player some extra outfits\n\
 to go through Cream 64.\n\
 Initially started as a set of 10,\n\
-now here we are up to a grand total\n\
-of 64 outfits. All the outfits are\n\
-categorized as well:\n\
+now here we are up to a grand\n\
+total of 64 outfits. All the outfits\n\
+are categorized as well:\n\
 \n\
 1-8 are official outfits seen in\n\
 either the games, comics, Sonic X\n\
@@ -1678,7 +1678,7 @@ Prepare yourself!"))
 
 //wf, big whomp after
 DEFINE_DIALOG(DIALOG_115, 1, 5, 95, 200, _("\
-Oh no...I lost. badly.\n\
+Nooooooo...I lost. badly.\n\
 Ooooooh, the doctor's not\n\
 gonna like this. Star Ring\n\
 please help m-"))
@@ -2713,6 +2713,12 @@ Funkys0da\n\
 \n\
 (PC Only) Pocky and Sorbet\n\
 DDR Poster by: FudgerNutter\n\
+The Tikal (The Echidna) &\n\
+Chaos Hour art by:\n\
+GadgetTR\n\
+Vend-a-Tails from 'Uncle\n\
+Knuckles' by:\n\
+Doobus Goobus\n\
 Parent's Day Out poster\n\
 in Karaoke Bar by:\n\
 FudgerNutter\n\

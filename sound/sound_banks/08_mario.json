@@ -173,6 +173,12 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "1D_hellothere"
+        },
+        "inst30": {
+            "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "1E_senayippie"
         }
     },
     "instrument_list": [
@@ -205,6 +211,7 @@
         "inst26",
         "inst27",
         "inst28",
-        "inst29"
+        "inst29",
+        "inst30"
     ]
 }

@@ -1652,7 +1652,12 @@ u32 interact_cap(struct MarioState *m, UNUSED u32 interactType, struct Object *o
         m->flags |= capFlag;
 
         switch (capFlag) {
-            case MARIO_VANISH_CAP: capTime =  600; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_VANISH  ); break;
+            case MARIO_VANISH_CAP: if(gCurrLevelNum == LEVEL_VCUTM)  {
+                    capTime = 600; break;
+                }
+                else {
+                    capTime = 600; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_VANISH  ); break;
+                }
             case MARIO_METAL_CAP: if(gCurrLevelNum == LEVEL_BITDW || gCurrLevelNum == LEVEL_COTMC)  {
                     capTime = 600; break;
                 }

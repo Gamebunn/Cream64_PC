@@ -124,7 +124,11 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_MMX,               mario_mmx_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_LATINA,            mario_latina_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_DOT,               mario_dot_geo),
-
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_NEZUKO,            mario_nezuko_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_SENA,              mario_sena_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_MARIA,             mario_maria_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_ENGIE,             mario_engie_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_ROLL,              mario_roll_geo),
     
 
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_FLY,               mario_fly_geo),
@@ -171,6 +175,10 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_JOHNNY_FLY,        mario_johnny_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SWEET_FLY,         mario_sweet_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_LATINA_FLY,        mario_latina_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_NEZUKO_FLY,        mario_nezuko_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_SENA_FLY,          mario_sena_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_MARIA_FLY,         mario_maria_fly_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_ROLL_FLY,          mario_roll_fly_geo),
 
 
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW,           cheese_follow_geo),
@@ -231,7 +239,12 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_MMX,       cheese_follow_mmx_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_LATINA,    cheese_follow_latina_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_DOT,       cheese_follow_dot_geo),
-
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_NEZUKO,    cheese_follow_nezuko_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SENA,      cheese_follow_sena_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_MARIA,     cheese_follow_maria_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ENGIE,     cheese_follow_engie_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ROLL,      cheese_follow_roll_geo),
+    
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SMOKE,                   smoke_geo),

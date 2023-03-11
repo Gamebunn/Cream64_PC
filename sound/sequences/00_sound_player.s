@@ -2067,6 +2067,7 @@ sound_ref .sound_mario_wah2
   sound_ref .sound_peach_mario2
   sound_ref .sound_mario_buh_bye
   sound_ref .sound_mario_ground_pound_sub
+  sound_ref .sound_mario_here_we_go_sena
 #endif
 
 .sound_mario_jump_hoo:
@@ -2526,7 +2527,7 @@ layer_jump .layer_C4E
   chan_end
 
   .layer_EA0:
-  layer_note1 39, 0x55, 110
+  layer_note1 39, 0x55, 0
   layer_end
 
   .sound_mario_hello:
@@ -2546,7 +2547,7 @@ layer_jump .layer_C4E
   chan_end
 
   .layer_EB8:
-  layer_note1 39, 0x12c, 127
+  layer_note1 39, 0x12c, 0
   layer_end
 
   .sound_mario_twirl_bounce:
@@ -2713,6 +2714,16 @@ chan_setlayer 0, .layer_F8B
 chan_end
 
 .layer_F8B:
+layer_note1 39, 0xc8, 110
+layer_end
+
+.sound_mario_here_we_go_sena:
+chan_setbank 8
+chan_setinstr 30
+chan_setlayer 0, .layer_F8C
+chan_end
+
+.layer_F8C:
 layer_note1 39, 0xc8, 110
 layer_end
 

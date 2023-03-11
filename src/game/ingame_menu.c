@@ -2400,11 +2400,11 @@ void render_pause_costume_options(void)
 {
         // Costume Code 1
 
-if (gPlayer1Controller->buttonPressed & R_CBUTTONS) {
+if (gPlayer1Controller->buttonPressed & R_JPAD) {
     gMarioState->currentCostume += 1;
     save_file_set_outfit();
 }
-if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
+if (gPlayer1Controller->buttonPressed & L_JPAD) {
     gMarioState->currentCostume -= 1;
     save_file_set_outfit();
 }

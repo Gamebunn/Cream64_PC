@@ -701,7 +701,11 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 break;
 
             case 42:
-                play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
+                if(gMarioState->currentCostume == 44) {
+                    play_sound(SOUND_MARIO_HERE_WE_GO_SENA, m->marioObj->header.gfx.cameraToObject);
+                } else {
+                    play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
+                }
                 m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
                 break;
 
