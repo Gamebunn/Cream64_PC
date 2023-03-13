@@ -149,6 +149,11 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "eggman3_liveandlearn_0"
+        },
+        "inst28": { // 1C
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "eggman3_liveandlearn_end_0"
         }
     },
     "instrument_list": [
@@ -179,6 +184,7 @@
         "inst24",
         "inst25",
         "inst26",
-        "inst27"
+        "inst27", 
+        "inst28"
     ]
 }

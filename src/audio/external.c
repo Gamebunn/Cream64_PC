@@ -121,6 +121,7 @@ enum DialogSpeakers {
     KITEN,
     HCHAO,
     LAYL2,
+    KATTY,
 
 };
 
@@ -142,14 +143,14 @@ u8 sDialogSpeaker[] = {
     /* 5*/ _,     _,     _,     _,     _,     CHAO2, CHAO2, TUXIE, TUXIE, TUXIE,
     /* 6*/ _,     _,     _,     _,     _,     _,     _,     BOWS2, _,     _,
     /* 7*/ _,     _,     _,     _,     _,     _,     SILVR, _,     _,     UKIKI,
-    /* 8*/ UKIKI, _,     _,     _,     _,     BOO,   _,     _,     _,     _,
+    /* 8*/ UKIKI, _,     _,     KATTY, _,     BOO,   _,     _,     _,     _,
     /* 9*/ BOWS2, _,     BOWS2, BOWS3, _,     _,     _,     _,     BOO,   BOO,
     /*10*/ UKIKI, UKIKI, _,     _,     _,     LAYLA, LAYLA, BOO,   BOOM,  _,
     /*11*/ _,     _,     _,     _,     _,     GRUNT, KBOMB, WIZE1, WIZE2, _,
     /*12*/ _,     _,     _,     RTOAD, _,     _,     _,     _,     KBOMB, _,
     /*13*/ _,     _,     CHAO2, CHAO,  CHAO,  CHAO,  CHAO,  CHAO,  _,     _,
     /*14*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
-    /*15*/ WIGLR, WIGLR, WIGLR, _,     _,     SILVR, _,     _,     _,     _,
+    /*15*/ WIGLR, WIGLR, WIGLR, _,     _,     SILVR, KATTY, _,     _,     _,
     /*16*/ _,     YOSHI, _,     _,     CHAO2, _,     _,     _,     WIGLR, _,
     /*17*/ HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO,
     /*18*/ HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO,
@@ -209,6 +210,7 @@ s32 sDialogSpeakerVoice[] = {
     SOUND_OBJ_KITTEN,
     SOUND_OBJ_HEROCHAO,
     SOUND_OBJ_LAYLA2,
+    SOUND_OBJ_KATALINA,
 
 #if defined(VERSION_JP) || defined(VERSION_US)
     NO_SOUND,
@@ -428,6 +430,25 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127,  // SEQ_DDRTRACK3
     127,  // NEW_TOTWC
     127,  // NEW_COTMC
+    127,  // EGGMAN3_FINALE_END
+    127,  // COLLECT_STAR_TF2
+    127,  // COLLECT_STAR_CV
+    127,  // COLLECT_STAR_ROLL
+    80,  // COLLECT_STAR_MARIO
+    127,  // COLLECT_STAR_DAWN
+    127,  // COLLECT_STAR_SERENA
+    127,  // COLLECT_STAR_DUDLEY
+    127,  // COLLECT_STAR_KATALINA
+    127,  // COLLECT_STAR_SORA
+    127,  // COLLECT_STAR_LAYLA
+    127,  // COLLECT_STAR_SWEET
+    127,  // COLLECT_STAR_MMX
+    127,  // COLLECT_STAR_DANI
+    127,  // COLLECT_STAR_JHW
+    127,  // COLLECT_STAR_CAROLINE
+    127,  // COLLECT_STAR_BAIT
+    127,  // COLLECT_STAR_CHEF
+    127,  // COLLECT_STAR_KITTEN
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,

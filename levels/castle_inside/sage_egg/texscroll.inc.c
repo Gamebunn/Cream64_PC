@@ -22,7 +22,7 @@ void scroll_sage_egg_Root_mesh_layer_1_vtx_0() {
 
 void scroll_sage_egg_Head_mesh_layer_1_vtx_2() {
 	int i = 0;
-	int count = 112;
+	int count = 119;
 	int width = 32 * 0x20;
 	int height = 32 * 0x20;
 

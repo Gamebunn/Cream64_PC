@@ -191,6 +191,21 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "20_layla2"
+        },
+        "inst33": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "21_kitten2"
+        },
+        "inst34": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "22_katalina"
+        },
+        "inst35": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "23_katalina2"
         }
     },
     "instrument_list": [
@@ -226,7 +241,10 @@
         "inst29",
         "inst30",
         "inst31",
-        "inst32"
+        "inst32",
+        "inst33",
+        "inst34",
+        "inst35"
 
     ]
 }

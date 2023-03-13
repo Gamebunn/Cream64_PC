@@ -2068,6 +2068,9 @@ sound_ref .sound_mario_wah2
   sound_ref .sound_mario_buh_bye
   sound_ref .sound_mario_ground_pound_sub
   sound_ref .sound_mario_here_we_go_sena
+  sound_ref .sound_mario_here_we_go_layla
+  sound_ref .sound_mario_here_we_go_kitten
+  sound_ref .sound_mario_here_we_go_katalina
 #endif
 
 .sound_mario_jump_hoo:
@@ -2724,6 +2727,36 @@ chan_setlayer 0, .layer_F8C
 chan_end
 
 .layer_F8C:
+layer_note1 39, 0xc8, 110
+layer_end
+
+.sound_mario_here_we_go_layla:
+chan_setbank 9
+chan_setinstr 28
+chan_setlayer 0, .layer_F8D
+chan_end
+
+.layer_F8D:
+layer_note1 39, 0xc8, 110
+layer_end
+
+.sound_mario_here_we_go_kitten:
+chan_setbank 9
+chan_setinstr 33
+chan_setlayer 0, .layer_F8E
+chan_end
+
+.layer_F8E:
+layer_note1 39, 0xc8, 110
+layer_end
+
+.sound_mario_here_we_go_katalina:
+chan_setbank 9
+chan_setinstr 35
+chan_setlayer 0, .layer_F8F
+chan_end
+
+.layer_F8F:
 layer_note1 39, 0xc8, 110
 layer_end
 
@@ -6914,6 +6947,8 @@ sound_ref .sound_kitten
 sound_ref .sound_herochao
 sound_ref .sound_layla2
 sound_ref .sound_kz_scream
+sound_ref .sound_katalina
+
 
 .sound_air_bowser_spit_fire:
 chan_setbank 7
@@ -7363,6 +7398,16 @@ chan_end
 
 .layer_2B27:
 layer_note1 39, 0xaf, 127
+layer_end
+
+.sound_katalina:
+chan_setbank 9
+chan_setinstr 34
+chan_setlayer 0, .layer_2B28
+chan_end
+
+.layer_2B28:
+layer_note1 39, 0xFF, 127
 layer_end
 
 .channel7_table:

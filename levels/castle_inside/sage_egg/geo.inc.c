@@ -1,19 +1,5 @@
 #include "src/game/envfx_snow.h"
 
-const GeoLayout sage_egg_Head_Switch_opt1[] = {
-	GEO_NODE_START(),
-	GEO_OPEN_NODE(),
-		GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 166, 0, sage_egg_Head_mesh_layer_1_mat_override_eyes_halfopen_0),
-	GEO_CLOSE_NODE(),
-	GEO_RETURN(),
-};
-const GeoLayout sage_egg_Head_Switch_opt2[] = {
-	GEO_NODE_START(),
-	GEO_OPEN_NODE(),
-		GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 166, 0, sage_egg_Head_mesh_layer_1_mat_override_eyes_closed_1),
-	GEO_CLOSE_NODE(),
-	GEO_RETURN(),
-};
 const GeoLayout sage_egg_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
@@ -32,8 +18,6 @@ const GeoLayout sage_egg_geo[] = {
 							GEO_OPEN_NODE(),
 								GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 166, 0, sage_egg_Head_mesh_layer_1),
 							GEO_CLOSE_NODE(),
-							GEO_BRANCH(1, sage_egg_Head_Switch_opt1),
-							GEO_BRANCH(1, sage_egg_Head_Switch_opt2),
 						GEO_CLOSE_NODE(),
 						GEO_ANIMATED_PART(LAYER_OPAQUE, 51, 104, 0, sage_egg_lArm_001_mesh_layer_1),
 						GEO_OPEN_NODE(),

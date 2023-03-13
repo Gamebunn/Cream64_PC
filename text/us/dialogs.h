@@ -2274,7 +2274,7 @@ the painting.\n\
 Keep at it, Cream. You'll\n\
 find your mom in no time!"))
 
-//katalina, second time talk to
+//Katalina, second time talk to
 DEFINE_DIALOG(DIALOG_156, 1, 5, 30, 200, _("\
 I know you'll find Mama, \n\
 Lil' Sis!! Papa, me and \n\

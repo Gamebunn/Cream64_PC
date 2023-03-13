@@ -1195,6 +1195,9 @@ void bowser_fly_back_dead(void) {
     o->oMoveAngleYaw = o->oBowserAngleToCenter + 0x8000;
     o->oBowserTimer = 0;
     o->oSubAction++; // BOWSER_SUB_ACT_DEAD_BOUNCE
+    if (gCurrLevelNum == LEVEL_BOWSER_3 ) {
+        play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_LEVEL_EGGMAN3FINALE_END), 0);
+    }
 }
 
 /**

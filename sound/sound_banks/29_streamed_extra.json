@@ -1,0 +1,119 @@
+{
+    "date": "1996-03-19",
+    "sample_bank": "streamed_audio_extra",
+    "envelopes": {
+        "envelope0": [
+            [1, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_tf2_0"
+        },
+        "inst1": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_cv_0"
+        },
+        "inst2": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_roll_0"
+        },
+        "inst3": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_dawn_0"
+        },
+        "inst4": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_serena_0"
+        },
+        "inst5": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_dudley_0"
+        },
+        "inst6": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_katalina_0"
+        },
+        "inst7": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_sora_0"
+        },
+        "inst8": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_layla_0"
+        },
+        "inst9": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_sweet_0"
+        },
+        "inst10": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_mmx_0"
+        },
+        "inst11": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_dani_0"
+        },
+        "inst12": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_jhw_0"
+        },
+        "inst13": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_caroline_0"
+        },
+        "inst14": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_bait_0"
+        },
+        "inst15": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_chef_0"
+        },
+        "inst16": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_kitten_0"
+        }
+        
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4",
+        "inst5",
+        "inst6",
+        "inst7",
+        "inst8",
+        "inst9",
+        "inst10",
+        "inst11",
+        "inst12",
+        "inst13",
+        "inst14",
+        "inst15",
+        "inst16"
+    ]
+}
