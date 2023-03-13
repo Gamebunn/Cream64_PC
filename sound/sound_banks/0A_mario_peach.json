@@ -133,6 +133,12 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "16_peach_mario2"
+        },
+        "inst23": {
+            "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "17_mario_thank_you2"
         }
     },
     "instrument_list": [
@@ -159,6 +165,7 @@
         "inst19",
         "inst20",
         "inst21",
-        "inst22"
+        "inst22",
+        "inst23"
     ]
 }

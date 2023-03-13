@@ -7483,7 +7483,7 @@ sound_ref .sound_menu_mario_castle_warp2
   sound_ref .sound_menu_collect_secret
   sound_ref .sound_menu_collect_secret
   sound_ref .sound_menu_cheatcode
-  sound_ref .sound_menu_let_go_mario_face
+  sound_ref .sound_menu_thank_you_playing_my_game2
   sound_ref .sound_menu_hand_appear
   sound_ref .sound_menu_hand_disappear
   sound_ref .chan_2D18
@@ -7933,6 +7933,22 @@ chan_end
 
 .layer_2EF3:
 layer_note1 39, 0x7F, 127
+layer_end
+
+.sound_menu_thank_you_playing_my_game2:
+chan_setbank 10
+chan_setinstr 24
+chan_setlayer 0, .layer_2EF4
+chan_setlayer 1, .layer_2EF5
+chan_end
+
+.layer_2EF4:
+layer_note1 39, 0x12C, 127
+layer_end
+
+.layer_2EF5:
+layer_delay 0x9
+layer_note1 39, 0x12C, 45
 layer_end
 
 .sound_menu_bowser_laugh:
