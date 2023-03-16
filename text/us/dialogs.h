@@ -1851,10 +1851,10 @@ But he looks like he's in \n\
 a deep meditative state!\n\
 Best not to disturb him.\n\
 \n\
-Nobody tells this naive\n\
-little bunny that he's just\n\
-snoozing on the job. Must\n\
-be exhausted, the poor guy.-"))
+\n\
+\n\
+\n\
+....wait, he is snoring??-"))
 
 // Charmy
 DEFINE_DIALOG(DIALOG_126, 1, 5, 30, 200, _("\
@@ -1912,14 +1912,14 @@ An abandoned mine sits\n\
 undisturbed, the noise of\n\
 the waterfall filling the\n\
 air.\n\
-Shame someone had to disturb\n\
-it but a Star Ring somehow\n\
-ended up here alongside\n\
-the Metal Locket Switch.\n\
-Oh well, least you can take\n\
-in this amazing beat. Be\n\
-careful of the waterfall\n\
-down below!"))
+The Metal Locket Switch\n\
+can't be too far off from\n\
+here. Never hurts to go\n\
+spelunkin'!\n\
+Just watch out for the\n\
+currents below and don't\n\
+get sucked up into the\n\
+waterfall!"))
 
 DEFINE_DIALOG(DIALOG_131, 1, 5, 30, 200, _("\
 A lone castle sits ontop\n\
