@@ -897,12 +897,12 @@ either the games, comics, Sonic X\n\
 or in official art from Sonic Team\n\
 and Sonic Channel.\n\
 \n\
-9-17 are outfits based on various\n\
+9-18 are outfits based on various\n\
 Sonic characters, if it wasn't\n\
 obvious enough. Originally just \n\
 picking who was in the hack and\n\
 then ended up adding a bit more.\n\
-18-46 are personal picks either by\n\
+19-46 are personal picks either by\n\
 how fitting, suggestions from\n\
 others, wanting to rep a series I \n\
 like or just finding it amusing.\n\
@@ -1858,7 +1858,7 @@ be exhausted, the poor guy.-"))
 
 // Charmy
 DEFINE_DIALOG(DIALOG_126, 1, 5, 30, 200, _("\
-Hey hey! No idea why Vector\n\
+Wooow! I forgot why Vector\n\
 sent me here but can you \n\
 believe this place?? A broken \n\
 down castle on top of a volcano? \n\
@@ -3026,8 +3026,8 @@ Stage: \n\
 -Mario & Sonic London 2012-\n\
 Koopa Road\n\
 Fight:\n\
--Sonic Mania-\n\
-Final Boss ~ Ruby Illusions\n\
+-Sonic Generations (3DS)-\n\
+Vs: Big Arms\n\
 \n\
 (Well, you made it to the\n\
 end. It's been nice helping\n\

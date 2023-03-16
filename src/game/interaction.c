@@ -843,7 +843,11 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
             fadeout_level_music(126);
         }
 
-        play_sound(SOUND_MENU_STAR_SOUND, m->marioObj->header.gfx.cameraToObject);
+                    if(gMarioState->currentCostume == 24) {
+                        play_sound(SOUND_MENU_STAR_SOUND_AUSTIN, m->marioObj->header.gfx.cameraToObject);
+                    } else {
+                        play_sound(SOUND_MENU_STAR_SOUND, m->marioObj->header.gfx.cameraToObject);
+                    }
 #ifndef VERSION_JP
         update_mario_sound_and_camera(m);
 #endif

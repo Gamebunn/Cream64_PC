@@ -154,6 +154,11 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "eggman3_liveandlearn_end_0"
+        },
+        "inst29": { // 1D
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "castleinside_apotos_0"
         }
     },
     "instrument_list": [
@@ -185,6 +190,7 @@
         "inst25",
         "inst26",
         "inst27", 
-        "inst28"
+        "inst28",
+        "inst29"
     ]
 }

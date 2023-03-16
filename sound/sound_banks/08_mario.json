@@ -179,6 +179,12 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "1E_senayippie"
+        },
+        "inst31": {
+            "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "1F_wahoo"
         }
     },
     "instrument_list": [
@@ -212,6 +218,7 @@
         "inst27",
         "inst28",
         "inst29",
-        "inst30"
+        "inst30",
+        "inst31"
     ]
 }

@@ -94,6 +94,91 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "starget_kitten_0"
+        },
+        "inst17": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_val_0"
+        },
+        "inst18": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_latina_0"
+        },
+        "inst19": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_macer_0"
+        },
+        "inst20": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_wonder_0"
+        },
+        "inst21": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_lan_0"
+        },
+        "inst22": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_kz_0"
+        },
+        "inst23": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_creamocchia_0"
+        },
+        "inst24": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_jack_0"
+        },
+        "inst25": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_vergil_0"
+        },
+        "inst26": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_pocky_0"
+        },
+        "inst27": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_mage_0"
+        },
+        "inst28": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_mage_0"
+        },
+        "inst29": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_dot_0"
+        },
+        "inst30": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_travis_0"
+        },
+        "inst31": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_klonoa_0"
+        },
+        "inst32": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_austin_0"
+        },
+        "inst33": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_sena_0"
         }
         
     },
@@ -114,6 +199,23 @@
         "inst13",
         "inst14",
         "inst15",
-        "inst16"
+        "inst16",
+        "inst17",
+        "inst18",
+        "inst19",
+        "inst20",
+        "inst21",
+        "inst22",
+        "inst23",
+        "inst24",
+        "inst25",
+        "inst26",
+        "inst27",
+        "inst28",
+        "inst29",
+        "inst30",
+        "inst31",
+        "inst32",
+        "inst33"
     ]
 }

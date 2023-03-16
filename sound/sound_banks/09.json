@@ -206,6 +206,11 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "23_katalina2"
+        },
+        "inst36": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "24_charmy"
         }
     },
     "instrument_list": [
@@ -244,7 +249,8 @@
         "inst32",
         "inst33",
         "inst34",
-        "inst35"
+        "inst35",
+        "inst36"
 
     ]
 }

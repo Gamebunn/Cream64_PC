@@ -703,9 +703,9 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_NTM_STARGET), 0);
                     } else if(gMarioState->currentCostume == 26) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TF2), 0);
-                    } else if(gMarioState->currentCostume == 36 || gMarioState->currentCostume == 50) {
+                    } else if(gMarioState->currentCostume == 36) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);
-                    } else if(gMarioState->currentCostume == 17) {
+                    } else if(gMarioState->currentCostume == 18) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MARIO), 0);
                     } else if(gMarioState->currentCostume == 32) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ROLL), 0);
@@ -717,17 +717,17 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DUDLEY), 0);
                     } else if(gMarioState->currentCostume == 63) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KATALINA), 0);
-                    } else if(gMarioState->currentCostume == 37 || gMarioState->currentCostume == 57) {
+                    } else if(gMarioState->currentCostume == 37) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SORA), 0);
                     } else if(gMarioState->currentCostume == 62) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAYLA), 0);
                     } else if(gMarioState->currentCostume == 56 || gMarioState->currentCostume == 21) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SWEET), 0);
-                    } else if(gMarioState->currentCostume == 33 || gMarioState->currentCostume == 58) {
+                    } else if(gMarioState->currentCostume == 33) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MMX), 0);
                     } else if(gMarioState->currentCostume == 59) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DANI), 0);
-                    } else if(gMarioState->currentCostume == 60) {
+                    } else if(gMarioState->currentCostume == 60 || gMarioState->currentCostume == 27 || gMarioState->currentCostume == 28) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JHW), 0);
                     } else if(gMarioState->currentCostume == 53) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CAROLINE), 0);
@@ -737,6 +737,40 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHEF), 0);
                     } else if(gMarioState->currentCostume == 61 || gMarioState->currentCostume == 12) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KITTEN), 0);
+                    } else if(gMarioState->currentCostume == 49) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VAL), 0);
+                    } else if(gMarioState->currentCostume == 46) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LATINA), 0);
+                    } else if(gMarioState->currentCostume == 54) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MACER), 0);
+                    } else if(gMarioState->currentCostume == 43) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_WONDER), 0);
+                    } else if(gMarioState->currentCostume == 34) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAN), 0);
+                    } else if(gMarioState->currentCostume == 57) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KZ), 0);
+                    } else if(gMarioState->currentCostume == 47) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CREAMOCCHIA), 0);
+                    } else if(gMarioState->currentCostume == 23) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JACK), 0);
+                    } else if(gMarioState->currentCostume == 35) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VERGIL), 0);
+                    } else if(gMarioState->currentCostume == 55) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_POCKY), 0);
+                    } else if(gMarioState->currentCostume == 42) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);
+                    } else if(gMarioState->currentCostume == 50) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KATE), 0);
+                    } else if(gMarioState->currentCostume == 58) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DOT), 0);
+                    } else if(gMarioState->currentCostume == 22) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TRAVIS), 0);
+                    } else if(gMarioState->currentCostume == 19) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KLONOA), 0);
+                    } else if(gMarioState->currentCostume == 24) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AUSTIN), 0);
+                    } else if(gMarioState->currentCostume == 44) {
+                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SENA), 0);
                     } else {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_STAR), 0);
                     }
@@ -753,6 +787,8 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                     play_sound(SOUND_MARIO_HERE_WE_GO_KITTEN, m->marioObj->header.gfx.cameraToObject);
                 } else if(gMarioState->currentCostume == 63) {
                     play_sound(SOUND_MARIO_HERE_WE_GO_KATALINA, m->marioObj->header.gfx.cameraToObject);
+                } else if(gMarioState->currentCostume == 19) {
+                    play_sound(SOUND_MARIO_HERE_WE_GO_KLONOA, m->marioObj->header.gfx.cameraToObject);
                 } else {
                     play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
                 }

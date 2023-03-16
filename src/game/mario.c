@@ -1848,8 +1848,8 @@ s32 execute_mario_action(UNUSED struct Object *o) {
   case 14: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TIKAL]; break;
   case 15: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_COSMO]; break;
   case 16: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_EGGMAN]; break;
-  case 17: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO]; break;
-  case 18: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN]; break;
+  case 17: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN]; break;
+  case 18: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO]; break;
   case 19: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KLONOA]; break;
   case 20: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LUFFY]; break;
   case 21: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ICHIBAN]; break;
@@ -1918,8 +1918,8 @@ if (gMarioState->action == ACT_HOVERING) {
   case 14: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TIKAL_FLY]; break;
   case 15: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_COSMO_FLY]; break;
   case 16: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_EGGMAN_FLY]; break;
-  case 17: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO]; break;
-  case 18: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN_FLY]; break;
+  case 17: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN]; break;
+  case 18: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO]; break;
   case 19: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_KLONOA]; break;
   case 20: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_LUFFY]; break;
   case 21: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_ICHIBAN_FLY]; break;

@@ -144,6 +144,11 @@
             "release_rate": 152,
             "envelope": "envelope10",
             "sound": "0D"
+        },
+        "inst14": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "1D_austin"
         }
     },
     "instrument_list": [
@@ -162,6 +167,7 @@
         null,
         "inst11",
         "inst12",
-        "inst13"
+        "inst13",
+        "inst14"
     ]
 }

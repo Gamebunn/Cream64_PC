@@ -2071,6 +2071,7 @@ sound_ref .sound_mario_wah2
   sound_ref .sound_mario_here_we_go_layla
   sound_ref .sound_mario_here_we_go_kitten
   sound_ref .sound_mario_here_we_go_katalina
+  sound_ref .sound_mario_here_we_go_klonoa
 #endif
 
 .sound_mario_jump_hoo:
@@ -2757,6 +2758,16 @@ chan_setlayer 0, .layer_F8F
 chan_end
 
 .layer_F8F:
+layer_note1 39, 0xc8, 110
+layer_end
+
+.sound_mario_here_we_go_klonoa:
+chan_setbank 8
+chan_setinstr 31
+chan_setlayer 0, .layer_F90
+chan_end
+
+.layer_F90:
 layer_note1 39, 0xc8, 110
 layer_end
 
@@ -6287,8 +6298,8 @@ layer_note1 48, 0x6, 127
 layer_end
 
 .sound_obj_eel:
-chan_setbank 6
-chan_setinstr 2
+chan_setbank 9
+chan_setinstr 6
 chan_setval 25
 chan_call .set_reverb
 chan_setlayer 0, .layer_2564
@@ -7484,7 +7495,7 @@ sound_ref .sound_menu_mario_castle_warp2
   sound_ref .sound_menu_collect_secret
   sound_ref .sound_menu_cheatcode
   sound_ref .sound_menu_thank_you_playing_my_game2
-  sound_ref .sound_menu_hand_appear
+  sound_ref .sound_menu_star_sound_austin
   sound_ref .sound_menu_hand_disappear
   sound_ref .chan_2D18
   sound_ref .sound_menu_power_meter
@@ -7949,6 +7960,16 @@ layer_end
 .layer_2EF5:
 layer_delay 0x9
 layer_note1 39, 0x12C, 45
+layer_end
+
+.sound_menu_star_sound_austin:
+chan_setbank 4
+chan_setinstr 16
+chan_setlayer 0, .layer_1AEA
+chan_end
+
+.layer_1AEA:
+layer_note1 39, 0x7f, 115
 layer_end
 
 .sound_menu_bowser_laugh:
