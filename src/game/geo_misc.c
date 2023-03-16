@@ -229,3 +229,35 @@ Gfx *geo_exec_cake_end_screen(s32 callContext, struct GraphNode *node, UNUSED f3
 
     return displayList;
 }
+
+Gfx *geo_exec_cake_end_screen_part2(s32 callContext, struct GraphNode *node, UNUSED f32 mtx[4][4]) {
+    struct GraphNodeGenerated *generatedNode = (struct GraphNodeGenerated *) node;
+    Gfx *displayList = NULL;
+    Gfx *displayListHead = NULL;
+
+#ifdef TARGET_N3DS
+    if (callContext == GEO_CONTEXT_RENDER) {
+        displayList = alloc_display_list(5 * sizeof(*displayList));
+        displayListHead = displayList;
+
+        
+        generatedNode->fnNode.node.flags = (generatedNode->fnNode.node.flags & 0xFF) | 0x100;
+        gDPForceFlush(displayListHead++);
+        gDPSet2d(displayListHead++, 1);
+#else
+    if (callContext == GEO_CONTEXT_RENDER) {
+        displayList = alloc_display_list(3 * sizeof(*displayList));
+        displayListHead = displayList;
+
+        generatedNode->fnNode.node.flags = (generatedNode->fnNode.node.flags & 0xFF) | 0x100;
+#endif
+
+        gSPDisplayList(displayListHead++, dl_proj_mtx_fullscreen);
+
+        gSPDisplayList(displayListHead++, dl_cake_end_screen_part2);
+
+        gSPEndDisplayList(displayListHead);
+    }
+
+    return displayList;
+}
