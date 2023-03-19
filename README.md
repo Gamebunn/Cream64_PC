@@ -1,131 +1,42 @@
-## Super Cream 64 - The Grand Finale 
-A fork of [AloXado320/sm64ex-alo](https://github.com/AloXado320/sm64ex-alo), which is a fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex) with additional features. 
 
-Overall additions since the last build: 
+# Super Cream 64 - The Grand Finale
 
-* You can now finally fly! Originally made for Cream 64, introduced in Chao Bandstand and now it's finally here. Works like Sonic Heroes: get about 3-4 seconds of total flight time. When you're not moving, you lose no stamina.
-* Be whoever you wanna be! Bunch of alt outfits are available for you to choose from the very start. (PC Version only): Each alt has its own matching Cheese alt and a handful have a custom Vanilla alt.
-* Brand new levels replacing three existing levels: Secret Aquarium, Vanish Cap under the Moat and Wing Mario over the Rainbow. Each still have a single secret star and the vanish switch is still there too.
-* Music has been updated. Mostly the same but with some new tracks scattered here and there. A bit more variety now with a few repeats. 
-* Gemerl is now actually beatable in the rematch. And even if you're struggling, you can always fly around on the other side.
-* Tails, Blaze and Marine have their own little side stories now alongside Amy. The number of encounters is now listed at the end of each of their dialog boxes.
-* And some smaller fixes
- 
- ## Building SC64
+A SM64 romhack starring Cream the Rabbit build on a fork of [AloXado320/sm64ex-alo](https://github.com/AloXado320/sm64ex-alo), which is a fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex) with additional features. 
+
+Overall additions:
+
+* The ability to fly! Originally made for Cream 64, introduced in Chao Bandstand and now it's finally back in its intended hack. Works like Sonic Heroes: get about 3-4 seconds of total flight time. When you're not moving, you lose no stamina.
+* Be whoever you wanna be! A grand total of 64 different outfits are available for you to choose from the very start. (PC Version only): Each alt has its own matching Cheese alt and a handful have a custom Vanilla alt. [A full list can be seen here.](https://i.imgur.com/13ezwpr.png)
+* Brand new levels replacing five existing levels: Secret Aquarium, Tower of the Wing Cap, Vanish Cap under the Moat, Cavern of the Metal Cap and Wing Mario over the Rainbow. Each still have a single secret star and the vanish switch is still there too. The Princess' Secret Slide remains the same but now has a visual makeover. 
+* Models and textures have been updated to fit the theme, ranging from enemies, the various toads in the castle, stars, etc. The few untouched are left that way on purpose.
+* Music has been updated. All but a few have been replaced with brand new tracks. (PC Version only) Half the costumes now come with a custom collect star jingle. 
+* General tweaks to the speed for the Koopa the Quick replacement. Rematch is now more doable than how it was in v4.x 
+* Amy, Tails, Blaze and Marine have their own little side stories. Completely optional and located through the game in the various levels. Keep an eye out!
+* And so much more. 
+
+## Building SC64 - The Hard Way
  
  Make sure to grab the latest version of MSYS2 from their website. Seems that initial bug has been fixed now and the latest version should be able to compile hacks now.
  
  If you haven't built with the normal sm64ex/sm64ex-alo builds, [look at those first for a proper tutorial and getting the proper dependencies for install](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows). Then once you got the hang of it, come back here. 
  
- 1) do ```git clone https://github.com/Gamebunn/sm64ex-alo.git``` to somewhere on your PC with MSYS2. Make sure it's a directory with full access. Then `cd sm64ex-alo` to get into the folder itself.
- 2) download the extra assets needed for the repo. https://drive.google.com/file/d/1-TAw3tel0Xaj6LZF4KMWoa5NqFSIYsiN/view?usp=sharing
- 3) find your own US copy of sm64, rename it to baserom.us.z64 and put it in the root of your clone.
- 4) dump the contents of the assets folder into the root of where you cloned the git
- 5) go ahead and compile with ```make```. If you got a decent CPU, you can increase the compile speed with ```make -j4```.
+ 1) Do `git clone https://github.com/Gamebunn/Cream64_PC.git` to somewhere on your PC with MSYS2. Make sure it's a directory with full access. Then `cd Cream64_PC` to get into the folder itself.
+ 2) Download the extra assets needed for the repo. Will update with the latest version when ready. 
+ 3) Find your own US copy of sm64, rename it to baserom.us.z64 and put it in the root of your clone.
+ 4) Dump the contents of the assets folder into the root of where you cloned the git
+ 5) Go ahead and compile with `make EXTENDED_BOUNDS=2`. If you got a decent CPU, you can increase the compile speed with `make EXTENDED_BOUNDS=2 -j4`.
+
  
- Helpful build additions:
+ ### Helpful optional build additions:
  
  HIGH_FPS_PC=1 - Game runs at 60 FPS
  
  NODRAWINGDISTANCE=1 - All objects are shown at all times
  
- Example: ```make NODRAWINGDISTANCE=1 -j4```
+ Example: ```make EXTENDED_BOUNDS=2 NODRAWINGDISTANCE=1 -j4```
 
-Currently the only build that works for this is just for PC. The others have not been tested and are not guaranteed to work. If you do wish to try, go right away. If you're also just looking for the N64 build, [it's available right here.](https://romhacking.com/hack/super-cream-64)
+ ## Building SC64 - The Easy Way
 
-## Known Bugs
+Super Cream 64 should now be avialable through sm64pcbuilder2. Currently not available, will update when it's live on the program. 
 
-* Certain stars show up transparent even when not collected (Visual bug): Aware but not sure what's going on. Still functions properly otherwise. 
-* Going to the Displays option crashes the game (SM64EX conflict): Since sm64ex-alo removed a setting in display (3 point filter for textures), the game doesn't know what to do and crashes. The current fix is to just delete your `sm64config.txt` file in `Appdata/Roaming/sm64ex` and let it generate a new one. 
-
-## Building
- ### Clone the repository:
-
- ```sh
- git clone https://github.com/AloXado320/sm64ex-alo
- cd sm64ex-alo
- ```
- 
- **Note:** On Unix systems you may need to do this before doing any changes:
- 
- ```sh
- git config core.fileMode false
- chmod -R 777 .
- ```
- 
- ### Copy baserom(s) for asset extraction:
- 
- For each version (jp/us/eu/sh) for which you want to build an executable, put an existing ROM at `./baserom.<VERSION>.z64` for asset extraction.
- 
- By default it builds the US version.
-
-<details>
-  <summary>To build for N64, click here.</summary>
- 
-  **Note:** Only tested in WSL, works on (Debian / Ubuntu) as well, other distros untested.
-
-  #### Install build dependencies:
-  ```sh
-  sudo apt install -y binutils-mips-linux-gnu build-essential git libcapstone-dev pkgconf python3 gcc-mips-linux-gnu
-  ```
-
-  #### Build:
-  ```sh
-  # if you have more cores available, you can increase the -j parameter
-  make -j4 TARGET_N64=1 
-  ```
- 
-  #### ROM location:
-  ```sh
-  build/us/sm64.us.f3dzex.z64
-  ```
-
-</details>
-
-<details>
-  <summary>To build for Android, click here.</summary>
- 
-  **Note:** Only Termux build is supported.
- 
-  #### Install Termux
- 
-  Install the app from F-Droid [here](https://f-droid.org/en/packages/com.termux/)
- 
-  Make sure you use this version, as the Google Play version is outdated.
-
-  #### Install build dependencies
-  ```sh
-  pkg install git wget make python getconf zip apksigner clang binutils
-  ```
-
-  #### Copy in your baserom:
-
-  Do this using your default file manager (on AOSP, you can slide on the left and there will be a "Termux" option there), or using Termux.
-  ```sh
-  termux-setup-storage
-  cp /sdcard/path/to/your/baserom.z64 ./baserom.us.z64
-  ```
-
-  #### Install external dependencies
-  ```sh
-  cd platform/android/ && ./getkhrplatform.sh && ./getSDL.sh && cd ../..
-  ```
- 
-  #### Build
-  ```sh
-  # if you have more cores available, you can increase the -j parameter
-  # On Termux, TARGET_ANDROID=1 is defined automatically in Makefile
-  make -j4
-  ```
-
- #### Install apk:
-  ```sh
-  xdg-open build/us_android/sm64.us.f3dex2e.apk
-  ```
- 
-</details>
-
- * To build for sm64ex platforms, [click here](https://github.com/sm64pc/sm64ex/blob/nightly/README.md).
- * To build for Wii U, [click here](https://github.com/aboood40091/sm64-port/blob/master/README.md). (TARGET_WII_U=1)
- * To build for 3DS, [click here](https://github.com/sm64-port/sm64_3ds/blob/master/README.md). (TARGET_N3DS=1)
- * To build for Switch, [click here](https://github.com/fgsfdsfgs/sm64ex/blob/switch/README.md). (TARGET_SWITCH=1)
+If you're just looking for the N64 build, [it's available right here.](https://romhacking.com/hack/super-cream-64)
