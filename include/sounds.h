@@ -576,6 +576,7 @@
 #define SOUND_OBJ_LAYLA2                         /* 0x50050080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x26, 0x00, SOUND_DISCRETE)
 #define SOUND_OBJ_KZ_SCREAM                      /* 0x5147C080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x27, 0xC0, SOUND_NO_VOLUME_LOSS | SOUND_DISCRETE)
 #define SOUND_OBJ_KATALINA                       /* 0x50050080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x28, 0x00, SOUND_DISCRETE)
+#define SOUND_OBJ_CHARMY                         /* 0x50050080 */ SOUND_ARG_LOAD(SOUND_BANK_AIR,      0x29, 0x00, SOUND_DISCRETE)
 
 
 /* Menu Sound Effects */

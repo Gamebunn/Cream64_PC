@@ -6959,6 +6959,7 @@ sound_ref .sound_herochao
 sound_ref .sound_layla2
 sound_ref .sound_kz_scream
 sound_ref .sound_katalina
+sound_ref .sound_charmy
 
 
 .sound_air_bowser_spit_fire:
@@ -7418,6 +7419,16 @@ chan_setlayer 0, .layer_2B28
 chan_end
 
 .layer_2B28:
+layer_note1 39, 0xFF, 127
+layer_end
+
+.sound_charmy:
+chan_setbank 9
+chan_setinstr 35
+chan_setlayer 0, .layer_2B29
+chan_end
+
+.layer_2B29:
 layer_note1 39, 0xFF, 127
 layer_end
 

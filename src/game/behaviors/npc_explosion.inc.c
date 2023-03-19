@@ -87,7 +87,7 @@ void bhv_tails_explode_loop(void)
         //printf("gDialogTextPos: %i \n",gDialogTextPos);
         //create_sound_spawner(SOUND_GENERAL2_BOBOMB_EXPLOSION);
 
-        if(cur_obj_update_dialog_with_cutscene(3, 1, CUTSCENE_DIALOG, AMY_03))
+        if(cur_obj_update_dialog_with_cutscene(3, 1, CUTSCENE_DIALOG, NTM_001))
             o->oSubAction++;
     }
 

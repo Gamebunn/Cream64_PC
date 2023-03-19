@@ -122,6 +122,7 @@ enum DialogSpeakers {
     HCHAO,
     LAYL2,
     KATTY,
+    CHARM,
 
 };
 
@@ -147,7 +148,7 @@ u8 sDialogSpeaker[] = {
     /* 9*/ BOWS2, _,     BOWS2, BOWS3, _,     _,     _,     _,     BOO,   BOO,
     /*10*/ UKIKI, UKIKI, _,     _,     _,     LAYLA, LAYLA, BOO,   BOOM,  _,
     /*11*/ _,     _,     _,     _,     _,     GRUNT, KBOMB, WIZE1, WIZE2, _,
-    /*12*/ _,     _,     _,     RTOAD, _,     _,     _,     _,     KBOMB, _,
+    /*12*/ _,     _,     _,     RTOAD, _,     _,     CHARM, _,     KBOMB, _,
     /*13*/ _,     _,     CHAO2, CHAO,  CHAO,  CHAO,  CHAO,  CHAO,  _,     _,
     /*14*/ _,     _,     _,     _,     _,     _,     _,     _,     _,     _,
     /*15*/ WIGLR, WIGLR, WIGLR, _,     _,     SILVR, KATTY, _,     _,     _,
@@ -211,6 +212,7 @@ s32 sDialogSpeakerVoice[] = {
     SOUND_OBJ_HEROCHAO,
     SOUND_OBJ_LAYLA2,
     SOUND_OBJ_KATALINA,
+    SOUND_OBJ_CHARMY,
 
 #if defined(VERSION_JP) || defined(VERSION_US)
     NO_SOUND,

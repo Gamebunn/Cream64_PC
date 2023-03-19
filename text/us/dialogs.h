@@ -2869,8 +2869,8 @@ Windmill Village 3\n\
 \n\
 \n\
 Castle Hub:\n\
--One Piece GBA-\n\
-Treasure Room\n\
+-Sonic Unleashed-\n\
+Apotos - Day\n\
 \n\
 \n\
 Boss Battle: \n\
