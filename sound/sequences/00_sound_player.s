@@ -7424,7 +7424,7 @@ layer_end
 
 .sound_charmy:
 chan_setbank 9
-chan_setinstr 35
+chan_setinstr 36
 chan_setlayer 0, .layer_2B29
 chan_end
 

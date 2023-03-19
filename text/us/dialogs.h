@@ -418,8 +418,8 @@ long jump, in which you press [B].\n\
 Also remember you can access\n\
 your alternate outfits while\n\
 in the pause menu. Simply use\n\
-the [C] left and right buttons \n\
-to change your outfit. \n\
+the left and right buttons on\n\
+the DPad to change your outfit. \n\
 \n\
 Remember, you can use the [C]\n\
 buttons to handle the camera,\n\
