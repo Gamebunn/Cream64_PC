@@ -2534,10 +2534,10 @@ And also...\n\
 Paps, Alonwoof, Sweet Sawft,\n\
 Funkys0da, Zack113, Blazy,\n\
 CuteyTCat, Johnny, Nullify,\n\
-Toad900, BlueStarGal, MSP169,\n\
+Toad900, BlueStarGal, MSPNova,\n\
 BerkStorm1, Brin,\n\
 Sketch, Lali, Poodle, Wiz,\n\
-Wawaluigi99, Rik, Simple\n\
+JinoDaPuppet, Rik, Simple\n\
 and much MUCH more holy crap.\n\
 Whoever I forgot, you know who\n\
 you are! Thaaaank yoooou.\n\
@@ -2723,8 +2723,8 @@ Parent's Day Out poster\n\
 in Karaoke Bar by:\n\
 FudgerNutter\n\
 \n\
-\n\
-\n\
+Kate the Wolf's collect star\n\
+theme composed by: Neath Myles\n\
 New Paintings by: InfiniteBrians,\n\
 SketchMeister, FlamingGaraco, \n\
 FudgerNutter, TheNovika, \n\
@@ -2782,7 +2782,7 @@ Sweet Sawft\n\
 Morgan the Cat by:\n\
 Simple\n\
 \n\
-KZ-NekoArc is just:\n\
+KZ-Neco Arc is just:\n\
 KZXcellent\n\
 \n\
 Hocus the Hedgehog by:\n\
