@@ -4055,7 +4055,7 @@ TheNovika"))
 DEFINE_DIALOG(ARTIST08, 1, 3, 30, 200, _("\
 'Motobuds'\n\
 This painting was done by\n\
-GeekofKawaii"))
+Funkys0da"))
 
 //Artist, Vanilla and Eggman
 DEFINE_DIALOG(ARTIST09, 1, 3, 30, 200, _("\
