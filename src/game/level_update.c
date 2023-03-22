@@ -104,7 +104,7 @@ const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE O
 #ifdef VERSION_US
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
 // ...3D animators and additional graphics in order to make room for screen text writer(s), Mario voice, and Peach voice
-const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII" };
+const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "FUNKYSXDA" };
 const char *credits11[] = { "4CREAM FACE MODEL", "CREAM FACE PROGRAMMER", "GAMEBUN", "BWGLITE" };
 const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "SURPRISINGLY BEATABLE" };
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
@@ -115,7 +115,7 @@ const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "N
 // ...as well as sound composer, sound effects, and sound programmer, and...
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
 // ...3D animators and additional graphics in order to make room for screen text writer(s), Mario voice, and Peach voice
-const char *credits10[] = { "5NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "GEEKOFKAWAII", "SIMPLE" };
+const char *credits10[] = { "5NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "FUNKYSXDA", "SIMPLE" };
 const char *credits11[] = { "4CREAM FACE MODEL", "CREAM FACE PROGRAMMER", "GAMEBUN", "BWGLITE" };
 const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "SURPRISINGLY BEATABLE" };
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
@@ -138,7 +138,7 @@ const char *credits18[] = { "3VERY SPECIAL THANKS", "MAGICALPOPTARTS", "CATTI", 
 const char *credits18[] = { "3VERY SPECIAL THANKS", "MAGICALPOPTARTS", "CATTI", "FUDGERNUTTER" };
 #endif
 const char *credits19[] = { "3VERY SPECIAL THANKS", "BRINTY BRIN", "RAINBOW FISSION", "NICOSTEPH" };
-const char *credits20[] = { "5CAKE END PIC BY", "VERY SPECIAL THANKS", "MAGICALPOPTARTS", "TO YOU", "THANKS FOR PLAYING" };
+const char *credits20[] = { "3CAKE END PICS", "MAGICALPOPTARTS", "FUDGERNUTTER", "THANK YOU FOR PLAYING" };
 
 // Screen top left - Bottom text
 #define CREDITS_POS_ONE 0*16

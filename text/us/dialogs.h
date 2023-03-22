@@ -2701,6 +2701,12 @@ CowQuack\n\
 \n\
 \n\
 \n\
+Cream Head Model done\n\
+by: Gamebun\n\
+\n\
+Cream Head Implementation\n\
+by: BWGLite\n\
+\n\
 Various Pokemon pics seen in the\n\
 castle and Mission Street from:\n\
 Gigaboots\n\
