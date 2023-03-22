@@ -2704,7 +2704,7 @@ CowQuack\n\
 Cream Head Model done\n\
 by: Gamebun\n\
 \n\
-Cream Head Implementation\n\
+Cream Head Coded In\n\
 by: BWGLite\n\
 \n\
 Various Pokemon pics seen in the\n\
