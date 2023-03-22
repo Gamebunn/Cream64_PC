@@ -137,7 +137,7 @@ const char *credits18[] = { "3VERY SPECIAL THANKS", "MAGICALPOPTARTS", "CATTI", 
 #else // VERSION_EU
 const char *credits18[] = { "3VERY SPECIAL THANKS", "MAGICALPOPTARTS", "CATTI", "FUDGERNUTTER" };
 #endif
-const char *credits19[] = { "3VERY SPECIAL THANKS", "BRINTY BRIN", "RAINBOW FISSION", "NICOSTEPH" };
+const char *credits19[] = { "3VERY SPECIAL THANKS", "BRINTY BRIN", "RAINBOW FISSION", "NICOSTEPHN" };
 const char *credits20[] = { "3CAKE END PICS", "MAGICALPOPTARTS", "FUDGERNUTTER", "THANK YOU FOR PLAYING" };
 
 // Screen top left - Bottom text
