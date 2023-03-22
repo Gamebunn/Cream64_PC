@@ -110,7 +110,7 @@ const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS",
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
 const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
 const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
-const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPH" };
+const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPHN" };
 #else // VERSION_EU
 // ...as well as sound composer, sound effects, and sound programmer, and...
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
@@ -121,7 +121,7 @@ const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS",
 const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
 const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
 const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
-const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPH" };
+const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPHN" };
 #endif
 
 #endif
