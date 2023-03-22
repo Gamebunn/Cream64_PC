@@ -47,5 +47,7 @@ If you're just looking for the N64 build, [it's available right here.](https://r
 
 Unfortunately, I don't have a real answer as to why it does that cause it varies per person. Sometimes it'll just work fine and for others it'll error out at a specific sound. Some solution is to just compile with the same settings again and it'll somehow work. [Though you can try and put this in the root, which has all the compiled custom sounds.](https://drive.google.com/file/d/19OHNwng-GTwDgevKncO0I_qWLrX3XYo8/view?usp=share_link) That does circumvent the problem most of the time but it's not guaranteed. 
 
+#### I'm getting the error `cannot extract from ROM`, what is going on?
 
+You may be missing some dependencies for which sm64ex/ex-alo needs to compile. [As mentioned above, try to do a normal compile of ex/ex-alo to make sure that works before trying Cream 64 if you keep running into that error.](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows) 
 
