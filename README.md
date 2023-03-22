@@ -21,7 +21,7 @@ Overall additions:
  If you haven't built with the normal sm64ex/sm64ex-alo builds, [look at those first for a proper tutorial and getting the proper dependencies for install](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows). Then once you got the hang of it, come back here. 
  
  1) Do `git clone https://github.com/Gamebunn/Cream64_PC.git` to somewhere on your PC with MSYS2. Make sure it's a directory with full access. Then `cd Cream64_PC` to get into the folder itself.
- 2) [Download the extra assets needed for the repo](https://drive.google.com/file/d/1QbC4j1HyEUNlgI1fQrEW8mZIS_r_OCNu/view?usp=share_link)
+ 2) [Download the extra assets needed for the repo](https://drive.google.com/file/d/18BBTyS0LgRCh26nFmHRQqpbEAT0rA9FJ/view?usp=share_link)
  3) Find your own US copy of sm64, rename it to baserom.us.z64 and put it in the root of your clone.
  4) Dump the contents of the assets folder into the root of where you cloned the git
  5) Go ahead and compile with `make EXTENDED_BOUNDS=2`. If you got a decent CPU, you can increase the compile speed with `make EXTENDED_BOUNDS=2 -j4`.
@@ -40,3 +40,14 @@ Overall additions:
 Super Cream 64 should now be avialable through sm64pcbuilder2. Currently not available, will update when it's live on the program. 
 
 If you're just looking for the N64 build, [it's available right here.](https://romhacking.com/hack/super-cream-64)
+
+## FAQ
+
+#### I'm running into `Segmentation Fault` errors when compiling sounds. What can I do?
+
+Unfortunately, I don't have a real answer as to why it does that cause it varies per person. Sometimes it'll just work fine and for others it'll error out at a specific sound. Some solution is to just compile with the same settings again and it'll somehow work. [Though you can try and put this in the root, which has all the compiled custom sounds.](https://drive.google.com/file/d/19OHNwng-GTwDgevKncO0I_qWLrX3XYo8/view?usp=share_link) That does circumvent the problem most of the time but it's not guaranteed. 
+
+#### I'm getting the error `Failed to extract assets from US ROM`, what is going on?
+
+You may be missing some dependencies for which sm64ex/ex-alo needs to compile. [As mentioned above, try to do a normal compile of ex/ex-alo to make sure that works before trying Cream 64 if you keep running into that error.](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows) 
+
