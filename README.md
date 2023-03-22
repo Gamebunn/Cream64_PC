@@ -40,3 +40,12 @@ Overall additions:
 Super Cream 64 should now be avialable through sm64pcbuilder2. Currently not available, will update when it's live on the program. 
 
 If you're just looking for the N64 build, [it's available right here.](https://romhacking.com/hack/super-cream-64)
+
+## FAQ
+
+#### I'm running into `Segmentation Fault` errors when compiling sounds. What can I do?
+
+Unfortunately, I don't have a real answer as to why it does that cause it varies per person. Sometimes it'll just work fine and for others it'll error out at a specific sound. Some solution is to just compile with the same settings again and it'll somehow work. [Though you can try and put this in the root, which has all the compiled custom sounds.](https://drive.google.com/file/d/19OHNwng-GTwDgevKncO0I_qWLrX3XYo8/view?usp=share_link) That does circumvent the problem most of the time but it's not guaranteed. 
+
+
+
