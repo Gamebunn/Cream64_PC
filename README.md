@@ -41,6 +41,12 @@ Super Cream 64 should now be avialable through sm64pcbuilder2. Currently not ava
 
 If you're just looking for the N64 build, [it's available right here.](https://romhacking.com/hack/super-cream-64)
 
+## Notable Bugs/Crashes
+
+- Riding the elevator in the volcano in LLL will crash after a few seconds of riding it. For now, avoid taking it and follow the other path and fly to the second volcano star. 
+- Something about collecting the last two green rings on the floating islands causes issues after the star has spawned. Inconsistent right now but never hurts to be safe!
+- A reported moment after Eyerok pushes you away but also inconsistent. 
+
 ## FAQ
 
 #### I'm running into `Segmentation Fault` errors when compiling sounds. What can I do?
