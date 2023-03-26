@@ -12,6 +12,7 @@ const GeoLayout cotmc_area_1_geo[] = {
 		GEO_ROTATION_NODE_WITH_DL(LAYER_OPAQUE, 90, 0, 0, cotmc_dl__006_geometry_mesh_layer_1),
 		GEO_ROTATION_NODE_WITH_DL(LAYER_OPAQUE, 90, 0, 0, cotmc_dl__007_geometry_mesh_layer_1),
 		GEO_ROTATION_NODE_WITH_DL(LAYER_OPAQUE, 90, 0, 0, cotmc_dl__008_geometry_mesh_layer_1),
+		GEO_ROTATION_NODE_WITH_DL(LAYER_TRANSPARENT, 90, 0, 0, cotmc_dl__009_geometry_mesh_layer_5),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, 50, 20, -603, cotmc_dl_Water_Flowing_mesh_layer_5),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
