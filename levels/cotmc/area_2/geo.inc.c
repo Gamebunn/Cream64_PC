@@ -4,6 +4,7 @@ const GeoLayout cotmc_area_2_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -3590, 2471, -3652, -30, -174, 38, cotmc_dl_Crystals_mesh_layer_1),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -3590, 2471, -3652, -30, -174, 38, cotmc_dl_Crystals_ToHideCollision_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 478, 7417, -684, cotmc_dl_lantern_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -3824, 5319, -3705, cotmc_dl_Level_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -3824, 5319, -3705, cotmc_dl_Level_Lanterns_mesh_layer_1),
