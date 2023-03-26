@@ -24,7 +24,7 @@ Overall additions:
  2) [Download the extra assets needed for the repo](https://drive.google.com/file/d/18BBTyS0LgRCh26nFmHRQqpbEAT0rA9FJ/view?usp=share_link)
  3) Find your own US copy of sm64, rename it to baserom.us.z64 and put it in the root of your clone.
  4) Dump the contents of the assets folder into the root of where you cloned the git
- 5) Go ahead and compile with `make EXTENDED_BOUNDS=2`. If you got a decent CPU, you can increase the compile speed with `make EXTENDED_BOUNDS=2 -j4`.
+ 5) Go ahead and compile with `make`. If you got a decent CPU, you can increase the compile speed with `make EXTENDED_BOUNDS=2 -j4`.
 
  
  ### Helpful optional build additions:
@@ -33,7 +33,7 @@ Overall additions:
  
  NODRAWINGDISTANCE=1 - All objects are shown at all times
  
- Example: ```make EXTENDED_BOUNDS=2 NODRAWINGDISTANCE=1 -j4```
+ Example: ```make NODRAWINGDISTANCE=1 -j4```
 
  ## Building SC64 - The Easy Way
 
@@ -45,7 +45,10 @@ If you're just looking for the N64 build, [it's available right here.](https://r
 
 - Riding the elevator in the volcano in LLL will crash after a few seconds of riding it. For now, avoid taking it and follow the other path and fly to the second volcano star. 
 - Something about collecting the last two green rings on the floating islands causes issues after the star has spawned. Inconsistent right now but never hurts to be safe!
-- A reported moment after Eyerok pushes you away but also inconsistent. 
+- A reported moment after Eyerok pushes you away but also inconsistent.
+- The ski lift in Cool Cool Mountain may crash similar to the elevator in LLL. 
+
+The current build may have most of these fixed but not 100% sure. Will update this when we know for sure. 
 
 ## FAQ
 
