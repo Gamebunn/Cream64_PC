@@ -64,7 +64,7 @@ s32 check_wall_triangle_vw(f32 d00, f32 d01, f32 d11, f32 d20, f32 d21, f32 invD
     }
 
     f32 w = ((d00 * d21) - (d01 * d20)) * invDenom;
-    if (w < 0.0f || w > 1.0f || v + w > 1.0f) {
+    if (w < 0.0f || w > 1.0f || (v + w) > 1.0f) {
         return TRUE;
     }
 
@@ -72,8 +72,10 @@ s32 check_wall_triangle_vw(f32 d00, f32 d01, f32 d11, f32 d20, f32 d21, f32 invD
 }
 
 s32 check_wall_triangle_edge(Vec3f vert, Vec3f v2, f32 *d00, f32 *d01, f32 *invDenom, f32 *offset, f32 margin_radius) {
-    if (FLT_IS_NONZERO(vert[1])) {
-        f32 v = (v2[1] / vert[1]);
+    f32 y = vert[1];
+
+    if (FLT_IS_NONZERO(y)) {
+        f32 v = (v2[1] / y);
         if (v < 0.0f || v > 1.0f) {
             return TRUE;
         }
@@ -151,7 +153,7 @@ static s32 find_wall_collisions_from_list(struct SurfaceNode *surfaceNode, struc
     }
 
 #if BETTER_FIND_WALL_COLLISION
-    f32 margin_radius = radius - 1.5f;
+    f32 margin_radius = radius - 1.0f;
 #endif
 
     // Stay in this loop until out of walls.
@@ -223,6 +225,8 @@ static s32 find_wall_collisions_from_list(struct SurfaceNode *surfaceNode, struc
         invDenom = (d00 * d11) - (d01 * d01);
         if (FLT_IS_NONZERO(invDenom)) {
             invDenom = 1.0f / invDenom;
+        } else {
+            invDenom = 1.0f;
         }
 
         if (check_wall_triangle_vw(d00, d01, d11, d20, d21, invDenom)) {
@@ -249,6 +253,8 @@ static s32 find_wall_collisions_from_list(struct SurfaceNode *surfaceNode, struc
             // Check collision
             if (FLT_IS_NONZERO(invDenom)) {
                 invDenom = (offset / invDenom);
+            } else {
+                invDenom = offset;
             }
 
             // Update pos
@@ -443,7 +449,7 @@ static struct Surface *find_ceil_from_list(struct SurfaceNode *surfaceNode, s32 
     register struct Surface *surf;
     register f32 height;
     struct Surface *ceil = NULL;
-#if COLLISION_IMPROVEMENTS   
+#if COLLISION_IMPROVEMENTS
     *pheight = CELL_HEIGHT_LIMIT;
 #endif
 
@@ -655,7 +661,7 @@ static struct Surface *find_floor_from_list(struct SurfaceNode *surfaceNode, s32
     }
 
     //! (Surface Cucking) Since only the first floor is returned and not the highest,
-    //  higher floors can be "cucked" by lower floors. 
+    //  higher floors can be "cucked" by lower floors.
     //  (Only applies if collision improvements are off)
     return floor;
 }
