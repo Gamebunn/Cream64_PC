@@ -1435,3 +1435,11 @@ s32 lvl_play_the_end_screen_sound3(UNUSED s16 arg0, UNUSED s32 arg1) {
     stop_background_music(SEQUENCE_ARGS(4, SEQ_EVENT_CUTSCENE_CREDITS));
     play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_THEEND), 0);
 }
+
+// Added so the player can reset the game at the end screen
+s32 lvl_end_screen_start_button_reset(UNUSED s16 arg0, UNUSED s32 arg1) {
+    if (gPlayer1Controller->buttonPressed & START_BUTTON) {
+        return 1;
+    }
+    return 0;
+}
