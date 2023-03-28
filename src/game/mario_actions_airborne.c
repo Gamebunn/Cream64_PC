@@ -587,6 +587,15 @@ s32 act_hovering(struct MarioState *m)
 
 
 s32 act_jump(struct MarioState *m) {
+    #if EASIER_LONG_JUMPS
+    if (m->actionTimer < 1) {
+        m->actionTimer++;
+        if (m->input & INPUT_Z_PRESSED && m->forwardVel > 10.0f) {
+            return set_jumping_action(m, ACT_LONG_JUMP, 0);
+        }
+    }
+#endif
+
     if (check_kick_or_dive_in_air(m)) {
         return TRUE;
     }
