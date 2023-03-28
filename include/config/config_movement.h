@@ -63,7 +63,7 @@
 #define FIX_LANDING_CANCEL_OFF_FLOOR (0 || QOL_FIXES)
 
 /// Fixes Mario's interaction with lava so it detects regardless of action.
-#define FIX_LAVA_INTERACTION (0 || QOL_FIXES)
+//#define FIX_LAVA_INTERACTION (0 || QOL_FIXES)
 
 /// Fixes crash if there's no referenced ceiling above Mario while hanging.
 #define FIX_CEILING_NULL_CRASH (0 || QOL_FIXES)
