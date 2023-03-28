@@ -7,8 +7,6 @@
 #define bool int
 #endif
 
-#include "config.h"
-
 #define CONFIGFILE_DEFAULT "sm64config.txt"
 
 #define MAX_BINDS  3
@@ -57,38 +55,21 @@ extern unsigned int configRumbleStrength;
 #ifdef EXTERNAL_DATA
 extern bool         configPrecacheRes;
 #endif
-
-#if MORE_VANILLA_CAM_STUFF
-typedef struct {
-    bool parallel;
-    bool srMario;
-    bool cUpSounds;
-    bool parallelCol;
-} ConfigVanillaCam;
-
-extern ConfigVanillaCam configVanillaCam;
-#endif
-
 #ifdef BETTERCAMERA
-typedef struct {
-    bool enable;
-    bool analog;
+extern bool         configEnableCamera;
+extern bool         configCameraAnalog;
 #ifdef MOUSE_ACTIONS
-    bool mouse;
+extern bool         configCameraMouse;
 #endif
-    bool invertX;
-    bool invertY;
-    unsigned int sensX;
-    unsigned int sensY;
-    unsigned int aggression;
-    unsigned int scheme;
-    unsigned int opacity;
-    bool debug;
-} ConfigPuppyCam;
-
-extern ConfigPuppyCam configPuppyCam;
+extern bool         configCameraInvertX;
+extern bool         configCameraInvertY;
+extern unsigned int configCameraXSens;
+extern unsigned int configCameraYSens;
+extern unsigned int configCameraAggr;
+extern unsigned int configCameraScheme;
+extern unsigned int configCameraOpacity;
+extern bool         configDebugCamera;
 #endif
-
 extern bool         configHUD;
 #ifdef MOUSE_ACTIONS
 extern bool         configMouse;

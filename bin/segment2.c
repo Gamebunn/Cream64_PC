@@ -135,7 +135,7 @@ ALIGNED8 static const Texture texture_hud_char_U[] = {
 };
 
 ALIGNED8 static const Texture texture_hud_char_V[] = {
-#include "textures/segment2/segment2.03E00.rgba16.inc.c"
+#include "textures/segment2/custom/segment2.03E00.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_W[] = {
