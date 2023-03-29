@@ -43,12 +43,13 @@ If you're just looking for the N64 build, [it's available right here.](https://r
 
 ## Notable Bugs/Crashes
 
-- Riding the elevator in the volcano in LLL will crash after a few seconds of riding it. For now, avoid taking it and follow the other path and fly to the second volcano star. 
-- Something about collecting the last two green rings on the floating islands causes issues after the star has spawned. Inconsistent right now but never hurts to be safe!
-- A reported moment after Eyerok pushes you away but also inconsistent.
-- The ski lift in Cool Cool Mountain may crash similar to the elevator in LLL. 
+While the current build may have most of these fixed due to removing the need of `EXTENDED_BOUNDS=2`, there's still the chance it could happen. Much less likely than before though!
 
-The current build may have most of these fixed but not 100% sure. Will update this when we know for sure. 
+- Riding the elevator in the volcano in LLL, or moving the camera too frequently while entering the volcano.
+- Something about the camera position on the spinning floating islands in WF
+- A reported moment after Eyerok pushes you away. 
+- Riding the ski lift in Cool Cool Mountain. 
+
 
 ## FAQ
 
