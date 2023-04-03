@@ -30,10 +30,6 @@ Lights1 cotmc_dl_VisualMaterial70_f3d_lights = gdSPDefLights1(
 	0x7F, 0x7F, 0x7F,
 	0xFE, 0xFE, 0xFE, 0x28, 0x28, 0x28);
 
-Lights1 cotmc_dl_VisualMaterial90_f3d_lights = gdSPDefLights1(
-	0x7F, 0x7F, 0x7F,
-	0xFE, 0xFE, 0xFE, 0x28, 0x28, 0x28);
-
 Lights1 cotmc_dl_water1_lights = gdSPDefLights1(
 	0x7F, 0x7F, 0x7F,
 	0xFE, 0xFE, 0xFE, 0x28, 0x28, 0x28);
@@ -2474,16 +2470,6 @@ u8 cotmc_dl__8_ci8_pal_rgba16[] = {
 	0x52, 0xd7, 0x00, 0x01, 0x3a, 0x0f, 0x3a, 0x11, 
 	0x42, 0x95, 0x4a, 0x95, 0x3a, 0x53, 0x42, 0x93, 
 	
-};
-
-Gfx cotmc_dl__9_ci4_aligner[] = {gsSPEndDisplayList()};
-u8 cotmc_dl__9_ci4[] = {
-	0x00, 
-};
-
-Gfx cotmc_dl__9_ci4_pal_rgba16_aligner[] = {gsSPEndDisplayList()};
-u8 cotmc_dl__9_ci4_pal_rgba16[] = {
-	0xff, 0xff, 
 };
 
 Gfx cotmc_dl_water_ci8_aligner[] = {gsSPEndDisplayList()};
@@ -6995,69 +6981,6 @@ Gfx cotmc_dl__008_geometry_mesh_layer_1_tri_0[] = {
 	gsSP1Triangle(0, 3, 1, 0),
 	gsSP1Triangle(4, 5, 6, 0),
 	gsSP1Triangle(5, 7, 6, 0),
-	gsSPEndDisplayList(),
-};
-
-Vtx cotmc_dl__009_geometry_mesh_layer_5_vtx_0[28] = {
-	{{{564, -4781, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{661, -4877, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{628, -4947, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{537, -4960, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{388, -4829, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{255, -4466, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{564, -3999, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{564, -3278, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{403, -3337, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{330, -3661, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{341, -3413, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{166, -3407, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{156, -3599, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{50, -3387, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{36, -3565, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-64, -3354, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-64, -3354, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{36, -3565, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-84, -3544, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-227, -3275, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-262, -3526, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-257, -3270, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-292, -3520, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-286, -3582, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-563, -3860, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-563, -1632, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-157, -1841, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-	{{{-35, -2711, 0},0, {-16, 16},{0x0, 0x0, 0x0, 0xC9}}},
-};
-
-Gfx cotmc_dl__009_geometry_mesh_layer_5_tri_0[] = {
-	gsSPVertex(cotmc_dl__009_geometry_mesh_layer_5_vtx_0 + 0, 16, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(0, 2, 3, 0),
-	gsSP1Triangle(4, 0, 3, 0),
-	gsSP1Triangle(4, 5, 0, 0),
-	gsSP1Triangle(5, 6, 0, 0),
-	gsSP1Triangle(5, 7, 6, 0),
-	gsSP1Triangle(5, 8, 7, 0),
-	gsSP1Triangle(5, 9, 8, 0),
-	gsSP1Triangle(9, 10, 8, 0),
-	gsSP1Triangle(11, 10, 9, 0),
-	gsSP1Triangle(11, 9, 12, 0),
-	gsSP1Triangle(13, 11, 12, 0),
-	gsSP1Triangle(13, 12, 14, 0),
-	gsSP1Triangle(15, 13, 14, 0),
-	gsSPVertex(cotmc_dl__009_geometry_mesh_layer_5_vtx_0 + 16, 12, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(3, 0, 2, 0),
-	gsSP1Triangle(3, 2, 4, 0),
-	gsSP1Triangle(5, 3, 4, 0),
-	gsSP1Triangle(5, 4, 6, 0),
-	gsSP1Triangle(4, 7, 6, 0),
-	gsSP1Triangle(6, 7, 8, 0),
-	gsSP1Triangle(6, 8, 9, 0),
-	gsSP1Triangle(9, 5, 6, 0),
-	gsSP1Triangle(9, 10, 5, 0),
-	gsSP1Triangle(10, 11, 5, 0),
-	gsSP1Triangle(11, 3, 5, 0),
 	gsSPEndDisplayList(),
 };
 
@@ -15820,37 +15743,6 @@ Gfx mat_revert_cotmc_dl_VisualMaterial80_f3d[] = {
 	gsSPEndDisplayList(),
 };
 
-Gfx mat_cotmc_dl_VisualMaterial90_f3d[] = {
-	gsDPPipeSync(),
-	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0),
-	gsSPClearGeometryMode(G_LIGHTING),
-	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureLUT(G_TT_RGBA16),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, cotmc_dl__9_ci4_pal_rgba16),
-	gsDPTileSync(),
-	gsDPSetTile(0, 0, 0, 256, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadSync(),
-	gsDPLoadTLUTCmd(7, 0),
-	gsDPPipeSync(),
-	gsDPTileSync(),
-	gsDPSetTextureImage(G_IM_FMT_CI, G_IM_SIZ_16b, 1, cotmc_dl__9_ci4),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPLoadSync(),
-	gsDPLoadBlock(7, 0, 0, 0, 2048),
-	gsDPPipeSync(),
-	gsDPSetTile(G_IM_FMT_CI, G_IM_SIZ_4b, 0, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
-	gsDPSetTileSize(0, 0, 0, 0, 0),
-	gsSPSetLights1(cotmc_dl_VisualMaterial90_f3d_lights),
-	gsSPEndDisplayList(),
-};
-
-Gfx mat_revert_cotmc_dl_VisualMaterial90_f3d[] = {
-	gsDPPipeSync(),
-	gsSPSetGeometryMode(G_LIGHTING),
-	gsDPSetTextureLUT(G_TT_NONE),
-	gsSPEndDisplayList(),
-};
-
 Gfx mat_cotmc_dl_water1[] = {
 	gsDPPipeSync(),
 	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, PRIMITIVE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, PRIMITIVE, 0),
@@ -16379,13 +16271,6 @@ Gfx cotmc_dl__008_geometry_mesh_layer_1[] = {
 	gsSPDisplayList(mat_cotmc_dl_VisualMaterial80_f3d),
 	gsSPDisplayList(cotmc_dl__008_geometry_mesh_layer_1_tri_0),
 	gsSPDisplayList(mat_revert_cotmc_dl_VisualMaterial80_f3d),
-	gsSPEndDisplayList(),
-};
-
-Gfx cotmc_dl__009_geometry_mesh_layer_5[] = {
-	gsSPDisplayList(mat_cotmc_dl_VisualMaterial90_f3d),
-	gsSPDisplayList(cotmc_dl__009_geometry_mesh_layer_5_tri_0),
-	gsSPDisplayList(mat_revert_cotmc_dl_VisualMaterial90_f3d),
 	gsSPEndDisplayList(),
 };
 
