@@ -195,24 +195,8 @@ void alon_cheat_99_rings()
 
 }
 
-static int isCredits = 0;
-
 void alon_cheats_update()
 {
 	alon_cheat_99_rings();
-
-			if(gPlayer1Controller->buttonPressed & R_TRIG)
-			{
-
-				if(isCredits)
-					level_trigger_warp(gMarioState, WARP_OP_CREDITS_NEXT);
-				else
-				{
-					level_trigger_warp(gMarioState, WARP_OP_CREDITS_START);
-					isCredits++;
-				}
-				//act_end_waving_cutscene(gMarioState);
-				//gMarioState->action = ACT_END_WAVING_CUTSCENE;
-			}
 
 }
