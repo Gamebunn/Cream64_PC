@@ -24,7 +24,7 @@ Overall additions:
  2) [Download the extra assets needed for the repo](https://drive.google.com/file/d/18BBTyS0LgRCh26nFmHRQqpbEAT0rA9FJ/view?usp=share_link)
  3) Find your own US copy of sm64, rename it to baserom.us.z64 and put it in the root of your clone.
  4) Dump the contents of the assets folder into the root of where you cloned the git
- 5) Go ahead and compile with `make`. If you got a decent CPU, you can increase the compile speed with `make EXTENDED_BOUNDS=2 -j4`.
+ 5) Go ahead and compile with `make`. If you got a decent CPU, you can increase the compile speed with `make -j4`.
 
  
  ### Helpful optional build additions:
