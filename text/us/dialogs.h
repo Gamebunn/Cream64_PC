@@ -2737,6 +2737,12 @@ FudgerNutter, TheNovika, \n\
 Funkys0da And Zack113\n\
 \n\
 \n\
+Vanilla drawing in intro\n\
+letter by:\n\
+FunkyS0da\n\
+\n\
+\n\
+\n\
 End cake pics by (in order):\n\
 MagicalPoptarts\n\
 and\n\

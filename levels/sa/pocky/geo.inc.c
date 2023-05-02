@@ -20,6 +20,16 @@ const GeoLayout pocky_Pocky_Eyes_002[] = {
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
+const GeoLayout pocky_Head_Switch_opt1[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+		GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 224, -16, pocky_Head_mesh_layer_1_mat_override_eyes_open_f3d_0),
+		GEO_OPEN_NODE(),
+			GEO_DISPLAY_LIST(LAYER_ALPHA, pocky_Head_mesh_layer_4_mat_override_eyes_open_f3d_0),
+		GEO_CLOSE_NODE(),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
 const GeoLayout pocky_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
@@ -42,6 +52,7 @@ const GeoLayout pocky_geo[] = {
 									GEO_DISPLAY_LIST(LAYER_ALPHA, pocky_Head_mesh_layer_4),
 								GEO_CLOSE_NODE(),
 							GEO_CLOSE_NODE(),
+							GEO_BRANCH(1, pocky_Head_Switch_opt1),
 							GEO_BRANCH(1, pocky_Pocky_Eyes_001),
 							GEO_BRANCH(1, pocky_Pocky_Eyes_002),
 						GEO_CLOSE_NODE(),
