@@ -10,10 +10,6 @@
 #include "segment2.h"
 #include "sm64.h"
 
-#ifndef TARGET_N64
-#define BETTER_SKYBOX_POSITION_PRECISION
-#endif
-
 #ifdef TARGET_N3DS
 #include "pc/gfx/gfx_3ds.h"
 bool is3D;
@@ -72,43 +68,6 @@ struct Skybox {
 #endif
 };
 
-struct Skybox sSkyBoxInfo[2];
-
-typedef const u8 *const SkyboxTexture[80];
-
-extern SkyboxTexture bbh_skybox_ptrlist;
-extern SkyboxTexture bidw_skybox_ptrlist;
-extern SkyboxTexture bitfs_skybox_ptrlist;
-extern SkyboxTexture bits_skybox_ptrlist;
-extern SkyboxTexture ccm_skybox_ptrlist;
-extern SkyboxTexture cloud_floor_skybox_ptrlist;
-extern SkyboxTexture clouds_skybox_ptrlist;
-extern SkyboxTexture ssl_skybox_ptrlist;
-extern SkyboxTexture water_skybox_ptrlist;
-extern SkyboxTexture wdw_skybox_ptrlist;
-
-SkyboxTexture *sSkyboxTextures[10] = {
-    &water_skybox_ptrlist,
-    &bitfs_skybox_ptrlist,
-    &wdw_skybox_ptrlist,
-    &cloud_floor_skybox_ptrlist,
-    &ccm_skybox_ptrlist,
-    &ssl_skybox_ptrlist,
-    &bbh_skybox_ptrlist,
-    &bidw_skybox_ptrlist,
-    &clouds_skybox_ptrlist,
-    &bits_skybox_ptrlist,
-};
-
-/**
- * The skybox color mask.
- * The final color of each pixel is computed from the bitwise AND of the color and the texture.
- */
-u8 sSkyboxColors[][3] = {
-    { 0x50, 0x64, 0x5A },
-    { 0xFF, 0xFF, 0xFF },
-};
-
 /**
  * Constant used to scale the skybox horizontally to a multiple of the screen's width
  */
@@ -138,6 +97,63 @@ u8 sSkyboxColors[][3] = {
  */
 #define SKYBOX_ROWS (8)
 
+struct Skybox sSkyBoxInfo[2];
+
+typedef const u8 *const SkyboxTexture[SKYBOX_ROWS * SKYBOX_COLS]; // originally 80
+
+#if QOL_FEATURE_BETTER_SKYBOX
+typedef f32 SkyboxType;
+#else
+typedef s32 SkyboxType;
+#endif
+#define SKYBOX_FOV_X(fov) degrees_to_angle(fov)
+#define SKYBOX_FOV_Y(fov) fov
+
+extern SkyboxTexture bbh_skybox_ptrlist;
+extern SkyboxTexture bidw_skybox_ptrlist;
+extern SkyboxTexture bitfs_skybox_ptrlist;
+extern SkyboxTexture bits_skybox_ptrlist;
+extern SkyboxTexture ccm_skybox_ptrlist;
+extern SkyboxTexture cloud_floor_skybox_ptrlist;
+extern SkyboxTexture clouds_skybox_ptrlist;
+extern SkyboxTexture ssl_skybox_ptrlist;
+extern SkyboxTexture water_skybox_ptrlist;
+extern SkyboxTexture wdw_skybox_ptrlist;
+
+#ifdef RM2C_HAS_CUSTOM_SKYBOX
+#define MIO0_SEG(skybox, _2) \
+extern SkyboxTexture skybox##_ptrlist;
+#include "textures/skyboxes/Skybox_Rules.ld"
+#undef MIO0_SEG
+#endif
+
+SkyboxTexture *sSkyboxTextures[] = {
+    &water_skybox_ptrlist,
+    &bitfs_skybox_ptrlist,
+    &wdw_skybox_ptrlist,
+    &cloud_floor_skybox_ptrlist,
+    &ccm_skybox_ptrlist,
+    &ssl_skybox_ptrlist,
+    &bbh_skybox_ptrlist,
+    &bidw_skybox_ptrlist,
+    &clouds_skybox_ptrlist,
+    &bits_skybox_ptrlist,
+#ifdef RM2C_HAS_CUSTOM_SKYBOX
+	#define MIO0_SEG(skybox, _2) \
+	&skybox##_ptrlist,
+	#include "textures/skyboxes/Skybox_Rules.ld"
+	#undef MIO0_SEG
+#endif 
+};
+
+/**
+ * The skybox color mask.
+ * The final color of each pixel is computed from the bitwise AND of the color and the texture.
+ */
+u8 sSkyboxColors[][3] = {
+    { 0x50, 0x64, 0x5A },
+    { 0xFF, 0xFF, 0xFF },
+};
 
 /**
  * Convert the camera's yaw into an x position into the scaled skybox image.
@@ -149,18 +165,12 @@ u8 sSkyboxColors[][3] = {
  *                 (how far is the camera rotated from 0, scaled 0 to 1)   *
  *                 (the screen width)
  */
-#ifdef BETTER_SKYBOX_POSITION_PRECISION
-f32
-#else
-s32
-#endif
-calculate_skybox_scaled_x(s8 player, f32 fov) {
+SkyboxType calculate_skybox_scaled_x(s8 player, f32 fov) {
     f32 yaw = sSkyBoxInfo[player].yaw;
 
-    //! double literals are used instead of floats
-    f32 yawScaled = SCREEN_WIDTH * 360.0 * yaw / (fov * 65536.0);
+    f32 yawScaled = ((SCREEN_WIDTH * yaw) / SKYBOX_FOV_X(fov));
 
-#ifdef BETTER_SKYBOX_POSITION_PRECISION
+#if QOL_FEATURE_BETTER_SKYBOX
     f32 scaledX = yawScaled;
 
     if (scaledX > SKYBOX_WIDTH) {
@@ -168,7 +178,7 @@ calculate_skybox_scaled_x(s8 player, f32 fov) {
     }
 #else
     // Round the scaled yaw. Since yaw is a u16, it doesn't need to check for < 0
-    s32 scaledX = yawScaled + 0.5;
+    s32 scaledX = yawScaled + 0.5f;
 
     if (scaledX > SKYBOX_WIDTH) {
         scaledX -= scaledX / SKYBOX_WIDTH * SKYBOX_WIDTH;
@@ -184,19 +194,14 @@ calculate_skybox_scaled_x(s8 player, f32 fov) {
  * fov may have been used in an earlier version, but the developers changed the function to always use
  * 90 degrees.
  */
-#ifdef BETTER_SKYBOX_POSITION_PRECISION
-f32
-#else
-s32
-#endif
-calculate_skybox_scaled_y(s8 player, UNUSED f32 fov) {
+SkyboxType calculate_skybox_scaled_y(s8 player, f32 fov) {
     // Convert pitch to degrees. Pitch is bounded between -90 (looking down) and 90 (looking up).
-    f32 pitchInDegrees = (f32) sSkyBoxInfo[player].pitch * 360.0 / 65535.0;
+    f32 pitchInDegrees = angle_to_degrees(sSkyBoxInfo[player].pitch);
 
     // Scale by 360 / fov
-    f32 degreesToScale = 360.0f * pitchInDegrees / 90.0;
+    f32 degreesToScale = pitchInDegrees * (360.0f / SKYBOX_FOV_Y(fov));
 
-#ifdef BETTER_SKYBOX_POSITION_PRECISION
+#if QOL_FEATURE_BETTER_SKYBOX
     f32 scaledY = degreesToScale + 5 * SKYBOX_TILE_HEIGHT;
 #else
     s32 roundedY = round_float(degreesToScale);
@@ -315,9 +320,13 @@ void draw_skybox_tile_grid(Gfx **dlist, s8 background, s8 player, s8 colorIndex)
 
 #ifdef TARGET_N3DS
     s16 grid = (is3D) ? 5 : 3; // 5x5 only if 3D is on
+#else
+    s16 grid = 3;
+#endif
     for (row = 0; row < grid; row++) { 
-        for (col = 0; col < grid; col++) { 
+        for (col = 0; col < grid; col++) {
             s32 tileIndex;
+#ifdef TARGET_N3DS
             if (is3D) {
                 sSkyBoxInfo[player].tileColCur = col; // tracking the position in the current 5x5 grid
                 sSkyBoxInfo[player].tileRowCur = row;
@@ -326,17 +335,21 @@ void draw_skybox_tile_grid(Gfx **dlist, s8 background, s8 player, s8 colorIndex)
                 if (tileColTotal > 7) tileColTotal = tileColTotal - 8; // check wrap around 
                 if (tileRowTotal > 7) tileRowTotal = 7; // check for bottom
                 tileIndex = tileColTotal + tileRowTotal * SKYBOX_COLS; // 5x5 index value
+            } else
+#endif
+            {
+                tileIndex = sSkyBoxInfo[player].upperLeftTile + row * SKYBOX_COLS + col;
+#ifdef AVOID_UB
+                if (tileIndex >= SKYBOX_ROWS * SKYBOX_COLS) {
+                    continue;
+                }
+#endif
             }
-            else tileIndex = sSkyBoxInfo[player].upperLeftTile + row * SKYBOX_COLS + col; // original index value
             const u8 *const texture =
                 (*(SkyboxTexture *) segmented_to_virtual(sSkyboxTextures[background]))[tileIndex];
+#ifdef TARGET_N3DS
             Vtx *vertices = make_skybox_rect(tileIndex, colorIndex, player);
 #else
-    for (row = 0; row < 3; row++) {
-        for (col = 0; col < 3; col++) {
-            s32 tileIndex = sSkyBoxInfo[player].upperLeftTile + row * SKYBOX_COLS + col;
-            const u8 *const texture =
-                (*(SkyboxTexture *) segmented_to_virtual(sSkyboxTextures[background]))[tileIndex];
             Vtx *vertices = make_skybox_rect(tileIndex, colorIndex);
 #endif
             gLoadBlockTexture((*dlist)++, 32, 32, G_IM_FMT_RGBA, texture);
@@ -428,9 +441,12 @@ Gfx *create_skybox_facing_camera(s8 player, s8 background, f32 fov,
         colorIndex = 0;
     }
 
-    //! fov is always set to 90.0f. If this line is removed, then the game crashes because fov is 0 on
-    //! the first frame, which causes a floating point divide by 0
+    // fov is always set to 90.0f. If this line is removed, then the game crashes because fov is 0 on
+    // the first frame, which causes a floating point divide by 0.
+    // Also due to primitive code, actually using fov causes some bad zooming on the skybox during cutscenes
+    // which is probably why they just made them use a fixed value instead.
     fov = 90.0f;
+
     sSkyBoxInfo[player].yaw = atan2s(cameraFaceZ, cameraFaceX);
     sSkyBoxInfo[player].pitch = atan2s(sqrtf(cameraFaceX * cameraFaceX + cameraFaceZ * cameraFaceZ), cameraFaceY);
     sSkyBoxInfo[player].scaledX = calculate_skybox_scaled_x(player, fov);

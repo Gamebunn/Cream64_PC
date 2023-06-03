@@ -37,7 +37,7 @@ const LevelScript level_ending_entry[] = {
     /*19*/ TRANSITION(/*transType*/ WARP_TRANSITION_FADE_INTO_COLOR, /*time*/ 75, /*color*/ 0x00, 0x00, 0x00),
 
     /*21*/ SLEEP(/*frames*/ 90),
-        /*22*/ ALLOC_LEVEL_POOL(),
+    /*22*/ ALLOC_LEVEL_POOL(),
 
     /*23*/ AREA(/*index*/ 1, ending_geo_part2),
     /*25*/ END_AREA(),
@@ -49,7 +49,7 @@ const LevelScript level_ending_entry[] = {
     /*15*/ CALL(/*arg*/ 0, /*func*/ lvl_play_the_end_screen_sound2),
     /*16*/ SLEEP(/*frames*/ 180),
     /*17*/ CALL(/*arg*/ 0, /*func*/ lvl_play_the_end_screen_sound3),
-     /*16*/ SLEEP(/*frames*/ 18000),
+    /*16*/ SLEEP(/*frames*/ 18000),
     /*21*/ SLEEP(/*frames*/ 1),
 #if QOL_FEATURE_ENDING_SCREEN_START
     /*17*/ CALL_LOOP(/*arg*/ 1, /*func*/ lvl_end_screen_start_button_reset),

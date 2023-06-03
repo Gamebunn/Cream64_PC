@@ -927,7 +927,6 @@ void handle_menu_scrolling(s8 scrollDirection, s8 *currentIndex, s8 minIndex, s8
         if (gPlayer3Controller->rawStickY > 60) {
             index |= 0b01; // Up
         }
-
         if (gPlayer3Controller->rawStickY < -60) {
             index |= 0b10; // Down
         }
@@ -956,6 +955,7 @@ void handle_menu_scrolling(s8 scrollDirection, s8 *currentIndex, s8 minIndex, s8
             (*currentIndex)--;
         }
     }
+
     // If there has been input for 10 frames, set the timer to 8 and set gMenuHoldKeyIndex to 0 so the above becomes true.
     if (gMenuHoldKeyTimer == 10) {
         gMenuHoldKeyTimer = 8;
@@ -1916,13 +1916,10 @@ s8 gDialogCourseActNum = 1;
 #endif
 
 void render_dialog_entries(void) {
-#ifdef VERSION_EU
-    s8 lowerBound;
-#endif
     void **dialogTable;
     struct DialogEntry *dialog;
-#if defined(VERSION_US) || defined(VERSION_SH)
-    s8 lowerBound;
+#if defined(VERSION_US) || defined(VERSION_EU) || defined(VERSION_SH)
+    s8 lowerBound = 0;
 #endif
 
 #ifdef VERSION_EU
@@ -2379,21 +2376,17 @@ void change_dialog_camera_angle(void) {
     }
 }
 
+// ex-alo change
+// properly shades the screen using a rectangle instead of a triangle
 void shade_screen(void) {
-    create_dl_translation_matrix(MENU_MTX_PUSH, GFX_DIMENSIONS_FROM_LEFT_EDGE(0), SCREEN_HEIGHT, 0);
+    Gfx* dlHead = gDisplayListHead;
 
-    // This is a bit weird. It reuses the dialog text box (width 130, height -80),
-    // so scale to at least fit the screen.
-#ifdef WIDESCREEN
-    create_dl_scale_matrix(MENU_MTX_NOPUSH,
-                           GFX_DIMENSIONS_ASPECT_RATIO * SCREEN_HEIGHT / 130.0f, 3.0f, 1.0f);
-#else
-    create_dl_scale_matrix(MENU_MTX_NOPUSH, 2.6f, 3.4f, 1.0f);
-#endif
+    gSPDisplayList(dlHead++, dl_shade_screen_begin);
+    gDPFillRectangle(dlHead++, GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(0), BORDER_HEIGHT,
+        (GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(0)), ((SCREEN_HEIGHT - BORDER_HEIGHT)));
+    gSPDisplayList(dlHead++, dl_shade_screen_end);
 
-    gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 110);
-    gSPDisplayList(gDisplayListHead++, dl_draw_text_bg_box);
-    gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
+    gDisplayListHead = dlHead;
 }
 
 void render_pause_costume_options(void)
@@ -2907,7 +2900,7 @@ s16 render_pause_screen(void) {
             gMenuLineNum = MENU_OPT_DEFAULT;
             gMenuTextAlpha = 0;
             level_set_transition(-1, NULL);
-            play_sound(SOUND_MENU_PAUSE, gGlobalSoundSource);
+            play_sound(SOUND_MENU_PAUSE_OPEN, gGlobalSoundSource);
 
             if (gCurrCourseNum >= COURSE_MIN && gCurrCourseNum <= COURSE_MAX) {
                 change_dialog_camera_angle();
@@ -2922,7 +2915,8 @@ s16 render_pause_screen(void) {
             shade_screen();
             render_pause_my_score_coins();
             render_pause_red_coins();
-            
+
+#if !EXIT_COURSE_ANYWHERE
 /* Added support for the "Exit course at any time" cheat */
             if ((gMarioStates[0].action & ACT_FLAG_PAUSE_EXIT) 
 #ifdef CHEATS_ACTIONS
@@ -2931,6 +2925,7 @@ s16 render_pause_screen(void) {
                 ) {
                 render_pause_course_options(99, 93, &gMenuLineNum, 15);
             }
+#endif
 
 #if QOL_FEATURE_Z_BUTTON_EXTRA_OPTION
             if (gPlayer3Controller->buttonPressed & (A_BUTTON | START_BUTTON | Z_TRIG))
@@ -2940,7 +2935,7 @@ s16 render_pause_screen(void) {
 #endif
             {
                 level_set_transition(0, NULL);
-                play_sound(SOUND_MENU_PAUSE_2, gGlobalSoundSource);
+                play_sound(SOUND_MENU_PAUSE_CLOSE, gGlobalSoundSource);
                 gMenuState = MENU_STATE_DEFAULT;
                 gMenuMode = MENU_MODE_NONE;
 
@@ -2968,7 +2963,7 @@ s16 render_pause_screen(void) {
 #endif
             {
                 level_set_transition(0, NULL);
-                play_sound(SOUND_MENU_PAUSE_2, gGlobalSoundSource);
+                play_sound(SOUND_MENU_PAUSE_CLOSE, gGlobalSoundSource);
                 gMenuMode = MENU_MODE_NONE;
                 gMenuState = MENU_STATE_DEFAULT;
 
@@ -3084,7 +3079,7 @@ void print_hud_course_complete_coins(s16 x, s16 y) {
         }
 
         if (gHudDisplay.coins == gCourseCompleteCoins && gGotFileCoinHiScore) {
-            play_sound(SOUND_MENU_MARIO_CASTLE_WARP2, gGlobalSoundSource);
+            play_sound(SOUND_MENU_HIGH_SCORE, gGlobalSoundSource);
         }
     }
 }

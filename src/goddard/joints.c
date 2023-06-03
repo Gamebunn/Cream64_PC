@@ -1,9 +1,5 @@
 #include <PR/ultratypes.h>
 
-
-#ifdef VERSION_EU
-#include "prevent_bss_reordering.h"
-#endif
 #include "debug_utils.h"
 #include "draw_objects.h"
 #include "dynlist_proc.h"

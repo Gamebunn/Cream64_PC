@@ -10,6 +10,11 @@
 #include "game/ingame_menu.h"
 #include "extras/draw_util.h"
 
+#ifdef VERSION_EU
+#include "eu_translation.h"
+extern s32 gInGameLanguage;
+#endif
+
 #define MAX_PAGE_STRINGS 12
 #define PAGE_DOWN_STOPS_MAX (LEVEL_MAX / MAX_PAGE_STRINGS)
 
@@ -86,7 +91,6 @@ void print_debug_level_select_menu(struct ZDebugLevelSelect *this) {
         if (levelName == NULL) {
             levelName = "--Null--";
         }
-
         courseNum = gLevelToCourseNumTable[scene];
         courseName = segmented_to_virtual(courseNameTbl[courseNum - 1]);
         int_to_str(courseNum, courseNumStr);
@@ -144,6 +148,7 @@ void print_debug_level_select_settings(struct ZDebugLevelSelect *this) {
     chrTemp = "Save File: ";
     print_generic_string_ascii(20, 42, chrTemp);
     print_generic_string(20 + get_string_width_ascii(chrTemp), 42, strSaveNum);
+
     chrTemp = "Level Act: ";
     print_generic_string_ascii(20, 28, chrTemp);
     print_generic_string(20 + get_string_width_ascii(chrTemp), 28, strActNum);
@@ -183,12 +188,12 @@ void print_debug_level_select_strings(struct ZDebugLevelSelect *this) {
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
 
     print_debug_level_select_menu(this);
+
     if (this->toggleControlsView) {
         print_debug_level_select_controls();
     } else {
         print_debug_level_select_settings(this);
     }
-
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 }
 
@@ -368,7 +373,7 @@ s32 lvl_init_intro_level_select(UNUSED s32 arg, UNUSED s32 unused) {
 
 s16 intro_level_select(void) {
     debug_level_select_update(gZDbgLevelSelect);
-    
+
     // Don't perform any button actions if controls view is active
     if (gZDbgLevelSelect->toggleControlsView) {
         return 0;

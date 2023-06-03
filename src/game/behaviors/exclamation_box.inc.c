@@ -20,6 +20,9 @@ struct ExclamationBoxContents {
     const BehaviorScript *behavior;
 };
 
+#ifdef RM2C_HAS_CUSTOM_BOX_ITEMS
+#include "src/extras/rm2c/item_box.inc.c"
+#else
 struct ExclamationBoxContents sExclamationBoxContents[] = {
     { EXCLAMATION_BOX_BP_WING_CAP,         0,                0, MODEL_MARIOS_WING_CAP,  bhvWingCap               },
     { EXCLAMATION_BOX_BP_METAL_CAP,        0,                0, MODEL_MARIOS_METAL_CAP, bhvMetalCap              },
@@ -38,6 +41,7 @@ struct ExclamationBoxContents sExclamationBoxContents[] = {
     { EXCLAMATION_BOX_BP_STAR_ACT_6,       0, STAR_INDEX_ACT_6, MODEL_STAR,             bhvSpawnedStar           },
     { EXCLAMATION_BOX_BP_END,              0,                0, MODEL_NONE,             NULL                     },
 };
+#endif
 
 void bhv_rotating_exclamation_box_loop(void) {
     if (o->parentObj->oAction != 1) {
@@ -136,6 +140,11 @@ void exclamation_box_spawn_contents(struct ExclamationBoxContents *contentsList,
     if (contents->model == MODEL_STAR) {
         o->oFlags |= OBJ_FLAG_PERSISTENT_RESPAWN;
     }
+#if KOOPA_SHELL_BOXES_RESPAWN
+    if (contents->model == MODEL_KOOPA_SHELL) {
+        contentsObj->oSubAction = 1;
+    }
+#endif
 }
 
 void exclamation_box_act_4(void) {

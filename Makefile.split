@@ -44,6 +44,8 @@ ACTOR_GROUPS := \
 
 LEVEL_FILES := $(addsuffix leveldata,$(LEVEL_DIRS))
 
+LEVEL_ELF_FILES := $(foreach level_dir,$(LEVEL_DIRS),$(BUILD_DIR)/levels/$(level_dir)leveldata.elf)
+
 SEG_FILES := \
     $(SEGMENTS:%=$(BUILD_DIR)/bin/%.elf) \
     $(ACTOR_GROUPS:%=$(BUILD_DIR)/actors/%.elf) \
@@ -85,6 +87,11 @@ MARIO_DIRS       := mario bubble walk_smoke burn_smoke stomp_smoke water_wave sp
 
 ifeq ($(PORT_MOP_OBJS),1)
   MOP_DIRS       := Blargg_MOP Checkpoint_Flag_MOP FlipBlock_MOP Flipswap_Platform_MOP Flipswap_Platform_Border_MOP Flipswitch_Panel_MOP Green_Switchboard_MOP Green_Switchboard_Gears_MOP Moving_Rotating_Block_MOP Noteblock_MOP SandBlock_MOP Shrink_Platform_MOP Shrink_Platform_Border_MOP Spring_MOP Switchblock_MOP Switchblock_Switch_MOP 
+endif
+
+# Custom RM2C leveldata rules
+ifeq ($(RM2C),1)
+  $(BUILD_DIR)/levels/%/custom.leveldata.elf: SEGMENT_ADDRESS := 0x0E000000
 endif
 
 # Actor Textures
@@ -288,5 +295,11 @@ $(BUILD_DIR)/src/goddard/renderer.o: $(addprefix $(BUILD_DIR)/,$(patsubst %.png,
 IPL3_TEXTURE_FILES          := $(wildcard $(TEXTURE_DIR)/ipl3_raw/*.png)
 IPL3_RAW_FILES              := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%,$(IPL3_TEXTURE_FILES)))
 
-CRASH_TEXTURE_FILES         := $(wildcard $(TEXTURE_DIR)/crash_screen/*.png)
-CRASH_TEXTURE_C_FILES       := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%.inc.c,$(CRASH_TEXTURE_FILES)))
+ifeq ($(TARGET_N64),1)
+  CRASH_TEXTURE_FILES         := $(wildcard $(TEXTURE_DIR)/crash_screen/*.png)
+  CRASH_TEXTURE_C_FILES       := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%.inc.c,$(CRASH_TEXTURE_FILES)))
+else
+  CRASH_TEXTURE_PC_FILES       := $(wildcard $(TEXTURE_DIR)/crash_screen_pc/*.png)
+  CRASH_TEXTURE_PC_C_FILES     := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%.inc.c,$(CRASH_TEXTURE_PC_FILES)))
+endif
+

@@ -16,10 +16,6 @@
 #include "shape_helper.h"
 #include "skin.h"
 
-#ifndef VERSION_EU
-#include <prevent_bss_reordering.h>
-#endif
-
 // types
 struct UnkData {
     struct GdTriangleF tri;

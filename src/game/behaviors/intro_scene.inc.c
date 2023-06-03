@@ -86,6 +86,8 @@ void bhv_intro_scene_loop(void) {
         gCutsceneObjSpawn = 0;
     }
 
+    if (obj2 == NULL) return; // prevent crashes
+
     switch (gMarioState->currentCostume) {
     case 0: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;
     case 1: obj2->header.gfx.sharedChild = gLoadedGraphNodes [MODEL_PEACH]; break;

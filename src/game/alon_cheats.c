@@ -30,7 +30,6 @@
 #endif
 #include "level_table.h"
 #include "course_table.h"
-#include "../../include/libc/stdlib.h"
 
 #include "pc/pc_main.h"
 #include "pc/cliopts.h"

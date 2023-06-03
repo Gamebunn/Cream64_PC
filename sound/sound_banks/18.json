@@ -61,22 +61,22 @@
         "inst0": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "22_boys_choir"
+            "sound": "22_boys_choir_Bb4"
         },
         "inst1": {
             "release_rate": 208,
             "envelope": "envelope1",
-            "sound": "36_sawtooth_synth"
+            "sound": "36_sawtooth_synth_Eb1"
         },
         "inst2": {
             "release_rate": 208,
             "envelope": "envelope2",
-            "sound": "37_square_synth"
+            "sound": "37_square_synth_C5"
         },
         "inst3": {
             "release_rate": 208,
             "envelope": "envelope3",
-            "sound": "29_orchestra_hit"
+            "sound": "29_orchestra_hit_C3"
         },
         "percussion": [
             {"release_rate": 10, "pan": 62, "envelope": "envelope4", "sound": {"sample": "06_kick_drum_1", "tuning": 0.210224}},
@@ -179,12 +179,12 @@
         "inst8": {
             "release_rate": 208,
             "envelope": "envelope3",
-            "sound": "29_orchestra_hit"
+            "sound": "29_orchestra_hit_C3"
         },
         "inst9": {
             "release_rate": 208,
             "envelope": "envelope3",
-            "sound": "29_orchestra_hit"
+            "sound": "29_orchestra_hit_C3"
         }
     },
     "instrument_list": [

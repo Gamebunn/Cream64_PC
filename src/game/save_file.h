@@ -8,7 +8,8 @@
 
 #include "course_table.h"
 
-#define EEPROM_SIZE 0x240
+#define EEPROM_SIZE_CUSTOM 0x240
+
 #define NUM_SAVE_FILES 4
 
 struct SaveBlockSignature {
@@ -60,7 +61,7 @@ struct MainMenuSaveData {
 #endif
 
     // Pad to match the EEPROM size of 0x200 (10 bytes on JP/US, 8 bytes on EU)
-    u8 filler[EEPROM_SIZE / 2 - SUBTRAHEND - NUM_SAVE_FILES * (4 + sizeof(struct SaveFile))];
+    u8 filler[EEPROM_SIZE_CUSTOM / 2 - SUBTRAHEND - NUM_SAVE_FILES * (4 + sizeof(struct SaveFile))];
 
     struct SaveBlockSignature signature;
 };

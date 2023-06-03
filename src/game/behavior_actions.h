@@ -578,6 +578,8 @@ void bhv_ddr_music2_init(void);
 void bhv_ddr_music3_loop(void);
 void bhv_ddr_music3_init(void);
 
+void bhv_2d_physics_loop(void);
+void uv_update_scroll(void);
 
 Gfx *geo_move_mario_part_from_parent(s32 run, UNUSED struct GraphNode *node, Mat4 mtx);
 

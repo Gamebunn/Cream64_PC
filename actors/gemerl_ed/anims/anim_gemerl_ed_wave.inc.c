@@ -127,7 +127,7 @@ static const u16 gemerl_ed_anim_gemerl_ed_wave_indices[] = {
 	
 };
 
-static const struct Animation gemerl_ed_anim_gemerl_ed_wave[] = {
+static const struct Animation gemerl_ed_anim_gemerl_ed_wave = {
 	0,
 	0,
 	0,

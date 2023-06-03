@@ -50,6 +50,12 @@
 
 #define o gCurrentObject
 
+#if FIX_PARTICLES_CALL_DELETED
+#define SWAP_PARTICLE_CALL(a,b) b; a;
+#else
+#define SWAP_PARTICLE_CALL(a,b) a; b;
+#endif
+
 static s32 sCapSaveFlags[] = {
     SAVE_FLAG_HAVE_WING_CAP,
     SAVE_FLAG_HAVE_METAL_CAP,
@@ -275,6 +281,9 @@ s32 set_obj_anim_with_accel_and_sound(s16 a0, s16 a1, s32 a2) {
 #include "behaviors/explosion_nd.inc.c"
 #include "behaviors/cheese_follow.inc.c"
 #include "behaviors/boo_amy.inc.c"
+
+#include "behaviors/2d_physics.inc.c"
+#include "behaviors/legacy_tex_scroll.inc.c"
 
 #ifdef PORT_MOP_OBJS
 #include "src/extras/mop/code.inc.c"

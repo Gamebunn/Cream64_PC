@@ -6,6 +6,16 @@
 #include "engine/surface_collision.h"
 #include "macros.h"
 #include "types.h"
+#include "behavior_actions.h"
+#include "rm2c.h"
+
+#ifdef RM2C_HAS_TRAJECTORIES //#include "src/extras/rm2c/trajectories.inc.c"
+extern const Trajectory KoopaBoB_path[];
+extern const Trajectory KoopaTHI_path[]; 
+#endif
+#ifdef RM2C_HAS_CUSTOM_STAR_POS
+#include "src/extras/rm2c/star_pos.inc.c" //just defines
+#endif
 
 void set_yoshi_as_not_dead(void);
 s32 coin_step(s16 *collisionFlagsPtr);
@@ -49,7 +59,6 @@ void bhv_cannon_closed_init(void);
 void cannon_door_act_opening(void);
 void bhv_cannon_closed_loop(void);
 void bhv_whirlpool_init(void);
-void whirlpool_set_hitbox(void);
 void bhv_whirlpool_loop(void);
 void bhv_jet_stream_loop(void);
 void bhv_homing_amp_init(void);

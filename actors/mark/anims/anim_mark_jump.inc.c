@@ -48,7 +48,7 @@ static const u16 mark_anim_mark_jump_indices[] = {
 	
 };
 
-static const struct Animation mark_anim_mark_jump[] = {
+static const struct Animation mark_anim_mark_jump = {
 	1,
 	0,
 	0,

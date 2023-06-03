@@ -92,7 +92,7 @@ s16 set_mario_animation(struct MarioState *m, s32 targetAnimID) {
         if (targetAnim->flags & ANIM_FLAG_2) {
             o->header.gfx.animInfo.animFrame = targetAnim->startFrame;
         } else {
-            if (targetAnim->flags & ANIM_FLAG_FORWARD) {
+            if (targetAnim->flags & ANIM_FLAG_BACKWARD) {
                 o->header.gfx.animInfo.animFrame = targetAnim->startFrame + 1;
             } else {
                 o->header.gfx.animInfo.animFrame = targetAnim->startFrame - 1;
@@ -124,7 +124,7 @@ s16 set_mario_anim_with_accel(struct MarioState *m, s32 targetAnimID, s32 accel)
         if (targetAnim->flags & ANIM_FLAG_2) {
             o->header.gfx.animInfo.animFrameAccelAssist = (targetAnim->startFrame << 0x10);
         } else {
-            if (targetAnim->flags & ANIM_FLAG_FORWARD) {
+            if (targetAnim->flags & ANIM_FLAG_BACKWARD) {
                 o->header.gfx.animInfo.animFrameAccelAssist = (targetAnim->startFrame << 0x10) + accel;
             } else {
                 o->header.gfx.animInfo.animFrameAccelAssist = (targetAnim->startFrame << 0x10) - accel;
@@ -147,13 +147,13 @@ void set_anim_to_frame(struct MarioState *m, s16 animFrame) {
     struct Animation *curAnim = animInfo->curAnim;
 
     if (animInfo->animAccel != 0) {
-        if (curAnim->flags & ANIM_FLAG_FORWARD) {
+        if (curAnim->flags & ANIM_FLAG_BACKWARD) {
             animInfo->animFrameAccelAssist = (animFrame << 0x10) + animInfo->animAccel;
         } else {
             animInfo->animFrameAccelAssist = (animFrame << 0x10) - animInfo->animAccel;
         }
     } else {
-        if (curAnim->flags & ANIM_FLAG_FORWARD) {
+        if (curAnim->flags & ANIM_FLAG_BACKWARD) {
             animInfo->animFrame = animFrame + 1;
         } else {
             animInfo->animFrame = animFrame - 1;
@@ -168,7 +168,7 @@ s32 is_anim_past_frame(struct MarioState *m, s16 animFrame) {
     struct Animation *curAnim = animInfo->curAnim;
 
     if (animInfo->animAccel != 0) {
-        if (curAnim->flags & ANIM_FLAG_FORWARD) {
+        if (curAnim->flags & ANIM_FLAG_BACKWARD) {
             isPastFrame =
                 (animInfo->animFrameAccelAssist > acceleratedFrame)
                 && (acceleratedFrame >= (animInfo->animFrameAccelAssist - animInfo->animAccel));
@@ -178,7 +178,7 @@ s32 is_anim_past_frame(struct MarioState *m, s16 animFrame) {
                 && (acceleratedFrame <= (animInfo->animFrameAccelAssist + animInfo->animAccel));
         }
     } else {
-        if (curAnim->flags & ANIM_FLAG_FORWARD) {
+        if (curAnim->flags & ANIM_FLAG_BACKWARD) {
             isPastFrame = (animInfo->animFrame == (animFrame + 1));
         } else {
             isPastFrame = ((animInfo->animFrame + 1) == animFrame);
@@ -538,9 +538,7 @@ struct Surface *resolve_and_return_wall_collisions(Vec3f pos, f32 offset, f32 ra
     struct WallCollisionData collisionData;
     struct Surface *wall = NULL;
 #if BETTER_RESOLVE_WALL_COLLISION
-    u8 i = 0;
-    s16 angleDiffStore = 0xFFFF;
-    s16 angleDiff = 0;
+    int i = 0;
 #endif
 
     collisionData.x = pos[0];
@@ -552,12 +550,7 @@ struct Surface *resolve_and_return_wall_collisions(Vec3f pos, f32 offset, f32 ra
     if (find_wall_collisions(&collisionData)) {
 #if BETTER_RESOLVE_WALL_COLLISION
         for (i = 0; i < collisionData.numWalls; i++) {
-            angleDiff = abs_angle_diff(gCurrentObject->oMoveAngleYaw - 0x8000,
-                    atan2s(collisionData.walls[i]->normal.z, collisionData.walls[i]->normal.x));
-            if (angleDiff < angleDiffStore) {
-                wall = collisionData.walls[i];
-                angleDiffStore = angleDiff;
-            }
+            wall = collisionData.walls[i];
         }
 #else
         wall = collisionData.walls[collisionData.numWalls - 1];
@@ -746,7 +739,7 @@ f32 find_floor_height_relative_polar(struct MarioState *m, s16 angleFromMario, f
     return floorY;
 }
 
-#if QOL_FIX_FLOOR_SLOPE_OOB
+#if FIX_FLOOR_SLOPE_OOB
 #define CHECK(set)    set
 #else
 #define CHECK(set)
@@ -768,19 +761,18 @@ s16 find_floor_slope(struct MarioState *m, s16 yawOffset) {
     if (absf(m->forwardVel) > FAST_FLOOR_ALIGN_VALUE) {
         forwardFloorY  = get_surface_height_at_pos((m->pos[0] + x), (m->pos[2] + z), floor);
         backwardFloorY = get_surface_height_at_pos((m->pos[0] - x), (m->pos[2] - z), floor);
-    } else {
-#endif    
-    forwardFloorY = find_floor(m->pos[0] + x, m->pos[1] + 100.0f, m->pos[2] + z, &floor);
-    CHECK(if (floor == NULL) forwardFloorY = m->floorHeight); // handle OOB slopes
-    backwardFloorY = find_floor(m->pos[0] - x, m->pos[1] + 100.0f, m->pos[2] - z, &floor);
-    CHECK(if (floor == NULL) backwardFloorY = m->floorHeight); // handle OOB slopes
-#if FAST_FLOOR_ALIGN
-    }
+    } else
 #endif
+    {
+        forwardFloorY = find_floor(m->pos[0] + x, m->pos[1] + 100.0f, m->pos[2] + z, &floor);
+        CHECK(if (floor == NULL) forwardFloorY = m->floorHeight); // handle OOB slopes
+        backwardFloorY = find_floor(m->pos[0] - x, m->pos[1] + 100.0f, m->pos[2] - z, &floor);
+        CHECK(if (floor == NULL) backwardFloorY = m->floorHeight); // handle OOB slopes
+    }
 
     //! If Mario is near OOB, these floorY's can sometimes be -11000.
     //  This will cause these to be off and give improper slopes.
-    //  QOL_FIX_FLOOR_SLOPE_OOB fixes it
+    //  FIX_FLOOR_SLOPE_OOB fixes it
     forwardYDelta = forwardFloorY - m->pos[1];
     backwardYDelta = m->pos[1] - backwardFloorY;
 
@@ -1445,7 +1437,7 @@ void update_mario_geometry_inputs(struct MarioState *m) {
         m->floorHeight = find_floor(m->pos[0], m->pos[1], m->pos[2], &m->floor);
     }
 
-    m->ceilHeight = vec3f_find_ceil(&m->pos[0], m->floorHeight, &m->ceil);
+    m->ceilHeight = vec3f_find_ceil(m->pos, m->floorHeight, &m->ceil);
     gasLevel = find_poison_gas_level(m->pos[0], m->pos[2]);
     m->waterLevel = find_water_level(m->pos[0], m->pos[2]);
 
@@ -1632,7 +1624,7 @@ void update_mario_health(struct MarioState *m) {
         // Play a noise to alert the player when Mario is close to drowning.
 
         if (((m->action & ACT_GROUP_MASK) == ACT_GROUP_SUBMERGED) && (m->health < 0x300)
-#if QOL_FIX_DROWING_SOUND_METAL
+#if NO_DROWING_SOUND_METAL
         && !(m->flags & (MARIO_METAL_CAP))
 #endif
         ) {
@@ -1745,6 +1737,12 @@ u32 update_and_return_cap_flags(struct MarioState *m) {
     return flags;
 }
 
+#if FIX_SHORT_HITBOX_SLIDE_ACTS
+#define ACT_FLAG_HEIGHT_MASK (ACT_FLAG_SHORT_HITBOX | ACT_FLAG_BUTT_OR_STOMACH_SLIDE)
+#else
+#define ACT_FLAG_HEIGHT_MASK ACT_FLAG_SHORT_HITBOX
+#endif
+
 /**
  * Updates the Mario's cap, rendering, and hitbox.
  */
@@ -1790,11 +1788,7 @@ void mario_update_hitbox_and_cap_model(struct MarioState *m) {
     }
 
     // Short hitbox for crouching/crawling/etc.
-    if (m->action & (ACT_FLAG_SHORT_HITBOX
-#if FIX_SHORT_HITBOX_SLIDE_ACTS
-        | ACT_FLAG_BUTT_OR_STOMACH_SLIDE
-#endif
-    )) {
+    if (m->action & ACT_FLAG_HEIGHT_MASK) {
         m->marioObj->hitboxHeight = 100.0f;
     } else {
         m->marioObj->hitboxHeight = 160.0f;
@@ -2027,9 +2021,6 @@ if (gMarioState->action == ACT_HOVERING) {
         gMarioState->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
         mario_reset_bodystate(gMarioState);
         update_mario_inputs(gMarioState);
-#ifdef BETTERCAMERA
-        if (!(gPuppyCam.flags & PUPPYCAM_BEHAVIOUR_FREE))
-#endif
         mario_handle_special_floors(gMarioState);
         mario_process_interactions(gMarioState);
 
@@ -2079,10 +2070,9 @@ if (gMarioState->action == ACT_HOVERING) {
         update_mario_health(gMarioState);
         update_mario_info_for_cam(gMarioState);
         mario_update_hitbox_and_cap_model(gMarioState);
-
         set_wind_floor_properties(gMarioState);
         play_infinite_stairs_music();
-        
+
         gMarioState->marioObj->oInteractStatus = 0;
 #ifdef RUMBLE_FEEDBACK
         queue_rumble_particles();
@@ -2098,9 +2088,6 @@ if (gMarioState->action == ACT_HOVERING) {
  **************************************************/
 
 void init_mario(void) {
-    Vec3s capPos;
-    struct Object *capObject;
-
     unused80339F10 = 0;
 
     gMarioState->actionTimer = 0;
@@ -2169,12 +2156,13 @@ void init_mario(void) {
     vec3f_copy(gMarioState->marioObj->header.gfx.pos, gMarioState->pos);
     vec3s_set(gMarioState->marioObj->header.gfx.angle, 0, gMarioState->faceAngle[1], 0);
 
+    Vec3s capPos;
     if (save_file_get_cap_pos(capPos)
-#if QOL_FIX_HAT_CLONE_FADE
-    && (count_objects_with_behavior(bhvNormalCap) > 1)
+#if FIX_HAT_CLONE_FADE
+    && (count_objects_with_behavior(bhvNormalCap) < 1)
 #endif
     ) {
-        capObject = spawn_object(gMarioState->marioObj, MODEL_MARIOS_CAP, bhvNormalCap);
+        struct Object *capObject = spawn_object(gMarioState->marioObj, MODEL_MARIOS_CAP, bhvNormalCap);
 
         capObject->oPosX = capPos[0];
         capObject->oPosY = capPos[1];
@@ -2201,7 +2189,7 @@ void init_mario_from_save_file(void) {
         save_file_get_total_star_count(gCurrSaveFileNum - 1, COURSE_MIN - 1, COURSE_MAX - 1);
     gMarioState->numKeys = 0;
 
-    gMarioState->numLives = 4;
+    gMarioState->numLives = MARIO_START_LIVES;
     gMarioState->health = 0x880;
 
     gMarioState->prevNumStarsForDialog = gMarioState->numStars;

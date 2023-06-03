@@ -18,6 +18,19 @@ static Collision const *sPlatformOnTrackCollisionModels[] = {
 /**
  * Paths for the different instances of these platforms.
  */
+#ifdef RM2C_HAS_TRAJECTORIES
+static void const *sPlatformOnTrackPaths[] = {
+    rr_seg7_trajectory_0702EC3C_RM2C_path,
+    rr_seg7_trajectory_0702ECC0_RM2C_path,
+    ccm_seg7_trajectory_0701669C_RM2C_path,
+    bitfs_seg7_trajectory_070159AC_RM2C_path,
+    hmc_seg7_trajectory_0702B86C_RM2C_path,
+    lll_seg7_trajectory_0702856C_RM2C_path,
+    lll_seg7_trajectory_07028660_RM2C_path,
+    rr_seg7_trajectory_0702ED9C_RM2C_path,
+    rr_seg7_trajectory_0702EEE0_RM2C_path,
+};
+#else
 static Trajectory const *sPlatformOnTrackPaths[] = {
     rr_seg7_trajectory_0702EC3C,
     rr_seg7_trajectory_0702ECC0,
@@ -29,6 +42,7 @@ static Trajectory const *sPlatformOnTrackPaths[] = {
     rr_seg7_trajectory_0702ED9C,
     rr_seg7_trajectory_0702EEE0,
 };
+#endif
 
 /**
  * Despawn all track balls and enter the init action.
@@ -61,7 +75,7 @@ void bhv_platform_on_track_init(void) {
         s16 pathIndex = (u16)(o->oBhvParams >> 16) & PLATFORM_ON_TRACK_BP_MASK_PATH;
         o->oPlatformOnTrackType = ((u16)(o->oBhvParams >> 16) & PLATFORM_ON_TRACK_BP_MASK_TYPE) >> 4;
 
-#if QOL_FIX_PLATFORM_TRACK_CHECKERED
+#if FIX_PLATFORM_TRACK_CHECKERED
         if (cur_obj_has_model(MODEL_CHECKERBOARD_PLATFORM) && o->oPlatformOnTrackType != PLATFORM_ON_TRACK_TYPE_CHECKERED) {
             o->oPlatformOnTrackType = PLATFORM_ON_TRACK_TYPE_CHECKERED;
         }
@@ -74,7 +88,7 @@ void bhv_platform_on_track_init(void) {
 
         o->oPlatformOnTrackStartWaypoint = segmented_to_virtual(sPlatformOnTrackPaths[pathIndex]);
 
-#if QOL_FIX_PLATFORM_TRACK_CHECKERED
+#if FIX_PLATFORM_TRACK_CHECKERED
         o->oPlatformOnTrackIsNotHMC = (o->oPlatformOnTrackType != PLATFORM_ON_TRACK_TYPE_CHECKERED);
 #else
         o->oPlatformOnTrackIsNotHMC = pathIndex - 4;
@@ -143,7 +157,7 @@ static void platform_on_track_act_wait_for_mario(void) {
  */
 static void platform_on_track_act_move_along_track(void) {
     s16 initialAngle;
-#if QOL_FEATURE_CONTROLLABLE_PLATFORM_SPEED
+#if CONTROLLABLE_PLATFORM_SPEED
     f32 targetVel = 10.0f;
 #endif
 
@@ -162,7 +176,7 @@ static void platform_on_track_act_move_along_track(void) {
         if (o->oPlatformOnTrackPrevWaypointFlags != 0 && !o->oPlatformOnTrackIsNotSkiLift) {
             if (o->oPlatformOnTrackPrevWaypointFlags == WAYPOINT_FLAGS_END
                 || o->oPlatformOnTrackPrevWaypointFlags == WAYPOINT_FLAGS_PLATFORM_ON_TRACK_PAUSE) {
-                cur_obj_play_sound_2(SOUND_GENERAL_UNKNOWN4_LOWPRIO);
+                cur_obj_play_sound_2(SOUND_GENERAL_ELEVATOR_WOBBLE_LOWPRIO);
 
                 o->oForwardVel = 0.0f;
                 if (o->oPlatformOnTrackPrevWaypointFlags == WAYPOINT_FLAGS_END) {
@@ -176,7 +190,7 @@ static void platform_on_track_act_move_along_track(void) {
             if (!o->oPlatformOnTrackIsNotSkiLift) {
                 obj_forward_vel_approach(10.0, 0.1f);
             } else {
-#if QOL_FEATURE_CONTROLLABLE_PLATFORM_SPEED
+#if CONTROLLABLE_PLATFORM_SPEED
                 targetVel = ((gMarioObject->platform == o) ? ((o->oDistanceToMario * coss(o->oAngleToMario - o->oMoveAngleYaw)) - 10.0f) : 10.0f);
                 if (targetVel < 10.0f) {
                     targetVel = 10.0f;
@@ -296,7 +310,7 @@ static void platform_on_track_rock_ski_lift(void) {
  * Update function for bhvPlatformOnTrack.
  */
 void bhv_platform_on_track_update(void) {
-#if QOL_FEATURE_CONTROLLABLE_PLATFORM_SPEED
+#if CONTROLLABLE_PLATFORM_SPEED
     s16 targetRoll; // visually pitch, since these platforms technically move sideways
 #endif
     switch (o->oAction) {
@@ -320,7 +334,7 @@ void bhv_platform_on_track_update(void) {
     if (!o->oPlatformOnTrackIsNotSkiLift) {
         platform_on_track_rock_ski_lift();
     } else if (o->oPlatformOnTrackType == PLATFORM_ON_TRACK_TYPE_CARPET) {
-#if QOL_FEATURE_CONTROLLABLE_PLATFORM_SPEED
+#if CONTROLLABLE_PLATFORM_SPEED
         if (gMarioObject->platform == o) {
             if (!o->oPlatformOnTrackWasStoodOn) {
                 o->oPlatformOnTrackOffsetY    = -8.0f;

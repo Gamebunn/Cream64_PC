@@ -24,6 +24,10 @@
 #include "sound_init.h"
 #include "rumble_init.h"
 
+#ifdef BETTERCAMERA
+#include "extras/bettercamera.h"
+#endif
+
 #ifdef CHEATS_ACTIONS
 #include "extras/cheats.h"
 #endif
@@ -623,9 +627,7 @@ void push_mario_out_of_object(struct MarioState *m, struct Object *o, f32 paddin
     f32 offsetX = m->pos[0] - o->oPosX;
     f32 offsetZ = m->pos[2] - o->oPosZ;
     f32 distance = sqrtf(offsetX * offsetX + offsetZ * offsetZ);
-#if QOL_FIX_PUSH_MARIO_OUT_OF_OBJECT_FLOOR
-    f32 floorHeight;
-#endif
+
     if (distance < minDistance) {
         struct Surface *floor;
         s16 pushAngle;
@@ -643,8 +645,8 @@ void push_mario_out_of_object(struct MarioState *m, struct Object *o, f32 paddin
 
         f32_find_wall_collision(&newMarioX, &m->pos[1], &newMarioZ, 60.0f, 50.0f);
 
-#if QOL_FIX_PUSH_MARIO_OUT_OF_OBJECT_FLOOR
-        floorHeight =
+#if FIX_PUSH_MARIO_OUT_OF_OBJECT_FLOOR
+        f32 floorHeight =
 #endif
         find_floor(newMarioX, m->pos[1], newMarioZ, &floor);
         if (floor != NULL) {
@@ -652,7 +654,7 @@ void push_mario_out_of_object(struct MarioState *m, struct Object *o, f32 paddin
             // an object pushes you into a steep slope while in a ground action)
             m->pos[0] = newMarioX;
             m->pos[2] = newMarioZ;
-#if QOL_FIX_PUSH_MARIO_OUT_OF_OBJECT_FLOOR
+#if FIX_PUSH_MARIO_OUT_OF_OBJECT_FLOOR
             m->floor       = floor;
             m->floorHeight = floorHeight;
 #endif
@@ -759,7 +761,7 @@ u32 interact_coin(struct MarioState *m, UNUSED u32 interactType, struct Object *
     o->oInteractStatus = INT_STATUS_INTERACTED;
 
     if (COURSE_IS_MAIN_COURSE(gCurrCourseNum)
-        && m->numCoins - o->oDamageOrCoinValue < 100 && m->numCoins >= 100) {
+        && m->numCoins - o->oDamageOrCoinValue < COINS_REQ_COINSTAR && m->numCoins >= COINS_REQ_COINSTAR) {
         bhv_spawn_star_no_level_exit(STAR_INDEX_100_COINS);
     }
 
@@ -808,8 +810,8 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
 
         if (m->action & ACT_FLAG_AIR) {
 #if MIDAIR_STAR_DANCE
-            if ((m->pos[1] > m->floorHeight + 1024.0f) || (m->floor != NULL 
-                && m->floor->type == SURFACE_DEATH_PLANE || m->floor->type == SURFACE_VERTICAL_WIND)) {
+            if ((m->pos[1] > m->floorHeight + 1024.0f) || ((m->floor != NULL 
+                && m->floor->type == SURFACE_DEATH_PLANE) || m->floor->type == SURFACE_VERTICAL_WIND)) {
                 starGrabAction = ACT_STAR_DANCE_WATER;
             } else {
                 starGrabAction = ACT_FALL_AFTER_STAR_GRAB;
@@ -901,17 +903,11 @@ u32 interact_warp(struct MarioState *m, UNUSED u32 interactType, struct Object *
             // ex-alo change
             // replaces check to behavior so collision can be freely replaced
             // without changing pipe sound effect
-            if (o->behavior == segmented_to_virtual(bhvWarpPipe)) {
-                play_sound(SOUND_MENU_ENTER_PIPE, m->marioObj->header.gfx.cameraToObject);
+            u32 isWarpPipe = obj_has_behavior(o, bhvWarpPipe);
+            play_sound(isWarpPipe ? SOUND_MENU_ENTER_PIPE : SOUND_MENU_ENTER_HOLE, m->marioObj->header.gfx.cameraToObject);
 #ifdef RUMBLE_FEEDBACK           
-                queue_rumble_data(15, 80);
+            queue_rumble_data(isWarpPipe ? 15 : 12, 80);
 #endif
-            } else {
-                play_sound(SOUND_MENU_ENTER_HOLE, m->marioObj->header.gfx.cameraToObject);
-#ifdef RUMBLE_FEEDBACK
-                queue_rumble_data(12, 80);
-#endif
-            }
 
             mario_stop_riding_object(m);
             return set_mario_action(m, ACT_DISAPPEARED, (WARP_OP_WARP_OBJECT << 16) + 2);
@@ -1166,7 +1162,7 @@ u32 interact_strong_wind(struct MarioState *m, UNUSED u32 interactType, struct O
         m->usedObj = o;
 
         m->faceAngle[1] = o->oMoveAngleYaw + 0x8000;
-        m->unkC4 = 0.4f;
+        m->gettingBlownGravity = 0.4f;
         m->forwardVel = -24.0f;
         m->vel[1] = 12.0f;
 
@@ -1212,7 +1208,7 @@ u32 interact_snufit_bullet(struct MarioState *m, UNUSED u32 interactType, struct
     if (!sInvulnerable && !(m->flags & MARIO_VANISH_CAP)) {
         if (m->flags & MARIO_METAL_CAP) {
             o->oInteractStatus = INT_STATUS_INTERACTED | INT_STATUS_WAS_ATTACKED;
-            play_sound(SOUND_ACTION_UNKNOWN458, m->marioObj->header.gfx.cameraToObject);
+            play_sound(SOUND_ACTION_SNUFFIT_BULLET_HIT_METAL, m->marioObj->header.gfx.cameraToObject);
         } else {
             o->oInteractStatus = INT_STATUS_INTERACTED | INT_STATUS_ATTACKED_MARIO;
             m->interactObj = o;
@@ -1343,9 +1339,18 @@ u32 interact_mr_blizzard(struct MarioState *m, UNUSED u32 interactType, struct O
     return FALSE;
 }
 
-u32 interact_hit_from_below(struct MarioState *m, UNUSED u32 interactType, struct Object *o) {
-    UNUSED u8 filler[4];
+#if TWIRL_WITH_OBJECT
+#define SET_MARIO_ACT(m, a, v) set_mario_action(m, a, v)
+#else
+#define SET_MARIO_ACT(m, a, v) drop_and_set_mario_action(m, a, v)
+#endif
 
+#if JUMP_ENEMY_BOUNCE_BOOST
+#define BOOST(c, t, f) ((c) ? t : f)
+#else
+#define BOOST(c, t, f) f
+#endif
+u32 interact_hit_from_below(struct MarioState *m, UNUSED u32 interactType, struct Object *o) {
     u32 interaction;
     if (m->flags & MARIO_METAL_CAP) {
         interaction = INT_FAST_ATTACK_OR_SHELL;
@@ -1371,13 +1376,9 @@ u32 interact_hit_from_below(struct MarioState *m, UNUSED u32 interactType, struc
 #ifndef VERSION_JP
                 play_sound(SOUND_MARIO_TWIRL_BOUNCE, m->marioObj->header.gfx.cameraToObject);
 #endif
-                return drop_and_set_mario_action(m, ACT_TWIRLING, 0);
+                return SET_MARIO_ACT(m, ACT_TWIRLING, 0);
             } else {
-                #if JUMP_ENEMY_BOUNCE_BOOST
-                bounce_off_object(m, o, (m->input & INPUT_A_DOWN) ? 50.0f : 30.0f);
-                #else
-                bounce_off_object(m, o, 30.0f);
-                #endif
+                bounce_off_object(m, o, BOOST(m->input & INPUT_A_DOWN, 50.0f, 30.0f));
             }
         }
     } else if (take_damage_and_knock_back(m, o)) {
@@ -1427,13 +1428,9 @@ u32 interact_bounce_top(struct MarioState *m, UNUSED u32 interactType, struct Ob
 #ifndef VERSION_JP
                 play_sound(SOUND_MARIO_TWIRL_BOUNCE, m->marioObj->header.gfx.cameraToObject);
 #endif
-                return drop_and_set_mario_action(m, ACT_TWIRLING, 0);
+                return SET_MARIO_ACT(m, ACT_TWIRLING, 0);
             } else {
-                #if JUMP_ENEMY_BOUNCE_BOOST
-                bounce_off_object(m, o, (m->input & INPUT_A_DOWN) ? 50.0f : 30.0f);
-                #else
-                bounce_off_object(m, o, 30.0f);
-                #endif
+                bounce_off_object(m, o, BOOST(m->input & INPUT_A_DOWN, 50.0f, 30.0f));
             }
         }
     } else if (take_damage_and_knock_back(m, o)) {
@@ -1446,6 +1443,8 @@ u32 interact_bounce_top(struct MarioState *m, UNUSED u32 interactType, struct Ob
 
     return FALSE;
 }
+#undef SET_MARIO_ACT
+#undef BOOST
 
 u32 interact_unknown_08(struct MarioState *m, UNUSED u32 interactType, struct Object *o) {
     u32 interaction = determine_interaction(m, o);
@@ -1516,12 +1515,8 @@ u32 interact_koopa_shell(struct MarioState *m, UNUSED u32 interactType, struct O
             play_shell_music();
             mario_drop_held_object(m);
 
-#if QOL_FIX_MARIO_KOOPA_SHELL_ACTION
-            if (m->action & ACT_FLAG_AIR) {
-                return set_mario_action(m, ACT_RIDING_SHELL_FALL, 0);
-            } else {
-                return set_mario_action(m, ACT_RIDING_SHELL_GROUND, 0);
-            }
+#if FIX_MARIO_KOOPA_SHELL_ACTION
+            return set_mario_action(m, (m->action & ACT_FLAG_AIR) ? ACT_RIDING_SHELL_FALL : ACT_RIDING_SHELL_GROUND, 0);
 #else            
             //! Puts Mario in ground action even when in air, making it easy to
             // escape air actions into crouch slide (shell cancel)
@@ -1580,7 +1575,7 @@ u32 interact_pole(struct MarioState *m, UNUSED u32 interactType, struct Object *
             m->vel[1] = 0.0f;
             m->forwardVel = 0.0f;
 
-#if QOL_FIX_POLE_BOTTOM_GRAB
+#if FIX_POLE_BOTTOM_GRAB
             // Check for a floor on the pole.
             f32 height = find_floor(o->oPosX, m->pos[1], o->oPosZ, &o->oFloor);
             o->oFloorHeight = height;
@@ -1650,22 +1645,22 @@ u32 interact_cap(struct MarioState *m, UNUSED u32 interactType, struct Object *o
 
         switch (capFlag) {
             case MARIO_VANISH_CAP: if(gCurrLevelNum == LEVEL_VCUTM)  {
-                    capTime = 600; break;
+                    capTime = VC_TIME; break;
                 }
                 else {
-                    capTime = 600; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_VANISH  ); break;
+                    capTime = VC_TIME; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_VANISH  ); break;
                 }
             case MARIO_METAL_CAP: if(gCurrLevelNum == LEVEL_BITDW || gCurrLevelNum == LEVEL_COTMC)  {
-                    capTime = 600; break;
+                    capTime = MC_TIME; break;
                 }
                 else {
-                    capTime = 600; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_METAL_CAP  ); break;
+                    capTime = MC_TIME; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_METAL_CAP  ); break;
                 }
             case MARIO_WING_CAP: if(gCurrLevelNum == LEVEL_WMOTR || gCurrLevelNum == LEVEL_TOTWC)  {
-                    capTime = 1800; break;
+                    capTime = WC_TIME; break;
                 }
                 else {
-                    capTime = 1800; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_POWERUP  ); break;
+                    capTime = WC_TIME; capMusic = SEQUENCE_ARGS(4, SEQ_EVENT_POWERUP  ); break;
                 }
         }
 
@@ -1748,7 +1743,7 @@ u32 mario_can_talk(struct MarioState *m, u32 arg) {
     return FALSE;
 }
 
-#ifdef VERSION_JP
+#if FIX_INTERACT_READING_BUTTON
 #define READ_MASK (INPUT_B_PRESSED)
 #else
 #define READ_MASK (INPUT_B_PRESSED | INPUT_A_PRESSED)
@@ -1920,14 +1915,17 @@ void pss_begin_slide(UNUSED struct MarioState *m) {
 }
 
 void pss_end_slide(struct MarioState *m) {
-#if !QOL_FIX_RESET_PSS_SLIDE_STARTED
-    //! This flag isn't set on death or level entry, allowing double star spawn
-#endif
+    //! This value isn't set on death or level entry, allowing double star spawn
+    //  Fixed with QOL_FIX_RESET_PSS_SLIDE_STARTED
     if (gPSSSlideStarted) {
         u16 slideTime = level_control_timer(TIMER_CONTROL_STOP);
-        if (slideTime < 630) {
+        if (slideTime < SLIDE_TIME) {
             m->marioObj->oBhvParams = (STAR_INDEX_ACT_2 << 24);
+            #ifdef RM2C_HAS_CUSTOM_STAR_POS
+            spawn_default_star(PssSlideStarPos);
+            #else
             spawn_default_star(-6358.0f, -4300.0f, 4700.0f);
+            #endif
         }
         gPSSSlideStarted = FALSE;
     }
@@ -1937,6 +1935,12 @@ void mario_handle_special_floors(struct MarioState *m) {
     if ((m->action & ACT_GROUP_MASK) == ACT_GROUP_CUTSCENE) {
         return;
     }
+
+#ifdef BETTERCAMERA
+    if (gPuppyCam.flags & PUPPYCAM_BEHAVIOUR_FREE) {
+        return;
+    }
+#endif
 
     if (m->floor != NULL) {
         s32 floorType = m->floor->type;

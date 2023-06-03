@@ -21,6 +21,10 @@
 #include "segment_symbols.h"
 #include "rumble_init.h"
 
+#ifdef TARGET_N64
+#include "boot/system_checks.h"
+#endif
+
 #ifdef BETTERCAMERA
 #include "extras/bettercamera.h"
 #endif
@@ -72,10 +76,6 @@ void *gMarioAnimsMemAlloc;
 void *gDemoInputsMemAlloc;
 struct DmaHandlerList gMarioAnimsBuf;
 struct DmaHandlerList gDemoInputsBuf;
-
-// fillers
-UNUSED static u8 sfillerGameInit[0x90];
-UNUSED static s32 sUnusedGameInitValue = 0;
 
 // General timer that runs as the game starts
 u32 gGlobalTimer = 0;
@@ -362,14 +362,19 @@ void render_init(void) {
     end_master_display_list();
     exec_display_list(&gGfxPool->spTask);
 
-    sRenderingFramebuffer++;
+    // Skip incrementing the initial framebuffer index on emulators so that they display immediately as the Gfx task finishes
+    // VC probably emulates osViSwapBuffer accurately so instant patch breaks VC compatibility
+    // Currently, Ares passes the cache emulation test and has issues with single buffering so disable it there as well.
+    if (gIsConsole || gIsWiiVC || gCacheEmulated) {
+        sRenderingFramebuffer++;
+    }
     gGlobalTimer++;
 }
 #endif
 
 #ifdef USE_SYSTEM_MALLOC
 Gfx **alloc_next_dl(void) {
-    u32 size = 10000;
+    u32 size = GFX_POOL_SIZE_FIXED;
     Gfx *new_chunk = alloc_only_pool_alloc(gGfxAllocOnlyPool, size * sizeof(Gfx));
     gSPBranchList(gDisplayListHeadInChunk++, new_chunk);
     gDisplayListHeadInChunk = new_chunk;
@@ -417,12 +422,17 @@ void display_and_vsync(void) {
     osViSwapBuffer((void *) PHYSICAL_TO_VIRTUAL(gPhysicalFramebuffers[sRenderedFramebuffer]));
     profiler_log_thread5_time(THREAD5_END);
     osRecvMesg(&gGameVblankQueue, &gMainReceivedMesg, OS_MESG_BLOCK);
-    if (++sRenderedFramebuffer == 3) {
-        sRenderedFramebuffer = 0;
+#ifdef TARGET_N64
+    // Skip swapping buffers on inaccurate emulators other than VC so that they display immediately as the Gfx task finishes
+    if (gIsConsole || gIsWiiVC || gCacheEmulated) {
+        if (++sRenderedFramebuffer == 3) {
+            sRenderedFramebuffer = 0;
+        }
+        if (++sRenderingFramebuffer == 3) {
+            sRenderingFramebuffer = 0;
+        }
     }
-    if (++sRenderingFramebuffer == 3) {
-        sRenderingFramebuffer = 0;
-    }
+#endif
     gGlobalTimer++;
 }
 

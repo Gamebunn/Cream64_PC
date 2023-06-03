@@ -317,12 +317,20 @@ void vec3f_cross(Vec3f dest, const Vec3f a, const Vec3f b) {
 }
 
 /// Scale vector 'dest' so it has length 1.
-void vec3f_normalize(Vec3f dest) {
+Bool32 vec3f_normalize_check(Vec3f dest) {
     f32 mag = vec3_sumsq(dest);
-    if (mag > (NEAR_ZERO)) {
-        f32 invsqrt = ((1.0f) / sqrtf(mag));
+    if (mag > NEAR_ZERO) {
+        f32 invsqrt = (1.0f / sqrtf(mag));
         vec3_mul_val(dest, invsqrt);
-    } else {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+/// Scale vector 'dest' so it has length 1. Set to vertical vector if magnitude is zero.
+void vec3f_normalize(Vec3f dest) {
+    s32 ret = vec3f_normalize_check(dest);
+    if (!ret) {
         // Default to up vector.
         dest[0] = 0;
         ((u32 *) dest)[1] = FLOAT_ONE;
@@ -330,12 +338,14 @@ void vec3f_normalize(Vec3f dest) {
     }
 }
 
-/// Scale vector 'dest' and returns TRUE if is a valid value.
-Bool32 vec3f_normalize_bool(Vec3f dest) {
+/// Scale vector 'dest' so it has length at most 'max'.
+Bool32 vec3f_normalize_max(Vec3f dest, f32 max) {
     f32 mag = vec3_sumsq(dest);
-    if (mag > (NEAR_ZERO)) {
-        f32 invsqrt = ((1.0f) / sqrtf(mag));
-        vec3_mul_val(dest, invsqrt);
+    if (mag > NEAR_ZERO) {
+        if (mag > sqr(max)) {
+            f32 invsqrt = max / sqrtf(mag);
+            vec3_mul_val(dest, invsqrt);
+        }
         return TRUE;
     }
     return FALSE;
@@ -1470,7 +1480,7 @@ void evaluate_cubic_spline(f32 progress, Vec3f pos, Vec3f spline1, Vec3f spline2
     B[0] = cube(omp) / 6.0f;                                      // ((1-p)^3)/6
     B[1] =  hcp - sqp + (2.0f / 3.0f);                            //  (p^3)/2 - p^2 + 2/3
     B[2] = -hcp + sqp / 2.0f + (progress / 2.0f) + (1.0f / 6.0f); // -(p^3)/2 + (p^2)/2 + (p^1)/2 + 1/6
-    B[3] =  hcp / 3.0f;                                           //  (p^3)/6                                     
+    B[3] =  hcp / 3.0f;                                           //  (p^3)/6                                     //  (p^3)/6
 
     pos[0] = (B[0] * spline1[0]) + (B[1] * spline2[0]) + (B[2] * spline3[0]) + (B[3] * spline4[0]);
     pos[1] = (B[0] * spline1[1]) + (B[1] * spline2[1]) + (B[2] * spline3[1]) + (B[3] * spline4[1]);
@@ -1611,4 +1621,25 @@ s32 anim_spline_poll(Vec3f result) {
     }
 
     return hasEnded;
+}
+
+s16 lenght_sins(s16 length, s16 direction) {
+    return (length * sins(direction));
+}
+s16 lenght_coss(s16 length, s16 direction) {
+    return (length * coss(direction));
+}
+
+static inline float smooth(float x) {
+    x = CLAMP(x, 0, 1);
+    return x * x * (3.f - 2.f * x);
+}
+
+float soft_clamp(float x, float a, float b) {
+    return smooth((2.f / 3.f) * (x - a) / (b - a) + (1.f / 6.f)) * (b - a) + a;
+}
+
+float smooth_step(float edge0, float edge1, float x) {
+    float t = MIN(MAX((x - edge0) / (edge1 - edge0), 0.0f), 1.0f);
+    return t * t * (3.0f - 2.0f * t);
 }

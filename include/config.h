@@ -18,7 +18,7 @@
 /// Fixes bug where the Boss music won't fade out after defeating King Bob-omb
 #define BUGFIX_KING_BOB_OMB_FADE_MUSIC (0 || VERSION_US || VERSION_EU || VERSION_SH || QOL_FIXES)
 /// Fixes bug in Bob-omb Battlefield where entering a warp stops the Koopa race music
-#define BUGFIX_KOOPA_RACE_MUSIC (0 || VERSION_US || VERSION_EU || VERSION_SH || QOL_FIXES)
+#define BUGFIX_KOOPA_RACE_MUSIC ((0 || VERSION_US || VERSION_EU || VERSION_SH || QOL_FIXES) && VANILLA_CHECKS)
 /// Fixes bug where Piranha Plants do not reset their action state when the
 /// player exits their activation radius.
 #define BUGFIX_PIRANHA_PLANT_STATE_RESET (0 || VERSION_US || VERSION_EU || VERSION_SH || QOL_FIXES)
@@ -46,11 +46,6 @@
 /// Fixes bug where the angle speed isn't preserved while in a pole
 #define BUGFIX_PRESERVE_VEL_POLE (0 || VERSION_SH || QOL_FIXES)
 
-// N64 Only Settings
-/// Enables extended ram on N64
-#define USE_EXT_RAM
-/// Enables crash screen on N64
-#define N64_CRASH_SCREEN
 
 // Misc Settings
 /// Sets a key combo to skip Peach cutscene during file select
@@ -58,22 +53,23 @@
 /// Sets a key combo to get to the debug level select on Mario Head
 #define SET_KEY_COMBO_LEVEL_SELECT
 
-// Audio Settings
-/// Removes bank size limit, saves a step when adding extra sound ID's
-#define AUDIO_NO_LIMIT_BANK_SIZE_TABLE
-/// Removes vibrato restriction set in JP and US, EU and SH already has it removed
-#define AUDIO_NO_VIBRATO_LIMIT
-
 // Other Settings
+#include "config/config_audio.h"
 #include "config/config_camera.h"
 #include "config/config_collision.h"
 #include "config/config_graphics.h"
 #include "config/config_movement.h"
+#include "config/config_n64.h"
+#include "config/config_objects.h"
 
 // Screen Size Defines
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 240
 
 #define BORDER_HEIGHT 0
+
+// Stack Size Defines
+#define IDLE_STACKSIZE 0x800
+#define STACKSIZE 0x2000
 
 #endif // CONFIG_H

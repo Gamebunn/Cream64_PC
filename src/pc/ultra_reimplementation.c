@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/time.h>
-#include "lib/src/libultra_internal.h"
+//#include "PR/os_internal.h"
 #include "macros.h"
 #include "platform.h"
 #include "fs/fs.h"
@@ -12,7 +12,6 @@
 #include <emscripten.h>
 #endif
 
-extern OSMgrArgs piMgrArgs;
 s32 gNumVblanks;
 u64 osClockRate = 62500000;
 
@@ -129,7 +128,7 @@ s32 osEepromProbe(UNUSED OSMesgQueue *mq) {
 }
 
 s32 osEepromLongRead(UNUSED OSMesgQueue *mq, u8 address, u8 *buffer, int nbytes) {
-    u8 content[EEPROM_SIZE];
+    u8 content[EEPROM_SIZE_CUSTOM];
     s32 ret = -1;
 
 #ifdef TARGET_WEB
@@ -138,8 +137,8 @@ s32 osEepromLongRead(UNUSED OSMesgQueue *mq, u8 address, u8 *buffer, int nbytes)
         if (s && s.length === 684) {
             try {
                 var binary = atob(s);
-                if (binary.length === EEPROM_SIZE) {
-                    for (var i = 0; i < EEPROM_SIZE; i++) {
+                if (binary.length === EEPROM_SIZE_CUSTOM) {
+                    for (var i = 0; i < EEPROM_SIZE_CUSTOM; i++) {
                         HEAPU8[$0 + i] = binary.charCodeAt(i);
                     }
                     return 1;
@@ -157,7 +156,7 @@ s32 osEepromLongRead(UNUSED OSMesgQueue *mq, u8 address, u8 *buffer, int nbytes)
     if (fp == NULL) {
         return -1;
     }
-    if (fs_read(fp, content, EEPROM_SIZE) == EEPROM_SIZE) {
+    if (fs_read(fp, content, EEPROM_SIZE_CUSTOM) == EEPROM_SIZE_CUSTOM) {
         memcpy(buffer, content + address * 8, nbytes);
         ret = 0;
     }
@@ -167,16 +166,16 @@ s32 osEepromLongRead(UNUSED OSMesgQueue *mq, u8 address, u8 *buffer, int nbytes)
 }
 
 s32 osEepromLongWrite(UNUSED OSMesgQueue *mq, u8 address, u8 *buffer, int nbytes) {
-    u8 content[EEPROM_SIZE] = {0};
-    if (address != 0 || nbytes != EEPROM_SIZE) {
-        osEepromLongRead(mq, 0, content, EEPROM_SIZE);
+    u8 content[EEPROM_SIZE_CUSTOM] = {0};
+    if (address != 0 || nbytes != EEPROM_SIZE_CUSTOM) {
+        osEepromLongRead(mq, 0, content, EEPROM_SIZE_CUSTOM);
     }
     memcpy(content + address * 8, buffer, nbytes);
 
 #ifdef TARGET_WEB
     EM_ASM({
         var str = "";
-        for (var i = 0; i < EEPROM_SIZE; i++) {
+        for (var i = 0; i < EEPROM_SIZE_CUSTOM; i++) {
             str += String.fromCharCode(HEAPU8[$0 + i]);
         }
         localStorage.sm64_save_file = btoa(str);
@@ -187,7 +186,7 @@ s32 osEepromLongWrite(UNUSED OSMesgQueue *mq, u8 address, u8 *buffer, int nbytes
     if (fp == NULL) {
         return -1;
     }
-    s32 ret = fwrite(content, 1, EEPROM_SIZE, fp) == EEPROM_SIZE ? 0 : -1;
+    s32 ret = fwrite(content, 1, EEPROM_SIZE_CUSTOM, fp) == EEPROM_SIZE_CUSTOM ? 0 : -1;
     fclose(fp);
 #endif
     return ret;
