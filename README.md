@@ -39,13 +39,7 @@ If you're just looking for the N64 build, [it's available right here.](https://r
 
 ## Notable Bugs/Crashes
 
-While the current build may have most of these fixed due to removing the need of `EXTENDED_BOUNDS=2`, there's still the chance it could happen. Much less likely than before though!
-
-- Riding the elevator in the volcano in LLL, or moving the camera too frequently while entering the volcano.
-- Something about the camera position on the spinning floating islands in WF
-- A reported moment after Eyerok pushes you away. 
-- Riding the ski lift in Cool Cool Mountain. 
-
+While on the default/original camera, landing from flying on stages that use the 8 directional camera (all Bowser stages, Tick Tock Clock, Rainbow Ride and all custom stages) will suddenly snap toward the northern direction of the level. For the time being, switch over to puppycam to avoid this issue till a fix is ready. 
 
 ## FAQ
 
