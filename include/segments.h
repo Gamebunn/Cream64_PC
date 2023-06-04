@@ -15,6 +15,11 @@
  * to cast the addresses to pointers in this file, since that would be invalid
  * linker script syntax.
 */
+
+#define USE_EXT_RAM
+#ifndef USE_EXT_RAM
+#endif 
+
 #ifdef N64_USE_EXTENDED_RAM
 #ifdef BBPLAYER
 #define SEG_RAM_END      0x807C0000 // iQue has stuff like EEPROM mapped at 807C0000 onwards. TODO: Code this using osMemSize

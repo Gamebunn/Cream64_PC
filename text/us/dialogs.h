@@ -3080,7 +3080,7 @@ Molten Mines"))
 DEFINE_DIALOG(MWISP_COTMC, 1, 3, 30, 200, _("\
 Music used:\n\
 -Donkey Kong Country 2-\n\
-Mining Meloncholy"))
+Mining Melancholy"))
 
 //sa, simple
 DEFINE_DIALOG(EX_SIMPLE, 1, 4, 30, 200, _("\

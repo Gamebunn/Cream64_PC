@@ -3011,7 +3011,7 @@ void set_camera_mode(struct Camera *c, s16 mode, s16 frames) {
 #if MORE_VANILLA_CAM_STUFF
     if (mode == CAMERA_MODE_8_DIRECTIONS) {
         // Helps transition from any camera mode to 8dir
-        s8DirModeYawOffset = 0;
+        s8DirModeYawOffset = snap_to_45_degrees(c->yaw);
     }
 #endif
 

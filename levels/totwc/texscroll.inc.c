@@ -87,8 +87,7 @@ void scroll_totwc_dl_clouds_mesh_layer_5_vtx_2() {
 
 void scroll_totwc_dl_level_mesh_layer_1_vtx_5() {
 	int i = 0;
-	int count = 222;
-	int width = 32 * 0x20;
+	int count = 210;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;
@@ -142,4 +141,4 @@ void scroll_totwc() {
 	scroll_totwc_dl_clouds_mesh_layer_5_vtx_2();
 	scroll_totwc_dl_level_mesh_layer_1_vtx_5();
 	scroll_totwc_dl_level_mesh_layer_1_vtx_6();
-}
+};
