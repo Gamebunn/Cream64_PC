@@ -39,7 +39,7 @@ If you're just looking for the N64 build, [it's available right here.](https://r
 
 ## Notable Bugs/Crashes
 
-While on the default/original camera, landing from flying on stages that use the 8 directional camera (all Bowser stages, Tick Tock Clock, Rainbow Ride and all custom stages) will suddenly snap toward the northern direction of the level. For the time being, switch over to puppycam to avoid this issue till a fix is ready. 
+Think we got them all. Please let me know if anything weird does pop up though!
 
 ## FAQ
 
