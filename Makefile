@@ -740,8 +740,8 @@ ifeq ($(TARGET_SWITCH),1)
   NXARCH := -march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
   INCLUDE_DIRS += $(LIBNX)/include $(PORTLIBS)/include
 
-  NX_APP_TITLE := Super Mario 64
-  NX_APP_AUTHOR := Nintendo - Port by Vatuu, fgsfdsfgs and KiritoDev
+  NX_APP_TITLE := Super Cream 64
+  NX_APP_AUTHOR := Nintendo - Hack by Gamebun - Port by Vatuu, fgsfdsfgs and KiritoDev
   NX_APP_VERSION := ver_$(VERSION)
   NX_APP_ICON := $(PLATFORM_DIR)/logo.jpg
   NACP_FILE := $(BUILD_DIR)/$(PLATFORM_DIR)/sm64.nacp
