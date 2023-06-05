@@ -14,7 +14,7 @@ Overall additions:
 * Amy, Tails, Blaze and Marine have their own little side stories. Completely optional and located through the game in the various levels. Keep an eye out!
 * And so much more. 
 
-## Building SC64
+## Building SC64 - Windows version
  
  Make sure to grab the latest version of MSYS2 from their website. Seems that initial bug has been fixed now and the latest version should be able to compile hacks now.
  
@@ -26,14 +26,19 @@ Overall additions:
  4) Dump the contents of the assets folder into the root of where you cloned the git
  5) Go ahead and compile with `make`. If you got a decent CPU, you can increase the compile speed with `make -j4`.
 
+ ## Building SC64 - Switch version
  
- ### Helpful optional build additions:
+ To build for Switch, [follow the instructions here](https://github.com/fgsfdsfgs/sm64ex/wiki/Compiling-for-Nintendo-Switch). (TARGET_SWITCH=1)
  
- HIGH_FPS_PC=1 - Game runs at 60 FPS
+ ## Helpful optional build additions:
  
- NODRAWINGDISTANCE=1 - All objects are shown at all times
+ `HIGH_FPS_PC=1` - Game runs at 60 FPS
+ 
+ `NODRAWINGDISTANCE=1` - All objects are shown at all times
  
  Example: ```make NODRAWINGDISTANCE=1 -j4```
+ 
+ The above can be used for the Switch version as well. 
 
 If you're just looking for the N64 build, [it's available right here.](https://romhacking.com/hack/super-cream-64)
 
