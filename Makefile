@@ -741,7 +741,7 @@ ifeq ($(TARGET_SWITCH),1)
   INCLUDE_DIRS += $(LIBNX)/include $(PORTLIBS)/include
 
   NX_APP_TITLE := Super Cream 64
-  NX_APP_AUTHOR := Nintendo - Hack by Gamebun - Port by Vatuu, fgsfdsfgs and KiritoDev
+  NX_APP_AUTHOR := Nintendo - Hack by Gamebun - Port by AloXado320, Vatuu, fgsfdsfgs and KiritoDev
   NX_APP_VERSION := ver_$(VERSION)
   NX_APP_ICON := $(PLATFORM_DIR)/logo.jpg
   NACP_FILE := $(BUILD_DIR)/$(PLATFORM_DIR)/sm64.nacp
