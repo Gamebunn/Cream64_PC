@@ -102,10 +102,10 @@
 #define FIX_PALM_TREE_LEAF_HEIGHT (0 || QOL_FIXES || !VANILLA_CHECKS)
 
 /// Adds unused cracked ice object back in Snowman's Land
-#define SNOWMAN_LAND_CRACKED_ICE_ACT (0 || QOL_FEATURES)
+// #define SNOWMAN_LAND_CRACKED_ICE_ACT (0 || QOL_FEATURES)
 
 /// Changes WF breakable wall by safely landing back if the proper wall is broken
-#define BETTER_WF_BREAKEABLE_WALL (0 || QOL_FEATURES)
+// #define BETTER_WF_BREAKEABLE_WALL (0 || QOL_FEATURES)
 
 /// Changes blue coin switch to respawn instead of disappearing
 #define RESPAWN_BLUE_COIN_SWITCH (0 || QOL_FEATURES)
