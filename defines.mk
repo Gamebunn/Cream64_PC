@@ -34,7 +34,7 @@ RM2C ?= 0
 # Quality of life fixes (works fine)
 QOL_FIXES ?= 1
 # Quality of life features (crash pops up here)
-QOL_FEATURES ?= 0
+QOL_FEATURES ?= 1
 # Quality of life redone files (works fine)
 QOL_REDONE ?= 1
 
