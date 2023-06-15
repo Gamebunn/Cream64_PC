@@ -2695,6 +2695,12 @@ by: PeachyPeach\n\
 unused, still wanna say thanks)\n\
 \n\
 \n\
+Windows Executable Icon by:\n\
+SketchMeister\n\
+\n\
+Nintendo Switch App Icon by:\n\
+J-Goblin\n\
+\n\
 Costume Switch Code only possible\n\
 thanks to:\n\
 CowQuack\n\

@@ -1416,7 +1416,8 @@ u32 interact_bounce_top(struct MarioState *m, UNUSED u32 interactType, struct Ob
             &&     o->behavior != segmented_to_virtual(bhvEyerokBoss)
             &&     o->behavior != segmented_to_virtual(bhvEyerokHand)            
             &&     o->behavior != segmented_to_virtual(bhvWigglerBody)
-            &&     o->behavior != segmented_to_virtual(bhvWigglerHead)) {
+            &&     o->behavior != segmented_to_virtual(bhvWigglerHead)
+            &&     o->behavior != segmented_to_virtual(bhvGoombaCrem)) {
                             spawn_object(o, MODEL_EXPLOSION, bhvExplosionNoDmg);
         }
         bounce_back_from_attack(m, interaction);

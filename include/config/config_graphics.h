@@ -37,4 +37,4 @@
 #define OBJ_HOLD_TRANSPARENT_STAR (0 || QOL_FEATURES)
 
 /// Makes snow particles slowly disappear when the camera is in a ceiling.
-#define NO_ENV_SNOW_CEILING (0 || QOL_FEATURES)
+//#define NO_ENV_SNOW_CEILING (0 || QOL_FEATURES)
