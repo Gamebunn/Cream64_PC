@@ -129,17 +129,12 @@ static void clear_static_surfaces(void) {
     clear_spatial_partition(&gStaticSurfacePartition[0][0]);
 }
 
-#if COLLISION_IMPROVEMENTS
-#define SURFACE_SORT(surf) surf->upperY
-#else
-#define SURFACE_SORT(surf) surf->vertex1[1]
-#endif
 /**
  * Add a surface to the correct cell list of surfaces.
- * @param dynamic Determines whether the surface is static or dynamic.
- * @param cellX The X position of the cell in which the surface resides.
- * @param cellZ The Z position of the cell in which the surface resides.
- * @param surface The surface to allocate to a node.
+ * @param dynamic Determines whether the surface is static or dynamic
+ * @param cellX The X position of the cell in which the surface resides
+ * @param cellZ The Z position of the cell in which the surface resides
+ * @param surface The surface to add
  */
 static void add_surface_to_cell(s32 dynamic, s32 cellX, s32 cellZ, struct Surface *surface) {
     struct SurfaceNode *newNode = alloc_surface_node(dynamic);
@@ -192,16 +187,25 @@ static void add_surface_to_cell(s32 dynamic, s32 cellX, s32 cellZ, struct Surfac
     if (listIndex == SPATIAL_PARTITION_WATER)
 #endif
     {
-        //! (Surface Cucking) Surfaces are sorted by the height of their first vertex.
-        //  Since vertices aren't ordered by height, this causes many lower triangles
-        //  to be sorted higher. This worsens surface cucking since many functions
-        //  only use the first triangle in surface order that fits, missing higher surfaces.
-        //  upperY would be a better sort method, set with optimizations enabled.
-        s32 surfacePriority = SURFACE_SORT(surface) * sortDir;
+    #if COLLISION_IMPROVEMENTS
+        s32 surfacePriority = surface->upperY * sortDir;
+    #else
+        //! (Surface Cucking) Surfaces are sorted by the height of their first
+        //  vertex. Since vertices aren't ordered by height, this causes many
+        //  lower triangles to be sorted higher. This worsens surface cucking since
+        //  many functions only use the first triangle in surface order that fits,
+        //  missing higher surfaces.
+        //  upperY would be a better sort method.
+        s32 surfacePriority = surface->vertex1[1] * sortDir;
+    #endif
         s32 priority;
         // Loop until we find the appropriate place for the surface in the list.
         while (list->next != NULL) {
-            priority = SURFACE_SORT(list->next->surface) * sortDir;
+        #if COLLISION_IMPROVEMENTS
+            priority = list->next->surface->upperY * sortDir;
+        #else
+            priority = list->next->surface->vertex1[1] * sortDir;
+        #endif
 
             if (surfacePriority > priority) {
                 break;
@@ -211,11 +215,10 @@ static void add_surface_to_cell(s32 dynamic, s32 cellX, s32 cellZ, struct Surfac
         }
     }
 #endif
+
     newNode->next = list->next;
     list->next = newNode;
 }
-
-#undef SURFACE_SORT
 
 /**
  * Every level is split into 16 * 16 cells of surfaces (to limit computing
@@ -297,7 +300,7 @@ static void add_surface(struct Surface *surface, s32 dynamic) {
     s32 minX, minZ, maxX, maxZ;
 
     min_max_3i(surface->vertex1[0], surface->vertex2[0], surface->vertex3[0], &minX, &maxX);
-    min_max_3i(surface->vertex1[2], surface->vertex2[2], surface->vertex3[2], &minZ, &maxZ);
+    min_max_3i(surface->vertex1[2], surface->vertex2[2], surface->vertex3[2], &minZ, &maxZ);    
 
     s32 minCellX = lower_cell_index(minX);
     s32 maxCellX = upper_cell_index(maxX);
@@ -445,9 +448,14 @@ static void load_static_surfaces(TerrainData **data, TerrainData *vertexData, Te
  * Read the data for vertices for reference by triangles.
  */
 static TerrainData *read_vertex_data(TerrainData **data) {
-    s32 numVertices = *(*data)++;
+    s32 numVertices;
+    UNUSED u8 filler[16];
+    TerrainData *vertexData;
 
-    TerrainData *vertexData = *data;
+    numVertices = *(*data);
+    (*data)++;
+
+    vertexData = *data;
     *data += 3 * numVertices;
 
     return vertexData;
@@ -581,11 +589,12 @@ void load_area_terrain(s16 index, TerrainData *data, RoomData *surfaceRooms, s16
     // results in segfaults if this is not done.
     clear_dynamic_surfaces();
 #endif
+
     clear_static_surfaces();
 
 #ifndef USE_SYSTEM_MALLOC
     // Initialise a new surface pool for this block of static surface data
-    gCurrStaticSurfacePool = main_pool_alloc(main_pool_available() - sizeof(struct AllocOnlyPool), MEMORY_POOL_LEFT);
+    gCurrStaticSurfacePool = main_pool_alloc(main_pool_available() - 0x10, MEMORY_POOL_LEFT);
     gCurrStaticSurfacePoolEnd = gCurrStaticSurfacePool;
 #endif
 
@@ -671,6 +680,9 @@ void clear_dynamic_surfaces(void) {
         clear_spatial_partition(&gDynamicSurfacePartition[0][0]);
 #endif
     }
+}
+
+UNUSED static void unused_80383604(void) {
 }
 
 /**
@@ -819,6 +831,13 @@ void load_object_collision_model(void) {
         marioDist = dist_between_objects(gCurrentObject, gMarioObject);
     }
 
+#if LOAD_OBJECT_COLLISION_NEAR_CAMERA
+    f32 camDist = vec3_mag(gCurrentObject->header.gfx.cameraToObject);
+    if (marioDist > camDist && camDist > 0.0f) {
+        marioDist = camDist;
+    }
+#endif
+
 #if AUTO_COLLISION_DISTANCE
     f32 colDist;
     if (collisionData == NULL) {
@@ -850,16 +869,6 @@ void load_object_collision_model(void) {
     if (drawDist < colDist) {
         drawDist = colDist;
     }
-
-#if LOAD_OBJECT_COLLISION_NEAR_CAMERA
-    // Ensure the object is rendered and limit max camera distance to the drawing distance.
-    if (gCurrentObject->header.gfx.node.flags & GRAPH_RENDER_ACTIVE) {
-        f32 camDist = vec3_mag(gCurrentObject->header.gfx.cameraToObject);
-        if (marioDist > camDist) {
-            marioDist = CLAMP(camDist, 1.0f, drawDist);
-        }
-    }
-#endif
 
     // Update if no Time Stop, in range, and in the current room.
     if (!(gTimeStopState & TIME_STOP_ACTIVE) && marioDist < colDist
@@ -896,7 +905,7 @@ void load_object_static_model(void) {
     u32 surfacePoolData;
 
     // Initialise a new surface pool for this block of surface data
-    gCurrStaticSurfacePool = main_pool_alloc(main_pool_available() - sizeof(struct AllocOnlyPool), MEMORY_POOL_LEFT);
+    gCurrStaticSurfacePool = main_pool_alloc(main_pool_available() - 0x10, MEMORY_POOL_LEFT);
     gCurrStaticSurfacePoolEnd = gCurrStaticSurfacePool;
 #endif
     gSurfaceNodesAllocated = gNumStaticSurfaceNodes;
