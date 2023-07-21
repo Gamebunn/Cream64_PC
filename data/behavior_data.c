@@ -360,8 +360,8 @@ const BehaviorScript bhvStarDoor[] = {
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_star_door_loop),
 #if !FIX_STAR_DOOR_ROOM_RENDER
-        CALL_NATIVE(bhv_star_door_loop_2),
         CALL_NATIVE(load_object_collision_model),
+        CALL_NATIVE(bhv_door_rendering_loop),
 #endif
     END_LOOP(),
 };
@@ -2655,6 +2655,7 @@ const BehaviorScript bhvExclamationBox[] = {
     ANIMATE(0),
     SET_FLOAT(oCollisionDistance, 300),
     SET_HOME(),
+    CALL_NATIVE(bhv_init_room), // added, common object
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_exclamation_box_loop),
     END_LOOP(),
@@ -3876,6 +3877,7 @@ const BehaviorScript bhvMessagePanel[] = {
     DROP_TO_FLOOR(),
     SET_HITBOX(/*Radius*/ 150, /*Height*/ 80),
     SET_INT(oWoodenPostTotalMarioAngle, 0),
+    CALL_NATIVE(bhv_init_room), // added, common object
     CALL_NATIVE(load_object_static_model),
     BEGIN_LOOP(),
         SET_INT(oIntangibleTimer, 0),
@@ -5704,6 +5706,7 @@ const BehaviorScript bhvActivatedBackAndForthPlatform[] = {
 const BehaviorScript bhvRecoveryHeart[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    CALL_NATIVE(bhv_init_room), // added, common object
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_recovery_heart_loop),
     END_LOOP(),
@@ -6104,6 +6107,7 @@ const BehaviorScript bhvRedCoinStarMarker[] = {
     DROP_TO_FLOOR(),
     ADD_FLOAT(oPosY, 60),
 #endif
+    CALL_NATIVE(bhv_init_room), // added, common object
     CALL_NATIVE(bhv_red_coin_star_marker_init),
     BEGIN_LOOP(),
         ADD_INT(oFaceAngleYaw, 0x100),
