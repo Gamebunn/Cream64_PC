@@ -2349,7 +2349,7 @@ static void end_peach_cutscene_summon_jumbo_star(struct MarioState *m) {
 #if defined(VERSION_EU)
     #define TIMER_FADE_IN_PEACH 201
     #define TIMER_DESCEND_PEACH 280
-#elif defined(VERSION_SH)
+#elif defined(VERSION_SH) || defined(VERSION_CN)
     #define TIMER_FADE_IN_PEACH 276
     #define TIMER_DESCEND_PEACH 400
 #else
@@ -2545,7 +2545,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
     }
 
     switch (m->actionTimer) {
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 110:
 #else
         case 80:
@@ -2553,7 +2553,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
             sEndPeachAnimation = 6;
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 111:
 #else
         case 81:
@@ -2561,7 +2561,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
             D_8032CBE4 = 3;
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 175:
 #else
         case 145:
@@ -2569,7 +2569,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
             D_8032CBE4 = 2;
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 258:
 #else
         case 228:
@@ -2578,7 +2578,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
             D_8032CBE8 = 1;
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 260:
 #else
         case 230:
@@ -2590,7 +2590,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
 #endif
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 305:
 #else
         case 275:
@@ -2599,7 +2599,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
             D_8032CBE8 = 0;
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 320:
 #else
         case 290:
@@ -2610,7 +2610,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
 #endif
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 510:
 #else
         case 480:
@@ -2623,7 +2623,7 @@ static void end_peach_cutscene_dialog_1(struct MarioState *m) {
 #if defined(VERSION_EU)
     #define TIMER_SOMETHING_SPECIAL 150
     #define TIMER_PEACH_KISS        260
-#elif defined(VERSION_SH)
+#elif defined(VERSION_SH) || defined(VERSION_CN)
     #define TIMER_SOMETHING_SPECIAL 170
     #define TIMER_PEACH_KISS        250
 #else
@@ -2639,7 +2639,7 @@ static void end_peach_cutscene_dialog_2(struct MarioState *m) {
     sEndPeachAnimation = 9;
 
     switch (m->actionTimer) {
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 39:
 #else
         case 29:
@@ -2650,7 +2650,7 @@ static void end_peach_cutscene_dialog_2(struct MarioState *m) {
 #endif
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 65:
 #else
         case 45:
@@ -2658,7 +2658,7 @@ static void end_peach_cutscene_dialog_2(struct MarioState *m) {
             D_8032CBE8 = 1;
             break;
 
-#ifdef VERSION_SH
+#if defined(VERSION_SH) || defined(VERSION_CN)
         case 105:
 #else
         case 75:
@@ -2934,7 +2934,7 @@ static s32 act_end_peach_cutscene(struct MarioState *m) {
     #define TIMER_CREDITS_SHOW      51
     #define TIMER_CREDITS_PROGRESS  80
     #define TIMER_CREDITS_WARP     160
-#elif defined(VERSION_SH)
+#elif defined(VERSION_SH) || defined(VERSION_CN)
     #define TIMER_CREDITS_SHOW      61
     #define TIMER_CREDITS_PROGRESS  90
     #define TIMER_CREDITS_WARP     204
@@ -3143,7 +3143,7 @@ static s32 check_for_instant_quicksand(struct MarioState *m) {
 }
 
 s32 mario_execute_cutscene_action(struct MarioState *m) {
-    s32 cancel;
+    s32 cancel = FALSE;
 
     if (check_for_instant_quicksand(m)) {
         return TRUE;

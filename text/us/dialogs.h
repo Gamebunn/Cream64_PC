@@ -164,7 +164,7 @@ DEFINE_DIALOG(DIALOG_008, 1, 4, 30, 200, _("\
 HEY, KEEP AWAY FROM\n\
 MY MOON MECH!! Get \n\
 a better gaze by pressing \n\
-[C]^ at a distance.\n\
+[C]▲ at a distance.\n\
 Yeah, beautiful ain't he?\n\
 My pride and joy but \n\
 even my baby needs a \n\
@@ -530,7 +530,7 @@ Cream, and have fun!!"))
 //bob, signpost at beginning
 DEFINE_DIALOG(DIALOG_035, 1, 5, 30, 200, _("\
 There are four camera, or\n\
-『[C],』 Buttons. Press [C]^\n\
+『[C],』 Buttons. Press [C]▲\n\
 to look around using the\n\
 Control Stick.\n\
 \n\
@@ -541,7 +541,7 @@ game. Not even Eggman is \n\
 this strong.\n\
 You can press [R] to center\n\
 it behind Cream then press\n\
-[C]| to get a wider view. \n\
+[C]▼ to get a wider view. \n\
 It's not the best method but\n\
 may prove a bit helpful.\n\
 Press [R] to return back to\n\
@@ -553,7 +553,7 @@ Best of luck!"))
 //wf, on stone platform
 DEFINE_DIALOG(DIALOG_036, 1, 5, 30, 200, _("\
 OBSERVATION PLATFORM\n\
-Press [C]^ to take a look\n\
+Press [C]▲ to take a look\n\
 around. Don't miss\n\
 anything!\n\
 \n\
@@ -1826,7 +1826,7 @@ rabbits like yourselves! Just\n\
 looking at you makes me sick!\n\
 Bleh!!\n\
 Get lost, you weebaboo \n\
-rabbit!! I don't have\n\ 
+rabbit!! I don't have\n\
 anything you want!\n\
 You disgust me. \n\
 Go eat a carrot or something,\n\
@@ -2521,9 +2521,9 @@ Sonic specific discords I'm\n\
 in for also giving me suggestions \n\
 and feedback.\n\
 \n\
-A huge thank you to everyone\n\ 
-whose streamed it and spread\n\ 
-the word around, along with\n\ 
+A huge thank you to everyone\n\
+whose streamed it and spread\n\
+the word around, along with\n\
 giving feedback and suggestions\n\
 for later versions.\n\
 and ANOTHER special thanks to\n\
@@ -3716,7 +3716,7 @@ all that really matters.- "))
 
 //Marine Goomba - Bar
 DEFINE_DIALOG(KB_003, 1, 4, 30, 200, _("\
-C'mon, c'mon just a set of\n\ 
+C'mon, c'mon just a set of\n\
 sevens pleaaaaase.\n\
 ...Oh hey, it's you. How \n\
 did you even get here?\n\
@@ -3854,7 +3854,7 @@ I'll be watching ya, kid."))
 //Big doll - Bar
 DEFINE_DIALOG(KB_008, 1, 3, 30, 200, _("\
 ~It's a doll of Mr. Big!\n\
-Aww, it's so cute and\n\ 
+Aww, it's so cute and\n\
 fluffy!!\n\
 Wonder how he got one?\n\
 I want one of me!!...and\n\
@@ -4182,7 +4182,7 @@ company equipment'..."))
 //Magenta Wisp, Fujiyama
 DEFINE_DIALOG(MWISP_NTM, 1, 4, 30, 200, _("\
 Music used:\n\
--Fujiyama Oriental\n\ 
+-Fujiyama Oriental\n\
 Golf Club (Japan)-\n\
 Neo Turf Masters"))
 

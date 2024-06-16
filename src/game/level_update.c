@@ -49,20 +49,44 @@
 #include "extras/bettercamera.h"
 #endif
 
-// TODO: Make these ifdefs better
+#if 1
+// Cream64 Credits (Used)
 const char *credits01[] = { "1ROMHACK BY", "GAMEBUN" };
 const char *credits02[] = { "2ENDING MUSIC", "SONIC ADVANCE 3", "ENDING A" };
 const char *credits03[] = { "2CREDIT MUSIC", "SONIC ADVANCE 3", "STAFF ROLL" };
 const char *credits04[] = { "3ALONWOOF", "FLIGHT CODE", "NPC SWITCH STATE CODE", "MAJOR CODE ADDITIONS" };
-
-#if defined(VERSION_JP) || defined(VERSION_SH)
-
 const char *credits05[] = { "4ARCTICJAGUAR", "THECOZIES", "AUDIO AND SEQUENCE HELP", "STAR GEO HELP" };
 const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES", "COSTUME SWITCH CODE" };
 const char *credits07[] = { "3CODING ASSIST", "WISEGUY", "CHEEZEPIN", "REONU"  };
 const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE OH DEAR GOD" };
 const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
 const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "FUNKYSXDA" };
+const char *credits11[] = { "4CREAM FACE MODEL", "CREAM FACE PROGRAMMER", "GAMEBUN", "BWGLITE" };
+const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "SURPRISINGLY BEATABLE" };
+const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
+const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
+const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
+const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPHN" };
+const char *credits17[] = { "3CREAM VOICE", "SARAH WULFECK", "MICHELLE RUFF", "MAGICALPOPTARTS" };
+const char *credits18[] = { "3VERY SPECIAL THANKS", "MAGICALPOPTARTS", "CATTI", "FUDGERNUTTER" };
+const char *credits19[] = { "3VERY SPECIAL THANKS", "BRINTY BRIN", "RAINBOW FISSION", "NICOSTEPHN" };
+const char *credits20[] = { "3CAKE END PICS", "MAGICALPOPTARTS", "FUDGERNUTTER", "THANK YOU FOR PLAYING" };
+#else
+// SM64 Credits (Unused)
+// TODO: Make these ifdefs better
+const char *credits01[] = { "1GAME DIRECTOR", "SHIGERU MIYAMOTO" };
+const char *credits02[] = { "2ASSISTANT DIRECTORS", "YOSHIAKI KOIZUMI", "TAKASHI TEZUKA" };
+const char *credits03[] = { "2SYSTEM PROGRAMMERS", "YASUNARI NISHIDA", "YOSHINORI TANIMOTO" };
+const char *credits04[] = { "3PROGRAMMERS", "HAJIME YAJIMA", "DAIKI IWAMOTO", "TOSHIO IWAWAKI" };
+
+#if defined(VERSION_JP) || defined(VERSION_SH) || defined(VERSION_CN)
+
+const char *credits05[] = { "1CAMERA PROGRAMMER", "TAKUMI KAWAGOE" };
+const char *credits06[] = { "1MARIO FACE PROGRAMMER", "GILES GODDARD" };
+const char *credits07[] = { "2COURSE DIRECTORS", "YOICHI YAMADA", "YASUHISA YAMAMURA" };
+const char *credits08[] = { "2COURSE DESIGNERS", "KENTA USUI", "NAOKI MORI" };
+const char *credits09[] = { "3COURSE DESIGNERS", "YOSHIKI HARUHANA", "MAKOTO MIYANAGA", "KATSUHIKO KANNO" };
+const char *credits10[] = { "1SOUND COMPOSER", "KOJI KONDO" };
 
 #ifdef VERSION_JP
 const char *credits11[] = { "1SOUND EFFECTS", "YOJI INAGAKI" };
@@ -72,62 +96,70 @@ const char *credits14[] = { "1CG DESIGNER", "MASANAO ARIMOTO" };
 const char *credits15[] = { "3TECHNICAL SUPPORT", "TAKAO SAWANO", "HIROHITO YOSHIMOTO", "HIROTO YADA" };
 const char *credits16[] = { "1TECHNICAL SUPPORT", "SGI. 64PROJECT STAFF" };
 const char *credits17[] = { "2PROGRESS MANAGEMENT", "KIMIYOSHI FUKUI", "KEIZO KATO" };
-#else // VERSION_SH
-// Shindou combines sound effects and sound programmer in order to make room for Mario voice and Peach voice
-const char *credits11[] = { "1SOUND EFFECTS", "YOJI INAGAKI" };
-const char *credits12[] = { "1SOUND PROGRAMMER", "HIDEAKI SHIMIZU" };
-const char *credits13[] = { "23D ANIMATORS", "YOSHIAKI KOIZUMI", "SATORU TAKIZAWA" };
-const char *credits14[] = { "1CG DESIGNER", "MASANAO ARIMOTO" };
-const char *credits15[] = { "3TECHNICAL SUPPORT", "TAKAO SAWANO", "HIROHITO YOSHIMOTO", "HIROTO YADA" };
-const char *credits16[] = { "1TECHNICAL SUPPORT", "SGI. 64PROJECT STAFF" };
-const char *credits17[] = { "2PROGRESS MANAGEMENT", "KIMIYOSHI FUKUI", "KEIZO KATO" };
+#else // VERSION_SH || VERSION_CN
+// Shindou and iQue combine sound effects and sound programmer in order to make room for Mario voice and Peach voice
+const char *credits11[] = { "4SOUND EFFECTS", "SOUND PROGRAMMER", "YOJI INAGAKI", "HIDEAKI SHIMIZU" };
+const char *credits12[] = { "23D ANIMATORS", "YOSHIAKI KOIZUMI", "SATORU TAKIZAWA" };
+const char *credits13[] = { "1CG DESIGNER", "MASANAO ARIMOTO" };
+const char *credits14[] = { "3TECHNICAL SUPPORT", "TAKAO SAWANO", "HIROHITO YOSHIMOTO", "HIROTO YADA" };
+const char *credits15[] = { "1TECHNICAL SUPPORT", "SGI. 64PROJECT STAFF" };
+const char *credits16[] = { "2PROGRESS MANAGEMENT", "KIMIYOSHI FUKUI", "KEIZO KATO" };
 #endif
 
 #else // VERSION_US || VERSION_EU
 // US and EU combine camera programmer and Mario face programmer...
-const char *credits05[] = { "4ARCTICJAGUAR", "THECOZIES", "AUDIO AND SEQUENCE HELP", "STAR GEO HELP" };
-const char *credits06[] = { "4SKETCHMEISTER", "COWQUACK", "NEW HUD AND RING SPRITES", "COSTUME SWITCH CODE" };
-const char *credits07[] = { "3CODING ASSIST", "WISEGUY", "CHEEZEPIN", "REONU"  };
-const char *credits08[] = { "3CODING ASSIST", "KAZE", "FAZANA", "AND MUCH MORE OH DEAR GOD" };
+const char *credits05[] = { "4CAMERA PROGRAMMER", "MARIO FACE PROGRAMMER", "TAKUMI KAWAGOE", "GILES GODDARD" };
+const char *credits06[] = { "2COURSE DIRECTORS", "YOICHI YAMADA", "YASUHISA YAMAMURA" };
+const char *credits07[] = { "2COURSE DESIGNERS", "KENTA USUI", "NAOKI MORI" };
+const char *credits08[] = { "3COURSE DESIGNERS", "YOSHIKI HARUHANA", "MAKOTO MIYANAGA", "KATSUHIKO KANNO" };
 
 #ifdef VERSION_US
-const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
-// ...3D animators and additional graphics in order to make room for screen text writer(s), Mario voice, and Peach voice
-const char *credits10[] = { "3NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "FUNKYSXDA" };
-const char *credits11[] = { "4CREAM FACE MODEL", "CREAM FACE PROGRAMMER", "GAMEBUN", "BWGLITE" };
-const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "SURPRISINGLY BEATABLE" };
-const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
-const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
-const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
-const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPHN" };
+const char *credits09[] = { "1SOUND COMPOSER", "KOJI KONDO" };
+// ...as well as sound effects and sound programmer in order to make room for screen text writer, Mario voice, and Peach voice
+const char *credits10[] = { "4SOUND EFFECTS", "SOUND PROGRAMMER", "YOJI INAGAKI", "HIDEAKI SHIMIZU" };
+const char *credits11[] = { "23-D ANIMATORS", "YOSHIAKI KOIZUMI", "SATORU TAKIZAWA" };
+const char *credits12[] = { "1ADDITIONAL GRAPHICS", "MASANAO ARIMOTO" };
+const char *credits13[] = { "3TECHNICAL SUPPORT", "TAKAO SAWANO", "HIROHITO YOSHIMOTO", "HIROTO YADA" };
+const char *credits14[] = { "1TECHNICAL SUPPORT", "SGI N64 PROJECT STAFF" };
+const char *credits15[] = { "2PROGRESS MANAGEMENT", "KIMIYOSHI FUKUI", "KEIZO KATO" };
+const char *credits16[] = { "5SCREEN TEXT WRITER", "TRANSLATION", "LESLIE SWAN", "MINA AKINO", "HIRO YAMADA" };
 #else // VERSION_EU
 // ...as well as sound composer, sound effects, and sound programmer, and...
-const char *credits09[] = { "5NEW PAINTING ASSETS", "ZACK ZHANG", "INFINITEBRIANS", "SKETCHMEISTER", "FLAMINGGARACO" };
+const char *credits09[] = { "7SOUND COMPOSER", "SOUND EFFECTS", "SOUND PROGRAMMER", "KOJI KONDO", "YOJI INAGAKI", "HIDEAKI SHIMIZU" };
 // ...3D animators and additional graphics in order to make room for screen text writer(s), Mario voice, and Peach voice
-const char *credits10[] = { "5NEW PAINTING CONT", "THENOVIKA", "FUDGERNUTTER", "FUNKYSXDA", "SIMPLE" };
-const char *credits11[] = { "4CREAM FACE MODEL", "CREAM FACE PROGRAMMER", "GAMEBUN", "BWGLITE" };
-const char *credits12[] = { "5SHOUTOUTS TO", "CONSOLE TESTED BY", "SIMPLEFLIPS", "GAMEBUN", "SURPRISINGLY BEATABLE" };
-const char *credits13[] = { "2GO READ ONE PIECE", "", "ALL ONE THOUSAND PLUS CHAPTERS" };
-const char *credits14[] = { "4TAILS VOICE", "AMY VOICE", "CUTEYTCAT", "CINDY ROBINSON"  };
-const char *credits15[] = { "4BLAZE VOICE", "HOCUS VOICE", "ERICA LINDBECK", "FUDGERNUTTER" };
-const char *credits16[] = { "4EGGMAN VOICE", "VANILLA VOICE", "MIKE POLLOCK", "NICOSTEPHN" };
+const char *credits10[] = { "63-D ANIMATORS", "ADDITIONAL GRAPHICS", "YOSHIAKI KOIZUMI", "SATORU TAKIZAWA", "MASANAO ARIMOTO" };
+const char *credits11[] = { "3TECHNICAL SUPPORT", "TAKAO SAWANO", "HIROHITO YOSHIMOTO", "HIROTO YADA" };
+const char *credits12[] = { "1TECHNICAL SUPPORT", "SGI N64 PROJECT STAFF" };
+const char *credits13[] = { "2PROGRESS MANAGEMENT", "KIMIYOSHI FUKUI", "KEIZO KATO" };
+const char *credits14[] = { "5SCREEN TEXT WRITER", "ENGLISH TRANSLATION", "LESLIE SWAN", "MINA AKINO", "HIRO YAMADA" };
+const char *credits15[] = { "4SCREEN TEXT WRITER", "FRENCH TRANSLATION", "JULIEN BARDAKOFF", "KENJI HARAGUCHI" };
+const char *credits16[] = { "4SCREEN TEXT WRITER", "GERMAN TRANSLATION", "THOMAS GOERG", "THOMAS SPINDLER" };
 #endif
 
 #endif
 
 #ifndef VERSION_JP
-const char *credits17[] = { "3CREAM VOICE", "SARAH WULFECK", "MICHELLE RUFF", "MAGICALPOPTARTS" };
+const char *credits17[] = { "4MARIO VOICE", "PEACH VOICE", "CHARLES MARTINET", "LESLIE SWAN" };
 #endif
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) || defined(VERSION_CN)
+// iQue uses this despite Jyoho Kaihatubu being Japanese
 const char *credits18[] = { "3SPECIAL THANKS TO", "JYOHO KAIHATUBU", "ALL NINTENDO", "MARIO CLUB STAFF" };
 #elif defined(VERSION_US)
-const char *credits18[] = { "3VERY SPECIAL THANKS", "MAGICALPOPTARTS", "CATTI", "FUDGERNUTTER" };
+const char *credits18[] = { "3SPECIAL THANKS TO", "EAD STAFF", "ALL NINTENDO PERSONNEL", "MARIO CLUB STAFF" };
 #else // VERSION_EU
-const char *credits18[] = { "3VERY SPECIAL THANKS", "MAGICALPOPTARTS", "CATTI", "FUDGERNUTTER" };
+const char *credits18[] = { "3SPECIAL THANKS TO", "EAD STAFF", "ALL NINTENDO PERSONNEL", "SUPER MARIO CLUB STAFF" };
 #endif
-const char *credits19[] = { "3VERY SPECIAL THANKS", "BRINTY BRIN", "RAINBOW FISSION", "NICOSTEPHN" };
-const char *credits20[] = { "3CAKE END PICS", "MAGICALPOPTARTS", "FUDGERNUTTER", "THANK YOU FOR PLAYING" };
+
+#ifdef VERSION_CN
+// iQue combines producer and executive producer in order to make room for China production
+const char *credits19[] = { "4PRODUCER", "EXECUTIVE PRODUCER", "SHIGERU MIYAMOTO", "HIROSHI YAMAUCHI" };
+const char *credits20[] = { "1CHINA PRODUCTION", "IQUE ENGINEERING" };
+#else
+const char *credits19[] = { "1PRODUCER", "SHIGERU MIYAMOTO" };
+const char *credits20[] = { "1EXECUTIVE PRODUCER", "HIROSHI YAMAUCHI" };
+#endif
+#endif
 
 // Screen top left - Bottom text
 #define CREDITS_POS_ONE 0*16
@@ -252,7 +284,7 @@ void stub_level_update_1(void) {
 
 void load_level_init_text(u32 arg) {
     s32 gotAchievement;
-    u32 dialogID = gCurrentArea->dialog[arg];
+    s32 dialogID = gCurrentArea->dialog[arg];
 
     switch (dialogID) {
         case DIALOG_129:
@@ -293,7 +325,7 @@ void init_door_warp(struct SpawnInfo *spawnInfo, u32 arg1) {
 }
 
 void set_mario_initial_cap_powerup(struct MarioState *m) {
-    u32 capCourseIndex = gCurrCourseNum - COURSE_CAP_COURSES;
+    s32 capCourseIndex = gCurrCourseNum - COURSE_CAP_COURSES;
 
     switch (capCourseIndex) {
         case COURSE_COTMC - COURSE_CAP_COURSES: /*
@@ -1249,11 +1281,7 @@ s32 init_level(void) {
     }
 #endif
 
-    if (gCurrCreditsEntry == NULL) {
-        gHudDisplay.flags = HUD_DISPLAY_DEFAULT;
-    } else {
-        gHudDisplay.flags = HUD_DISPLAY_NONE;
-    }
+    gHudDisplay.flags = gCurrCreditsEntry == NULL ? HUD_DISPLAY_DEFAULT : HUD_DISPLAY_NONE;
 
     sTimerRunning = FALSE;
 
