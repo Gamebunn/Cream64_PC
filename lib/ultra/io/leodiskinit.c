@@ -1,39 +1,36 @@
 #include "PR/os_internal.h"
 #include "PR/os.h"
 #include "PR/rcp.h"
-#include "macros.h"
 
-// This file was removed in 2.0J
-ALIGNED8 OSPiHandle LeoDiskHandle;
+OSPiHandle __Dom2SpeedParam;
 OSPiHandle *__osDiskHandle;
 
 OSPiHandle *osLeoDiskInit(void) {
-    u32 saveMask;
+    s32 saveMask;
 
-    LeoDiskHandle.type = DEVICE_TYPE_64DD;
-    LeoDiskHandle.baseAddress = PHYS_TO_K1(PI_DOM2_ADDR1);
-    LeoDiskHandle.latency = 3;
-    LeoDiskHandle.pulse = 6;
-    LeoDiskHandle.pageSize = 6;
-    LeoDiskHandle.relDuration = 2;
+    __Dom2SpeedParam.type = DEVICE_TYPE_64DD;
+    __Dom2SpeedParam.baseAddress = PHYS_TO_K1(PI_DOM2_ADDR1);
+    __Dom2SpeedParam.latency = 3;
+    __Dom2SpeedParam.pulse = 6;
+    __Dom2SpeedParam.pageSize = 6;
+    __Dom2SpeedParam.relDuration = 2;
 #if LIBULTRA_VERSION >= OS_VER_H
-    LeoDiskHandle.domain = PI_DOMAIN2;
+    __Dom2SpeedParam.domain = 1;
 #endif
 
-    IO_WRITE(PI_BSD_DOM2_LAT_REG, LeoDiskHandle.latency);
-    IO_WRITE(PI_BSD_DOM2_PWD_REG, LeoDiskHandle.pulse);
-    IO_WRITE(PI_BSD_DOM2_PGS_REG, LeoDiskHandle.pageSize);
-    IO_WRITE(PI_BSD_DOM2_RLS_REG, LeoDiskHandle.relDuration);
+    IO_WRITE(PI_BSD_DOM2_LAT_REG, __Dom2SpeedParam.latency);
+    IO_WRITE(PI_BSD_DOM2_PWD_REG, __Dom2SpeedParam.pulse);
+    IO_WRITE(PI_BSD_DOM2_PGS_REG, __Dom2SpeedParam.pageSize);
+    IO_WRITE(PI_BSD_DOM2_RLS_REG, __Dom2SpeedParam.relDuration);
 #if LIBULTRA_VERSION >= OS_VER_I
-    LeoDiskHandle.speed = 0;
+    __Dom2SpeedParam.speed = 0;
 #endif
 
-    bzero(&LeoDiskHandle.transferInfo, sizeof(__OSTranxInfo));
+    bzero(&__Dom2SpeedParam.transferInfo, sizeof(__OSTranxInfo));
     saveMask = __osDisableInt();
-    LeoDiskHandle.next = __osPiTable;
-    __osPiTable = &LeoDiskHandle;
-    __osDiskHandle = &LeoDiskHandle;
+    __Dom2SpeedParam.next = __osPiTable;
+    __osPiTable = &__Dom2SpeedParam;
+    __osDiskHandle = &__Dom2SpeedParam;
     __osRestoreInt(saveMask);
-
-    return &LeoDiskHandle;
+    return &__Dom2SpeedParam;
 }

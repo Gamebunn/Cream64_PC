@@ -154,7 +154,7 @@ void create_thread(OSThread *thread, OSId id, void (*entry)(void *), void *arg, 
     osCreateThread(thread, id, entry, arg, sp, pri);
 }
 
-#if defined(VERSION_SH) || defined(VERSION_CN)
+#ifdef VERSION_SH
 extern void func_sh_802f69cc(void);
 #endif
 
@@ -164,7 +164,7 @@ void handle_nmi_request(void) {
     stop_sounds_in_continuous_banks();
     sound_banks_disable(SEQ_PLAYER_SFX, SOUND_BANKS_BACKGROUND);
     fadeout_music(90);
-#if defined(VERSION_SH) || defined(VERSION_CN)
+#ifdef VERSION_SH
     func_sh_802f69cc();
 #endif
 }
@@ -235,7 +235,7 @@ void handle_vblank(void) {
 
     stub_main_3();
     gNumVblanks++;
-#if defined(VERSION_SH) || defined(VERSION_CN)
+#ifdef VERSION_SH
     if (gResetTimer > 0 && gResetTimer < 100) {
         gResetTimer++;
     }
@@ -438,12 +438,12 @@ void turn_off_audio(void) {
  * Initialize hardware, start main thread, then idle.
  */
 void thread1_idle(UNUSED void *arg) {
-#if defined(VERSION_US) || defined(VERSION_SH) || defined(VERSION_CN)
+#if defined(VERSION_US) || defined(VERSION_SH)
     s32 tvType = osTvType;
 #endif
 
     osCreateViManager(OS_PRIORITY_VIMGR);
-#if defined(VERSION_US) || defined(VERSION_SH) || defined(VERSION_CN)
+#if defined(VERSION_US) || defined(VERSION_SH)
     if (tvType == OS_TV_NTSC) {
         osViSetMode(&osViModeTable[OS_VI_NTSC_LAN1]);
     } else {

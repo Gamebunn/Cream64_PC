@@ -63,11 +63,11 @@ s32 osEepromRead(OSMesgQueue *mq, u8 address, u8 *buffer) {
 #if LIBULTRA_VERSION > OS_VER_H
     type = sdata.type & (CONT_EEPROM | CONT_EEP16K);
 
-#if LIBULTRA_VERSION < OS_VER_J
-    if (ret != 0) {
-        __osSiRelAccess();
-        return CONT_NO_RESPONSE_ERROR;
-    }
+#if LIBULTRA_VERSION < OS_VER_K
+	if (ret != 0) {
+		__osSiRelAccess();
+		return CONT_NO_RESPONSE_ERROR;
+	}
 #else
     if (ret == 0) {
 #endif
@@ -85,14 +85,15 @@ s32 osEepromRead(OSMesgQueue *mq, u8 address, u8 *buffer) {
 #endif
                 break;
             default:
-#if LIBULTRA_VERSION < OS_VER_J
+#if LIBULTRA_VERSION < OS_VER_K
                 __osSiRelAccess();
                 return CONT_NO_RESPONSE_ERROR;
+                break;
 #else
                 ret = CONT_NO_RESPONSE_ERROR;
 #endif
         }
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION >= OS_VER_K
     }
 
     if (ret != 0) {
@@ -145,7 +146,7 @@ void __osPackEepReadData(u8 address) {
     __OSContEepromFormat eepromformat;
     s32 i;
 
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION >= OS_VER_K
     __osEepPifRam.pifstatus = CONT_CMD_EXE;
 #else
     CONT_PIFRAM_SET(__osEepPifRam, CONT_CMD_NOP, CONT_CMD_EXE);
@@ -156,7 +157,7 @@ void __osPackEepReadData(u8 address) {
     eepromformat.cmd = CONT_CMD_READ_EEPROM;
     eepromformat.address = address;
 
-#if LIBULTRA_VERSION < OS_VER_J
+#if LIBULTRA_VERSION < OS_VER_K
     for (i = 0; i < ARRAY_COUNT(eepromformat.data); i++) {
         eepromformat.data[i] = 0;
     }

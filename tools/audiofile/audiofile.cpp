@@ -3562,17 +3562,13 @@ struct signConverter
 	static const int kMaxSignedValue = (((1 << (kScaleBits - 1)) - 1) << 1) + 1;
 	static const int kMinSignedValue = -kMaxSignedValue - 1;
 
-	struct signedToUnsigned
- 	{
-		typedef SignedType argument_type;
-		typedef UnsignedType result_type;
+	struct signedToUnsigned : public std::unary_function<SignedType, UnsignedType>
+	{
 		UnsignedType operator()(SignedType x) { return x - kMinSignedValue; }
 	};
 
-	struct unsignedToSigned
- 	{
-		typedef SignedType argument_type;
-		typedef UnsignedType result_type;
+	struct unsignedToSigned : public std::unary_function<SignedType, UnsignedType>
+	{
 		SignedType operator()(UnsignedType x) { return x + kMinSignedValue; }
 	};
 };
@@ -3764,10 +3760,8 @@ private:
 };
 
 template <typename Arg, typename Result>
-struct intToFloat
+struct intToFloat : public std::unary_function<Arg, Result>
 {
-	typedef Arg argument_type;
-	typedef Result result_type;
 	Result operator()(Arg x) const { return x; }
 };
 
@@ -3832,18 +3826,14 @@ private:
 };
 
 template <typename Arg, typename Result, unsigned shift>
-struct lshift
+struct lshift : public std::unary_function<Arg, Result>
 {
-	typedef Arg argument_type;
-	typedef Result result_type;
 	Result operator()(const Arg &x) const { return x << shift; }
 };
 
 template <typename Arg, typename Result, unsigned shift>
-struct rshift
+struct rshift : public std::unary_function<Arg, Result>
 {
-	typedef Arg argument_type;
-	typedef Result result_type;
 	Result operator()(const Arg &x) const { return x >> shift; }
 };
 
@@ -3938,10 +3928,8 @@ private:
 };
 
 template <typename Arg, typename Result>
-struct floatToFloat
+struct floatToFloat : public std::unary_function<Arg, Result>
 {
-	typedef Arg argument_type;
-	typedef Result result_type;
 	Result operator()(Arg x) const { return x; }
 };
 

@@ -43,12 +43,12 @@ void bhv_ddr_music2_init(void)
 
 }
 
-void bhv_ddr_music3_loop(void)
+void bhv_bm_music1_loop(void)
 {
     
-    if (o->oDistanceToMario < 320.0f) 
+    if (o->oDistanceToMario < 300.0f) 
     {
-        play_secondary_music(SEQ_DDRTRACK3, 0, 255, 1000);
+        play_secondary_music(SEQ_BMTRACK1, 0, 255, 1000);
         o->oPiranhaPlantSleepMusicState = PIRANHA_PLANT_SLEEP_MUSIC_PLAYING;
     }  
     else if (o->oPiranhaPlantSleepMusicState == PIRANHA_PLANT_SLEEP_MUSIC_PLAYING) 
@@ -59,7 +59,28 @@ void bhv_ddr_music3_loop(void)
 
 }
 
-void bhv_ddr_music3_init(void)
+void bhv_bm_music1_init(void)
+{
+
+}
+
+void bhv_bm_music2_loop(void)
+{
+    
+    if (o->oDistanceToMario < 300.0f) 
+    {
+        play_secondary_music(SEQ_BMTRACK2, 0, 255, 1000);
+        o->oPiranhaPlantSleepMusicState = PIRANHA_PLANT_SLEEP_MUSIC_PLAYING;
+    }  
+    else if (o->oPiranhaPlantSleepMusicState == PIRANHA_PLANT_SLEEP_MUSIC_PLAYING) 
+    {
+        o->oPiranhaPlantSleepMusicState++;
+        func_80321080(50);
+    }
+
+}
+
+void bhv_bm_music2_init(void)
 {
 
 }

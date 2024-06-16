@@ -31,7 +31,7 @@ s32 __osContRamRead(UNUSED OSMesgQueue* mq, int channel, u16 address, u8* buffer
 }
 #else
 
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION > OS_VER_I
 s32 __osPfsLastChannel = -1;
 
 s32 __osContRamRead(OSMesgQueue* mq, int channel, u16 address, u8* buffer) {
@@ -82,16 +82,19 @@ s32 __osContRamRead(OSMesgQueue* mq, int channel, u16 address, u8* buffer) {
 
                 if (ret) {
                     break;
-                } else {
-                    ret = PFS_ERR_CONTRFAIL;
                 }
+
+                ret = PFS_ERR_CONTRFAIL;
             } else {
                 bcopy(&READFORMAT(ptr)->data, buffer, BLOCKSIZE);
             }
         } else {
             ret = PFS_ERR_NOPACK;
         }
-    } while ((ret == PFS_ERR_CONTRFAIL) && (retry-- >= 0));
+        if (ret != PFS_ERR_CONTRFAIL) {
+            break;
+        }
+    } while (0 <= retry--);
     __osSiRelAccess();
 
     return ret;
@@ -100,18 +103,22 @@ s32 __osContRamRead(OSMesgQueue* mq, int channel, u16 address, u8* buffer) {
 void __osPackRamReadData(int channel, u16 address);
 
 s32 __osContRamRead(OSMesgQueue *mq, int channel, u16 address, u8 *buffer) {
-    s32 ret = 0;
+    s32 ret;
     int i;
-    u8 *ptr = (u8 *)&__osPfsPifRam;
+    u8 *ptr;
     __OSContRamReadFormat ramreadformat;
-    int retry = 2;
+    int retry;
+    ret = 0;
+    ptr = (u8 *)&__osPfsPifRam;
+    retry = 2;
 
     __osSiGetAccess();
+
     __osContLastCmd = CONT_CMD_READ_PAK;
     __osPackRamReadData(channel, address);
+
     ret = __osSiRawStartDma(OS_WRITE, &__osPfsPifRam);
     osRecvMesg(mq, NULL, OS_MESG_BLOCK);
-
     do {
         ret = __osSiRawStartDma(OS_READ, &__osPfsPifRam);
         osRecvMesg(mq, NULL, OS_MESG_BLOCK);
@@ -124,19 +131,16 @@ s32 __osContRamRead(OSMesgQueue *mq, int channel, u16 address, u8 *buffer) {
         }
 
         ramreadformat = *READFORMAT(ptr);
-
         ret = CHNL_ERR(ramreadformat);
         if (ret == 0) {
             u8 c;
             c = __osContDataCrc((u8*)&ramreadformat.data);
             if (c != ramreadformat.datacrc) {
                 ret = __osPfsGetStatus(mq, channel);
-
                 if (ret != 0) {
                     __osSiRelAccess();
                     return ret;
                 }
-
                 ret = PFS_ERR_CONTRFAIL;
             } else {
                 for (i = 0; i < ARRAY_COUNT(ramreadformat.data); i++) {
@@ -146,7 +150,10 @@ s32 __osContRamRead(OSMesgQueue *mq, int channel, u16 address, u8 *buffer) {
         } else {
             ret = PFS_ERR_NOPACK;
         }
-    } while ((ret == PFS_ERR_CONTRFAIL) && retry-- >= 0);
+        if (ret != PFS_ERR_CONTRFAIL) {
+            break;
+        }
+    } while (retry-- >= 0);
 
     __osSiRelAccess();
     return ret;

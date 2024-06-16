@@ -163,9 +163,11 @@ Gfx *geo_switch_area(s32 callContext, struct GraphNode *node, UNUSED void *conte
 #if BETTER_ROOM_CHECKS
     RoomData room;
     #define ROOM_ID(r) r
+    #define CHECK_ROOM room
 #else
     struct Surface *floor;
     #define ROOM_ID(r) floor->r
+    #define CHECK_ROOM floor
 #endif
 
     if (callContext == GEO_CONTEXT_RENDER && gMarioObject != NULL) {
@@ -186,11 +188,13 @@ Gfx *geo_switch_area(s32 callContext, struct GraphNode *node, UNUSED void *conte
         }
 #endif
 
-        print_debug_top_down_objectinfo("areainfo %d", ROOM_ID(room));
-
-        if (ROOM_ID(room) > 0) {
+        if (CHECK_ROOM) {
             gMarioCurrentRoom = ROOM_ID(room);
-            switchCase->selectedCase = (ROOM_ID(room) - 1);
+            print_debug_top_down_objectinfo("areainfo %d", ROOM_ID(room));
+
+            if (ROOM_ID(room) > 0) {
+                switchCase->selectedCase = (ROOM_ID(room) - 1);
+            }
         }
     } else {
         switchCase->selectedCase = 0;

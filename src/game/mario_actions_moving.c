@@ -57,7 +57,7 @@ struct LandingAction sDoubleJumpLandAction = {
 };
 
 struct LandingAction sTripleJumpLandAction = {
-    4, 0, ACT_FREEFALL, ACT_TRIPLE_JUMP_LAND_STOP, ACT_JUMP, ACT_FREEFALL, ACT_BEGIN_SLIDING,
+    4, 0, ACT_FREEFALL, ACT_TRIPLE_JUMP_LAND_STOP, ACT_UNINITIALIZED, ACT_FREEFALL, ACT_BEGIN_SLIDING,
 };
 
 struct LandingAction sBackflipLandAction = {
@@ -854,11 +854,6 @@ s32 act_walking(struct MarioState *m) {
     }
 
     if (m->input & INPUT_A_PRESSED) {
-#if EASIER_LONG_JUMPS
-        if (m->input & INPUT_Z_PRESSED && m->forwardVel > 10.0f) {
-            return set_mario_action(m, ACT_CROUCH_SLIDE, 0);
-        }
-#endif
         return set_jump_from_landing(m);
     }
 
@@ -1944,7 +1939,7 @@ s32 act_hold_freefall_land(struct MarioState *m) {
 }
 
 s32 act_long_jump_land(struct MarioState *m) {
-#if defined(VERSION_SH) || defined(VERSION_CN)
+#ifdef VERSION_SH
     // BLJ (Backwards Long Jump) speed build up fix, crushing SimpleFlips's dreams since July 1997
     if (m->forwardVel < 0.0f) {
         m->forwardVel = 0.0f;
@@ -2082,7 +2077,7 @@ s32 check_common_moving_cancels(struct MarioState *m) {
 }
 
 s32 mario_execute_moving_action(struct MarioState *m) {
-    s32 cancel = FALSE;
+    s32 cancel;
 
     if (check_common_moving_cancels(m)) {
         return TRUE;

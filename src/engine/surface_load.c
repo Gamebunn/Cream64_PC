@@ -373,7 +373,6 @@ static s32 surface_has_force(TerrainData surfaceType) {
         default:
             break;
     }
-
     return hasForce;
 }
 
@@ -465,7 +464,6 @@ static void load_environmental_regions(TerrainData **data) {
     numRegions = *(*data)++;
 
     if (numRegions > 20) {
-        CN_DEBUG_PRINTF(("Error Water Over\n"));
     }
 
     for (i = 0; i < numRegions; i++) {
@@ -612,8 +610,7 @@ void load_area_terrain(s16 index, TerrainData *data, RoomData *surfaceRooms, s16
             break;
         } else if (TERRAIN_LOAD_IS_SURFACE_TYPE_HIGH(terrainLoadType)) {
             load_static_surfaces(&data, vertexData, terrainLoadType, &surfaceRooms);
-        } else {
-            CN_DEBUG_PRINTF((" BGCode Error \n"));
+            continue;
         }
     }
 

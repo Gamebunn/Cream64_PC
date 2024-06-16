@@ -357,13 +357,7 @@ void render_hud_timer(void) {
     // 30 frames * 60 seconds (1 minute) = 1800
     u16 timerMins = timerValFrames / 1800;
     u16 timerSecs = (timerValFrames - (timerMins * 1800)) / 30;
-    u16 timerFracSecs = ((u16) (timerValFrames - (timerMins * 1800) - (timerSecs * 30))) / 3;
-#ifdef VERSION_CN
-    u8 timeString[2];
-    timeString[0] = 0xC0; // 时间
-    timeString[1] = 0x00;
-    print_text_centered(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(SCREEN_WIDTH - HUD_TIME_X), HUD_TIME_Y, (const char *) timeString);
-#else
+    u16 timerFracSecs = (timerValFrames - (timerMins * 1800) - (timerSecs * 30)) / 3;
     char *str;
 #ifdef VERSION_EU
     switch (eu_get_language()) {
@@ -381,7 +375,6 @@ void render_hud_timer(void) {
     str = "TIME";
     // If set_hud_auto_x_pos is used, the "TIME" text will be very separate from the actual timer
     print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(SCREEN_WIDTH - HUD_TIME_X), HUD_TIME_Y, str);
-#endif
 #endif
 
     print_text_fmt_int(set_hud_auto_x_pos(HUD_TIME_MIN_X), HUD_TIME_Y, "%0d", timerMins);
@@ -403,7 +396,7 @@ void set_hud_camera_status(s16 status) {
 }
 
 /**
- * Renders camera HUD glyphs using a table list. Depending on
+ * Renders camera HUD glyphs using a table list, depending of
  * the camera status called, a defined glyph is rendered.
  */
 void render_hud_camera_status(void) {

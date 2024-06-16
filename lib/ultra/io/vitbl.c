@@ -1311,7 +1311,7 @@ OSViMode osViModeTable[] = {
     },
 #endif
 
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION >= OS_VER_K
     {
         OS_VI_FPAL_LPN1,  // type
         { // comRegs

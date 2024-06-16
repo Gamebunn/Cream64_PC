@@ -662,7 +662,8 @@ extern const BehaviorScript bhvKZNekoarc[];
 extern const BehaviorScript bhvSimple[];
 extern const BehaviorScript bhvDDRMusic[];
 extern const BehaviorScript bhvDDRMusic2[];
-extern const BehaviorScript bhvDDRMusic3[];
+extern const BehaviorScript bhvBMMusic1[];
+extern const BehaviorScript bhvBMMusic2[];
 
 // Castle Courtyard
 extern const BehaviorScript bhvToadMessageBait[];

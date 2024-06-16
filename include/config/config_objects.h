@@ -95,9 +95,6 @@
 /// Fixes NPC interaction button so it's like the japanese version
 #define FIX_INTERACT_READING_BUTTON (0 || QOL_FIXES)
 
-/// Fixes doors still being visible outside of it's room when changing areas
-#define FIX_DOOR_NO_ROOM_VISIBLE (0 || QOL_FIXES)
-
 /// Fixes hardcoded snow tree leaf particles
 #define FIX_HARDCODED_TREE_PARTICLES (0 || QOL_FIXES || !VANILLA_CHECKS)
 
@@ -136,9 +133,6 @@
 
 /// Makes an object active only if it's on it's room if it exists
 #define PROCESS_ONLY_ON_ROOM_PARENT (0 || QOL_FEATURES)
-
-/// Makes collected stars fly up instead of disappearing
-#define FLY_UP_COLLECTED_STARS (0 || QOL_FEATURES)
 
 /// Makes coin formation on ground have better coin position, fixes misaligned coins
 #define BETTER_COIN_FORMATION_GROUND (0 || QOL_FEATURES || COLLISION_FIXES)

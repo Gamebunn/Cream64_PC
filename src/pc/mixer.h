@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <ultra64.h>
 
-#if defined(VERSION_SH) || defined(VERSION_CN)
+#ifdef VERSION_SH
 #define NEW_AUDIO_UCODE
 #endif
 

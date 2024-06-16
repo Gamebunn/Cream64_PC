@@ -78,7 +78,7 @@ enum SeqId {
     SEQ_EVENT_HIGH_SCORE5,            // 0x42; NEW_HIGHSCORE3
     SEQ_DDRTRACK1,                    // 0x43; DDR TRACK1
     SEQ_DDRTRACK2,                    // 0x44; DDR TRACK2
-    SEQ_DDRTRACK3,                    // 0x45; DDR TRACK3
+    SEQ_BMTRACK1,                     // 0x45; BM TRACK1
     SEQ_LEVEL_NEW_TOTWC,              // 0x46; TOTWC
     SEQ_LEVEL_NEW_COTMC,              // 0x47; COTMC
     SEQ_LEVEL_EGGMAN3FINALE_END,      // 0x48; EGGMAN3 FINALE END
@@ -117,6 +117,7 @@ enum SeqId {
     SEQ_COLLECT_STAR_KLONOA,          // 0x69; COLLECT STAR (FOR KLONOA)
     SEQ_COLLECT_STAR_AUSTIN,          // 0x6A; COLLECT STAR (FOR AUSTIN)
     SEQ_COLLECT_STAR_SENA,            // 0x6B; COLLECT STAR (FOR SENA)
+    SEQ_BMTRACK2,                    // 0x6C; BM TRACK2
     SEQ_COUNT 
 };
 

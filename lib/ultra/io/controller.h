@@ -39,7 +39,7 @@ typedef struct {
     /* 0x1 */ u8 txsize;
     /* 0x2 */ u8 rxsize;
     /* 0x3 */ u8 cmd;
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION > OS_VER_I
     /* 0x4 */ u8 addrh;
     /* 0x5 */ u8 addrl;
 #else
@@ -189,17 +189,13 @@ s32 __osCheckPackId(OSPfs *pfs, __OSPackId *temp);
 s32 __osGetId(OSPfs *pfs);
 s32 __osCheckId(OSPfs *pfs);
 s32 __osPfsRWInode(OSPfs *pfs, __OSInode *inode, u8 flag, u8 bank);
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION >= OS_VER_K
 s32 __osPfsSelectBank(OSPfs *pfs, u8 bank);
 #else
 s32 __osPfsSelectBank(OSPfs *pfs);
 #endif
 s32 __osPfsDeclearPage(OSPfs *pfs, __OSInode *inode, int file_size_in_pages, int *first_page, u8 bank, int *decleared, int *last_page);
-#if LIBULTRA_VERSION >= OS_VER_J
-s32 __osPfsReleasePages(OSPfs *pfs, __OSInode *inode, u8 start_page, u8 bank, __OSInodeUnit *last_page);
-#else
 s32 __osPfsReleasePages(OSPfs *pfs, __OSInode *inode, u8 start_page, u16 *sum, u8 bank, __OSInodeUnit *last_page, int flag);
-#endif
 s32 __osBlockSum(OSPfs *pfs, u8 page_no, u16 *sum, u8 bank);
 s32 __osContRamRead(OSMesgQueue *mq, int channel, u16 address, u8 *buffer);
 s32 __osContRamWrite(OSMesgQueue *mq, s32 channel, u16 address, u8 *buffer, s32 force);
@@ -222,7 +218,7 @@ extern u8 __osMaxControllers;
 extern s32 __osPfsLastChannel;
 extern s32 __osEepromRead16K;
 
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION > OS_VER_I
 #define CONT_READFORMAT_ADDR(s, d)                \
     s->addrh = d >> 3;                            \
     s->addrl = (__osContAddressCrc(d) | (d << 5));
@@ -237,7 +233,7 @@ extern s32 __osEepromRead16K;
     }                                                  \
     addr.pifstatus = cmdstatus;
 
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION >= OS_VER_K
 #define CONT_CHECK_BLOCK(ad, bl, er)   \
     if (ad >= bl) {                    \
         ret = er;                      \
@@ -259,20 +255,13 @@ extern s32 __osEepromRead16K;
     if (ret != 0) \
         return ret;
 
-#if LIBULTRA_VERSION >= OS_VER_J
-#define SELECT_BANK(pfs, bank) \
-    __osPfsSelectBank((pfs), (bank))
-
+#if LIBULTRA_VERSION >= OS_VER_K
 #define SET_ACTIVEBANK_TO_ZERO        \
     if (pfs->activebank != 0)         \
     {                                 \
         ERRCK(__osPfsSelectBank(pfs, 0)) \
     }
 #else
-#define SELECT_BANK(pfs, bank) \
-    (pfs->activebank = (bank), \
-    __osPfsSelectBank((pfs))) \
-
 #define SET_ACTIVEBANK_TO_ZERO        \
     if (pfs->activebank != 0)         \
     {                                 \

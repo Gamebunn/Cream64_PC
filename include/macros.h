@@ -15,12 +15,6 @@
 #define UNUSED
 #endif
 
-#ifdef VERSION_CN
-#define UNUSED_CN UNUSED
-#else
-#define UNUSED_CN
-#endif
-
 #ifdef __GNUC__
 #define FALL_THROUGH __attribute__((fallthrough))
 #else
@@ -112,13 +106,6 @@
 #define PHYSICAL_TO_VIRTUAL(addr)   ((uintptr_t)(addr))
 #define VIRTUAL_TO_PHYSICAL2(addr)  ((void *)(addr))
 #endif
-
-// Stubbed CN debug prints
-//#ifdef VERSION_CN
-//#define CN_DEBUG_PRINTF(args) osSyncPrintf args
-//#else
-#define CN_DEBUG_PRINTF(args)
-//#endif
 
 // Byteswap macros
 #define BSWAP16(x) (((x) & 0xFF) << 8 | (((x) >> 8) & 0xFF))

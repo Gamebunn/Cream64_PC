@@ -1,7 +1,6 @@
 void scroll_cotmc_dl_Water_Flowing_mesh_layer_5_vtx_0() {
 	int i = 0;
 	int count = 22;
-	int width = 32 * 0x20;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;
@@ -51,8 +50,7 @@ void scroll_cotmc_dl_Water_mesh_layer_5_vtx_0() {
 
 void scroll_cotmc_dl_Water_mesh_layer_5_vtx_1() {
 	int i = 0;
-	int count = 24;
-	int width = 32 * 0x20;
+	int count = 28;
 	int height = 32 * 0x20;
 
 	static int currentY = 0;
@@ -105,4 +103,4 @@ void scroll_cotmc() {
 	scroll_cotmc_dl_Water_mesh_layer_5_vtx_0();
 	scroll_cotmc_dl_Water_mesh_layer_5_vtx_1();
 	scroll_cotmc_dl_Water_mesh_layer_5_vtx_2();
-}
+};

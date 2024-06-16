@@ -18,7 +18,7 @@ void osDestroyThread(OSThread *t) {
         __osActiveQueue = __osActiveQueue->tlnext;
     } else {
         pred = __osActiveQueue;
-#if LIBULTRA_VERSION >= OS_VER_J
+#if LIBULTRA_VERSION > OS_VER_H
         while (pred->priority != -1) {
             succ = pred->tlnext;
             if (succ == t) {
