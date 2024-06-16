@@ -797,7 +797,11 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
                 m->capTimer = 1;
             }
         } else {
+#if BETTER_STAR_INTERACTION
+            m->statusForCamera->cameraEvent = CAM_EVENT_NO_EXIT_STAR;
+#else
             starGrabAction = ACT_STAR_DANCE_NO_EXIT;
+#endif
         }
 
         if (m->action & ACT_FLAG_SWIMMING) {
@@ -809,7 +813,7 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
         }
 
         if (m->action & ACT_FLAG_AIR) {
-#if MIDAIR_STAR_DANCE
+#if BETTER_STAR_INTERACTION
             if ((m->pos[1] > m->floorHeight + 1024.0f) || ((m->floor != NULL 
                 && m->floor->type == SURFACE_DEATH_PLANE) || m->floor->type == SURFACE_VERTICAL_WIND)) {
                 starGrabAction = ACT_STAR_DANCE_WATER;
@@ -838,7 +842,7 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
             fadeout_level_music(126);
         }
 
-                    if(gMarioState->currentCostume == 76) {
+                    if(gMarioState->currentCostume == 24) {
                         play_sound(SOUND_MENU_STAR_SOUND_AUSTIN, m->marioObj->header.gfx.cameraToObject);
                     } else {
                         play_sound(SOUND_MENU_STAR_SOUND, m->marioObj->header.gfx.cameraToObject);
@@ -1641,7 +1645,7 @@ u32 interact_cap(struct MarioState *m, UNUSED u32 interactType, struct Object *o
         m->interactObj = o;
         o->oInteractStatus = INT_STATUS_INTERACTED;
 
-        m->flags &= /*~MARIO_CAP_ON_HEAD &*/ ~MARIO_CAP_IN_HAND;
+        m->flags &= ~MARIO_CAP_ON_HEAD & ~MARIO_CAP_IN_HAND;
         m->flags |= capFlag;
 
         switch (capFlag) {
@@ -1670,7 +1674,7 @@ u32 interact_cap(struct MarioState *m, UNUSED u32 interactType, struct Object *o
         }
 
         if ((m->action & ACT_FLAG_IDLE) || m->action == ACT_WALKING) {
-            m->flags |= MARIO_CAP_IN_HAND;
+            //m->flags |= MARIO_CAP_IN_HAND;
             set_mario_action(m, ACT_PUTTING_ON_CAP, 0);
         } else {
             m->flags |= MARIO_CAP_ON_HEAD;

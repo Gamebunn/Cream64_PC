@@ -384,7 +384,6 @@ struct MarioState {
     u16 flyTimer;
     u16 flyStamina;
     int currentCostume;
-    int currentCostumeDesc;
 };
 
 #endif // _SM64_TYPES_H_

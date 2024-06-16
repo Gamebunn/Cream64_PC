@@ -41,7 +41,7 @@ COMPILER_TYPE ?= gcc
 $(eval $(call validate-option,COMPILER_TYPE,gcc clang))
 
 COMPILER_OPT ?= default
-$(eval $(call validate-option,COMPILER_OPT,debug default fast))
+$(eval $(call validate-option,COMPILER_OPT,debug debugmax default fast))
 
 # Automatic target defines
 
@@ -65,6 +65,9 @@ CPP_ASSEMBLY ?= 0
 NO_BZERO_BCOPY ?= 0
 NO_LDIV ?= 0
 NO_PIE ?= 1
+
+# Use vendor-gnostic GLVND implementation, instead of the old/legacy GLX X11-only implementation.
+USE_GLVND ?= 0
 
 # Backend selection
 
@@ -273,8 +276,11 @@ BASEPACK ?= base.zip
 #   us - builds the 1996 North American version
 #   eu - builds the 1997 PAL version
 #   sh - builds the 1997 Japanese Shindou version, with rumble pak support
+#   cn - builds the 2003 Chinese iQue version
 VERSION ?= us
-$(eval $(call validate-option,VERSION,jp us eu sh))
+$(eval $(call validate-option,VERSION,jp us eu sh cn))
+
+NEW_AUDIO_REV ?= false
 
 ifeq      ($(VERSION),jp)
   VER_DEFINES   += VERSION_JP=1
@@ -284,6 +290,10 @@ else ifeq ($(VERSION),eu)
   VER_DEFINES   += VERSION_EU=1
 else ifeq ($(VERSION),sh)
   VER_DEFINES   += VERSION_SH=1
+  NEW_AUDIO_REV := true
+else ifeq ($(VERSION),cn)
+  VER_DEFINES   += VERSION_CN=1
+  NEW_AUDIO_REV := true
 endif
 
 DEFINES += $(VER_DEFINES)
@@ -345,6 +355,11 @@ else ifeq ($(TARGET_SWITCH),1)
   DEFINES += TARGET_SWITCH=1 USE_GLES=1
 endif
 
+# OpenGL defines
+ifeq ($(USE_GLES),1) # GLES can be used outside Raspberry Pi, Android or Switch
+  DEFINES += USE_GLES=1
+endif
+
 # Libultra defines
 LIBULTRA ?= L
 
@@ -352,7 +367,7 @@ LIBULTRA ?= L
 LIBULTRA_REVISION ?= 0
 
 # LIBULTRA - sets the libultra OS version to use
-$(eval $(call validate-option,LIBULTRA,D F H I K L BB))
+$(eval $(call validate-option,LIBULTRA,D F H I J K L BB))
 
 # Libultra number revision (only used on 2.0D)
 LIBULTRA_REVISION ?= 0
@@ -473,6 +488,8 @@ else
     OPT_FLAGS := -O2
   else ifeq ($(COMPILER_OPT),debug)
     OPT_FLAGS := -g
+  else ifeq ($(COMPILER_OPT),debugmax)
+    OPT_FLAGS := -O2 -g3
   else ifeq ($(COMPILER_OPT),fast)
     OPT_FLAGS := -Ofast
   endif
@@ -486,45 +503,7 @@ ifeq ($(TARGET_WEB),1)
 endif
 
 ifeq ($(TARGET_RPI),1)
-RPI_MODEL_NAME ?= Raspberry Pi
-
-  machine = $(shell sh -c 'uname -m 2>/dev/null || echo unknown')
-# Raspberry Pi B+, Zero, etc
-  ifneq (,$(findstring armv6l,$(machine)))
-   OPT_FLAGS := -march=armv6zk+fp -mfpu=vfp -Ofast
-   RPI_MODEL_NAME := Raspberry Pi ARMv6
-  endif
-
-# Raspberry Pi 2 and 3 in ARM 32bit mode
-  ifneq (,$(findstring armv7l,$(machine)))
-    model = $(shell sh -c 'cat /sys/firmware/devicetree/base/model 2>/dev/null || echo unknown')
-    ifneq (,$(findstring 4,$(model)))
-      OPT_FLAGS := -march=armv8-a+crc+simd -mtune=cortex-a53 -mfpu=neon-fp-armv8 -O3
-      RPI_MODEL_NAME := Raspberry Pi 4
-    else ifneq (,$(findstring 3,$(model)))
-      OPT_FLAGS := -march=armv8-a+crc -mtune=cortex-a53 -mfpu=neon-fp-armv8 -O3
-      RPI_MODEL_NAME := Raspberry Pi 3
-    else
-      OPT_FLAGS := -march=armv7-a -mtune=cortex-a7 -mfpu=neon-vfpv4 -O3
-      RPI_MODEL_NAME := Raspberry Pi 2
-    endif
-  endif
-
-# RPi3 or RPi4, in ARM64 (aarch64) mode.
-# DO NOT pass -mfpu stuff here, thats for 32bit ARM only and will fail for 64bit ARM.
-  ifneq (,$(findstring aarch64,$(machine)))
-    model = $(shell sh -c 'cat /sys/firmware/devicetree/base/model 2>/dev/null || echo unknown')
-    ifneq (,$(findstring 3,$(model)))
-      OPT_FLAGS := -march=armv8-a+crc -mtune=cortex-a53 -O3
-      RPI_MODEL_NAME := Raspberry Pi 3
-    else ifneq (,$(findstring 4,$(model)))
-      OPT_FLAGS := -march=armv8-a+crc+simd -mtune=cortex-a72 -O3
-      RPI_MODEL_NAME := Raspberry Pi 4
-    else
-      OPT_FLAGS := -march=armv8-a+crc -mtune=cortex-a53 -O3
-      RPI_MODEL_NAME := Raspberry Pi ARMv8
-    endif
-  endif
+  OPT_FLAGS := -O3 -march=native -mtune=native
 endif
 
 #==============================================================================#
@@ -580,7 +559,7 @@ else # Linux/Unix builds/binary namer
   else ifeq ($(HOST_OS),Haiku)
     TARGET_NAME := Haiku OS
   else ifeq ($(TARGET_RPI),1)
-    TARGET_NAME := $(RPI_MODEL_NAME)
+    TARGET_NAME := Raspberry Pi
   else
     TARGET_NAME := Linux-Unix system
   endif
@@ -588,12 +567,14 @@ endif
 
 ELF := $(BUILD_DIR)/$(TARGET).elf
 
-LD_SCRIPT := sm64.ld
-MIO0_DIR := $(BUILD_DIR)/bin
-SOUND_BIN_DIR := $(BUILD_DIR)/sound
-TEXTURE_DIR := textures
-ACTOR_DIR := actors
-LEVEL_DIRS := $(patsubst levels/%,%,$(dir $(wildcard levels/*/header.h)))
+LD_SCRIPT      := sm64.ld
+CHARMAP        := charmap.txt
+CHARMAP_DEBUG  := charmap.debug.txt
+MIO0_DIR       := $(BUILD_DIR)/bin
+SOUND_BIN_DIR  := $(BUILD_DIR)/sound
+TEXTURE_DIR    := textures
+ACTOR_DIR      := actors
+LEVEL_DIRS     := $(patsubst levels/%,%,$(dir $(wildcard levels/*/header.h)))
 
 # Directories containing source files
 SRC_DIRS := src src/engine src/game src/audio src/menu src/buffers src/extras actors levels bin bin/$(VERSION) data assets sound
@@ -604,7 +585,7 @@ else
 # Specify target folders
   PLATFORM_DIR := platform
 
-  SRC_DIRS += src/pc src/pc/gfx src/pc/audio src/pc/controller src/pc/fs src/pc/fs/packtypes
+  SRC_DIRS += src/pc src/pc/audio src/pc/controller src/pc/crash src/pc/fs src/pc/fs/packtypes src/pc/gfx
   ifeq ($(WINDOWS_BUILD),1)
     PLATFORM_DIR := $(PLATFORM_DIR)/win
   else ifeq ($(TARGET_N3DS),1)
@@ -697,7 +678,11 @@ endif
 # "If we're not N64, use the above"
 
 SOUND_BANK_FILES := $(wildcard sound/sound_banks/*.json)
-SOUND_SEQUENCE_DIRS := sound/sequences sound/sequences/$(VERSION)
+ifeq ($(VERSION),cn)
+  SOUND_SEQUENCE_DIRS := sound/sequences sound/sequences/sh
+else
+  SOUND_SEQUENCE_DIRS := sound/sequences sound/sequences/$(VERSION)
+endif
 # all .m64 files in SOUND_SEQUENCE_DIRS, plus all .m64 files that are generated from .s files in SOUND_SEQUENCE_DIRS
 SOUND_SEQUENCE_FILES := \
   $(foreach dir,$(SOUND_SEQUENCE_DIRS),\
@@ -992,8 +977,12 @@ else ifeq ($(findstring SDL,$(WINDOW_API)),SDL)
     BACKEND_LDFLAGS += -lGLESv2
   else ifeq ($(TARGET_SWITCH),1)
     BACKEND_LDFLAGS += -lGLESv2
+  else ifeq ($(USE_GLES),1)
+    BACKEND_LDFLAGS += -lGLESv2
   else ifeq ($(OSX_BUILD),1)
     BACKEND_LDFLAGS += -framework OpenGL $(shell pkg-config --libs glew)
+  else ifeq ($(USE_GLVND),1)
+    BACKEND_LDFLAGS += -lOpenGL
   else
     BACKEND_LDFLAGS += -lGL
   endif
@@ -1057,6 +1046,9 @@ else ifeq ($(TARGET_WEB),1)
 # Linux / Other builds below
 else
   CFLAGS := $(PLATFORM_CFLAGS) $(BACKEND_CFLAGS) $(DEF_INC_CFLAGS) -fno-strict-aliasing -fwrapv
+  ifeq ($(TARGET_PORT_CONSOLE),0)
+    BACKEND_LDFLAGS += -rdynamic
+  endif
 endif
 
 ifeq ($(TARGET_WII_U),1)
@@ -1119,7 +1111,7 @@ else ifeq ($(WINDOWS_BUILD),1)
   ifeq ($(CROSS),)
     LDFLAGS += $(NO_PIE_DEF)
   endif
-  ifeq ($(COMPILER_OPT),debug)
+  ifneq ($(DEBUG),0)
     LDFLAGS += -mconsole
   endif
 
@@ -1306,19 +1298,19 @@ $(BUILD_DIR)/$(RPC_LIBS):
 
 # Extra object file dependencies
 ifeq ($(TARGET_N64),1)
-  $(BUILD_DIR)/asm/boot.o: $(IPL3_RAW_FILES)
+  $(BUILD_DIR)/asm/ipl3_font.o: $(IPL3_RAW_FILES)
   $(BUILD_DIR)/src/boot/crash_screen.o: $(CRASH_TEXTURE_C_FILES)
   $(CRASH_TEXTURE_C_FILES): TEXTURE_ENCODING := u32
 
   RSP_DIR := $(BUILD_DIR)/rsp
   $(BUILD_DIR)/lib/rsp.o: $(RSP_DIR)/rspboot.bin $(RSP_DIR)/fast3d.bin $(RSP_DIR)/audio.bin
 else
-  $(BUILD_DIR)/src/pc/crash_screen_pc.o: $(CRASH_TEXTURE_PC_C_FILES)
+  $(BUILD_DIR)/src/pc/crash/crash_handler.o: $(CRASH_TEXTURE_PC_C_FILES)
 endif
 
 SOUND_FILES := $(SOUND_BIN_DIR)/sound_data.ctl $(SOUND_BIN_DIR)/sound_data.tbl $(SOUND_BIN_DIR)/sequences.bin $(SOUND_BIN_DIR)/bank_sets
 SOUND_FILES_SH :=
-ifeq ($(VERSION),sh)
+ifeq ($(NEW_AUDIO_REV),true)
   ifeq ($(EXTERNAL_DATA),1)
     SOUND_FILES_SH := $(SOUND_BIN_DIR)/sequences_header $(SOUND_BIN_DIR)/ctl_header $(SOUND_BIN_DIR)/tbl_header
     SOUND_FILES += $(SOUND_FILES_SH)
@@ -1352,6 +1344,7 @@ else
     $(BUILD_DIR)/bin/segment2.o: $(BUILD_DIR)/text/$(VERSION)/define_text.inc.c
   endif
 endif
+$(BUILD_DIR)/bin/segment2.o: $(BUILD_DIR)/text/debug_text.raw.inc.c
 
 # N64 specific optimization files
 ifeq ($(TARGET_N64),1)
@@ -1592,37 +1585,43 @@ $(BUILD_DIR)/assets/demo_data.c: assets/demo_data.json $(wildcard assets/demos/*
 	$(V)$(PYTHON) tools/demo_data_converter.py assets/demo_data.json $(DEF_INC_CFLAGS) > $@
 
 # Encode in-game text strings
-$(BUILD_DIR)/include/text_strings.h: include/text_strings.h.in
+$(BUILD_DIR)/$(CHARMAP): $(CHARMAP)
+	$(call print,Preprocessing charmap:,$<,$@)
+	$(V)$(CPP) $(CPPFLAGS) -DBUILD_DIR=$(BUILD_DIR) -MMD -MP -MT $@ -MF $@.d -o $@ $<
+$(BUILD_DIR)/$(CHARMAP_DEBUG): $(CHARMAP)
+	$(call print,Preprocessing charmap:,$<,$@)
+	$(V)$(CPP) $(CPPFLAGS) -DCHARMAP_DEBUG -DBUILD_DIR=$(BUILD_DIR) -MMD -MP -MT $@ -MF $@.d -o $@ $<
+$(BUILD_DIR)/include/text_strings.h: include/text_strings.h.in $(BUILD_DIR)/$(CHARMAP)
 	$(call print,Encoding:,$<,$@)
-	$(V)$(TEXTCONV) charmap.txt $< $@
-
+	$(V)$(TEXTCONV) $(BUILD_DIR)/$(CHARMAP) $< $@
 $(BUILD_DIR)/include/text_menu_strings.h: include/text_menu_strings.h.in
 	$(call print,Encoding:,$<,$@)
 	$(V)$(TEXTCONV) charmap_menu.txt $< $@
-
 $(BUILD_DIR)/text/%/define_courses.inc.c: text/define_courses.inc.c text/%/courses.h
 	@$(PRINT) "$(GREEN)Preprocessing: $(BLUE)$@ $(NO_COL)\n"
-	$(V)$(CPP) $(CPPFLAGS) $< -o - -I text/$*/ | $(TEXTCONV) charmap.txt - $@
-
+	$(V)$(CPP) $(CPPFLAGS) $< -o - -I text/$*/ | $(TEXTCONV) $(BUILD_DIR)/$(CHARMAP) - $@
 $(BUILD_DIR)/text/%/define_text.inc.c: text/define_text.inc.c text/%/courses.h text/%/dialogs.h
 	@$(PRINT) "$(GREEN)Preprocessing: $(BLUE)$@ $(NO_COL)\n"
-	$(V)$(CPP) $(CPPFLAGS) $< -o - -I text/$*/ | $(TEXTCONV) charmap.txt - $@
+	$(V)$(CPP) $(CPPFLAGS) $< -o - -I text/$*/ | $(TEXTCONV) $(BUILD_DIR)/$(CHARMAP) - $@
+$(BUILD_DIR)/text/debug_text.raw.inc.c: text/debug_text.inc.c $(BUILD_DIR)/$(CHARMAP_DEBUG)
+	@$(PRINT) "$(GREEN)Preprocessing: $(BLUE)$@ $(NO_COL)\n"
+	$(V)$(CPP) $(CPPFLAGS) $< -o - -I text/$*/ | $(TEXTCONV) $(BUILD_DIR)/$(CHARMAP_DEBUG) - $@
 
 ifeq ($(EXT_OPTIONS_MENU),1)
 $(BUILD_DIR)/include/text_options_strings.h: include/text_options_strings.h.in
 	$(call print,Encoding:,$<,$@)
-	$(V)$(TEXTCONV) charmap.txt $< $@
+	$(V)$(TEXTCONV) $(BUILD_DIR)/$(CHARMAP) $< $@
 
 ifeq ($(CHEATS_ACTIONS),1)
 $(BUILD_DIR)/include/text_cheats_strings.h: include/text_cheats_strings.h.in
 	$(call print,Encoding:,$<,$@)
-	$(V)$(TEXTCONV) charmap.txt $< $@
+	$(V)$(TEXTCONV) $(BUILD_DIR)/$(CHARMAP) $< $@
 endif
 
 ifeq ($(EXT_DEBUG_MENU),1)
 $(BUILD_DIR)/include/text_debug_strings.h: include/text_debug_strings.h.in
 	$(call print,Encoding:,$<,$@)
-	$(V)$(TEXTCONV) charmap.txt $< $@
+	$(V)$(TEXTCONV) $(BUILD_DIR)/$(CHARMAP) $< $@
 endif
 
 endif
@@ -1838,8 +1837,8 @@ $(APK_SIGNED): $(APK)
 endif
 endif
 
-# For the crash handler on Windows
-ifeq ($(WINDOWS_BUILD),1)
+# For the crash handler on Windows and Linux
+ifeq ($(TARGET_PORT_CONSOLE),0)
 all: PC_EXE_MAP
 PC_EXE_MAP: $(EXE)
 	$(V)objdump -t $(EXE) > $(BUILD_DIR)/sm64pc.map

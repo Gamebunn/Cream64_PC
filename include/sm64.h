@@ -37,7 +37,7 @@ int strcmp(char *s, char *t);
 #endif
 
 // Number of possible unique model ID's (keep it higher than 256).
-#define MODEL_ID_COUNT 768
+#define MODEL_ID_COUNT 512
 
 // Pointer casting is technically UB, and avoiding it gets rid of endian issues
 // as well as a nice side effect.

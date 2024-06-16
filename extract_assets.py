@@ -46,10 +46,16 @@ def remove_file(fname):
         pass
 
 
-def clean_assets(local_asset_file):
+def clean_assets(local_asset_file, folder):
     assets = set(read_asset_map().keys())
     assets.update(read_local_asset_list(local_asset_file))
-    for fname in list(assets) + [".assets-local.txt"]:
+
+    if folder:
+        assets = {asset for asset in assets if asset.startswith(folder)}
+    else:
+        assets.add(".assets-local.txt")
+
+    for fname in list(assets):
         if fname.startswith("@"):
             continue
         try:
@@ -72,11 +78,15 @@ def main():
         local_version = -1
 
     langs = sys.argv[1:]
-    if langs == ["--clean"]:
-        clean_assets(local_asset_file)
+    if langs and langs[0] == "--clean":
+        if len(langs) > 1:
+            folder = langs[1]
+        else:
+            folder = None
+        clean_assets(local_asset_file, folder)
         sys.exit(0)
 
-    all_langs = ["jp", "us", "eu", "sh"]
+    all_langs = ["jp", "us", "eu", "sh", "cn"]
     if not langs or not all(a in all_langs for a in langs):
         langs_str = " ".join("[" + lang + "]" for lang in all_langs)
         print("Usage: " + sys.argv[0] + " " + langs_str)
@@ -192,13 +202,14 @@ def main():
                 "baserom." + lang + ".z64",
             ]
             def append_args(key):
-                size, locs = asset_map["@sound " + key + " " + lang]
+                sound_ver = "sh" if lang == "cn" else lang
+                size, locs = asset_map["@sound " + key + " " + sound_ver]
                 offset = locs[lang][0]
                 args.append(str(offset))
                 args.append(str(size))
             append_args("ctl")
             append_args("tbl")
-            if lang == "sh":
+            if lang in ("sh", "cn"):
                 args.append("--shindou-headers")
                 append_args("ctl header")
                 append_args("tbl header")
@@ -239,7 +250,8 @@ def main():
                         if asset.startswith("textures/skyboxes/"):
                             imagetype = "sky"
                         else:
-                            imagetype =  "cake" + ("-eu" if "eu" in asset else "")
+                            imagetype = "cake" + ("-cn" if "cn" in asset else "-eu" if "eu" in asset else "")
+                        print(imagetype, png_file.name, asset)
                         subprocess.run(
                             [
                                 "./tools/skyconv" + winext,

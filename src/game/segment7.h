@@ -25,7 +25,7 @@ extern const u8 eu_course_strings_de_table[];
 
 // from intro_segment7
 extern Gfx *title_cream64_title_cream64_mesh;
-extern Gfx *intro_seg7_dl_0700C6A0;
+extern Gfx *intro_seg7_dl_copyright;
 extern f32 intro_seg7_table_0700C790[];
 extern f32 intro_seg7_table_0700C880[];
 

@@ -74,7 +74,7 @@
 #define MODEL_MARIO_WONDER                0x1D7        // mario_wonder_geo #42
 #define MODEL_MARIO_SENA                  0x1D6        // mario_sena_geo #43
 #define MODEL_MARIO_ROGER                 0x1D5        // mario_roger_geo #44
-#define MODEL_MARIO_VANNY                 0x1D4        // mario_vanny_geo #45
+#define MODEL_MARIO_DENJI                 0x1D4        // mario_denji_geo #45
 #define MODEL_MARIO_NEZUKO                0x1D3        // mario_nezuko_geo #46
 #define MODEL_MARIO_LATINA                0x1D2        // mario_latina_geo #47
 
@@ -101,52 +101,6 @@
 #define MODEL_MARIO_LAYLA                 0x1C2        // mario_layla_geo #63
 #define MODEL_MARIO_KATALINA              0x1C1        // mario_katalina_geo #64
 
-// Creamtober Alts
-
-#define MODEL_MARIO_DETECTIVE             0x200        // mario_detective_geo
-#define MODEL_MARIO_CARROT                0x201        // mario_carrot_geo
-#define MODEL_MARIO_DINA                  0x202        // mario_dina_geo
-#define MODEL_MARIO_MADOTSUKI             0x203        // mario_madotsuki_geo
-#define MODEL_MARIO_KARIYA                0x204        // mario_kariya_geo
-#define MODEL_MARIO_DAISY                 0x205        // mario_daisy_geo
-#define MODEL_MARIO_MAGENTA               0x206        // mario_magenta_geo
-#define MODEL_MARIO_CACEE                 0x207        // mario_cacee_geo
-#define MODEL_MARIO_LUKE                  0x208        // mario_luke_geo
-#define MODEL_MARIO_GOEMON                0x209        // mario_goemon_geo
-#define MODEL_MARIO_RIBBON                0x20A        // mario_ribbon_geo
-#define MODEL_MARIO_PRINCESS              0x20B        // mario_princess_geo
-#define MODEL_MARIO_CREAM                 0x20C        // mario_cream_geo
-#define MODEL_MARIO_NIGHTS                0x20D        // mario_avgn_geo
-#define MODEL_MARIO_PARAPPA               0x20E        // mario_parappa_geo
-#define MODEL_MARIO_KAIRI                 0x20F        // mario_kairi_geo
-#define MODEL_MARIO_SILVER                0x210        // mario_silver_geo
-#define MODEL_MARIO_MIMI                  0x211        // mario_mimi_geo
-#define MODEL_MARIO_SAITAMA               0x212        // mario_saitama_geo
-#define MODEL_MARIO_LILY                  0x213        // mario_lily_geo
-#define MODEL_MARIO_DQHERO                0x214        // mario_dqhero_geo
-#define MODEL_MARIO_PASTEL                0x215        // mario_pastel_geo
-#define MODEL_MARIO_CHARLOTTE             0x216        // mario_charlotte_geo
-#define MODEL_MARIO_SAKURA                0x217        // mario_sakura_geo
-#define MODEL_MARIO_TAMMIE                0x218        // mario_tammie_geo
-#define MODEL_MARIO_PEPPINO               0x219        // mario_peppino_geo
-#define MODEL_MARIO_JUNIHITOE             0x21A        // mario_junihitoe_geo
-#define MODEL_MARIO_POMNI                 0x21B        // mario_pomni_geo
-#define MODEL_MARIO_OLIMAR                0x21C        // mario_olimar_geo
-#define MODEL_MARIO_PIT                   0x21D        // mario_pit_geo
-#define MODEL_MARIO_RICHTER               0x21E        // mario_richter_geo
-
-// Remaining alt slots to reach 100 (subject to change)
-
-#define MODEL_MARIO_SHADOW                0x21F        // mario_shadow_geo
-#define MODEL_MARIO_AVGN                  0x220        // mario_avgn_geo
-#define MODEL_MARIO_RUKIA                 0x221        // mario_rukia_geo
-#define MODEL_MARIO_LUNAR                 0x222        // mario_lunar_geo
-#define MODEL_MARIO_SYBIL                 0x223        // mario_sybil_geo
-#define MODEL_MARIO_OUENDAN               0x264        // mario_ouendan_geo
-#define MODEL_MARIO_DRUMMER               0x268        // mario_drummer_geo
-#define MODEL_MARIO_CRESCENTFOX           0x26C        // mario_crescentfox_geo
-#define MODEL_MARIO_ARLE                  0x26F        // mario_arle_geo
-#define MODEL_MARIO_SFSAKURA              0x272        // mario_sfsakura_geo
 
 // -- Cheese Alts --
 
@@ -201,7 +155,7 @@
 #define MODEL_CHEESE_FOLLOW_WONDER        0x198       // cheese_follow_wonder_geo #42
 #define MODEL_CHEESE_FOLLOW_SENA          0x197       // cheese_follow_sena_geo #43
 #define MODEL_CHEESE_FOLLOW_ROGER         0x196       // cheese_follow_roger_geo #44
-#define MODEL_CHEESE_FOLLOW_VANNY         0x195       // cheese_follow_vanny_geo #45
+#define MODEL_CHEESE_FOLLOW_DENJI         0x195       // cheese_follow_denji_geo #45
 #define MODEL_CHEESE_FOLLOW_NEZUKO        0x194       // cheese_follow_nezuko_geo #46
 #define MODEL_CHEESE_FOLLOW_LATINA        0x193       // cheese_follow_latina_geo #47
 
@@ -226,54 +180,6 @@
 #define MODEL_CHEESE_FOLLOW_KITTEN        0x185       // cheese_follow_kitten_geo #62
 #define MODEL_CHEESE_FOLLOW_LAYLA         0x184       // cheese_follow_layla_geo #63
 #define MODEL_CHEESE_FOLLOW_KATALINA      0x183       // cheese_follow_katalina_geo #64
-
-// Creamtober + Nights
-
-#define MODEL_CHEESE_FOLLOW_DETECTIVE     0x224        // cheese_follow_detective_geo
-#define MODEL_CHEESE_FOLLOW_CARROT        0x225        // cheese_follow_carrot_geo
-#define MODEL_CHEESE_FOLLOW_DINA          0x226        // cheese_follow_dina_geo
-#define MODEL_CHEESE_FOLLOW_MADOTSUKI     0x227        // cheese_follow_madotsuki_geo
-#define MODEL_CHEESE_FOLLOW_KARIYA        0x228        // cheese_follow_kariya_geo
-#define MODEL_CHEESE_FOLLOW_DAISY         0x229        // cheese_follow_daisy_geo
-#define MODEL_CHEESE_FOLLOW_MAGENTA       0x22A        // cheese_follow_magenta_geo
-#define MODEL_CHEESE_FOLLOW_CACEE         0x22B        // cheese_follow_cacee_geo
-#define MODEL_CHEESE_FOLLOW_LUKE          0x22C        // cheese_follow_luke_geo
-#define MODEL_CHEESE_FOLLOW_GOEMON        0x22D        // cheese_follow_goemon_geo
-#define MODEL_CHEESE_FOLLOW_RIBBON        0x22E        // cheese_follow_ribbon_geo
-#define MODEL_CHEESE_FOLLOW_PRINCESS      0x22F        // cheese_follow_princess_geo
-#define MODEL_CHEESE_FOLLOW_CREAM         0x230        // cheese_followcream_geo
-#define MODEL_CHEESE_FOLLOW_NIGHTS        0x231        // cheese_follow_nights_geo
-#define MODEL_CHEESE_FOLLOW_PARAPPA       0x232        // cheese_follow_parappa_geo
-#define MODEL_CHEESE_FOLLOW_KAIRI         0x233        // cheese_follow_kairi_geo
-#define MODEL_CHEESE_FOLLOW_SILVER        0x234        // cheese_follow_silver_geo
-#define MODEL_CHEESE_FOLLOW_MIMI          0x235        // cheese_follow_mimi_geo
-#define MODEL_CHEESE_FOLLOW_SAITAMA       0x236        // cheese_follow_saitama_geo
-#define MODEL_CHEESE_FOLLOW_LILY          0x237        // cheese_follow_lily_geo
-#define MODEL_CHEESE_FOLLOW_DQHERO        0x238        // cheese_follow_dqhero_geo
-#define MODEL_CHEESE_FOLLOW_PASTEL        0x239        // cheese_follow_pastel_geo
-#define MODEL_CHEESE_FOLLOW_CHARLOTTE     0x23A        // cheese_follow_charlotte_geo
-#define MODEL_CHEESE_FOLLOW_SAKURA        0x23B        // cheese_follow_sakura_geo
-#define MODEL_CHEESE_FOLLOW_TAMMIE        0x23C        // cheese_follow_tammie_geo
-#define MODEL_CHEESE_FOLLOW_PEPPINO       0x23D        // cheese_follow_peppino_geo
-#define MODEL_CHEESE_FOLLOW_JUNIHITOE     0x23E        // cheese_follow_junihitoe_geo
-#define MODEL_CHEESE_FOLLOW_POMNI         0x23F        // cheese_follow_pomni_geo
-#define MODEL_CHEESE_FOLLOW_OLIMAR        0x240        // cheese_follow_olimar_geo
-#define MODEL_CHEESE_FOLLOW_PIT           0x241        // cheese_follow_pit_geo
-#define MODEL_CHEESE_FOLLOW_RICHTER       0x242        // cheese_follow_richter_geo
-
-// Remaining alt slots to reach 100 (subject to change)
-
-#define MODEL_CHEESE_FOLLOW_SHADOW        0x243        // cheese_follow_shadow_geo
-#define MODEL_CHEESE_FOLLOW_OUENDAN       0x244        // cheese_follow_ouendan_geo
-#define MODEL_CHEESE_FOLLOW_RUKIA         0x245        // cheese_follow_rukia_geo
-#define MODEL_CHEESE_FOLLOW_LUNAR         0x246        // cheese_follow_lunar_geo
-#define MODEL_CHEESE_FOLLOW_SYBIL         0x247        // cheese_follow_sybil_geo
-#define MODEL_CHEESE_FOLLOW_AVGN          0x265        // cheese_follow_avgn_geo
-#define MODEL_CHEESE_FOLLOW_DRUMMER       0x269        // cheese_follow_drummer_geo
-#define MODEL_CHEESE_FOLLOW_CRESCENTFOX   0x26D        // cheese_follow_crescentfox_geo
-#define MODEL_CHEESE_FOLLOW_ARLE          0x270        // cheese_follow_arle_geo
-#define MODEL_CHEESE_FOLLOW_SFSAKURA      0x273        // cheese_follow_sfsakura_geo
-#define MODEL_CHEESE_FOLLOW_HERO          0x275        // cheese_follow_hero_geo
 
 // --Cream Flying Models--
 
@@ -315,7 +221,7 @@
 #define MODEL_MARIO_WONDER_FLY            0x161        // mario_wonder_fly_geo #42
 #define MODEL_MARIO_SENA_FLY              0x160        // mario_sena_fly_geo #43
 #define MODEL_MARIO_ROGER_FLY             0x15F        // mario_rider_fly_geo #44
-#define MODEL_MARIO_VANNY_FLY             0x15E        // mario_vanny_fly_geo #45
+#define MODEL_MARIO_DENJI_FLY             0x15E        // mario_denji_fly_geo #45
 #define MODEL_MARIO_NEZUKO_FLY            0x15D        // mario_nezuko_fly_geo #46
 #define MODEL_MARIO_LATINA_FLY            0x15C        // mario_latina_fly_geo #47
 
@@ -330,46 +236,6 @@
 #define MODEL_MARIO_DANI_FLY              0x153        // mario_dani_fly_geo #60
 #define MODEL_MARIO_JOHNNY_FLY            0x152        // mario_johnny_fly_geo #61
 
-// Creamtober Alts
-
-#define MODEL_MARIO_DETECTIVE_FLY         0x248        // mario_detective_fly_geo
-#define MODEL_MARIO_CARROT_FLY            0x249        // mario_carrot_fly_geo
-#define MODEL_MARIO_MADOTSUKI_FLY         0x24A        // mario_madotsuki_fly_geo
-#define MODEL_MARIO_KARIYA_FLY            0x24B        // mario_kariya_fly_geo
-#define MODEL_MARIO_DAISY_FLY             0x24C        // mario_daisy_fly_geo
-#define MODEL_MARIO_MAGENTA_FLY           0x24D        // mario_magenta_fly_geo
-#define MODEL_MARIO_GOEMON_FLY            0x24E        // mario_goemon_fly_geo
-#define MODEL_MARIO_RIBBON_FLY            0x24F        // mario_ribbon_fly_geo
-#define MODEL_MARIO_PRINCESS_FLY          0x250        // mario_princess_fly_geo
-#define MODEL_MARIO_CREAM_FLY             0x251        // mario_cream_fly_geo
-#define MODEL_MARIO_NIGHTS_FLY            0x252        // mario_nights_fly_geo
-#define MODEL_MARIO_KAIRI_FLY             0x253        // mario_kairi_fly_geo
-#define MODEL_MARIO_MIMI_FLY              0x254        // mario_mimi_fly_geo
-#define MODEL_MARIO_SAITAMA_FLY           0x255        // mario_saitama_fly_geo
-#define MODEL_MARIO_LILY_FLY              0x256        // mario_lily_fly_geo
-#define MODEL_MARIO_DQHERO_FLY            0x257        // mario_dqhero_fly_geo
-#define MODEL_MARIO_PASTEL_FLY            0x258        // mario_pastel_fly_geo
-#define MODEL_MARIO_CHARLOTTE_FLY         0x259        // mario_charlotte_fly_geo
-#define MODEL_MARIO_SAKURA_FLY            0x25A        // mario_sakura_fly_geo
-#define MODEL_MARIO_TAMMIE_FLY            0x25B        // mario_tammie_fly_geo
-#define MODEL_MARIO_PEPPINO_FLY           0x25C        // mario_peppino_fly_geo
-#define MODEL_MARIO_JUNIHITOE_FLY         0x25D        // mario_junihitoe_fly_geo
-#define MODEL_MARIO_PIT_FLY               0x25E        // mario_pit_fly_geo
-#define MODEL_MARIO_RICHTER_FLY           0x25F        // mario_richter_fly_geo
-
-// Remaining alt slots to reach 100 (subject to change)
-
-#define MODEL_MARIO_AVGN_FLY              0x260        // mario_avgn_fly_geo
-#define MODEL_MARIO_RUKIA_FLY             0x261        // mario_rukia_fly_geo
-#define MODEL_MARIO_LUNAR_FLY             0x262        // mario_lunar_fly_geo
-#define MODEL_MARIO_SYBIL_FLY             0x263        // mario_sybil_fly_geo
-#define MODEL_MARIO_OUENDAN_FLY           0x266        // mario_ouendan_fly_geo
-#define MODEL_MARIO_LUKE_FLY              0x267        // mario_luke_fly_geo
-#define MODEL_MARIO_DRUMMER_FLY           0x26A        // mario_drummer_fly_geo
-#define MODEL_MARIO_SILVER_FLY            0x26B        // mario_silver_fly_geo
-#define MODEL_MARIO_CRESCENTFOX_FLY       0x26E        // mario_crescentfox_fly_geo
-#define MODEL_MARIO_ARLE_FLY              0x271        // mario_arle_fly_geo
-#define MODEL_MARIO_SFSAKURA_FLY          0x274        // mario_sfsakura_fly_geo
 
 // Additional NPCs
 
