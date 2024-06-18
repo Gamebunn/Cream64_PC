@@ -712,97 +712,68 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_KEY), 0);
                     } else if (gCurrLevelNum == LEVEL_WMOTR) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_NTM_STARGET), 0);
-                    } else if(gMarioState->currentCostume == 26) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TF2), 0);
-                    } else if(gMarioState->currentCostume == 36) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);
-                    } else if(gMarioState->currentCostume == 18) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MARIO), 0);
-                    } else if(gMarioState->currentCostume == 32) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ROLL), 0);
-                    } else if(gMarioState->currentCostume == 39) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DAWN), 0);
-                    } else if(gMarioState->currentCostume == 40) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SERENA), 0);
-                    } else if(gMarioState->currentCostume == 25) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DUDLEY), 0);
-                    } else if(gMarioState->currentCostume == 63) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KATALINA), 0);
-                    } else if(gMarioState->currentCostume == 37) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SORA), 0);
-                    } else if(gMarioState->currentCostume == 62) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAYLA), 0);
-                    } else if(gMarioState->currentCostume == 56 || gMarioState->currentCostume == 21) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SWEET), 0);
-                    } else if(gMarioState->currentCostume == 33) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MMX), 0);
-                    } else if(gMarioState->currentCostume == 59) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DANI), 0);
-                    } else if(gMarioState->currentCostume == 60 || gMarioState->currentCostume == 27 || gMarioState->currentCostume == 28) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JHW), 0);
-                    } else if(gMarioState->currentCostume == 53) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CAROLINE), 0);
-                    } else if(gMarioState->currentCostume == 51) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_BAIT), 0);
-                    } else if(gMarioState->currentCostume == 48) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHEF), 0);
-                    } else if(gMarioState->currentCostume == 61 || gMarioState->currentCostume == 12) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KITTEN), 0);
-                    } else if(gMarioState->currentCostume == 49) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VAL), 0);
-                    } else if(gMarioState->currentCostume == 46) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LATINA), 0);
-                    } else if(gMarioState->currentCostume == 54) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MACER), 0);
-                    } else if(gMarioState->currentCostume == 43) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_WONDER), 0);
-                    } else if(gMarioState->currentCostume == 34) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAN), 0);
-                    } else if(gMarioState->currentCostume == 57) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KZ), 0);
-                    } else if(gMarioState->currentCostume == 47) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CREAMOCCHIA), 0);
-                    } else if(gMarioState->currentCostume == 23) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JACK), 0);
-                    } else if(gMarioState->currentCostume == 35) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VERGIL), 0);
-                    } else if(gMarioState->currentCostume == 55) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_POCKY), 0);
-                    } else if(gMarioState->currentCostume == 42) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);
-                    } else if(gMarioState->currentCostume == 50) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KATE), 0);
-                    } else if(gMarioState->currentCostume == 58) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DOT), 0);
-                    } else if(gMarioState->currentCostume == 22) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TRAVIS), 0);
-                    } else if(gMarioState->currentCostume == 19) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KLONOA), 0);
-                    } else if(gMarioState->currentCostume == 24) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AUSTIN), 0);
-                    } else if(gMarioState->currentCostume == 44) {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SENA), 0);
-                    } else {
-                        play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_STAR), 0);
-                    }
+                    } else if  (gCurrLevelNum) {
+                    
+                    switch (gMarioState->currentCostume) {
+                case 19: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KITTEN), 0);break;
+                case 26: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MARIO), 0);break;
+                case 28: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KLONOA), 0);break;
+                case 29: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TF2), 0);break;
+                case 30: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SWEET), 0);break;
+                case 31: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TRAVIS), 0);break;
+                case 32: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JACK), 0);break;
+                case 34: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DUDLEY), 0);break;
+                case 36: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ROLL), 0);break;
+                case 37: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MMX), 0);break;
+                case 38: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAN), 0);break;
+                case 39: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VERGIL), 0);break;
+                case 40: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
+                case 41: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
+                case 48: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SORA), 0);break;
+                case 54: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DAWN), 0);break;
+                case 55: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SERENA), 0);break;
+                case 56: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);break;
+                case 57: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);break;
+                case 60: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_WONDER), 0);break;
+                case 61: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SENA), 0);break;
+                case 65: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JHW), 0);break;
+                case 66: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JHW), 0);break;
+                case 76: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AUSTIN), 0);break;
+                case 79: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CREAMOCCHIA), 0);break;
+                case 80: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LATINA), 0);break;
+                case 81: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHEF), 0);break;
+                case 82: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VAL), 0);break;
+                case 85: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KATE), 0);break;
+                case 86: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KZ), 0);break;
+                case 87: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_BAIT), 0);break;
+                case 90: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CAROLINE), 0);break;
+                case 91: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_POCKY), 0);break;
+                case 94: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MACER), 0);break;
+                case 96: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SWEET), 0);break;
+                case 98: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DANI), 0);break;
+                case 99: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JHW), 0);break;
+                case 100: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DOT), 0);break;
+                case 101: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KITTEN), 0);break;
+                case 102: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAYLA), 0);break;
+                case 103: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KATALINA), 0);break;
+                default: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_STAR), 0);break;
+                
+
+        } }
                     
                 m->marioBodyState->eyeState = MARIO_EYES_LOOK_LEFT;
                 break;
 
             case 42:
-                       if(gMarioState->currentCostume == 44) {
-                    play_sound(SOUND_MARIO_HERE_WE_GO_SENA, m->marioObj->header.gfx.cameraToObject);
-                } else if(gMarioState->currentCostume == 62) {
-                    play_sound(SOUND_MARIO_HERE_WE_GO_LAYLA, m->marioObj->header.gfx.cameraToObject);
-                } else if(gMarioState->currentCostume == 61) {
-                    play_sound(SOUND_MARIO_HERE_WE_GO_KITTEN, m->marioObj->header.gfx.cameraToObject);
-                } else if(gMarioState->currentCostume == 63) {
-                    play_sound(SOUND_MARIO_HERE_WE_GO_KATALINA, m->marioObj->header.gfx.cameraToObject);
-                } else if(gMarioState->currentCostume == 19) {
-                    play_sound(SOUND_MARIO_HERE_WE_GO_KLONOA, m->marioObj->header.gfx.cameraToObject);
-                } else {
-                    play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
-                }
+                       switch (gMarioState->currentCostume) {
+                        case 28: play_sound(SOUND_MARIO_HERE_WE_GO_KLONOA, m->marioObj->header.gfx.cameraToObject);break;
+                        case 61: play_sound(SOUND_MARIO_HERE_WE_GO_SENA, m->marioObj->header.gfx.cameraToObject);break;
+                        case 101: play_sound(SOUND_MARIO_HERE_WE_GO_KITTEN, m->marioObj->header.gfx.cameraToObject);break;
+                        case 102: play_sound(SOUND_MARIO_HERE_WE_GO_LAYLA, m->marioObj->header.gfx.cameraToObject);break;
+                        case 103: play_sound(SOUND_MARIO_HERE_WE_GO_KATALINA, m->marioObj->header.gfx.cameraToObject);break;
+                        default: play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);break;
+                        }
+                        
                 m->marioBodyState->eyeState = MARIO_EYES_LOOK_RIGHT;
                 break;
 
@@ -2372,70 +2343,12 @@ static void end_peach_cutscene_spawn_peach(struct MarioState *m) {
         obj_mark_for_deletion(sEndJumboStarObj);
 
         switch (m->currentCostume) {
-    case 0: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 1: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 2: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 3: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 4: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 5: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 6: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 7: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 8: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_VANILLA, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 9: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 10: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 11: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 12: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 14: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 15: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 16: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 17: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 18: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 19: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 20: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 21: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 22: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 23: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 24: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 25: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 26: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 27: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 28: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 29: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 30: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 31: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 32: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 33: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 34: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 35: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 36: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 37: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 38: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 39: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 40: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 41: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 42: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 43: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 44: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 45: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 46: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 47: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 48: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 49: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 50: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 51: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 52: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 53: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 54: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 55: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 56: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 57: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 58: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 59: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 60: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 61: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 62: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
-    case 63: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_VANILLA, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 79: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 101: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 102: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    case 103: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
+    default: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 0, 2428, -1300, 0, 0, 0); break;
 
         }
         gCutsceneFocus = sEndPeachObj;
@@ -3004,71 +2917,12 @@ static s32 act_end_waving_cutscene(struct MarioState *m) {
         m->statusForCamera->cameraEvent = CAM_EVENT_START_END_WAVING;
 
         switch (m->currentCostume) {
-    case 0: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 1: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 2: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 3: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 4: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 5: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 6: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 7: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 8: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_VANILLA, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 9: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 10: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 11: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 12: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 14: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 15: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 16: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 17: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 18: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 19: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 20: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 21: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 22: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 23: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 24: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 25: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 26: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 27: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 28: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 29: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 30: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 31: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 32: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 33: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 34: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 35: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 36: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 37: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 38: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 39: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 40: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 41: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 42: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 43: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 44: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 45: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 46: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 47: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 48: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 49: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 50: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 51: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 52: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 53: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 54: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 55: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 56: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 57: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 58: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 59: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 60: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 61: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 62: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-    case 63: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
-
+    case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_VANILLA, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    case 79: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    case 101: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_JACK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    case 102: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    case 103: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
+    default: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
         }
         
        // sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,

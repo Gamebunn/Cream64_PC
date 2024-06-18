@@ -1,0 +1,8 @@
+extern const GeoLayout cheese_follow_madotsuki_geo[];
+extern u8 cheese_follow_madotsuki_cheese_uboa_ia8[];
+extern Vtx cheese_follow_madotsuki_Root_Billboard_Display_mesh_layer_4_vtx_0[4];
+extern Gfx cheese_follow_madotsuki_Root_Billboard_Display_mesh_layer_4_tri_0[];
+extern Gfx mat_cheese_follow_madotsuki_cheese_uboa_f3d[];
+extern Gfx mat_revert_cheese_follow_madotsuki_cheese_uboa_f3d[];
+extern Gfx cheese_follow_madotsuki_Root_Billboard_Display_mesh_layer_4[];
+extern Gfx cheese_follow_madotsuki_material_revert_render_settings[];

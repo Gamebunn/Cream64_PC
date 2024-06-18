@@ -113,10 +113,157 @@ u8 textCreamOutfit61[] = { TEXT_CREAM61};
 u8 textCreamOutfit62[] = { TEXT_CREAM62};
 u8 textCreamOutfit63[] = { TEXT_CREAM63};
 u8 textCreamOutfit64[] = { TEXT_CREAM64};
+u8 textCreamOutfit65[] = { TEXT_CREAM65};
+u8 textCreamOutfit66[] = { TEXT_CREAM66};
+u8 textCreamOutfit67[] = { TEXT_CREAM67};
+u8 textCreamOutfit68[] = { TEXT_CREAM68};
+u8 textCreamOutfit69[] = { TEXT_CREAM69};
+u8 textCreamOutfit70[] = { TEXT_CREAM70};
+u8 textCreamOutfit71[] = { TEXT_CREAM71};
+u8 textCreamOutfit72[] = { TEXT_CREAM72};
+u8 textCreamOutfit73[] = { TEXT_CREAM73};
+u8 textCreamOutfit74[] = { TEXT_CREAM74};
+u8 textCreamOutfit75[] = { TEXT_CREAM75};
+u8 textCreamOutfit76[] = { TEXT_CREAM76};
+u8 textCreamOutfit77[] = { TEXT_CREAM77};
+u8 textCreamOutfit78[] = { TEXT_CREAM78};
+u8 textCreamOutfit79[] = { TEXT_CREAM79};
+u8 textCreamOutfit80[] = { TEXT_CREAM80};
+u8 textCreamOutfit81[] = { TEXT_CREAM81};
+u8 textCreamOutfit82[] = { TEXT_CREAM82};
+u8 textCreamOutfit83[] = { TEXT_CREAM83};
+u8 textCreamOutfit84[] = { TEXT_CREAM84};
+u8 textCreamOutfit85[] = { TEXT_CREAM85};
+u8 textCreamOutfit86[] = { TEXT_CREAM86};
+u8 textCreamOutfit87[] = { TEXT_CREAM87};
+u8 textCreamOutfit88[] = { TEXT_CREAM88};
+u8 textCreamOutfit89[] = { TEXT_CREAM89};
+u8 textCreamOutfit90[] = { TEXT_CREAM90};
+u8 textCreamOutfit91[] = { TEXT_CREAM91};
+u8 textCreamOutfit92[] = { TEXT_CREAM92};
+u8 textCreamOutfit93[] = { TEXT_CREAM93};
+u8 textCreamOutfit94[] = { TEXT_CREAM94};
+u8 textCreamOutfit95[] = { TEXT_CREAM95};
+u8 textCreamOutfit96[] = { TEXT_CREAM96};
+u8 textCreamOutfit97[] = { TEXT_CREAM97};
+u8 textCreamOutfit98[] = { TEXT_CREAM98};
+u8 textCreamOutfit99[] = { TEXT_CREAM99};
+u8 textCreamOutfit100[] = { TEXT_CREAM100};
+u8 textCreamOutfit101[] = { TEXT_CREAM101};
+u8 textCreamOutfit102[] = { TEXT_CREAM102};
+u8 textCreamOutfit103[] = { TEXT_CREAM103};
+u8 textCreamOutfit104[] = { TEXT_CREAM104};
+
+u8 textCreamOutfitDesc[] = { TEXT_CREAM1_DESC};
+u8 textCreamOutfitDesc2[] = { TEXT_CREAM2_DESC};
+u8 textCreamOutfitDesc3[] = { TEXT_CREAM3_DESC};
+u8 textCreamOutfitDesc4[] = { TEXT_CREAM4_DESC};
+u8 textCreamOutfitDesc5[] = { TEXT_CREAM5_DESC};
+u8 textCreamOutfitDesc6[] = { TEXT_CREAM6_DESC};
+u8 textCreamOutfitDesc7[] = { TEXT_CREAM7_DESC};
+u8 textCreamOutfitDesc8[] = { TEXT_CREAM8_DESC};
+u8 textCreamOutfitDesc9[] = { TEXT_CREAM9_DESC};
+u8 textCreamOutfitDesc10[] = { TEXT_CREAM10_DESC};
+u8 textCreamOutfitDesc11[] = { TEXT_CREAM11_DESC};
+u8 textCreamOutfitDesc12[] = { TEXT_CREAM12_DESC};
+u8 textCreamOutfitDesc13[] = { TEXT_CREAM13_DESC};
+u8 textCreamOutfitDesc14[] = { TEXT_CREAM14_DESC};
+u8 textCreamOutfitDesc15[] = { TEXT_CREAM15_DESC};
+u8 textCreamOutfitDesc16[] = { TEXT_CREAM16_DESC};
+u8 textCreamOutfitDesc17[] = { TEXT_CREAM17_DESC};
+u8 textCreamOutfitDesc18[] = { TEXT_CREAM18_DESC};
+u8 textCreamOutfitDesc19[] = { TEXT_CREAM19_DESC};
+u8 textCreamOutfitDesc20[] = { TEXT_CREAM20_DESC};
+u8 textCreamOutfitDesc21[] = { TEXT_CREAM21_DESC};
+u8 textCreamOutfitDesc22[] = { TEXT_CREAM22_DESC};
+u8 textCreamOutfitDesc23[] = { TEXT_CREAM23_DESC};
+u8 textCreamOutfitDesc24[] = { TEXT_CREAM24_DESC};
+u8 textCreamOutfitDesc25[] = { TEXT_CREAM25_DESC};
+u8 textCreamOutfitDesc26[] = { TEXT_CREAM26_DESC};
+u8 textCreamOutfitDesc27[] = { TEXT_CREAM27_DESC};
+u8 textCreamOutfitDesc28[] = { TEXT_CREAM28_DESC};
+u8 textCreamOutfitDesc29[] = { TEXT_CREAM29_DESC};
+u8 textCreamOutfitDesc30[] = { TEXT_CREAM30_DESC};
+u8 textCreamOutfitDesc31[] = { TEXT_CREAM31_DESC};
+u8 textCreamOutfitDesc32[] = { TEXT_CREAM32_DESC};
+u8 textCreamOutfitDesc33[] = { TEXT_CREAM33_DESC};
+u8 textCreamOutfitDesc34[] = { TEXT_CREAM34_DESC};
+u8 textCreamOutfitDesc35[] = { TEXT_CREAM35_DESC};
+u8 textCreamOutfitDesc36[] = { TEXT_CREAM36_DESC};
+u8 textCreamOutfitDesc37[] = { TEXT_CREAM37_DESC};
+u8 textCreamOutfitDesc38[] = { TEXT_CREAM38_DESC};
+u8 textCreamOutfitDesc39[] = { TEXT_CREAM39_DESC};
+u8 textCreamOutfitDesc40[] = { TEXT_CREAM40_DESC};
+u8 textCreamOutfitDesc41[] = { TEXT_CREAM41_DESC};
+u8 textCreamOutfitDesc42[] = { TEXT_CREAM42_DESC};
+u8 textCreamOutfitDesc43[] = { TEXT_CREAM43_DESC};
+u8 textCreamOutfitDesc44[] = { TEXT_CREAM44_DESC};
+u8 textCreamOutfitDesc45[] = { TEXT_CREAM45_DESC};
+u8 textCreamOutfitDesc46[] = { TEXT_CREAM46_DESC};
+u8 textCreamOutfitDesc47[] = { TEXT_CREAM47_DESC};
+u8 textCreamOutfitDesc48[] = { TEXT_CREAM48_DESC};
+u8 textCreamOutfitDesc49[] = { TEXT_CREAM49_DESC};
+u8 textCreamOutfitDesc50[] = { TEXT_CREAM50_DESC};
+u8 textCreamOutfitDesc51[] = { TEXT_CREAM51_DESC};
+u8 textCreamOutfitDesc52[] = { TEXT_CREAM52_DESC};
+u8 textCreamOutfitDesc53[] = { TEXT_CREAM53_DESC};
+u8 textCreamOutfitDesc54[] = { TEXT_CREAM54_DESC};
+u8 textCreamOutfitDesc55[] = { TEXT_CREAM55_DESC};
+u8 textCreamOutfitDesc56[] = { TEXT_CREAM56_DESC};
+u8 textCreamOutfitDesc57[] = { TEXT_CREAM57_DESC};
+u8 textCreamOutfitDesc58[] = { TEXT_CREAM58_DESC};
+u8 textCreamOutfitDesc59[] = { TEXT_CREAM59_DESC};
+u8 textCreamOutfitDesc60[] = { TEXT_CREAM60_DESC};
+u8 textCreamOutfitDesc61[] = { TEXT_CREAM61_DESC};
+u8 textCreamOutfitDesc62[] = { TEXT_CREAM62_DESC};
+u8 textCreamOutfitDesc63[] = { TEXT_CREAM63_DESC};
+u8 textCreamOutfitDesc64[] = { TEXT_CREAM64_DESC};
+u8 textCreamOutfitDesc65[] = { TEXT_CREAM65_DESC};
+u8 textCreamOutfitDesc66[] = { TEXT_CREAM66_DESC};
+u8 textCreamOutfitDesc67[] = { TEXT_CREAM67_DESC};
+u8 textCreamOutfitDesc68[] = { TEXT_CREAM68_DESC};
+u8 textCreamOutfitDesc69[] = { TEXT_CREAM69_DESC};
+u8 textCreamOutfitDesc70[] = { TEXT_CREAM70_DESC};
+u8 textCreamOutfitDesc71[] = { TEXT_CREAM71_DESC};
+u8 textCreamOutfitDesc72[] = { TEXT_CREAM72_DESC};
+u8 textCreamOutfitDesc73[] = { TEXT_CREAM73_DESC};
+u8 textCreamOutfitDesc74[] = { TEXT_CREAM74_DESC};
+u8 textCreamOutfitDesc75[] = { TEXT_CREAM75_DESC};
+u8 textCreamOutfitDesc76[] = { TEXT_CREAM76_DESC};
+u8 textCreamOutfitDesc77[] = { TEXT_CREAM77_DESC};
+u8 textCreamOutfitDesc78[] = { TEXT_CREAM78_DESC};
+u8 textCreamOutfitDesc79[] = { TEXT_CREAM79_DESC};
+u8 textCreamOutfitDesc80[] = { TEXT_CREAM80_DESC};
+u8 textCreamOutfitDesc81[] = { TEXT_CREAM81_DESC};
+u8 textCreamOutfitDesc82[] = { TEXT_CREAM82_DESC};
+u8 textCreamOutfitDesc83[] = { TEXT_CREAM83_DESC};
+u8 textCreamOutfitDesc84[] = { TEXT_CREAM84_DESC};
+u8 textCreamOutfitDesc85[] = { TEXT_CREAM85_DESC};
+u8 textCreamOutfitDesc86[] = { TEXT_CREAM86_DESC};
+u8 textCreamOutfitDesc87[] = { TEXT_CREAM87_DESC};
+u8 textCreamOutfitDesc88[] = { TEXT_CREAM88_DESC};
+u8 textCreamOutfitDesc89[] = { TEXT_CREAM89_DESC};
+u8 textCreamOutfitDesc90[] = { TEXT_CREAM90_DESC};
+u8 textCreamOutfitDesc91[] = { TEXT_CREAM91_DESC};
+u8 textCreamOutfitDesc92[] = { TEXT_CREAM92_DESC};
+u8 textCreamOutfitDesc93[] = { TEXT_CREAM93_DESC};
+u8 textCreamOutfitDesc94[] = { TEXT_CREAM94_DESC};
+u8 textCreamOutfitDesc95[] = { TEXT_CREAM95_DESC};
+u8 textCreamOutfitDesc96[] = { TEXT_CREAM96_DESC};
+u8 textCreamOutfitDesc97[] = { TEXT_CREAM97_DESC};
+u8 textCreamOutfitDesc98[] = { TEXT_CREAM98_DESC};
+u8 textCreamOutfitDesc99[] = { TEXT_CREAM99_DESC};
+u8 textCreamOutfitDesc100[] = { TEXT_CREAM100_DESC};
+u8 textCreamOutfitDesc101[] = { TEXT_CREAM101_DESC};
+u8 textCreamOutfitDesc102[] = { TEXT_CREAM102_DESC};
+u8 textCreamOutfitDesc103[] = { TEXT_CREAM103_DESC};
+u8 textCreamOutfitDesc104[] = { TEXT_CREAM104_DESC};
+
 u8 textCostumeCurrent[] = { TEXT_CREAM_CURRENT};
 u8 textCostumeinstrutions[] = { TEXT_CREAM_DPAD};
 
-#define COSTUME_COUNT 63
+#define COSTUME_COUNT 103
+#define COSTUME_DESC_COUNT 103
 
 u8 * creamOutfitStrings[] = 
 {
@@ -183,7 +330,155 @@ u8 * creamOutfitStrings[] =
     textCreamOutfit61,
     textCreamOutfit62,
     textCreamOutfit63,
-    textCreamOutfit64  
+    textCreamOutfit64,
+    textCreamOutfit65,
+    textCreamOutfit66,
+    textCreamOutfit67,
+    textCreamOutfit68,
+    textCreamOutfit69,
+    textCreamOutfit70,
+    textCreamOutfit71,
+    textCreamOutfit72,
+    textCreamOutfit73,
+    textCreamOutfit74,
+    textCreamOutfit75,
+    textCreamOutfit76,
+    textCreamOutfit77,
+    textCreamOutfit78,
+    textCreamOutfit79,
+    textCreamOutfit80,
+    textCreamOutfit81,
+    textCreamOutfit82,
+    textCreamOutfit83,
+    textCreamOutfit84,
+    textCreamOutfit85,
+    textCreamOutfit86,
+    textCreamOutfit87,
+    textCreamOutfit88,
+    textCreamOutfit89,
+    textCreamOutfit90,
+    textCreamOutfit91,
+    textCreamOutfit92,
+    textCreamOutfit93,
+    textCreamOutfit94,
+    textCreamOutfit95,
+    textCreamOutfit96,
+    textCreamOutfit97,
+    textCreamOutfit98,
+    textCreamOutfit99,
+    textCreamOutfit100,
+    textCreamOutfit101,
+    textCreamOutfit102,
+    textCreamOutfit103,
+    textCreamOutfit104  
+};
+
+u8 * creamOutfitDescStrings[] = 
+{
+    textCreamOutfitDesc,
+    textCreamOutfitDesc2,
+    textCreamOutfitDesc3,
+    textCreamOutfitDesc4,
+    textCreamOutfitDesc5,
+    textCreamOutfitDesc6,
+    textCreamOutfitDesc7,
+    textCreamOutfitDesc8,
+    textCreamOutfitDesc9,
+    textCreamOutfitDesc10,
+    textCreamOutfitDesc11,
+    textCreamOutfitDesc12,
+    textCreamOutfitDesc13,
+    textCreamOutfitDesc14,
+    textCreamOutfitDesc15,
+    textCreamOutfitDesc16,
+    textCreamOutfitDesc17,
+    textCreamOutfitDesc18,
+    textCreamOutfitDesc19,
+    textCreamOutfitDesc20,
+    textCreamOutfitDesc21,
+    textCreamOutfitDesc22,
+    textCreamOutfitDesc23,
+    textCreamOutfitDesc24,
+    textCreamOutfitDesc25,
+    textCreamOutfitDesc26,
+    textCreamOutfitDesc27,
+    textCreamOutfitDesc28,
+    textCreamOutfitDesc29,
+    textCreamOutfitDesc30,
+    textCreamOutfitDesc31,
+    textCreamOutfitDesc32,
+    textCreamOutfitDesc33,
+    textCreamOutfitDesc34,
+    textCreamOutfitDesc35,
+    textCreamOutfitDesc36,
+    textCreamOutfitDesc37,
+    textCreamOutfitDesc38,
+    textCreamOutfitDesc39,
+    textCreamOutfitDesc40,
+    textCreamOutfitDesc41,
+    textCreamOutfitDesc42,
+    textCreamOutfitDesc43,
+    textCreamOutfitDesc44,
+    textCreamOutfitDesc45,
+    textCreamOutfitDesc46,
+    textCreamOutfitDesc47,
+    textCreamOutfitDesc48,
+    textCreamOutfitDesc49,
+    textCreamOutfitDesc50,
+    textCreamOutfitDesc51,
+    textCreamOutfitDesc52,
+    textCreamOutfitDesc53,
+    textCreamOutfitDesc54,
+    textCreamOutfitDesc55,
+    textCreamOutfitDesc56,
+    textCreamOutfitDesc57,
+    textCreamOutfitDesc58,
+    textCreamOutfitDesc59,
+    textCreamOutfitDesc60,
+    textCreamOutfitDesc61,
+    textCreamOutfitDesc62,
+    textCreamOutfitDesc63,
+    textCreamOutfitDesc64,
+    textCreamOutfitDesc65,
+    textCreamOutfitDesc66,
+    textCreamOutfitDesc67,
+    textCreamOutfitDesc68,
+    textCreamOutfitDesc69,
+    textCreamOutfitDesc70,
+    textCreamOutfitDesc71,
+    textCreamOutfitDesc72,
+    textCreamOutfitDesc73,
+    textCreamOutfitDesc74,
+    textCreamOutfitDesc75,
+    textCreamOutfitDesc76,
+    textCreamOutfitDesc77,
+    textCreamOutfitDesc78,
+    textCreamOutfitDesc79,
+    textCreamOutfitDesc80,
+    textCreamOutfitDesc81,
+    textCreamOutfitDesc82,
+    textCreamOutfitDesc83,
+    textCreamOutfitDesc84,
+    textCreamOutfitDesc85,
+    textCreamOutfitDesc86,
+    textCreamOutfitDesc87,
+    textCreamOutfitDesc88,
+    textCreamOutfitDesc89,
+    textCreamOutfitDesc90,
+    textCreamOutfitDesc91,
+    textCreamOutfitDesc92,
+    textCreamOutfitDesc93,
+    textCreamOutfitDesc94,
+    textCreamOutfitDesc95,
+    textCreamOutfitDesc96,
+    textCreamOutfitDesc97,
+    textCreamOutfitDesc98,
+    textCreamOutfitDesc99,
+    textCreamOutfitDesc100,
+    textCreamOutfitDesc101,
+    textCreamOutfitDesc102,
+    textCreamOutfitDesc103,
+    textCreamOutfitDesc104 
 };
 
 extern u8 gLastCompletedCourseNum;
@@ -2671,6 +2966,15 @@ if (gPlayer1Controller->buttonPressed & L_JPAD) {
     save_file_set_outfit();
 }
 
+if (gPlayer1Controller->buttonPressed & U_JPAD) {
+    gMarioState->currentCostume += 10;
+    save_file_set_outfit();
+}
+if (gPlayer1Controller->buttonPressed & D_JPAD) {
+    gMarioState->currentCostume -= 10;
+    save_file_set_outfit();
+}
+
 if (gMarioState->currentCostume < 0) {
     gMarioState->currentCostume = COSTUME_COUNT;
     save_file_set_outfit();
@@ -2680,11 +2984,11 @@ if (gMarioState->currentCostume > COSTUME_COUNT) {
     save_file_set_outfit();
 }
 
-    print_generic_string(10, 20, textCostumeCurrent);
-    print_generic_string(10, 5, textCostumeinstrutions);
+    print_generic_string(5, 15, textCostumeCurrent);
+    print_generic_string(5, 30, textCostumeinstrutions);
 
-    
-    print_generic_string(100, 20, creamOutfitStrings[gMarioState->currentCostume]);
+    print_generic_string(45, 15, creamOutfitStrings[gMarioState->currentCostume]);
+    print_generic_string(20, 0, creamOutfitDescStrings[gMarioState->currentCostume]);
 
 }
 

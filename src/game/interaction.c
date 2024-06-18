@@ -842,7 +842,7 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
             fadeout_level_music(126);
         }
 
-                    if(gMarioState->currentCostume == 24) {
+                    if(gMarioState->currentCostume == 76) {
                         play_sound(SOUND_MENU_STAR_SOUND_AUSTIN, m->marioObj->header.gfx.cameraToObject);
                     } else {
                         play_sound(SOUND_MENU_STAR_SOUND, m->marioObj->header.gfx.cameraToObject);

@@ -436,7 +436,7 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127,  // SEQ_EVENT_HIGH_SCORE5
     127,  // SEQ_DDRTRACK1
     127,  // SEQ_DDRTRACK2
-    127,  // SEQ_DDRTRACK3
+    127,  // SEQ_BMTRACK1
     127,  // NEW_TOTWC
     127,  // NEW_COTMC
     127,  // EGGMAN3_FINALE_END
@@ -475,6 +475,7 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127,  // COLLECT_STAR_KLONOA
     127,  // COLLECT_STAR_AUSTIN
     127,  // COLLECT_STAR_SENA
+    127,  // SEQ_BMTRACK2
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,

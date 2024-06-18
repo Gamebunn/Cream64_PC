@@ -69,7 +69,7 @@
     "42_event_high_score5": ["28_streamed_side"],
     "43_ddr_track1_funkys0da_daikenkai": ["28_streamed_side"],
     "44_ddr_track2_funkys0da_rhythm": ["28_streamed_side"],
-    "45_ddr_track3_gamebun_miraclemoon": ["28_streamed_side"],
+    "45_bm_track1_gamebun_loveisdreamless": ["28_streamed_side"],
     "46_totwc_moltenmines": ["28_streamed_side"],
     "47_cotmc_miningmelancholy": ["28_streamed_side"],
     "48_eggman3_finalstrike_end": ["27_streamed_main"],
@@ -108,5 +108,6 @@
     "69_collect_star_klonoa": ["29_streamed_extra"],
     "6A_collect_star_austin": ["29_streamed_extra"],
     "6B_collect_star_sena": ["29_streamed_extra"],
+    "6C_bm_track2_gamebun_lovelycowboy": ["28_streamed_side"],
     "22_cutscene_lakitu": {"ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"], "banks": ["1B"]}
 }
