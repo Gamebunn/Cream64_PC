@@ -1,0 +1,23 @@
+{
+    "date": "1996-03-19",
+    "sample_bank": "streamed_audio_extra2",
+    "envelopes": {
+        "envelope0": [
+            [1, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_cosmo_0"
+        }
+        
+    },
+    "instrument_list": [
+        "inst0"
+    ]
+}

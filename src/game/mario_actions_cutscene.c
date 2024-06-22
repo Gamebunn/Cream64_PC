@@ -715,7 +715,27 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                     } else if  (gCurrLevelNum) {
                     
                     switch (gMarioState->currentCostume) {
+                case 1: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_RIDERS), 0);break;
+                case 2: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_WINTER), 0);break;
+                case 3: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SPRING), 0);break;
+                case 4: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_UNICORN), 0);break;
+                case 5: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_YUKATA), 0);break;
+                case 6: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SWIMSUIT), 0);break;
+                case 7: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
+                case 8: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_GOEMON), 0);break;
+                case 9: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PRINCESS), 0);break;
+                case 10: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DETECTIVE), 0);break;
+                case 11: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DRUMMER), 0);break;
+                case 12: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LUNAR), 0);break;
+                case 14: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AMY), 0);break;        
+                case 15: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_BLAZE), 0);break;        
+                case 16: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MARINE), 0);break;        
+                case 17: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SHADOW), 0);break;      
+                case 18: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SILVER), 0);break;        
                 case 19: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KITTEN), 0);break;
+                case 20: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHARMY), 0);break;        
+                case 21: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TIKAL), 0);break;
+                case 22: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_COSMO), 0);break;        
                 case 26: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MARIO), 0);break;
                 case 28: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KLONOA), 0);break;
                 case 29: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TF2), 0);break;
@@ -729,11 +749,13 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 39: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VERGIL), 0);break;
                 case 40: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
                 case 41: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
+                case 43: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_GOEMON), 0);break;
                 case 48: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SORA), 0);break;
                 case 54: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DAWN), 0);break;
                 case 55: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SERENA), 0);break;
                 case 56: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);break;
                 case 57: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);break;
+                case 59: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MIKU), 0);break;
                 case 60: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_WONDER), 0);break;
                 case 61: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SENA), 0);break;
                 case 65: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_JHW), 0);break;

@@ -476,6 +476,25 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127,  // COLLECT_STAR_AUSTIN
     127,  // COLLECT_STAR_SENA
     127,  // SEQ_BMTRACK2
+    127,  // COLLECT_STAR_DRUMMER
+    127,  // COLLECT_STAR_AMY
+    127,  // COLLECT_STAR_RIDERS
+    127,  // COLLECT_STAR_SPRING
+    127,  // COLLECT_STAR_UNICORN
+    127,  // COLLECT_STAR_YUKATA
+    127,  // COLLECT_STAR_SWIMSUIT
+    127,  // COLLECT_STAR_GOEMON
+    127,  // COLLECT_STAR_SHADOW
+    127,  // COLLECT_STAR_TIKAL
+    127,  // COLLECT_STAR_DETECTIVE
+    127,  // COLLECT_STAR_PRINCESS
+    127,  // COLLECT_STAR_MIKU
+    127,  // COLLECT_STAR_LUNAR
+    127,  // COLLECT_STAR_BLAZE
+    127,  // COLLECT_STAR_MARINE
+    127,  // COLLECT_STAR_SILVER
+    127,  // COLLECT_STAR_CHARMY
+    127,  // COLLECT_STAR_COSMO
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,
@@ -1883,7 +1902,7 @@ static void seq_player_play_sequence(u8 player, u8 seqId, u16 arg2) {
     u8 i;
 
     if (player == SEQ_PLAYER_LEVEL) {
-        sCurrentBackgroundMusicSeqId = seqId & SEQ_BASE_ID;
+        sCurrentBackgroundMusicSeqId = seqId;
         sBackgroundMusicForDynamics = SEQUENCE_NONE;
         sCurrentMusicDynamic = 0xff;
         sMusicDynamicDelay = 2;
@@ -1894,8 +1913,8 @@ static void seq_player_play_sequence(u8 player, u8 seqId, u16 arg2) {
     }
 
 #if defined(VERSION_EU) || defined(VERSION_SH) || defined(VERSION_CN)
-    func_802ad770(0x46000000 | ((u8)(u32) player) << 16, seqId & SEQ_VARIATION);
-    func_802ad74c(0x82000000 | ((u8)(u32) player) << 16 | ((u8)(seqId & SEQ_BASE_ID)) << 8, arg2);
+    func_802ad770(0x46000000 | ((u8)(u32) player) << 16, seqId);
+    func_802ad74c(0x82000000 | ((u8)(u32) player) << 16 | ((u8)(seqId)) << 8, arg2);
 
     if (player == SEQ_PLAYER_LEVEL) {
         targetVolume = begin_background_music_fade(0);
@@ -1905,8 +1924,8 @@ static void seq_player_play_sequence(u8 player, u8 seqId, u16 arg2) {
     }
 #else
 
-    gSequencePlayers[player].seqVariation = seqId & SEQ_VARIATION;
-    load_sequence(player, seqId & SEQ_BASE_ID, 0);
+    gSequencePlayers[player].seqVariation = seqId;
+    load_sequence(player, seqId, 0);
 
     if (player == SEQ_PLAYER_LEVEL) {
         targetVolume = begin_background_music_fade(0);

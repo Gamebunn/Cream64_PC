@@ -63,7 +63,7 @@ const LevelScript level_sa_entry[] = {
         JUMP_LINK(script_func_local_2),
         TERRAIN(/*terrainData*/ sa_seg7_collision),
         MACRO_OBJECTS(/*objList*/ sa_seg7_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ (SEQ_LEVEL_WATER | SEQ_VARIATION)),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0003, /*seq*/ (SEQ_LEVEL_WATER)),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_WATER),
     END_AREA(),
 

@@ -179,6 +179,106 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "starget_sena_0"
+        },
+        "inst34": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_drummer_0"
+        },
+        "inst35": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_amy_0"
+        },
+        "inst36": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_riders_0"
+        },
+        "inst37": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_winter_0"
+        },
+        "inst38": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_spring_0"
+        },
+        "inst39": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_unicorn_0"
+        },
+        "inst40": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_yukata_0"
+        },
+        "inst41": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_swimsuit_0"
+        },
+        "inst42": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_goemon_0"
+        },
+        "inst43": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_shadow_0"
+        },
+        "inst44": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_tikal_0"
+        },
+        "inst45": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_detective_0"
+        },
+        "inst46": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_princess_0"
+        },
+        "inst47": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_miku_0"
+        },
+        "inst48": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_lunar_0"
+        },
+        "inst49": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_blaze_0"
+        },
+        "inst50": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_marine_0"
+        },
+        "inst51": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_silver_0"
+        },
+        "inst52": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_charmy_0"
+        },
+        "inst53": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_cosmo_0"
         }
         
     },
@@ -216,6 +316,26 @@
         "inst30",
         "inst31",
         "inst32",
-        "inst33"
+        "inst33",
+        "inst34",
+        "inst35",
+        "inst36",
+        "inst37",
+        "inst38",
+        "inst39",
+        "inst40",
+        "inst41",
+        "inst42",
+        "inst43",
+        "inst44",
+        "inst45",
+        "inst46",
+        "inst47",
+        "inst48",
+        "inst49",
+        "inst50",
+        "inst51",
+        "inst52",
+        "inst53"
     ]
 }
