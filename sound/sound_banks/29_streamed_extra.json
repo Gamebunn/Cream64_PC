@@ -58,7 +58,7 @@
         "inst9": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "starget_sweet_0"
+            "sound": "starget_ichiban_0"
         },
         "inst10": {
             "release_rate": 10,
@@ -274,11 +274,6 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "starget_charmy_0"
-        },
-        "inst53": {
-            "release_rate": 10,
-            "envelope": "envelope0",
-            "sound": "starget_cosmo_0"
         }
         
     },
@@ -335,7 +330,6 @@
         "inst49",
         "inst50",
         "inst51",
-        "inst52",
-        "inst53"
+        "inst52"
     ]
 }

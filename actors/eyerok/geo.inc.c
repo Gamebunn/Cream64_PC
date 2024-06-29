@@ -123,7 +123,7 @@ const GeoLayout eyerok_left_hand_geo[] = {
    GEO_OPEN_NODE(),
       GEO_SCALE(0x00, 16384),
       GEO_OPEN_NODE(),
-         GEO_BRANCH(1, eyerok_geo_0002AC),
+        GEO_BRANCH(1, eyerok_geo_0002AC),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
    GEO_END(),

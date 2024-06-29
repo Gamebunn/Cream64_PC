@@ -1882,7 +1882,7 @@ s32 execute_mario_action(UNUSED struct Object *o) {
   case 21: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_TIKAL]; break;
   case 22: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_COSMO]; break;
   case 23: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_EGGMAN]; break;
-  case 24: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN]; break;
+  case 24: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_BEAN]; break; //Cheese
   case 25: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_NIGHTS]; break;
 
   case 26: gMarioObject->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_MARIO_MARIO]; break;

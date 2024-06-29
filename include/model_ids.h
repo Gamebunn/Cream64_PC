@@ -615,6 +615,9 @@
 #define MODEL_GREMLIN                             0x3A        // gremlin_geo
 #define MODEL_KZ_NEKOARC                          0x3B        // kz_nekoarc_geo
 #define MODEL_SIMPLE                              0x3C        // simple_geo
+#define MODEL_TREE_MS_NM                          0x3D        // ms_tree_nm_geo
+#define MODEL_GREMLIN_NM                          0x3E        // gremlin_nm_geo
+#define MODEL_SCUTTLEBUG_NM                       0x3F        // scuttlebug_nm_geo
 
 // bits
 #define MODEL_BITS_SLIDING_PLATFORM               0x36        // bits_geo_0005E0

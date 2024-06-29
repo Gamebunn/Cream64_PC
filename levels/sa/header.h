@@ -45,4 +45,10 @@ extern const LevelScript level_sa_entry[];
 
 #include "levels/sa/simple/anim_header.h"
 
+#include "levels/sa/ms_tree_nm/geo_header.h"
+
+#include "levels/sa/gremlin_nm/geo_header.h"
+
+#include "levels/sa/skeeter_nm/geo_header.h"
+
 #endif

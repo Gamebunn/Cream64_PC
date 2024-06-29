@@ -252,6 +252,7 @@ static struct MacroPreset sMacroObjectPresets[] = {
     /* macro_jet_stream_ring_spawner_1   */ { bhvJetStreamRingSpawner, MODEL_WATER_RING, 0 }, // unused
     /* macro_jet_stream_ring_spawner_2   */ { bhvJetStreamRingSpawner, MODEL_WATER_RING, 0 }, // unused
     /* macro_skeeter                     */ { bhvSkeeter, MODEL_SKEETER, 0 },
+    /* macro_skeeter_nm                  */ { bhvSkeeter, MODEL_SCUTTLEBUG_NM, 0 },
     /* macro_clam_shell                  */ { bhvClamShell, MODEL_CLAM_SHELL, 0 },
     /* macro_empty_244                   */ { bhvYellowCoin, MODEL_YELLOW_COIN, 0 },
     /* macro_empty_245                   */ { bhvYellowCoin, MODEL_YELLOW_COIN, 0 },

@@ -247,6 +247,7 @@ enum MacroPresets {
     macro_jet_stream_ring_spawner_1,
     macro_jet_stream_ring_spawner_2,
     macro_skeeter,
+    macro_skeeter_nm,
     macro_clam_shell,
     macro_empty_244,
     macro_empty_245,

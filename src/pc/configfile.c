@@ -127,7 +127,7 @@ ConfigPuppyCam configPuppyCam = {
     .sensX = 50,
     .sensY = 50,
     .helper = true,
-    .opaque = true,
+    .opaque = false,
     .input = 0, // PUPPYCAM_INPUT_TYPE_DOUBLE_TAB
     .debug = false,
 };

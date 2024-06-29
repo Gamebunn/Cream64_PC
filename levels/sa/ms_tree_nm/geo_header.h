@@ -1,0 +1,10 @@
+extern const GeoLayout ms_tree_nm_geo[];
+extern Lights1 ms_tree_nm_nightmare_lights;
+extern u8 ms_tree_nm_nightmare_ci8[];
+extern u8 ms_tree_nm_nightmare_pal_rgba16[];
+extern Vtx ms_tree_nm_000_displaylist_mesh_layer_4_vtx_0[10];
+extern Gfx ms_tree_nm_000_displaylist_mesh_layer_4_tri_0[];
+extern Gfx mat_ms_tree_nm_nightmare[];
+extern Gfx mat_revert_ms_tree_nm_nightmare[];
+extern Gfx ms_tree_nm_000_displaylist_mesh_layer_4[];
+extern Gfx ms_tree_nm_material_revert_render_settings[];

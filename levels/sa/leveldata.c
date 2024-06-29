@@ -24,6 +24,10 @@
 #include "levels/sa/areas/area_3/macro.inc.c"
 #include "levels/sa/areas/area_3/spline.inc.c"
 
+#include "levels/sa/areas/area_4/collision.inc.c"
+#include "levels/sa/areas/area_4/macro.inc.c"
+#include "levels/sa/areas/area_4/spline.inc.c"
+
 #include "levels/sa/gardevoir/model.inc.c"
 #include "levels/sa/gardevoir/anims/data.inc.c"
 #include "levels/sa/gardevoir/anims/table.inc.c"
@@ -43,3 +47,6 @@
 #include "levels/sa/simple/model.inc.c"
 #include "levels/sa/simple/anims/data.inc.c"
 #include "levels/sa/simple/anims/table.inc.c"
+#include "levels/sa/ms_tree_nm/model.inc.c"
+#include "levels/sa/gremlin_nm/model.inc.c"
+#include "levels/sa/skeeter_nm/model.inc.c"
