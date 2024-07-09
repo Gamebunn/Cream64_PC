@@ -108,7 +108,7 @@
     "69_collect_star_klonoa": ["29_streamed_extra"],
     "6A_collect_star_austin": ["29_streamed_extra"],
     "6B_collect_star_sena": ["29_streamed_extra"],
-    "6C_bm_track2_gamebun_lovelycowboy": ["28_streamed_side"],
+    "6C_bm_track2_gamebun_littledevil": ["28_streamed_side"],
     "6D_collect_star_drummer": ["29_streamed_extra"],
     "6E_collect_star_amy": ["29_streamed_extra"],
     "6F_collect_star_riders": ["29_streamed_extra"],
@@ -165,5 +165,8 @@
     "A2_collect_star_magenta": ["30_streamed_extra2"],
     "A3_collect_star_crescentfox": ["30_streamed_extra2"],
     "A4_ms_nightmare": ["28_streamed_side"],
+    "A5_collect_star_pastel": ["30_streamed_extra2"],
+    "A6_collect_star_madotsuki": ["30_streamed_extra2"],
+    "A7_collect_star_dina": ["30_streamed_extra2"],
     "22_cutscene_lakitu": {"ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"], "banks": ["1B"]}
 }

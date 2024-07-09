@@ -211,6 +211,11 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "24_charmy"
+        },
+        "inst37": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "25_morgan"
         }
     },
     "instrument_list": [
@@ -250,7 +255,8 @@
         "inst33",
         "inst34",
         "inst35",
-        "inst36"
+        "inst36",
+        "inst37"
 
     ]
 }

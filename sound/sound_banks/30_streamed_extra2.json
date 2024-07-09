@@ -189,6 +189,21 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "starget_crescentfox_0"
+        },
+        "inst36": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_pastel_0"
+        },
+        "inst37": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_madotsuki_0"
+        },
+        "inst38": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_dina_0"
         }
         
     },
@@ -228,6 +243,9 @@
         "inst32",
         "inst33",
         "inst34",
-        "inst35"
+        "inst35",
+        "inst36",
+        "inst37",
+        "inst38"
     ]
 }

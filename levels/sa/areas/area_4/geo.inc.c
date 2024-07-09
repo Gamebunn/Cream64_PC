@@ -3,10 +3,10 @@
 const GeoLayout sa_area_4_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 1348, 196, 2813, sa_dl_cars_001_mesh_layer_1),
-		GEO_DISPLAY_LIST(LAYER_OPAQUE, sa_dl_City_Render_003_mesh_layer_1),
-		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 1770, 374, 2159, 90, 0, 0, sa_dl_NoCollisionObjects_001_mesh_layer_1),
-		GEO_DISPLAY_LIST(LAYER_OPAQUE, sa_dl_skybox_001_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_ALPHA, 1348, 196, 2813, sa_dl_cars_001_mesh_layer_4),
+		GEO_DISPLAY_LIST(LAYER_ALPHA, sa_dl_City_Render_003_mesh_layer_4),
+		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_ALPHA, 1770, 374, 2159, 90, 0, 0, sa_dl_NoCollisionObjects_001_mesh_layer_4),
+		GEO_DISPLAY_LIST(LAYER_ALPHA, sa_dl_skybox_001_mesh_layer_4),
 		GEO_TRANSLATE_NODE(LAYER_OPAQUE, 2224, 133, 976),
 		GEO_TRANSLATE_ROTATE(LAYER_OPAQUE, -1, -7610, 4221, 0, -90, 0),
 	GEO_CLOSE_NODE(),
@@ -34,7 +34,7 @@ const GeoLayout sa_area_4[] = {
 				GEO_CLOSE_NODE(),
 			GEO_CLOSE_NODE(),
 		GEO_CLOSE_NODE(),
-		GEO_DISPLAY_LIST(LAYER_OPAQUE, sa_dl_material_revert_render_settings),
+		GEO_DISPLAY_LIST(LAYER_ALPHA, sa_dl_material_revert_render_settings),
 	GEO_CLOSE_NODE(),
 	GEO_END(),
 };

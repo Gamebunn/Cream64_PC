@@ -124,6 +124,7 @@ enum DialogSpeakers {
     LAYL2,
     KATTY,
     CHARM,
+    MORGN,
 
 };
 
@@ -156,7 +157,7 @@ u8 sDialogSpeaker[] = {
     /*16*/ _,     YOSHI, _,     _,     CHAO2, _,     _,     _,     WIGLR, _,
     /*17*/ HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO,
     /*18*/ HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO, HCHAO,
-    /*19*/ HCHAO, HCHAO, _,     AMY1,  AMY2,  AMY2,  AMY3,  AMY4,  _,     AMY5, 
+    /*19*/ HCHAO, HCHAO, MORGN, AMY1,  AMY2,  AMY2,  AMY3,  AMY4,  _,     AMY5, 
     /*20*/ BLAZ1, _,     BLAZ2, _,     BLAZ3, BLAZ4, _,     BLAZ5, _,     GARDE, 
     /*21*/ POCKY, TALS1, CHAO,  TAMIE, _,     _,     HCHAO, _,     _,     _,
     /*22*/ _,     _,     GTOAD, GTOAD, _,     _,     _,     _,     _,     _,
@@ -214,6 +215,8 @@ s32 sDialogSpeakerVoice[] = {
     SOUND_OBJ_LAYLA2,
     SOUND_OBJ_KATALINA,
     SOUND_OBJ_CHARMY,
+    SOUND_OBJ_MORGAN,
+
 
 #if defined(VERSION_JP) || defined(VERSION_US)
     NO_SOUND,
@@ -531,6 +534,9 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127,  // COLLECT_STAR_MAGENTA
     127,  // COLLECT_STAR_CRESCENTFOX
     127,  // MS_NIGHTMARE
+    127,  // COLLECT_STAR_PASTEL
+    127,  // COLLECT_STAR_MADOTSUKI
+    127,  // COLLECT_STAR_DINA
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,

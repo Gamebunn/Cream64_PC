@@ -185,6 +185,12 @@
             "release_rate": 208,
             "envelope": "envelope0",
             "sound": "1F_wahoo"
+        },
+        "inst32": {
+            "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "20_jeezus"
         }
     },
     "instrument_list": [
@@ -219,6 +225,7 @@
         "inst28",
         "inst29",
         "inst30",
-        "inst31"
+        "inst31",
+        "inst32"
     ]
 }

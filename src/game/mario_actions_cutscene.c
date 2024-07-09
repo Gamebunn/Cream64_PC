@@ -765,6 +765,7 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 49: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KAIRI), 0);break;
                 case 50: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PARAPPA), 0);break;
                 case 51: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VANNY), 0);break;
+                case 52: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MADOTSUKI), 0);break;
                 case 53: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ARLE), 0);break;
                 case 54: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DAWN), 0);break;
                 case 55: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SERENA), 0);break;
@@ -801,6 +802,8 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 89: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LILY), 0);break;
                 case 90: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CAROLINE), 0);break;
                 case 91: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_POCKY), 0);break;
+                case 92: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PASTEL), 0);break;
+                case 93: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DINA), 0);break;
                 case 94: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MACER), 0);break;
                 case 95: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGENTA), 0);break;
                 case 96: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ICHIBAN), 0);break;
@@ -813,9 +816,6 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 103: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KATALINA), 0);break;
                 default: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_STAR), 0);break;
                 
-                // Outfits left & case #: 
-                // Madotsuki #52, Pastel #92, Dina #93
-
                 // Left as default: Vanilla #13, Roger #78, Cacee #84, Anya-Wiz #88
         } }
                     
@@ -825,7 +825,9 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
             case 42:
                        switch (gMarioState->currentCostume) {
                         case 28: play_sound(SOUND_MARIO_HERE_WE_GO_KLONOA, m->marioObj->header.gfx.cameraToObject);break;
+                        case 52: break;
                         case 61: play_sound(SOUND_MARIO_HERE_WE_GO_SENA, m->marioObj->header.gfx.cameraToObject);break;
+                        case 94: break;
                         case 101: play_sound(SOUND_MARIO_HERE_WE_GO_KITTEN, m->marioObj->header.gfx.cameraToObject);break;
                         case 102: play_sound(SOUND_MARIO_HERE_WE_GO_LAYLA, m->marioObj->header.gfx.cameraToObject);break;
                         case 103: play_sound(SOUND_MARIO_HERE_WE_GO_KATALINA, m->marioObj->header.gfx.cameraToObject);break;
@@ -1819,7 +1821,7 @@ s32 act_squished(struct MarioState *m) {
                 if (!(m->flags & MARIO_METAL_CAP) && m->invincTimer == 0) {
                     // cap on: 3 units; cap off: 4.5 units
                     m->hurtCounter += m->flags & MARIO_CAP_ON_HEAD ? 12 : 18;
-                    play_sound_if_no_flag(m, SOUND_MARIO_ATTACKED, MARIO_MARIO_SOUND_PLAYED);
+                    play_sound_if_no_flag(m, SOUND_MARIO_JEEZUS, MARIO_MARIO_SOUND_PLAYED);
                 }
 
                 vec3f_set(m->marioObj->header.gfx.scale, 1.8f, 0.05f, 1.8f);

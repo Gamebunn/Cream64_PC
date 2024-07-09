@@ -83,7 +83,7 @@
         "inst14": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "theend2_0"  
+            "sound": "theend_0"  
         },
         "inst15": {
             "release_rate": 10,
@@ -138,7 +138,7 @@
         "inst25": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "bm_track2_gamebun_lovelycowboy_0"
+            "sound": "bm_track2_gamebun_littledevil_0"
         },
         "inst26": {
             "release_rate": 10,

@@ -2893,7 +2893,7 @@ Miss!)"))
 DEFINE_DIALOG(MWISP_CASTLE2, 1, 5, 30, 200, _("\
 File Select:\n\
 -Sonic Rush Adventure-\n\
-Windmill Village 3\n\
+Windmill Village 2\n\
 \n\
 \n\
 Castle Hub:\n\
@@ -3100,7 +3100,7 @@ Mining Melancholy\n\
 Remix by:\n\
 Burning Idol"))
 
-//sa, simple
+//sa, morgan
 DEFINE_DIALOG(EX_SIMPLE, 1, 4, 30, 200, _("\
 Gotta take a break between\n\
 races. I can't reach the\n\
