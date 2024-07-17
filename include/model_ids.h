@@ -73,7 +73,7 @@
 #define MODEL_MARIO_MAGE                  0x1D8        // mario_mage_geo #41
 #define MODEL_MARIO_WONDER                0x1D7        // mario_wonder_geo #42
 #define MODEL_MARIO_SENA                  0x1D6        // mario_sena_geo #43
-#define MODEL_MARIO_ROGER                 0x1D5        // mario_roger_geo #44
+#define MODEL_MARIO_TERRY                 0x1D5        // mario_terry_geo #44
 #define MODEL_MARIO_VANNY                 0x1D4        // mario_vanny_geo #45
 #define MODEL_MARIO_NEZUKO                0x1D3        // mario_nezuko_geo #46
 #define MODEL_MARIO_LATINA                0x1D2        // mario_latina_geo #47
@@ -200,7 +200,7 @@
 #define MODEL_CHEESE_FOLLOW_MAGE          0x199       // cheese_follow_mage_geo #41
 #define MODEL_CHEESE_FOLLOW_WONDER        0x198       // cheese_follow_wonder_geo #42
 #define MODEL_CHEESE_FOLLOW_SENA          0x197       // cheese_follow_sena_geo #43
-#define MODEL_CHEESE_FOLLOW_ROGER         0x196       // cheese_follow_roger_geo #44
+#define MODEL_CHEESE_FOLLOW_TERRY         0x196       // cheese_follow_terry_geo #44
 #define MODEL_CHEESE_FOLLOW_VANNY         0x195       // cheese_follow_vanny_geo #45
 #define MODEL_CHEESE_FOLLOW_NEZUKO        0x194       // cheese_follow_nezuko_geo #46
 #define MODEL_CHEESE_FOLLOW_LATINA        0x193       // cheese_follow_latina_geo #47

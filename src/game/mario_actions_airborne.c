@@ -498,8 +498,8 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
 
     stepResult = perform_air_step(m, stepArg);
 
-    if(stepResult != AIR_STEP_NONE && m->action == ACT_HOVERING)
-    	set_camera_mode(m->area->camera, m->area->camera->defMode, 1);
+    // if(stepResult != AIR_STEP_NONE && m->action == ACT_HOVERING)
+    	// set_camera_mode(m->area->camera, m->area->camera->defMode, 1);
 
     switch (stepResult) {
         case AIR_STEP_NONE:
@@ -540,9 +540,15 @@ s32 act_hovering(struct MarioState *m)
 {
 	u16 max_stamina = 60;
 
+    switch (gMarioState->currentCostume) {
+            case 25: m->particleFlags |= PARTICLE_SPARKLES;
+            case 49: m->particleFlags |= PARTICLE_SPARKLES;
+            default: ;
+        }
+
 	//Only when A is being held.
 	if((m->controller->buttonDown & A_BUTTON) && m->flyStamina < max_stamina)
-	{
+	{   
 
 			float offset = (sin(((double)gGlobalTimer * 0.1f)));
 			m->vel[1] = offset;

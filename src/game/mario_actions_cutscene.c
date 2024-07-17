@@ -727,6 +727,7 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 10: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DETECTIVE), 0);break;
                 case 11: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DRUMMER), 0);break;
                 case 12: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LUNAR), 0);break;
+
                 case 14: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AMY), 0);break;        
                 case 15: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_BLAZE), 0);break;        
                 case 16: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MARINE), 0);break;        
@@ -738,7 +739,8 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 22: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_COSMO), 0);break;    
                 case 23: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_EGGMAN), 0);break;        
                 case 24: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHAO), 0);break;        
-                case 25: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_NIGHTS), 0);break;        
+                case 25: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_NIGHTS), 0);break; 
+                       
                 case 26: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MARIO), 0);break;
                 case 27: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DAISY), 0);break;
                 case 28: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KLONOA), 0);break;
@@ -753,44 +755,46 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 37: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MMX), 0);break;
                 case 38: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAN), 0);break;
                 case 39: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VERGIL), 0);break;
-                case 40: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
+                case 40: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_TERRY), 0);break;
                 case 41: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
-                case 42: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHARLOTTE), 0);break;
-                case 43: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_GOEMON), 0);break;
-                case 44: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MIMI), 0);break;
-                case 45: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_OUENDAN), 0);break;
-                case 46: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PEPPINO), 0);break;
-                case 47: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AVGN), 0);break;
-                case 48: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SORA), 0);break;
-                case 49: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KAIRI), 0);break;
-                case 50: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PARAPPA), 0);break;
-                case 51: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VANNY), 0);break;
-                case 52: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MADOTSUKI), 0);break;
-                case 53: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ARLE), 0);break;
-                case 54: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DAWN), 0);break;
-                case 55: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SERENA), 0);break;
-                case 56: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);break;
+                case 42: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CV), 0);break;
+                case 43: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHARLOTTE), 0);break;
+                case 44: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_GOEMON), 0);break;
+                case 45: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MIMI), 0);break;
+                case 46: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_OUENDAN), 0);break;
+                case 47: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PEPPINO), 0);break;
+                case 48: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AVGN), 0);break;
+                case 49: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SORA), 0);break;
+                case 50: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KAIRI), 0);break;
+                case 51: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PARAPPA), 0);break;
+                case 52: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_VANNY), 0);break;
+                case 53: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MADOTSUKI), 0);break;
+                case 54: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ARLE), 0);break;
+                case 55: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_DAWN), 0);break;
+                case 56: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SERENA), 0);break;
                 case 57: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);break;
-                case 58: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SYBIL), 0);break;
-                case 59: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MIKU), 0);break;
-                case 60: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_WONDER), 0);break;
-                case 61: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SENA), 0);break;
-                case 62: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_OLIMAR), 0);break;
-                case 63: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PIT), 0);break;
-                case 64: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAYLA), 0);break;
-                case 65: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_GOKU), 0);break;
-                case 66: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PAN), 0);break;
+                case 58: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MAGE), 0);break;
+                case 59: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SYBIL), 0);break;
+                case 60: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_MIKU), 0);break;
+                case 61: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_WONDER), 0);break;
+                case 62: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SENA), 0);break;
+                case 63: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_OLIMAR), 0);break;
+                case 64: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PIT), 0);break;
+                case 65: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LAYLA), 0);break;               
+                case 66: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ANYA), 0);break;
                 case 67: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_RUKIA), 0);break;
                 case 68: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KARIYA), 0);break;
                 case 69: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LUFFY), 0);break;
                 case 70: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CARROT), 0);break;
-                case 71: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_ANYA), 0);break;
-                case 72: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_NEZUKO), 0);break;
-                case 73: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_YUGI), 0);break;
-                case 74: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CREAM), 0);break;
-                case 75: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SAKURA), 0);break;
-                case 76: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AUSTIN), 0);break;
-                case 77: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_POMNI), 0);break;
+                case 71: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_GOKU), 0);break;
+                case 72: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PAN), 0);break;
+                case 73: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_NEZUKO), 0);break;
+                case 74: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_YUGI), 0);break;
+                case 75: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CREAM), 0);break;
+                case 76: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_SAKURA), 0);break;
+                case 77: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_AUSTIN), 0);break;
+                case 78: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_POMNI), 0);break;
+
                 case 79: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CREAMOCCHIA), 0);break;
                 case 80: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LATINA), 0);break;
                 case 81: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CHEF), 0);break;
@@ -2050,6 +2054,7 @@ static void intro_cutscene_jump_out_of_pipe(struct MarioState *m) {
 #endif
 
         set_mario_animation(m, MARIO_ANIM_SINGLE_JUMP);
+        gCheeseObject->unused2 = 0;
         mario_set_forward_vel(m, 10.0f);
         if (perform_air_step(m, 0) == AIR_STEP_LANDED) {
             sound_banks_enable(SEQ_PLAYER_SFX, SOUND_BANKS_DISABLED_DURING_INTRO_CUTSCENE);
@@ -2113,6 +2118,7 @@ static s32 act_intro_cutscene(struct MarioState *m) {
             break;
         case INTRO_CUTSCENE_PEACH_LAKITU_SCENE:
             intro_cutscene_peach_lakitu_scene(m);
+            gCheeseObject->unused2 = 1;
             break;
         case INTRO_CUTSCENE_RAISE_PIPE:
             intro_cutscene_raise_pipe(m);
@@ -2120,7 +2126,7 @@ static s32 act_intro_cutscene(struct MarioState *m) {
         case INTRO_CUTSCENE_JUMP_OUT_OF_PIPE:
             intro_cutscene_jump_out_of_pipe(m);
             break;
-        case INTRO_CUTSCENE_LAND_OUTSIDE_PIPE:
+        case INTRO_CUTSCENE_LAND_OUTSIDE_PIPE: 
             intro_cutscene_land_outside_pipe(m);
             break;
         case INTRO_CUTSCENE_LOWER_PIPE:
@@ -2328,7 +2334,7 @@ static void end_peach_cutscene_mario_falling(struct MarioState *m) {
     if (m->actionTimer == 1) {
         m->statusForCamera->cameraEvent = CAM_EVENT_START_ENDING;
     }
-
+    gCheeseObject->unused2 = 1;
     m->input |= INPUT_A_DOWN;
     m->flags |= (MARIO_WING_CAP | MARIO_CAP_ON_HEAD);
 
@@ -2830,6 +2836,7 @@ static void end_peach_cutscene_fade_out(struct MarioState *m) {
         level_trigger_warp(m, WARP_OP_CREDITS_NEXT);
         gPaintingMarioYEntry = 1500.0f; // ensure medium water level in WDW credits cutscene
         m->actionState = 1;
+        // gCheeseObject->unused2 = 0;
     }
 }
 
@@ -2975,6 +2982,8 @@ static s32 act_credits_cutscene(struct MarioState *m) {
 static s32 act_end_waving_cutscene(struct MarioState *m) {
     if (m->actionState == 0) {
         m->statusForCamera->cameraEvent = CAM_EVENT_START_END_WAVING;
+
+        gCheeseObject->unused2 = 1;
 
         switch (m->currentCostume) {
     case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_VANILLA, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;

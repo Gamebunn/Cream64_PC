@@ -309,3 +309,5 @@
 #include "mario_sfsakura_fly/geo.inc.c"
 #include "cheese_follow_sfsakura/geo.inc.c"
 #include "cheese_follow_hero/geo.inc.c"
+#include "mario_terry/geo.inc.c"
+#include "cheese_follow_terry/geo.inc.c"

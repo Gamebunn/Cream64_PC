@@ -537,6 +537,7 @@ u8 sBackgroundMusicDefaultVolume[] = {
     127,  // COLLECT_STAR_PASTEL
     127,  // COLLECT_STAR_MADOTSUKI
     127,  // COLLECT_STAR_DINA
+    127,  // COLLECT_STAR_TERRY
 };
 
 STATIC_ASSERT(ARRAY_COUNT(sBackgroundMusicDefaultVolume) == SEQ_COUNT,

@@ -91,7 +91,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_KATE,              mario_kate_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_CHEF,              mario_chef_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_VAL,               mario_val_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_MARIO_ROGER,             mario_roger_geo),
+    // LOAD_MODEL_FROM_GEO(MODEL_MARIO_ROGER,             mario_roger_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_KATALINA,          mario_katalina_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_KITTEN,            mario_kitten_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_LAYLA,             mario_layla_geo),
@@ -180,6 +180,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SYBIL,             mario_sybil_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_RUKIA,             mario_rukia_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SFSAKURA,          mario_sfsakura_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_MARIO_TERRY,             mario_terry_geo),
     
 
 
@@ -195,7 +196,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_JACK_FLY,          mario_jack_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_YUKATA_FLY,        mario_yukata_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_RIDERS_FLY,        mario_riders_fly_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_MARIO_ROGER_FLY,         mario_roger_fly_geo),
+    // LOAD_MODEL_FROM_GEO(MODEL_MARIO_ROGER_FLY,         mario_roger_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_BEAN_FLY,          mario_bean_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SPRING_FLY,        mario_spring_fly_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO_SWIMSUIT_FLY,      mario_swimsuit_fly_geo),
@@ -285,7 +286,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ICHIBAN,   cheese_follow_ichiban_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_GOKU,      cheese_follow_goku_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_KATE,      cheese_follow_kate_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ROGER,     cheese_follow_roger_geo),
+    // LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_ROGER,     cheese_follow_roger_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_CREAMOCCHIA, cheese_follow_creamocchia_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_KATALINA,  cheese_follow_katalina_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_KITTEN,    cheese_follow_kitten_geo),
@@ -373,6 +374,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_RUKIA,     cheese_follow_rukia_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_SFSAKURA,  cheese_follow_sfsakura_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_HERO,      cheese_follow_hero_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_CHEESE_FOLLOW_TERRY,     cheese_follow_terry_geo),
     
 
     LOAD_MODEL_FROM_GEO(MODEL_WISP1,                   wisp1_geo),

@@ -3,16 +3,27 @@
 
 void bhv_cheese_follow_init(void) {
 
+    gCheeseObject = o;
     o->oButterflyYPhase = random_float() * 10.0f;
     o->header.gfx.animInfo.animFrame = random_float() * 7.0f;
     o->oHomeX = o->oPosX;
     o->oHomeY = o->oPosY;
     o->oHomeZ = o->oPosZ;
 
+    o->oPosX = gMarioObject->oPosX;
+    o->oPosY = gMarioObject->oPosY;
+    o->oPosZ = gMarioObject->oPosZ;
+
     cur_obj_scale(0.75f);
 }
 
 void bhv_cheese_act_follow_mario(void) {
+
+  //The "hide cheese" flag
+    if(o->unused2)
+        cur_obj_scale(0.0f);
+    else
+        cur_obj_scale(0.75f);
 
 	float offset = (sinf(((double)gGlobalTimer * 0.1f)) * 20.0f);
 
@@ -82,45 +93,45 @@ void bhv_cheese_act_follow_mario(void) {
   case 37: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MMX]; break;
   case 38: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_LAN]; break; 
   case 39: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_VIRGIL]; break;
-  case 40: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MARIA]; break;
-  case 41: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_RICHTER]; break; 
-  case 42: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_CHARLOTTE]; break; 
-  case 43: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_GOEMON]; break; 
-  case 44: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MIMI]; break;
-  case 45: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_OUENDAN]; break;
-  case 46: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PEPPINO]; break; 
-  case 47: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_AVGN]; break; 
-  case 48: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SORA]; break; 
-  case 49: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_KAIRI]; break;
-  case 50: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PARAPPA]; break;
-  case 51: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_VANNY]; break;
-  case 52: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MADOTSUKI]; break;
-  case 53: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_ARLE]; break;
-  case 54: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_DAWN]; break;
-  case 55: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SERENA]; break;
-  case 56: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_HERO]; break;
-  case 57: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MAGE]; break;
-  case 58: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SYBIL]; break;
-  case 59: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MIKU]; break;
-  case 60: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_WONDER]; break;
-  case 61: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SENA]; break;
-  case 62: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_OLIMAR]; break;
-  case 63: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PIT]; break;
-  case 64: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_RIBBON]; break;
-  case 65: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_GOKU]; break;
-  case 66: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PAN]; break;
-  case 67: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_RUKIA]; break;
-  case 68: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_KARIYA]; break;
-  case 69: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_LUFFY]; break;
-  case 70: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_CARROT]; break; 
-  case 71: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_ANYA]; break;
-  case 72: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_NEZUKO]; break;
-  case 73: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_YUGI]; break;
-  case 74: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_CREAM]; break;
-  case 75: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SAKURA]; break;
-  case 76: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_AUSTIN]; break;
-  case 77: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_POMNI]; break;
-  case 78: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_ROGER]; break;
+  case 40: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_TERRY]; break;
+  case 41: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MARIA]; break;
+  case 42: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_RICHTER]; break; 
+  case 43: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_CHARLOTTE]; break; 
+  case 44: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_GOEMON]; break; 
+  case 45: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MIMI]; break;
+  case 46: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_OUENDAN]; break;
+  case 47: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PEPPINO]; break; 
+  case 48: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_AVGN]; break; 
+  case 49: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SORA]; break; 
+  case 50: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_KAIRI]; break;
+  case 51: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PARAPPA]; break;
+  case 52: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_VANNY]; break;
+  case 53: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MADOTSUKI]; break;
+  case 54: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_ARLE]; break;
+  case 55: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_DAWN]; break;
+  case 56: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SERENA]; break;
+  case 57: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_HERO]; break;
+  case 58: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MAGE]; break;
+  case 59: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SYBIL]; break;
+  case 60: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_MIKU]; break;
+  case 61: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_WONDER]; break;
+  case 62: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SENA]; break;
+  case 63: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_OLIMAR]; break;
+  case 64: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PIT]; break;
+  case 65: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_RIBBON]; break;
+  case 66: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_RUKIA]; break;
+  case 67: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_KARIYA]; break;
+  case 68: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_LUFFY]; break;
+  case 69: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_CARROT]; break; 
+  case 70: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_GOKU]; break;
+  case 71: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_PAN]; break;  
+  case 72: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_ANYA]; break;
+  case 73: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_NEZUKO]; break;
+  case 74: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_YUGI]; break;
+  case 75: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_CREAM]; break;
+  case 76: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_SAKURA]; break;
+  case 77: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_AUSTIN]; break;
+  case 78: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_POMNI]; break;
 
   case 79: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_CREAMOCCHIA]; break;
   case 80: o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_CHEESE_FOLLOW_LATINA]; break;

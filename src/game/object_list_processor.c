@@ -93,6 +93,11 @@ struct Object *gMarioObject;
 struct Object *gLuigiObject;
 
 /**
+ * A pointer to Cheese. Exclusive to SC64.
+ */
+struct Object *gCheeseObject;
+
+/**
  * The object whose behavior script is currently being updated.
  * This object is used frequently in object behavior code, and so is often
  * aliased as "o".

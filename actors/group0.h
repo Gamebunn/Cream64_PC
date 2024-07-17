@@ -934,4 +934,8 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "cheese_follow_hero/geo_header.h"
 
+#include "mario_terry/geo_header.h"
+
+#include "cheese_follow_terry/geo_header.h"
+
 #endif

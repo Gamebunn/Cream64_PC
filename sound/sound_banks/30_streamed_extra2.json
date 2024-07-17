@@ -204,6 +204,11 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "starget_dina_0"
+        },
+        "inst39": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "starget_terry_0"
         }
         
     },
@@ -246,6 +251,7 @@
         "inst35",
         "inst36",
         "inst37",
-        "inst38"
+        "inst38",
+        "inst39"
     ]
 }

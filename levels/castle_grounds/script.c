@@ -196,6 +196,7 @@ const LevelScript level_castle_grounds_entry[] = {
     
     AREA(/*index*/ 1, castle_grounds_geo_00073C),
         WARP_NODE(/*id*/ WARP_NODE_DEATH, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 1, /*destNode*/ WARP_NODE_03, /*flags*/ WARP_NO_CHECKPOINT),
+        OBJECT(/*model*/ MODEL_CHEESE_FOLLOW, /*pos*/ 0, 0, 0, /*angle*/ 0, 0, 0, /*behParam*/ 0x00000000, /*beh*/ bhvCheeseFollow),
         JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),
         JUMP_LINK(script_func_local_3),

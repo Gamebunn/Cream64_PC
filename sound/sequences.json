@@ -27,7 +27,7 @@
     "17_cutscene_collect_key": ["1A"],
     "18_event_endless_stairs": ["22"],
     "19_level_boss_koopa_final": ["27_streamed_main"],
-    "1A_cutscene_credits": ["25"],
+    "1A_cutscene_credits": ["28_streamed_side"],
     "1B_event_solve_puzzle": ["14_piranha_music_box"],
     "1C_event_toad_message": ["20"],
     "1D_event_peach_message": ["28_streamed_side"],
@@ -168,5 +168,6 @@
     "A5_collect_star_pastel": ["30_streamed_extra2"],
     "A6_collect_star_madotsuki": ["30_streamed_extra2"],
     "A7_collect_star_dina": ["30_streamed_extra2"],
+    "A8_collect_star_terry": ["30_streamed_extra2"],
     "22_cutscene_lakitu": {"ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"], "banks": ["1B"]}
 }

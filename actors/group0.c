@@ -323,3 +323,5 @@
 #include "mario_sfsakura_fly/model.inc.c"
 #include "cheese_follow_sfsakura/model.inc.c"
 #include "cheese_follow_hero/model.inc.c"
+#include "mario_terry/model.inc.c"
+#include "cheese_follow_terry/model.inc.c"
