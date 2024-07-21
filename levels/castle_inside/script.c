@@ -261,6 +261,7 @@ const LevelScript level_castle_inside_entry[] = {
 
     LOAD_MODEL_FROM_GEO(MODEL_FISH_BAIT, bait_fish_geo),
     LOAD_MODEL_FROM_GEO(MODEL_FISH_BAIT2, bait_fish2_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_FISH_BAIT3, bait_fish3_geo),
 
     LOAD_MODEL_FROM_GEO(MODEL_TOAD_ANGY, toad_angy_geo),
 
@@ -270,7 +271,7 @@ const LevelScript level_castle_inside_entry[] = {
         OBJECT(/*model*/ MODEL_NONE,       /*pos*/  2774,  507, -1716, /*angle*/ 0,  90, 0, /*bhvParam*/ 0, /*bhv*/ bhvTankFishGroup),
         OBJECT(/*model*/ MODEL_NONE,       /*pos*/  3672,  507, -1307, /*angle*/ 0,  45, 0, /*bhvParam*/ 0, /*bhv*/ bhvTankFishGroup2),
         OBJECT(/*model*/ MODEL_NONE,       /*pos*/  3748,  507,   773, /*angle*/ 0, -45, 0, /*bhvParam*/ 0, /*bhv*/ bhvTankFishGroup3),
-        OBJECT(/*model*/ MODEL_NONE,       /*pos*/  2778,  507,  1255, /*angle*/ 0, -90, 0, /*bhvParam*/ 0, /*bhv*/ bhvTankFishGroup),
+        OBJECT(/*model*/ MODEL_NONE,       /*pos*/  2778,  507,  1255, /*angle*/ 0, -90, 0, /*bhvParam*/ 0, /*bhv*/ bhvTankFishGroup4),
         OBJECT(/*model*/ MODEL_BOO_CASTLE, /*pos*/ -1000,   50, -3500, /*angle*/ 0,   0, 0, /*bhvParam*/ 0, /*bhv*/ bhvBooInCastle),
         OBJECT(/*model*/ MODEL_CHOCOLA,       /*pos*/ -1671,    0,  1313, /*angle*/ 0,  83, 0, /*bhvParam*/ BPARAM1(DIALOG_133), /*bhv*/ bhvToadMessage),
         OBJECT(/*model*/ MODEL_TOAD,       /*pos*/  1524,  307,   458, /*angle*/ 0, 110, 0, /*bhvParam*/ BPARAM1(DIALOG_134), /*bhv*/ bhvToadMessage),

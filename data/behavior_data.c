@@ -2173,6 +2173,15 @@ const BehaviorScript bhvTankFishGroup3[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvTankFishGroup4[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_tank_fish_group4_loop),
+    END_LOOP(),
+};
+
 const BehaviorScript bhvCheckerboardElevatorGroup[] = {
     BEGIN(OBJ_LIST_SPAWNER),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),

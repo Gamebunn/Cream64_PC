@@ -14,6 +14,18 @@ static struct ObjectHitbox sBooGivingStarHitbox = {
     /* hurtboxHeight:     */ 60,
 };
 
+static struct ObjectHitbox sKingBoomBooHitbox = {
+    /* interactType: */      0,
+    /* downOffset: */        0,
+    /* damageOrCoinValue: */ 3,
+    /* health: */            3,
+    /* numLootCoins: */      0,
+    /* radius: */            50,
+    /* height: */            80,
+    /* hurtboxRadius: */     40,
+    /* hurtboxHeight: */     60,
+};
+
 // Relative positions
 static s16 sCourtyardBooTripletPositions[][3] = {
     { 0, 50, 0 },
@@ -675,7 +687,7 @@ static void (*sBooGivingStarActions[])(void) = {
 void bhv_big_boo_loop(void) {
     //PARTIAL_UPDATE
 
-    obj_set_hitbox(o, &sBooGivingStarHitbox);
+    obj_set_hitbox(o, &sKingBoomBooHitbox);
 
     o->oGraphYOffset = o->oBooBaseScale * 60.0f;
 

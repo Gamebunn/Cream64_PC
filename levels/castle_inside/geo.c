@@ -28,3 +28,4 @@
 #include "levels/castle_inside/bait_fish/geo.inc.c"
 #include "levels/castle_inside/toad_angy/geo.inc.c"
 #include "levels/castle_inside/sage_egg/geo.inc.c"
+#include "levels/castle_inside/bait_fish3/geo.inc.c"

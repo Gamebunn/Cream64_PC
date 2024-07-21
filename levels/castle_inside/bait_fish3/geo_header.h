@@ -1,0 +1,17 @@
+extern const GeoLayout bait_fish3_geo[];
+extern u8 bait_fish3_brog2_rgba16[];
+extern u8 bait_fish3_brog1_ci8[];
+extern u8 bait_fish3_brog1_pal_rgba16[];
+extern Vtx bait_fish3_000_offset_002_skinned_mesh_layer_4_vtx_0[2];
+extern Gfx bait_fish3_000_offset_002_skinned_mesh_layer_4_tri_0[];
+extern Vtx bait_fish3_000_offset_002_mesh_layer_4_vtx_0[2];
+extern Gfx bait_fish3_000_offset_002_mesh_layer_4_tri_0[];
+extern Vtx bait_fish3_000_offset_002_mesh_layer_4_vtx_1[4];
+extern Gfx bait_fish3_000_offset_002_mesh_layer_4_tri_1[];
+extern Gfx mat_bait_fish3_brog2[];
+extern Gfx mat_revert_bait_fish3_brog2[];
+extern Gfx mat_bait_fish3_brog1[];
+extern Gfx mat_revert_bait_fish3_brog1[];
+extern Gfx bait_fish3_000_offset_002_skinned_mesh_layer_4[];
+extern Gfx bait_fish3_000_offset_002_mesh_layer_4[];
+extern Gfx bait_fish3_material_revert_render_settings[];

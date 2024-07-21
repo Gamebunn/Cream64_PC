@@ -93,3 +93,4 @@
 #include "levels/castle_inside/sage_egg/model.inc.c"
 #include "levels/castle_inside/sage_egg/anims/data.inc.c"
 #include "levels/castle_inside/sage_egg/anims/table.inc.c"
+#include "levels/castle_inside/bait_fish3/model.inc.c"

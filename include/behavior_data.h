@@ -651,6 +651,7 @@ extern const BehaviorScript bhvToadMessageGemerl[];
 // Castle Inside
 extern const BehaviorScript bhvTankFishGroup2[];
 extern const BehaviorScript bhvTankFishGroup3[];
+extern const BehaviorScript bhvTankFishGroup4[];
 
 // SA
 extern const BehaviorScript bhvToadMessagePocky[];

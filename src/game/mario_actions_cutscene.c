@@ -829,8 +829,8 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
             case 42:
                        switch (gMarioState->currentCostume) {
                         case 28: play_sound(SOUND_MARIO_HERE_WE_GO_KLONOA, m->marioObj->header.gfx.cameraToObject);break;
-                        case 52: break;
-                        case 61: play_sound(SOUND_MARIO_HERE_WE_GO_SENA, m->marioObj->header.gfx.cameraToObject);break;
+                        case 53: break;
+                        case 62: play_sound(SOUND_MARIO_HERE_WE_GO_SENA, m->marioObj->header.gfx.cameraToObject);break;
                         case 94: break;
                         case 101: play_sound(SOUND_MARIO_HERE_WE_GO_KITTEN, m->marioObj->header.gfx.cameraToObject);break;
                         case 102: play_sound(SOUND_MARIO_HERE_WE_GO_LAYLA, m->marioObj->header.gfx.cameraToObject);break;
