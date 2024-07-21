@@ -785,7 +785,7 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 case 67: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_RUKIA), 0);break;
                 case 68: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_KARIYA), 0);break;
                 case 69: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LUFFY), 0);break;
-                case 70: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_CARROT), 0);break;
+                case 70: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_LUFFY), 0);break;
                 case 71: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_GOKU), 0);break;
                 case 72: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_PAN), 0);break;
                 case 73: play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_COLLECT_STAR_NEZUKO), 0);break;
@@ -2334,6 +2334,7 @@ static void end_peach_cutscene_mario_falling(struct MarioState *m) {
     if (m->actionTimer == 1) {
         m->statusForCamera->cameraEvent = CAM_EVENT_START_ENDING;
     }
+
     gCheeseObject->unused2 = 1;
     m->input |= INPUT_A_DOWN;
     m->flags |= (MARIO_WING_CAP | MARIO_CAP_ON_HEAD);
@@ -2836,7 +2837,6 @@ static void end_peach_cutscene_fade_out(struct MarioState *m) {
         level_trigger_warp(m, WARP_OP_CREDITS_NEXT);
         gPaintingMarioYEntry = 1500.0f; // ensure medium water level in WDW credits cutscene
         m->actionState = 1;
-        // gCheeseObject->unused2 = 0;
     }
 }
 
@@ -2983,8 +2983,6 @@ static s32 act_end_waving_cutscene(struct MarioState *m) {
     if (m->actionState == 0) {
         m->statusForCamera->cameraEvent = CAM_EVENT_START_END_WAVING;
 
-        gCheeseObject->unused2 = 1;
-
         switch (m->currentCostume) {
     case 13: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_VANILLA, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
     case 79: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_CREAMOCCHIA, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
@@ -2993,6 +2991,7 @@ static s32 act_end_waving_cutscene(struct MarioState *m) {
     case 103: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH_MARK, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
     default: sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906, -1180, 0, 0, 0); break;
         }
+
         
        // sEndPeachObj = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_PEACH, bhvEndPeach, 60, 906,
        //                                          -1180, 0, 0, 0);
@@ -3037,6 +3036,8 @@ static s32 act_end_waving_cutscene(struct MarioState *m) {
 
         m->actionState = 1;
     }
+    
+    gCheeseObject->unused2 = 1;
 
     set_mario_animation(m, MARIO_ANIM_CREDITS_WAVING);
     stop_and_set_height_to_floor(m);

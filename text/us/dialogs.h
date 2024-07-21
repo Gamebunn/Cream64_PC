@@ -2003,14 +2003,10 @@ It's done so you can still\n\
 perform the BLJ whenever you\n\
 like.\n\
 \n\
-Also important: flying might\n\
-break the set camera in certain\n\
-rooms, but triggering a new \n\
-camera zone will fix it.\n\
-You'll find out exactly what I\n\
-mean by flying in this room.\n\
-Anyway, have fun messing around\n\
-with that, Miss Cream!)"))
+Remember, this is a feature!\n\
+Explore how much flying can\n\
+benefit you. Don't be afraid to\n\
+break levels, Miss Cream!)"))
 
 DEFINE_DIALOG(DIALOG_135, 1, 2, 30, 200, _("\
 (I showed you my Emote \n\
@@ -2735,28 +2731,22 @@ Funkys0da\n\
 \n\
 (PC Only) Pocky and Sorbet\n\
 DDR Poster by: FudgerNutter\n\
-The Tikal (The Echidna) &\n\
-Chaos Hour art by:\n\
-GadgetTR\n\
 Vend-a-Tails from 'Uncle\n\
 Knuckles' by:\n\
 Doobus Goobus\n\
 Parent's Day Out poster\n\
 in Karaoke Bar by:\n\
 FudgerNutter\n\
-\n\
 Kate the Wolf's collect star\n\
 theme composed by: Neath Myles\n\
-New Paintings by: InfiniteBrians,\n\
-SketchMeister, FlamingGaraco, \n\
-FudgerNutter, TheNovika, \n\
-Funkys0da And Zack113\n\
-\n\
 \n\
 Vanilla drawing in intro\n\
 letter by:\n\
 FunkyS0da\n\
-\n\
+New Paintings by: InfiniteBrians,\n\
+SketchMeister, FlamingGaraco, \n\
+FudgerNutter, TheNovika, \n\
+Funkys0da And Zack113\n\
 \n\
 \n\
 End cake pics by (in order):\n\
@@ -2778,7 +2768,7 @@ Dr. Eggman Cream design\n\
 by: TheNovika\n\
 \n\
 Hatsune Miku Cream by:\n\
-(underscore)motobug\n\
+▲motobug\n\
 \n\
 Grandma Rabbit design\n\
 by: StellarSpin\n\

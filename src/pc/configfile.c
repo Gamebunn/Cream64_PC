@@ -117,7 +117,7 @@ ConfigVanillaCam configVanillaCam = {
 // PuppyCam 2 settings
 ConfigPuppyCam configPuppyCam = {
     .enable = true,
-    .legacy = false,
+    .legacy = true,
     .analog = false,
 #ifdef MOUSE_ACTIONS
     .mouse = false,

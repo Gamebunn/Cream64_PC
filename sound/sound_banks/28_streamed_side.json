@@ -144,6 +144,11 @@
             "release_rate": 10,
             "envelope": "envelope0",
             "sound": "ms_nightmare"
+        },
+        "inst27": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "bm_track3_gamebun_lovelycowboy_0"
         }
     },
     "instrument_list": [
@@ -173,6 +178,7 @@
         "inst23",
         "inst24",
         "inst25",
-        "inst26"
+        "inst26",
+        "inst27"
     ]
 }

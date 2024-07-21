@@ -579,6 +579,8 @@ void bhv_bm_music1_loop(void);
 void bhv_bm_music1_init(void);
 void bhv_bm_music2_loop(void);
 void bhv_bm_music2_init(void);
+void bhv_bm_music3_loop(void);
+void bhv_bm_music3_init(void);
 
 void bhv_2d_physics_loop(void);
 void uv_update_scroll(void);

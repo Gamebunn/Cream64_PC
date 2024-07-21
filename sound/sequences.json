@@ -169,5 +169,6 @@
     "A6_collect_star_madotsuki": ["30_streamed_extra2"],
     "A7_collect_star_dina": ["30_streamed_extra2"],
     "A8_collect_star_terry": ["30_streamed_extra2"],
+    "A9_bm_track3_gamebun_lovelycowboy": ["28_streamed_side"],
     "22_cutscene_lakitu": {"ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"], "banks": ["1B"]}
 }
