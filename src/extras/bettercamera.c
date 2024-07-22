@@ -1117,7 +1117,7 @@ void puppycam_projection_behaviours(void) {
         }
 
         // This sets the view offset from Mario. It accentuates a bit further when moving.
-        puppycam_view_panning();
+        //puppycam_view_panning();
 
         // This sets a pseudo tilt offset based on the floor heights in front and behind mario.
         puppycam_terrain_angle();
