@@ -2530,7 +2530,6 @@ Sonic-specific discords for help\n\
 and suggestions for various\n\
 enemies and music. Thank you\n\
 so much!\n\
-\n\
 A huge thank you to everyone\n\
 whose streamed it and spread\n\
 the word around, along with\n\
