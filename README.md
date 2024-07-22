@@ -21,7 +21,7 @@ Overall additions:
  If you haven't built with the normal sm64ex/sm64ex-alo builds, [look at those first for a proper tutorial and getting the proper dependencies for install](https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows). Then once you got the hang of it, come back here. 
  
  1) Do `git clone https://github.com/Gamebunn/Cream64_PC.git` to somewhere on your PC with MSYS2. Make sure it's a directory with full access. Then `cd Cream64_PC` to get into the folder itself.
- 2) [Download the extra assets needed for the repo](https://drive.google.com/file/d/1rHteLAEMClXGX-xrQVBmFhoYg3AhCdo5/view?usp=drive_link)
+ 2) [Download the extra assets needed for the repo](https://drive.google.com/file/d/1bcM290pwvUAdtQPtPPVQpwMBdMD7vQY_/view?usp=drive_link)
  3) Find your own US copy of sm64, rename it to baserom.us.z64 and put it in the root of your clone.
  4) Dump the contents of the assets folder into the root of where you cloned the git
  5) Go ahead and compile with `make`. If you got a decent CPU, you can increase the compile speed with `make -j4`.
