@@ -2739,9 +2739,15 @@ FudgerNutter\n\
 Kate the Wolf's collect star\n\
 theme composed by: Neath Myles\n\
 \n\
+Drummer Cream's collect star\n\
+theme made by: CPJ2002\n\
+\n\
 Vanilla drawing in intro\n\
 letter by:\n\
 FunkyS0da\n\
+\n\
+\n\
+\n\
 New Paintings by: InfiniteBrians,\n\
 SketchMeister, FlamingGaraco, \n\
 FudgerNutter, TheNovika, \n\
