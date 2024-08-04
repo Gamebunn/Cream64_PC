@@ -3758,7 +3758,7 @@ Only a few have ever seen\n\
 it in person, a creature\n\
 so mysterious and divine.\n\
 \n\
-All we have this is lone\n\
+All we have is this lone\n\
 picture of the beast to\n\
 go by. They said it lurks\n\
 in underwater lakes.\n\
